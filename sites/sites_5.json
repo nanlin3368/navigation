@@ -12,5 +12,19 @@
         "url": "https://zh.wikihow.com",
         "description": "全球化的技能习得指南，采用颗粒度极细的步骤化拆解，将复杂的生活经验与专业技术转化为可复制的操作手册",
         "category": "学习成长"
+    },
+    {
+        "title": "W3Schools",
+        "icon": "W3Schools_icon.webp",
+        "url": "https://www.w3schools.com",
+        "description": "全球著名的编程学习平台，专注于 Web 开发技术，提供简洁易懂的 HTML、CSS、JavaScript 等教程及在线实例代码，并附带编辑器",
+        "category": "学习成长"
+    },
+    {
+        "title": "在线英语打字练习",
+        "icon": "在线英语打字练习_icon.webp",
+        "url": "https://typing-practice.toolsnav.top/",
+        "description": "",
+        "category": "学习成长"
     }
 ]

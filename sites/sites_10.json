@@ -73,14 +73,14 @@
         "title": "i2PDF",
         "icon": "i2PDF_icon.webp",
         "url": "https://www.i2pdf.com/zh",
-        "description": "基于浏览器的 PDF 文档处理平台，集成格式转换、页面编辑、数据压缩及 OCR 文字识别功能，支持数字文档的标准化整理、加密与优化，实现全流程在线化文档加工",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "PDFTool",
         "icon": "PDFTool_icon.webp",
         "url": "https://www.pdftool.cc/zh",
-        "description": "在线 PDF 处理工具集，涵盖文件合并、拆分、压缩及多格式双向转换功能，支持添加水印、电子签名与 OCR 识别，并集成 LLMs.txt 生成与 AI 服务检测等新兴能力",
+        "description": "",
         "category": "文档办公"
     }
 ]

@@ -87,13 +87,20 @@
         "title": "2DWallpapers",
         "icon": "2DWallpapers_icon.webp",
         "url": "https://www.2dwallpapers.com",
-        "description": "动漫与游戏主题壁纸获取平台，深度归档二次元及数字艺术作品，提供无水印原画资源下载，支持多题材标签索引，实现高清晰度静态视觉素材的快速预览与检索",
+        "description": "",
         "category": "视觉灵感"
     },
     {
         "title": "Font",
         "icon": "Font_icon.webp",
         "url": "https://font.icu",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Foodiesfeed",
+        "icon": "Foodiesfeed_icon.webp",
+        "url": "https://www.foodiesfeed.com/zh",
         "description": "",
         "category": "视觉灵感"
     }
