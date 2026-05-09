@@ -87,21 +87,35 @@
         "title": "2DWallpapers",
         "icon": "2DWallpapers_icon.webp",
         "url": "https://www.2dwallpapers.com",
-        "description": "",
-        "category": "视觉灵感"
-    },
-    {
-        "title": "Font",
-        "icon": "Font_icon.webp",
-        "url": "https://font.icu",
-        "description": "",
+        "description": "高品质动漫与游戏壁纸分享平台，汇集热门的二次元及主流游戏高清背景图，支持免登录直接获取图片，所有资源均可免费下载且无水印",
         "category": "视觉灵感"
     },
     {
         "title": "Foodiesfeed",
         "icon": "Foodiesfeed_icon.webp",
         "url": "https://www.foodiesfeed.com/zh",
-        "description": "",
+        "description": "免费高质量美食摄影的首选资源，汇集全球摄影师分享的数千张高分辨率食物图片，涵盖烹饪、食材及餐饮场景，所有资源均可免费下载，完全免费用于商业和个人用途，无需署名",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "AURA 壁纸",
+        "icon": "AURA_壁纸_icon.webp",
+        "url": "https://gallery.wallaura.cn",
+        "description": "纯粹且优雅的高质量壁纸聚合平台，收录数万张经由人工审核的高清原图，涵盖自然、动漫及艺术等多种风格，提供极简的浏览体验",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "西瓜封面设计",
+        "icon": "西瓜封面设计_icon.webp",
+        "url": "https://cover.xgdh.cn",
+        "description": "在线封面设计工具，免注册、完全免费使用，集成丰富的图标库与自定义编辑功能，可快速生成极具质感的纯色、渐变或图片背景封面，操作极简且支持实时预览",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Font",
+        "icon": "Font_icon.webp",
+        "url": "https://font.icu",
+        "description": "免费字体资源平台，提供海量中英文字体在线预览、搜索与下载，涵盖商用免费字体、设计字体、书法手写体等，支持快速查找与详情查看",
         "category": "视觉灵感"
     }
 ]

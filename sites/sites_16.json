@@ -1,0 +1,51 @@
+[
+    {
+        "title": "视觉族",
+        "icon": "视觉族_icon.webp",
+        "url": "https://www.shijuezu.com",
+        "description": "专业级在线显示性能评估矩阵，集成坏点检测、色彩校准及刷新率验证等二十余项核心工具，实现显示器素质的一键深度体检",
+        "category": "网络工具"
+    },
+    {
+        "title": "文件快传",
+        "icon": "文件快传_icon.webp",
+        "url": "https://transfer.52python.cn",
+        "description": "基于 P2P 协议的极简文件投递枢纽，支持跨设备口令取件与无注册即时传输，是构建临时办公链路与跨端协同的高效交互利器",
+        "category": "网络工具"
+    },
+    {
+        "title": "Temp Number",
+        "icon": "Temp_Number_icon.webp",
+        "url": "https://temp-number.org/zh",
+        "description": "全球化在线虚拟通讯中转站，提供多国临时电话号码接收服务，旨在保护用户真实隐私，降低数字化账户注册过程中的信息泄露风险",
+        "category": "网络工具"
+    },
+    {
+        "title": "TemporaryMail",
+        "icon": "TemporaryMail_icon.webp",
+        "url": "https://temporarymail.com/zh",
+        "description": "瞬时化的临时电子通讯方案，支持无注册、即开即用的匿名邮件收发服务，有效过滤数字化流转中的广告干扰与垃圾信息渗透",
+        "category": "网络工具"
+    },
+    {
+        "title": "聚合图床",
+        "icon": "聚合图床_icon.webp",
+        "url": "https://www.superbed.cn",
+        "description": "高性能的专业影像托管与外链聚合分发平台，为开发者与创作者提供稳定的图像存储支撑，确保视觉资产在多终端间的丝滑流转",
+        "category": "图像视听"
+    },
+    {
+        "title": "搜图神器",
+        "icon": "搜图神器_icon.webp",
+        "url": "https://soutushenqi.com/home",
+        "description": "多维度的以图搜图智能引擎，深度聚合全球主流图源识别算法，实现图片资源的全网精准溯源与跨模态关联搜索，极速消除信息差",
+        "category": "聚合搜索"
+    },
+    {
+        "title": "待一会",
+        "icon": "待一会_icon.webp",
+        "url": "https://daiyihui.com",
+        "description": "专注在线放松、减压与情绪释放的小工具平台，提供呼吸引导、发泄撕纸、声音房间、治愈小游戏、每日一句等功能，帮助你在烦躁、焦虑或疲惫时，停下来温柔地“待一会",
+        "category": "网络工具"
+    }
+]

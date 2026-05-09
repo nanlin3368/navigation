@@ -31,7 +31,7 @@
         "title": "iLovePDF",
         "icon": "iLovePDF_icon.webp",
         "url": "https://www.ilovepdf.com/zh-cn",
-        "description": "全球化的全功能 PDF 在线处理枢纽，提供覆盖全生命周期的文档编辑工具，以稳定、高效的服务助力个人与企业数字化办公",
+        "description": "全功能 PDF 在线处理枢纽，提供覆盖全生命周期的文档编辑工具，以稳定、高效的服务助力个人与企业数字化办公",
         "category": "文档办公"
     },
     {
@@ -59,7 +59,7 @@
         "title": "Smallpdf",
         "icon": "Smallpdf_icon.webp",
         "url": "https://smallpdf.com",
-        "description": "全球领先的数字化文档处理中枢，深度集成 PDF 压缩、格式转换及智能编辑等全维度工具矩阵，通过极简的交互链路与云端协作技术，全面重构现代办公的文档处理效能",
+        "description": "数字化文档处理中枢，深度集成 PDF 压缩、格式转换及智能编辑等全维度工具矩阵，通过极简的交互链路与云端协作技术，全面重构现代办公的文档处理效能",
         "category": "文档办公"
     },
     {
@@ -73,14 +73,35 @@
         "title": "i2PDF",
         "icon": "i2PDF_icon.webp",
         "url": "https://www.i2pdf.com/zh",
-        "description": "",
+        "description": "专业的在线 PDF 处理工具，提供格式转换、合并拆分、页面提取及压缩等全方位服务，支持图片转PDF、PDF编辑与OCR识别，无需下载安装即可在网页端高效处理文档",
         "category": "文档办公"
     },
     {
         "title": "PDFTool",
         "icon": "PDFTool_icon.webp",
         "url": "https://www.pdftool.cc/zh",
-        "description": "",
+        "description": "极简高效的在线 PDF 处理平台，主打本地浏览器渲染技术以确保隐私安全，集成了 PDF 合并、拆分、压缩及格式转换等多项实用功能，无需上传文件至服务器即可快速处理",
         "category": "文档办公"
+    },
+    {
+        "title": "ABCD Office",
+        "icon": "ABCD_Office_icon.webp",
+        "url": "https://www.abcdoffice.com/zh-cn",
+        "description": "综合性的在线文件处理与转换平台，提供Word、Excel、PPT及PDF的在线编辑器与查看器，无需安装任何软件即可直接在浏览器中修改和管理各类文档",
+        "category": "文档处理"
+    },
+    {
+        "title": "Compare2Word",
+        "icon": "Compare2Word_icon.webp",
+        "url": "https://compare2word.com/zh",
+        "description": "在线文档差异比对工具，支持 Word、PDF、Excel 及纯文本等多格式比对，精准、直观地呈现文档间的细微差异，所有计算均在浏览器本地完成，主打隐私安全",
+        "category": "文档处理"
+    },
+    {
+        "title": "魔方简历",
+        "icon": "魔方简历_icon.webp",
+        "url": "https://magicv.art/zh",
+        "description": "基于 AI 技术的智能在线简历制作平台，提供简历润色、语法检查等专业辅助功能，网站主打隐私安全，数据完全存储在用户本地设备中，并支持一站式导出为 PDF 或 JSON 格式",
+        "category": "文档处理"
     }
 ]

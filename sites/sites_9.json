@@ -1,5 +1,12 @@
 [
     {
+        "title": "观云",
+        "icon": "观云_icon.webp",
+        "url": "https://snapvee.com/zh",
+        "description": "专为创作者打造的一站式 AI 内容工作台，集成多平台视频提取、字幕转录、文案去 AI 化及视频总结等核心功能，旨在打通从素材采集到深度理解、再到创意生成的全流程",
+        "category": "媒体创作"
+    },
+    {
         "title": "视频大师",
         "icon": "视频大师_icon.webp",
         "url": "https://www.shipindashi.cn",

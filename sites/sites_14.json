@@ -1,51 +1,23 @@
 [
     {
-        "title": "SnapWC",
-        "icon": "SnapWC_icon.webp",
-        "url": "https://snapwc.com/zh",
-        "description": "高性能在线流媒体解析终端，深度支持全球主流社交平台的音视频提取，以纯净的交互体验解决跨媒介素材获取难题",
-        "category": "视频提取"
+        "title": "如意视频",
+        "icon": "如意视频_icon.webp",
+        "url": "https://rytv.tv",
+        "description": "免费在线影视观看平台，汇聚海量国产动漫、电视剧、电影、海外剧集等资源，支持高清播放与持续更新，追剧、刷番一站式免费观影",
+        "category": "网络工具"
     },
     {
-        "title": "GreenVideo",
-        "icon": "GreenVideo_icon.webp",
-        "url": "https://greenvideo.cc",
-        "description": "全场景视频素材抓取平台，依托稳定的云端解析算法，实现千余家平台内容的高速重采样，是内容创作者的采集利器",
-        "category": "视频提取"
+        "title": "枫叶音乐盒",
+        "icon": "枫叶音乐盒_icon.webp",
+        "url": "https://mu-jie.cc/musicBox/#",
+        "description": "轻量化在线流媒体播放系统，通过极简的交互逻辑提供沉浸式的听觉体验，是探索多元化音轨与优化工作环境氛围的数字化随身听",
+        "category": "网络工具"
     },
     {
-        "title": "AnyToCopy",
-        "icon": "AnyToCopy_icon.webp",
-        "url": "https://www.anytocopy.com",
-        "description": "智能化的多模态素材提取引擎，支持视频文案、音轨与画面的全自动分离，通过 AI 技术显著提升二次创作的工程效率",
-        "category": "视频提取"
-    },
-    {
-        "title": "观云",
-        "icon": "观云_icon.webp",
-        "url": "https://snapvee.com/zh",
-        "description": "极简主义的万能视频提取工具，专注于高清无水印素材的解析与抓取，致力于为视觉从业者提供即时响应的灵感捕获方案",
-        "category": "视频提取"
-    },
-    {
-        "title": "YT1s",
-        "icon": "YT1s_icon.webp",
-        "url": "https://yt1s.media/zh-cn",
-        "description": "顶级的全球化视频转换枢纽，提供超高清画质解析与高码率音频提取功能，实现跨设备的无缝离线访问，重塑流媒体体验",
-        "category": "视频提取"
-    },
-    {
-        "title": "社交媒体下载器",
-        "icon": "社交媒体下载器_icon.webp",
-        "url": "https://downloader.bhwa233.com/zh",
-        "description": "全兼容的匿名媒体资源库，通过对国内外社交生态内容的深度解析，实现音视频与图文的一键获取，精简数字化交付链路",
-        "category": "视频提取"
-    },
-    {
-        "title": "Cobalt",
-        "icon": "Cobalt_icon.webp",
-        "url": "https://cobalt.tools",
-        "description": "追求极致纯净的流媒体下载引擎，主打无广告、零跟踪的隐私保护体验，支持全平台高清素材抓取，定义极简效能新标准",
-        "category": "视频提取"
+        "title": "泡椒音乐",
+        "icon": "泡椒音乐_icon.webp",
+        "url": "https://pjmp3.de",
+        "description": "多维度的在线音频资源索引引擎，实现全网流行音轨与经典乐库的高效聚合，通过敏捷的检索逻辑与纯净的交互界面，提供一站式听觉资产获取方案",
+        "category": "网络工具"
     }
 ]

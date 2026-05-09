@@ -45,21 +45,21 @@
         "title": "ImageOnline",
         "icon": "ImageOnline_co_icon.webp",
         "url": "https://imageonline.co/cn",
-        "description": "",
+        "description": "终极免费在线工具套件，探索超过250多个专业实用程序，编辑照片、转换视频、制作 GIF、测试硬件和管理 PDF，100% 免费、私密且极其快速",
         "category": "图像处理"
     },
     {
         "title": "imageonline",
         "icon": "imageonline_io_icon.webp",
         "url": "https://imageonline.io",
-        "description": "",
+        "description": "专业图像编辑套件，拥有超过220种专业工具，涵盖了图像压缩、尺寸调整、格式转换、特效滤镜及高级编辑功能，是极具生产力的在线编辑器",
         "category": "图像处理"
     },
     {
         "title": "Compress Image",
         "icon": "Compress_Image_icon.webp",
         "url": "https://compressimage.cn/zh-CN",
-        "description": "",
+        "description": "高效、安全的在线图片压缩工具，支持批量处理与多种格式转换，压缩率高达95%且画质超清，所有处理均在本地完成，确保隐私数据不上传，提供极速、免费的图片优化体验",
         "category": "图像处理"
     }
 ]

@@ -1,9 +1,9 @@
 [
     {
-        "title": "AppTeka",
-        "icon": "AppTeka_icon.webp",
-        "url": "https://appteka.store/apps",
-        "description": "精选安卓生态的高质量应用镜像站，主打无广告、零干扰的纯净下载体验，是获取优质移动端软件工具的可靠路径",
+        "title": "鹿鸣",
+        "icon": "鹿鸣_icon.webp",
+        "url": "https://www.lumingrj.com",
+        "description": "跨平台软件安装方案专家，提供详尽的桌面端软件安装教程与环境配置指南，致力于消除跨系统软件部署的技术壁垒",
         "category": "资源下载"
     },
     {
@@ -28,17 +28,24 @@
         "category": "资源下载"
     },
     {
-        "title": "鹿鸣",
-        "icon": "鹿鸣_icon.webp",
-        "url": "https://www.lumingrj.com",
-        "description": "跨平台软件安装方案专家，提供详尽的桌面端软件安装教程与环境配置指南，致力于消除跨系统软件部署的技术壁垒",
-        "category": "资源下载"
-    },
-    {
         "title": "考拉资源库",
         "icon": "考拉资源库_icon.webp",
         "url": "https://www.kaolarj.com",
         "description": "深耕职场办公与生活技术的资源积淀池，通过系统化的资料归类与技术分享，助力用户实现跨场景的数字化效率提升",
+        "category": "资源下载"
+    },
+    {
+        "title": "Crx搜搜",
+        "icon": "Crx搜搜_icon.webp",
+        "url": "https://www.crxsoso.com",
+        "description": "浏览器扩展聚合平台，全面收录了 Chrome、Edge 及 Firefox 的海量扩展插件，提供高效的搜索、分类浏览与直接下载功能",
+        "category": "网络工具"
+    },
+    {
+        "title": "AppTeka",
+        "icon": "AppTeka_icon.webp",
+        "url": "https://appteka.store/apps",
+        "description": "精选安卓生态的高质量应用镜像站，主打无广告、零干扰的纯净下载体验，是获取优质移动端软件工具的可靠路径",
         "category": "资源下载"
     },
     {
