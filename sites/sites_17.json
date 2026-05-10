@@ -1,9 +1,142 @@
 [
     {
-        "title": "创作者导航",
-        "icon": "创作者导航_icon.webp",
-        "url": "https://bbab.net",
-        "description": "专为内容创作者、自媒体运营者和数字工作者打造的高效主页，汇聚AI工具、免版权图片、写作排版、设计素材、效率协作等精选资源，一站式发现灵感、高效创作",
-        "category": ""
+        "title": "7-Zip",
+        "icon": "7-Zip_icon.webp",
+        "url": "https://www.7-zip.org",
+        "description": "免费开源的高压缩率文件压缩/解压工具，支持7z、ZIP、RAR、TAR等多种格式，压缩比极高，体积小巧、无广告，集成Windows右键菜单与命令行",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Everything",
+        "icon": "Everything_icon.webp",
+        "url": "https://www.voidtools.com/zh-cn",
+        "description": "极致高效的文件搜索神器，通过文件名即时定位文件和文件夹，搜索速度飞快、资源占用极低，支持正则表达式、过滤器、实时更新",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Geek Uninstaller",
+        "icon": "Geek_Uninstaller_icon.webp",
+        "url": "https://geekuninstaller.com",
+        "description": "免费轻量级软件卸载工具，能彻底移除Windows程序残留文件、注册表项和顽固应用，支持强制卸载与深度扫描，体积小、无广告、操作简便",
+        "category": "官仓直达"
+    },
+    {
+        "title": "图吧工具箱",
+        "icon": "图吧工具箱_icon.webp",
+        "url": "https://www.tbtool.cn",
+        "description": "开源免费、绿色纯净的电脑硬件检测工具，集成CPU、显卡、内存、硬盘、主板等上百款专业检测、评分与测试工具，一键调用、免安装使用",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Google Chrome",
+        "icon": "Google_Chrome_icon.webp",
+        "url": "https://www.google.cn/chrome",
+        "description": "全球用户量最大的网页浏览器，由Google开发，极致速度、简洁界面和强大安全性，支持海量扩展插件、Chrome Web Store、同步账号、多标签页管理",
+        "category": "官仓直达"
+    },
+    {
+        "title": "PotPlayer",
+        "icon": "PotPlayer_icon.webp",
+        "url": "https://potplayer.tv",
+        "description": "全能多媒体播放器，内置强大的解码器，几乎支持所有视频格式，支持硬解码（减少 CPU 占用）、滤镜挂载以及对 4K/HDR 内容的卓越兼容性",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Escrcpy",
+        "icon": "Escrcpy_icon.webp",
+        "url": "https://viarotel.eu.org",
+        "description": "基于 Scrcpy 的投屏工具，支持 USB 或无线连接安卓设备，提供低延迟、高画质的屏幕镜像与跨端操控，集成按键映射、录屏及文件传输功能",
+        "category": "官仓直达"
+    },
+    {
+        "title": "火绒安全",
+        "icon": "火绒安全_icon.webp",
+        "url": "https://www.huorong.cn",
+        "description": "轻量且纯净的国产杀毒工具，集成火绒剑、弹窗拦截及系统优化等实用功能，无广告和捆绑，高效防御各类威胁",
+        "category": "官仓直达"
+    },
+    {
+        "title": "IDM",
+        "icon": "IDM_icon.webp",
+        "url": "https://www.internetdownloadmanager.com",
+        "description": "强力下载加速工具，多线程技术可将下载速度提升数倍，具备强大的网页媒体嗅探功能，能一键抓取视频与音频，支持断点续传与浏览器无缝集成",
+        "category": "官仓直达"
+    },
+    {
+        "title": "ShareX",
+        "icon": "ShareX_icon.webp",
+        "url": "https://getsharex.com",
+        "description": "开源全能截图与录屏工具，支持灵活的截图模式，支持自动添加水印、OCR 文本识别以及一键上传至云端，功能丰富、完全免费、无广告",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Clash Verge Rev",
+        "icon": "Clash_Verge_Rev_icon.webp",
+        "url": "https://www.clashverge.dev",
+        "description": "开源的网络代理客户端，内置功能强大的 Mihomo 内核，极简的 UI 设计与深度的自定义功能，支持系统代理、TUN 模式及灵活的规则配置",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Visual Studio Code",
+        "icon": "Visual_Studio_Code_icon.webp",
+        "url": "https://code.visualstudio.com",
+        "description": "开源轻量级代码编辑器，支持几乎所有主流编程语言，拥有极其庞大的插件生态系统，集成了智能代码补全、调试、Git 版本控制及终端功能",
+        "category": "官仓直达"
+    },
+    {
+        "title": "LocalSend",
+        "icon": "LocalSend_icon.webp",
+        "url": "https://localsend.org",
+        "description": "开源、跨平台的本地局域网文件传输工具，无需联网，通过局域网即可在手机、电脑等多种设备间互传图片、文档或剪贴板内容，免注册、无广告且完全端到端加密",
+        "category": "官仓直达"
+    },
+    {
+        "title": "OBS Studio",
+        "icon": "OBS_Studio_icon.webp",
+        "url": "https://obsproject.com",
+        "description": "开源免费的专业级流媒体直播与屏幕录制工具，支持多源实时混音、转场特效及高度自定义的场景设置，能将画面推送到几乎所有主流直播平台",
+        "category": "官仓直达"
+    },
+    {
+        "title": "XnConvert",
+        "icon": "XnConvert_icon.webp",
+        "url": "https://www.xnview.com/en/xnconvert",
+        "description": "功能强大的批量图像处理工具，支持超过 500 种图像格式，集成调整尺寸、添加水印、转换格式、修剪及滤镜增强等 80 多种编辑操作",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Snipaste",
+        "icon": "Snipaste_icon.webp",
+        "url": "https://www.snipaste.com",
+        "description": "屏幕截图与贴图工具，支持像素级精准捕捉、智能窗口检测及丰富的标注功能，能将截图以悬浮窗形式置顶显示，方便跨窗口信息比对与资料整理",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Wallpaper Engine",
+        "icon": "Wallpaper_Engine_icon.webp",
+        "url": "https://www.wallpaperengine.io/zh-hans",
+        "description": "动态壁纸引擎，支持将 2D/3D 动画、视频甚至交互式游戏设置为壁纸，深度集成 Steam 创意工坊，用户可以获取数以百万计的社区作品",
+        "category": "官仓直达"
+    },
+    {
+        "title": "PDFgear",
+        "icon": "PDFgear_icon.webp",
+        "url": "https://www.pdfgear.com/zh",
+        "description": "完全免费且全能 PDF 软件，集成编辑、转换、合并、压缩及 OCR 识别等高级功能，内置 AI 助手，支持对话快速总结长文档内容或提取关键信息",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Bandizip",
+        "icon": "Bandizip_icon.webp",
+        "url": "https://www.bandisoft.com/bandizip",
+        "description": "口碑极佳的压缩解压工具，支持包括 7Z、RAR 在内的几乎所有主流格式，提供快速预览与多核心并行压缩，智能的算法能有效避免解压乱码问题",
+        "category": "官仓直达"
+    },
+    {
+        "title": "Honeyview",
+        "icon": "Honeyview_icon.webp",
+        "url": "https://www.bandisoft.com/honeyview",
+        "description": "极致轻量的图像查看器，支持包括 PSD、RAW 及压缩包（ZIP/RAR）在内的各类格式，无需解压即可直接阅览，纯净无广告的体验和便捷的 EXIF 信息查看功能",
+        "category": "官仓直达"
     }
 ]
