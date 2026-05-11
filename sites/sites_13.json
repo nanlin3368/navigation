@@ -1,12 +1,5 @@
 [
     {
-        "title": "夸盘资源网",
-        "icon": "夸盘资源网_icon.webp",
-        "url": "https://ppat.top/hlg",
-        "description": "聚合多源的万能网盘影视搜索神器，能快速找到电影、电视剧、动漫及短剧的可用链接，同时提供实时的热门搜视榜，是找寻稀缺影视资源的捷径",
-        "category": "聚合搜索"
-    },
-    {
         "title": "网盘资源搜索",
         "icon": "网盘资源搜索_icon.webp",
         "url": "https://wpzyss.top",
@@ -14,10 +7,17 @@
         "category": "聚合搜索"
     },
     {
-        "title": "海搜",
-        "icon": "海搜_icon.webp",
-        "url": "https://haisou.cc",
-        "description": "全场景网盘资源聚合终端，深度兼容阿里云盘、天翼云等多种云端存储介质，依托强大的底层搜索逻辑，构建起一站式的数字化资源发现阵地",
+        "title": "PanSou",
+        "icon": "PanSou_icon.webp",
+        "url": "https://so.252035.xyz",
+        "description": "高效的网盘资源搜索引擎，支持对阿里云盘、百度网盘等主流平台的深度检索，提供影视、音乐及软件等资源的精准搜索，是挖掘学习素材与数字资源的便捷入口",
+        "category": "聚合搜索"
+    },
+    {
+        "title": "TV 搜",
+        "icon": "TV搜_icon.webp",
+        "url": "https://www.tvso.uk",
+        "description": "聚合全网影视资源，一键搜索电影、电视剧、动漫、综艺等内容，输入关键词即可快速找到资源，支持多种网盘资源直接访问，是用户快速获取海量影视资源的一站式搜索终端",
         "category": "聚合搜索"
     }
 ]

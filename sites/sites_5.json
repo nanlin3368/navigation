@@ -26,5 +26,12 @@
         "url": "https://qwerty.kaiyi.cool/mobile",
         "description": "英语单词记忆与打字训练深度融合的在线工具，在提升打字速度的同时，实现科学高效的词汇积累，是兼顾技能提升与语言学习的专业化平台",
         "category": "学习成长"
+    },
+    {
+        "title": "Edclub",
+        "icon": "Edclub_icon.webp",
+        "url": "https://www.edclub.com/zh/",
+        "description": "在线打字教学系统，提供科学的阶梯式课程与趣味互动练习，通过实时反馈与精细化的进度管理，帮助用户从零基础起步，高效掌握盲打技巧并提升输入速度",
+        "category": "学习成长"
     }
 ]

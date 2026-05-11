@@ -1,142 +1,233 @@
 [
     {
+        "title": "Google Chrome",
+        "icon": "Google_Chrome_icon.webp",
+        "url": "https://www.google.cn/chrome",
+        "description": "跨平台高速 Web 浏览器，内置高效的 V8 渲染引擎和多层安全防护机制，强大的 Google 账号云同步及海量插件生态，为用户提供在多设备间实现无缝切换的高效互联网入口",
+        "category": "装机必备"
+    },
+    {
+        "title": "Microsoft Edge",
+        "icon": "Microsoft_Edge_icon.webp",
+        "url": "https://www.microsoft.com/zh-cn/edge/download",
+        "description": "基于 Chromium 内核的现代化浏览器，深度整合了 Copilot 智能助手与大声朗读功能，支持 Chrome 插件、高效的垂直标签页以及跨设备无缝同步，兼具性能与生产力",
+        "category": "装机必备"
+    },
+    {
         "title": "7-Zip",
         "icon": "7-Zip_icon.webp",
         "url": "https://www.7-zip.org",
         "description": "免费开源的高压缩率文件压缩/解压工具，支持7z、ZIP、RAR、TAR等多种格式，压缩比极高，体积小巧、无广告，集成Windows右键菜单与命令行",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Everything",
         "icon": "Everything_icon.webp",
         "url": "https://www.voidtools.com/zh-cn",
         "description": "极致高效的文件搜索神器，通过文件名即时定位文件和文件夹，搜索速度飞快、资源占用极低，支持正则表达式、过滤器、实时更新",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Geek Uninstaller",
         "icon": "Geek_Uninstaller_icon.webp",
         "url": "https://geekuninstaller.com",
         "description": "免费轻量级软件卸载工具，能彻底移除Windows程序残留文件、注册表项和顽固应用，支持强制卸载与深度扫描，体积小、无广告、操作简便",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "图吧工具箱",
         "icon": "图吧工具箱_icon.webp",
         "url": "https://www.tbtool.cn",
         "description": "开源免费、绿色纯净的电脑硬件检测工具，集成CPU、显卡、内存、硬盘、主板等上百款专业检测、评分与测试工具，一键调用、免安装使用",
-        "category": "官仓直达"
-    },
-    {
-        "title": "Google Chrome",
-        "icon": "Google_Chrome_icon.webp",
-        "url": "https://www.google.cn/chrome",
-        "description": "全球用户量最大的网页浏览器，由Google开发，极致速度、简洁界面和强大安全性，支持海量扩展插件、Chrome Web Store、同步账号、多标签页管理",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "PotPlayer",
         "icon": "PotPlayer_icon.webp",
         "url": "https://potplayer.tv",
         "description": "全能多媒体播放器，内置强大的解码器，几乎支持所有视频格式，支持硬解码（减少 CPU 占用）、滤镜挂载以及对 4K/HDR 内容的卓越兼容性",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Escrcpy",
         "icon": "Escrcpy_icon.webp",
         "url": "https://viarotel.eu.org",
         "description": "基于 Scrcpy 的投屏工具，支持 USB 或无线连接安卓设备，提供低延迟、高画质的屏幕镜像与跨端操控，集成按键映射、录屏及文件传输功能",
-        "category": "官仓直达"
+        "category": "装机必备"
+    },
+    {
+        "title": "WPS Office",
+        "icon": "WPS_Office_icon.webp",
+        "url": "https://www.wps.cn",
+        "description": "全能型一站式办公套件，深度集成文字处理、表格、演示、PDF编辑及云文档协作功能，支持多端云同步与AI协作，显著提升办公效率",
+        "category": "装机必备"
     },
     {
         "title": "火绒安全",
         "icon": "火绒安全_icon.webp",
         "url": "https://www.huorong.cn",
         "description": "轻量且纯净的国产杀毒工具，集成火绒剑、弹窗拦截及系统优化等实用功能，无广告和捆绑，高效防御各类威胁",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "IDM",
         "icon": "IDM_icon.webp",
         "url": "https://www.internetdownloadmanager.com",
         "description": "强力下载加速工具，多线程技术可将下载速度提升数倍，具备强大的网页媒体嗅探功能，能一键抓取视频与音频，支持断点续传与浏览器无缝集成",
-        "category": "官仓直达"
+        "category": "装机必备"
+    },
+    {
+        "title": "Steam",
+        "icon": "Steam_icon.webp",
+        "url": "https://store.steampowered.com/about",
+        "description": "全球领先的数字游戏社交平台，整合数以万计的游戏发行、创意工坊模组及深度玩家社区，支持云存档与跨设备同步，是 PC 玩家探索、购买和管理电子游戏的权威终端",
+        "category": "装机必备"
     },
     {
         "title": "ShareX",
         "icon": "ShareX_icon.webp",
         "url": "https://getsharex.com",
         "description": "开源全能截图与录屏工具，支持灵活的截图模式，支持自动添加水印、OCR 文本识别以及一键上传至云端，功能丰富、完全免费、无广告",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Clash Verge Rev",
         "icon": "Clash_Verge_Rev_icon.webp",
         "url": "https://www.clashverge.dev",
         "description": "开源的网络代理客户端，内置功能强大的 Mihomo 内核，极简的 UI 设计与深度的自定义功能，支持系统代理、TUN 模式及灵活的规则配置",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Visual Studio Code",
         "icon": "Visual_Studio_Code_icon.webp",
         "url": "https://code.visualstudio.com",
         "description": "开源轻量级代码编辑器，支持几乎所有主流编程语言，拥有极其庞大的插件生态系统，集成了智能代码补全、调试、Git 版本控制及终端功能",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "LocalSend",
         "icon": "LocalSend_icon.webp",
         "url": "https://localsend.org",
         "description": "开源、跨平台的本地局域网文件传输工具，无需联网，通过局域网即可在手机、电脑等多种设备间互传图片、文档或剪贴板内容，免注册、无广告且完全端到端加密",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "OBS Studio",
         "icon": "OBS_Studio_icon.webp",
         "url": "https://obsproject.com",
         "description": "开源免费的专业级流媒体直播与屏幕录制工具，支持多源实时混音、转场特效及高度自定义的场景设置，能将画面推送到几乎所有主流直播平台",
-        "category": "官仓直达"
+        "category": "装机必备"
+    },
+    {
+        "title": "Notion",
+        "icon": "Notion_icon.webp",
+        "url": "https://www.notion.com",
+        "description": "极具创新性的全能笔记与协作平台，将文档、数据库、看板和日历深度整合，支持高度自由的模块化搭建，集成强大的 AI 辅助功能，是个人知识管理与团队协作的顶级神器",
+        "category": "装机必备"
     },
     {
         "title": "XnConvert",
         "icon": "XnConvert_icon.webp",
         "url": "https://www.xnview.com/en/xnconvert",
         "description": "功能强大的批量图像处理工具，支持超过 500 种图像格式，集成调整尺寸、添加水印、转换格式、修剪及滤镜增强等 80 多种编辑操作",
-        "category": "官仓直达"
+        "category": "装机必备"
+    },
+    {
+        "title": "EcoPaste",
+        "icon": "EcoPaste_icon.webp",
+        "url": "https://ecopaste.cn",
+        "description": "开源免费的跨平台剪贴板管理工具，支持文本、图片、文件及代码片段的智能分类存储，集成内置搜索与快捷同步功能，通过灵活的自定义配置，能极大地简化重复性粘贴任务",
+        "category": "装机必备"
     },
     {
         "title": "Snipaste",
         "icon": "Snipaste_icon.webp",
         "url": "https://www.snipaste.com",
         "description": "屏幕截图与贴图工具，支持像素级精准捕捉、智能窗口检测及丰富的标注功能，能将截图以悬浮窗形式置顶显示，方便跨窗口信息比对与资料整理",
-        "category": "官仓直达"
+        "category": "装机必备"
+    },
+    {
+        "title": "QuickLook",
+        "icon": "QuickLook_icon.webp",
+        "url": "https://github.com/QL-Win/QuickLook",
+        "description": "开源免费的 Windows 强力预览工具，只需按下空格键即可快速查看图片、视频、PDF 及压缩包等文件内容，无需等待程序关联启动",
+        "category": "装机必备"
     },
     {
         "title": "Wallpaper Engine",
         "icon": "Wallpaper_Engine_icon.webp",
         "url": "https://www.wallpaperengine.io/zh-hans",
         "description": "动态壁纸引擎，支持将 2D/3D 动画、视频甚至交互式游戏设置为壁纸，深度集成 Steam 创意工坊，用户可以获取数以百万计的社区作品",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "PDFgear",
         "icon": "PDFgear_icon.webp",
         "url": "https://www.pdfgear.com/zh",
         "description": "完全免费且全能 PDF 软件，集成编辑、转换、合并、压缩及 OCR 识别等高级功能，内置 AI 助手，支持对话快速总结长文档内容或提取关键信息",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Bandizip",
         "icon": "Bandizip_icon.webp",
         "url": "https://www.bandisoft.com/bandizip",
         "description": "口碑极佳的压缩解压工具，支持包括 7Z、RAR 在内的几乎所有主流格式，提供快速预览与多核心并行压缩，智能的算法能有效避免解压乱码问题",
-        "category": "官仓直达"
+        "category": "装机必备"
     },
     {
         "title": "Honeyview",
         "icon": "Honeyview_icon.webp",
         "url": "https://www.bandisoft.com/honeyview",
         "description": "极致轻量的图像查看器，支持包括 PSD、RAW 及压缩包（ZIP/RAR）在内的各类格式，无需解压即可直接阅览，纯净无广告的体验和便捷的 EXIF 信息查看功能",
-        "category": "官仓直达"
+        "category": "装机必备"
+    },
+    {
+        "title": "Quicker",
+        "icon": "Quicker_icon.webp",
+        "url": "https://getquicker.net",
+        "description": "综合性效率工具，通过“快捷面板”提供海量自动化脚本，支持用户通过鼠标中键、悬浮窗或热键快速触发文字识别、文件处理及各类组合动作，能显著减少重复操作，极大提升生产力",
+        "category": "装机必备"
+    },
+    {
+        "title": "PowerToys",
+        "icon": "PowerToys_icon.webp",
+        "url": "https://github.com/microsoft/PowerToys",
+        "description": "开源的系统增强工具集，集成了窗口高级布局、毫秒级搜索启动、全局取色器、文本识别（OCR）及批量重命名等 20 多款实用工具，被誉为 Windows 用户的“官方外挂”",
+        "category": "装机必备"
+    },
+    {
+        "title": "CCleaner",
+        "icon": "CCleaner_icon.webp",
+        "url": "https://www.ccleaner.com/zh-cn",
+        "description": "老牌系统优化工具，专注于清理系统冗余文件、修复注册表及保护隐私，能有效释放磁盘空间并提升电脑运行速度，适合日常维护系统纯净与流畅",
+        "category": "装机必备"
+    },
+    {
+        "title": "FlClash",
+        "icon": "FlClash_icon.webp",
+        "url": "https://flclash.cc",
+        "description": "基于 Clash Meta 内核的开源跨平台代理客户端，支持多种协议及分流规则配置，支持通过WebDAV同步数据，支持一键导入订阅，轻量、美观且支持深色模式特性",
+        "category": "装机必备"
+    },
+    {
+        "title": "SyncClipboard",
+        "icon": "SyncClipboard_icon.webp",
+        "url": "https://github.com/Jeric-X/SyncClipboard",
+        "description": "开源免费的跨平台剪贴板同步工具，支持多端设备之间实现文本与图片的无缝同步，提供剪贴板历史管理功能，允许用户通过自建服务器或 WebDAV 进行数据传输",
+        "category": "装机必备"
+    },
+    {
+        "title": "Upscayl",
+        "icon": "Upscayl_icon.webp",
+        "url": "https://upscayl.org",
+        "description": "功能强大的 AI 视频/图片放大工具，能够将低分辨率或模糊的图片无损放大至 4 倍或更高，显著提升画质细节，支持本地离线运行",
+        "category": "装机必备"
+    },
+    {
+        "title": "Actus Auto Clicker",
+        "icon": "Actus_Auto_Clicker_icon.webp",
+        "url": "https://actusclicker.com/zh",
+        "description": "简单高效的自动化点击工具，支持自定义热键操作、脚本录制与回放，集成先进的图像识别技术，能精准定位并点击动态目标",
+        "category": "装机必备"
     }
 ]
