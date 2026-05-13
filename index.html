@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" id="themeColorMeta" content="#e6e7ee" />
     <title>智汇导航</title>
-    <link rel="apple-touch-icon" href="assets/nav.webp">
-    <link rel="icon" href="assets/nav.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="assets/nav.webp" />
+    <link rel="icon" href="assets/nav.webp" type="image/webp" />
     <!-- 禁止浏览器刷新时恢复滚动位置，保证入场动画从顶部开始 -->
-    <script>history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
+    <script>
+      history.scrollRestoration = 'manual'
+      window.scrollTo(0, 0)
+    </script>
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-        -webkit-tap-highlight-color: transparent; /* 全局禁用点击高亮 */
+        font-family: 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', Arial,
+          sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        /* 全局禁用点击高亮 */
       }
 
       :root {
@@ -46,28 +51,24 @@
       }
 
       /* ── 主题切换平滑过渡 ── */
-      /* 只在 :root 上过渡 CSS 变量，避免通配符 * 导致全量元素重绘卡顿 */
       :root {
-        transition:
-          --primary-bg 0s,   /* CSS 变量本身不可直接 transition，靠下方 color-scheme 触发 */
-          color-scheme 0.4s;
+        transition: --primary-bg 0s, color-scheme 0.4s;
       }
-      /* 真正让颜色丝滑的方案：只给固定数量的结构层加 transition */
       body.theme-transitioning {
         transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                    color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
       body.theme-transitioning .container,
       body.theme-transitioning header,
-      body.theme-transitioning .search-box,
+      body.theme-transitioning .search-bar,
+      body.theme-transitioning .engine-dropdown,
       body.theme-transitioning .category-btn,
       body.theme-transitioning .tool-card,
       body.theme-transitioning .tool-link,
       body.theme-transitioning footer,
       body.theme-transitioning #themeToggle,
       body.theme-transitioning #backToTop {
-        transition:
-          background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
           background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
           color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
           box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -117,8 +118,8 @@
 
       header {
         text-align: center;
-        margin-bottom: 40px;
-        padding: 30px;
+        margin-bottom: 24px;
+        padding: 16px 24px;
         background: var(--primary-bg);
         border-radius: 25px;
         box-shadow: 10px 10px 20px var(--shadow-dark),
@@ -139,7 +140,7 @@
 
       h1 {
         font-size: 3.2rem;
-        margin-bottom: 15px;
+        margin-bottom: 8px;
         background: var(--accent-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -160,18 +161,24 @@
       .subtitle {
         font-size: 0.95rem;
         color: var(--text-secondary);
-        margin-bottom: 30px;
+        margin-bottom: 0;
         font-weight: 500;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
 
+      /* ── 搜索容器：提升 z-index 确保下拉面板不被分类标签遮挡 ── */
       .search-container {
-        margin-bottom: 40px;
+        margin-bottom: 32px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
         animation: searchSlide 0.8s ease 0.6s both;
+        position: relative;
+        z-index: 100;
+        /* 确保下拉面板在分类按钮之上 */
       }
 
       @keyframes searchSlide {
@@ -185,33 +192,398 @@
         }
       }
 
-      .search-box {
+      /* ── 搜索栏外壳（含引擎触发器 + 输入框 + 搜索按钮） ── */
+      .search-bar {
         width: 100%;
         max-width: 600px;
-        padding: 18px 25px;
+        height: 56px; /* 固定高度，防止切换引擎时抖动 */
+        display: flex;
+        align-items: center;
         background: var(--primary-bg);
+        border-radius: 28px;
+        box-shadow: inset 8px 8px 16px var(--shadow-dark),
+          inset -8px -8px 16px var(--shadow-light);
+        transition: box-shadow 0.3s ease;
+        overflow: visible;
+        position: relative;
+      }
+
+      .search-bar:focus-within {
+        box-shadow: inset 10px 10px 20px var(--shadow-dark),
+          inset -10px -10px 20px var(--shadow-light),
+          0 0 0 3px rgba(102, 126, 234, 0.2);
+      }
+
+      /* ── 引擎触发按钮 ── */
+      .engine-trigger {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 10px 0 14px;
+        height: 100%; /* 撑满搜索栏固定高度 */
+        cursor: pointer;
         border: none;
-        border-radius: 25px;
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.82rem;
+        font-weight: 600;
+        border-right: 1.5px solid rgba(128, 128, 160, 0.18);
+        transition: color 0.2s;
+        user-select: none;
+        border-radius: 28px 0 0 28px;
+        white-space: nowrap;
+      }
+
+      .engine-trigger:hover {
+        color: var(--accent-color);
+      }
+
+      /* 图标统一为 30px，保持分割线位置固定 */
+      .engine-trigger .engine-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        overflow: hidden;
+        /* 取消尺寸过渡，避免切换引擎时图标变动导致分割线移动 */
+        transition: none;
+      }
+
+      /* 选中外部引擎时图标大小保持一致（已无文字，与站内图标尺寸相同） */
+      .engine-trigger.engine-selected .engine-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+      }
+
+      .engine-trigger .engine-icon svg {
+        display: block;
+      }
+
+      .engine-trigger .engine-name {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: inherit;
+        line-height: 1;
+      }
+
+      .engine-trigger .engine-caret {
+        font-size: 9px;
+        opacity: 0.6;
+        transition: transform 0.25s;
+        margin-left: 1px;
+      }
+
+      .engine-trigger.open .engine-caret {
+        transform: rotate(180deg);
+      }
+
+      /* ── 输入框 ── */
+      .search-box {
+        flex: 1;
+        padding: 0 12px;
+        height: 100%;
+        background: transparent;
+        border: none;
         color: var(--text-primary);
         font-size: 1.1rem;
         font-weight: 500;
-        box-shadow: inset 8px 8px 16px var(--shadow-dark),
-          inset -8px -8px 16px var(--shadow-light);
-        transition: all 0.3s ease;
+        min-width: 0;
       }
 
       .search-box:focus {
         outline: none;
-        box-shadow: inset 10px 10px 20px var(--shadow-dark),
-          inset -10px -10px 20px var(--shadow-light),
-          0 0 0 3px rgba(102, 126, 234, 0.2);
+      }
+
+      /* ── 清除按钮 ── */
+      .search-clear {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        margin-right: 4px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent-gradient);
+        color: #fff;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.6);
+        transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.45);
+      }
+
+      .search-clear.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+      }
+
+      .search-clear:hover {
+        box-shadow: 0 4px 14px rgba(102, 126, 234, 0.6);
+        transform: scale(1.08);
+      }
+
+      .search-clear:active {
+        transform: scale(0.88);
+        box-shadow: 0 1px 4px rgba(102, 126, 234, 0.3);
+      }
+
+      .search-clear svg {
+        width: 11px;
+        height: 11px;
+        stroke: #fff;
+        stroke-width: 2.8;
+        stroke-linecap: round;
+        fill: none;
+      }
+
+      /* ── 搜索执行按钮（仅全网模式下显示） ── */
+      .search-submit {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        margin-right: 6px;
+        border-radius: 18px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s ease;
+        background: var(--accent-gradient);
+        box-shadow: 3px 3px 8px var(--shadow-dark),
+          -2px -2px 6px var(--shadow-light);
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.7);
+      }
+
+      .search-submit.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+      }
+
+      .search-submit:hover {
+        transform: scale(1.08);
+      }
+      .search-submit:active {
+        transform: scale(0.94);
+      }
+
+      .search-submit svg {
+        width: 18px;
+        height: 18px;
+        stroke: #fff;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+
+      /* ── 下拉面板：居中定位，防止被分类标签遮挡 ── */
+      .engine-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 600px;
+        background: var(--primary-bg);
+        border-radius: 22px;
+        box-shadow:
+          0 8px 32px rgba(80, 80, 160, 0.18),
+          0 2px 8px rgba(80, 80, 160, 0.10),
+          16px 16px 40px var(--shadow-dark),
+          -8px -8px 24px var(--shadow-light);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        padding: 16px;
+        z-index: 200;
+        display: none;
+        animation: dropdownIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation-fill-mode: forwards;
+      }
+
+      body.dark .engine-dropdown {
+        border-color: rgba(255, 255, 255, 0.07);
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.45),
+          0 2px 8px rgba(0, 0, 0, 0.30),
+          16px 16px 40px var(--shadow-dark),
+          -8px -8px 24px var(--shadow-light);
+      }
+
+      .engine-dropdown.open {
+        display: block;
+      }
+
+      @keyframes dropdownIn {
+        from {
+          opacity: 0;
+          transform: translateX(-50%) translateY(-8px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0) scale(1);
+        }
+      }
+
+      /* ── 站内搜索选项（顶部单行） ── */
+      .engine-local-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-bottom: 10px;
+        border-bottom: 1.5px solid rgba(128, 128, 160, 0.15);
+        padding-bottom: 14px;
+      }
+
+      .engine-local-row:hover {
+        background: rgba(102, 126, 234, 0.08);
+      }
+
+      .engine-local-row.selected {
+        background: rgba(102, 126, 234, 0.13);
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+
+      .engine-local-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: var(--accent-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 20px;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+      }
+
+      .engine-local-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .engine-local-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+      .engine-local-desc {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        margin-top: 1px;
+      }
+
+      .engine-local-row.selected .engine-local-name {
+        color: var(--accent-color);
+      }
+
+      /* ── 搜索引擎网格 ── */
+      .engine-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      .engine-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        padding: 10px 6px 8px;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+        user-select: none;
+        text-align: center;
+        background: var(--primary-bg);
+        box-shadow: 4px 4px 10px var(--shadow-dark),
+          -3px -3px 8px var(--shadow-light);
+      }
+
+      .engine-item:hover {
+        background: var(--primary-bg);
+        box-shadow: 6px 6px 14px var(--shadow-dark),
+          -4px -4px 10px var(--shadow-light);
+        transform: translateY(-2px);
+      }
+      .engine-item:active {
+        transform: scale(0.95);
+        box-shadow: inset 3px 3px 8px var(--shadow-dark),
+          inset -2px -2px 6px var(--shadow-light);
+      }
+
+      .engine-item.selected {
+        background: var(--primary-bg);
+        box-shadow: inset 4px 4px 10px var(--shadow-dark),
+          inset -3px -3px 8px var(--shadow-light);
+      }
+
+      .engine-item-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 4px 10px rgba(0, 0, 0, 0.18),
+          0 1px 3px rgba(0, 0, 0, 0.12);
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+
+      .engine-item-label {
+        font-size: 0.62rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.2;
+      }
+
+      .engine-item.selected .engine-item-label {
+        color: var(--accent-color);
+        font-weight: 700;
+      }
+
+      /* 深色模式微调 */
+      body.dark .engine-trigger {
+        /* border-right 已改为固定 rgba，无需深色覆盖 */
+      }
+      body.dark .engine-local-row {
+        border-bottom-color: rgba(128, 128, 160, 0.15);
+      }
+
+      /* 选中外部引擎时隐藏文字名称 */
+      .engine-trigger.engine-selected .engine-name {
+        display: none;
       }
 
       .categories {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         gap: 12px;
-        margin-bottom: 40px;
+        margin-bottom: 32px;
         animation: categoriesSlide 0.8s ease 0.8s both;
       }
 
@@ -291,8 +663,8 @@
       .tools-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 25px;
-        margin-bottom: 40px;
+        gap: 24px;
+        margin-bottom: 32px;
         animation: toolsSlide 0.8s ease 1s both;
       }
 
@@ -306,7 +678,6 @@
           transform: translateY(0);
         }
       }
-
 
       .tool-card {
         background: var(--primary-bg);
@@ -417,11 +788,11 @@
       }
 
       footer {
-        margin-top: 40px;
+        margin-top: 32px;
         text-align: center;
         color: var(--text-secondary);
         font-size: 0.95rem;
-        padding: 25px;
+        padding: 22px 24px;
         background: var(--primary-bg);
         border-radius: 20px;
         box-shadow: 6px 6px 12px var(--shadow-dark),
@@ -442,7 +813,6 @@
         display: none !important;
       }
 
-      /* ── 回顶部按钮 ── */
       /* ── 深色模式变量 ── */
       body.dark {
         --primary-bg: #1e1e2e;
@@ -478,8 +848,7 @@
         bottom: 168px;
         background: var(--accent-gradient);
         box-shadow: 0 6px 20px rgba(102, 126, 234, 0.45),
-          4px 4px 10px var(--shadow-dark),
-          -2px -2px 8px var(--shadow-light);
+          4px 4px 10px var(--shadow-dark), -2px -2px 8px var(--shadow-light);
         opacity: 0;
         visibility: hidden;
         transform: translateY(16px) scale(0.85);
@@ -493,14 +862,13 @@
 
       #backToTop:hover {
         box-shadow: 0 10px 28px rgba(102, 126, 234, 0.55),
-          6px 6px 14px var(--shadow-dark),
-          -3px -3px 10px var(--shadow-light);
+          6px 6px 14px var(--shadow-dark), -3px -3px 10px var(--shadow-light);
         transform: translateY(-3px) scale(1.07);
       }
 
       #backToTop:active {
         box-shadow: 0 3px 10px rgba(102, 126, 234, 0.35),
-          inset 3px 3px 8px rgba(0,0,0,0.2);
+          inset 3px 3px 8px rgba(0, 0, 0, 0.2);
         transform: scale(0.94);
       }
 
@@ -512,7 +880,7 @@
         stroke-linecap: round;
         stroke-linejoin: round;
         fill: none;
-        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
       }
 
       /* ── 主题切换按钮 ── */
@@ -539,41 +907,124 @@
       }
 
       @media (max-width: 768px) {
-        #backToTop {
-          right: 16px;
-          bottom: 158px;
-          width: 48px;
-          height: 48px;
-        }
-
-        #themeToggle {
-          right: 16px;
-          bottom: 100px;
-          width: 48px;
-          height: 48px;
-          font-size: 20px;
+        body {
+          padding: 12px;
         }
 
         .container {
-          padding: 20px;
+          padding: 20px 16px;
+          margin-top: 12px;
+          border-radius: 24px;
+        }
+
+        header {
+          margin-bottom: 24px;
+          padding: 20px 16px;
+          border-radius: 20px;
         }
 
         h1 {
-          font-size: 2.5rem;
+          font-size: 2.4rem;
+          margin-bottom: 10px;
+        }
+
+        .subtitle {
+          font-size: 0.88rem;
+          margin-bottom: 0;
+        }
+
+        .search-container {
+          margin-bottom: 24px;
+        }
+
+        .search-bar {
+          border-radius: 22px;
+          height: 50px; /* 移动端固定高度 */
+        }
+
+        .engine-trigger {
+          padding: 0 8px 0 14px;
+          gap: 4px;
+        }
+
+        .search-box {
+          padding: 0 10px;
+          font-size: 1rem;
+        }
+
+        .search-submit {
+          width: 40px;
+          height: 40px;
+          margin-right: 5px;
+          border-radius: 14px;
+        }
+
+        .engine-dropdown {
+          max-width: calc(100vw - 40px);
+          padding: 12px;
+          border-radius: 18px;
+        }
+
+        /* 移动端搜索引擎网格调整为 4 列 */
+        .engine-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 6px;
+        }
+
+        .engine-item {
+          padding: 8px 4px 6px;
+        }
+
+        .engine-item-icon {
+          width: 30px;
+          height: 30px;
+          border-radius: 10px;
+        }
+
+        .categories {
+          grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+          gap: 10px;
+          margin-bottom: 24px;
+        }
+
+        .category-btn {
+          padding: 9px 4px;
+          font-size: 0.8rem;
+          border-radius: 14px;
+          gap: 4px;
         }
 
         .tools-grid {
           grid-template-columns: 1fr;
+          gap: 22px;
+          margin-bottom: 24px;
         }
 
-        .categories {
-          grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-          gap: 10px;
+        .tool-card {
+          padding: 20px;
+          border-radius: 20px;
         }
 
-        .category-btn {
-          padding: 10px 6px;
-          font-size: 0.82rem;
+        footer {
+          margin-top: 24px;
+          padding: 18px 16px;
+          font-size: 0.88rem;
+          border-radius: 18px;
+        }
+
+        #backToTop {
+          right: 14px;
+          bottom: 158px;
+          width: 46px;
+          height: 46px;
+        }
+
+        #themeToggle {
+          right: 14px;
+          bottom: 100px;
+          width: 46px;
+          height: 46px;
+          font-size: 20px;
         }
       }
 
@@ -587,8 +1038,21 @@
           font-size: 1.1rem;
         }
 
+        .search-bar {
+          font-size: 1.2rem;
+          height: 62px; /* 桌面端固定高度 */
+          border-radius: 31px;
+        }
+
         .search-box {
           font-size: 1.2rem;
+          padding: 0 14px;
+        }
+
+        .engine-trigger {
+          padding: 0 12px 0 22px;
+          gap: 6px;
+          font-size: 0.9rem;
         }
 
         .category-btn {
@@ -622,17 +1086,63 @@
   <body>
     <div class="container">
       <header>
-        <h1>🌐 智汇导航</h1>
+        <h1>💫 智汇导航</h1>
         <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
       </header>
 
       <div class="search-container">
-        <input
-          type="text"
-          class="search-box"
-          id="searchBox"
-          placeholder="🔍 搜索关键词..."
-        />
+        <div class="search-bar" id="searchBar">
+          <!-- 引擎触发按钮 -->
+          <button
+            class="engine-trigger"
+            id="engineTrigger"
+            aria-label="选择搜索引擎"
+            aria-expanded="false"
+          >
+            <span class="engine-icon" id="triggerIcon"></span>
+            <span class="engine-caret">▼</span>
+          </button>
+          <!-- 搜索输入框 -->
+          <input
+            type="text"
+            class="search-box"
+            id="searchBox"
+            placeholder="搜索关键词..."
+          />
+          <!-- 清除按钮 -->
+          <button class="search-clear" id="searchClear" aria-label="清除搜索">
+            <svg viewBox="0 0 14 14">
+              <line x1="2" y1="2" x2="12" y2="12"/>
+              <line x1="12" y1="2" x2="2" y2="12"/>
+            </svg>
+          </button>
+          <!-- 全网搜索提交按钮 -->
+          <button class="search-submit" id="searchSubmit" aria-label="搜索">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- 搜索引擎下拉面板 -->
+        <div class="engine-dropdown" id="engineDropdown" role="listbox">
+          <!-- 站内搜索 -->
+          <div
+            class="engine-local-row selected"
+            id="engineLocal"
+            role="option"
+            data-engine="local"
+          >
+            <div class="engine-local-icon">🔍</div>
+            <div class="engine-local-info">
+              <span class="engine-local-name">站内搜索</span>
+              <span class="engine-local-desc">在导航内容中搜索网站</span>
+            </div>
+          </div>
+          <!-- 搜索引擎网格（由 JS 动态生成） -->
+          <div class="engine-grid" id="engineGrid"></div>
+        </div>
       </div>
 
       <div class="categories">
@@ -657,8 +1167,7 @@
         <button class="category-btn"><span class="cat-label">🧭 更多导航</span></button>
       </div>
 
-      <div class="tools-grid" id="toolsGrid">
-      </div>
+      <div class="tools-grid" id="toolsGrid"></div>
 
       <footer>
         <p>视界窗口 · 链接万物 · 极速开启</p>
@@ -673,29 +1182,206 @@
     </button>
 
     <!-- 主题切换按钮 -->
-    <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式">☀️</button>
+    <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式">
+      ☀️
+    </button>
 
+    <!-- 搜索引擎配置 -->
+    <script src="src/scripts/config.js"></script>
     <script>
       const searchBox = document.getElementById('searchBox')
       const grid = document.getElementById('toolsGrid')
       const categoryBtns = document.querySelectorAll('.category-btn')
 
-      // 按钮索引对应 sites_n.json（第0个按钮=全部，第1个=sites_1.json，第2个=sites_2.json...）
-      categoryBtns.forEach((btn, i) => {
-        btn.dataset.index = i  // 0=全部，1~n=对应json编号
+      // ── 搜索引擎选择器 ────────────────────────────────────────
+      const ENGINES =
+        typeof SB_ENGINES !== 'undefined' ? SB_ENGINES : {}
+      const ENGINE_META =
+        typeof SB_ENGINE_META !== 'undefined' ? SB_ENGINE_META : {}
+
+      let currentEngine = 'local' // 'local' = 站内搜索，其余为引擎 key
+
+      const engineTrigger = document.getElementById('engineTrigger')
+      const engineDropdown = document.getElementById('engineDropdown')
+      const engineGrid = document.getElementById('engineGrid')
+      const engineLocal = document.getElementById('engineLocal')
+      const triggerIcon = document.getElementById('triggerIcon')
+      const searchSubmit = document.getElementById('searchSubmit')
+      const searchClear = document.getElementById('searchClear')
+
+      // ── 清除叉号显隐逻辑 ──
+      function updateClearBtn() {
+        if (searchBox.value.length > 0) {
+          searchClear.classList.add('visible')
+        } else {
+          searchClear.classList.remove('visible')
+        }
+      }
+
+      searchClear.addEventListener('click', () => {
+        searchBox.value = ''
+        searchClear.classList.remove('visible')
+        searchBox.focus()
+        // 若站内模式，重置卡片显示
+        if (currentEngine === 'local') {
+          const catSites =
+            currentIndex === 0
+              ? allSites
+              : allSites.filter((s) => s._catIndex === currentIndex)
+          renderCards(catSites)
+        }
       })
 
-      let currentIndex = 0       // 当前选中的按钮索引
-      let allSites = []          // 全部已加载的站点数据 [{...site, _catIndex}]
+      // 初始化触发器图标为"站内"状态（只显示图标，无文字）
+      function setTriggerLocal() {
+        triggerIcon.innerHTML =
+          '<svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
+        engineTrigger.classList.remove('engine-selected')
+        searchBox.placeholder = '搜索关键词...'
+      }
+
+      // 根据引擎 key 更新触发器显示（只显示图标，不显示名称）
+      function setTriggerEngine(key) {
+        const meta = ENGINE_META[key]
+        if (!meta) return
+        const iconDiv = document.createElement('div')
+        iconDiv.style.cssText = `width:100%;height:100%;border-radius:inherit;background:${meta.bg};display:flex;align-items:center;justify-content:center;overflow:hidden;`
+        iconDiv.innerHTML = meta.svgIcon || ''
+        triggerIcon.innerHTML = ''
+        triggerIcon.appendChild(iconDiv)
+        engineTrigger.classList.add('engine-selected')
+        searchBox.placeholder =
+          meta.placeholder || `用 ${meta.label} 搜索…`
+      }
+
+      // 动态生成引擎格子
+      function buildEngineGrid() {
+        engineGrid.innerHTML = ''
+        Object.keys(ENGINE_META).forEach((key) => {
+          const meta = ENGINE_META[key]
+          const item = document.createElement('div')
+          item.className = 'engine-item'
+          item.dataset.engine = key
+          item.setAttribute('role', 'option')
+          item.innerHTML = `
+            <div class="engine-item-icon" style="background:${meta.bg}">
+              ${meta.svgIcon || ''}
+            </div>
+            <span class="engine-item-label">${meta.label}</span>
+          `
+          item.addEventListener('click', () => selectEngine(key))
+          engineGrid.appendChild(item)
+        })
+      }
+
+      buildEngineGrid()
+      setTriggerLocal()
+
+      // 选择引擎
+      function selectEngine(key) {
+        currentEngine = key
+        // 更新 selected 样式
+        document.querySelectorAll('.engine-item').forEach((el) => {
+          el.classList.toggle('selected', el.dataset.engine === key)
+        })
+        engineLocal.classList.remove('selected')
+
+        setTriggerEngine(key)
+        searchSubmit.classList.add('visible')
+        searchBox.value = ''
+        searchClear.classList.remove('visible')
+        closeDropdown()
+        searchBox.focus()
+      }
+
+      // 选择站内搜索
+      function selectLocal() {
+        currentEngine = 'local'
+        document
+          .querySelectorAll('.engine-item')
+          .forEach((el) => el.classList.remove('selected'))
+        engineLocal.classList.add('selected')
+        setTriggerLocal()
+        searchSubmit.classList.remove('visible')
+        searchBox.value = ''
+        searchClear.classList.remove('visible')
+        // 触发站内搜索重置（显示全部）
+        const catSites =
+          currentIndex === 0
+            ? allSites
+            : allSites.filter((s) => s._catIndex === currentIndex)
+        renderCards(catSites)
+        closeDropdown()
+        searchBox.focus()
+      }
+
+      engineLocal.addEventListener('click', selectLocal)
+
+      // 下拉开关
+      function openDropdown() {
+        engineDropdown.classList.add('open')
+        engineTrigger.classList.add('open')
+        engineTrigger.setAttribute('aria-expanded', 'true')
+        // 推入一条历史记录，让返回键可以关闭下拉
+        history.pushState({ dropdownOpen: true }, '')
+      }
+
+      function closeDropdown() {
+        engineDropdown.classList.remove('open')
+        engineTrigger.classList.remove('open')
+        engineTrigger.setAttribute('aria-expanded', 'false')
+      }
+
+      // 监听返回键：下拉打开时拦截，关闭下拉而非后退页面
+      window.addEventListener('popstate', (e) => {
+        if (engineDropdown.classList.contains('open')) {
+          closeDropdown()
+        }
+      })
+
+      engineTrigger.addEventListener('click', (e) => {
+        e.stopPropagation()
+        engineDropdown.classList.contains('open')
+          ? closeDropdown()
+          : openDropdown()
+      })
+
+      // 点击外部关闭下拉
+      document.addEventListener('click', (e) => {
+        if (
+          !engineDropdown.contains(e.target) &&
+          !engineTrigger.contains(e.target)
+        ) {
+          closeDropdown()
+        }
+      })
+
+      // 执行全网搜索
+      function doWebSearch() {
+        const q = searchBox.value.trim()
+        if (!q || currentEngine === 'local') return
+        const fn = ENGINES[currentEngine]
+        if (fn) window.open(fn(q), '_blank', 'noopener')
+      }
+
+      searchSubmit.addEventListener('click', doWebSearch)
+
+      // ── 按钮索引 ──────────────────────────────────────────────
+      categoryBtns.forEach((btn, i) => {
+        btn.dataset.index = i // 0=全部，1~n=对应json编号
+      })
+
+      let currentIndex = 0 // 当前选中的按钮索引
+      let allSites = [] // 全部已加载的站点数据 [{...site, _catIndex}]
       let loadedIndexes = new Set() // 已加载过的json编号
 
-      const totalCategories = categoryBtns.length - 1  // 分类数量（不含"全部"）
+      const totalCategories = categoryBtns.length - 1 // 分类数量（不含"全部"）
 
       // ── 渲染卡片 ──────────────────────────────────────────
       function renderCards(sites, searchTerm = '') {
         grid.innerHTML = ''
         const term = searchTerm.toLowerCase().trim()
-        const filtered = sites.filter(site => {
+        const filtered = sites.filter((site) => {
           if (!term) return true
           return (
             (site.title || '').toLowerCase().includes(term) ||
@@ -703,7 +1389,8 @@
           )
         })
         if (filtered.length === 0) {
-          grid.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">暂无内容</p>'
+          grid.innerHTML =
+            '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">暂无内容</p>'
           return
         }
         filtered.forEach((site, i) => {
@@ -743,7 +1430,7 @@
         } else {
           const btn = categoryBtns[index]
           if (!btn) return
-          const count = allSites.filter(s => s._catIndex === index).length
+          const count = allSites.filter((s) => s._catIndex === index).length
           let badge = btn.querySelector('.cat-count')
           if (!badge) {
             badge = document.createElement('span')
@@ -756,17 +1443,17 @@
 
       // ── 加载单个 json ──────────────────────────────────────
       async function loadCategory(index) {
-        if (loadedIndexes.has(index)) return  // 已加载过，跳过
+        if (loadedIndexes.has(index)) return // 已加载过，跳过
         try {
           const res = await fetch(`sites/sites_${index}.json`)
           if (!res.ok) return
           const data = await res.json()
           const arr = Array.isArray(data) ? data : []
-          arr.forEach(site => site._catIndex = index)
+          arr.forEach((site) => (site._catIndex = index))
           allSites = allSites.concat(arr)
           loadedIndexes.add(index)
           updateCount(index)
-          updateCount(0)  // 同步更新"全部"总数
+          updateCount(0) // 同步更新"全部"总数
         } catch (e) {
           console.warn(`sites_${index}.json 加载失败`, e)
         }
@@ -790,7 +1477,7 @@
         } else {
           // 单分类
           await loadCategory(index)
-          const catSites = allSites.filter(s => s._catIndex === index)
+          const catSites = allSites.filter((s) => s._catIndex === index)
           renderCards(catSites, term)
         }
       }
@@ -798,7 +1485,7 @@
       // ── 分类按钮点击 ───────────────────────────────────────
       categoryBtns.forEach((btn) => {
         btn.addEventListener('click', function () {
-          categoryBtns.forEach(b => b.classList.remove('active'))
+          categoryBtns.forEach((b) => b.classList.remove('active'))
           this.classList.add('active')
           showCategory(parseInt(this.dataset.index))
         })
@@ -806,11 +1493,15 @@
 
       // ── 搜索 ───────────────────────────────────────────────
       searchBox.addEventListener('input', function () {
+        updateClearBtn()
+        if (currentEngine !== 'local') return // 全网模式不触发站内过滤
         const term = this.value.toLowerCase().trim()
         if (currentIndex === 0) {
           renderCards(allSites, term)
         } else {
-          const catSites = allSites.filter(s => s._catIndex === currentIndex)
+          const catSites = allSites.filter(
+            (s) => s._catIndex === currentIndex
+          )
           renderCards(catSites, term)
         }
       })
@@ -821,30 +1512,52 @@
           e.preventDefault()
           searchBox.focus()
         }
-        if (e.key === 'Escape' && document.activeElement === searchBox) {
-          searchBox.value = ''
-          const catSites = currentIndex === 0 ? allSites : allSites.filter(s => s._catIndex === currentIndex)
-          renderCards(catSites)
-          searchBox.blur()
+        if (e.key === 'Escape') {
+          if (engineDropdown.classList.contains('open')) {
+            closeDropdown()
+            return
+          }
+          if (document.activeElement === searchBox) {
+            searchBox.value = ''
+            searchClear.classList.remove('visible')
+            if (currentEngine === 'local') {
+              const catSites =
+                currentIndex === 0
+                  ? allSites
+                  : allSites.filter((s) => s._catIndex === currentIndex)
+              renderCards(catSites)
+            }
+            searchBox.blur()
+          }
+        }
+        // 回车：全网模式执行搜索
+        if (e.key === 'Enter' && document.activeElement === searchBox) {
+          if (currentEngine !== 'local') {
+            doWebSearch()
+          }
         }
       })
 
       // ── 初始化：显示全部分类，同时后台预加载所有json更新数字 ──
       showCategory(0).then(() => {
         // 后台静默预加载其余所有分类，仅更新数字，不切换显示
-        // （showCategory(0) 已全量加载，此处无需额外操作，updateCount会自动同步）
       })
+
       // ── 回顶部按钮 ───────────────────────────────────────────
       const backToTopBtn = document.getElementById('backToTop')
       const SCROLL_THRESHOLD = 300
 
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > SCROLL_THRESHOLD) {
-          backToTopBtn.classList.add('visible')
-        } else {
-          backToTopBtn.classList.remove('visible')
-        }
-      }, { passive: true })
+      window.addEventListener(
+        'scroll',
+        function () {
+          if (window.scrollY > SCROLL_THRESHOLD) {
+            backToTopBtn.classList.add('visible')
+          } else {
+            backToTopBtn.classList.remove('visible')
+          }
+        },
+        { passive: true }
+      )
 
       backToTopBtn.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -855,12 +1568,15 @@
       const themeColorMeta = document.getElementById('themeColorMeta')
       const DARK_KEY = 'zhihui-dark-mode'
       const THEME_COLOR_LIGHT = '#e6e7ee'
-      const THEME_COLOR_DARK  = '#1e1e2e'
+      const THEME_COLOR_DARK = '#1e1e2e'
       let themeTimer = null
 
       function applyTheme(isDark, animate = false) {
         // 同步更新浏览器顶栏颜色
-        themeColorMeta.setAttribute('content', isDark ? THEME_COLOR_DARK : THEME_COLOR_LIGHT)
+        themeColorMeta.setAttribute(
+          'content',
+          isDark ? THEME_COLOR_DARK : THEME_COLOR_LIGHT
+        )
 
         if (animate) {
           // 清除上一次可能还在跑的定时器
@@ -872,7 +1588,9 @@
             requestAnimationFrame(() => {
               document.body.classList.toggle('dark', isDark)
               themeToggleBtn.textContent = isDark ? '🌙' : '☀️'
-              themeToggleBtn.title = isDark ? '切换浅色模式' : '切换深色模式'
+              themeToggleBtn.title = isDark
+                ? '切换浅色模式'
+                : '切换深色模式'
             })
           })
           // transition 结束后移除类（duration 0.45s，留 50ms 余量）
@@ -889,14 +1607,15 @@
 
       // 读取本地保存的偏好
       const savedDark = localStorage.getItem(DARK_KEY)
-      const prefersDark = savedDark !== null
-        ? savedDark === 'true'
-        : window.matchMedia('(prefers-color-scheme: dark)').matches
-      applyTheme(prefersDark, false)  // 初始加载不做动画
+      const prefersDark =
+        savedDark !== null
+          ? savedDark === 'true'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches
+      applyTheme(prefersDark, false) // 初始加载不做动画
 
       themeToggleBtn.addEventListener('click', function () {
         const isDark = !document.body.classList.contains('dark')
-        applyTheme(isDark, true)  // 用户点击才做动画
+        applyTheme(isDark, true) // 用户点击才做动画
         localStorage.setItem(DARK_KEY, isDark)
       })
     </script>
