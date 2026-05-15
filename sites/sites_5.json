@@ -3,35 +3,42 @@
         "title": "菜鸟教程",
         "icon": "菜鸟教程_icon.webp",
         "url": "https://www.runoob.com",
-        "description": "结构化的编程启蒙与技术字典，通过高度压缩的知识条目与实时交互环境，实现从零基础到工程实践的快速技能迁移",
+        "description": "国内最受欢迎的编程入门学习网站，提供HTML、CSS、JavaScript、Python、Java、PHP、MySQL、Linux 等数百门编程语言与技术的免费教程，内容通俗易懂、实例丰富，适合零基础小白快速入门",
         "category": "学习成长"
     },
     {
         "title": "wikiHow",
         "icon": "wikiHow_icon.webp",
         "url": "https://zh.wikihow.com",
-        "description": "全球化的技能习得指南，采用颗粒度极细的步骤化拆解，将复杂的生活经验与专业技术转化为可复制的操作手册",
+        "description": "全球知名的生活技能百科网站中文版，拥有上万篇详细图文教程，涵盖生活技巧、技能学习、健康、电脑、数码、职场等几乎所有领域，步骤清晰、实用可靠，是解决日常问题、学习新技能的免费实用百科",
         "category": "学习成长"
     },
     {
         "title": "W3Schools",
         "icon": "W3Schools_icon.webp",
         "url": "https://www.w3schools.com",
-        "description": "全球著名的编程学习平台，专注于 Web 开发技术，提供简洁易懂的 HTML、CSS、JavaScript 等教程及在线实例代码，并附带编辑器",
+        "description": "免费的网页开发学习平台，提供HTML、CSS、JavaScript、Python、SQL、PHP等技术的简洁教程、在线实例、代码编辑器和实时演示，内容清晰实用、示例丰富，是快速学习与查阅前端后端知识的经典参考站点",
         "category": "学习成长"
     },
     {
         "title": "Qwerty Learner",
         "icon": "Qwerty_Learner_icon.webp",
         "url": "https://qwerty.kaiyi.cool/mobile",
-        "description": "英语单词记忆与打字训练深度融合的在线工具，在提升打字速度的同时，实现科学高效的词汇积累，是兼顾技能提升与语言学习的专业化平台",
+        "description": "专为键盘工作者设计的免费开源英语单词记忆与打字练习平台，通过输入单词练习肌肉记忆，支持CET-4/6、考研、托福、编程API等多种词库，带音标发音、默写模式、实时速度统计，高效提升英语水平和英文打字速度",
         "category": "学习成长"
     },
     {
         "title": "Edclub",
         "icon": "Edclub_icon.webp",
         "url": "https://www.edclub.com/zh/",
-        "description": "在线打字教学系统，提供科学的阶梯式课程与趣味互动练习，通过实时反馈与精细化的进度管理，帮助用户从零基础起步，高效掌握盲打技巧并提升输入速度",
+        "description": "集打字、词汇拼写和数字公民教育于一体的多功能教学平台，提供海量中文/英文打字课程、游戏、视频和进度追踪，支持从零基础到高级练习，提升打字速度与准确率，是学生、教师和打字爱好者提升键盘技能的首选平台",
+        "category": "学习成长"
+    },
+    {
+        "title": "Musicca",
+        "icon": "Musicca_icon.webp",
+        "url": "https://www.musicca.com/zh",
+        "description": "",
         "category": "学习成长"
     }
 ]

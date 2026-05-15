@@ -91,6 +91,13 @@
         "category": "装机必备"
     },
     {
+        "title": "Obsidian",
+        "icon": "Obsidian_icon.webp",
+        "url": "https://obsidian.md/zh",
+        "description": "基于本地 Markdown 文件的强力知识管理工具，通过独特的双向链接和关系图谱构建个人知识网，支持高度自定义的插件生态与 CSS 样式",
+        "category": "装机必备"
+    },
+    {
         "title": "Clash Verge Rev",
         "icon": "Clash_Verge_Rev_icon.webp",
         "url": "https://www.clashverge.dev",

@@ -3,63 +3,56 @@
         "title": "抠抠图",
         "icon": "抠抠图_icon.webp",
         "url": "https://www.koukoutu.com",
-        "description": "智能化的在线 AI 抠图利器，凭借像素级的边缘识别算法，实现复杂背景的秒级剥离与图像批量处理，极速提升修图效率",
+        "description": "智能化的 AI抠图与图片编辑平台，提供人物/商品抠图、智能去背景、商品图修饰、老照片上色、图片高清放大、AI去水印、印花图案提取、证件照制作等工具，全自动识别主体与背景，支持批量处理与高清下载，让电商主图、设计素材、社交图片制作更轻松",
         "category": "图像处理"
     },
     {
         "title": "Shutterstock Create",
         "icon": "Shutterstock_Create_icon.webp",
         "url": "https://www.shutterstock.com/zh/image-design-tools",
-        "description": "专业级的在线图形设计套件，集成前沿 AI 算法辅助构图、背景移除及高保真压缩，为视觉内容创作提供全链路技术支持",
+        "description": "汇集多款专业级的在线图片设计工具，提供图片编辑、裁剪、压缩、格式转换到高级抠图、拼贴制作、调色板生成、社交媒体尺寸适配等全流程视觉创作，平台界面直观、操作轻松，支持社交媒体常用尺寸与多格式导出，全面提升品牌曝光与创意生产力",
         "category": "图像处理"
     },
     {
         "title": "Squoosh",
         "icon": "Squoosh_icon.webp",
         "url": "https://squoosh.app",
-        "description": "谷歌出品的顶尖图像压缩引擎，通过先进的算法实现极致的体积优化与画质平衡，支持多种现代图像格式的即时转换预览",
+        "description": "由谷歌开发的免费在线图片压缩与格式转换工具，支持PNG、JPEG、WebP、AVIF等多种格式，可实时预览压缩前后效果、极高压缩率、可视化参数调节、离线可用等优势，成为设计师、开发者、内容创作者优化图片体积、提升网页加载速度的理想工具",
         "category": "图像处理"
     },
     {
         "title": "To WebP",
         "icon": "To_WebP_icon.webp",
         "url": "https://towebp.io",
-        "description": "专注于 WebP 格式转化的轻量化工具，旨在优化网页加载性能，提供高保真的无损转换方案，是前端开发与资源优化的必备利器",
+        "description": "完全免费的在线图片格式转换工具，支持批量将JPG、JPEG、PNG、GIF、SVG、ICO等主流格式一键转换为 WebP格式，显著减少图片体积，支持自由调整 WebP图片的质量、尺寸倍率、压缩方式等高级参数，以满足设计师、开发者等不同场景的专业需求",
         "category": "图像处理"
     },
     {
         "title": "在线图片编辑",
         "icon": "在线图片编辑_icon.webp",
         "url": "https://llccj.cn",
-        "description": "专业、安全、高效的在线图片处理工具，支持裁剪、无缝长图拼接、胶片滤镜及马赛克处理，无需注册即可实现高清导出，所有操作均在浏览器本地完成，无需上传，百分百保障隐私安全",
+        "description": "永久免费的在线图片编辑平台，支持不规则形状裁剪、智能背景移除、多图层自由编辑、长图无缝拼接、海报级排版、马赛克与模糊隐私保护、高清无损导出等核心能力，覆盖从轻量编辑到复杂创作的多种功能，满足内容创作者、设计师等不同用户需求",
         "category": "图像处理"
     },
     {
         "title": "iLoveIMG",
         "icon": "iLoveIMG_icon.webp",
         "url": "https://www.iloveimg.com/zh-cn",
-        "description": "全能型在线图片处理工具，集压缩、调整大小、格式转换及水印添加等功能于一体，界面简洁直观，支持批量操作，是提升日常办公与图像管理效率的利器",
-        "category": "图像处理"
-    },
-    {
-        "title": "ImageOnline",
-        "icon": "ImageOnline_co_icon.webp",
-        "url": "https://imageonline.co/cn",
-        "description": "终极免费在线工具套件，探索超过250多个专业实用程序，编辑照片、转换视频、制作 GIF、测试硬件和管理 PDF，100% 免费、私密且极其快速",
+        "description": "全套免费的在线图片编辑工具，提供压缩、裁剪、格式转换、去背景、增强清晰度与批量处理等功能，支持PNG、JPG、WEBP等多种格式，界面简洁直观，支持批量操作，满足从日常编辑到专业设计的多种需求，是提升日常办公与图片编辑效率的利器",
         "category": "图像处理"
     },
     {
         "title": "imageonline",
         "icon": "imageonline_io_icon.webp",
         "url": "https://imageonline.io",
-        "description": "专业图像编辑套件，拥有超过220种专业工具，涵盖了图像压缩、尺寸调整、格式转换、特效滤镜及高级编辑功能，是极具生产力的在线编辑器",
+        "description": " 免费在线图像工具和照片编辑器，提供 220+ 专业工具，包括图片压缩、裁剪、调整大小、格式转换、滤镜特效、背景去除、GIF编辑、颜色校正、测量与摄影计算等工具，适合设计师、摄影师及普通用户的多用途图像处理网站，是极具生产力的在线编辑器",
         "category": "图像处理"
     },
     {
         "title": "Compress Image",
         "icon": "Compress_Image_icon.webp",
         "url": "https://compressimage.cn/zh-CN",
-        "description": "高效、安全的在线图片压缩工具，支持批量处理与多种格式转换，压缩率高达95%且画质超清，所有处理均在本地完成，确保隐私数据不上传，提供极速、免费的图片优化体验",
+        "description": "高效、安全的在线图片压缩工具，支持JPG、PNG、WebP、GIF、BMP等格式，支持批量压缩与大图优化，采用行业领先算法，压缩率高达 95% 且画质超清，所有处理均在本地完成，确保隐私数据不上传，提供极速、免费、安全的图片压缩体验",
         "category": "图像处理"
     }
 ]
