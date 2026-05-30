@@ -1,51 +1,93 @@
 [
     {
-        "title": "鹿鸣",
-        "icon": "鹿鸣_icon.webp",
-        "url": "https://www.lumingrj.com",
-        "description": "专注于提供 Win/Mac 平台的软件资源下载、图文安装教程与常见故障解决方案，内容覆盖设计、办公、工程、科研等高频软件领域，站内软件均配备详细步骤说明与实机测试说明，并支持多网盘高速下载，帮助用户在最短时间内完成软件获取、安装配置与问题排查，提升整体使用效率与体验",
-        "category": "资源下载"
+        "title": "FreeCodeFormat",
+        "icon": "FreeCodeFormat_icon.webp",
+        "url": "https://www.freecodeformat.com/zh-hans",
+        "description": "全面的在线代码格式化与美化服务，支持 JSON、XML、HTML、CSS、JavaScript、SQL、C、C++、Java、Python 等多种语言，提供代码美化、压缩、校验、转换等功能，无需安装、快速高效，是开发者进行代码整理、调试与分享的高效工具平台",
+        "category": "开发辅助"
     },
     {
-        "title": "软仓",
-        "icon": "软仓_icon.webp",
-        "url": "https://www.ruancang.net",
-        "description": "聚合专业软件学习资源的公益导航站，分类全面、无广告、资源丰富，收录数百款设计、三维、影视、建筑、机械、电子与数据分析等领域软件，提供学习版软件下载与网盘直链，适合学生与从业者用于非商业学习与技能提升",
-        "category": "资源下载"
+        "title": "IT-Tools",
+        "icon": "IT-Tools_icon.webp",
+        "url": "https://it-tools.tech",
+        "description": "开源免费的在线开发者工具集合，提供 50+ 高质量 Web 工具，涵盖编码与解码、网络调试、正则表达式测试、JSON/YAML/CSV转换、JWT解析等常用开发场景，无需注册，即开即用，适合前端工程师、后端开发者、运维工程师与技术爱好者日常使用",
+        "category": "开发辅助"
     },
     {
-        "title": "奇迹秀",
-        "icon": "奇迹秀_icon.webp",
-        "url": "https://www.qijishow.com",
-        "description": "视觉创意与灵感分享的内容聚合平台，涵盖设计灵感、创意案例、视觉素材、艺术作品等多类型内容，网站以高质量精选内容为核心，帮助设计师、创作者、短视频从业者快速找到灵感方向，界面清爽、更新稳定，是创意工作者常用的灵感来源地",
-        "category": "资源下载"
+        "title": "开发者武器库",
+        "icon": "开发者武器库_icon.webp",
+        "url": "https://devtool.tech",
+        "description": "专为开发者打造的一站式在线工具，涵盖JSON格式化、数据转换、JSON/YAML处理、色彩调色板、CSS渐变生成器、图片添加水印、文本处理、编码/解码等 60+ 实用功能，所有操作均在浏览器本地运行，注重隐私，是提升开发效率的高效利器",
+        "category": "开发辅助"
     },
     {
-        "title": "考拉资源库",
-        "icon": "考拉资源库_icon.webp",
-        "url": "https://www.kaolarj.com",
-        "description": "个人非盈利性网站，专注分享日常工作生活办公技术资源，覆盖绿色软件、办公软件、系统工具、格式转换、学习辅助等多类实用内容，所有资源均由站长亲测，确保安全、纯净、可用，是学生、职场人和电脑爱好者获取高质量资源的优选平台",
-        "category": "资源下载"
+        "title": "蛙蛙工具",
+        "icon": "蛙蛙工具_icon.webp",
+        "url": "https://www.10015tools.online/zh",
+        "description": "轻量、高效的日常开发工具集，包括编码解码、文本处理、二进制转换、代码格式化、PDF工具、图片压缩、二维码生成等功能，所有工具均免费、开源透明、安全可靠，无需下载即可一站式解决各种办公与技术需求，是提升开发效率的高性能辅助平台",
+        "category": "开发辅助"
     },
     {
-        "title": "Crx搜搜",
-        "icon": "Crx搜搜_icon.webp",
-        "url": "https://www.crxsoso.com",
-        "description": "浏览器扩展聚合平台，收录海量 Chrome 扩展插件，提供高速、纯净、无广告的 CRX 文件下载与在线搜索服务，支持插件历史版本、离线安装包、扩展镜像资源加速，适合普通用户快速查找插件与开发者进行版本对比与调试",
-        "category": "网络工具"
+        "title": "TidyCode",
+        "icon": "TidyCode_icon.webp",
+        "url": "https://tidycode.org/zh-cn",
+        "description": "",
+        "category": "开发辅助"
     },
     {
-        "title": "AppTeka",
-        "icon": "AppTeka_icon.webp",
-        "url": "https://appteka.store/apps",
-        "description": "Android 应用与游戏免费下载的第三方应用市场，涵盖系统工具、音乐与视频、个性化设置、健康健身、娱乐、摄影、教育等多种分类，帮助用户快速找到所需 APK，平台致力于提供安全、便捷的下载体验，是探索 Android 应用的优质资源平台",
-        "category": "资源下载"
+        "title": "加密大师",
+        "icon": "加密大师_icon.webp",
+        "url": "https://jiamidashi.cn",
+        "description": "",
+        "category": "开发辅助"
     },
     {
-        "title": "Sfile Mobi",
-        "icon": "Sfile_Mobi_icon.webp",
-        "url": "https://sfile.mobi",
-        "description": "极简主义云端存储与分发平台，依托高效的数据交互逻辑与无限制下载带宽，重塑移动互联网时代的文件传输体验",
-        "category": "资源下载"
+        "title": "程序员工具",
+        "icon": "程序员工具_icon.webp",
+        "url": "https://tool.ur1.fun",
+        "description": "",
+        "category": "开发辅助"
+    },
+    {
+        "title": "BeautifierConverter",
+        "icon": "BeautifierConverter_icon.webp",
+        "url": "https://www.beautifyconverter.com",
+        "description": "",
+        "category": "开发辅助"
+    },
+    {
+        "title": "Beautify Tools",
+        "icon": "Beautify_Tools_icon.webp",
+        "url": "https://beautifytools.com",
+        "description": "",
+        "category": "开发辅助"
+    },
+    {
+        "title": "百川在线工具箱",
+        "icon": "百川在线工具箱_icon.webp",
+        "url": "https://rivers.chaitin.cn/tools",
+        "description": "",
+        "category": "开发辅助"
+    },
+    {
+        "title": "JavaPub Tool",
+        "icon": "JavaPub_Tool_icon.webp",
+        "url": "https://rodert.github.io/jsonformat",
+        "description": "",
+        "category": "开发辅助"
+    },
+    {
+        "title": "工具百宝箱",
+        "icon": "工具百宝箱_icon.webp",
+        "url": "https://toolsdev.top",
+        "description": "",
+        "category": "开发辅助"
+    },
+    {
+        "title": "DevFile",
+        "icon": "DevFile_icon.webp",
+        "url": "https://devfile.cn",
+        "description": "",
+        "category": "开发辅助"
     }
 ]

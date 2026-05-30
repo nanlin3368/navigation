@@ -1,44 +1,324 @@
 [
     {
-        "title": "SnapWC",
-        "icon": "SnapWC_icon.webp",
-        "url": "https://snapwc.com/zh",
-        "description": "高性能在线流媒体解析终端，深度支持全球主流社交平台的音视频提取，以纯净的交互体验解决跨媒介素材获取难题",
-        "category": "视频提取"
+        "title": "PDFCraft",
+        "icon": "PDFCraft_icon.webp",
+        "url": "http://pdfcraft.devtoolcafe.com/zh",
+        "description": "专业级在线 PDF 工具套件，提供 99+ 功能，覆盖 PDF合并、拆分、压缩、编辑、OCR识别、格式转换、页面管理与安全加密等全套工具，所有处理均在浏览器本地完成，100%隐私安全，无需注册、完全免费，适用于办公、学习、文档管理与团队使用",
+        "category": "文档办公"
     },
     {
-        "title": "GreenVideo",
-        "icon": "GreenVideo_icon.webp",
-        "url": "https://greenvideo.cc",
-        "description": "全场景视频素材抓取平台，依托稳定的云端解析算法，实现千余家平台内容的高速重采样，是内容创作者的采集利器",
-        "category": "视频提取"
+        "title": "QwikPDF",
+        "icon": "QwikPDF_icon.webp",
+        "url": "https://qwikpdf.com",
+        "description": "追求极致速度的轻量化 PDF 处理引擎，通过精简的交互设计提供流畅的文档合并、压缩与格式转换体验，实现即开即办",
+        "category": "文档办公"
     },
     {
-        "title": "AnyToCopy",
-        "icon": "AnyToCopy_icon.webp",
-        "url": "https://www.anytocopy.com",
-        "description": "智能化的多模态素材提取引擎，支持视频文案、音轨与画面的全自动分离，通过 AI 技术显著提升二次创作的工程效率",
-        "category": "视频提取"
+        "title": "iLovePDF",
+        "icon": "iLovePDF_icon.webp",
+        "url": "https://www.ilovepdf.com/zh-cn",
+        "description": "全功能 PDF 在线工具平台，提供 PDF转换、压缩、合并、拆分、编辑、OCR识别、图片转PDF 等全套文档处理功能，覆盖学习、办公、合同处理、内容创作等场景，支持多格式互转与跨平台使用，操作简单、快速处理，是高效处理 PDF 文件的首选平台",
+        "category": "文档办公"
     },
     {
-        "title": "YT1s",
-        "icon": "YT1s_icon.webp",
-        "url": "https://yt1s.media/zh-cn",
-        "description": "顶级的全球化视频转换枢纽，提供超高清画质解析与高码率音频提取功能，实现跨设备的无缝离线访问，重塑流媒体体验",
-        "category": "视频提取"
+        "title": "PDF24",
+        "icon": "PDF24_icon.webp",
+        "url": "https://tools.pdf24.org/zh/all-tools",
+        "description": "完全免费的在线 PDF 工具集，包括 PDF合并、拆分、压缩、编辑、签署、OCR识别、PDF转Word/Excel/PPT、图片转PDF、PDF转图片、网页转PDF 等功能，支持无水印、无次数限制、多设备访问，文件传输全程加密，是处理 PDF 的高效、安全、可靠选择",
+        "category": "文档办公"
     },
     {
-        "title": "社交媒体下载器",
-        "icon": "社交媒体下载器_icon.webp",
-        "url": "https://downloader.bhwa233.com/zh",
-        "description": "全兼容的匿名媒体资源库，通过对国内外社交生态内容的深度解析，实现音视频与图文的一键获取，精简数字化交付链路",
-        "category": "视频提取"
+        "title": "FileUNZIP",
+        "icon": "FileUNZIP_icon.webp",
+        "url": "https://cn.fileunzip.com",
+        "description": "垂直于云端解压缩领域的效率利器，支持 RAR、7Z 等多种加密格式的在线解压与封包，彻底解决跨设备文件读取障碍",
+        "category": "文档办公"
     },
     {
-        "title": "Cobalt",
-        "icon": "Cobalt_icon.webp",
-        "url": "https://cobalt.tools",
-        "description": "追求极致纯净的流媒体下载引擎，主打无广告、零跟踪的隐私保护体验，支持全平台高清素材抓取，定义极简效能新标准",
-        "category": "视频提取"
+        "title": "iLoveZIP",
+        "icon": "iLoveZIP_icon.webp",
+        "url": "https://cn.ilovezip.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "文件转换器",
+        "icon": "文件转换器_icon.webp",
+        "url": "https://cn.onlineconvert.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "文件阅读器",
+        "icon": "文件阅读器_icon.webp",
+        "url": "https://cn.online-reader.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "文件压缩工具",
+        "icon": "文件压缩工具_icon.webp",
+        "url": "https://www.online-compressor.com/cn/",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "iLoveOCR",
+        "icon": "iLoveOCR_icon.webp",
+        "url": "https://www.iloveocr.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "TinyWow",
+        "icon": "TinyWow_icon.webp",
+        "url": "https://tinywow.com",
+        "description": "全维度数字化处理矩阵，提供涵盖 PDF、视频及图像处理的超两百项免费功能，主打零门槛、免注册的交互体验，是极致简约的办公生产力引擎",
+        "category": "文档办公"
+    },
+    {
+        "title": "Smallpdf",
+        "icon": "Smallpdf_icon.webp",
+        "url": "https://smallpdf.com",
+        "description": "数字化文档处理中枢，深度集成 PDF 压缩、格式转换及智能编辑等全维度工具矩阵，通过极简的交互链路与云端协作技术，全面重构现代办公的文档处理效能",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDFuck",
+        "icon": "PDFuck_icon.webp",
+        "url": "https://pdfuck.com/zh",
+        "description": "完全免费且安全的在线 PDF 工具集，支持合并、分割及转换等 40 多种功能。所有处理均在浏览器本地完成，文件无需上传，在保障隐私的同时实现极速编辑",
+        "category": "文档办公"
+    },
+    {
+        "title": "i2PDF",
+        "icon": "i2PDF_icon.webp",
+        "url": "https://www.i2pdf.com/zh",
+        "description": "专业的在线 PDF 处理工具，提供格式转换、合并拆分、页面提取及压缩等全方位服务，支持图片转PDF、PDF编辑与OCR识别，无需下载安装即可在网页端高效处理文档",
+        "category": "文档办公"
+    },
+    {
+        "title": "i2OCR",
+        "icon": "i2OCR_icon.webp",
+        "url": "https://www.i2ocr.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "i2TEXT",
+        "icon": "i2TEXT_icon.webp",
+        "url": "https://www.i2text.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDFTool",
+        "icon": "PDFTool_icon.webp",
+        "url": "https://www.pdftool.cc/zh",
+        "description": "极简高效的在线 PDF 处理平台，主打本地浏览器渲染技术以确保隐私安全，集成了 PDF 合并、拆分、压缩及格式转换等多项实用功能，无需上传文件至服务器即可快速处理",
+        "category": "文档办公"
+    },
+    {
+        "title": "ABCD Office",
+        "icon": "ABCD_Office_icon.webp",
+        "url": "https://www.abcdoffice.com/zh-cn",
+        "description": "综合性的在线文件处理与转换平台，提供Word、Excel、PPT及PDF的在线编辑器与查看器，无需安装任何软件即可直接在浏览器中修改和管理各类文档",
+        "category": "文档办公"
+    },
+    {
+        "title": "Compare2Word",
+        "icon": "Compare2Word_icon.webp",
+        "url": "https://compare2word.com/zh",
+        "description": "在线文档差异比对工具，支持 Word、PDF、Excel 及纯文本等多格式比对，精准、直观地呈现文档间的细微差异，所有计算均在浏览器本地完成，主打隐私安全",
+        "category": "文档办公"
+    },
+    {
+        "title": "CSVtoAny",
+        "icon": "CSVtoAny_icon.webp",
+        "url": "https://csvtoany.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "魔方简历",
+        "icon": "魔方简历_icon.webp",
+        "url": "https://magicv.art/zh",
+        "description": "基于 AI 技术的智能在线简历制作平台，提供智能润色、语法检查、自动排版、多模板选择、本地存储等专业辅助功能，支持 PDF 与 JSON 格式一键导出，适配不同求职场景与平台需求，无需注册即可使用，帮助用户快速创建结构清晰、表达专业的高质量简历",
+        "category": "文档处理"
+    },
+    {
+        "title": "ZIZIYI Office",
+        "icon": "ZIZIYI_Office_icon.webp",
+        "url": "https://office.ziziyi.com",
+        "description": "免费的在线 Office 编辑器，支持在浏览器中直接打开与编辑 DOCX、XLSX、PPTX、PDF 等格式，文件本地处理，确保隐私与安全，提供 Word、Excel、PPT 免费模板库，覆盖教育、商务、创意等主题，无需注册即可使用，提升办公效率与内容制作质量",
+        "category": "文档办公"
+    },
+    {
+        "title": "Diagrams",
+        "icon": "Diagrams_icon.webp",
+        "url": "https://www.drawio.com",
+        "description": "开源、免费的在线图表编辑器，支持流程图、组织结构图、网络拓扑图、思维导图等多种专业图表绘制，具备拖拽式编辑、智能对齐、多人协作、丰富导出格式等功能，无需注册即可使用，支持本地与云端存储，提供桌面版下载，是 Visio 的高质量替代方案",
+        "category": "文档办公"
+    },
+    {
+        "title": "懒人办公",
+        "icon": "懒人办公_icon.webp",
+        "url": "https://www.lanren.work",
+        "description": "专业的在线办公工具平台，支持 PDF合并、拆分、加密、解密、OCR、压缩等功能，提供图片去背景、文字提取、格式转换、拼接长图等工具，拥有丰富的 PPT、Word、Excel 模板免费下载，无需安装软件，即开即用，是高效便捷的一站式在线办公平台",
+        "category": "文档办公"
+    },
+    {
+        "title": "教师盒子",
+        "icon": "教师盒子_icon.webp",
+        "url": "https://teachbox.cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "docsmall",
+        "icon": "docsmall_icon.webp",
+        "url": "https://docsmall.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "CleverPDF",
+        "icon": "CleverPDF_icon.webp",
+        "url": "https://www.cleverpdf.com/cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "表格助手",
+        "icon": "表格助手_icon.webp",
+        "url": "https://tablecopy.pro/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "文字图像提取器",
+        "icon": "文字图像提取器_icon.webp",
+        "url": "https://word.appinn.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "在线简历生成工具",
+        "icon": "在线简历生成工具_icon.webp",
+        "url": "https://dnd-resume.com/editor",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "nbpdf",
+        "icon": "nbpdf_icon.webp",
+        "url": "https://nbpdf.com/zh-CN/print",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Raphael Publish",
+        "icon": "Raphael_Publish_icon.webp",
+        "url": "https://publish.raphael.app",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Z2H字帖",
+        "icon": "Z2H字帖_icon.webp",
+        "url": "https://z2h.cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "纸由我 PaperMe",
+        "icon": "纸由我_PaperMe_icon.webp",
+        "url": "https://paperme.toolooz.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PdfZap",
+        "icon": "PdfZap_icon.webp",
+        "url": "https://pdfzap.toolooz.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Flyfish Viewer",
+        "icon": "Flyfish_Viewer_icon.webp",
+        "url": "https://viewer.flyfish.dev",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDF ImagesTool",
+        "icon": "PDF_ImagesTool_icon.webp",
+        "url": "https://pdf.imagestool.com/zh-CN",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PrintlyTool",
+        "icon": "PrintlyTool_icon.webp",
+        "url": "https://www.printlytool.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "BentoPDF",
+        "icon": "BentoPDF_icon.webp",
+        "url": "https://www.bentopdf.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "File Compress",
+        "icon": "File_Compress_icon.webp",
+        "url": "https://filecompress.org/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "ConvertTool",
+        "icon": "ConvertTool_icon.webp",
+        "url": "https://converttool.org/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "File Compare",
+        "icon": "File_Compare_icon.webp",
+        "url": "https://filecompare.org/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Sejda PDF",
+        "icon": "Sejda_PDF_icon.webp",
+        "url": "https://www.sejda.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "在线 PDF 编辑",
+        "icon": "在线_PDF_编辑_icon.webp",
+        "url": "https://onlinepdfedit.com/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "发票排版助手",
+        "icon": "发票排版助手_icon.webp",
+        "url": "https://fapiao.jimbray.xyz",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "MDCard",
+        "icon": "MDCard_icon.webp",
+        "url": "https://mdcard.rouguang.top",
+        "description": "",
+        "category": "文档办公"
     }
 ]

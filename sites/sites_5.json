@@ -1,44 +1,65 @@
 [
-    {
-        "title": "菜鸟教程",
-        "icon": "菜鸟教程_icon.webp",
-        "url": "https://www.runoob.com",
-        "description": "国内最受欢迎的编程入门学习网站，提供HTML、CSS、JavaScript、Python、Java、PHP、MySQL、Linux 等数百门编程语言与技术的免费教程，内容通俗易懂、实例丰富，适合零基础小白快速入门",
-        "category": "学习成长"
+   {
+        "title": "热榜 Today",
+        "icon": "热榜Today_icon.webp",
+        "url": "https://rebang.today",
+        "description": "全网热点聚合平台，实时抓取知乎、微博、百度、IT之家、豆瓣、小红书等站点的热门内容，按热度排序呈现今日、本周、本月的全网趋势，帮助用户快速获取全网最热资讯、话题讨论、社会事件与趋势内容，是信息获取、热点追踪与内容创作的高效站点",
+        "category": "新知百态"
+   },
+   {
+        "title": "CCTV 节目",
+        "icon": "CCTV_节目_icon.webp",
+        "url": "https://tv.cctv.com",
+        "description": "中央广播电视总台的权威入口，提供央视频道直播、节目单、栏目大全、热播榜单、片库点播等服务，覆盖新闻、纪录片、综艺、体育、少儿、电视剧等全品类节目内容，支持回看、收藏、搜索、智能推荐等功能，是获取国家级资讯、观看央视节目的核心平台",
+        "category": "新知百态"
+   },
+   {
+        "title": "大众科普网",
+        "icon": "大众科普网_icon.webp",
+        "url": "https://www.dazhongkepu.cn",
+        "description": "综合性科普知识平台，汇聚医学健康、食品安全、环境保护、生命科学、科技前沿、公共安全与科学辟谣等多领域内容，通过图文解读、专题策划、知识问答、实用指南等形式，将复杂的科学原理转化为易理解、可实践、贴近生活的知识，让科学真正“走进生活",
+        "category": "新知百态"
     },
     {
-        "title": "wikiHow",
-        "icon": "wikiHow_icon.webp",
-        "url": "https://zh.wikihow.com",
-        "description": "全球知名的生活技能百科网站中文版，拥有上万篇详细图文教程，涵盖生活技巧、技能学习、健康、电脑、数码、职场等几乎所有领域，步骤清晰、实用可靠，是解决日常问题、学习新技能的免费实用百科",
-        "category": "学习成长"
-    },
-    {
-        "title": "W3Schools",
-        "icon": "W3Schools_icon.webp",
-        "url": "https://www.w3schools.com",
-        "description": "免费的网页开发学习平台，提供HTML、CSS、JavaScript、Python、SQL、PHP等技术的简洁教程、在线实例、代码编辑器和实时演示，内容清晰实用、示例丰富，是快速学习与查阅前端后端知识的经典参考站点",
-        "category": "学习成长"
-    },
-    {
-        "title": "Qwerty Learner",
-        "icon": "Qwerty_Learner_icon.webp",
-        "url": "https://qwerty.kaiyi.cool/mobile",
-        "description": "专为键盘工作者设计的免费开源英语单词记忆与打字练习平台，通过输入单词练习肌肉记忆，支持CET-4/6、考研、托福、编程API等多种词库，带音标发音、默写模式、实时速度统计，高效提升英语水平和英文打字速度",
-        "category": "学习成长"
-    },
-    {
-        "title": "Edclub",
-        "icon": "Edclub_icon.webp",
-        "url": "https://www.edclub.com/zh/",
-        "description": "集打字、词汇拼写和数字公民教育于一体的多功能教学平台，提供海量中文/英文打字课程、游戏、视频和进度追踪，支持从零基础到高级练习，提升打字速度与准确率，是学生、教师和打字爱好者提升键盘技能的首选平台",
-        "category": "学习成长"
-    },
-    {
-        "title": "Musicca",
-        "icon": "Musicca_icon.webp",
-        "url": "https://www.musicca.com/zh",
+        "title": "家庭保健报",
+        "icon": "家庭保健报_icon.webp",
+        "url": "https://www.familyhealthpaper.com",
         "description": "",
-        "category": "学习成长"
+        "category": "新知百态"
+    },
+    {
+        "title": "我爱怀旧网",
+        "icon": "我爱怀旧网_icon.webp",
+        "url": "https://www.52huaijiu.com",
+        "description": "",
+        "category": "新知百态"
+    },
+    {
+        "title": "科普中国 Lite",
+        "icon": "科普中国_Lite_icon.webp",
+        "url": "https://m.kepuchina.cn/headline",
+        "description": "中国科协打造的权威科普资讯平台，聚焦科技新闻、科学热点、健康医学、自然生态、工程技术与前沿研究等多领域内容，以图文结合、清晰排版与通俗易懂为特色，让用户随时随地获取可信赖、结构清晰、内容丰富的科学知识，是追踪科技趋势的核心入口",
+        "category": "新知百态"
+    },
+    {
+        "title": "高校名录数据可视化",
+        "icon": "高校名录数据可视化_icon.webp",
+        "url": "https://uni.utities.online",
+        "description": "全国高校数据可视化展示平台，通过地图、图表与列表方式展示全国高校的分布结构、办学类型与层次差异，可按地区、省份、学校类型、办学性质等维度进行筛选与对比，快速洞察教育资源布局、区域发展差异与高校结构特征，是查询高校信息的便捷工具",
+        "category": "新知百态"
+    },
+    {
+        "title": "四大名著",
+        "icon": "四大名著_icon.webp",
+        "url": "http://www.sdmz.cn",
+        "description": "中国古典文学高质量资源平台，汇集《三国演义》《水浒传》《西游记》《红楼梦》等经典名著原文与延伸阅读，提供章节赏析、人物资料、地图图谱与电子书下载，覆盖 200+ 名著题材作品，是学习参考、系统研读中国古典文学与名著文化的优质资源库",
+        "category": "新知百态"
+    },
+    {
+        "title": "日本海景车站",
+        "icon": "日本海景车站_icon.webp",
+        "url": "https://seaside-station.com",
+        "description": "探索日本 276 座可眺望大海的绝美车站，涵盖北海道、本州、四国、九州与离岛地区，以都道府县索引呈现海景车站的实拍照片、地理特色、景点亮点与旅行灵感，让你轻松规划一段“海与铁道同行”的疗愈旅程，感受铁道、海风与蓝色地平线交织的独特风景",
+        "category": "新知百态"
     }
 ]

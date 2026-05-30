@@ -1,23 +1,149 @@
 [
     {
-        "title": "网盘资源搜索",
-        "icon": "网盘资源搜索_icon.webp",
-        "url": "https://wpzyss.top",
-        "description": "跨平台云端数据索引引擎，支持对百度、夸克、迅雷等主流网盘存储内容的瞬时检索，致力于打破平台壁垒，实现资源共享的高效流通",
-        "category": "聚合搜索"
+        "title": "HTMLrev",
+        "icon": "HTMLrev_icon.webp",
+        "url": "https://htmlrev.com",
+        "description": "HTML 网站模板资源库，提供免费且高质量的 HTML 网站模板，涵盖作品集、登陆页、博客、仪表盘等多类型页面，所有模板采用现代化设计、响应式布局与清晰的代码结构，支持实时预览、跨浏览器兼容，是寻找免费网页模板与前端 UI 资源的重要站点",
+        "category": "创意设计"
     },
     {
-        "title": "PanSou",
-        "icon": "PanSou_icon.webp",
-        "url": "https://so.252035.xyz",
-        "description": "高效的网盘资源搜索引擎，支持对阿里云盘、百度网盘等主流平台的深度检索，提供影视、音乐及软件等资源的精准搜索，是挖掘学习素材与数字资源的便捷入口",
-        "category": "聚合搜索"
+        "title": "Proicon",
+        "icon": "Proicon_icon.webp",
+        "url": "https://proicons.com",
+        "description": "",
+        "category": "创意设计"
     },
     {
-        "title": "TV 搜",
-        "icon": "TV搜_icon.webp",
-        "url": "https://www.tvso.uk",
-        "description": "聚合全网影视资源，一键搜索电影、电视剧、动漫、综艺等内容，输入关键词即可快速找到资源，支持多种网盘资源直接访问，是用户快速获取海量影视资源的一站式搜索终端",
-        "category": "聚合搜索"
+        "title": "theSVG",
+        "icon": "theSVG_icon.webp",
+        "url": "https://thesvg.org",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "Remix Icon",
+        "icon": "Remix_Icon_icon.webp",
+        "url": "https://remixicon.com",
+        "description": "开源的中性风格图标库，收录超过 3200 个像素级精致的 SVG 图标，覆盖常用 UI、系统操作与业务等场景，风格统一、线条干净、适配性强，支持 Outlined 与 Filled 双风格，可免费用于个人与商业项目，适用于 UI 设计、Web 开发与移动应用界面构建",
+        "category": "创意设计"
+    },
+    {
+        "title": "Uiverse",
+        "icon": "Uiverse_icon.webp",
+        "url": "https://uiverse.io",
+        "description": "全球最大的开源 UI 元素库，收录 7000+ 个高质量开源组件，包括按钮、卡片、加载动画、输入框、切换开关等，全部免费可商用，支持 CSS、Tailwind、HTML、React 与 Figma，所有组件均可一键复制使用，旨在为前端开发与视觉设计注入无限创意灵感",
+        "category": "创意设计"
+    },
+    {
+        "title": "APPLORE",
+        "icon": "APPLORE_icon.webp",
+        "url": "https://app.uiboy.com",
+        "description": "全球 App 图标探索与灵感平台，收录超过 5000+ 高质量应用图标，支持按分类、颜色、风格、发布时间等维度智能筛选，提供便捷的图标参考、应用信息浏览、设计趋势洞察与灵感收集体验，是灵感收集、界面设计与产品调研提供更全面、直观的视觉参考",
+        "category": "创意设计"
+    },
+    {
+        "title": "Google Fonts",
+        "icon": "Google_Fonts_icon.webp",
+        "url": "https://fonts.google.com",
+        "description": "由 Google 提供的免费开源字体库，收录超过 1000+ 高质量字体，覆盖拉丁、中文、日文、韩文、阿拉伯语、希腊语等多语种字符集，支持现代变量字体技术，让同一字体文件即可呈现多种字重、宽度与风格，大幅减少加载体积，提升排版灵活度与网页性能",
+        "category": "创意设计"
+    },
+    {
+        "title": "Emoji Directory",
+        "icon": "Emoji_Directory_icon.webp",
+        "url": "https://emojidir.com/zh-CN",
+        "description": "专业的 Emoji 收录与展示平台，整合 Fluent Emoji、Noto Emoji、Apple Emoji 等多平台样式展示，提供分类筛选、关键词搜索、风格对比、一键复制与 PNG/SVG 下载，用户可快速浏览 3D、彩色、扁平、线性等多种风格，是全球创作者查找 Emoji 的便捷工具",
+        "category": "创意设计"
+    },
+    {
+        "title": "阿里巴巴矢量图标库",
+        "icon": "阿里巴巴矢量图标库_icon.webp",
+        "url": "https://www.iconfont.cn",
+        "description": "国内最大的矢量图标与设计素材平台，提供超过 3300 万图标、插画、3D素材与 Lottie动效，支持 SVG/PNG/AI/FontIcon 等多格式下载，具备智能搜索、在线编辑、可变字体、多色图标、项目管理与团队协作等功能，是国内最受欢迎的图标与设计素材平台",
+        "category": "创意设计"
+    },
+    {
+        "title": "Undraw",
+        "icon": "Undraw_icon.webp",
+        "url": "https://undraw.co/illustrations",
+        "description": "开源的 SVG 插画库，提供数千张风格统一、可无限缩放的 SVG 插画，全部可免费商用且无需署名，支持关键词搜索、自定义插画主色调、高质量矢量下载，插画涵盖商业、科技、人物、设计、应用场景等主题，适用于网站、App、演示文稿、博客与营销内容",
+        "category": "创意设计"
+    },
+    {
+        "title": "YouIcons",
+        "icon": "YouIcons_icon.webp",
+        "url": "https://cn.youicons.com",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "All SVG Icons",
+        "icon": "All_SVG_Icons_icon.webp",
+        "url": "https://allsvgicons.com",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "CocoMaterial",
+        "icon": "CocoMaterial_icon.webp",
+        "url": "https://cocomaterial.com",
+        "description": "开源手绘插画素材库，提供数千张可自定义的线稿插画，支持在线搜索、编辑、调色与免费下载，所有插画均基于开源授权，可自由使用、修改与商用，适合网页设计、品牌视觉、教育内容、演示文稿与创意项目，是内容创作者获取轻量级视觉素材的理想来源",
+        "category": "创意设计"
+    },
+    {
+        "title": "西瓜封面设计",
+        "icon": "西瓜封面设计_icon.webp",
+        "url": "https://cover.xgdh.cn",
+        "description": "在线封面设计工具，无需注册，完全免费使用，支持纯色、渐变与图片背景，自定义标题、水印与图标库，提供主题模式、一键切换与实时预览功能，支持多格式导出、自定义尺寸与高质量图片生成，适用于文章封面、课程封面、博客头图等多种创作场景",
+        "category": "创意设计"
+    },
+    {
+        "title": "yesicon",
+        "icon": "yesicon_icon.webp",
+        "url": "https://yesicon.app",
+        "description": "超大规模开源矢量图标平台，整合 200+ 开源图标库与 29 万+ 矢量图标，支持中文关键词检索、风格筛选、颜色与尺寸在线调整，提供 SVG/PNG下载与多框架代码复制，无需注册即可使用，帮助设计师、前端开发者与产品团队快速查找、编辑与集成图标资源",
+        "category": "创意设计"
+    },
+    {
+        "title": "svgl",
+        "icon": "svgl_icon.webp",
+        "url": "https://svgl.app",
+        "description": "免费开源的矢量标识资源库，收录 600+ 国际品牌、技术框架、AI工具与软件服务的矢量图标，支持快速搜索、复制SVG代码、免费下载与自由使用，适用于网站UI、前端项目、移动应用、设计稿与产品展示，以轻量、快速，为你的项目提供专业级图标资源",
+        "category": "创意设计"
+    },
+    {
+        "title": "FreeDownloadLogo",
+        "icon": "FreeDownloadLogo_icon.webp",
+        "url": "https://www.freedownloadlogo.com/cn",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "SignatureFont",
+        "icon": "SignatureFont_icon.webp",
+        "url": "https://signaturefont.net/zh",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "Flaticon",
+        "icon": "Flaticon_icon.webp",
+        "url": "https://www.flaticon.com",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "Iconbuddy",
+        "icon": "Iconbuddy_icon.webp",
+        "url": "https://iconbuddy.com",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "3D图标库",
+        "icon": "3D图标库_icon.webp",
+        "url": "https://www.ai-suguan.com",
+        "description": "",
+        "category": "创意设计"
     }
 ]

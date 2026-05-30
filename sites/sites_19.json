@@ -1,0 +1,261 @@
+[
+    {
+        "title": "Prompt123",
+        "icon": "Prompt123_icon.webp",
+        "url": "https://prompt123.cn",
+        "description": "完全免费的中文 AI 提示词平台，覆盖 DeepSeek、Kimi、豆包、小红书内容创作、短视频脚本、写作、编程、论文研究等多元场景，支持一键复制、精细分类、实时热门榜单，帮助用户快速找到最有效的 AI 指令，大幅提升创作效率与灵感产出速度",
+        "category": "网络驿站"
+    },
+    {
+        "title": "快捷键备忘录",
+        "icon": "快捷键备忘录_icon.webp",
+        "url": "https://hotkeycheatsheet.com/zh",
+        "description": "全平台快捷键查询工具，整理 208+ 常用应用与 26,800+ 快捷键，覆盖 Windows、macOS 与 Linux 三大系统，支持按应用、分类与系统浏览，帮助用户以最快方式查找各种软件的操作方式，全面提升效率，是专业人士与学习者必备的快捷键查询网站",
+        "category": "网络驿站"
+    },
+    {
+        "title": "文件快传",
+        "icon": "文件快传_icon.webp",
+        "url": "https://transfer.52python.cn",
+        "description": "基于 WebRTC 的端到端加密文件传输工具，无需注册、即开即用，支持多文件上传、实时文本消息、跨设备共享等功能，数据不经过服务器存储或中转，通过点对点直连实现高速、安全、隐私的文件分享，适合进行临时协作与内容分享，提升工作与生活效率",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Temp Number",
+        "icon": "Temp_Number_icon.webp",
+        "url": "https://temp-number.org/zh",
+        "description": "全球临时电话号码服平台，提供一次性号码用于短信接收与验证，支持多个国家的临时号码供用户选择，用户可直接使用平台号码接收短信，避免暴露真实手机号，适合注册App、网站、验证账号、在线交易、社交平台等场景，是进行临时短信验证的便捷工具",
+        "category": "网络驿站"
+    },
+    {
+        "title": "TemporaryMail",
+        "icon": "TemporaryMail_icon.webp",
+        "url": "https://temporarymail.com/zh",
+        "description": "匿名、安全的临时邮箱服务，即时生成一次性电子邮件地址，可用于注册网站、接收验证邮件等场景，避免真实邮箱暴露，有效隔离广告、推销与潜在恶意邮件，邮件自动过期、自毁、不记录个人信息，确保安全与匿名性，是注册网站与短期通信的最佳选择",
+        "category": "网络驿站"
+    },
+    {
+        "title": "聚合图床",
+        "icon": "聚合图床_icon.webp",
+        "url": "https://www.superbed.cn",
+        "description": "图片托管与分发平台，支持多源上传、自动生成外链、多平台同步与全球CDN加速，提供批量管理、格式转换、历史记录与基础权限控制，确保图片长期可用、加载迅速、管理便捷，为跨境电商卖家、博客作者、设计师与开发者提供高效稳定的图片管理方案",
+        "category": "网络驿站"
+    },
+    {
+        "title": "聚合视频",
+        "icon": "聚合视频_icon.webp",
+        "url": "https://v.superbed.cn",
+        "description": "视频托管与外链平台，提供自动转码、智能审核、多云存储、全球CDN加速、批量上传与跨平台嵌入等功能，支持网页上传、直链下载、m3u8导入、API上传与桌面客户端，可用于产品演示、教程视频、博客内容等场景，是构建高质量视频内容体验的理想平台",
+        "category": "网络驿站"
+    },
+    {
+        "title": "聚合网盘",
+        "icon": "聚合网盘_icon.webp",
+        "url": "https://pan.superbed.cn",
+        "description": "文件存储与分享平台，支持多云备份、极速上传、外链分享、跨平台访问与稳定CDN加速，提供高可用的文件托管能力，结合聚合图床生态，实现图片、视频、文档与大文件的一站式管理、存储与全球分发，适用于个人用户、跨境电商、内容创作者与团队协作",
+        "category": "网络驿站"
+    },
+    {
+        "title": "GetPostalCodes",
+        "icon": "GetPostalCodes_icon.webp",
+        "url": "https://www.getpostalcodes.com",
+        "description": "全球邮政编码查询平台，提供各国家与城市的邮编、区域信息、地理位置与行政区划数据，数据准确、更新及时、免费使用，支持快速搜索、精确定位与多语言浏览，帮助用户轻松查找邮政编码、地址范围与相关地理信息，是跨境电商、物流配送与地址验证的高效工具",
+        "category": "网络驿站"
+    },
+    {
+        "title": "视觉族",
+        "icon": "视觉族_icon.webp",
+        "url": "https://www.shijuezu.com",
+        "description": "专业的在线屏幕检测平台，提供 20+ 免费检测工具，支持坏点检测、漏光测试、色准校验、灰阶测试、刷新率检测等全方位验屏项目，适用于手机、平板、笔记本、显示器与电视检测，帮助用户快速发现屏幕问题，适合新机验收、二手交易与专业校色场景",
+        "category": "网络驿站"
+    },
+    {
+        "title": "鼠标测试",
+        "icon": "鼠标测试_icon.webp",
+        "url": "https://www.mousetester.cn",
+        "description": "专业的在线鼠标测试平台，提供鼠标按键检测、滚轮测试、双击检测、CPS点击速度测试、回报率测试、DPI精准度检测与光标平滑度分析等多项检测，基于浏览器本地运行、无需安装、无广告、免费使用，是进行鼠标性能诊断与故障排查的高精度鼠标检测工具",
+        "category": "网络驿站"
+    },
+    {
+        "title": "键盘测试",
+        "icon": "键盘测试_icon.webp",
+        "url": "https://www.keyboardtest.cn",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "手柄测试",
+        "icon": "手柄测试_icon.webp",
+        "url": "https://www.gamepadtester.cn",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "罗码术",
+        "icon": "罗码术_icon.webp",
+        "url": "https://www.luomashu.com",
+        "description": "高质量的在线认知测试平台，提供反应速度、记忆力、逻辑思维、人格测评、色彩敏感度等百余项科学测试，覆盖从基础反应到高阶思维的多维度能力评估体系，支持成绩记录、能力趋势图、个人能力雷达图等功能，是兼具实用性与娱乐性的认知工具集合",
+        "category": "网络驿站"
+    },
+    {
+        "title": "泡泡白噪音",
+        "icon": "泡泡白噪音_icon.webp",
+        "url": "https://www.ppbzy.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "摸鱼小游戏",
+        "icon": "摸鱼小游戏_icon.webp",
+        "url": "https://moyu.aolifu.org",
+        "description": "免费在线摸鱼小游戏平台，收录 80+ 休闲、怀旧、烧脑、对战小游戏，无需下载、打开即玩，适合通勤、午休、开会前的碎片时间，随时进入五分钟的快乐时光，提供植物大战僵尸、俄罗斯方块、益智闯关与经典街机等多类型游戏，轻松解压、快速进入状态",
+        "category": "网络驿站"
+    },
+    {
+        "title": "待一会",
+        "icon": "待一会_icon.webp",
+        "url": "https://daiyihui.com",
+        "description": "专注情绪调节与减压体验的在线平台，提供呼吸练习、安静冥想、写下烦恼、声音房间、记忆翻牌、星空漫游等互动工具，让你在忙碌生活中随时暂停片刻、舒缓压力、放松心情、恢复专注，这里没有压力、没有任务，只是一个让你安心待一会的地方",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Mixkit",
+        "icon": "Mixkit_icon.webp",
+        "url": "https://mixkit.co",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Soft Echo",
+        "icon": "Soft_Echo_icon.webp",
+        "url": "https://softecho.wowyou.cc",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "FMAIL",
+        "icon": "FMAIL_icon.webp",
+        "url": "https://femails.win",
+        "description": "免费、匿名、24小时有效的临时邮箱平台，支持一键生成一次性邮箱地址，用于接收验证码、注册邮件与临时通知，避免真实邮箱暴露带来的垃圾邮件与隐私风险，邮件自动过期删除，确保数据安全与匿名性，是防止垃圾邮件、避免信息泄露的绝佳工具",
+        "category": "网络驿站"
+    },
+    {
+        "title": "二维码生成器",
+        "icon": "二维码生成器_icon.webp",
+        "url": "https://cn.online-qrcode-generator.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "二维码扫描器",
+        "icon": "二维码扫描器_icon.webp",
+        "url": "https://www.online-qr-scanner.com/zh-cn",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "调色板",
+        "icon": "调色板_icon.webp",
+        "url": "https://cn.online-color.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "QwikQR",
+        "icon": "QwikQR_icon.webp",
+        "url": "https://qwikqrcode.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "教师工具箱",
+        "icon": "教师工具箱_icon.webp",
+        "url": "https://www.teacher.homes",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Apple 苹果产品参数中心",
+        "icon": "Apple_苹果产品参数中心_icon.webp",
+        "url": "https://hubweb.cn",
+        "description": "苹果设备与芯片参数查询平台，提供 Apple 全系列设备的详细规格、性能跑分、芯片架构、影像系统、屏幕技术等内容，支持多设备对比、芯片代际对比、CPU/GPU/AI 跑分查询，数据权威、信息更新及时，是探索 Apple 设备性能与技术细节的最佳参考平台",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Neal",
+        "icon": "Neal_icon.webp",
+        "url": "https://neal.fun",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "青柠起始页",
+        "icon": "青柠起始页_icon.webp",
+        "url": "https://www.limestart.cn",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Pic Detective",
+        "icon": "Pic_Detective_icon.webp",
+        "url": "https://picdetective.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "小游戏合集",
+        "icon": "小游戏合集_icon.webp",
+        "url": "https://game.teckbest.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "批量 URL 打开器",
+        "icon": "批量_URL_打开器_icon.webp",
+        "url": "https://openbulkurl.com/zh",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "My Steps",
+        "icon": "My_Steps_icon.webp",
+        "url": "https://mysteps.top",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "114号码通",
+        "icon": "114号码通_icon.webp",
+        "url": "https://114phone.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "词咕咕",
+        "icon": "词咕咕_icon.webp",
+        "url": "https://cugo.toolooz.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "老药新用全景研究",
+        "icon": "老药新用全景研究_icon.webp",
+        "url": "https://t3d7wcppdarmk.ok.kimi.link",
+        "description": "",
+        "category": "新知百态"
+    },
+    {
+        "title": "小故事铺",
+        "icon": "小故事铺_icon.webp",
+        "url": "https://storynook.cn",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "文字转手写",
+        "icon": "文字转手写_icon.webp",
+        "url": "https://text-to-handwriting.org/zh",
+        "description": "",
+        "category": "网络驿站"
+    }
+]

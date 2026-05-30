@@ -14,13 +14,6 @@
         "category": "全球门户"
     },
     {
-        "title": "APKMirror",
-        "icon": "APKMirror_icon.webp",
-        "url": "https://www.apkmirror.com",
-        "description": "全球知名的安卓 APK 下载平台，提供安全、可靠、经过验证的应用与游戏安装包，用户可直接获取官方签名的APK、APK Bundle、App Bundle等多种格式，支持版本回溯、更新对比与快速下载，为用户提供安全、透明且高效的 Android 应用获取体验",
-        "category": "全球门户"
-    },
-    {
         "title": "Google",
         "icon": "Google_icon.webp",
         "url": "https://www.google.com",

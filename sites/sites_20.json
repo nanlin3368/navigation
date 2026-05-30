@@ -1,0 +1,72 @@
+[
+    {
+        "title": "APKMirror",
+        "icon": "APKMirror_icon.webp",
+        "url": "https://www.apkmirror.com",
+        "description": "全球知名的安卓 APK 下载平台，提供安全、免费、无修改的官方签名 APK 文件，包括最新版本、历史版本、Beta测试版与多架构变体，支持 Google Play 应用镜像下载、版本更新记录查询、快速搜索与安全校验，是全球用户获取 Android 应用的首选可信来源",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "AppTeka",
+        "icon": "AppTeka_icon.webp",
+        "url": "https://appteka.store/apps",
+        "description": "Android 应用与游戏免费下载的第三方应用市场，涵盖系统工具、音乐与视频、个性化设置、健康健身、娱乐、摄影、教育等多种分类，帮助用户快速找到所需 APK，平台致力于提供安全、便捷的下载体验，是探索 Android 应用的优质资源平台",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "F-Droid",
+        "icon": "F-Droid_icon.webp",
+        "url": "https://f-droid.org/zh_Hans/packages",
+        "description": "完全自由开源的 Android 应用商店，提供数千款无广告、无跟踪、可验证源码的 FOSS 应用，所有应用均由开源代码构建，支持多源仓库、国内镜像加速、自动更新与隐私保护，提供分类浏览、版本历史、源码链接与反特性标注，是探索开源世界的最佳入口",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "Uptodown",
+        "icon": "Uptodown_icon.webp",
+        "url": "https://cn.uptodown.com",
+        "description": "全球知名的第三方应用下载平台，提供安全可靠的 APK 下载、软件更新、历史版本与多平台应用资源，覆盖 Android、Windows、Mac、iOS 等系统，支持高速下载、区域无锁访问、官方原版验证与多语言界面，是全球用户与开发者信赖的应用获取渠道",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "APKPure",
+        "icon": "APKPure_icon.webp",
+        "url": "https://m.apkpure.com/cn",
+        "description": "全球领先的安卓应用下载平台，提供最新、热门与经典版本的 APK/XAPK 文件下载，支持区域受限应用访问、下载旧版本应用、获取测试版应用、多设备兼容，所有安装包均经过严格安全检测，确保无病毒、无恶意代码，是获取 Android 应用的可靠渠道",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "A2ZAPK",
+        "icon": "A2ZAPK_icon.webp",
+        "url": "https://a2zapk.co",
+        "description": "安卓应用与游戏下载平台，提供热门修改版、付费解锁版、去广告版与旧版本资源等多类型内容，更新快速、资源丰富，支持快速搜索、分类浏览与多版本选择，满足用户对多版本、多功能与特殊版本的下载需求，是寻找特殊版本与最新 Mod 应用的首选来源",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "APKCombo",
+        "icon": "APKCombo_icon.webp",
+        "url": "https://apkcombo.com/zh",
+        "description": "全球领先的安卓应用与游戏下载平台，提供最新版本、历史版本、地区限定App与大型游戏的高速直链下载，支持设备型号、CPU 架构与系统版本精准筛选，无需登录即可免费下载，安全快速、更新及时，是获取安卓软件包、跨区应用与版本管理的优质选择",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "OpenAPK",
+        "icon": "OpenAPK_icon.webp",
+        "url": "https://www.openapk.net/zh/",
+        "description": "Android 开源应用的高质量下载平台，收录数千款高质量 FOSS 应用与无广告游戏，涵盖工具、效率、隐私、安全、娱乐等多类别，所有应用均经过严格审核，确保来源透明、代码可验证、安全可安装，是探索安卓开源生态、获取纯净应用体验的理想入口",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "APKToy",
+        "icon": "APKToy_icon.webp",
+        "url": "https://m.apktoy.com",
+        "description": "优质的安卓 APK 下载平台，提供热门应用与游戏的最新版本安装包，支持高速、稳定、免费获取，站点每日更新热门APK，覆盖工具、娱乐、系统等多类资源，提供安全检测与版本信息，帮助用户快速找到可靠的安卓应用下载渠道，是值得信赖的安卓资源库",
+        "category": "安卓镜像"
+    },
+    {
+        "title": "Sfile Mobi",
+        "icon": "Sfile_Mobi_icon.webp",
+        "url": "https://sfile.mobi",
+        "description": "极简主义云端存储与分发平台，依托高效的数据交互逻辑与无限制下载带宽，重塑移动互联网时代的文件传输体验",
+        "category": "安卓镜像"
+    }
+]

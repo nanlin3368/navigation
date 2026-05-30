@@ -1,58 +1,86 @@
 [
     {
-        "title": "抠抠图",
-        "icon": "抠抠图_icon.webp",
-        "url": "https://www.koukoutu.com",
-        "description": "智能化的 AI抠图与图片编辑平台，提供人物/商品抠图、智能去背景、商品图修饰、老照片上色、图片高清放大、AI去水印、印花图案提取、证件照制作等工具，全自动识别主体与背景，支持批量处理与高清下载，让电商主图、设计素材、社交图片制作更轻松",
-        "category": "图像处理"
+        "title": "鹿鸣",
+        "icon": "鹿鸣_icon.webp",
+        "url": "https://www.lumingrj.com",
+        "description": "专注于提供 Win/Mac 平台的软件资源下载、图文安装教程与常见故障解决方案，内容覆盖设计、办公、工程、科研等高频软件领域，站内软件均配备详细步骤说明与实机测试说明，并支持多网盘高速下载，帮助用户在最短时间内完成软件获取、安装配置与问题排查，提升整体使用效率与体验",
+        "category": "资源下载"
     },
     {
-        "title": "Shutterstock Create",
-        "icon": "Shutterstock_Create_icon.webp",
-        "url": "https://www.shutterstock.com/zh/image-design-tools",
-        "description": "汇集多款专业级的在线图片设计工具，提供图片编辑、裁剪、压缩、格式转换到高级抠图、拼贴制作、调色板生成、社交媒体尺寸适配等全流程视觉创作，平台界面直观、操作轻松，支持社交媒体常用尺寸与多格式导出，全面提升品牌曝光与创意生产力",
-        "category": "图像处理"
+        "title": "软仓",
+        "icon": "软仓_icon.webp",
+        "url": "https://www.ruancang.net",
+        "description": "聚合专业软件学习资源的公益导航站，分类全面、无广告、资源丰富，收录数百款设计、三维、影视、建筑、机械、电子与数据分析等领域软件，提供学习版软件下载与网盘直链，适合学生与从业者用于非商业学习与技能提升",
+        "category": "资源下载"
     },
     {
-        "title": "Squoosh",
-        "icon": "Squoosh_icon.webp",
-        "url": "https://squoosh.app",
-        "description": "由谷歌开发的免费在线图片压缩与格式转换工具，支持PNG、JPEG、WebP、AVIF等多种格式，可实时预览压缩前后效果、极高压缩率、可视化参数调节、离线可用等优势，成为设计师、开发者、内容创作者优化图片体积、提升网页加载速度的理想工具",
-        "category": "图像处理"
+        "title": "奇迹秀",
+        "icon": "奇迹秀_icon.webp",
+        "url": "https://www.qijishow.com",
+        "description": "视觉创意与灵感分享的内容聚合平台，涵盖设计灵感、创意案例、视觉素材、艺术作品等多类型内容，网站以高质量精选内容为核心，帮助设计师、创作者、短视频从业者快速找到灵感方向，界面清爽、更新稳定，是创意工作者常用的灵感来源地",
+        "category": "资源下载"
     },
     {
-        "title": "To WebP",
-        "icon": "To_WebP_icon.webp",
-        "url": "https://towebp.io",
-        "description": "完全免费的在线图片格式转换工具，支持批量将JPG、JPEG、PNG、GIF、SVG、ICO等主流格式一键转换为 WebP格式，显著减少图片体积，支持自由调整 WebP图片的质量、尺寸倍率、压缩方式等高级参数，以满足设计师、开发者等不同场景的专业需求",
-        "category": "图像处理"
+        "title": "考拉资源库",
+        "icon": "考拉资源库_icon.webp",
+        "url": "https://www.kaolarj.com",
+        "description": "个人非盈利性网站，专注分享日常工作生活办公技术资源，覆盖绿色软件、办公软件、系统工具、格式转换、学习辅助等多类实用内容，所有资源均由站长亲测，确保安全、纯净、可用，是学生、职场人和电脑爱好者获取高质量资源的优选平台",
+        "category": "资源下载"
     },
     {
-        "title": "在线图片编辑",
-        "icon": "在线图片编辑_icon.webp",
-        "url": "https://llccj.cn",
-        "description": "永久免费的在线图片编辑平台，支持不规则形状裁剪、智能背景移除、多图层自由编辑、长图无缝拼接、海报级排版、马赛克与模糊隐私保护、高清无损导出等核心能力，覆盖从轻量编辑到复杂创作的多种功能，满足内容创作者、设计师等不同用户需求",
-        "category": "图像处理"
+        "title": "Crx搜搜",
+        "icon": "Crx搜搜_icon.webp",
+        "url": "https://www.crxsoso.com",
+        "description": "浏览器扩展聚合平台，收录海量 Chrome 扩展插件，提供高速、纯净、无广告的 CRX 文件下载与在线搜索服务，支持插件历史版本、离线安装包、扩展镜像资源加速，适合普通用户快速查找插件与开发者进行版本对比与调试",
+        "category": "资源下载"
     },
     {
-        "title": "iLoveIMG",
-        "icon": "iLoveIMG_icon.webp",
-        "url": "https://www.iloveimg.com/zh-cn",
-        "description": "全套免费的在线图片编辑工具，提供压缩、裁剪、格式转换、去背景、增强清晰度与批量处理等功能，支持PNG、JPG、WEBP等多种格式，界面简洁直观，支持批量操作，满足从日常编辑到专业设计的多种需求，是提升日常办公与图片编辑效率的利器",
-        "category": "图像处理"
+        "title": "爱PPT",
+        "icon": "爱PPT_icon.webp",
+        "url": "https://www.2ppt.com",
+        "description": "智算时代的一键式演示文稿生成平台，依托海量专业模板库与 AI 逻辑，实现从创意标题到高品质 PPT 方案的极速转化",
+        "category": "资源下载"
     },
     {
-        "title": "imageonline",
-        "icon": "imageonline_io_icon.webp",
-        "url": "https://imageonline.io",
-        "description": " 免费在线图像工具和照片编辑器，提供 220+ 专业工具，包括图片压缩、裁剪、调整大小、格式转换、滤镜特效、背景去除、GIF编辑、颜色校正、测量与摄影计算等工具，适合设计师、摄影师及普通用户的多用途图像处理网站，是极具生产力的在线编辑器",
-        "category": "图像处理"
+        "title": "简历模板资源网",
+        "icon": "简历模板资源网_icon.webp",
+        "url": "https://www.jianlimoban-ziyuan.com",
+        "description": "专注于职场竞争力的文书资源库，聚合海量可编辑的 Word 简历模板，旨在为求职者提供专业、标准且高效的排版方案",
+        "category": "资源下载"
     },
     {
-        "title": "Compress Image",
-        "icon": "Compress_Image_icon.webp",
-        "url": "https://compressimage.cn/zh-CN",
-        "description": "高效、安全的在线图片压缩工具，支持JPG、PNG、WebP、GIF、BMP等格式，支持批量压缩与大图优化，采用行业领先算法，压缩率高达 95% 且画质超清，所有处理均在本地完成，确保隐私数据不上传，提供极速、免费、安全的图片压缩体验",
-        "category": "图像处理"
+        "title": "Font",
+        "icon": "Font_icon.webp",
+        "url": "https://font.icu",
+        "description": "免费字体资源平台，提供丰富的中英文字体资源，涵盖黑体、宋体、楷体、手写体、艺术体等多种风格，支持在线预览、授权类型查看、字形数量展示与免费下载，特别适合设计师、品牌方与内容创作者快速找到可安全商用的字体，提升视觉表现与创意效率",
+        "category": "创意设计"
+    },
+    {
+        "title": "SeedHub",
+        "icon": "SeedHub_icon.webp",
+        "url": "https://sidhub.cc",
+        "description": "",
+        "category": "资源下载"
+    },
+    {
+        "title": "PPT 库",
+        "icon": "PPT库_icon.webp",
+        "url": "https://pptku.org",
+        "description": "",
+        "category": "资源下载"
+    },
+    {
+        "title": "字体库",
+        "icon": "字体库_icon.webp",
+        "url": "https://zitiku.org",
+        "description": "",
+        "category": "资源下载"
+    },
+    {
+        "title": "尔尔小站",
+        "icon": "尔尔小站_icon.webp",
+        "url": "https://erer.site",
+        "description": "",
+        "category": "资源下载"
     }
 ]

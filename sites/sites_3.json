@@ -21,6 +21,13 @@
         "category": "项目汇总"
     },
     {
+        "title": "Datawhale",
+        "icon": "Datawhale_icon.webp",
+        "url": "https://github.com/datawhalechina",
+        "description": "",
+        "category": "项目汇总"
+    },
+    {
         "title": "GitHub中文排行榜",
         "icon": "GitHub中文排行榜_icon.webp",
         "url": "https://github.com/GrowingGit/GitHub-Chinese-Top-Charts",

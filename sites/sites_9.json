@@ -1,51 +1,282 @@
 [
     {
-        "title": "观云",
-        "icon": "观云_icon.webp",
-        "url": "https://snapvee.com/zh",
-        "description": "面向创作者的一站式 AI 内容工作台，支持多平台视频下载、视频总结、字幕转录、文案去 AI 味、AI 生图与 AI 生视频等核心能力，通过自动提取、理解与再创作，让内容从素材到表达更高效，帮助创作者、运营者与团队快速完成内容生产与二次创作",
-        "category": "媒体创作"
+        "title": "Mikutools",
+        "icon": "Mikutools_icon.webp",
+        "url": "https://okmiku.com",
+        "description": "极客范十足的轻量化在线工具箱，提供文本编辑、格式转换、图片处理、音频视频工具、AI 工具、加密解密、开发者工具等多种功能，所有工具均可免费使用，无需下载软件，操作简单、加载快速，是效率、实用与便捷于一体的在线工具集合站",
+        "category": "综合效率"
     },
     {
-        "title": "视频大师",
-        "icon": "视频大师_icon.webp",
-        "url": "https://www.shipindashi.cn",
-        "description": "全能型在线视频处理平台，提供视频剪辑、压缩、去水印、格式转换、字幕自动生成、音频提取、封面生成等全流程工具，支持多格式上传与高速云端处理，无需下载软件，打开浏览器即可使用，帮助用户快速处理短视频、宣传片、课程视频与自媒体内容",
-        "category": "媒体创作"
+        "title": "蜻蜓工具",
+        "icon": "蜻蜓工具_icon.webp",
+        "url": "https://33tool.com",
+        "description": "全能型在线工具箱，涵盖开发工具、编码加密、办公日常及生活娱乐等多元分类，提供HTML格式化、汉字转拼音、图片格式转换、Base64加密解密等多种实用功能，免费、快速、界面简洁、无需安装，是开发者与日常用户提升工作效率的便捷助手",
+        "category": "综合效率"
     },
     {
-        "title": "文本转语音",
-        "icon": "文本转语音_icon.webp",
-        "url": "https://text2voice.cc",
-        "description": "完全免费的在线文字转语音平台，采用微软 Edge TTS 技术，提供媲美真人的自然语音效果，支持中文、英文、日文等多语言，支持多种语音角色可选，自定义语速与音调，在线播放与 MP3 下载，无需注册、无限次数，适用于短视频配音、播客制作等场景",
-        "category": "媒体创作"
+        "title": "Wux Webtools",
+        "icon": "Wux_Webtools_icon.webp",
+        "url": "https://wuxwebtools.com/zh-CN",
+        "description": "完全免费的在线工具平台，提供文本处理、编码转换、加密解密、格式化工具、开发者工具等五十多种工具，无需安装与注册、快速高效，所有操作均在浏览器本地完成，主打隐私与安全，适合开发者、设计师与日常用户的一站式在线工具平台",
+        "category": "综合效率"
     },
     {
-        "title": "视频压缩",
-        "icon": "视频压缩_icon.webp",
-        "url": "https://videocompressors.com/zh",
-        "description": "免费、无需上传、100% 隐私保护的本地在线视频压缩工具，支持 MP4/MOV/AVI 等主流格式，依托 GPU 加速技术，最高可将视频体积缩小 90%，轻松满足 Discord、微信、邮件等平台的上传限制，压缩快速、安全无水印，适合个人与专业用户高效处理视频",
-        "category": "媒体创作"
+        "title": "FastDo",
+        "icon": "FastDo_icon.webp",
+        "url": "https://fastdo.tools",
+        "description": "多元化的在线效率工具站，覆盖电商设计、自媒体创作、文档处理、开发调试等全场景高频需求，提供图片压缩/抠图、PDF 转换/合并、视频剪辑/压缩、AI 文案生成、数据图表制作、开发者工具等 200+ 实用工具，无需安装，打开浏览器即可进入处理流程",
+        "category": "综合效率"
     },
     {
-        "title": "视频转JPG",
-        "icon": "视频转JPG_icon.webp",
-        "url": "https://videotojpg.com/zh",
-        "description": "高质量在线视频转图片工具，支持最大 1.9GB文件处理，兼容多种视频格式，输出JPG、PNG、WebP格式，提供清晰度检测、时间段截取、图片预览与批量打包下载等专业功能，无论你是摄影师、视频创作者还是社媒运营，都能轻松获得高质量截图",
-        "category": "媒体创作"
+        "title": "ImageOnline",
+        "icon": "ImageOnline_co_icon.webp",
+        "url": "https://imageonline.co/cn",
+        "description": "终极免费在线工具套件，探索超过 250+ 免费在线工具，涵盖图像裁剪、格式转换、滤镜增强、视频合并、音频剪辑、GIF制作、PDF 合并与拆分、JSON/CSS/HTML工具、硬件诊断等实用功能，100%免费、快速、安全，可在任何设备上高速使用",
+        "category": "综合效率"
     },
     {
-        "title": "VERT",
-        "icon": "VERT_icon.webp",
-        "url": "https://vert.sh",
-        "description": "开源免费的文件格式转换工具，采用端侧处理技术，支持数百种图片、音频、视频与文档格式互转，无广告、无文件大小限制，提供极致简约且高效的转换体验，图片、音频及文档的转换均在本地完成，不上传、不存储、不追踪，确保隐私安全与高效速度",
-        "category": "媒体创作"
+        "title": "ToolDuck",
+        "icon": "ToolDuck_icon.webp",
+        "url": "https://toolduck.cn",
+        "description": "高质量的免费在线工具库，提供 350+ 免费在线工具，覆盖AI助手、智能写作、图片处理、文本转换、效率提升、开发辅助等多领域工具，无需下载，即开即用，支持便捷分类与快速检索，帮助用户高效查找并使用各种在线工具，让办公、学习、开发更高效",
+        "category": "综合效率"
     },
     {
-        "title": "视频工具",
-        "icon": "视频工具_icon.webp",
-        "url": "https://tools.video/zh-CN",
-        "description": "功能全能且免费的视频与音频工具，提供 26款完全免费的媒体处理工具，涵盖压缩、裁剪、合并、智能补帧、加字幕、加水印、降噪、转GIF等丰富功能，支持 50GB大文件与多种专业格式，无需注册，无需下载安装即可在浏览器中实现高效的媒体创作",
-        "category": "媒体创作"
+        "title": "LocallyTools",
+        "icon": "LocallyTools_icon.webp",
+        "url": "https://locallytools.com/zh-Hans",
+        "description": "安全、免费、可离线使用的本地工具集合，汇集图片压缩与格式转换、PDF拆分/合并、文本与编码工具、代码格式化、UUID生成等开发者功能，所有操作均在本地浏览器完成，无需上传文件，确保隐私零泄露，为用户提供快速、高效、安全的使用体验",
+        "category": "综合效率"
+    },
+    {
+        "title": "一个木函",
+        "icon": "一个木函_icon.webp",
+        "url": "https://ol.woobx.cn",
+        "description": "全能在线效率工具，提供超过 80+ 实用工具，支持短网址生成、网络测速、图片压缩、正则表达式大全、JSON/YAML转换等高频需求，网页端无需安装，即开即用，部分工具支持会员增强功能，是创作、办公、学习、开发于一体的高效在线工具",
+        "category": "综合效率"
+    },
+    {
+        "title": "帮小忙",
+        "icon": "帮小忙_icon.webp",
+        "url": "https://tool.browser.qq.com",
+        "description": "腾讯推出的在线多功能工具箱平台，覆盖图片处理、PDF 转换、文档格式转换、视频处理、生活服务、教育学习、开发者工具等多类场景，所有工具均可在线即开即用，部分功能限时免费，适用于办公、学习、自媒体创作、生活查询等多种需求",
+        "category": "综合效率"
+    },
+    {
+        "title": "即时工具",
+        "icon": "即时工具_icon.webp",
+        "url": "https://www.67tool.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "奇妙工具箱",
+        "icon": "奇妙工具箱_icon.webp",
+        "url": "https://www.magicalbox.cn",
+        "description": "集日常娱乐、文档办公、图片处理、文本优化、开发应用等于一体的在线工具集合平台，支持 PDF/图片/音视频转换、OCR识别、数据查询、单位换算、加密解密、正则工具等上百种实用功能，轻量便捷、随开随用，高效完成各种工作与生活任务",
+        "category": "综合效率"
+    },
+    {
+        "title": "多功能工具箱",
+        "icon": "多功能工具箱_icon.webp",
+        "url": "https://www.996day.com",
+        "description": "极致纯净的纯前端工具集，涵盖文本处理、图片编辑、视频剪辑、音频转换、OCR文字识别、屏幕录制、格式转换、图片压缩、JSON查看、颜色工具等 40+ 高效实用工具，所有功能均在浏览器本地运行，安全高效，适用于办公、设计、开发等多场景",
+        "category": "综合效率"
+    },
+    {
+        "title": "Tools-Web",
+        "icon": "Tools-Web_icon.webp",
+        "url": "https://tools.ranblogs.com",
+        "description": "开源免费的在线工具聚合平台，提供URL编码/解码、图片格式转换、文本对比、ASCll码表、Color选择器、数据图表等多种 Web 工具，无需安装即可使用，平台界面简洁、加载快速，是程序员、学生、设计师与内容创作者的实用在线工具箱”",
+        "category": "综合效率"
+    },
+    {
+        "title": "Next BConvert",
+        "icon": "Next_BConvert_icon.webp",
+        "url": "https://nextbconvert.com/zh",
+        "description": "免费的在线文件转换工具，支持图片转换、视频压缩、音频提取、文档格式互转、HEIC转JPG、MP4转MP3、PDF转Word等功能，浏览器本地处理，隐私安全，支持批量任务与离线模式，兼容移动端与PC端，满足日常办公、学习与内容创作多场景需求",
+        "category": "综合效率"
+    },
+    {
+        "title": "iToTii 工具箱",
+        "icon": "iToTii_工具箱_icon.webp",
+        "url": "https://tool.itotii.com",
+        "description": "免费、高效且功能全面的在线工具箱，覆盖智能工具、生活工具、站长工具、文本处理、数学计算、PDF转换、图片拼接、加密解密、编码转码等多领域在线工具，界面简洁、操作简单，是一个全面、便捷、稳定的在线工具集合站",
+        "category": "综合效率"
+    },
+    {
+        "title": "123Apps",
+        "icon": "123Apps_icon.webp",
+        "url": "https://123apps.com/cn",
+        "description": "极简风格的在线工具集，涵盖视频、音频、PDF文件编辑、多格式文件转换等分类，支持剪辑、合并、录制、压缩、格式转换等功能，操作简单、无需安装、在线即可快速处理各类文件，适合日常用户与内容创作者便捷使用，让文件处理更高效、更轻松",
+        "category": "综合效率"
+    },
+    {
+        "title": "UU在线工具",
+        "icon": "UU在线工具_icon.webp",
+        "url": "https://uutool.cn",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "CDKM",
+        "icon": "CDKM_icon.webp",
+        "url": "https://cdkm.com/cn",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "工具哇",
+        "icon": "工具哇_icon.webp",
+        "url": "https://toolwa.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "MixToolsHub",
+        "icon": "MixToolsHub_icon.webp",
+        "url": "https://www.mixtoolshub.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "OOCCRR",
+        "icon": "OOCCRR_icon.webp",
+        "url": "https://www.ooccrr.com/zh",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Easy Tools Box",
+        "icon": "Easy_Tools_Box_icon.webp",
+        "url": "https://www.easytoolsbox.com/zh",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "懒人工具",
+        "icon": "懒人工具_icon.webp",
+        "url": "https://www.lanren-tools.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "酷工具",
+        "icon": "酷工具_icon.webp",
+        "url": "https://kutool.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "金牌在线工具箱",
+        "icon": "金牌在线工具箱_icon.webp",
+        "url": "https://www.gold-tools.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Doc2X",
+        "icon": "Doc2X_icon.webp",
+        "url": "https://doc2x.noedgeai.com/parse",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "万事通工具箱",
+        "icon": "万事通工具箱_icon.webp",
+        "url": "https://unitools.fun",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "专业在线工具集",
+        "icon": "专业在线工具集_icon.webp",
+        "url": "https://www.tooljson.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "在线工具集",
+        "icon": "在线工具集_icon.webp",
+        "url": "https://xtechtools.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "ToolPkg",
+        "icon": "ToolPkg_icon.webp",
+        "url": "https://www.toolpkg.com/zh",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "JustHTMLs",
+        "icon": "JustHTMLs_icon.webp",
+        "url": "https://www.htmls.dev",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "自然工具箱",
+        "icon": "自然工具箱_icon.webp",
+        "url": "https://toolbox.osbooting.com/zh",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "极速箱",
+        "icon": "极速箱_icon.webp",
+        "url": "https://www.jisuxiang.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Hoothin Tools",
+        "icon": "Hoothin_Tools_icon.webp",
+        "url": "https://tool.hoothin.com/zh-CN",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Lynote",
+        "icon": "Lynote_icon.webp",
+        "url": "https://lynote.ai/zh",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Edit Tools",
+        "icon": "Edit_Tools_icon.webp",
+        "url": "https://edittools.org/zh-cn",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "10015",
+        "icon": "10015_icon.webp",
+        "url": "https://10015.io",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "SimplyKit",
+        "icon": "SimplyKit_icon.webp",
+        "url": "https://simplykit.cn",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "XTools",
+        "icon": "XTools_icon.webp",
+        "url": "https://xtools.im",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Master 工具箱",
+        "icon": "Master_工具箱_icon.webp",
+        "url": "https://tool.mastermao.com/zh",
+        "description": "",
+        "category": "综合效率"
     }
 ]

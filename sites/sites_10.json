@@ -1,107 +1,289 @@
 [
     {
-        "title": "PDFCraft",
-        "icon": "PDFCraft_icon.webp",
-        "url": "http://pdfcraft.devtoolcafe.com/zh",
-        "description": "基于浏览器的隐私级 PDF 处理矩阵，支持近百项专业编辑与转换功能，坚持本地运行逻辑，确保文档数据绝不上传云端",
-        "category": "文档办公"
+        "title": "抠抠图",
+        "icon": "抠抠图_icon.webp",
+        "url": "https://www.koukoutu.com",
+        "description": "智能化的 AI抠图与图片编辑平台，提供人物/商品抠图、智能去背景、商品图修饰、老照片上色、图片高清放大、AI去水印、印花图案提取、证件照制作等工具，全自动识别主体与背景，支持批量处理与高清下载，让电商主图、设计素材、社交图片制作更轻松",
+        "category": "图像处理"
     },
     {
-        "title": "爱PPT",
-        "icon": "爱PPT_icon.webp",
-        "url": "https://www.2ppt.com",
-        "description": "智算时代的一键式演示文稿生成平台，依托海量专业模板库与 AI 逻辑，实现从创意标题到高品质 PPT 方案的极速转化",
-        "category": "文档办公"
+        "title": "Shutterstock",
+        "icon": "Shutterstock_icon.webp",
+        "url": "https://www.shutterstock.com/zh/image-design-tools",
+        "description": "汇集多款专业级的在线图片设计工具，提供图片编辑、裁剪、压缩、格式转换到高级抠图、拼贴制作、调色板生成、社交媒体尺寸适配等全流程视觉创作，平台界面直观、操作轻松，支持社交媒体常用尺寸与多格式导出，全面提升品牌曝光与创意生产力",
+        "category": "图像处理"
     },
     {
-        "title": "简历模板资源网",
-        "icon": "简历模板资源网_icon.webp",
-        "url": "https://www.jianlimoban-ziyuan.com",
-        "description": "专注于职场竞争力的文书资源库，聚合海量可编辑的 Word 简历模板，旨在为求职者提供专业、标准且高效的排版方案",
-        "category": "文档办公"
+        "title": "i2IMG",
+        "icon": "i2IMG_icon.webp",
+        "url": "https://www.i2img.com/zh",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "QwikPDF",
-        "icon": "QwikPDF_icon.webp",
-        "url": "https://qwikpdf.com",
-        "description": "追求极致速度的轻量化 PDF 处理引擎，通过精简的交互设计提供流畅的文档合并、压缩与格式转换体验，实现即开即办",
-        "category": "文档办公"
+        "title": "To WebP",
+        "icon": "To_WebP_icon.webp",
+        "url": "https://towebp.io",
+        "description": "完全免费的在线图片格式转换工具，支持批量将JPG、JPEG、PNG、GIF、SVG、ICO等主流格式一键转换为 WebP格式，显著减少图片体积，支持自由调整 WebP图片的质量、尺寸倍率、压缩方式等高级参数，以满足设计师、开发者等不同场景的专业需求",
+        "category": "图像处理"
     },
     {
-        "title": "iLovePDF",
-        "icon": "iLovePDF_icon.webp",
-        "url": "https://www.ilovepdf.com/zh-cn",
-        "description": "全功能 PDF 在线处理枢纽，提供覆盖全生命周期的文档编辑工具，以稳定、高效的服务助力个人与企业数字化办公",
-        "category": "文档办公"
+        "title": "在线图片编辑",
+        "icon": "在线图片编辑_icon.webp",
+        "url": "https://llccj.cn",
+        "description": "永久免费的在线图片编辑平台，支持不规则形状裁剪、智能背景移除、多图层自由编辑、长图无缝拼接、海报级排版、马赛克与模糊隐私保护、高清无损导出等核心能力，覆盖从轻量编辑到复杂创作的多种功能，满足内容创作者、设计师等不同用户需求",
+        "category": "图像处理"
     },
     {
-        "title": "PDF24",
-        "icon": "PDF24_icon.webp",
-        "url": "https://tools.pdf24.org/zh/all-tools",
-        "description": "源自德国的免费在线 PDF 工具包，集文档创建、合并、加密及高级编辑功能于一体，是公认的跨平台、无限制办公利器",
-        "category": "文档办公"
+        "title": "iLoveIMG",
+        "icon": "iLoveIMG_icon.webp",
+        "url": "https://www.iloveimg.com/zh-cn",
+        "description": "全套免费的在线图片编辑工具，提供压缩、裁剪、格式转换、去背景、增强清晰度与批量处理等功能，支持PNG、JPG、WEBP等多种格式，界面简洁直观，支持批量操作，满足从日常编辑到专业设计的多种需求，是提升日常办公与图片编辑效率的利器",
+        "category": "图像处理"
     },
     {
-        "title": "FileUNZIP",
-        "icon": "FileUNZIP_icon.webp",
-        "url": "https://cn.fileunzip.com",
-        "description": "垂直于云端解压缩领域的效率利器，支持 RAR、7Z 等多种加密格式的在线解压与封包，彻底解决跨设备文件读取障碍",
-        "category": "文档办公"
+        "title": "imageonline",
+        "icon": "imageonline_io_icon.webp",
+        "url": "https://imageonline.io",
+        "description": " 免费在线图像工具和照片编辑器，提供 220+ 专业工具，包括图片压缩、裁剪、调整大小、格式转换、滤镜特效、背景去除、GIF编辑、颜色校正、测量与摄影计算等工具，适合设计师、摄影师及普通用户的多用途图像处理网站，是极具生产力的在线编辑器",
+        "category": "图像处理"
     },
     {
-        "title": "TinyWow",
-        "icon": "TinyWow_icon.webp",
-        "url": "https://tinywow.com",
-        "description": "全维度数字化处理矩阵，提供涵盖 PDF、视频及图像处理的超两百项免费功能，主打零门槛、免注册的交互体验，是极致简约的办公生产力引擎",
-        "category": "文档办公"
+        "title": "神奇橡皮擦",
+        "icon": "神奇橡皮擦_icon.webp",
+        "url": "https://magiceraser.org/zh",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "Smallpdf",
-        "icon": "Smallpdf_icon.webp",
-        "url": "https://smallpdf.com",
-        "description": "数字化文档处理中枢，深度集成 PDF 压缩、格式转换及智能编辑等全维度工具矩阵，通过极简的交互链路与云端协作技术，全面重构现代办公的文档处理效能",
-        "category": "文档办公"
+        "title": "隐私图片压缩",
+        "icon": "隐私图片压缩_icon.webp",
+        "url": "https://compressimage.cn/zh-CN",
+        "description": "高效、安全的在线图片压缩工具，支持JPG、PNG、WebP、GIF、BMP等格式，支持批量压缩与大图优化，采用行业领先算法，压缩率高达 95% 且画质超清，所有处理均在本地完成，确保隐私数据不上传，提供极速、免费、安全的图片压缩体验",
+        "category": "图像处理"
     },
     {
-        "title": "PDFuck",
-        "icon": "PDFuck_icon.webp",
-        "url": "https://pdfuck.com/zh",
-        "description": "完全免费且安全的在线 PDF 工具集，支持合并、分割及转换等 40 多种功能。所有处理均在浏览器本地完成，文件无需上传，在保障隐私的同时实现极速编辑",
-        "category": "文档办公"
+        "title": "QwikIMG",
+        "icon": "Qwikimg_icon.webp",
+        "url": "https://qwikimg.com",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "i2PDF",
-        "icon": "i2PDF_icon.webp",
-        "url": "https://www.i2pdf.com/zh",
-        "description": "专业的在线 PDF 处理工具，提供格式转换、合并拆分、页面提取及压缩等全方位服务，支持图片转PDF、PDF编辑与OCR识别，无需下载安装即可在网页端高效处理文档",
-        "category": "文档办公"
+        "title": "Squoosh",
+        "icon": "Squoosh_icon.webp",
+        "url": "https://squoosh.app",
+        "description": "由谷歌开发的免费在线图片压缩与格式转换工具，支持PNG、JPEG、WebP、AVIF等多种格式，可实时预览压缩前后效果、极高压缩率、可视化参数调节、离线可用等优势，成为设计师、开发者、内容创作者优化图片体积、提升网页加载速度的理想工具",
+        "category": "图像处理"
     },
     {
-        "title": "PDFTool",
-        "icon": "PDFTool_icon.webp",
-        "url": "https://www.pdftool.cc/zh",
-        "description": "极简高效的在线 PDF 处理平台，主打本地浏览器渲染技术以确保隐私安全，集成了 PDF 合并、拆分、压缩及格式转换等多项实用功能，无需上传文件至服务器即可快速处理",
-        "category": "文档办公"
+        "title": "ImagesTool",
+        "icon": "ImagesTool_icon.webp",
+        "url": "https://imagestool.com/zh_CN",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "ABCD Office",
-        "icon": "ABCD_Office_icon.webp",
-        "url": "https://www.abcdoffice.com/zh-cn",
-        "description": "综合性的在线文件处理与转换平台，提供Word、Excel、PPT及PDF的在线编辑器与查看器，无需安装任何软件即可直接在浏览器中修改和管理各类文档",
-        "category": "文档处理"
+        "title": "Ai ImagesTool",
+        "icon": "Ai_ImagesTool_icon.webp",
+        "url": "https://ai.imagestool.com/zh-CN",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "Compare2Word",
-        "icon": "Compare2Word_icon.webp",
-        "url": "https://compare2word.com/zh",
-        "description": "在线文档差异比对工具，支持 Word、PDF、Excel 及纯文本等多格式比对，精准、直观地呈现文档间的细微差异，所有计算均在浏览器本地完成，主打隐私安全",
-        "category": "文档处理"
+        "title": "To ImagesTool",
+        "icon": "To_ImagesTool_icon.webp",
+        "url": "https://to.imagestool.com/zh-CN",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "魔方简历",
-        "icon": "魔方简历_icon.webp",
-        "url": "https://magicv.art/zh",
-        "description": "基于 AI 技术的智能在线简历制作平台，提供简历润色、语法检查等专业辅助功能，网站主打隐私安全，数据完全存储在用户本地设备中，并支持一站式导出为 PDF 或 JSON 格式",
-        "category": "文档处理"
+        "title": "Tiny ImagesTool",
+        "icon": "Tiny_ImagesTool_icon.webp",
+        "url": "https://tiny.imagestool.com/zh-CN",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "BG Remove",
+        "icon": "BG_Remove_icon.webp",
+        "url": "https://www.picbgremove.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "批量压缩图片",
+        "icon": "批量压缩图片_icon.webp",
+        "url": "https://image.wowyou.cc",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "Zero BGRemove",
+        "icon": "Zero_BGRemove_icon.webp",
+        "url": "https://bgremove.wowyou.cc",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "AI 图片检测工具",
+        "icon": "AI_图片检测工具_icon.webp",
+        "url": "https://www.aidetectlab.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "Remove",
+        "icon": "Remove_icon.webp",
+        "url": "https://remove.photos/zh-cn",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "七卡瓦",
+        "icon": "七卡瓦_icon.webp",
+        "url": "https://perlerbeads.zippland.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "Gemini去水印工具",
+        "icon": "Gemini去水印工具_icon.webp",
+        "url": "https://geminiwatermarkremover.io/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "RevizePic",
+        "icon": "RevizePic_icon.webp",
+        "url": "https://revizepic.pixzens.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "Image Splitter",
+        "icon": "Image_Splitter_icon.webp",
+        "url": "https://imagesplitter.tools/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "LIVP转换器",
+        "icon": "LIVP转换器_icon.webp",
+        "url": "https://livp.toolooz.com/zh-CN",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "BananaCut",
+        "icon": "BananaCut_icon.webp",
+        "url": "https://bananacut.kirenath.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "Collaigo",
+        "icon": "Collaigo_icon.webp",
+        "url": "https://www.collaigo.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "在线图像工具箱",
+        "icon": "在线图像工具箱_icon.webp",
+        "url": "https://phototool.cn",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "拼图 Pro",
+        "icon": "拼图_Pro_icon.webp",
+        "url": "https://www.collage-pro.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "ResizeOn",
+        "icon": "ResizeOn_icon.webp",
+        "url": "https://resizeon.com/zh-cn",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "PetPet 生成器",
+        "icon": "PetPet_生成器_icon.webp",
+        "url": "https://petpetgenerator.app/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "EXIF Frame",
+        "icon": "EXIF_Frame_icon.webp",
+        "url": "https://exifframe.org/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "SlimPic 瘦图",
+        "icon": "SlimPic_瘦图_icon.webp",
+        "url": "https://slimpic.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图裁刀",
+        "icon": "图裁刀_icon.webp",
+        "url": "https://snaptrim.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图拼宝",
+        "icon": "图拼宝_icon.webp",
+        "url": "https://picweave.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "抠小宝",
+        "icon": "抠小宝_icon.webp",
+        "url": "https://cuttypic.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图尺匠",
+        "icon": "图尺匠_icon.webp",
+        "url": "https://picsizer.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图切宝",
+        "icon": "图切宝_icon.webp",
+        "url": "https://snapcute.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "手抠宝",
+        "icon": "手抠宝_icon.webp",
+        "url": "https://handtrim.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图美啦",
+        "icon": "图美啦_icon.webp",
+        "url": "https://snapbeautify.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "PhotoCollagePro",
+        "icon": "PhotoCollagePro_icon.webp",
+        "url": "https://photocollagepro.com/zh",
+        "description": "",
+        "category": "图像处理"
     }
 ]

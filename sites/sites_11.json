@@ -1,121 +1,177 @@
 [
     {
-        "title": "Google Fonts",
-        "icon": "Google_Fonts_icon.webp",
-        "url": "https://fonts.google.com/icons",
-        "description": "谷歌官方出品的全球化字体与符号资源库，遵循 Material Design 体系，提供高度可自定义的变体调节，是交互设计的工业标准",
-        "category": "视觉灵感"
+        "title": "视频大师",
+        "icon": "视频大师_icon.webp",
+        "url": "https://www.shipindashi.cn",
+        "description": "全能型在线视频处理平台，提供视频剪辑、压缩、去水印、格式转换、字幕自动生成、音频提取、封面生成等全流程工具，支持多格式上传与高速云端处理，无需下载软件，打开浏览器即可使用，帮助用户快速处理短视频、宣传片、课程视频与自媒体内容",
+        "category": "媒体创作"
     },
     {
-        "title": "svgl",
-        "icon": "svgl_icon.webp",
-        "url": "https://svgl.app",
-        "description": "顶级的开源矢量标识资源库，深度聚合全球主流品牌与技术堆栈的 SVG Logo，提供纯净的原始代码与极致的检索交互体验",
-        "category": "视觉灵感"
+        "title": "文本转语音",
+        "icon": "文本转语音_icon.webp",
+        "url": "https://text2voice.cc",
+        "description": "完全免费的在线文字转语音平台，采用微软 Edge TTS 技术，提供媲美真人的自然语音效果，支持中文、英文、日文等多语言，支持多种语音角色可选，自定义语速与音调，在线播放与 MP3 下载，无需注册、无限次数，适用于短视频配音、播客制作等场景",
+        "category": "媒体创作"
     },
     {
-        "title": "Heroicons",
-        "icon": "Heroicons_icon.webp",
-        "url": "https://heroicons.com",
-        "description": "现代网页设计的审美标杆，由 Tailwind 团队打造的手工级精简 SVG 图标集，完美适配前端框架并支持一键代码复用",
-        "category": "视觉灵感"
+        "title": "视频压缩",
+        "icon": "视频压缩_icon.webp",
+        "url": "https://videocompressors.com/zh",
+        "description": "免费、无需上传、100% 隐私保护的本地在线视频压缩工具，支持 MP4/MOV/AVI 等主流格式，依托 GPU 加速技术，最高可将视频体积缩小 90%，轻松满足 Discord、微信、邮件等平台的上传限制，压缩快速、安全无水印，适合个人与专业用户高效处理视频",
+        "category": "媒体创作"
     },
     {
-        "title": "Remix Icon",
-        "icon": "Remix_Icon_icon.webp",
-        "url": "https://remixicon.com",
-        "description": "精美优雅的开源中性符号系统，风格高度一致且覆盖全维度场景，支持矢量下载与商业授权，是构建系统化 UI 的核心资产",
-        "category": "视觉灵感"
+        "title": "视频转 JPG",
+        "icon": "视频转_JPG_icon.webp",
+        "url": "https://videotojpg.com/zh",
+        "description": "高质量在线视频转图片工具，支持最大 1.9GB文件处理，兼容多种视频格式，输出JPG、PNG、WebP格式，提供清晰度检测、时间段截取、图片预览与批量打包下载等专业功能，无论你是摄影师、视频创作者还是社媒运营，都能轻松获得高质量截图",
+        "category": "媒体创作"
     },
     {
-        "title": "Uiverse",
-        "icon": "Uiverse_icon.webp",
-        "url": "https://uiverse.io",
-        "description": "全球领先的开源 UI 元素实验室，汇聚由 HTML 与 CSS 构建的精美交互组件，旨在为前端开发与视觉设计注入无限创意灵感",
-        "category": "视觉灵感"
-    },  
-    {
-        "title": "APPLORE",
-        "icon": "APPLORE_icon.webp",
-        "url": "https://app.uiboy.com",
-        "description": "专注于移动端界面美学的灵感探索平台，通过对海量精美 App 图标与 UI 案例的系统化收录，助力设计师捕捉前沿视觉动向",
-        "category": "视觉灵感"
+        "title": "VERT",
+        "icon": "VERT_icon.webp",
+        "url": "https://vert.sh",
+        "description": "开源免费的文件格式转换工具，采用端侧处理技术，支持数百种图片、音频、视频与文档格式互转，无广告、无文件大小限制，提供极致简约且高效的转换体验，图片、音频及文档的转换均在本地完成，不上传、不存储、不追踪，确保隐私安全与高效速度",
+        "category": "媒体创作"
     },
     {
-        "title": "Unsplash",
-        "icon": "Unsplash_icon.webp",
-        "url": "https://unsplash.com",
-        "description": "全球顶尖的高清摄影创作社区，提供极具美感且无版权限制的高质量影像素材，是数字化内容创作与视觉叙事的灵感源泉",
-        "category": "视觉灵感"
+        "title": "视频工具",
+        "icon": "视频工具_icon.webp",
+        "url": "https://tools.video/zh-CN",
+        "description": "功能全能且免费的视频与音频工具，提供 26款完全免费的媒体处理工具，涵盖压缩、裁剪、合并、智能补帧、加字幕、加水印、降噪、转GIF等丰富功能，支持 50GB大文件与多种专业格式，无需注册，无需下载安装即可在浏览器中实现高效的媒体创作",
+        "category": "媒体创作"
     },
     {
-        "title": "哲风壁纸",
-        "icon": "哲风壁纸_icon.webp",
-        "url": "https://haowallpaper.com",
-        "description": "高品质视觉美学积淀池，提供从 4K 到 8K 级别的超清壁纸资源，涵盖多元化艺术风格，旨在重塑数字设备的桌面感官体验",
-        "category": "视觉灵感"
+        "title": "音频大师",
+        "icon": "音频大师_icon.webp",
+        "url": "https://yinpindashi.cn",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "创意匹配 Emoji",
-        "icon": "创意匹配_Emoji_icon.webp",
-        "url": "https://emojidir.com/zh-CN",
-        "description": "全平台表情符号创意引擎，深度收录数千款精制 3D 视觉表情，为社交互动与内容创作提供极具表现力的视觉辅助元素",
-        "category": "视觉灵感"
+        "title": "闪记",
+        "icon": "闪记_icon.webp",
+        "url": "https://flashnotes-ai.web.app",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "阿里巴巴矢量图标库",
-        "icon": "阿里巴巴矢量图标库_icon.webp",
-        "url": "https://www.iconfont.cn",
-        "description": "国内功能最完备的图标内容协作平台，汇聚海量专业设计师原创的矢量素材，为互联网产品提供系统化的视觉符号解决方案",
-        "category": "视觉灵感"
+        "title": "Vocal Remover",
+        "icon": "Vocal_Remover_icon.webp",
+        "url": "https://vocalremover.org/zh/",
+        "description": "免费的 AI 在线人声分离工具，支持从歌曲中提取伴奏与人声，提供音调变换、BPM查找、音频剪辑、合并、录音等多种音频编辑功能，无需安装软件，浏览器运行即可快速制作卡拉 OK 伴奏、混音素材与音频样本，是音乐爱好者与创作者的多功能音频工具站",
+        "category": "媒体创作"
     },
     {
-        "title": "Undraw",
-        "icon": "Undraw_icon.webp",
-        "url": "https://undraw.co/illustrations",
-        "description": "数字化产品设计的“插画百科全书”，提供可高度自定义色彩的开源矢量插画库，助力开发者轻松构建具有现代感的交互界面",
-        "category": "视觉灵感"
+        "title": "观云",
+        "icon": "观云_icon.webp",
+        "url": "https://snapvee.com/zh",
+        "description": "面向创作者的一站式 AI 内容工作台，支持多平台视频下载、视频总结、字幕转录、文案去 AI 味、AI 生图与 AI 生视频等核心能力，通过自动提取、理解与再创作，让内容从素材到表达更高效，帮助创作者、运营者与团队快速完成内容生产与二次创作",
+        "category": "媒体创作"
     },
     {
-        "title": "Lucide",
-        "icon": "Lucide_icon.webp",
-        "url": "https://lucide.dev",
-        "description": "现代网页设计的灵感源泉，风格极简且高度一致的开源图标系统，是构建高品质 UI 界面、提升品牌视觉统一性的首选符号库",
-        "category": "视觉灵感"
+        "title": "AI speaker",
+        "icon": "AI_speaker_icon.webp",
+        "url": "https://ai-speaker.net/zh",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "2DWallpapers",
-        "icon": "2DWallpapers_icon.webp",
-        "url": "https://www.2dwallpapers.com",
-        "description": "高品质动漫与游戏壁纸分享平台，汇集热门的二次元及主流游戏高清背景图，支持免登录直接获取图片，所有资源均可免费下载且无水印",
-        "category": "视觉灵感"
+        "title": "TikTok 语音生成器",
+        "icon": "TikTok_语音生成器_icon.webp",
+        "url": "https://tiktokvoice.net/zh",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "Foodiesfeed",
-        "icon": "Foodiesfeed_icon.webp",
-        "url": "https://www.foodiesfeed.com/zh",
-        "description": "免费高质量美食摄影的首选资源，汇集全球摄影师分享的数千张高分辨率食物图片，涵盖烹饪、食材及餐饮场景，所有资源均可免费下载，完全免费用于商业和个人用途，无需署名",
-        "category": "视觉灵感"
+        "title": "人声分离",
+        "icon": "人声分离_icon.webp",
+        "url": "https://myvocalremover.com/zh",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "AURA 壁纸",
-        "icon": "AURA_壁纸_icon.webp",
-        "url": "https://gallery.wallaura.cn",
-        "description": "纯粹且优雅的高质量壁纸聚合平台，收录数万张经由人工审核的高清原图，涵盖自然、动漫及艺术等多种风格，提供极简的浏览体验",
-        "category": "视觉灵感"
+        "title": "配音助手",
+        "icon": "配音助手_icon.webp",
+        "url": "https://peiyinzhushou.com",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "西瓜封面设计",
-        "icon": "西瓜封面设计_icon.webp",
-        "url": "https://cover.xgdh.cn",
-        "description": "在线封面设计工具，免注册、完全免费使用，集成丰富的图标库与自定义编辑功能，可快速生成极具质感的纯色、渐变或图片背景封面，操作极简且支持实时预览",
-        "category": "视觉灵感"
+        "title": "文本转语音工具",
+        "icon": "文本转语音工具_icon.webp",
+        "url": "https://tts.kutool.com",
+        "description": "",
+        "category": "媒体创作"
     },
     {
-        "title": "Font",
-        "icon": "Font_icon.webp",
-        "url": "https://font.icu",
-        "description": "免费字体资源平台，提供海量中英文字体在线预览、搜索与下载，涵盖商用免费字体、设计字体、书法手写体等，支持快速查找与详情查看",
-        "category": "视觉灵感"
+        "title": "视频转提示词",
+        "icon": "视频转提示词_icon.webp",
+        "url": "https://videotoprompt.com/zh",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "FreeAIVideo",
+        "icon": "FreeAIVideo_icon.webp",
+        "url": "https://freeaivideo.org/zh-cn",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "Vidtill",
+        "icon": "Vidtill_icon.webp",
+        "url": "https://vidtill.com",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "视频转换宝",
+        "icon": "视频转换宝_icon.webp",
+        "url": "https://livecapture.toolooz.com",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "帧妙",
+        "icon": "帧妙_icon.webp",
+        "url": "https://framewow.toolooz.com",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "FreeCut",
+        "icon": "FreeCut_icon.webp",
+        "url": "https://www.freecut.net",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "VoiceCraft",
+        "icon": "VoiceCraft_icon.webp",
+        "url": "https://tts.wangwangit.com",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "Vidmore",
+        "icon": "Vidmore_icon.webp",
+        "url": "https://www.vidmore.com/zh",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "格式工厂",
+        "icon": "格式工厂_icon.webp",
+        "url": "https://z.pcgeshi.com",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "TextReader",
+        "icon": "TextReader_icon.webp",
+        "url": "https://textreader.cc/zh-cn",
+        "description": "",
+        "category": "媒体创作"
     }
 ]

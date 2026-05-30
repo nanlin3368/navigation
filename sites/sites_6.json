@@ -1,135 +1,156 @@
 [
     {
-        "title": "FreeCodeFormat",
-        "icon": "FreeCodeFormat_icon.webp",
-        "url": "https://www.freecodeformat.com/zh-hans",
-        "description": "全面的在线代码格式化与美化服务，支持 JSON、XML、HTML、CSS、JavaScript、SQL、C、C++、Java、Python 等多种语言，提供代码美化、压缩、校验、转换等功能，无需安装、快速高效，是开发者进行代码整理、调试与分享的高效工具平台",
-        "category": "综合效率"
+        "title": "菜鸟教程",
+        "icon": "菜鸟教程_icon.webp",
+        "url": "https://www.runoob.com",
+        "description": "国内最受欢迎的编程入门学习网站，提供HTML、CSS、JavaScript、Python、Java、PHP、Linux 等数百门编程语言与技术的免费教程，内容通俗易懂、结构严谨、实例丰富，适合零基础入门与开发者快速查阅，是中文开发者最信赖的技术学习平台",
+        "category": "学习成长"
     },
     {
-        "title": "Mikutools",
-        "icon": "Mikutools_icon.webp",
-        "url": "https://okmiku.com",
-        "description": "极客范十足的轻量化在线工具箱，提供文本编辑、格式转换、图片处理、音频视频工具、AI 工具、加密解密、开发者工具等多种功能，所有工具均可免费使用，无需下载软件，操作简单、加载快速，是效率、实用与便捷于一体的在线工具集合站",
-        "category": "综合效率"
+        "title": "wikiHow",
+        "icon": "wikiHow_icon.webp",
+        "url": "https://zh.wikihow.com",
+        "description": "全球知名的生活技能百科网站中文版，拥有上万篇详细图文教程，涵盖生活技巧、技能学习、健康、电脑、数码、职场等几乎所有领域，提供清晰步骤、插图与实用技巧，帮助你快速学习生活、工作与兴趣相关的各种技能，是解决日常问题、学习新技能的免费实用百科",
+        "category": "学习成长"
     },
     {
-        "title": "Wux Webtools",
-        "icon": "Wux_Webtools_icon.webp",
-        "url": "https://wuxwebtools.com/zh-CN",
-        "description": "完全免费的在线工具平台，提供文本处理、编码转换、加密解密、格式化工具、开发者工具等五十多种工具，无需安装与注册、快速高效，所有操作均在浏览器本地完成，主打隐私与安全，适合开发者、设计师与日常用户的一站式在线工具平台",
-        "category": "综合效率"
+        "title": "W3Schools",
+        "icon": "W3Schools_icon.webp",
+        "url": "https://www.w3schools.com",
+        "description": "全球最受欢迎的网页开发学习平台，涵盖HTML、CSS、JavaScript、Python等技术的简洁教程，提供在线实例、代码编辑器和实时演示，让用户在学习过程中快速理解语法与概念，内容清晰实用、示例丰富，是快速学习与查阅前端后端知识的经典参考站点",
+        "category": "学习成长"
     },
     {
-        "title": "蜻蜓工具",
-        "icon": "蜻蜓工具_icon.webp",
-        "url": "https://33tool.com",
-        "description": "全能型在线工具箱，涵盖开发工具、编码加密、办公日常及生活娱乐等多元分类，提供HTML格式化、汉字转拼音、图片格式转换、Base64加密解密等多种实用功能，免费、快速、界面简洁、无需安装，是开发者与日常用户提升工作效率的便捷助手",
-        "category": "综合效率"
+        "title": "Qwerty Learner",
+        "icon": "Qwerty_Learner_icon.webp",
+        "url": "https://qwerty.kaiyi.cool/mobile",
+        "description": "免费开源英语单词记忆与打字练习平台，通过输入单词练习肌肉记忆，支持 CET4/6、IELTS、TOEFL 等多类词库，提供带音标发音、默写模式、速度统计与实时输入反馈等功能，高效提升英语水平和打字速度，适用于学习备考、日常英语提升与专业写作场景",
+        "category": "学习成长"
     },
     {
-        "title": "FastDo",
-        "icon": "FastDo_icon.webp",
-        "url": "https://fastdo.tools",
-        "description": "多元化的在线效率工具站，覆盖电商设计、自媒体创作、文档处理、开发调试等全场景高频需求，提供图片压缩/抠图、PDF 转换/合并、视频剪辑/压缩、AI 文案生成、数据图表制作、开发者工具等 200+ 实用工具，无需安装，打开浏览器即可进入处理流程",
-        "category": "综合效率"
+        "title": "Edclub",
+        "icon": "Edclub_icon.webp",
+        "url": "https://www.edclub.com/zh/",
+        "description": "全球领先的在线学习平台，提供 TypingClub 打字课程、拼写与词汇训练、数字公民与 SEL 学习内容，平台支持互动教学、实时反馈、跨设备使用，并为教师提供班级管理、作业分配与学习数据分析工具，帮助学习者系统提升键盘技能与语言能力",
+        "category": "学习成长"
     },
     {
-        "title": "ImageOnline",
-        "icon": "ImageOnline_co_icon.webp",
-        "url": "https://imageonline.co/cn",
-        "description": "终极免费在线工具套件，探索超过 250+ 免费在线工具，涵盖图像裁剪、格式转换、滤镜增强、视频合并、音频剪辑、GIF制作、PDF 合并与拆分、JSON/CSS/HTML工具、硬件诊断等实用功能，100%免费、快速、安全，可在任何设备上高速使用",
-        "category": "图像处理"
+        "title": "Musicca",
+        "icon": "Musicca_icon.webp",
+        "url": "https://www.musicca.com/zh",
+        "description": "永久免费使用的在线乐理学习平台，提供趣味化、游戏式的在线乐理课程与练习，包括节奏、音程、和弦、乐器训练等内容，永久免费、无广告，适合学生、自学者与学校课堂使用，并支持教师追踪学习进度，提升读谱、记谱与演奏能力，从 Musicca 开始",
+        "category": "学习成长"
     },
     {
-        "title": "IT-Tools",
-        "icon": "IT-Tools_icon.webp",
-        "url": "https://it-tools.tech",
-        "description": "开源免费的在线开发者工具集合，提供 50+ 高质量 Web 工具，涵盖编码与解码、网络调试、正则表达式测试、JSON/YAML/CSV转换、JWT解析等常用开发场景，无需注册，即开即用，适合前端工程师、后端开发者、运维工程师与技术爱好者日常使用",
-        "category": "综合效率"
+        "title": "Fold'N Fly",
+        "icon": "Fold_N_Fly_icon.webp",
+        "url": "https://www.foldnfly.com",
+        "description": "全球最全纸飞机折叠教学平台，收录 57 款经典与创新纸飞机设计，提供清晰易懂的折纸步骤、视频教程与可打印折线图，帮助你轻松折出飞行距离远、停空时间长、稳定性强的纸飞机，无论你是初学者还是纸飞机高手，都能在这里找到适合自己的模型与技巧",
+        "category": "学习成长"
     },
     {
-        "title": "ToolDuck",
-        "icon": "ToolDuck_icon.webp",
-        "url": "https://toolduck.cn",
-        "description": "高质量的免费在线工具库，提供 350+ 免费在线工具，覆盖AI助手、智能写作、图片处理、文本转换、效率提升、开发辅助等多领域工具，无需下载，即开即用，支持便捷分类与快速检索，帮助用户高效查找并使用各种在线工具，让办公、学习、开发更高效",
-        "category": "综合效率"
+        "title": "Geeksforgeeks",
+        "icon": "Geeksforgeeks_icon.webp",
+        "url": "https://www.geeksforgeeks.org",
+        "description": "全球知名的计算机科学与编程学习平台，提供数据结构、算法、编程语言、系统设计、Web开发、机器学习等高质量教程与题解，拥有海量技术文章、代码示例、面试题库与学习路径，帮助开发者从基础到进阶全面提升技能、准备技术面试并解决实际开发问题",
+        "category": "学习成长"
     },
     {
-        "title": "LocallyTools",
-        "icon": "LocallyTools_icon.webp",
-        "url": "https://locallytools.com/zh-Hans",
-        "description": "安全、免费、可离线使用的本地工具集合，汇集图片压缩与格式转换、PDF拆分/合并、文本与编码工具、代码格式化、UUID生成等开发者功能，所有操作均在本地浏览器完成，无需上传文件，确保隐私零泄露，为用户提供快速、高效、安全的使用体验",
-        "category": "综合效率"
+        "title": "你缺失的那门计算机课",
+        "icon": "你缺失的那门计算机课_icon.webp",
+        "url": "https://www.criwits.top/missing",
+        "description": "《你缺失的那门计算机课》是一套为电脑小白打造的零门槛入门课程，从文件管理、软件安装到系统维护与常见问题处理，循序渐进、易懂实用，同时涵盖生成式AI、网络安全、云计算等前沿技术，内容持续更新，开放共享，是提升电脑能力的高质量学习入口",
+        "category": "学习成长"
     },
     {
-        "title": "一个木函",
-        "icon": "一个木函_icon.webp",
-        "url": "https://ol.woobx.cn",
-        "description": "全能在线效率工具，提供超过 80+ 实用工具，支持短网址生成、网络测速、图片压缩、正则表达式大全、JSON/YAML转换等高频需求，网页端无需安装，即开即用，部分工具支持会员增强功能，是创作、办公、学习、开发于一体的高效在线工具",
-        "category": "综合效率"
+        "title": "VitePress",
+        "icon": "VitePress_icon.webp",
+        "url": "https://vitepress.dev/zh",
+        "description": "基于 Vite 与 Vue 驱动的极速静态站点生成器，支持 Markdown 编写、Vue 组件扩展、快速构建与高性能页面加载，适合构建文档、博客、知识库与技术站点，提供完整指南、主题配置、自定义扩展与部署方案，是打造高质量技术内容与知识库的绝佳工具",
+        "category": "学习成长"
     },
     {
-        "title": "帮小忙",
-        "icon": "帮小忙_icon.webp",
-        "url": "https://tool.browser.qq.com",
-        "description": "腾讯推出的在线多功能工具箱平台，覆盖图片处理、PDF 转换、文档格式转换、视频处理、生活服务、教育学习、开发者工具等多类场景，所有工具均可在线即开即用，部分功能限时免费，适用于办公、学习、自媒体创作、生活查询等多种需求",
-        "category": "综合效率"
+        "title": "Bun",
+        "icon": "Bun_icon.webp",
+        "url": "https://www.bunjs.com.cn/zh-cn",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "奇妙工具箱",
-        "icon": "奇妙工具箱_icon.webp",
-        "url": "https://www.magicalbox.cn",
-        "description": "集日常娱乐、文档办公、图片处理、文本优化、开发应用等于一体的在线工具集合平台，支持 PDF/图片/音视频转换、OCR识别、数据查询、单位换算、加密解密、正则工具等上百种实用功能，轻量便捷、随开随用，高效完成各种工作与生活任务",
-        "category": "综合效率"
+        "title": "Markdown 教程",
+        "icon": "Markdown_教程_icon.webp",
+        "url": "https://www.markdownlang.com/zh",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "123Apps",
-        "icon": "123Apps_icon.webp",
-        "url": "https://123apps.com/cn",
-        "description": "极简风格的在线工具集，涵盖视频、音频、PDF文件编辑、多格式文件转换等分类，支持剪辑、合并、录制、压缩、格式转换等功能，操作简单、无需安装、在线即可快速处理各类文件，适合日常用户与内容创作者便捷使用，让文件处理更高效、更轻松",
-        "category": "综合效率"
+        "title": "LetMeEnglish",
+        "icon": "LetMeEnglish_icon.webp",
+        "url": "https://letmeenglish.com/zh-hans",
+        "description": "高质量免费的英语学习平台，提供系统化的英文文法解析、常用字汇讲解、实用句型整理、日常英文表达、听力训练与发音技巧等多维度模块，内容结构清晰、示例丰富、解释直观，适合零基础、学生、上班族与留学需求者，是提升英文能力的高效学习资源",
+        "category": "学习成长"
     },
     {
-        "title": "多功能工具箱",
-        "icon": "多功能工具箱_icon.webp",
-        "url": "https://www.996day.com",
-        "description": "极致纯净的纯前端工具集，涵盖文本处理、图片编辑、视频剪辑、音频转换、OCR文字识别、屏幕录制、格式转换、图片压缩、JSON查看、颜色工具等 40+ 高效实用工具，所有功能均在浏览器本地运行，安全高效，适用于办公、设计、开发等多场景",
-        "category": "综合效率"
+        "title": "语言指南",
+        "icon": "语言指南_icon.webp",
+        "url": "https://www.languageguide.org/cn",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "Tools-Web",
-        "icon": "Tools-Web_icon.webp",
-        "url": "https://tools.ranblogs.com",
-        "description": "开源免费的在线工具聚合平台，提供URL编码/解码、图片格式转换、文本对比、ASCll码表、Color选择器、数据图表等多种 Web 工具，无需安装即可使用，平台界面简洁、加载快速，是程序员、学生、设计师与内容创作者的实用在线工具箱”",
-        "category": "综合效率"
+        "title": "Type Words",
+        "icon": "Type_Words_icon.webp",
+        "url": "https://typewords.cc",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "Next BConvert",
-        "icon": "Next_BConvert_icon.webp",
-        "url": "https://nextbconvert.com/zh",
-        "description": "免费的在线文件转换工具，支持图片转换、视频压缩、音频提取、文档格式互转、HEIC转JPG、MP4转MP3、PDF转Word等功能，浏览器本地处理，隐私安全，支持批量任务与离线模式，兼容移动端与PC端，满足日常办公、学习与内容创作多场景需求",
-        "category": "综合效率"
+        "title": "W3School",
+        "icon": "W3School_icon.webp",
+        "url": "https://www.w3school.com.cn",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "iToTii 工具箱",
-        "icon": "iToTii_工具箱_icon.webp",
-        "url": "https://tool.itotii.com",
-        "description": "免费、高效且功能全面的在线工具箱，覆盖智能工具、生活工具、站长工具、文本处理、数学计算、PDF转换、图片拼接、加密解密、编码转码等多领域在线工具，界面简洁、操作简单，是一个全面、便捷、稳定的在线工具集合站",
-        "category": "综合效率"
+        "title": "Typing Learner",
+        "icon": "Typing_Learner_icon.webp",
+        "url": "https://www.typinglearner.com",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "开发者武器库",
-        "icon": "开发者武器库_icon.webp",
-        "url": "https://devtool.tech",
-        "description": "专为开发者打造的一站式在线工具，涵盖JSON格式化、数据转换、JSON/YAML处理、色彩调色板、CSS渐变生成器、图片添加水印、文本处理、编码/解码等 60+ 实用功能，所有操作均在浏览器本地运行，注重隐私，是提升开发效率的高效利器",
-        "category": "综合效率"
+        "title": "LabEx",
+        "icon": "LabEx_icon.webp",
+        "url": "https://labex.io/zh",
+        "description": "",
+        "category": "学习成长"
     },
     {
-        "title": "蛙蛙工具",
-        "icon": "蛙蛙工具_icon.webp",
-        "url": "https://www.10015tools.online/zh",
-        "description": "轻量、高效的日常开发工具集，包括编码解码、文本处理、二进制转换、代码格式化、PDF工具、图片压缩、二维码生成等功能，所有工具均免费、开源透明、安全可靠，无需下载即可一站式解决各种办公与技术需求，是提升开发效率的高性能辅助平台",
-        "category": "综合效率"
+        "title": "BALA 公考",
+        "icon": "BALA_公考_icon.webp",
+        "url": "https://www.baijing1.top",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "VitePress",
+        "icon": "VitePress_icon.webp",
+        "url": "https://vitepress.yiov.top",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "考试酷",
+        "icon": "考试酷_icon.webp",
+        "url": "https://www.examcoo.com",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "摄影技术学习",
+        "icon": "摄影技术学习_icon.webp",
+        "url": "https://www.photographystudy.online",
+        "description": "",
+        "category": "学习成长"
     }
 ]

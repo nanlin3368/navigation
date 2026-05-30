@@ -1,30 +1,128 @@
 [
     {
-        "title": "如意视频",
-        "icon": "如意视频_icon.webp",
-        "url": "https://rytv.tv",
-        "description": "免费在线影视观看平台，汇聚海量国产动漫、电视剧、电影、海外剧集等资源，支持高清播放与持续更新，支持手机与电脑端在线播放，追剧、刷番一站式免费观影",
-        "category": "影音娱乐"
+        "title": "哲风壁纸",
+        "icon": "哲风壁纸_icon.webp",
+        "url": "https://haowallpaper.com",
+        "description": "4K–8K 高清壁纸资源综合平台，提供电脑壁纸、手机壁纸、动态壁纸、素材图片与头像制作等内容，全部支持免费下载，支持按图搜索、壁纸裁剪、多维度分类与智能推荐功能，提供 Win/Mac/网页三端同步，为用户带来高质量壁纸获取与个性化桌面体验",
+        "category": "视觉灵感"
     },
     {
-        "title": "枫叶音乐盒",
-        "icon": "枫叶音乐盒_icon.webp",
-        "url": "https://mu-jie.cc/musicBox/#",
-        "description": "简洁纯净的在线音乐播放器，无需下载即可随时听歌，支持搜索、在线播放、歌单收藏、自建歌单、导入网易云/QQ音乐等APP歌单及推荐分类，界面清爽、加载快速，随时随地享受音乐",
-        "category": "影音娱乐"
+        "title": "Unsplash",
+        "icon": "Unsplash_icon.webp",
+        "url": "https://unsplash.com",
+        "description": "全球顶尖的高清摄影创作图库，提供极具美感且无版权限制的高质量影像素材，涵盖自然、人物、科技、商业、旅行、美食等主题，所有图片均可免费使用，支持主题搜索与分类，适用于社交媒体、内容创作与视觉展示，是创意表达与视觉叙事的灵感源泉",
+        "category": "视觉灵感"
     },
     {
-        "title": "泡椒音乐",
-        "icon": "泡椒音乐_icon.webp",
-        "url": "https://pjmp3.de",
-        "description": "免费无损音乐在线搜索、播放与下载平台，收录海量MP3、FLAC、WAV高品质音源，支持付费歌曲、流行音乐、经典老歌等快速搜索试听，一键下载，曲库全、更新快、无广告干扰",
-        "category": "影音娱乐"
+        "title": "Pexels",
+        "icon": "Pexels_icon.webp",
+        "url": "https://www.pexels.com/zh-cn/",
+        "description": "",
+        "category": "视觉灵感"
     },
     {
-        "title": "淘声网",
-        "icon": "淘声网_icon.webp",
-        "url": "https://www.tosound.com",
-        "description": "全球免费声音素材聚合平台，独创“吐司”toSound智能搜索引擎，汇聚百万级游戏音效、影视配乐、实地录音、音乐样本、节奏音源等资源，支持智能搜索与一键下载，提供明确免费/商用授权",
-        "category": "影音娱乐"
+        "title": "Httpster",
+        "icon": "Httpster_icon.webp",
+        "url": "https://httpster.net",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Behance",
+        "icon": "Behance_icon.webp",
+        "url": "https://www.behance.net",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Dribbble",
+        "icon": "Dribbble_icon.webp",
+        "url": "https://dribbble.com",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "2DWallpapers",
+        "icon": "2DWallpapers_icon.webp",
+        "url": "https://www.2dwallpapers.com",
+        "description": "高品质动漫与游戏壁纸分享平台，精选全球最新最热门的优质动漫与二次元高清壁纸资源，提供角色立绘、场景背景、插画作品、同人创作等多种主题，支持免登录直接获取图片，所有资源均可免费下载且无水印，是 ACG 爱好者寻找精美视觉资源的优质网站",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Foodiesfeed",
+        "icon": "Foodiesfeed_icon.webp",
+        "url": "https://www.foodiesfeed.com/zh",
+        "description": "高质量的美食摄影图库，汇集全球摄影师分享的数千张高分辨率美食图片，涵盖咖啡、甜点、早餐、寿司、汉堡、披萨等场景，所有资源均可免费下载，可用于商业和个人用途，无需署名，图片高清、风格自然、种类丰富，是获取美食视觉素材的首选图库",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "AURA 壁纸",
+        "icon": "AURA_壁纸_icon.webp",
+        "url": "https://gallery.wallaura.cn",
+        "description": "纯粹且优雅的高质量壁纸聚合平台，收录数万张经人工审核的高清原图，提供 4K/8K 超清壁纸下载，涵盖风光摄影、动漫角色、国风艺术、AI场景、Windows聚焦、游戏主题等分类，并每日更新热门专题与精选合集，是寻找高品质壁纸与视觉灵感的优质平台",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "AirPano",
+        "icon": "AirPano_icon.webp",
+        "url": "https://airpano.org.cn",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Akspic",
+        "icon": "Akspic_icon.webp",
+        "url": "https://wallspic.com/cn",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "MakerWorld",
+        "icon": "MakerWorld_icon.webp",
+        "url": "https://makerworld.com.cn/zh",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "gooood",
+        "icon": "gooood_icon.webp",
+        "url": "https://www.gooood.cn",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Deviant Art",
+        "icon": "Deviant_Art_icon.webp",
+        "url": "https://www.deviantart.com",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "拾光壁纸",
+        "icon": "拾光壁纸_icon.webp",
+        "url": "https://gallery.timeline.ink",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "AppleWalls",
+        "icon": "AppleWalls_icon.webp",
+        "url": "https://www.applewalls.com/zh",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Chiikawa 壁纸",
+        "icon": "Chiikawa_壁纸_icon.webp",
+        "url": "https://chiikawawallpaper.com/zh-Hans",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "21st",
+        "icon": "21st_icon.webp",
+        "url": "https://21st.dev/community/components",
+        "description": "",
+        "category": "视觉灵感"
     }
 ]
