@@ -72,6 +72,7 @@
         min-height        : 100vh;
         margin            : 0;
         padding           : 0;
+        scrollbar-gutter  : stable;
       }
 
       /* ════════════════════════════════════════════════════════
@@ -783,7 +784,7 @@
         }
         .cat-label {
           flex        : 1;
-          word-spacing: 6px;
+          word-spacing: 0;
         }
         .cat-count {
           display    : inline-block;
@@ -822,10 +823,14 @@
           left     : 0;
           transform: none;
         }
+        .engine-trigger .engine-caret {
+          font-size    : 0.9rem;   /* 使用相对单位更好 */
+          margin-left  : 2px;    /* 可选，微调间距 */
+        }
         @keyframes dropdownIn {
           from { opacity: 0; transform: translateY(-8px) scale(0.97); }
           to   { opacity: 1; transform: translateY(0)    scale(1);    }
-        }
+        }        
 
         /* 工具网格：3 列 */
         .tools-grid {
@@ -912,6 +917,10 @@
         .engine-grid     { grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .engine-item     { padding: 8px 4px 6px; }
         .engine-item-icon { width: 30px; height: 30px; border-radius: 10px; }
+        .engine-trigger .engine-caret {
+          font-size    : 0.8rem;   /* 使用相对单位更好 */
+          margin-left  : 1px;    /* 可选，微调间距 */
+        }
 
         /* ── 移动端菜单按钮 ── */
         .mobile-menu-btn {
@@ -988,6 +997,7 @@
           transform     : translateX(-100%);
           transition    : transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           overflow      : hidden;
+          will-change   : transform;
         }
         .mobile-drawer.open { transform: translateX(0); }
 
@@ -1035,7 +1045,7 @@
         }
         .mobile-drawer-nav .category-btn:hover  { transform: none !important; background: rgba(102, 126, 234, 0.1) !important; }
         .mobile-drawer-nav .category-btn.active { background: var(--accent-gradient) !important; color: white !important; box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35) !important; }
-        .mobile-drawer-nav .cat-label           { flex: 1; }
+        .mobile-drawer-nav .cat-label           { flex: 1; word-spacing: 0; }
         .mobile-drawer-nav .cat-count           { display: inline-block !important; font-size: 0.8rem; padding: 2px 6.5px; border-radius: 8px; margin-left: 6px; flex-shrink: 0; }
         .mobile-drawer-nav .category-btn.active .cat-count { background: rgba(255, 255, 255, 0.25) !important; color: white !important; }
       }
@@ -1140,8 +1150,8 @@
           <div class="tools-grid" id="toolsGrid"></div>
 
           <footer>
-            <p>© 2026 星源导航 | 基于 MIT 开源项目二次开发</p>
-            <p>保留原作者版权声明 · 原项目主页：<a href="https://github.com/424490034/web-tools/blob/master/tools-navigation.html" target="_blank" rel="noopener noreferrer">访问</a></p>
+            <p>© 2026 星源导航 | ⚡ 持续更新中...🚀</p>
+            <p>由 [ 闲月 ] 整理 ❤️ 极简 · 纯粹 · 高效<a href="https://nanlin3368.github.io/navigation" target="_blank" rel="noopener noreferrer"></a></p>
           </footer>
         </main><!-- /main-content -->
 
@@ -1565,14 +1575,14 @@
         mobileDrawerOverlay.style.display = 'block'
         mobileDrawerOverlay.offsetHeight  // 触发 reflow
         mobileDrawerOverlay.classList.add('open')
-        document.body.style.overflow = 'hidden'
+        document.documentElement.style.overflow = 'hidden'
         // 推入历史记录，使设备返回键可关闭抽屉
         history.pushState({ drawerOpen: true }, '')
       }
       function closeDrawer() {
         mobileDrawer.classList.remove('open')
         mobileDrawerOverlay.classList.remove('open')
-        document.body.style.overflow = ''
+        document.documentElement.style.overflow = ''
         mobileDrawerOverlay.addEventListener('transitionend', function handler() {
           if (!mobileDrawerOverlay.classList.contains('open')) {
             mobileDrawerOverlay.style.display = 'none'
