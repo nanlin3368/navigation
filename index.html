@@ -123,6 +123,10 @@
       body.theme-transitioning .tool-link,
       body.theme-transitioning footer,
       body.theme-transitioning #themeToggle,
+      body.theme-transitioning #sponsorBtn,
+      body.theme-transitioning #copyLinkBtn,
+      body.theme-transitioning #disclaimerBtn,
+      body.theme-transitioning #settingsFab,
       body.theme-transitioning #backToTop,
       /* 修复移动端抽屉与内容区过渡不同步：增加抽屉相关元素 */
       body.theme-transitioning .mobile-drawer,
@@ -619,10 +623,9 @@
       }
 
       /* ── 悬浮按钮公共样式 ── */
-      #backToTop,
-      #themeToggle {
+      #backToTop {
         position     : fixed;
-        right        : 20px;
+        right        : 32px;
         width        : 52px;
         height       : 52px;
         border-radius: 50%;
@@ -633,8 +636,6 @@
         justify-content: center;
         z-index      : 999;
         transition   : opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, box-shadow 0.25s ease;
-      }
-      #backToTop {
         bottom    : 168px;
         background: var(--accent-gradient);
         box-shadow: 0 6px 20px rgba(102, 126, 234, 0.45), 4px 4px 10px var(--shadow-dark), -2px -2px 8px var(--shadow-light);
@@ -659,18 +660,381 @@
         fill            : none;
         filter          : drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
       }
+
+      /* ── 设置 FAB 组 ── */
+      #settingsFabGroup {
+        position : fixed;
+        right    : 32px;
+        bottom   : 90px;
+        z-index  : 999;
+        display  : flex;
+        flex-direction: row;
+        align-items   : center;
+        gap      : 22px;
+      }
+
+      /* 主触发按钮 */
+      #settingsFab {
+        width        : 52px;
+        height       : 52px;
+        border-radius: 18px;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        color        : var(--text-primary);
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+        transition   : box-shadow 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        flex-shrink  : 0;
+      }
+      #settingsFab:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
+      #settingsFab:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
+      #settingsFab.open   { background: var(--primary-bg); color: var(--accent-color);  transform: rotate(45deg); }
+      #settingsFab.open:hover { transform: rotate(45deg) translateY(-2px) scale(1.06); }
+
+      /* ── 主题切换子按钮（保持原 themeToggle 样式完全不变） ── */
       #themeToggle {
-        bottom    : 104px;
-        background: var(--primary-bg);
-        box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
-        font-size : 22px;
-        line-height: 1;
-        transform : scale(1);
+        width        : 52px;
+        height       : 52px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+        font-size    : 22px;
+        line-height  : 1;
+        /* 初始隐藏，展开时显示 */
+        opacity      : 0;
+        visibility   : hidden;
+        transform    : translateX(20px) scale(0.7);
+        transition   : opacity 0.25s ease, visibility 0.25s ease,
+                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                       box-shadow 0.25s ease;
+        pointer-events: none;
       }
       #themeToggle:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
       #themeToggle:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
 
+      /* 展开状态 */
+      #settingsFabGroup.expanded #themeToggle {
+        opacity      : 1;
+        visibility   : visible;
+        transform    : translateX(0) scale(1);
+        pointer-events: auto;
+      }
+
+      /* ── 赞赏支持子按钮（与 themeToggle 平行，展开时显示） ── */
+      #sponsorBtn {
+        width        : 52px;
+        height       : 52px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+        font-size    : 22px;
+        line-height  : 1;
+        /* 初始隐藏，展开时显示 */
+        opacity      : 0;
+        visibility   : hidden;
+        transform    : translateX(20px) scale(0.7);
+        transition   : opacity 0.25s ease, visibility 0.25s ease,
+                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                       box-shadow 0.25s ease;
+        pointer-events: none;
+      }
+      #sponsorBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
+      #sponsorBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
+
+      #settingsFabGroup.expanded #sponsorBtn {
+        opacity      : 1;
+        visibility   : visible;
+        transform    : translateX(0) scale(1);
+        pointer-events: auto;
+      }
+
+      /* ── 赞赏支持模态框 ── */
+      #sponsorModal {
+        position        : fixed;
+        inset           : 0;
+        z-index         : 2000;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        background      : rgba(0, 0, 0, 0.55);
+        backdrop-filter : blur(6px);
+        opacity         : 0;
+        visibility      : hidden;
+        transition      : opacity 0.3s ease, visibility 0.3s ease;
+      }
+      #sponsorModal.open {
+        opacity   : 1;
+        visibility: visible;
+      }
+      .sponsor-panel {
+        position     : relative;
+        background   : var(--primary-bg);
+        border-radius: 28px;
+        padding      : 36px 32px 28px;
+        width        : min(92vw, 420px);
+        box-shadow   : 16px 16px 40px var(--shadow-dark), -8px -8px 24px var(--shadow-light),
+                       0 20px 60px rgba(0, 0, 0, 0.25);
+        transform    : scale(0.88) translateY(20px);
+        transition   : transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        text-align   : center;
+      }
+      #sponsorModal.open .sponsor-panel {
+        transform: scale(1) translateY(0);
+      }
+      .sponsor-close {
+        position     : absolute;
+        top          : 14px;
+        right        : 16px;
+        width        : 32px;
+        height       : 32px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        color        : var(--text-secondary);
+        font-size    : 16px;
+        box-shadow   : 4px 4px 8px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+        transition   : box-shadow 0.2s, transform 0.15s;
+      }
+      .sponsor-close:hover  { box-shadow: 5px 5px 10px var(--shadow-dark), -4px -4px 8px var(--shadow-light); transform: scale(1.1); }
+      .sponsor-close:active { box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -2px -2px 4px var(--shadow-light); transform: scale(0.92); }
+      .sponsor-title {
+        font-size  : 1.4rem;
+        font-weight: 700;
+        color      : var(--text-primary);
+        margin-bottom: 6px;
+      }
+      .sponsor-sub {
+        font-size  : 0.9rem;
+        color      : var(--text-secondary);
+        margin-bottom: 24px;
+      }
+      .sponsor-qr-row {
+        display        : flex;
+        justify-content: center;
+        gap            : 20px;
+      }
+      .sponsor-qr-item {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        gap           : 10px;
+      }
+      .sponsor-qr-img {
+        width        : 140px;
+        height       : 140px;
+        border-radius: 18px;
+        object-fit   : cover;
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+      }
+      .sponsor-qr-label {
+        font-size  : 0.85rem;
+        color      : var(--text-secondary);
+        font-weight: 500;
+      }
+
+      /* ── 复制链接子按钮（与 themeToggle / sponsorBtn 平行，展开时显示） ── */
+      #copyLinkBtn {
+        width        : 52px;
+        height       : 52px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+        font-size    : 22px;
+        line-height  : 1;
+        /* 初始隐藏，展开时显示 */
+        opacity      : 0;
+        visibility   : hidden;
+        transform    : translateX(20px) scale(0.7);
+        transition   : opacity 0.25s ease, visibility 0.25s ease,
+                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                       box-shadow 0.25s ease;
+        pointer-events: none;
+      }
+      #copyLinkBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
+      #copyLinkBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
+
+      #settingsFabGroup.expanded #copyLinkBtn {
+        opacity      : 1;
+        visibility   : visible;
+        transform    : translateX(0) scale(1);
+        pointer-events: auto;
+      }
+
+      /* ── 关于本站子按钮（与其他子按钮平行，展开时显示） ── */
+      #disclaimerBtn {
+        width        : 52px;
+        height       : 52px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+        font-size    : 22px;
+        line-height  : 1;
+        opacity      : 0;
+        visibility   : hidden;
+        transform    : translateX(20px) scale(0.7);
+        transition   : opacity 0.25s ease, visibility 0.25s ease,
+                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                       box-shadow 0.25s ease;
+        pointer-events: none;
+      }
+      #disclaimerBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
+      #disclaimerBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
+
+      #settingsFabGroup.expanded #disclaimerBtn {
+        opacity      : 1;
+        visibility   : visible;
+        transform    : translateX(0) scale(1);
+        pointer-events: auto;
+      }
+
+      /* ── 关于本站模态框 ── */
+      #disclaimerModal {
+        position        : fixed;
+        inset           : 0;
+        z-index         : 2000;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        background      : rgba(0, 0, 0, 0.55);
+        backdrop-filter : blur(6px);
+        opacity         : 0;
+        visibility      : hidden;
+        transition      : opacity 0.3s ease, visibility 0.3s ease;
+      }
+      #disclaimerModal.open {
+        opacity   : 1;
+        visibility: visible;
+      }
+      .disclaimer-panel {
+        position     : relative;
+        background   : var(--primary-bg);
+        border-radius: 28px;
+        padding      : 36px 28px 28px;
+        width        : min(94vw, 480px);
+        max-height   : 80vh;
+        overflow-y   : auto;
+        box-shadow   : 16px 16px 40px var(--shadow-dark), -8px -8px 24px var(--shadow-light),
+                       0 20px 60px rgba(0, 0, 0, 0.25);
+        transform    : scale(0.88) translateY(20px);
+        transition   : transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      #disclaimerModal.open .disclaimer-panel {
+        transform: scale(1) translateY(0);
+      }
+      .disclaimer-close {
+        position     : absolute;
+        top          : 14px;
+        right        : 16px;
+        width        : 32px;
+        height       : 32px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--primary-bg);
+        color        : var(--text-secondary);
+        font-size    : 16px;
+        box-shadow   : 4px 4px 8px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+        transition   : box-shadow 0.2s, transform 0.15s;
+      }
+      .disclaimer-close:hover  { box-shadow: 5px 5px 10px var(--shadow-dark), -4px -4px 8px var(--shadow-light); transform: scale(1.1); }
+      .disclaimer-close:active { box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -2px -2px 4px var(--shadow-light); transform: scale(0.92); }
+      .disclaimer-title {
+        font-size    : 1.25rem;
+        font-weight  : 700;
+        color        : var(--text-primary);
+        margin-bottom: 18px;
+        text-align   : center;
+        padding-right: 24px;
+      }
+      .disclaimer-list {
+        list-style  : none;
+        padding     : 0;
+        margin      : 0;
+        display     : flex;
+        flex-direction: column;
+        gap         : 14px;
+      }
+      .disclaimer-item {
+        display        : flex;
+        align-items    : flex-start;
+        gap            : 10px;
+        padding        : 14px 16px;
+        border-radius  : 16px;
+        background     : var(--primary-bg);
+        box-shadow     : inset 3px 3px 8px var(--shadow-dark), inset -2px -2px 6px var(--shadow-light);
+      }
+      .disclaimer-item-dot {
+        width       : 8px;
+        height      : 8px;
+        border-radius: 50%;
+        background  : var(--accent-color);
+        flex-shrink : 0;
+        margin-top  : 6px;
+      }
+      .disclaimer-item-body {
+        flex: 1;
+      }
+      .disclaimer-item-title {
+        font-size  : 0.9rem;
+        font-weight: 700;
+        color      : var(--text-primary);
+        margin-bottom: 4px;
+      }
+      .disclaimer-item-text {
+        font-size  : 0.83rem;
+        color      : var(--text-secondary);
+        line-height: 1.6;
+      }
+      .disclaimer-item-text strong {
+        color      : var(--text-primary);
+        font-weight: 700;
+      }
+
+      /* ── 模态框打开时锁定背景滚动（移动端 + 桌面端通用） ── */
+      body.modal-open {
+        overflow : hidden;
+      }
+      /* iOS Safari：html 层也需要锁定 */
+      html.modal-open {
+        overflow : hidden;
+        height   : 100%;
+      }
+
       .hidden { display: none !important; }
+
+      /* 作者名高亮 */
+      .author-highlight {
+        color   : #40C8E0; }
 
 
       /* ════════════════════════════════════════════════════════
@@ -965,8 +1329,13 @@
         footer     { margin: 0 28px 24px; padding: 18px 16px; font-size: 0.88rem; border-radius: 18px; }
 
         /* 悬浮按钮移动端尺寸 */
-        #backToTop  { right: 14px; bottom: 158px; width: 46px; height: 46px; }
-        #themeToggle { right: 14px; bottom: 100px; width: 46px; height: 46px; font-size: 20px; }
+        #backToTop         { right: 18px; bottom: 158px; width: 46px; height: 46px; }
+        #settingsFabGroup  { right: 18px; bottom: 90px; gap: 18px; }
+        #settingsFab       { width: 46px; height: 46px; border-radius: 15px; }
+        #themeToggle       { width: 46px; height: 46px; font-size: 20px; }
+        #sponsorBtn        { width: 46px; height: 46px; font-size: 20px; }
+        #copyLinkBtn       { width: 46px; height: 46px; font-size: 20px; }
+        #disclaimerBtn     { width: 46px; height: 46px; font-size: 20px; }
 
         /* ── 遮罩层 ── */
         .mobile-drawer-overlay {
@@ -1151,7 +1520,7 @@
 
           <footer>
             <p>© 2026 星源导航 | ⚡ 持续更新中...🚀</p>
-            <p>由 [ 闲月 ] 整理 ❤️ 极简 · 纯粹 · 高效<a href="https://nanlin3368.github.io/navigation" target="_blank" rel="noopener noreferrer"></a></p>
+            <p>由 [ <span class="author-highlight">闲月</span> ] 整理 ❤️ 极简 · 纯粹 · 高效<a href="https://nanlin3368.github.io/navigation" target="_blank" rel="noopener noreferrer"></a></p>
           </footer>
         </main><!-- /main-content -->
 
@@ -1179,7 +1548,91 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
-    <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式">☀️</button>
+
+    <!-- ── 设置 FAB 菜单 ── -->
+    <div id="settingsFabGroup">
+      <!-- 子按钮：免责声明 -->
+      <button id="disclaimerBtn" title="关于本站" aria-label="关于本站">📢</button>
+      <!-- 子按钮：复制链接 -->
+      <button id="copyLinkBtn" title="复制网页链接" aria-label="复制网页链接">🔗</button>
+      <!-- 子按钮：赞助入口 -->
+      <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持">🌿</button>
+      <!-- 子按钮：主题切换（样式与原 themeToggle 完全一致） -->
+      <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式" class="fab-child">☀️</button>
+      <!-- 主触发按钮 "+" -->
+      <button id="settingsFab" title="设置" aria-label="设置">
+        <svg id="settingsFabIcon" viewBox="0 0 24 24" width="22" height="22"
+             stroke="currentColor" stroke-width="2.8"
+             stroke-linecap="round" fill="none">
+          <line x1="12" y1="5"  x2="12" y2="19"/>
+          <line x1="5"  y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ── 赞助模态框 ── -->
+    <div id="sponsorModal" role="dialog" aria-modal="true" aria-label="赞赏支持">
+      <div class="sponsor-panel">
+        <button class="sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
+        <p class="sponsor-title">🌿 赞赏支持</p>
+        <p class="sponsor-sub"> 如果本站对您有帮助，欢迎支持一下 ☕</p>
+        <div class="sponsor-qr-row">
+          <div class="sponsor-qr-item">
+            <img class="sponsor-qr-img" src="assets/wx.webp" alt="微信赞赏">
+            <span class="sponsor-qr-label">微信</span>
+          </div>
+          <div class="sponsor-qr-item">
+            <img class="sponsor-qr-img" src="assets/zfb.webp" alt="支付宝赞赏">
+            <span class="sponsor-qr-label">支付宝</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 免责声明模态框 ── -->
+    <div id="disclaimerModal" role="dialog" aria-modal="true" aria-label="关于本站">
+      <div class="disclaimer-panel">
+        <button class="disclaimer-close" id="disclaimerClose" aria-label="关闭">✕</button>
+        <p class="disclaimer-title">📢 关于本站</p>
+        <ul class="disclaimer-list">
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">本站定位与目的</p>
+              <p class="disclaimer-item-text">本站只是一个简单的网站导航入口，便于快速查找各类在线工具、资源与服务。<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>，仅作为信息索引平台存在。</p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">数据来源与免责</p>
+              <p class="disclaimer-item-text">本站收录的第三方网站（包括但不限于资源库、素材网、技术论坛等）均由搜索引擎及公开信息整理而成，旨在方便用户获取信息。<strong>本站与所列网站无任何隶属、合作或商业关系。</strong></p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">风控与安全提示</p>
+              <p class="disclaimer-item-text">本站无法对第三方网站的内容实时性、安全性及服务质量进行监控。用户在访问上述网站时，<strong>请务必自行甄别信息真伪，提高警惕，谨防诈骗、病毒感染及隐私泄露。</strong></p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">图标与视觉说明</p>
+              <p class="disclaimer-item-text">本站所显示的第三方网站图标，<strong>仅作为页面视觉区分与辅助识别体现</strong>，并不一定代表该网站的官方授权或最新官方图标。所有图标的版权均归其原始版权所有人所有。</p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">内容描述与体验</p>
+              <p class="disclaimer-item-text">本站对第三方网站的介绍和描述内容<strong>均由 AI 辅助生成，仅供快速了解时参考</strong>。相关网站的实际功能与服务，请用户以最终的实际访问、使用体验及官方最终说明为准。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- 搜索引擎配置 -->
     <script src="src/scripts/config.js"></script>
@@ -1543,6 +1996,153 @@
         localStorage.setItem(DARK_KEY, isDark ? 'true' : 'false')
       })
 
+      // ── 设置 FAB 展开/收起 ────────────────────────────────────
+      const settingsFabBtn   = document.getElementById('settingsFab')
+      const settingsFabGroup = document.getElementById('settingsFabGroup')
+
+      settingsFabBtn.addEventListener('click', function(e) {
+        e.stopPropagation()
+        const isOpen = settingsFabGroup.classList.toggle('expanded')
+        settingsFabBtn.classList.toggle('open', isOpen)
+      })
+
+      // 点击页面其他区域关闭 FAB 菜单
+      document.addEventListener('click', function(e) {
+        if (!settingsFabGroup.contains(e.target)) {
+          settingsFabGroup.classList.remove('expanded')
+          settingsFabBtn.classList.remove('open')
+        }
+      })
+
+      // ── 背景滚动锁（模态框打开时禁止页面滚动，关闭后恢复） ──────
+      // 使用计数器支持多个模态框同时存在的场景
+      let _modalLockCount = 0
+
+      function lockScroll() {
+        _modalLockCount++
+        if (_modalLockCount === 1) {
+          document.body.classList.add('modal-open')
+          document.documentElement.classList.add('modal-open')
+        }
+      }
+      function unlockScroll() {
+        if (_modalLockCount > 0) _modalLockCount--
+        if (_modalLockCount === 0) {
+          document.body.classList.remove('modal-open')
+          document.documentElement.classList.remove('modal-open')
+        }
+      }
+
+      // ── 赞助模态框 ────────────────────────────────────────────
+      const sponsorBtn   = document.getElementById('sponsorBtn')
+      const sponsorModal = document.getElementById('sponsorModal')
+      const sponsorClose = document.getElementById('sponsorClose')
+
+      function openSponsor() {
+        sponsorModal.classList.add('open')
+        lockScroll()                                    // 锁定背景滚动
+        // 关闭 FAB 展开菜单
+        settingsFabGroup.classList.remove('expanded')
+        settingsFabBtn.classList.remove('open')
+        // 推入历史，使设备任意返回键可关闭模态框
+        history.pushState({ sponsorOpen: true }, '')
+      }
+      function closeSponsor() {
+        sponsorModal.classList.remove('open')
+        unlockScroll()                                  // 恢复背景滚动
+      }
+
+      sponsorBtn.addEventListener('click', function(e) {
+        e.stopPropagation()
+        openSponsor()
+      })
+      sponsorClose.addEventListener('click', function() {
+        // 同步撤销 pushState，避免关闭后返回键退出页面
+        if (history.state && history.state.sponsorOpen) history.back()
+        else closeSponsor()
+      })
+      // 点击模态框背景关闭
+      sponsorModal.addEventListener('click', function(e) {
+        if (e.target === sponsorModal) {
+          if (history.state && history.state.sponsorOpen) history.back()
+          else closeSponsor()
+        }
+      })
+      // ESC 键关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sponsorModal.classList.contains('open')) {
+          if (history.state && history.state.sponsorOpen) history.back()
+          else closeSponsor()
+        }
+      })
+
+      // ── 复制网页链接 ──────────────────────────────────────────
+      const copyLinkBtn = document.getElementById('copyLinkBtn')
+      // ★ 在此处替换为实际网页链接 ★
+      const SITE_URL    = 'https://nanlin3368.github.io/navigation'
+
+      copyLinkBtn.addEventListener('click', function(e) {
+        e.stopPropagation()
+        const url = SITE_URL || location.href
+        navigator.clipboard.writeText(url).then(function() {
+          const prev = copyLinkBtn.textContent
+          copyLinkBtn.textContent = '✅'
+          setTimeout(function() { copyLinkBtn.textContent = prev }, 1500)
+        }).catch(function() {
+          // 降级：创建临时 input 复制
+          const inp = document.createElement('input')
+          inp.value = url
+          document.body.appendChild(inp)
+          inp.select()
+          document.execCommand('copy')
+          document.body.removeChild(inp)
+          const prev = copyLinkBtn.textContent
+          copyLinkBtn.textContent = '✅'
+          setTimeout(function() { copyLinkBtn.textContent = prev }, 1500)
+        })
+        // 关闭 FAB 菜单
+        settingsFabGroup.classList.remove('expanded')
+        settingsFabBtn.classList.remove('open')
+      })
+
+      // ── 免责声明模态框 ──────────────────────────────────────
+      const disclaimerBtn   = document.getElementById('disclaimerBtn')
+      const disclaimerModal = document.getElementById('disclaimerModal')
+      const disclaimerClose = document.getElementById('disclaimerClose')
+
+      function openDisclaimer() {
+        disclaimerModal.classList.add('open')
+        lockScroll()                                    // 锁定背景滚动
+        settingsFabGroup.classList.remove('expanded')
+        settingsFabBtn.classList.remove('open')
+        history.pushState({ disclaimerOpen: true }, '')
+      }
+      function closeDisclaimer() {
+        disclaimerModal.classList.remove('open')
+        unlockScroll()                                  // 恢复背景滚动
+      }
+
+      disclaimerBtn.addEventListener('click', function(e) {
+        e.stopPropagation()
+        openDisclaimer()
+      })
+      disclaimerClose.addEventListener('click', function() {
+        if (history.state && history.state.disclaimerOpen) history.back()
+        else closeDisclaimer()
+      })
+      disclaimerModal.addEventListener('click', function(e) {
+        if (e.target === disclaimerModal) {
+          if (history.state && history.state.disclaimerOpen) history.back()
+          else closeDisclaimer()
+        }
+      })
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && disclaimerModal.classList.contains('open')) {
+          if (history.state && history.state.disclaimerOpen) history.back()
+          else closeDisclaimer()
+        }
+      })
+
       // ── 分类列表：桌面端移入侧边栏 / 移动端移入抽屉 ──────────
       const categoriesEl    = document.getElementById('categoriesEl')
       const sidebarNav      = document.getElementById('sidebarNav')
@@ -1591,9 +2191,13 @@
         })
       }
 
-      // 设备返回键（popstate）：若抽屉打开则关闭，否则正常回退
+      // 设备返回键（popstate）：优先关闭免责声明 → 赞助模态框 → 抽屉
       window.addEventListener('popstate', function(e) {
-        if (mobileDrawer.classList.contains('open')) {
+        if (disclaimerModal.classList.contains('open')) {
+          closeDisclaimer()
+        } else if (sponsorModal.classList.contains('open')) {
+          closeSponsor()
+        } else if (mobileDrawer.classList.contains('open')) {
           closeDrawer()
         }
       })
