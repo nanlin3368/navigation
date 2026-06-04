@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" id="themeColorMeta" content="#e6e7ee" />
-    <title>星源导航 | 收录优质站点，助力高效工作学习</title>
-    <link rel="apple-touch-icon" href="assets/nav.webp" />
-    <link rel="icon" href="assets/nav.webp" type="image/webp" />
+    <title>星源导航 | 所有站点随机收录</title>
+    <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
+    <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
     <!-- 禁止浏览器刷新时恢复滚动位置，保证入场动画从顶部开始 -->
     <!-- 主题预加载：在 CSS/JS 执行前立即确定深浅色，避免闪烁 -->
     <script>
@@ -849,7 +849,7 @@
         font-weight: 500;
       }
 
-      /* ── 复制链接子按钮（与 themeToggle / sponsorBtn 平行，展开时显示） ── */
+      /* ── 复制本站链接子按钮（与 themeToggle / sponsorBtn 平行，展开时显示） ── */
       #copyLinkBtn {
         width        : 52px;
         height       : 52px;
@@ -880,6 +880,34 @@
         visibility   : visible;
         transform    : translateX(0) scale(1);
         pointer-events: auto;
+      }
+
+      /* 复制本站链接 Toast 提示 */
+      #copyLinkToast {
+        position        : fixed;
+        bottom          : 36px;
+        left            : 50%;
+        transform       : translateX(-50%) translateY(20px);
+        background      : #2d2d3a;
+        color           : #fff;
+        padding         : 13px 28px;
+        border-radius   : 50px;
+        font-size       : 0.95rem;
+        font-weight     : 600;
+        letter-spacing  : 0.01em;
+        white-space     : nowrap;
+        box-shadow      : 0 8px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
+        opacity         : 0;
+        pointer-events  : none;
+        z-index         : 9999;
+        transition      : opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        display         : flex;
+        align-items     : center;
+        gap             : 8px;
+      }
+      #copyLinkToast.show {
+        opacity         : 1;
+        transform       : translateX(-50%) translateY(0);
       }
 
       /* ── 关于本站子按钮（与其他子按钮平行，展开时显示） ── */
@@ -1418,10 +1446,9 @@
         .mobile-drawer-nav .cat-count           { display: inline-block !important; font-size: 0.8rem; padding: 2px 6.5px; border-radius: 8px; margin-left: 6px; flex-shrink: 0; }
         .mobile-drawer-nav .category-btn.active .cat-count { background: rgba(255, 255, 255, 0.25) !important; color: white !important; }
       }
-
-    </style>
+    </style>  
   </head>
-  <body>
+  <body>   
     <div class="container">
       <div class="desktop-layout">
 
@@ -1499,7 +1526,7 @@
         <button class="category-btn"><span class="cat-label">🍉 新知百态</span></button>
         <button class="category-btn"><span class="cat-label">📖 学习成长</span></button>
         <button class="category-btn"><span class="cat-label">🧲 开发辅助</span></button>
-        <button class="category-btn"><span class="cat-label">📦 资源下载</span></button>
+        <button class="category-btn"><span class="cat-label">📦 资源基地</span></button>
         <button class="category-btn"><span class="cat-label">🛠️ 综合效率</span></button>
         <button class="category-btn"><span class="cat-label">🖼️ 图像处理</span></button>
         <button class="category-btn"><span class="cat-label">🎬 媒体创作</span></button>
@@ -1519,8 +1546,8 @@
           <div class="tools-grid" id="toolsGrid"></div>
 
           <footer>
-            <p>© 2026 星源导航 | ⚡ 持续更新中...🚀</p>
-            <p>由 [ <span class="author-highlight">闲月</span> ] 整理 ❤️ 极简 · 纯粹 · 高效<a href="https://nanlin3368.github.io/navigation" target="_blank" rel="noopener noreferrer"></a></p>
+            <p>© 2026 星源导航 | 极简 · 纯粹 · 高效</p>
+            <p>本站由 [ <span class="author-highlight">闲月</span> ] 倾心制作与内容整理<a href="https://nanlin3368.github.io/navigation" target="_blank" rel="noopener noreferrer"></a></p>
           </footer>
         </main><!-- /main-content -->
 
@@ -1554,7 +1581,7 @@
       <!-- 子按钮：免责声明 -->
       <button id="disclaimerBtn" title="关于本站" aria-label="关于本站">📢</button>
       <!-- 子按钮：复制链接 -->
-      <button id="copyLinkBtn" title="复制网页链接" aria-label="复制网页链接">🔗</button>
+      <button id="copyLinkBtn" title="复制本站链接" aria-label="复制本站链接">🔗</button>
       <!-- 子按钮：赞助入口 -->
       <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持">🌿</button>
       <!-- 子按钮：主题切换（样式与原 themeToggle 完全一致） -->
@@ -1578,16 +1605,19 @@
         <p class="sponsor-sub"> 如果本站对您有帮助，欢迎支持一下 ☕</p>
         <div class="sponsor-qr-row">
           <div class="sponsor-qr-item">
-            <img class="sponsor-qr-img" src="assets/wx.webp" alt="微信赞赏">
+            <img class="sponsor-qr-img" src="assets/picture/wx.webp" alt="微信赞赏">
             <span class="sponsor-qr-label">微信</span>
           </div>
           <div class="sponsor-qr-item">
-            <img class="sponsor-qr-img" src="assets/zfb.webp" alt="支付宝赞赏">
+            <img class="sponsor-qr-img" src="assets/picture/zfb.webp" alt="支付宝赞赏">
             <span class="sponsor-qr-label">支付宝</span>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- 复制链接成功提示 -->
+    <div id="copyLinkToast">✅ 成功复制本站链接，感谢您的分享！</div>
 
     <!-- ── 免责声明模态框 ── -->
     <div id="disclaimerModal" role="dialog" aria-modal="true" aria-label="关于本站">
@@ -1606,7 +1636,14 @@
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">数据来源与免责</p>
-              <p class="disclaimer-item-text">本站收录的第三方网站（包括但不限于资源库、素材网、技术论坛等）均由搜索引擎及公开信息整理而成，旨在方便用户获取信息。<strong>本站与所列网站无任何隶属、合作或商业关系。</strong></p>
+              <p class="disclaimer-item-text">本站所收录的第三方网站（包括但不限于资源库、素材网、技术论坛等）均由搜索引擎及公开信息整理而成，旨在方便用户获取信息。<strong>本站与所列网站无任何隶属、合作或商业关系。</strong></p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">收录知悉与质量</p>
+              <p class="disclaimer-item-text">本站抓取并整理的第三方网站<strong>均属于随机收录，收录网站的内容质量参差不齐，好坏皆有</strong>。用户在访问和使用相关网站时，根据自身需求理性评估其价值与实用性。</p>
             </div>
           </li>
           <li class="disclaimer-item">
@@ -1633,6 +1670,9 @@
         </ul>
       </div>
     </div>
+
+    <!-- 源码防护脚本 -->
+    <script src="src/scripts/security.js" defer></script>
 
     <!-- 搜索引擎配置 -->
     <script src="src/scripts/config.js"></script>
@@ -2076,18 +2116,27 @@
         }
       })
 
-      // ── 复制网页链接 ──────────────────────────────────────────
-      const copyLinkBtn = document.getElementById('copyLinkBtn')
+      // ── 复制本站链接 ──────────────────────────────────────────
+      const copyLinkBtn  = document.getElementById('copyLinkBtn')
+      const copyLinkToast = document.getElementById('copyLinkToast')
       // ★ 在此处替换为实际网页链接 ★
-      const SITE_URL    = 'https://nanlin3368.github.io/navigation'
+      const SITE_URL     = 'https://nanlin3368.github.io/navigation'
+
+      let _copyToastTimer = null
+      function showCopyToast() {
+        if (_copyToastTimer) clearTimeout(_copyToastTimer)
+        copyLinkToast.classList.add('show')
+        _copyToastTimer = setTimeout(function() {
+          copyLinkToast.classList.remove('show')
+          _copyToastTimer = null
+        }, 2000)
+      }
 
       copyLinkBtn.addEventListener('click', function(e) {
         e.stopPropagation()
         const url = SITE_URL || location.href
         navigator.clipboard.writeText(url).then(function() {
-          const prev = copyLinkBtn.textContent
-          copyLinkBtn.textContent = '✅'
-          setTimeout(function() { copyLinkBtn.textContent = prev }, 1500)
+          showCopyToast()
         }).catch(function() {
           // 降级：创建临时 input 复制
           const inp = document.createElement('input')
@@ -2096,9 +2145,7 @@
           inp.select()
           document.execCommand('copy')
           document.body.removeChild(inp)
-          const prev = copyLinkBtn.textContent
-          copyLinkBtn.textContent = '✅'
-          setTimeout(function() { copyLinkBtn.textContent = prev }, 1500)
+          showCopyToast()
         })
         // 关闭 FAB 菜单
         settingsFabGroup.classList.remove('expanded')
@@ -2217,9 +2264,6 @@
           }
         })
       }
-    </script>
-
-    <!-- 源码防护脚本 -->
-    <script src="src/scripts/security.js" defer></script>
+    </script>   
   </body>
 </html>
