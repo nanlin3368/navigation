@@ -6,5 +6,8 @@
 
 ## 📸 界面预览
 
+### 📱 移动端
 ![星源导航界面预览 1](assets/picture/preview_1.webp)
+
+### 💻 桌面端
 ![星源导航界面预览 2](assets/picture/preview_2.webp)
