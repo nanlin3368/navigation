@@ -31,6 +31,34 @@
         "title": "秋木科技",
         "icon": "秋木科技_icon.webp",
         "url": "https://qiumu1998.github.io",
+        "description": "官方软件下载导航平台，精选 70+ 常用软件与驱动的官方直链下载入口，涵盖游戏平台、社交通讯、浏览器、办公效率、影音娱乐、系统工具等高频使用场景，所有链接均指向官方来源，安全无广告、分类清晰，是高效工作与娱乐的一站式软件下载导航平台",
+        "category": "更多导航"
+    },
+    {
+        "title": "AI 工具集",
+        "icon": "AI_工具集_icon.webp",
+        "url": "https://ai-bot.cn",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "纯净派",
+        "icon": "纯净派_icon.webp",
+        "url": "https://chunjing.app",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "那些免费的砖",
+        "icon": "那些免费的砖_icon.webp",
+        "url": "https://www.thosefree.com",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "阅读指南",
+        "icon": "阅读指南_icon.webp",
+        "url": "https://readzn.com",
         "description": "",
         "category": "更多导航"
     }

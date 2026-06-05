@@ -31,63 +31,70 @@
         "title": "TidyCode",
         "icon": "TidyCode_icon.webp",
         "url": "https://tidycode.org/zh-cn",
-        "description": "",
+        "description": "集成格式化、美化、验证、压缩与格式转换于一体的免费在线开发工具平台，支持 JSON、XML、HTML 等多种语言与数据结构，提供 JSON 路径搜索、字段提取、语法校验等实用功能，全程本地处理，操作简单，适合开发者与测试人员高效完成工作流",
         "category": "开发辅助"
     },
     {
         "title": "加密大师",
         "icon": "加密大师_icon.webp",
         "url": "https://jiamidashi.cn",
-        "description": "",
+        "description": "加解密与编码转换平台，提供多种常用的数据加密、解密和编码转换功能，包括Base64编码与解码、URL编码与解码、MD5加密与验证等，旨在为用户提供简便安全的解决方案，界面简洁，无需安装与登录，适合开发者与安全从业者进行日常调试与数据处理",
         "category": "开发辅助"
     },
     {
         "title": "程序员工具",
         "icon": "程序员工具_icon.webp",
         "url": "https://tool.ur1.fun",
-        "description": "",
+        "description": "面向开发者的全能在线工具平台，提供代码格式化、代码压缩与转换、加解密算法、文本处理、网络诊断、站长检测、单位换算等多类开发工具，无需安装、即开即用，满足开发调试、前后端协作与日常运维的多场景需求，是高效便捷的一站式开发辅助平台",
         "category": "开发辅助"
     },
     {
         "title": "BeautifierConverter",
         "icon": "BeautifierConverter_icon.webp",
         "url": "https://www.beautifyconverter.com",
-        "description": "",
+        "description": "在线开发者工具平台，提供 CSS、HTML、JavaScript、JSON、XML 等多格式的在线代码美化、压缩、混淆与格式转换工具，同时支持 CSV、Excel 等文件互转，所有处理均在线完成且不存储数据，兼具高效与安全，是日常开发与项目维护的高效辅助工具",
         "category": "开发辅助"
     },
     {
         "title": "Beautify Tools",
         "icon": "Beautify_Tools_icon.webp",
         "url": "https://beautifytools.com",
-        "description": "",
+        "description": "多功能在线开发工具平台，汇聚数十类工具，涵盖单位换算、字符串处理、SEO分析、IP与DNS查询、CSS/HTML/JS美化压缩、JSON/XML/CSV转换等功能，界面简洁、工具丰富，为开发者提供高效便捷的一站式解决方案，轻松完成日常技术任务",
         "category": "开发辅助"
     },
     {
         "title": "百川在线工具箱",
         "icon": "百川在线工具箱_icon.webp",
         "url": "https://rivers.chaitin.cn/tools",
-        "description": "",
+        "description": "全能型开发与安全工具平台，集成编码解码、加密解密、JSON处理、图片与视频加工、二进制分析、格式化、美化、可视化图表、安全工具等数百款高质量辅助工具，全部在线使用、无需安装，助你更高效地完成开发、调试、安全分析与日常工作流程",
         "category": "开发辅助"
     },
     {
         "title": "JavaPub Tool",
         "icon": "JavaPub_Tool_icon.webp",
         "url": "https://rodert.github.io/jsonformat",
-        "description": "",
+        "description": "开源、纯前端实现的开发者在线工具集合，提供 JSON格式化/转换、编码加密、正则测试、时间戳转换、代码对比、AI请求体格式化等高频开发工具，打开即用、无广告、数据不上传服务器，本地处理，安全高效，是开发者日常调试与数据处理的高效工具箱",
         "category": "开发辅助"
     },
     {
         "title": "工具百宝箱",
         "icon": "工具百宝箱_icon.webp",
         "url": "https://toolsdev.top",
-        "description": "",
+        "description": "专为开发者、运维与办公用户打造的在线多功能工具平台，覆盖文本处理、编码转换、格式生成、网络计算、调试分析与安全检测等高频场景，界面轻量、加载迅速、无需安装，支持快速搜索与即开即用，助力开发者快速处理日常任务，提升开发与办公效率",
         "category": "开发辅助"
     },
     {
         "title": "DevFile",
         "icon": "DevFile_icon.webp",
         "url": "https://devfile.cn",
-        "description": "",
+        "description": "永久免费的静态网页托管平台，支持 HTML 上传、ZIP 解压、在线编辑器、实时预览、全球 CDN 加速、HTTPS 自动部署，无需服务器、无需域名、无需 Git 仓库，30 秒发布前端作品，适合前端开发、UI 设计、AI 生成代码展示、教学作业提交与 Demo 演示",
+        "category": "开发辅助"
+    },
+    {
+        "title": "friday 工具箱",
+        "icon": "friday_工具箱_icon.webp",
+        "url": "https://fridaytools.dpdns.org",
+        "description": "纯前端在线开发者工具集合，提供 SVG 转 PNG、图片压缩、JSON 格式化、Base64 编解码、URL 编解码、正则测试、UUID 生成、时间戳转换、颜色转换等高效实用功能，浏览器本地运行处理，无需安装与登录，是开发者与设计师的轻量级效率工作台",
         "category": "开发辅助"
     }
 ]

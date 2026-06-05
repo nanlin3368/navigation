@@ -278,5 +278,61 @@
         "url": "https://tool.mastermao.com/zh",
         "description": "",
         "category": "综合效率"
+    },
+    {
+        "title": "pudone",
+        "icon": "pudone_icon.webp",
+        "url": "https://pudone.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "UFreeTools",
+        "icon": "UFreeTools_icon.webp",
+        "url": "https://www.ufreetools.com/zh",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Convry",
+        "icon": "Convry_icon.webp",
+        "url": "https://www.convry.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "UIED Tools",
+        "icon": "UIED_Tools_icon.webp",
+        "url": "https://uiedtool.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "紫图工具",
+        "icon": "紫图工具_icon.webp",
+        "url": "https://www.toolzt.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "小李时光工具箱",
+        "icon": "小李时光工具箱_icon.webp",
+        "url": "https://xlsgtools.cn",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "小李时光工具箱",
+        "icon": "小李时光工具箱_icon.webp",
+        "url": "https://xiaolishiguang-code-tool.pages.dev",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Tools Sutdio",
+        "icon": "Tools_Sutdio_icon.webp",
+        "url": "https://tools.wflynn.cn/tools",
+        "description": "",
+        "category": "综合效率"
     }
 ]

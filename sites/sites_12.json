@@ -320,5 +320,26 @@
         "url": "https://mdcard.rouguang.top",
         "description": "",
         "category": "文档办公"
+    },
+    {
+        "title": "RenameTools",
+        "icon": "RenameTools_icon.webp",
+        "url": "https://rename.tools/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Excalidraw",
+        "icon": "Excalidraw_icon.webp",
+        "url": "https://excalidraw.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDF Candy",
+        "icon": "PDF_Candy_icon.webp",
+        "url": "https://pdfcandy.com/cn",
+        "description": "",
+        "category": "文档办公"
     }
 ]

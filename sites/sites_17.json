@@ -89,5 +89,19 @@
         "url": "https://www.ncat22.com",
         "description": "",
         "category": "影音娱乐"
+    },
+    {
+        "title": "Hi歌曲音乐网",
+        "icon": "Hi歌曲音乐网_icon.webp",
+        "url": "https://higequ.com",
+        "description": "",
+        "category": "影音娱乐"
+    },
+    {
+        "title": "歌曲宝",
+        "icon": "歌曲宝_icon.webp",
+        "url": "https://www.gequbao.com",
+        "description": "",
+        "category": "影音娱乐"
     }
 ]

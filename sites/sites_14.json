@@ -124,5 +124,40 @@
         "url": "https://21st.dev/community/components",
         "description": "",
         "category": "视觉灵感"
+    },
+    {
+        "title": "backiee",
+        "icon": "backiee_icon.webp",
+        "url": "https://backiee.com",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "图叙",
+        "icon": "图叙_icon.webp",
+        "url": "https://www.tuxuai.com/inspiration",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Aiart Pics",
+        "icon": "Aiart_Pics_icon.webp",
+        "url": "https://aiart.pics",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "OpenNana",
+        "icon": "OpenNana_icon.webp",
+        "url": "https://opennana.com/awesome-prompt-gallery",
+        "description": "",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Wallpaper Gallery",
+        "icon": "Wallpaper_Gallery_icon.webp",
+        "url": "https://wallpaper.061129.xyz/mobile",
+        "description": "",
+        "category": "视觉灵感"
     }
 ]

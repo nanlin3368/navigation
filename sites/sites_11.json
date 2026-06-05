@@ -173,5 +173,12 @@
         "url": "https://textreader.cc/zh-cn",
         "description": "",
         "category": "媒体创作"
+    },
+    {
+        "title": "哔哩哔哩音频解析",
+        "icon": "哔哩哔哩音频解析_icon.webp",
+        "url": "https://www.pixcat.cn/lab/biliaudio.php",
+        "description": "",
+        "category": "媒体创作"
     }
 ]

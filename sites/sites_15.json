@@ -89,5 +89,19 @@
         "url": "https://downloader.bhwa233.com/zh",
         "description": "多平台媒体下载工具，支持抖音、TikTok、微博、小红书、Instagram 等平台，一键解析视频、图片、音频并下载视频、图片或音频文件，永久免费、无需登录、不限次数，粘贴链接即可高速下载原始媒体文件，适用于内容备份、素材收集与跨平台创作",
         "category": "视频提取"
+    },
+    {
+        "title": "TwitterXZ",
+        "icon": "TwitterXZ_icon.webp",
+        "url": "https://twitterxz.com",
+        "description": "",
+        "category": "视频提取"
+    },
+    {
+        "title": "免费视频文案提取工具",
+        "icon": "免费视频文案提取工具_icon.webp",
+        "url": "https://www.transcriptgenerate.com/zh-CN",
+        "description": "",
+        "category": "视频提取"
     }
 ]

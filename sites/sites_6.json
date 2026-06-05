@@ -70,16 +70,16 @@
         "category": "学习成长"
     },
     {
-        "title": "Bun",
-        "icon": "Bun_icon.webp",
-        "url": "https://www.bunjs.com.cn/zh-cn",
+        "title": "Markdown 教程",
+        "icon": "Markdown_教程_icon.webp",
+        "url": "https://www.markdownlang.com/zh",
         "description": "",
         "category": "学习成长"
     },
     {
-        "title": "Markdown 教程",
-        "icon": "Markdown_教程_icon.webp",
-        "url": "https://www.markdownlang.com/zh",
+        "title": "Bun",
+        "icon": "Bun_icon.webp",
+        "url": "https://www.bunjs.com.cn/zh-cn",
         "description": "",
         "category": "学习成长"
     },
@@ -91,8 +91,8 @@
         "category": "学习成长"
     },
     {
-        "title": "语言指南",
-        "icon": "语言指南_icon.webp",
+        "title": "LanguageGuide",
+        "icon": "LanguageGuide_icon.webp",
         "url": "https://www.languageguide.org/cn",
         "description": "",
         "category": "学习成长"
@@ -150,6 +150,27 @@
         "title": "摄影技术学习",
         "icon": "摄影技术学习_icon.webp",
         "url": "https://www.photographystudy.online",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "格言人-英语",
+        "icon": "格言人-英语_icon.webp",
+        "url": "https://en.kyrgk.com",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "DevDocs",
+        "icon": "DevDocs_icon.webp",
+        "url": "https://devdocs.io",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "LingoHut",
+        "icon": "LingoHut_icon.webp",
+        "url": "https://www.lingohut.com/zh",
         "description": "",
         "category": "学习成长"
     }

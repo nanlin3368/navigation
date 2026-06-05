@@ -285,5 +285,40 @@
         "url": "https://photocollagepro.com/zh",
         "description": "",
         "category": "图像处理"
+    },
+    {
+        "title": "宠物生成器",
+        "icon": "宠物生成器_icon.webp",
+        "url": "https://petpetgenerator.net",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "RAIW",
+        "icon": "RAIW_icon.webp",
+        "url": "https://raiw.cc/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "AIGCTRace",
+        "icon": "AIGCTRace_icon.webp",
+        "url": "https://aigctrace.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "PerlerBeads",
+        "icon": "PerlerBeads_icon.webp",
+        "url": "https://perlerbeads.net/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "麻雀AI工具箱",
+        "icon": "麻雀AI工具箱_icon.webp",
+        "url": "https://maquetool.cn",
+        "description": "",
+        "category": "图像处理"
     }
 ]

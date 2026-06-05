@@ -14,10 +14,10 @@
         "category": "人工智能"
     },
     {
-        "title": "Gemini",
-        "icon": "Gemini_icon.webp",
-        "url": "https://gemini.google.com",
-        "description": "谷歌推出的原生多模态大模型，深度集成谷歌生态体系，具备强大的理解、生成与推理能力，支持文本、图像、音频与视频的跨模态理解与高效处理，Gemini 以高性能、多模态与广泛适用性著称，在教育科研、内容生产、软件开发与企业智能化场景中表现突出",
+        "title": "Copilot",
+        "icon": "Copilot_icon.webp",
+        "url": "https://copilot.microsoft.com",
+        "description": "深度集成于微软生态的智能助手，可用于写作、搜索、学习、办公自动化与创意构思等多场景任务处理，依托微软云与大模型技术，能在 Microsoft 生态等场景中提供实时协作、智能总结、数据洞察与创意支持，帮助个人与团队显著提升生产效率与内容质量",
         "category": "人工智能"
     },
     {
@@ -35,10 +35,10 @@
         "category": "人工智能"
     },
     {
-        "title": "Copilot",
-        "icon": "Copilot_icon.webp",
-        "url": "https://copilot.microsoft.com",
-        "description": "深度集成于微软生态的智能助手，可用于写作、搜索、学习、办公自动化与创意构思等多场景任务处理，依托微软云与大模型技术，能在 Microsoft 生态等场景中提供实时协作、智能总结、数据洞察与创意支持，帮助个人与团队显著提升生产效率与内容质量",
+        "title": "Gemini",
+        "icon": "Gemini_icon.webp",
+        "url": "https://gemini.google.com",
+        "description": "谷歌推出的原生多模态大模型，深度集成谷歌生态体系，具备强大的理解、生成与推理能力，支持文本、图像、音频与视频的跨模态理解与高效处理，Gemini 以高性能、多模态与广泛适用性著称，在教育科研、内容生产、软件开发与企业智能化场景中表现突出",
         "category": "人工智能"
     },
     {
@@ -53,6 +53,13 @@
         "icon": "Perplexity_icon.webp",
         "url": "https://www.perplexity.ai",
         "description": "革命性的 AI 问答搜索引擎，支持学习、研究、写作、商业分析与日常查询，通过多源信息融合与结构化回答，能快速提供准确、可验证的内容，帮助用户节省搜索时间、提升决策效率，其引用透明、答案直接、结构清晰，是新一代 AI 搜索体验的代表",
+        "category": "人工智能"
+    },
+    {
+        "title": "豆包",
+        "icon": "豆包_icon.webp",
+        "url": "https://www.doubao.com/chat",
+        "description": "字节跳动旗下的 AI 智能助手，提供智能聊天、文案创作、翻译润色、编程指导、识图转文字、AI生图提示词、视频生成等功能，无论是创意灵感、学习辅导、办公效率还是日常聊天，都能提供高效、便捷、智能的对话体验，是工作、学习与创作的高效 AI 工具",
         "category": "人工智能"
     }
 ]
