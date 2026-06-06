@@ -882,7 +882,7 @@
         pointer-events: auto;
       }
 
-      /* 复制本站链接 Toast 提示 */
+      /* ── 复制本站链接 Toast 提示 ── */
       #copyLinkToast {
         position        : fixed;
         bottom          : 36px;
@@ -1536,6 +1536,7 @@
         <button class="category-btn"><span class="cat-label">📤 视频提取</span></button>
         <button class="category-btn"><span class="cat-label">🔍 聚合搜索</span></button>
         <button class="category-btn"><span class="cat-label">🎧 影音娱乐</span></button>
+        <button class="category-btn"><span class="cat-label">🔮 漫步次元</span></button>
         <button class="category-btn"><span class="cat-label">✈️ 跨境互联</span></button>
         <button class="category-btn"><span class="cat-label">🧰 网络驿站</span></button>
         <button class="category-btn"><span class="cat-label">🤖 安卓镜像</span></button>
@@ -1578,11 +1579,11 @@
 
     <!-- ── 设置 FAB 菜单 ── -->
     <div id="settingsFabGroup">
-      <!-- 子按钮：免责声明 -->
+      <!-- 子按钮：关于本站 -->
       <button id="disclaimerBtn" title="关于本站" aria-label="关于本站">📢</button>
-      <!-- 子按钮：复制链接 -->
+      <!-- 子按钮：复制本站链接 -->
       <button id="copyLinkBtn" title="复制本站链接" aria-label="复制本站链接">🔗</button>
-      <!-- 子按钮：赞助入口 -->
+      <!-- 子按钮：赞赏支持 -->
       <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持">🌿</button>
       <!-- 子按钮：主题切换（样式与原 themeToggle 完全一致） -->
       <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式" class="fab-child">☀️</button>
@@ -1597,7 +1598,7 @@
       </button>
     </div>
 
-    <!-- ── 赞助模态框 ── -->
+    <!-- ── 赞赏模态框 ── -->
     <div id="sponsorModal" role="dialog" aria-modal="true" aria-label="赞赏支持">
       <div class="sponsor-panel">
         <button class="sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
@@ -1619,7 +1620,7 @@
     <!-- 复制链接成功提示 -->
     <div id="copyLinkToast">✅ 成功复制本站链接，感谢您的分享！</div>
 
-    <!-- ── 免责声明模态框 ── -->
+    <!-- ── 关于本站模态框 ── -->
     <div id="disclaimerModal" role="dialog" aria-modal="true" aria-label="关于本站">
       <div class="disclaimer-panel">
         <button class="disclaimer-close" id="disclaimerClose" aria-label="关闭">✕</button>
@@ -2073,7 +2074,7 @@
         }
       }
 
-      // ── 赞助模态框 ────────────────────────────────────────────
+      // ── 赞赏模态框 ────────────────────────────────────────────
       const sponsorBtn   = document.getElementById('sponsorBtn')
       const sponsorModal = document.getElementById('sponsorModal')
       const sponsorClose = document.getElementById('sponsorClose')
@@ -2152,7 +2153,7 @@
         settingsFabBtn.classList.remove('open')
       })
 
-      // ── 免责声明模态框 ──────────────────────────────────────
+      // ── 关于本站模态框 ──────────────────────────────────────
       const disclaimerBtn   = document.getElementById('disclaimerBtn')
       const disclaimerModal = document.getElementById('disclaimerModal')
       const disclaimerClose = document.getElementById('disclaimerClose')
