@@ -31,28 +31,28 @@
         "title": "VERT",
         "icon": "VERT_icon.webp",
         "url": "https://vert.sh",
-        "description": "开源免费的文件格式转换工具，采用端侧处理技术，支持数百种图片、音频、视频与文档格式互转，无广告、无文件大小限制，提供极致简约且高效的转换体验，图片、音频及文档的转换均在本地完成，不上传、不存储、不追踪，确保隐私安全与高效速度",
+        "description": "开源、免费的文件格式转换工具，采用端侧处理技术，支持数百种图片、音频、视频与文档格式互转，无广告、无文件大小限制，提供极致简约且高效的转换体验，图片、音频及文档的转换均在本地完成，不上传、不存储、不追踪，确保隐私安全与高效速度",
         "category": "媒体创作"
     },
     {
         "title": "视频工具",
         "icon": "视频工具_icon.webp",
         "url": "https://tools.video/zh-CN",
-        "description": "功能全能且免费的视频与音频工具，提供 26款完全免费的媒体处理工具，涵盖压缩、裁剪、合并、智能补帧、加字幕、加水印、降噪、转GIF等丰富功能，支持 50GB大文件与多种专业格式，无需注册，无需下载安装即可在浏览器中实现高效的媒体创作",
+        "description": "功能全面且免费的视频与音频工具，提供 26款完全免费的媒体处理工具，涵盖压缩、裁剪、合并、智能补帧、加字幕、加水印、降噪、转 GIF 等丰富功能，支持 50GB 大文件与多种专业格式，无需注册、无需下载与安装，即可在浏览器中实现高效的媒体创作",
         "category": "媒体创作"
     },
     {
         "title": "音频大师",
         "icon": "音频大师_icon.webp",
         "url": "https://yinpindashi.cn",
-        "description": "",
+        "description": "免费的在线音频处理平台，提供音频格式转换、压缩、剪辑、拼接、变速、音量调整、频谱图生成、噪音生成器、MIDI转音频等多项功能，支持 MP3、WAV、AAC、FLAC 等主流格式，所有处理均在本地完成，适用于音乐制作、播客创作、视频剪辑与声学测试",
         "category": "媒体创作"
     },
     {
         "title": "闪记",
         "icon": "闪记_icon.webp",
         "url": "https://flashnotes-ai.web.app",
-        "description": "",
+        "description": "AI 录音转写工具，基于 OpenAI Whisper 与 WhisperX，实现高精度语音识别，支持多格式音频上传，自动识别说话人、生成精确时间戳，并可实时录音转写，适用于会议记录、采访整理、课堂笔记与内容创作等多种场景，助力高效完成内容整理与知识沉淀",
         "category": "媒体创作"
     },
     {
@@ -73,35 +73,14 @@
         "title": "AI speaker",
         "icon": "AI_speaker_icon.webp",
         "url": "https://ai-speaker.net/zh",
-        "description": "",
-        "category": "媒体创作"
-    },
-    {
-        "title": "TikTok 语音生成器",
-        "icon": "TikTok_语音生成器_icon.webp",
-        "url": "https://tiktokvoice.net/zh",
-        "description": "",
-        "category": "媒体创作"
-    },
-    {
-        "title": "人声分离",
-        "icon": "人声分离_icon.webp",
-        "url": "https://myvocalremover.com/zh",
-        "description": "",
+        "description": "在线免费文字转语音工具，支持 200+ 语言、320+ AI 主播音色，提供情感化、自然流畅的真人级语音合成，支持在线输入文本并一键生成 MP3 音频，支持多端同步、字幕生成、音频分段导出与自定义声音，适合短视频配音、课程录制、旁白制作与商业用途",
         "category": "媒体创作"
     },
     {
         "title": "配音助手",
         "icon": "配音助手_icon.webp",
         "url": "https://peiyinzhushou.com",
-        "description": "",
-        "category": "媒体创作"
-    },
-    {
-        "title": "文本转语音工具",
-        "icon": "文本转语音工具_icon.webp",
-        "url": "https://tts.kutool.com",
-        "description": "",
+        "description": "多音色、多方言的在线 AI 文本转语音工具，提供数十种高质量中文音色，支持普通话、粤语、四川话等方言，一键生成自然流畅的专业级配音，提供极速生成、批量处理、语调调节与高保真音质输出，可用于短视频、自媒体、广告宣传、有声阅读等多种场景",
         "category": "媒体创作"
     },
     {
@@ -136,6 +115,13 @@
         "title": "帧妙",
         "icon": "帧妙_icon.webp",
         "url": "https://framewow.toolooz.com",
+        "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "文本转语音工具",
+        "icon": "文本转语音工具_icon.webp",
+        "url": "https://tts.kutool.com",
         "description": "",
         "category": "媒体创作"
     },
@@ -179,6 +165,20 @@
         "icon": "哔哩哔哩音频解析_icon.webp",
         "url": "https://www.pixcat.cn/lab/biliaudio.php",
         "description": "",
+        "category": "媒体创作"
+    },
+    {
+        "title": "TikTok 语音生成器",
+        "icon": "TikTok_语音生成器_icon.webp",
+        "url": "https://tiktokvoice.net/zh",
+        "description": "在线 AI 配音平台，将任意文本一键转换为 TikTok 风格的特色语音，涵盖 Ghostface、Adam、Jessie 等热门声线，支持 20+ 语言、数千种音色、多情绪表达与多风格呈现，适用于搞笑旁白、剧情配音、广告文案、教学讲解、游戏解说与媒体内容创作",
+        "category": "媒体创作"
+    },
+    {
+        "title": "人声分离",
+        "icon": "人声分离_icon.webp",
+        "url": "https://myvocalremover.com/zh",
+        "description": "AI 人声分离工具，支持 mp3、wav、mp4 等多种音视频格式，一键提取人声或伴奏，基于先进深度学习算法，实现高精度、低失真的无损分离效果，提供在线预览、高品质输出与 SSL 隐私保护，适合短视频创作、播客剪辑、音乐编曲、混音工程与内容制作",
         "category": "媒体创作"
     }
 ]

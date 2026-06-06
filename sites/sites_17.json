@@ -103,5 +103,12 @@
         "url": "https://www.gequbao.com",
         "description": "",
         "category": "影音娱乐"
+    },
+    {
+        "title": "COCO音乐下载站",
+        "icon": "COCO音乐下载站_icon.webp",
+        "url": "https://cocodownloader.markqq.com",
+        "description": "",
+        "category": "影音娱乐"
     }
 ]

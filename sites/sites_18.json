@@ -1,30 +1,37 @@
 [
     {
-        "title": "机场推荐",
-        "icon": "机场推荐_icon.webp",
-        "url": "https://jichangtuijian.com",
-        "description": "深度聚合网络协议相关的前沿资讯与技术评测，通过系统化的选型建议与数据反馈，助力用户构建稳定可靠的互联环境",
-        "category": "跨境互联"
+        "title": "Komiic",
+        "icon": "Komiic_icon.webp",
+        "url": "https://komiic.com",
+        "description": "高质量线上漫画阅读平台，收录超过 7000 部高画质漫画，涵盖少年、少女、奇幻、冒险、恋爱、热血、治愈等多元题材，每日更新最新章节，支持跨设备同步阅读，提供快速载入、清晰画质与零负担的流畅体验，让你随时随地轻松追漫、探索更多精彩作品",
+        "category": "漫步次元"
     },
     {
-        "title": "润土分享",
-        "icon": "润土分享_icon.webp",
-        "url": "https://runtushare.net",
-        "description": "知名的前沿技术分享平台，深度聚焦数字化生存解决方案，提供详尽的海外服务订阅教程与科学的网络环境配置指南",
-        "category": "跨境互联"
+        "title": "拷贝漫画",
+        "icon": "拷贝漫画_icon.webp",
+        "url": "https://www.2026copy.com/h5/index",
+        "description": "海量正版与原创漫画资源平台，收录海量日漫、国漫、韩漫等热门作品，涵盖热血、恋爱、奇幻、悬疑、校园、玄幻、武侠等主流题材，更新速度快，分类清晰，支持夜间模式、离线缓存、多端同步与高清阅读，是追更热门连载与探索小众漫画的优质阅读平台",
+        "category": "漫步次元"
     },
     {
-        "title": "一个朋友",
-        "icon": "一个朋友_icon.webp",
-        "url": "https://ygpy.net",
-        "description": "跨境出海工具导航站，涵盖机场推荐、软件列表和网址导航等内容，致力于解决用户上网难题，是探索互联网的第一站",
-        "category": "跨境互联"
+        "title": "Mangabz",
+        "icon": "Mangabz_icon.webp",
+        "url": "https://www.mangabz.com",
+        "description": "日本漫画阅读平台，收录热门日漫与经典完结作品，涵盖热血、恋爱、校园、冒险、奇幻、科幻等全分类内容，提供《鬼灭之刃》《一拳超人》《海贼王》《火影忍者》《死神》等高人气漫画，分类清晰、纯净无广告、阅读流畅，是追番的高质量漫画入口",
+        "category": "漫步次元"
     },
     {
-        "title": "科学上网",
-        "icon": "科学上网_icon.webp",
-        "url": "https://www.zoio.net",
-        "description": "",
-        "category": "跨境互联"
+        "title": "G点漫画",
+        "icon": "G点漫画_icon.webp",
+        "url": "https://m.g-mh.org",
+        "description": "漫画聚合与索引平台，收录来自互联网公开漫画资源，提供多题材、多类型的在线阅读入口，整合剧情、冒险、都市、奇幻等常见漫画类别，方便快速找到符合兴趣的作品，界面简洁、清晰分类，支持移动端浏览，旨在为用户提供便捷的漫画检索与阅读体验",
+        "category": "漫步次元"
+    },
+    {
+        "title": "Yymanhua",
+        "icon": "Yymanhua_icon.webp",
+        "url": "https://www.yymanhua.com",
+        "description": "日本漫画阅读平台，收录热门日漫与经典完结作品，涵盖热血、恋爱、校园、冒险、奇幻、科幻等全分类内容，提供《鬼灭之刃》《一拳超人》《海贼王》《火影忍者》《死神》等高人气漫画，分类清晰、纯净无广告、阅读流畅，是追番的高质量漫画入口",
+        "category": "漫步次元"
     }
 ]
