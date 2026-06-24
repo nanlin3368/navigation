@@ -1,6 +1,6 @@
 /**
  * ════════════════════════════════════════
- *  通用源码防护脚本 · security.js
+ *  通用禁止脚本 · security.js
  *  路径: src/scripts/security.js
  *  说明: 由任意页面通过 <script src defer> 加载，无需修改即可复用。
  *
@@ -17,6 +17,7 @@
  *    ③ DevTools 尺寸检测
  *    ④ 截图 / 录屏视觉遮罩
  *    ⑤ console 陷阱
+ *    ⑥ 禁止页面缩放
  * ════════════════════════════════════════
  */
 (function () {
@@ -102,7 +103,7 @@
     });
 
     /* ─────────────────────────────────────────
-       ② 禁用危险快捷键
+       ② 禁用快捷键
           F12 / Ctrl+U / Ctrl+S / Ctrl+P
           Ctrl+Shift+I / J / C（DevTools）
           截图快捷键（PrtSc / Mac Cmd+Shift+3/4/5/6）
@@ -136,6 +137,12 @@
             _showCaptureOverlay();
             e.preventDefault();
             setTimeout(_hideCaptureOverlay, 400);
+        }
+
+        // 禁止键盘缩放：Ctrl/Cmd + +  -  =  0
+        if ((e.ctrlKey || e.metaKey) && ['+', '-', '=', '0'].includes(e.key)) {
+            e.preventDefault();
+            return false;
         }
     });
 
@@ -213,5 +220,25 @@
     setInterval(function () {
         console.log('%c', _trap);
     }, 2000);
+
+    /* ─────────────────────────────────────────
+       ⑥ 禁止页面缩放
+          移动端：双指捏合（touchmove 多点 / gesture 事件）
+          桌面端：触控板捏合 / Ctrl+滚轮（wheel + ctrlKey）
+    ───────────────────────────────────────── */
+    // 移动端：双指 touchmove
+    document.addEventListener('touchmove', function (e) {
+        if (e.touches.length > 1) e.preventDefault();
+    }, { passive: false });
+
+    // iOS Safari gesture 事件（pinch / rotate）
+    document.addEventListener('gesturestart',  function (e) { e.preventDefault(); }, { passive: false });
+    document.addEventListener('gesturechange', function (e) { e.preventDefault(); }, { passive: false });
+    document.addEventListener('gestureend',    function (e) { e.preventDefault(); }, { passive: false });
+
+    // 桌面端：触控板捏合 / Ctrl+滚轮
+    window.addEventListener('wheel', function (e) {
+        if (e.ctrlKey || e.metaKey) e.preventDefault();
+    }, { passive: false });
 
 })();
