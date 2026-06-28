@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" id="themeColorMeta" content="#e6e7ee" />
     <title>星源导航 | 你的网络小助手</title>
     <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
@@ -65,10 +65,14 @@
 
       body {
         background        : var(--primary-bg);
-        min-height        : 100vh;
+        min-height        : 100dvh;
         margin            : 0;
         padding           : 0;
         scrollbar-gutter  : stable;
+      }
+
+      html, body, .main-content {
+        overscroll-behavior: none;
       }
 
       /* ════════════════════════════════════════════════════════
@@ -302,10 +306,10 @@
       /* ── 全网搜索提交按钮 ── */
       .search-submit {
         flex-shrink   : 0;
-        width         : 44px;
-        height        : 44px;
-        margin-right  : 6px;
-        border-radius : 18px;
+        width         : 40px;
+        height        : 40px;
+        margin-right  : 10px;
+        border-radius : 14px;
         border        : none;
         cursor        : pointer;
         display       : flex;
@@ -1375,6 +1379,58 @@
         animation-delay   : 0s !important;
       }
 
+      /* ── 底部到达发光条（fixed，仅内容区滚动到底部时触发） ── */
+      #scrollBottomGlow {
+        position        : fixed;
+        bottom          : 0;
+        left            : 0;
+        right           : 0;
+        height          : 3px;
+        pointer-events  : none;
+        z-index         : 9999;
+        background      : linear-gradient(
+                            90deg,
+                            transparent              0%,
+                            rgba(239,  68,  68, 0.7) 20%,
+                            rgba(220,  38,  38, 0.95) 50%,
+                            rgba(239,  68,  68, 0.7) 80%,
+                            transparent              100%
+                          );
+        opacity         : 0;
+        transform       : scaleX(0.55);
+        transform-origin: center;
+        box-shadow      : none;
+        transition      : opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      #scrollBottomGlow.active {
+        opacity   : 1;
+        transform : scaleX(1);
+        box-shadow: 0 0 18px 6px  rgba(239,  68,  68, 0.55),
+                    0 0 60px 20px rgba(239,  68,  68, 0.20),
+                    0 -8px  36px 0 rgba(220,  38,  38, 0.16);
+      }
+      #scrollBottomGlow.fade-out {
+        opacity   : 0;
+        transform : scaleX(1);
+        box-shadow: none;
+        transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+      }
+      body.dark #scrollBottomGlow {
+        background: linear-gradient(
+                      90deg,
+                      transparent               0%,
+                      rgba(252, 165, 165, 0.60) 20%,
+                      rgba(239,  68,  68, 0.92) 50%,
+                      rgba(252, 165, 165, 0.60) 80%,
+                      transparent               100%
+                    );
+      }
+      body.dark #scrollBottomGlow.active {
+        box-shadow: 0 0 22px 8px  rgba(252, 165, 165, 0.55),
+                    0 0 70px 24px rgba(252, 165, 165, 0.22),
+                    0 -10px 48px 0 rgba(239,  68,  68, 0.20);
+      }
+
       /* ════════════════════════════════════════════════════════
          §2  桌面端布局（min-width: 769px）
          ════════════════════════════════════════════════════════ */
@@ -1549,9 +1605,9 @@
         }
         .tool-icon-fallback { font-size: 2.2rem; margin-bottom: 10px; }
         .tool-title         { font-size: 1.35rem; margin-bottom: 8px; }
-        .tool-description   { font-size: 0.95rem; margin-bottom: 14px; }
-        .tool-link          { font-size: 1.05rem; padding: 8px 18px; border-radius: 12px; }
-        footer              { font-size: 1rem; margin-top: 28px; }
+        .tool-description   { font-size: 0.98rem; margin-bottom: 14px; }
+        .tool-link          { font-size: 1.1rem; padding: 8px 18px; border-radius: 12px; }
+        footer              { font-size: 0.95rem; margin-top: 28px; }
 
         /* ── 隐藏移动端专属元素 ── */
         .mobile-categories     { display: none !important; }
@@ -1614,7 +1670,7 @@
         }
         .engine-trigger  { padding: 0 8px 0 14px; gap: 4px; }
         .search-box      { padding: 0 10px; font-size: 1rem; }
-        .search-submit   { width: 40px; height: 40px; margin-right: 4px; border-radius: 14px; }
+        .search-submit   { width: 35px; height: 35px; margin-right: 6px; border-radius: 12px; }
         .engine-dropdown { max-width: calc(100vw - 24px); padding: 12px; border-radius: 18px; }
         .engine-grid     { grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .engine-item     { padding: 8px 4px 6px; }
@@ -1662,7 +1718,7 @@
         .tool-link        { font-size: 1.2rem; padding: 8px 16px; border-radius: 12px; }
         .tools-grid       { grid-template-columns: 1fr; gap: 20px; margin-bottom: 8px; padding: 16px 28px; }
         .tool-card        { padding: 20px; border-radius: 20px; }
-        footer            { margin: 0 28px 26px; padding: 18px 16px; font-size: 0.88rem; border-radius: 18px; }
+        footer            { margin: 0 28px 26px; padding: 18px 16px; font-size: 0.9rem; border-radius: 18px; }
 
         /* 悬浮按钮移动端尺寸 */
         #backToTop         { right: 18px; bottom: 158px; width: 46px; height: 46px; }
@@ -1829,6 +1885,7 @@
           z-index: 150;
         }
       }
+
     </style>  
   </head>
   <body>   
@@ -1978,6 +2035,7 @@
         </svg>
       </button>
     </div>
+    <div id="scrollBottomGlow"></div>
 
     <!-- ── 赞赏模态框 ── -->
     <div id="sponsorModal" role="dialog" aria-modal="true" aria-label="赞赏支持">
@@ -2057,7 +2115,7 @@
     <div id="toolboxModal" role="dialog" aria-modal="true" aria-label="在线工具箱">
       <div class="toolbox-panel">
         <button class="toolbox-close" id="toolboxClose" aria-label="关闭">✕</button>
-        <p class="toolbox-title">🧰 在线工具</p>
+        <p class="toolbox-title">🧰 简单工具</p>
         <div class="toolbox-search-row">
           <div class="toolbox-count-badge" id="toolboxCountBadge" title="当前显示工具数">
             <span class="toolbox-count-badge-num" id="toolboxCountNum">0</span>
@@ -2075,7 +2133,7 @@
 
     <!-- 在线工具列表配置 -->
     <script>
-      const TOOLS_BASE = 'tools/tools/'
+      const TOOLS_BASE = 'tools/tools1/'
 
       const TOOL_GROUPS = [
         {
@@ -2085,9 +2143,11 @@
             { name: 'JSON 压缩',    file: 'JSON压缩.html'    },
             { name: 'JSON 格式化',  file: 'JSON格式化.html'  },
             { name: '代码对比',     file: '代码对比.html'    },
+            { name: '色彩选择器',  file: '色彩选择器.html'  },            
+            { name: 'CSS 动画效果', file: 'CSS动画效果.html' },
             { name: '网页源码获取', file: '网页源码获取.html' },
-            { name: 'IP 信息查询',  file: 'IP信息查询.html'  },
-            { name: '二维码生成',   file: '二维码生成.html'  },
+            { name: 'IP 信息查询',  file: 'IP信息查询.html'  },            
+            { name: '浏览器起始页',   file: '浏览器起始页.html'  },
           ],
         },
         {
@@ -2109,27 +2169,24 @@
             { name: 'Markdown 编辑器', file: 'Markdown编辑器.html' },
             { name: '密码生成器',      file: '密码生成器.html'     },
             { name: '手写签名',        file: '手写签名.html'       },
-            { name: '汉字转拼音',      file: '汉字转拼音.html'     },
+            { name: '汉字转拼音',      file: '汉字转拼音.html'     },            
+            { name: '简体转繁体',    file: '简体转繁体.html'   },
+            { name: '繁体转简体',    file: '繁体转简体.html'   },
+            { name: 'Emoji 表情库', file: 'Emoji表情库.html' },
             { name: '特殊符号大全',    file: '特殊符号大全.html'   },
           ],
-        },
-        {
-          icon : '🎨',
-          label: '独立设计/前端',
-          tools: [
-            { name: '色彩选择器',  file: '色彩选择器.html'  },
-            { name: 'Emoji 表情库', file: 'Emoji表情库.html' },
-            { name: 'CSS 动画效果', file: 'CSS动画效果.html' },
-          ],
-        },
+        },        
         {
           icon : '🎈',
           label: '日常生活/趣味',
-          tools: [
-            { name: '每日一言',     file: '每日一言.html'     },
+          tools: [           
             { name: '在线黄历',     file: '在线黄历.html'     },
             { name: '天气预报',     file: '天气预报.html'     },
+            { name: '常用号码查询',     file: '常用号码查询.html'     },
+            { name: '国际区号查询',     file: '国际区号查询.html'     },
             { name: '单位换算',     file: '单位换算.html'     },
+            { name: '二维码生成',   file: '二维码生成.html'  },
+            { name: '每日一言',     file: '每日一言.html'     },
             { name: '反应速度测试', file: '反应速度测试.html' },
           ],
         },
@@ -2291,43 +2348,80 @@
       let loadedIndexes   = new Set()
       const totalCategories = categoryBtns.length - 1
 
-      // ── 渲染卡片 ──────────────────────────────────────────────
+      // ── 渲染卡片（懒加载分页版）─────────────────────────────
+      const PAGE_SIZE   = 20
+      let _lazyItems    = []
+      let _lazyOffset   = 0
+      let _lazyObserver = null
+
+      function buildCard(site, i) {
+        const card     = document.createElement('div')
+        card.className = 'tool-card'
+        const PERIOD   = 3000, STAGGER = 400
+        const phaseMs  = (performance.now() + i * STAGGER) % PERIOD
+        const delay    = -(phaseMs / 1000).toFixed(3)
+        const iconHtml = site.icon
+          ? `<img class="tool-icon" src="assets/siteicons/${site.icon}" alt="${site.title}" loading="lazy" style="animation-delay:${delay}s" onerror="this.outerHTML='<span class=\\'tool-icon-skeleton\\'></span>'">`
+          : `<span class="tool-icon-skeleton"></span>`
+        card.innerHTML = `
+          ${iconHtml}
+          <h3 class="tool-title">${site.title || ''}</h3>
+          <p class="tool-description">${site.description || ''}</p>
+          <a href="${site.url || '#'}" target="_blank" class="tool-link">访问</a>
+        `
+        card.addEventListener('click', function(e) {
+          if (!e.target.classList.contains('tool-link')) {
+            const link = this.querySelector('.tool-link')
+            if (link) link.click()
+          }
+        })
+        return card
+      }
+
+      function appendChunk() {
+        if (_lazyOffset >= _lazyItems.length) return
+        const oldSentinel = grid.querySelector('.lazy-sentinel')
+        if (oldSentinel) oldSentinel.remove()
+        const chunk = _lazyItems.slice(_lazyOffset, _lazyOffset + PAGE_SIZE)
+        const frag  = document.createDocumentFragment()
+        chunk.forEach((site, j) => frag.appendChild(buildCard(site, _lazyOffset + j)))
+        _lazyOffset += chunk.length
+        if (_lazyOffset < _lazyItems.length) {
+          const sentinel = document.createElement('div')
+          sentinel.className = 'lazy-sentinel'
+          sentinel.style.cssText = 'height:1px;grid-column:1/-1'
+          frag.appendChild(sentinel)
+          grid.appendChild(frag)
+          _lazyObserver.observe(sentinel)
+        } else {
+          grid.appendChild(frag)
+        }
+      }
+
       function renderCards(sites, searchTerm = '') {
+        if (_lazyObserver) { _lazyObserver.disconnect(); _lazyObserver = null }
         grid.innerHTML = ''
-        const term     = searchTerm.toLowerCase().trim()
-        const filtered = sites.filter(site => {
+        const term  = searchTerm.toLowerCase().trim()
+        _lazyItems  = sites.filter(site => {
           if (!term) return true
           return (site.title || '').toLowerCase().includes(term) ||
                  (site.description || '').toLowerCase().includes(term)
         })
-        if (filtered.length === 0) {
+        _lazyOffset = 0
+        if (_lazyItems.length === 0) {
           grid.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">暂无内容</p>'
           return
         }
-        const PERIOD  = 3000
-        const STAGGER = 400
-        filtered.forEach((site, i) => {
-          const card    = document.createElement('div')
-          card.className = 'tool-card'
-          const phaseMs  = (performance.now() + i * STAGGER) % PERIOD
-          const delay    = -(phaseMs / 1000).toFixed(3)
-          const iconHtml = site.icon
-            ? `<img class="tool-icon" src="assets/siteicons/${site.icon}" alt="${site.title}" style="animation-delay:${delay}s" onerror="this.outerHTML='<span class=\\'tool-icon-skeleton\\'></span>'">`
-            : `<span class="tool-icon-skeleton"></span>`
-          card.innerHTML = `
-            ${iconHtml}
-            <h3 class="tool-title">${site.title || ''}</h3>
-            <p class="tool-description">${site.description || ''}</p>
-            <a href="${site.url || '#'}" target="_blank" class="tool-link">访问</a>
-          `
-          card.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('tool-link')) {
-              const link = this.querySelector('.tool-link')
-              if (link) link.click()
-            }
-          })
-          grid.appendChild(card)
-        })
+        const scrollRoot = window.innerWidth >= 769
+          ? document.querySelector('.main-content')
+          : null
+        _lazyObserver = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+            entries[0].target.remove()
+            appendChunk()
+          }
+        }, { root: scrollRoot, rootMargin: '200px' })
+        appendChunk()
       }
 
       // ── 更新分类按钮数字 ──────────────────────────────────────
@@ -2437,28 +2531,65 @@
       // ── 初始化：显示全部分类 ──────────────────────────────────
       showCategory(0)
 
-      // ── 回顶部按钮 ────────────────────────────────────────────
+      // ── 回顶部 & 底部发光 ──────────────────────────────────────
       const backToTopBtn     = document.getElementById('backToTop')
+      const scrollBottomGlow = document.getElementById('scrollBottomGlow')
       const SCROLL_THRESHOLD = 300
+      const mainContentEl    = document.querySelector('.main-content')
 
-      function getScrollContainer() {
-        return window.innerWidth >= 769
-          ? document.querySelector('.main-content')
-          : window
+      let _glowOn       = false
+      let _glowOffTimer = null
+
+      function glowShow() {
+        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null }
+        if (_glowOn) return
+        _glowOn = true
+        scrollBottomGlow.classList.remove('fade-out')
+        scrollBottomGlow.classList.add('active')
       }
-      function onScroll() {
-        const container = getScrollContainer()
-        const scrollTop = container === window ? window.scrollY : container.scrollTop
-        backToTopBtn.classList.toggle('visible', scrollTop > SCROLL_THRESHOLD)
+
+      function glowHide() {
+        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null }
+        if (!_glowOn) return
+        _glowOn = false
+        scrollBottomGlow.classList.remove('active')
+        scrollBottomGlow.classList.add('fade-out')
+        setTimeout(function() { scrollBottomGlow.classList.remove('fade-out') }, 550)
       }
-      window.addEventListener('scroll', onScroll, { passive: true })
-      document.querySelector('.main-content').addEventListener('scroll', onScroll, { passive: true })
+
+      // 在底部收到 scroll → 亮起，并将熄灭计时器顺延 350ms
+      function glowAtBottom() {
+        glowShow()
+        if (_glowOffTimer) clearTimeout(_glowOffTimer)
+        _glowOffTimer = setTimeout(glowHide, 350)
+      }
+
+      // 桌面端：只监听 .main-content（侧边栏等其他滚动容器不触发）
+      mainContentEl.addEventListener('scroll', function() {
+        if (window.innerWidth < 769) return
+        const st = mainContentEl.scrollTop
+        const ch = mainContentEl.clientHeight
+        const sh = mainContentEl.scrollHeight
+        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD)
+        if (st + ch >= sh - 4) { glowAtBottom() } else { glowHide() }
+      }, { passive: true })
+
+      // 移动端：只监听 window
+      window.addEventListener('scroll', function() {
+        if (window.innerWidth >= 769) return
+        const st = window.scrollY
+        const ch = window.innerHeight
+        const sh = document.documentElement.scrollHeight
+        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD)
+        if (st + ch >= sh - 4) { glowAtBottom() } else { glowHide() }
+      }, { passive: true })
 
       backToTopBtn.addEventListener('click', function() {
-        const container = getScrollContainer()
-        container === window
-          ? window.scrollTo({ top: 0, behavior: 'smooth' })
-          : container.scrollTo({ top: 0, behavior: 'smooth' })
+        if (window.innerWidth >= 769) {
+          mainContentEl.scrollTo({ top: 0, behavior: 'smooth' })
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
       })
 
       // ── 主题切换 ──────────────────────────────────────────────
@@ -2484,7 +2615,7 @@
           themeTimer = setTimeout(() => {
             document.body.classList.remove('theme-transitioning')
             themeTimer = null
-          }, 500)
+          }, 400)
         } else {
           document.body.classList.toggle('dark', isDark)
           themeToggleBtn.textContent = isDark ? '🌙' : '☀️'
