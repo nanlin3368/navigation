@@ -95,7 +95,7 @@
         "icon": "pixiv_icon.webp",
         "url": "https://www.pixiv.net",
         "description": "全球知名的二次元艺术社区，汇聚海量插画、漫画、小说与原创艺术内容，提供标签系统、收藏夹、排行榜与推荐流，用户可以浏览高质量作品、关注创作者、参与主题活动、发布原创内容并加入多元创作社区，是视觉创作者展示才华与交流灵感的互动平台",
-        "category": "全球名站"
+        "category": "全球门户"
     },
     {
         "title": "X（原 Twitter）",
@@ -109,7 +109,7 @@
         "icon": "Dropbox_icon.webp",
         "url": "https://www.dropbox.com",
         "description": "全球领先的云端存储与协作平台，支持跨设备同步、文件备份、共享链接、团队协作与多格式文件管理，让用户随时随地轻松管理并访问重要数据，Dropbox以稳定性、安全性与高效协作为核心，是个人用户、团队与企业管理数字文件的理想解决方案",
-        "category": "全球名站"
+        "category": "全球门户"
     },
     {
         "title": "Yandex",
@@ -123,7 +123,7 @@
         "icon": "Spotify_icon.webp",
         "url": "https://open.spotify.com",
         "description": "全球最受欢迎的音乐与播客串流平台，拥有横跨全球的庞大曲库与不断更新的精选内容，提供热门列表、播客内容、个性化推荐、智能歌单与艺术家关注，支持离线收听与跨设备同步播放，无论在手机、电脑或智能音箱上，都能享受流畅、高品质音频播放",
-        "category": "全球名站"
+        "category": "全球门户"
     },
     {
         "title": "Potato Chat",

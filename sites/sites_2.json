@@ -1,65 +1,191 @@
 [
     {
-        "title": "ChatGPT",
-        "icon": "ChatGPT_icon.webp",
-        "url": "https://chatgpt.com",
-        "description": "全球领先的 AI 对话平台，支持文本生成、创意写作、代码解释、数据分析、语言翻译、学习辅导与商业内容创作，通过先进的自然语言处理技术，ChatGPT 能理解用户需求并生成准确且高质量内容，帮助用户更快完成任务、优化工作流程并解决多类型问题",
-        "category": "人工智能"
+        "title": "微信",
+        "icon": "微信_icon.webp",
+        "url": "https://weixin.qq.com",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "Claude",
-        "icon": "Claude_icon.webp",
-        "url": "https://claude.ai",
-        "description": "由 Anthropic 推出的高性能 AI 助手，擅长写作、总结、分析、推理、知识问答、代码解释、商业内容创作等多种任务，输出风格自然、逻辑清晰且高度可靠，无论你是内容创作者还是企业团队，Claude 都能帮助你提升效率、拓展思维并构建更强的数字化工作流",
-        "category": "人工智能"
+        "title": "QQ",
+        "icon": "QQ_icon.webp",
+        "url": "https://im.qq.com/index/#/",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "Copilot",
-        "icon": "Copilot_icon.webp",
-        "url": "https://copilot.microsoft.com",
-        "description": "深度集成于微软生态的智能助手，可用于写作、搜索、学习、办公自动化与创意构思等多场景任务处理，依托微软云与大模型技术，能在 Microsoft 生态等场景中提供实时协作、智能总结、数据洞察与创意支持，帮助个人与团队显著提升生产效率与内容质量",
-        "category": "人工智能"
+        "title": "哔哩哔哩",
+        "icon": "哔哩哔哩_icon.webp",
+        "url": "https://m.bilibili.com",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "Grok",
-        "icon": "Grok_icon.webp",
-        "url": "https://grok.com",
-        "description": "由 xAI 推出的新一代 AI 模型，深度融合 X 平台实时资讯，能够快速生成文章、摘要、标题、脚本、代码与深度分析内容，通过实时抓取 X 平台讨论与网络信息，Grok 的回答更贴近当前语境与趋势，它不仅能写，还能“知道现在正在发生什么”",
-        "category": "人工智能"
+        "title": "抖音",
+        "icon": "抖音_icon.webp",
+        "url": "https://www.douyin.com/home",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "DeepSeek",
-        "icon": "DeepSeek_icon.webp",
-        "url": "https://chat.deepseek.com",
-        "description": "中国领先的新一代开源 AI 大模型，顶尖的推理模型和开源生态，以极高性价比、强推理能力与可本地化部署，相比同级闭源模型，DeepSeek 在代码编程、深度思考、知识问答及复杂任务处理上表现卓越，适用于企业私有化部署、AI 应用开发与科研创新",
-        "category": "人工智能"
+        "title": "快手",
+        "icon": "快手_icon.webp",
+        "url": "https://m.kuaishou.com",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "Gemini",
-        "icon": "Gemini_icon.webp",
-        "url": "https://gemini.google.com",
-        "description": "谷歌推出的原生多模态大模型，深度集成谷歌生态体系，具备强大的理解、生成与推理能力，支持文本、图像、音频与视频的跨模态理解与高效处理，Gemini 以高性能、多模态与广泛适用性著称，在教育科研、内容生产、软件开发与企业智能化场景中表现突出",
-        "category": "人工智能"
+        "title": "小红书",
+        "icon": "小红书_icon.webp",
+        "url": "https://www.xiaohongshu.com",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "Midjourney",
-        "icon": "Midjourney_icon.webp",
-        "url": "https://www.midjourney.com",
-        "description": "艺术级 AI 图像生成平台，依托先进的深度学习模型生成逼真、风格化或艺术级图像，提供文字生图、图生图、风格迁移、角色一致性、智能编辑器、风格库等专业功能，无论是设计师、品牌团队还是内容创作者，都能快速构建独特视觉风格与高质量创意作品",
-        "category": "人工智能"
+        "title": "微博",
+        "icon": "微博_icon.webp",
+        "url": "https://weibo.com",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "Perplexity",
-        "icon": "Perplexity_icon.webp",
-        "url": "https://www.perplexity.ai",
-        "description": "革命性的 AI 问答搜索引擎，支持学习、研究、写作、商业分析与日常查询，通过多源信息融合与结构化回答，能快速提供准确、可验证的内容，帮助用户节省搜索时间、提升决策效率，其引用透明、答案直接、结构清晰，是新一代 AI 搜索体验的代表",
-        "category": "人工智能"
+        "title": "知乎",
+        "icon": "知乎_icon.webp",
+        "url": "https://www.zhihu.com",
+        "description": "",
+        "category": "国内主流"
     },
     {
-        "title": "豆包",
-        "icon": "豆包_icon.webp",
-        "url": "https://www.doubao.com/chat",
-        "description": "字节跳动旗下的 AI 智能助手，提供智能聊天、文案创作、翻译润色、编程指导、识图转文字、AI生图提示词、视频生成等功能，无论是创意灵感、学习辅导、办公效率还是日常聊天，都能提供高效、便捷、智能的对话体验，是工作、学习与创作的高效 AI 工具",
-        "category": "人工智能"
+        "title": "酷安",
+        "icon": "酷安_icon.webp",
+        "url": "https://www.coolapk.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "京东",
+        "icon": "京东_icon.webp",
+        "url": "https://m.jd.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "拼多多",
+        "icon": "拼多多_icon.webp",
+        "url": "https://m.pinduoduo.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "淘宝",
+        "icon": "淘宝_icon.webp",
+        "url": "https://tb.alicdn.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "闲鱼",
+        "icon": "闲鱼_icon.webp",
+        "url": "https://www.goofish.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "腾讯视频",
+        "icon": "腾讯视频_icon.webp",
+        "url": "https://v.qq.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "QQ音乐",
+        "icon": "QQ音乐_icon.webp",
+        "url": "https://y.qq.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "酷狗音乐",
+        "icon": "酷狗音乐_icon.webp",
+        "url": "https://m.kugou.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "虎牙直播",
+        "icon": "虎牙直播_icon.webp",
+        "url": "https://www.huya.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "斗鱼直播",
+        "icon": "斗鱼直播_icon.webp",
+        "url": "https://www.douyu.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "夸克",
+        "icon": "夸克_icon.webp",
+        "url": "https://www.quark.cn",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "百度",
+        "icon": "百度_icon.webp",
+        "url": "https://www.baidu.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "百度贴吧",
+        "icon": "百度贴吧_icon.webp",
+        "url": "https://tieba.baidu.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "网易",
+        "icon": "网易_icon.webp",
+        "url": "https://www.163.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "网易云音乐",
+        "icon": "网易云音乐_icon.webp",
+        "url": "https://music.163.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "搜狐",
+        "icon": "搜狐_icon.webp",
+        "url": "https://www.sohu.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "今日头条",
+        "icon": "今日头条_icon.webp",
+        "url": "https://www.toutiao.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "西瓜视频",
+        "icon": "西瓜视频_icon.webp",
+        "url": "https://www.ixigua.com",
+        "description": "",
+        "category": "国内主流"
+    },
+    {
+        "title": "爱奇艺",
+        "icon": "爱奇艺_icon.webp",
+        "url": "https://www.iqiyi.com",
+        "description": "",
+        "category": "国内主流"
     }
 ]

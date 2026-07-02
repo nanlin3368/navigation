@@ -1,107 +1,100 @@
 [
     {
-        "title": "爱PPT",
-        "icon": "爱PPT_icon.webp",
-        "url": "https://www.2ppt.com",
-        "description": "高质量 PPT 模板与演示素材资源平台，提供海量免费 PPT 模板、PPT 图表、背景图片、设计素材，每日更新精选模板，覆盖办公汇报、教师课件、竞选演讲、商务展示等多场景，支持快速浏览与一键下载，让用户随时随地获取精美演示资源，高效完成 PPT 制作",
-        "category": "资源基地"
+        "title": "FreeCodeFormat",
+        "icon": "FreeCodeFormat_icon.webp",
+        "url": "https://www.freecodeformat.com/zh-hans",
+        "description": "代码格式化与美化服务平台，支持 JSON、HTML、SQL、XML 等代码格式化、压缩、校验、转换，提供哈希加密、正则测试、时间戳转换、图片转码等 500+ 工具，无需注册、免费使用，一键美化杂乱代码、转换各类数据格式，高效提升调试与文档处理效率",
+        "category": "开发辅助"
     },
     {
-        "title": "简历模板资源网",
-        "icon": "简历模板资源网_icon.webp",
-        "url": "https://www.jianlimoban-ziyuan.com",
-        "description": "免费的求职文档资源平台，提供海量行业简历模板、简历范文、求职信写作指南与简历优化教程，涵盖销售、设计、互联网IT、财务、教师、医疗等上百类岗位，模板格式规范、排版精美，支持在线预览与免费下载，助你快速打造专业简历，提升求职竞争力",
-        "category": "资源基地"
+        "title": "IT-Tools",
+        "icon": "IT-Tools_icon.webp",
+        "url": "https://it-tools.tech",
+        "description": "免费开源的在线开发者工具集合，提供百余种开发工具，涵盖JSON格式化、Base64、哈希加密、JWT解析、IP子网计算、时间转换、正则测试、Docker转换、二维码生成等功能，无需注册，即开即用，高效解决程序员日常调试、数据转换、网络运维各类需求",
+        "category": "开发辅助"
     },
     {
-        "title": "鹿鸣",
-        "icon": "鹿鸣_icon.webp",
-        "url": "https://www.lumingrj.com",
-        "description": "软件资源与安装服务平台，提供 Mac/Win 软件目录、详细图文安装教程与常见报错解决方案，内容涵盖科研建模、数据分析、医学影像、设计绘图、办公效率等多类型软件，所有资源均经实机测试，确保安全、可靠，帮助用户快速完成软件部署与环境配置",
-        "category": "资源基地"
+        "title": "开发者武器库",
+        "icon": "开发者武器库_icon.webp",
+        "url": "https://devtool.tech",
+        "description": "专为开发者打造的开发工具箱，内置 60+ 实用工具，覆盖编解码、JSON格式化、色彩转换、图片压缩、表格互转、JWT解析、OCR文字识别、SEO检测等功能，工具浏览器本地运行，无注册、无广告、无付费，适合前端、后端、数据从业者提升日常开发效率",
+        "category": "开发辅助"
     },
     {
-        "title": "软仓",
-        "icon": "软仓_icon.webp",
-        "url": "https://www.ruancang.net",
-        "description": "公益性质的专业软件导航站，收录 Office、Adobe系列、AutoCAD、3dsMax、达芬奇、C4D 等 300+ 专业软件，分类全面、资源丰富，提供资源整理、版本信息、安装教程与网盘直链下载，是设计、建模、影视、建筑等领域用户获取软件资源的高质量入口",
-        "category": "资源基地"
+        "title": "蛙蛙工具",
+        "icon": "蛙蛙工具_icon.webp",
+        "url": "https://www.10015tools.online/zh",
+        "description": "免费轻量日常开发工具集，包括编码解码、文本处理、二进制转换、代码格式化、PDF合并、图片压缩、哈希加密等功能，所有工具均免费，无注册登录，代码开源可本地部署，前端开发者、运维可随时在线调试，高效解决日常编码、格式转换、文件处理需求",
+        "category": "开发辅助"
     },
     {
-        "title": "奇迹秀",
-        "icon": "奇迹秀_icon.webp",
-        "url": "https://www.qijishow.com",
-        "description": "优质资源与效率工具聚合平台，整合创意工具、效率插件、灵感导航与设计规范等核心内容，提供 UI/UX、平面设计、视频剪辑、三维建模等领域常用的软件、插件与高质量素材，全部资源均可免费下载并经过安全测试，是创意从业者必备的高效工具集合站",
-        "category": "资源基地"
+        "title": "TidyCode",
+        "icon": "TidyCode_icon.webp",
+        "url": "https://tidycode.org/zh-cn",
+        "description": "集成格式化、美化、验证、压缩与格式转换于一体的免费在线开发工具平台，支持 JSON、XML、HTML 等多种语言与数据结构，提供 JSON 路径搜索、字段提取、语法校验等实用功能，全程本地处理，操作简单，适合开发者与测试人员高效完成工作流",
+        "category": "开发辅助"
     },
     {
-        "title": "考拉资源库",
-        "icon": "考拉资源库_icon.webp",
-        "url": "https://www.kaolarj.com",
-        "description": "个人非盈利性网站，专注分享日常工作办公技术资源，聚合电脑软件、系统维护工具、专业应用、编程软件、Adobe全家桶、实用网站与精品游戏的高质量资源，提供软件版本选择、图文安装教程与多个网盘直链下载，是高效获取软件与学习资源的实用平台",
-        "category": "资源基地"
+        "title": "加密大师",
+        "icon": "加密大师_icon.webp",
+        "url": "https://jiamidashi.cn",
+        "description": "加解密与编码转换平台，提供多种常用的数据加密、解密和编码转换功能，包括Base64编码与解码、URL编码与解码、MD5加密与验证等，旨在为用户提供简便安全的解决方案，界面简洁，无需安装与登录，适合开发者与安全从业者进行日常调试与数据处理",
+        "category": "开发辅助"
     },
     {
-        "title": "Crx搜搜",
-        "icon": "Crx搜搜_icon.webp",
-        "url": "https://www.crxsoso.com",
-        "description": "浏览器扩展聚合平台，收录海量 Chrome 扩展、Edge 插件、浏览器应用，提供高速、纯净、无广告的 CRX 文件下载与在线搜索服务，支持插件历史版本、详情查询、离线安装包、扩展镜像资源加速，适合普通用户快速查找插件与开发者进行版本对比与调试",
-        "category": "资源基地"
+        "title": "程序员工具",
+        "icon": "程序员工具_icon.webp",
+        "url": "https://tool.ur1.fun",
+        "description": "面向开发者的全能在线工具平台，提供代码格式化、代码压缩与转换、加解密算法、文本处理、网络诊断、站长检测、单位换算等多类开发工具，无需安装、即开即用，满足开发调试、前后端协作与日常运维的多场景需求，是高效便捷的一站式开发辅助平台",
+        "category": "开发辅助"
     },
     {
-        "title": "Font",
-        "icon": "Font_icon.webp",
-        "url": "https://font.icu",
-        "description": "免费字体资源平台，提供丰富的中英文字体资源，涵盖黑体、宋体、楷体、手写体、艺术体等多种风格，支持在线预览、授权类型查看、字形数量展示与免费下载，特别适合设计师、品牌方与内容创作者快速找到可安全商用的字体，提升视觉表现与创意效率",
-        "category": "资源基地"
+        "title": "BeautifierConverter",
+        "icon": "BeautifierConverter_icon.webp",
+        "url": "https://www.beautifyconverter.com",
+        "description": "在线开发者工具平台，提供 CSS、HTML、JavaScript、JSON、XML 等多格式的在线代码美化、压缩、混淆与格式转换工具，同时支持 CSV、Excel 等文件互转，所有处理均在线完成且不存储数据，兼具高效与安全，是日常开发与项目维护的高效辅助工具",
+        "category": "开发辅助"
     },
     {
-        "title": "SeedHub",
-        "icon": "SeedHub_icon.webp",
-        "url": "https://sidhub.cc",
-        "description": "影视内容发现与资讯平台，覆盖电影、电视剧、动漫等多种类型，包含剧情、动作、科幻、悬疑、喜剧、纪录片等丰富分类，平台持续更新最新上映与热门作品，提供清晰的内容分类、评分参考、剧情简介与相关资讯，帮助用户快速浏览最新影视资讯与推荐",
-        "category": "资源基地"
+        "title": "Beautify Tools",
+        "icon": "Beautify_Tools_icon.webp",
+        "url": "https://beautifytools.com",
+        "description": "多功能在线开发工具平台，汇聚数十类工具，涵盖单位换算、字符串处理、SEO分析、IP与DNS查询、CSS/HTML/JS美化压缩、JSON/XML/CSV转换等功能，界面简洁、工具丰富，为开发者提供高效便捷的一站式解决方案，轻松完成日常技术任务",
+        "category": "开发辅助"
     },
     {
-        "title": "PPT 库",
-        "icon": "PPT库_icon.webp",
-        "url": "https://pptku.org",
-        "description": "高品质免费 PPT 模板库，提供海量精心挑选的 10000+ 免费 PPT 模板，涵盖工作汇报、教学课件、商务演示、主题班会、毕业答辩等多种场景，支持在线预览、分类检索与一键下载，无需注册，完全免费，是高质量 PPT 模板获取与办公素材查找的便捷平台",
-        "category": "资源基地"
+        "title": "百川在线工具箱",
+        "icon": "百川在线工具箱_icon.webp",
+        "url": "https://rivers.chaitin.cn/tools",
+        "description": "全能型开发与安全工具平台，集成编码解码、加密解密、JSON处理、图片与视频加工、二进制分析、格式化、美化、可视化图表、安全工具等数百款高质量辅助工具，全部在线使用、无需安装，助你更高效地完成开发、调试、安全分析与日常工作流程",
+        "category": "开发辅助"
     },
     {
-        "title": "字体库",
-        "icon": "字体库_icon.webp",
-        "url": "https://zitiku.org",
-        "description": "高品质免费商用字体下载平台，提供 1000+ 精选中英文字体，覆盖黑体、宋体、楷体、手写体、艺术字等多种风格，支持在线预览与高速下载，无需注册即可使用，全部字体均标注授权信息，可放心用于品牌设计、海报、包装、LOGO、电商运营及自媒体创作",
-        "category": "资源基地"
+        "title": "JavaPub Tool",
+        "icon": "JavaPub_Tool_icon.webp",
+        "url": "https://rodert.github.io/jsonformat",
+        "description": "开源、纯前端实现的开发者在线工具集合，提供 JSON格式化/转换、编码加密、正则测试、时间戳转换、代码对比、AI请求体格式化等高频开发工具，打开即用、无广告、数据不上传服务器，本地处理，安全高效，是开发者日常调试与数据处理的高效工具箱",
+        "category": "开发辅助"
     },
     {
-        "title": "尔尔小站",
-        "icon": "尔尔小站_icon.webp",
-        "url": "https://erer.site",
-        "description": "资源分享的多领域导航站，覆盖学习、工作、娱乐、生活、旅行、软件等多类型内容，从效率工具到学习教程，从影视动漫到生活百科，分类清晰、资源可直接访问，满足不同用户的多样化需求，站点采用极简设计、无广告干扰，是资源聚合与分享中心",
-        "category": "资源基地"
+        "title": "工具百宝箱",
+        "icon": "工具百宝箱_icon.webp",
+        "url": "https://toolsdev.top",
+        "description": "专为开发者、运维与办公用户打造的在线多功能工具平台，覆盖文本处理、编码转换、格式生成、网络计算、调试分析与安全检测等高频场景，界面轻量、加载迅速、无需安装，支持快速搜索与即开即用，助力开发者快速处理日常任务，提升开发与办公效率",
+        "category": "开发辅助"
     },
     {
-        "title": "Word 联盟",
-        "icon": "Word_联盟_icon.webp",
-        "url": "https://www.wordlm.cn/",
-        "description": "文档排版与办公技能学习平台，提供从基础操作到进阶技巧的全套教程，包括格式调整、样式应用、目录生成、页眉页脚设置、文档美化与排版规范等高频办公场景，整合丰富的 PPT 模板、办公资源与文档示例，是学习办公技能与解决排版难题的优质工具站",
-        "category": "资源基地"
+        "title": "DevFile",
+        "icon": "DevFile_icon.webp",
+        "url": "https://devfile.cn",
+        "description": "永久免费的静态网页托管平台，支持 HTML 上传、ZIP 解压、在线编辑器、实时预览、全球 CDN 加速、HTTPS 自动部署，无需服务器、无需域名、无需 Git 仓库，30 秒发布前端作品，适合前端开发、UI 设计、AI 生成代码展示、教学作业提交与 Demo 演示",
+        "category": "开发辅助"
     },
     {
-        "title": "PNG素材网",
-        "icon": "PNG素材网_icon.webp",
-        "url": "https://www.pngsucai.com",
-        "description": "高清 PNG 透明背景素材资源平台，收录范围覆盖图标、插画、装饰元素、背景、节日素材、电商设计素材等多类型内容，支持在线预览与无损透明背景下载，即取即用，适用于设计、电商、美工、PPT制作等场景，让你快速找到所需素材，高效完成创意设计",
-        "category": "资源基地"
-    },
-    {
-        "title": "Mixkit",
-        "icon": "Mixkit_icon.webp",
-        "url": "https://mixkit.co",
-        "description": "免费创意素材平台，提供海量高清视频、音乐、音效、动画、转场与视频模板，全部可商用且无需署名，资源覆盖广告制作、短视频、YouTube、品牌营销、课程教学、社交媒体等多种场景，支持快速下载、无限制使用，是内容创作必备的高质量免费素材库",
-        "category": "网络驿站"
+        "title": "friday 工具箱",
+        "icon": "friday_工具箱_icon.webp",
+        "url": "https://fridaytools.dpdns.org",
+        "description": "纯前端在线开发者工具集合，提供 SVG 转 PNG、图片压缩、JSON 格式化、Base64 编解码、URL 编解码、正则测试、UUID 生成、时间戳转换、颜色转换等高效实用功能，浏览器本地运行处理，无需安装与登录，是开发者与设计师的轻量级效率工作台",
+        "category": "开发辅助"
     }
 ]

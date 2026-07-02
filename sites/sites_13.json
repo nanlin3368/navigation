@@ -1,163 +1,387 @@
 [
     {
-        "title": "HTMLrev",
-        "icon": "HTMLrev_icon.webp",
-        "url": "https://htmlrev.com",
-        "description": "HTML 网站模板资源库，提供免费且高质量的 HTML 网站模板，涵盖作品集、登陆页、博客、仪表盘等多类型页面，所有模板采用现代化设计、响应式布局与清晰的代码结构，支持实时预览、跨浏览器兼容，是寻找免费网页模板与前端 UI 资源的重要站点",
-        "category": "创意设计"
+        "title": "PDFCraft",
+        "icon": "PDFCraft_icon.webp",
+        "url": "http://pdfcraft.devtoolcafe.com/zh",
+        "description": "专业级在线 PDF 办公套件，提供 120+ 款功能，覆盖 PDF 文字编辑、合并、拆分、压缩、OCR识别、格式转换、页面管理与安全加密等全套工具，所有处理均在浏览器本地完成，100%隐私安全，无注册、完全免费，适用于办公、学习、文档管理与扫描文件",
+        "category": "文档办公"
     },
     {
-        "title": "Proicon",
-        "icon": "Proicon_icon.webp",
-        "url": "https://proicons.com",
+        "title": "QwikPDF",
+        "icon": "QwikPDF_icon.webp",
+        "url": "https://qwikpdf.com",
+        "description": "免费全能在线 PDF 办公，提供 20+ 全能工具，在线编辑 PDF 文字、合并拆分、压缩、PDF与图片互转，支持签名、标注、涂黑脱敏，可批量处理文件，旋转删除裁剪页面、设计印刷海报，编辑元数据、添加页码与水印，适合高效处理合同、简历与办公文档",
+        "category": "文档办公"
+    },
+    {
+        "title": "iLovePDF",
+        "icon": "iLovePDF_icon.webp",
+        "url": "https://www.ilovepdf.com/zh-cn",
+        "description": "全功能 PDF 在线工具平台，提供 PDF转换、压缩、合并、拆分、编辑、OCR识别、图片转PDF 等全套文档处理功能，覆盖学习、办公、合同处理、内容创作等场景，支持多格式互转与跨平台使用，操作简单、快速处理，是高效处理 PDF 文件的首选平台",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDF24",
+        "icon": "PDF24_icon.webp",
+        "url": "https://tools.pdf24.org/zh/all-tools",
+        "description": "完全免费的在线 PDF 工具集，包括 PDF合并、拆分、压缩、编辑、签署、OCR识别、PDF转Word/Excel/PPT、图片转PDF、PDF转图片、网页转PDF 等功能，支持无水印、无次数限制、多设备访问，文件传输全程加密，是处理 PDF 的高效、安全、可靠选择",
+        "category": "文档办公"
+    },
+    {
+        "title": "Stirling PDF",
+        "icon": "Stirling_PDF_icon.webp",
+        "url": "https://spdf.tinyrui.com",
+        "description": "一站式 PDF 工具平台，涵盖 PDF 合并、拆分、压缩、OCR识别、加水印、签名修复、加密解密、PDF与Word/图片/Markdown互转等全功能，支持批量处理、页面裁剪、空白页清理、证书签名、文档对比，工具无需频繁切换，高效完成各类 PDF 编辑转换需求",
+        "category": "文档办公"
+    },
+    {
+        "title": "FileUNZIP",
+        "icon": "FileUNZIP_icon.webp",
+        "url": "https://cn.fileunzip.com",
+        "description": "免费云端在线解压工具，无需安装软件，浏览器直接解压ZIP、RAR、7Z、ISO等 50 余种格式，支持加密压缩包，云端高速处理，最大支持 1GB 文件，文件加密上传，24小时自动清除保障隐私，解压后可预览并批量下载文件，让办公学习快速提取各类压缩资源",
+        "category": "文档办公"
+    },
+    {
+        "title": "iLoveZIP",
+        "icon": "iLoveZIP_icon.webp",
+        "url": "https://cn.ilovezip.com",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "theSVG",
-        "icon": "theSVG_icon.webp",
-        "url": "https://thesvg.org",
+        "title": "文件转换器",
+        "icon": "文件转换器_icon.webp",
+        "url": "https://cn.onlineconvert.com",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "Remix Icon",
-        "icon": "Remix_Icon_icon.webp",
-        "url": "https://remixicon.com",
-        "description": "开源的中性风格图标库，收录超过 3200 个像素级精致的 SVG 图标，覆盖常用 UI、系统操作与业务等场景，风格统一、线条干净、适配性强，支持 Outlined 与 Filled 双风格，可免费用于个人与商业项目，适用于 UI 设计、Web 开发与移动应用界面构建",
-        "category": "创意设计"
-    },
-    {
-        "title": "Uiverse",
-        "icon": "Uiverse_icon.webp",
-        "url": "https://uiverse.io",
-        "description": "全球最大的开源 UI 元素库，收录 7000+ 个高质量开源组件，包括按钮、卡片、加载动画、输入框、切换开关等，全部免费可商用，支持 CSS、Tailwind、HTML、React 与 Figma，所有组件均可一键复制使用，旨在为前端开发与视觉设计注入无限创意灵感",
-        "category": "创意设计"
-    },
-    {
-        "title": "APPLORE",
-        "icon": "APPLORE_icon.webp",
-        "url": "https://app.uiboy.com",
-        "description": "全球 App 图标探索与灵感平台，收录超过 5000+ 高质量应用图标，支持按分类、颜色、风格、发布时间等维度智能筛选，提供便捷的图标参考、应用信息浏览、设计趋势洞察与灵感收集体验，是灵感收集、界面设计与产品调研提供更全面、直观的视觉参考",
-        "category": "创意设计"
-    },
-    {
-        "title": "Google Fonts",
-        "icon": "Google_Fonts_icon.webp",
-        "url": "https://fonts.google.com",
-        "description": "由 Google 提供的免费开源字体库，收录超过 1000+ 高质量字体，覆盖拉丁、中文、日文、韩文、阿拉伯语、希腊语等多语种字符集，支持现代变量字体技术，让同一字体文件即可呈现多种字重、宽度与风格，大幅减少加载体积，提升排版灵活度与网页性能",
-        "category": "创意设计"
-    },
-    {
-        "title": "Emoji Directory",
-        "icon": "Emoji_Directory_icon.webp",
-        "url": "https://emojidir.com/zh-CN",
-        "description": "专业的 Emoji 收录与展示平台，整合 Fluent Emoji、Noto Emoji、Apple Emoji 等多平台样式展示，提供分类筛选、关键词搜索、风格对比、一键复制与 PNG/SVG 下载，用户可快速浏览 3D、彩色、扁平、线性等多种风格，是全球创作者查找 Emoji 的便捷工具",
-        "category": "创意设计"
-    },
-    {
-        "title": "阿里巴巴矢量图标库",
-        "icon": "阿里巴巴矢量图标库_icon.webp",
-        "url": "https://www.iconfont.cn",
-        "description": "国内最大的矢量图标与设计素材平台，提供超过 3300 万图标、插画、3D素材与 Lottie动效，支持 SVG/PNG/AI/FontIcon 等多格式下载，具备智能搜索、在线编辑、可变字体、多色图标、项目管理与团队协作等功能，是国内最受欢迎的图标与设计素材平台",
-        "category": "创意设计"
-    },
-    {
-        "title": "Undraw",
-        "icon": "Undraw_icon.webp",
-        "url": "https://undraw.co/illustrations",
-        "description": "开源的 SVG 插画库，提供数千张风格统一、可无限缩放的 SVG 插画，全部可免费商用且无需署名，支持关键词搜索、自定义插画主色调、高质量矢量下载，插画涵盖商业、科技、人物、设计、应用场景等主题，适用于网站、App、演示文稿、博客与营销内容",
-        "category": "创意设计"
-    },
-    {
-        "title": "YouIcons",
-        "icon": "YouIcons_icon.webp",
-        "url": "https://cn.youicons.com",
+        "title": "文件阅读器",
+        "icon": "文件阅读器_icon.webp",
+        "url": "https://cn.online-reader.com",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "All SVG Icons",
-        "icon": "All_SVG_Icons_icon.webp",
-        "url": "https://allsvgicons.com",
+        "title": "文件压缩工具",
+        "icon": "文件压缩工具_icon.webp",
+        "url": "https://www.online-compressor.com/cn/",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "CocoMaterial",
-        "icon": "CocoMaterial_icon.webp",
-        "url": "https://cocomaterial.com",
-        "description": "开源手绘插画素材库，提供数千张可自定义的线稿插画，支持在线搜索、编辑、调色与免费下载，所有插画均基于开源授权，可自由使用、修改与商用，适合网页设计、品牌视觉、教育内容、演示文稿与创意项目，是内容创作者获取轻量级视觉素材的理想来源",
-        "category": "创意设计"
-    },
-    {
-        "title": "西瓜封面设计",
-        "icon": "西瓜封面设计_icon.webp",
-        "url": "https://cover.xgdh.cn",
-        "description": "在线封面设计工具，无需注册，完全免费使用，支持纯色、渐变与图片背景，自定义标题、水印与图标库，提供主题模式、一键切换与实时预览功能，支持多格式导出、自定义尺寸与高质量图片生成，适用于文章封面、课程封面、博客头图等多种创作场景",
-        "category": "创意设计"
-    },
-    {
-        "title": "yesicon",
-        "icon": "yesicon_icon.webp",
-        "url": "https://yesicon.app",
-        "description": "超大规模开源矢量图标平台，整合 200+ 开源图标库与 29 万+ 矢量图标，支持中文关键词检索、风格筛选、颜色与尺寸在线调整，提供 SVG/PNG下载与多框架代码复制，无需注册即可使用，帮助设计师、前端开发者与产品团队快速查找、编辑与集成图标资源",
-        "category": "创意设计"
-    },
-    {
-        "title": "svgl",
-        "icon": "svgl_icon.webp",
-        "url": "https://svgl.app",
-        "description": "免费开源的矢量标识资源库，收录 600+ 国际品牌、技术框架、AI工具与软件服务的矢量图标，支持快速搜索、复制SVG代码、免费下载与自由使用，适用于网站UI、前端项目、移动应用、设计稿与产品展示，以轻量、快速，为你的项目提供专业级图标资源",
-        "category": "创意设计"
-    },
-    {
-        "title": "FreeDownloadLogo",
-        "icon": "FreeDownloadLogo_icon.webp",
-        "url": "https://www.freedownloadlogo.com/cn",
+        "title": "iLoveOCR",
+        "icon": "iLoveOCR_icon.webp",
+        "url": "https://www.iloveocr.com",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "SignatureFont",
-        "icon": "SignatureFont_icon.webp",
-        "url": "https://signaturefont.net/zh",
+        "title": "TinyWow",
+        "icon": "TinyWow_icon.webp",
+        "url": "https://tinywow.com",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "Flaticon",
-        "icon": "Flaticon_icon.webp",
-        "url": "https://www.flaticon.com",
+        "title": "Smallpdf",
+        "icon": "Smallpdf_icon.webp",
+        "url": "https://smallpdf.com",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "Iconbuddy",
-        "icon": "Iconbuddy_icon.webp",
-        "url": "https://iconbuddy.com",
+        "title": "PDFuck",
+        "icon": "PDFuck_icon.webp",
+        "url": "https://pdfuck.com/zh",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "3D图标库",
-        "icon": "3D图标库_icon.webp",
-        "url": "https://www.ai-suguan.com",
+        "title": "i2PDF",
+        "icon": "i2PDF_icon.webp",
+        "url": "https://www.i2pdf.com/zh",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "Dashboard Icons",
-        "icon": "Dashboard_Icons_icon.webp",
-        "url": "https://dashboardicons.com",
+        "title": "i2OCR",
+        "icon": "i2OCR_icon.webp",
+        "url": "https://www.i2ocr.com/zh",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
     },
     {
-        "title": "Worldvectorlogo",
-        "icon": "Worldvectorlogo_icon.webp",
-        "url": "https://worldvectorlogo.com/zh",
+        "title": "i2TEXT",
+        "icon": "i2TEXT_icon.webp",
+        "url": "https://www.i2text.com/zh",
         "description": "",
-        "category": "创意设计"
+        "category": "文档办公"
+    },
+    {
+        "title": "PDFTool",
+        "icon": "PDFTool_icon.webp",
+        "url": "https://www.pdftool.cc/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "ABCD Office",
+        "icon": "ABCD_Office_icon.webp",
+        "url": "https://www.abcdoffice.com/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Compare2Word",
+        "icon": "Compare2Word_icon.webp",
+        "url": "https://compare2word.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "CSVtoAny",
+        "icon": "CSVtoAny_icon.webp",
+        "url": "https://csvtoany.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "魔方简历",
+        "icon": "魔方简历_icon.webp",
+        "url": "https://magicv.art/zh",
+        "description": "基于 AI 技术的智能在线简历制作平台，提供智能润色、语法检查、自动排版、多模板选择、本地存储等专业辅助功能，支持 PDF 与 JSON 格式一键导出，适配不同求职场景与平台需求，无需注册即可使用，帮助用户快速创建结构清晰、表达专业的高质量简历",
+        "category": "文档办公"
+    },
+    {
+        "title": "ZIZIYI Office",
+        "icon": "ZIZIYI_Office_icon.webp",
+        "url": "https://office.ziziyi.com",
+        "description": "免费的在线 Office 编辑器，支持在浏览器中直接打开与编辑 DOCX、XLSX、PPTX、PDF 等格式，文件本地处理，确保隐私与安全，提供 Word、Excel、PPT 免费模板库，覆盖教育、商务、创意等主题，无需注册即可使用，提升办公效率与内容制作质量",
+        "category": "文档办公"
+    },
+    {
+        "title": "Diagrams",
+        "icon": "Diagrams_icon.webp",
+        "url": "https://www.drawio.com",
+        "description": "开源、免费的在线图表编辑器，支持流程图、组织结构图、网络拓扑图、思维导图等多种专业图表绘制，具备拖拽式编辑、智能对齐、多人协作、丰富导出格式等功能，无需注册即可使用，支持本地与云端存储，提供桌面版下载，是 Visio 的高质量替代方案",
+        "category": "文档办公"
+    },
+    {
+        "title": "懒人办公",
+        "icon": "懒人办公_icon.webp",
+        "url": "https://www.lanren.work",
+        "description": "专业的在线办公工具平台，支持 PDF合并、拆分、加密、解密、OCR、压缩等功能，提供图片去背景、文字提取、格式转换、拼接长图等工具，拥有丰富的 PPT、Word、Excel 模板免费下载，无需安装软件，即开即用，是高效便捷的一站式在线办公平台",
+        "category": "文档办公"
+    },
+    {
+        "title": "教师盒子",
+        "icon": "教师盒子_icon.webp",
+        "url": "https://teachbox.cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "docsmall",
+        "icon": "docsmall_icon.webp",
+        "url": "https://docsmall.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "CleverPDF",
+        "icon": "CleverPDF_icon.webp",
+        "url": "https://www.cleverpdf.com/cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "表格助手",
+        "icon": "表格助手_icon.webp",
+        "url": "https://tablecopy.pro/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "文字图像提取器",
+        "icon": "文字图像提取器_icon.webp",
+        "url": "https://word.appinn.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "在线简历生成工具",
+        "icon": "在线简历生成工具_icon.webp",
+        "url": "https://dnd-resume.com/editor",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "nbpdf",
+        "icon": "nbpdf_icon.webp",
+        "url": "https://nbpdf.com/zh-CN/print",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Raphael Publish",
+        "icon": "Raphael_Publish_icon.webp",
+        "url": "https://publish.raphael.app",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Z2H字帖",
+        "icon": "Z2H字帖_icon.webp",
+        "url": "https://z2h.cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "纸由我 PaperMe",
+        "icon": "纸由我_PaperMe_icon.webp",
+        "url": "https://paperme.toolooz.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PdfZap",
+        "icon": "PdfZap_icon.webp",
+        "url": "https://pdfzap.toolooz.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Flyfish Viewer",
+        "icon": "Flyfish_Viewer_icon.webp",
+        "url": "https://viewer.flyfish.dev",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDF ImagesTool",
+        "icon": "PDF_ImagesTool_icon.webp",
+        "url": "https://pdf.imagestool.com/zh-CN",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PrintlyTool",
+        "icon": "PrintlyTool_icon.webp",
+        "url": "https://www.printlytool.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "BentoPDF",
+        "icon": "BentoPDF_icon.webp",
+        "url": "https://www.bentopdf.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "File Compress",
+        "icon": "File_Compress_icon.webp",
+        "url": "https://filecompress.org/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "ConvertTool",
+        "icon": "ConvertTool_icon.webp",
+        "url": "https://converttool.org/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "File Compare",
+        "icon": "File_Compare_icon.webp",
+        "url": "https://filecompare.org/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Sejda PDF",
+        "icon": "Sejda_PDF_icon.webp",
+        "url": "https://www.sejda.com/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "在线 PDF 编辑",
+        "icon": "在线_PDF_编辑_icon.webp",
+        "url": "https://onlinepdfedit.com/zh-cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "发票排版助手",
+        "icon": "发票排版助手_icon.webp",
+        "url": "https://fapiao.jimbray.xyz",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "MDCard",
+        "icon": "MDCard_icon.webp",
+        "url": "https://mdcard.rouguang.top",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "RenameTools",
+        "icon": "RenameTools_icon.webp",
+        "url": "https://rename.tools/zh",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Excalidraw",
+        "icon": "Excalidraw_icon.webp",
+        "url": "https://excalidraw.com",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "PDF Candy",
+        "icon": "PDF_Candy_icon.webp",
+        "url": "https://pdfcandy.com/cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "WeMD",
+        "icon": "WeMD_icon.webp",
+        "url": "https://edit.wemd.app",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "Design2WeChat",
+        "icon": "Design2WeChat_icon.webp",
+        "url": "https://design2wechat.yihuier.xyz",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "福兮",
+        "icon": "福兮_icon.webp",
+        "url": "https://forxi.cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "青档 PDF",
+        "icon": "青档_PDF_icon.webp",
+        "url": "https://qingpdf.cn",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "烁皓的工具箱",
+        "icon": "烁皓的工具箱_icon.webp",
+        "url": "https://eternityspring.github.io/article-tools",
+        "description": "",
+        "category": "文档办公"
     }
 ]

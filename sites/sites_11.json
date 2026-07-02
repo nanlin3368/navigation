@@ -1,184 +1,310 @@
 [
     {
-        "title": "视频大师",
-        "icon": "视频大师_icon.webp",
-        "url": "https://www.shipindashi.cn",
-        "description": "全能型在线视频处理平台，提供视频剪辑、压缩、去水印、格式转换、字幕自动生成、音频提取、封面生成等全流程工具，支持多格式上传与高速云端处理，无需下载软件，打开浏览器即可使用，帮助用户快速处理短视频、宣传片、课程视频与自媒体内容",
-        "category": "媒体创作"
+        "title": "抠抠图",
+        "icon": "抠抠图_icon.webp",
+        "url": "https://www.koukoutu.com",
+        "description": "智能化的 AI抠图与图片编辑平台，提供人物/商品抠图、智能去背景、商品图修饰、老照片上色、图片高清放大、AI去水印、印花图案提取、证件照制作等工具，全自动识别主体与背景，支持批量处理与高清下载，让电商主图、设计素材、社交图片制作更轻松",
+        "category": "图像处理"
     },
     {
-        "title": "文本转语音",
-        "icon": "文本转语音_icon.webp",
-        "url": "https://text2voice.cc",
-        "description": "完全免费的在线文字转语音平台，采用微软 Edge TTS 技术，提供媲美真人的自然语音效果，支持中文、英文、日文等多语言，支持多种语音角色可选，自定义语速与音调，在线播放与 MP3 下载，无需注册、无限次数，适用于短视频配音、播客制作等场景",
-        "category": "媒体创作"
+        "title": "Shutterstock",
+        "icon": "Shutterstock_icon.webp",
+        "url": "https://www.shutterstock.com/zh/image-design-tools",
+        "description": "汇集多款专业级的在线图片设计工具，提供图片编辑、裁剪、压缩、格式转换到高级抠图、拼贴制作、调色板生成、社交媒体尺寸适配等全流程视觉创作，平台界面直观、操作轻松，支持社交媒体常用尺寸与多格式导出，全面提升品牌曝光与创意生产力",
+        "category": "图像处理"
     },
     {
-        "title": "视频压缩",
-        "icon": "视频压缩_icon.webp",
-        "url": "https://videocompressors.com/zh",
-        "description": "免费、无需上传、100% 隐私保护的本地在线视频压缩工具，支持 MP4/MOV/AVI 等主流格式，依托 GPU 加速技术，最高可将视频体积缩小 90%，轻松满足 Discord、微信、邮件等平台的上传限制，压缩快速、安全无水印，适合个人与专业用户高效处理视频",
-        "category": "媒体创作"
-    },
-    {
-        "title": "视频转 JPG",
-        "icon": "视频转_JPG_icon.webp",
-        "url": "https://videotojpg.com/zh",
-        "description": "高质量在线视频转图片工具，支持最大 1.9GB文件处理，兼容多种视频格式，输出JPG、PNG、WebP格式，提供清晰度检测、时间段截取、图片预览与批量打包下载等专业功能，无论你是摄影师、视频创作者还是社媒运营，都能轻松获得高质量截图",
-        "category": "媒体创作"
-    },
-    {
-        "title": "VERT",
-        "icon": "VERT_icon.webp",
-        "url": "https://vert.sh",
-        "description": "开源、免费的文件格式转换工具，采用端侧处理技术，支持数百种图片、音频、视频与文档格式互转，无广告、无文件大小限制，提供极致简约且高效的转换体验，图片、音频及文档的转换均在本地完成，不上传、不存储、不追踪，确保隐私安全与高效速度",
-        "category": "媒体创作"
-    },
-    {
-        "title": "视频工具",
-        "icon": "视频工具_icon.webp",
-        "url": "https://tools.video/zh-CN",
-        "description": "功能全面且免费的视频与音频工具，提供 26款完全免费的媒体处理工具，涵盖压缩、裁剪、合并、智能补帧、加字幕、加水印、降噪、转 GIF 等丰富功能，支持 50GB 大文件与多种专业格式，无需注册、无需下载与安装，即可在浏览器中实现高效的媒体创作",
-        "category": "媒体创作"
-    },
-    {
-        "title": "音频大师",
-        "icon": "音频大师_icon.webp",
-        "url": "https://yinpindashi.cn",
-        "description": "免费的在线音频处理平台，提供音频格式转换、压缩、剪辑、拼接、变速、音量调整、频谱图生成、噪音生成器、MIDI转音频等多项功能，支持 MP3、WAV、AAC、FLAC 等主流格式，所有处理均在本地完成，适用于音乐制作、播客创作、视频剪辑与声学测试",
-        "category": "媒体创作"
-    },
-    {
-        "title": "闪记",
-        "icon": "闪记_icon.webp",
-        "url": "https://flashnotes-ai.web.app",
-        "description": "AI 录音转写工具，基于 OpenAI Whisper 与 WhisperX，实现高精度语音识别，支持多格式音频上传，自动识别说话人、生成精确时间戳，并可实时录音转写，适用于会议记录、采访整理、课堂笔记与内容创作等多种场景，助力高效完成内容整理与知识沉淀",
-        "category": "媒体创作"
-    },
-    {
-        "title": "Vocal Remover",
-        "icon": "Vocal_Remover_icon.webp",
-        "url": "https://vocalremover.org/zh/",
-        "description": "免费的 AI 在线人声分离工具，支持从歌曲中提取伴奏与人声，提供音调变换、BPM查找、音频剪辑、合并、录音等多种音频编辑功能，无需安装软件，浏览器运行即可快速制作卡拉 OK 伴奏、混音素材与音频样本，是音乐爱好者与创作者的多功能音频工具站",
-        "category": "媒体创作"
-    },
-    {
-        "title": "观云",
-        "icon": "观云_icon.webp",
-        "url": "https://snapvee.com/zh",
-        "description": "面向创作者的一站式 AI 内容工作台，支持多平台视频下载、视频总结、字幕转录、文案去 AI 味、AI 生图与 AI 生视频等核心能力，通过自动提取、理解与再创作，让内容从素材到表达更高效，帮助创作者、运营者与团队快速完成内容生产与二次创作",
-        "category": "媒体创作"
-    },
-    {
-        "title": "AI speaker",
-        "icon": "AI_speaker_icon.webp",
-        "url": "https://ai-speaker.net/zh",
-        "description": "在线免费文字转语音工具，支持 200+ 语言、320+ AI 主播音色，提供情感化、自然流畅的真人级语音合成，支持在线输入文本并一键生成 MP3 音频，支持多端同步、字幕生成、音频分段导出与自定义声音，适合短视频配音、课程录制、旁白制作与商业用途",
-        "category": "媒体创作"
-    },
-    {
-        "title": "配音助手",
-        "icon": "配音助手_icon.webp",
-        "url": "https://peiyinzhushou.com",
-        "description": "多音色、多方言的在线 AI 文本转语音工具，提供数十种高质量中文音色，支持普通话、粤语、四川话等方言，一键生成自然流畅的专业级配音，提供极速生成、批量处理、语调调节与高保真音质输出，可用于短视频、自媒体、广告宣传、有声阅读等多种场景",
-        "category": "媒体创作"
-    },
-    {
-        "title": "视频转提示词",
-        "icon": "视频转提示词_icon.webp",
-        "url": "https://videotoprompt.com/zh",
+        "title": "i2IMG",
+        "icon": "i2IMG_icon.webp",
+        "url": "https://www.i2img.com/zh",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "FreeAIVideo",
-        "icon": "FreeAIVideo_icon.webp",
-        "url": "https://freeaivideo.org/zh-cn",
+        "title": "To WebP",
+        "icon": "To_WebP_icon.webp",
+        "url": "https://towebp.io",
+        "description": "完全免费的在线图片格式转换工具，支持批量将JPG、JPEG、PNG、GIF、SVG、ICO等主流格式一键转换为 WebP格式，显著减少图片体积，支持自由调整 WebP图片的质量、尺寸倍率、压缩方式等高级参数，以满足设计师、开发者等不同场景的专业需求",
+        "category": "图像处理"
+    },
+    {
+        "title": "在线图片编辑",
+        "icon": "在线图片编辑_icon.webp",
+        "url": "https://llccj.cn",
+        "description": "永久免费的在线图片编辑平台，支持不规则形状裁剪、智能背景移除、多图层自由编辑、长图无缝拼接、海报级排版、马赛克与模糊隐私保护、高清无损导出等核心能力，覆盖从轻量编辑到复杂创作的多种功能，满足内容创作者、设计师等不同用户需求",
+        "category": "图像处理"
+    },
+    {
+        "title": "iLoveIMG",
+        "icon": "iLoveIMG_icon.webp",
+        "url": "https://www.iloveimg.com/zh-cn",
+        "description": "全套免费的在线图片编辑工具，提供压缩、裁剪、格式转换、去背景、增强清晰度与批量处理等功能，支持PNG、JPG、WEBP等多种格式，界面简洁直观，支持批量操作，满足从日常编辑到专业设计的多种需求，是提升日常办公与图片编辑效率的利器",
+        "category": "图像处理"
+    },
+    {
+        "title": "imageonline",
+        "icon": "imageonline_io_icon.webp",
+        "url": "https://imageonline.io",
+        "description": " 免费在线图像工具和照片编辑器，提供 220+ 专业工具，包括图片压缩、裁剪、调整大小、格式转换、滤镜特效、背景去除、GIF编辑、颜色校正、测量与摄影计算等工具，适合设计师、摄影师及普通用户的多用途图像处理网站，是极具生产力的在线编辑器",
+        "category": "图像处理"
+    },
+    {
+        "title": "神奇橡皮擦",
+        "icon": "神奇橡皮擦_icon.webp",
+        "url": "https://magiceraser.org/zh",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "Vidtill",
-        "icon": "Vidtill_icon.webp",
-        "url": "https://vidtill.com",
+        "title": "隐私图片压缩",
+        "icon": "隐私图片压缩_icon.webp",
+        "url": "https://compressimage.cn/zh-CN",
+        "description": "高效、安全的在线图片压缩工具，支持JPG、PNG、WebP、GIF、BMP等格式，支持批量压缩与大图优化，采用行业领先算法，压缩率高达 95% 且画质超清，所有处理均在本地完成，确保隐私数据不上传，提供极速、免费、安全的图片压缩体验",
+        "category": "图像处理"
+    },
+    {
+        "title": "QwikIMG",
+        "icon": "Qwikimg_icon.webp",
+        "url": "https://qwikimg.com",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "视频转换宝",
-        "icon": "视频转换宝_icon.webp",
-        "url": "https://livecapture.toolooz.com",
+        "title": "Squoosh",
+        "icon": "Squoosh_icon.webp",
+        "url": "https://squoosh.app",
+        "description": "由谷歌开发的免费在线图片压缩与格式转换工具，支持PNG、JPEG、WebP、AVIF等多种格式，可实时预览压缩前后效果、极高压缩率、可视化参数调节、离线可用等优势，成为设计师、开发者、内容创作者优化图片体积、提升网页加载速度的理想工具",
+        "category": "图像处理"
+    },
+    {
+        "title": "ImagesTool",
+        "icon": "ImagesTool_icon.webp",
+        "url": "https://imagestool.com/zh_CN",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "帧妙",
-        "icon": "帧妙_icon.webp",
-        "url": "https://framewow.toolooz.com",
+        "title": "Ai ImagesTool",
+        "icon": "Ai_ImagesTool_icon.webp",
+        "url": "https://ai.imagestool.com/zh-CN",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "文本转语音工具",
-        "icon": "文本转语音工具_icon.webp",
-        "url": "https://tts.kutool.com",
+        "title": "To ImagesTool",
+        "icon": "To_ImagesTool_icon.webp",
+        "url": "https://to.imagestool.com/zh-CN",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "FreeCut",
-        "icon": "FreeCut_icon.webp",
-        "url": "https://www.freecut.net",
+        "title": "Tiny ImagesTool",
+        "icon": "Tiny_ImagesTool_icon.webp",
+        "url": "https://tiny.imagestool.com/zh-CN",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "VoiceCraft",
-        "icon": "VoiceCraft_icon.webp",
-        "url": "https://tts.wangwangit.com",
+        "title": "BG Remove",
+        "icon": "BG_Remove_icon.webp",
+        "url": "https://www.picbgremove.com",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "Vidmore",
-        "icon": "Vidmore_icon.webp",
-        "url": "https://www.vidmore.com/zh",
+        "title": "批量压缩图片",
+        "icon": "批量压缩图片_icon.webp",
+        "url": "https://image.wowyou.cc",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "格式工厂",
-        "icon": "格式工厂_icon.webp",
-        "url": "https://z.pcgeshi.com",
+        "title": "Zero BGRemove",
+        "icon": "Zero_BGRemove_icon.webp",
+        "url": "https://bgremove.wowyou.cc",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "TextReader",
-        "icon": "TextReader_icon.webp",
-        "url": "https://textreader.cc/zh-cn",
+        "title": "Remove",
+        "icon": "Remove_icon.webp",
+        "url": "https://remove.photos/zh-cn",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "哔哩哔哩音频解析",
-        "icon": "哔哩哔哩音频解析_icon.webp",
-        "url": "https://www.pixcat.cn/lab/biliaudio.php",
+        "title": "Gemini去水印工具",
+        "icon": "Gemini去水印工具_icon.webp",
+        "url": "https://geminiwatermarkremover.io/zh",
         "description": "",
-        "category": "媒体创作"
+        "category": "图像处理"
     },
     {
-        "title": "TikTok 语音生成器",
-        "icon": "TikTok_语音生成器_icon.webp",
-        "url": "https://tiktokvoice.net/zh",
-        "description": "在线 AI 配音平台，将任意文本一键转换为 TikTok 风格的特色语音，涵盖 Ghostface、Adam、Jessie 等热门声线，支持 20+ 语言、数千种音色、多情绪表达与多风格呈现，适用于搞笑旁白、剧情配音、广告文案、教学讲解、游戏解说与媒体内容创作",
-        "category": "媒体创作"
+        "title": "RevizePic",
+        "icon": "RevizePic_icon.webp",
+        "url": "https://revizepic.pixzens.com",
+        "description": "",
+        "category": "图像处理"
     },
     {
-        "title": "人声分离",
-        "icon": "人声分离_icon.webp",
-        "url": "https://myvocalremover.com/zh",
-        "description": "AI 人声分离工具，支持 mp3、wav、mp4 等多种音视频格式，一键提取人声或伴奏，基于先进深度学习算法，实现高精度、低失真的无损分离效果，提供在线预览、高品质输出与 SSL 隐私保护，适合短视频创作、播客剪辑、音乐编曲、混音工程与内容制作",
-        "category": "媒体创作"
+        "title": "Image Splitter",
+        "icon": "Image_Splitter_icon.webp",
+        "url": "https://imagesplitter.tools/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "LIVP转换器",
+        "icon": "LIVP转换器_icon.webp",
+        "url": "https://livp.toolooz.com/zh-CN",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "BananaCut",
+        "icon": "BananaCut_icon.webp",
+        "url": "https://bananacut.kirenath.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "Collaigo",
+        "icon": "Collaigo_icon.webp",
+        "url": "https://www.collaigo.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "在线图像工具箱",
+        "icon": "在线图像工具箱_icon.webp",
+        "url": "https://phototool.cn",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "拼图 Pro",
+        "icon": "拼图_Pro_icon.webp",
+        "url": "https://www.collage-pro.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "ResizeOn",
+        "icon": "ResizeOn_icon.webp",
+        "url": "https://resizeon.com/zh-cn",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "PetPet 生成器",
+        "icon": "PetPet_生成器_icon.webp",
+        "url": "https://petpetgenerator.app/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "EXIF Frame",
+        "icon": "EXIF_Frame_icon.webp",
+        "url": "https://exifframe.org/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "SlimPic 瘦图",
+        "icon": "SlimPic_瘦图_icon.webp",
+        "url": "https://slimpic.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图裁刀",
+        "icon": "图裁刀_icon.webp",
+        "url": "https://snaptrim.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图拼宝",
+        "icon": "图拼宝_icon.webp",
+        "url": "https://picweave.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "抠小宝",
+        "icon": "抠小宝_icon.webp",
+        "url": "https://cuttypic.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图尺匠",
+        "icon": "图尺匠_icon.webp",
+        "url": "https://picsizer.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图切宝",
+        "icon": "图切宝_icon.webp",
+        "url": "https://snapcute.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "手抠宝",
+        "icon": "手抠宝_icon.webp",
+        "url": "https://handtrim.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "图美啦",
+        "icon": "图美啦_icon.webp",
+        "url": "https://snapbeautify.toolooz.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "PhotoCollagePro",
+        "icon": "PhotoCollagePro_icon.webp",
+        "url": "https://photocollagepro.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "宠物生成器",
+        "icon": "宠物生成器_icon.webp",
+        "url": "https://petpetgenerator.net",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "RAIW",
+        "icon": "RAIW_icon.webp",
+        "url": "https://raiw.cc/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "AIGCTRace",
+        "icon": "AIGCTRace_icon.webp",
+        "url": "https://aigctrace.com",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "麻雀AI工具箱",
+        "icon": "麻雀AI工具箱_icon.webp",
+        "url": "https://maquetool.cn",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
+        "title": "应用截图工坊",
+        "icon": "应用截图工坊_icon.webp",
+        "url": "https://appshotmaker.com",
+        "description": "",
+        "category": "图像处理"
     }
 ]

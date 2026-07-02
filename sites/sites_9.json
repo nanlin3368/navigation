@@ -1,338 +1,128 @@
 [
     {
-        "title": "Mikutools",
-        "icon": "Mikutools_icon.webp",
-        "url": "https://okmiku.com",
-        "description": "极客范十足的轻量化在线工具箱，提供文本编辑、格式转换、图片处理、音频视频工具、AI 工具、加密解密、开发者工具等多种功能，所有工具均可免费使用，无需下载软件，操作简单、加载快速，是效率、实用与便捷于一体的在线工具集合站",
-        "category": "综合效率"
+        "title": "爱PPT",
+        "icon": "爱PPT_icon.webp",
+        "url": "https://www.2ppt.com",
+        "description": "高质量 PPT 模板与演示素材资源平台，提供海量免费 PPT 模板、PPT 图表、背景图片、设计素材，每日更新精选模板，覆盖办公汇报、教师课件、竞选演讲、商务展示等多场景，支持快速浏览与一键下载，让用户随时随地获取精美演示资源，高效完成 PPT 制作",
+        "category": "资源基地"
     },
     {
-        "title": "蜻蜓工具",
-        "icon": "蜻蜓工具_icon.webp",
-        "url": "https://33tool.com",
-        "description": "全能型在线工具箱，涵盖开发工具、编码加密、办公日常及生活娱乐等多元分类，提供HTML格式化、汉字转拼音、图片格式转换、Base64加密解密等多种实用功能，免费、快速、界面简洁、无需安装，是开发者与日常用户提升工作效率的便捷助手",
-        "category": "综合效率"
+        "title": "简历模板资源网",
+        "icon": "简历模板资源网_icon.webp",
+        "url": "https://www.jianlimoban-ziyuan.com",
+        "description": "免费的求职文档资源平台，提供海量行业简历模板、简历范文、求职信写作指南与简历优化教程，涵盖销售、设计、互联网IT、财务、教师、医疗等上百类岗位，模板格式规范、排版精美，支持在线预览与免费下载，助你快速打造专业简历，提升求职竞争力",
+        "category": "资源基地"
     },
     {
-        "title": "Wux Webtools",
-        "icon": "Wux_Webtools_icon.webp",
-        "url": "https://wuxwebtools.com/zh-CN",
-        "description": "完全免费的在线工具平台，提供文本处理、编码转换、加密解密、格式化工具、开发者工具等五十多种工具，无需安装与注册、快速高效，所有操作均在浏览器本地完成，主打隐私与安全，适合开发者、设计师与日常用户的一站式在线工具平台",
-        "category": "综合效率"
+        "title": "鹿鸣",
+        "icon": "鹿鸣_icon.webp",
+        "url": "https://www.lumingrj.com",
+        "description": "软件资源与安装服务平台，提供 Mac/Win 软件目录、详细图文安装教程与常见报错解决方案，内容涵盖科研建模、数据分析、医学影像、设计绘图、办公效率等多类型软件，所有资源均经实机测试，确保安全、可靠，帮助用户快速完成软件部署与环境配置",
+        "category": "资源基地"
     },
     {
-        "title": "FastDo",
-        "icon": "FastDo_icon.webp",
-        "url": "https://fastdo.tools",
-        "description": "多元化的在线效率工具站，覆盖电商设计、自媒体创作、文档处理、开发调试等全场景高频需求，提供图片压缩/抠图、PDF 转换/合并、视频剪辑/压缩、AI 文案生成、数据图表制作、开发者工具等 200+ 实用工具，无需安装，打开浏览器即可进入处理流程",
-        "category": "综合效率"
+        "title": "软仓",
+        "icon": "软仓_icon.webp",
+        "url": "https://www.ruancang.net",
+        "description": "公益性质的专业软件导航站，收录 Office、Adobe系列、AutoCAD、3dsMax、达芬奇、C4D 等 300+ 专业软件，分类全面、资源丰富，提供资源整理、版本信息、安装教程与网盘直链下载，是设计、建模、影视、建筑等领域用户获取软件资源的高质量入口",
+        "category": "资源基地"
     },
     {
-        "title": "ImageOnline",
-        "icon": "ImageOnline_co_icon.webp",
-        "url": "https://imageonline.co/cn",
-        "description": "终极免费在线工具套件，探索超过 250+ 免费在线工具，涵盖图像裁剪、格式转换、滤镜增强、视频合并、音频剪辑、GIF制作、PDF 合并与拆分、JSON/CSS/HTML工具、硬件诊断等实用功能，100%免费、快速、安全，可在任何设备上高速使用",
-        "category": "综合效率"
+        "title": "奇迹秀",
+        "icon": "奇迹秀_icon.webp",
+        "url": "https://www.qijishow.com",
+        "description": "优质资源与效率工具聚合平台，整合创意工具、效率插件、灵感导航与设计规范等核心内容，提供 UI/UX、平面设计、视频剪辑、三维建模等领域常用的软件、插件与高质量素材，全部资源均可免费下载并经过安全测试，是创意从业者必备的高效工具集合站",
+        "category": "资源基地"
     },
     {
-        "title": "ToolDuck",
-        "icon": "ToolDuck_icon.webp",
-        "url": "https://toolduck.cn",
-        "description": "高质量的免费在线工具库，提供 350+ 免费在线工具，覆盖AI助手、智能写作、图片处理、文本转换、效率提升、开发辅助等多领域工具，无需下载，即开即用，支持便捷分类与快速检索，帮助用户高效查找并使用各种在线工具，让办公、学习、开发更高效",
-        "category": "综合效率"
+        "title": "考拉资源库",
+        "icon": "考拉资源库_icon.webp",
+        "url": "https://www.kaolarj.com",
+        "description": "个人非盈利性网站，专注分享日常工作办公技术资源，聚合电脑软件、系统维护工具、专业应用、编程软件、Adobe全家桶、实用网站与精品游戏的高质量资源，提供软件版本选择、图文安装教程与多个网盘直链下载，是高效获取软件与学习资源的实用平台",
+        "category": "资源基地"
     },
     {
-        "title": "LocallyTools",
-        "icon": "LocallyTools_icon.webp",
-        "url": "https://locallytools.com/zh-Hans",
-        "description": "安全、免费、可离线使用的本地工具集合，汇集图片压缩与格式转换、PDF拆分/合并、文本与编码工具、代码格式化、UUID生成等开发者功能，所有操作均在本地浏览器完成，无需上传文件，确保隐私零泄露，为用户提供快速、高效、安全的使用体验",
-        "category": "综合效率"
+        "title": "Crx搜搜",
+        "icon": "Crx搜搜_icon.webp",
+        "url": "https://www.crxsoso.com",
+        "description": "浏览器扩展聚合平台，收录海量 Chrome 扩展、Edge 插件、浏览器应用，提供高速、纯净、无广告的 CRX 文件下载与在线搜索服务，支持插件历史版本、详情查询、离线安装包、扩展镜像资源加速，适合普通用户快速查找插件与开发者进行版本对比与调试",
+        "category": "资源基地"
     },
     {
-        "title": "一个木函",
-        "icon": "一个木函_icon.webp",
-        "url": "https://ol.woobx.cn",
-        "description": "全能在线效率工具，提供超过 80+ 实用工具，支持短网址生成、网络测速、图片压缩、正则表达式大全、JSON/YAML转换等高频需求，网页端无需安装，即开即用，部分工具支持会员增强功能，是创作、办公、学习、开发于一体的高效在线工具",
-        "category": "综合效率"
+        "title": "淘声网",
+        "icon": "淘声网_icon.webp",
+        "url": "https://www.tosound.com",
+        "description": "百万级免费音效素材聚合平台，收录影视配乐、游戏音效、实地录音、音乐样本，搭载自研吐司智能搜索引擎，快速匹配音频，整合多平台合规音源，提供CC0、免版税等商用授权，一键批量高速下载，短视频、游戏、剪辑创作者一站式获取无版权音频素材",
+        "category": "资源基地"
     },
     {
-        "title": "帮小忙",
-        "icon": "帮小忙_icon.webp",
-        "url": "https://tool.browser.qq.com",
-        "description": "腾讯推出的在线多功能工具箱平台，覆盖图片处理、PDF 转换、文档格式转换、视频处理、生活服务、教育学习、开发者工具等多类场景，所有工具均可在线即开即用，部分功能限时免费，适用于办公、学习、自媒体创作、生活查询等多种需求",
-        "category": "综合效率"
+        "title": "Font",
+        "icon": "Font_icon.webp",
+        "url": "https://font.icu",
+        "description": "免费字体资源平台，提供丰富的中英文字体资源，涵盖黑体、宋体、楷体、手写体、艺术体等多种风格，支持在线预览、授权类型查看、字形数量展示与免费下载，特别适合设计师、品牌方与内容创作者快速找到可安全商用的字体，提升视觉表现与创意效率",
+        "category": "资源基地"
     },
     {
-        "title": "即时工具",
-        "icon": "即时工具_icon.webp",
-        "url": "https://www.67tool.com",
-        "description": "",
-        "category": "综合效率"
+        "title": "SeedHub",
+        "icon": "SeedHub_icon.webp",
+        "url": "https://sidhub.cc",
+        "description": "影视内容发现与资讯平台，覆盖电影、电视剧、动漫等多种类型，包含剧情、动作、科幻、悬疑、喜剧、纪录片等丰富分类，平台持续更新最新上映与热门作品，提供清晰的内容分类、评分参考、剧情简介与相关资讯，帮助用户快速浏览最新影视资讯与推荐",
+        "category": "资源基地"
     },
     {
-        "title": "奇妙工具箱",
-        "icon": "奇妙工具箱_icon.webp",
-        "url": "https://www.magicalbox.cn",
-        "description": "集日常娱乐、文档办公、图片处理、文本优化、开发应用等于一体的在线工具集合平台，支持 PDF/图片/音视频转换、OCR识别、数据查询、单位换算、加密解密、正则工具等上百种实用功能，轻量便捷、随开随用，高效完成各种工作与生活任务",
-        "category": "综合效率"
+        "title": "PPT 库",
+        "icon": "PPT库_icon.webp",
+        "url": "https://pptku.org",
+        "description": "高品质免费 PPT 模板库，提供海量精心挑选的 10000+ 免费 PPT 模板，涵盖工作汇报、教学课件、商务演示、主题班会、毕业答辩等多种场景，支持在线预览、分类检索与一键下载，无需注册，完全免费，是高质量 PPT 模板获取与办公素材查找的便捷平台",
+        "category": "资源基地"
     },
     {
-        "title": "多功能工具箱",
-        "icon": "多功能工具箱_icon.webp",
-        "url": "https://www.996day.com",
-        "description": "极致纯净的纯前端工具集，涵盖文本处理、图片编辑、视频剪辑、音频转换、OCR文字识别、屏幕录制、格式转换、图片压缩、JSON查看、颜色工具等 40+ 高效实用工具，所有功能均在浏览器本地运行，安全高效，适用于办公、设计、开发等多场景",
-        "category": "综合效率"
+        "title": "字体库",
+        "icon": "字体库_icon.webp",
+        "url": "https://zitiku.org",
+        "description": "高品质免费商用字体下载平台，提供 1000+ 精选中英文字体，覆盖黑体、宋体、楷体、手写体、艺术字等多种风格，支持在线预览与高速下载，无需注册即可使用，全部字体均标注授权信息，可放心用于品牌设计、海报、包装、LOGO、电商运营及自媒体创作",
+        "category": "资源基地"
     },
     {
-        "title": "Tools-Web",
-        "icon": "Tools-Web_icon.webp",
-        "url": "https://tools.ranblogs.com",
-        "description": "开源免费的在线工具聚合平台，提供URL编码/解码、图片格式转换、文本对比、ASCll码表、Color选择器、数据图表等多种 Web 工具，无需安装即可使用，平台界面简洁、加载快速，是程序员、学生、设计师与内容创作者的实用在线工具箱”",
-        "category": "综合效率"
+        "title": "尔尔小站",
+        "icon": "尔尔小站_icon.webp",
+        "url": "https://erer.site",
+        "description": "资源分享的多领域导航站，覆盖学习、工作、娱乐、生活、旅行、软件等多类型内容，从效率工具到学习教程，从影视动漫到生活百科，分类清晰、资源可直接访问，满足不同用户的多样化需求，站点采用极简设计、无广告干扰，是资源聚合与分享中心",
+        "category": "资源基地"
     },
     {
-        "title": "Next BConvert",
-        "icon": "Next_BConvert_icon.webp",
-        "url": "https://nextbconvert.com/zh",
-        "description": "免费的在线文件转换工具，支持图片转换、视频压缩、音频提取、文档格式互转、HEIC转JPG、MP4转MP3、PDF转Word等功能，浏览器本地处理，隐私安全，支持批量任务与离线模式，兼容移动端与PC端，满足日常办公、学习与内容创作多场景需求",
-        "category": "综合效率"
+        "title": "Word 联盟",
+        "icon": "Word_联盟_icon.webp",
+        "url": "https://www.wordlm.cn/",
+        "description": "文档排版与办公技能学习平台，提供从基础操作到进阶技巧的全套教程，包括格式调整、样式应用、目录生成、页眉页脚设置、文档美化与排版规范等高频办公场景，整合丰富的 PPT 模板、办公资源与文档示例，是学习办公技能与解决排版难题的优质工具站",
+        "category": "资源基地"
     },
     {
-        "title": "iToTii 工具箱",
-        "icon": "iToTii_工具箱_icon.webp",
-        "url": "https://tool.itotii.com",
-        "description": "免费、高效且功能全面的在线工具箱，覆盖智能工具、生活工具、站长工具、文本处理、数学计算、PDF转换、图片拼接、加密解密、编码转码等多领域在线工具，界面简洁、操作简单，是一个全面、便捷、稳定的在线工具集合站",
-        "category": "综合效率"
+        "title": "PNG素材网",
+        "icon": "PNG素材网_icon.webp",
+        "url": "https://www.pngsucai.com",
+        "description": "高清 PNG 透明背景素材资源平台，收录范围覆盖图标、插画、装饰元素、背景、节日素材、电商设计素材等多类型内容，支持在线预览与无损透明背景下载，即取即用，适用于设计、电商、美工、PPT制作等场景，让你快速找到所需素材，高效完成创意设计",
+        "category": "资源基地"
     },
     {
-        "title": "123Apps",
-        "icon": "123Apps_icon.webp",
-        "url": "https://123apps.com/cn",
-        "description": "极简风格的在线工具集，涵盖视频、音频、PDF文件编辑、多格式文件转换等分类，支持剪辑、合并、录制、压缩、格式转换等功能，操作简单、无需安装、在线即可快速处理各类文件，适合日常用户与内容创作者便捷使用，让文件处理更高效、更轻松",
-        "category": "综合效率"
+        "title": "Mixkit",
+        "icon": "Mixkit_icon.webp",
+        "url": "https://mixkit.co",
+        "description": "免费创意素材平台，提供海量高清视频、音乐、音效、动画、转场与视频模板，全部可商用且无需署名，资源覆盖广告制作、短视频、YouTube、品牌营销、课程教学、社交媒体等多种场景，支持快速下载、无限制使用，是内容创作必备的高质量免费素材库",
+        "category": "资源基地"
     },
     {
-        "title": "UU在线工具",
-        "icon": "UU在线工具_icon.webp",
-        "url": "https://uutool.cn",
-        "description": "",
-        "category": "综合效率"
+        "title": "优品PPT",
+        "icon": "优品PPT_icon.webp",
+        "url": "https://www.ypppt.com",
+        "description": "免费共享的 PPT 模板资源平台，提供海量高质量 PPT 模板下载，涵盖商务汇报、教育课件、论文答辩、工作总结、商业计划书等多场景模板，提供 PPT 图表、背景图片、素材与教程等资源，帮助用户快速制作专业、美观的演示文稿，是优质的 PPT 模板下载平台",
+        "category": "资源基地"
     },
     {
-        "title": "CDKM",
-        "icon": "CDKM_icon.webp",
-        "url": "https://cdkm.com/cn",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "工具哇",
-        "icon": "工具哇_icon.webp",
-        "url": "https://toolwa.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "MixToolsHub",
-        "icon": "MixToolsHub_icon.webp",
-        "url": "https://www.mixtoolshub.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "OOCCRR",
-        "icon": "OOCCRR_icon.webp",
-        "url": "https://www.ooccrr.com/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Easy Tools Box",
-        "icon": "Easy_Tools_Box_icon.webp",
-        "url": "https://www.easytoolsbox.com/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "懒人工具",
-        "icon": "懒人工具_icon.webp",
-        "url": "https://www.lanren-tools.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "酷工具",
-        "icon": "酷工具_icon.webp",
-        "url": "https://kutool.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "金牌在线工具箱",
-        "icon": "金牌在线工具箱_icon.webp",
-        "url": "https://www.gold-tools.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Doc2X",
-        "icon": "Doc2X_icon.webp",
-        "url": "https://doc2x.noedgeai.com/parse",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "万事通工具箱",
-        "icon": "万事通工具箱_icon.webp",
-        "url": "https://unitools.fun",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "专业在线工具集",
-        "icon": "专业在线工具集_icon.webp",
-        "url": "https://www.tooljson.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "在线工具集",
-        "icon": "在线工具集_icon.webp",
-        "url": "https://xtechtools.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "ToolPkg",
-        "icon": "ToolPkg_icon.webp",
-        "url": "https://www.toolpkg.com/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "JustHTMLs",
-        "icon": "JustHTMLs_icon.webp",
-        "url": "https://www.htmls.dev",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "自然工具箱",
-        "icon": "自然工具箱_icon.webp",
-        "url": "https://toolbox.osbooting.com/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "极速箱",
-        "icon": "极速箱_icon.webp",
-        "url": "https://www.jisuxiang.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Hoothin Tools",
-        "icon": "Hoothin_Tools_icon.webp",
-        "url": "https://tool.hoothin.com/zh-CN",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Lynote",
-        "icon": "Lynote_icon.webp",
-        "url": "https://lynote.ai/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Edit Tools",
-        "icon": "Edit_Tools_icon.webp",
-        "url": "https://edittools.org/zh-cn",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "10015",
-        "icon": "10015_icon.webp",
-        "url": "https://10015.io",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "SimplyKit",
-        "icon": "SimplyKit_icon.webp",
-        "url": "https://simplykit.cn",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "XTools",
-        "icon": "XTools_icon.webp",
-        "url": "https://xtools.im",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Master 工具箱",
-        "icon": "Master_工具箱_icon.webp",
-        "url": "https://tool.mastermao.com/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "pudone",
-        "icon": "pudone_icon.webp",
-        "url": "https://pudone.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "UFreeTools",
-        "icon": "UFreeTools_icon.webp",
-        "url": "https://www.ufreetools.com/zh",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Convry",
-        "icon": "Convry_icon.webp",
-        "url": "https://www.convry.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "UIED Tools",
-        "icon": "UIED_Tools_icon.webp",
-        "url": "https://uiedtool.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "紫图工具",
-        "icon": "紫图工具_icon.webp",
-        "url": "https://www.toolzt.com",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "小李时光工具箱",
-        "icon": "小李时光工具箱_icon.webp",
-        "url": "https://xlsgtools.cn",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "小李时光工具箱",
-        "icon": "小李时光工具箱_icon.webp",
-        "url": "https://xiaolishiguang-code-tool.pages.dev",
-        "description": "",
-        "category": "综合效率"
-    },
-    {
-        "title": "Tools Sutdio",
-        "icon": "Tools_Sutdio_icon.webp",
-        "url": "https://tools.wflynn.cn/tools",
-        "description": "",
-        "category": "综合效率"
+        "title": "17素材",
+        "icon": "17素材_icon.webp",
+        "url": "https://www.17sucai.com",
+        "description": "前端网页特效与设计资源平台，提供 jQuery 网页特效、HTML5/CSS3 动画代码、网站模板、整站源码、UI图标与网页素材等前端资源，支持在线预览、分类检索与快速下载等功能，覆盖从基础布局到高级交互的多场景需求，是前端设计与网页制作的高效素材库",
+        "category": "资源基地"
     }
 ]

@@ -1,184 +1,149 @@
 [
     {
-        "title": "菜鸟教程",
-        "icon": "菜鸟教程_icon.webp",
-        "url": "https://www.runoob.com",
-        "description": "国内最受欢迎的编程入门学习网站，提供HTML、CSS、JavaScript、Python、Java、PHP、Linux 等数百门编程语言与技术的免费教程，内容通俗易懂、结构严谨、实例丰富，适合零基础入门与开发者快速查阅，是中文开发者最信赖的技术学习平台",
-        "category": "学习成长"
+        "title": "CCTV 节目",
+        "icon": "CCTV_节目_icon.webp",
+        "url": "https://tv.cctv.com",
+        "description": "中央广播电视总台的权威入口，提供央视频道直播、节目单、栏目大全、热播榜单、片库点播等服务，覆盖新闻、纪录片、综艺、体育、少儿、电视剧等全品类节目内容，支持回看、收藏、搜索、智能推荐等功能，是获取国家级资讯、观看央视节目的核心平台",
+        "category": "新知百态"
     },
     {
-        "title": "wikiHow",
-        "icon": "wikiHow_icon.webp",
-        "url": "https://zh.wikihow.com",
-        "description": "全球知名的生活技能百科网站中文版，拥有上万篇详细图文教程，涵盖生活技巧、技能学习、健康、电脑、数码、职场等几乎所有领域，提供清晰步骤、插图与实用技巧，帮助你快速学习生活、工作与兴趣相关的各种技能，是解决日常问题、学习新技能的免费实用百科",
-        "category": "学习成长"
+        "title": "央视网",
+        "icon": "央视网_icon.webp",
+        "url": "https://m.cctv.com",
+        "description": "国家级新闻与视频平台，以“新闻立网、视频主业”为核心，聚焦时政新闻、深度报道、特色直播、纪录片、国际资讯与熊猫频道等全领域内容，让用户随时获取权威、专业、及时的资讯信息，支持高清播放、栏目化导航与智能分发，是国内外了解中国的重要窗口",
+        "category": "新知百态"
     },
     {
-        "title": "W3Schools",
-        "icon": "W3Schools_icon.webp",
-        "url": "https://www.w3schools.com",
-        "description": "全球最受欢迎的网页开发学习平台，涵盖HTML、CSS、JavaScript、Python等技术的简洁教程，提供在线实例、代码编辑器和实时演示，让用户在学习过程中快速理解语法与概念，内容清晰实用、示例丰富，是快速学习与查阅前端后端知识的经典参考站点",
-        "category": "学习成长"
+        "title": "热榜 Today",
+        "icon": "热榜Today_icon.webp",
+        "url": "https://rebang.today",
+        "description": "全网热点聚合平台，实时抓取知乎、微博、百度、IT之家、豆瓣、小红书等站点的热门内容，按热度排序呈现今日、本周、本月的全网趋势，帮助用户快速获取全网最热资讯、话题讨论、社会事件与趋势内容，是信息获取、热点追踪与内容创作的高效站点",
+        "category": "新知百态"
     },
     {
-        "title": "Qwerty Learner",
-        "icon": "Qwerty_Learner_icon.webp",
-        "url": "https://qwerty.kaiyi.cool/mobile",
-        "description": "免费开源英语单词记忆与打字练习平台，通过输入单词练习肌肉记忆，支持 CET4/6、IELTS、TOEFL 等多类词库，提供带音标发音、默写模式、速度统计与实时输入反馈等功能，高效提升英语水平和打字速度，适用于学习备考、日常英语提升与专业写作场景",
-        "category": "学习成长"
+        "title": "大众科普网",
+        "icon": "大众科普网_icon.webp",
+        "url": "https://www.dazhongkepu.cn",
+        "description": "综合性科普知识平台，汇聚医学健康、食品安全、环境保护、生命科学、科技前沿、公共安全与科学辟谣等多领域内容，通过图文解读、专题策划、知识问答、实用指南等形式，将复杂的科学原理转化为易理解、可实践、贴近生活的知识，让科学真正“走进生活",
+        "category": "新知百态"
     },
     {
-        "title": "Edclub",
-        "icon": "Edclub_icon.webp",
-        "url": "https://www.edclub.com/zh/",
-        "description": "全球领先的在线学习平台，提供 TypingClub 打字课程、拼写与词汇训练、数字公民与 SEL 学习内容，平台支持互动教学、实时反馈、跨设备使用，并为教师提供班级管理、作业分配与学习数据分析工具，帮助学习者系统提升键盘技能与语言能力",
-        "category": "学习成长"
+        "title": "家庭保健报",
+        "icon": "家庭保健报_icon.webp",
+        "url": "https://www.familyhealthpaper.com",
+        "description": "健康科普与养生保健平台，致力于传播权威健康知识，内容涵盖医学科普、疾病预防、营养食疗、心理健康、中医养生、家庭医生指导及数字报阅读等知识，以严谨专业的内容体系、通俗易懂的表达方式，帮助用户建立正确的健康观念，提升家庭健康管理能力",
+        "category": "新知百态"
     },
     {
-        "title": "Musicca",
-        "icon": "Musicca_icon.webp",
-        "url": "https://www.musicca.com/zh",
-        "description": "永久免费使用的在线乐理学习平台，提供趣味化、游戏式的在线乐理课程与练习，包括节奏、音程、和弦、乐器训练等内容，永久免费、无广告，适合学生、自学者与学校课堂使用，并支持教师追踪学习进度，提升读谱、记谱与演奏能力，从 Musicca 开始",
-        "category": "学习成长"
+        "title": "我爱怀旧网",
+        "icon": "我爱怀旧网_icon.webp",
+        "url": "https://www.52huaijiu.com",
+        "description": "收藏80后、90后青春记忆的高质量怀旧空间，收录怀旧视频、经典老歌、童年玩具、怀旧零食、老物件、老照片、校园回忆、经典广告等丰富内容，通过真实影像、老物件图鉴与时代故事，带你重温那些温暖的旧时光，找回属于一代人的青春记忆与情感共鸣",
+        "category": "新知百态"
     },
     {
-        "title": "Fold'N Fly",
-        "icon": "Fold_N_Fly_icon.webp",
-        "url": "https://www.foldnfly.com",
-        "description": "全球最全纸飞机折叠教学平台，收录 57 款经典与创新纸飞机设计，提供清晰易懂的折纸步骤、视频教程与可打印折线图，帮助你轻松折出飞行距离远、停空时间长、稳定性强的纸飞机，无论你是初学者还是纸飞机高手，都能在这里找到适合自己的模型与技巧",
-        "category": "学习成长"
+        "title": "科普中国 Lite",
+        "icon": "科普中国_Lite_icon.webp",
+        "url": "https://m.kepuchina.cn/headline",
+        "description": "中国科协打造的权威科普资讯平台，聚焦科技新闻、科学热点、健康医学、自然生态、工程技术与前沿研究等多领域内容，以图文结合、清晰排版与通俗易懂为特色，让用户随时随地获取可信赖、结构清晰、内容丰富的科学知识，是追踪科技趋势的核心入口",
+        "category": "新知百态"
     },
     {
-        "title": "Geeksforgeeks",
-        "icon": "Geeksforgeeks_icon.webp",
-        "url": "https://www.geeksforgeeks.org",
-        "description": "全球知名的计算机科学与编程学习平台，提供数据结构、算法、编程语言、系统设计、Web开发、机器学习等高质量教程与题解，拥有海量技术文章、代码示例、面试题库与学习路径，帮助开发者从基础到进阶全面提升技能、准备技术面试并解决实际开发问题",
-        "category": "学习成长"
+        "title": "故宫博物院",
+        "icon": "故宫博物院_icon.webp",
+        "url": "https://www.dpm.org.cn",
+        "description": "世界文化遗产紫禁城线上服务平台，提供故宫门票预约、开放时间、全景故宫、数字文物库、展览资讯、文保研究、导览地图等服务，馆藏 186 万余件宫廷文物，展示宫殿建筑、书画等珍宝，同步开展文物保护、文化活动资讯，助力大众读懂中华优秀传统文化",
+        "category": "新知百态"
     },
     {
-        "title": "你缺失的那门计算机课",
-        "icon": "你缺失的那门计算机课_icon.webp",
-        "url": "https://www.criwits.top/missing",
-        "description": "《你缺失的那门计算机课》是一套为电脑小白打造的零门槛入门课程，从文件管理、软件安装到系统维护与常见问题处理，循序渐进、易懂实用，同时涵盖生成式AI、网络安全、云计算等前沿技术，内容持续更新，开放共享，是提升电脑能力的高质量学习入口",
-        "category": "学习成长"
+        "title": "四大名著",
+        "icon": "四大名著_icon.webp",
+        "url": "http://www.sdmz.cn",
+        "description": "中国古典文学高质量资源平台，汇集《三国演义》《水浒传》《西游记》《红楼梦》等经典名著原文与延伸阅读，提供章节赏析、人物资料、地图图谱与电子书下载，覆盖 200+ 名著题材作品，是学习参考、系统研读中国古典文学与名著文化的优质资源库",
+        "category": "新知百态"
     },
     {
-        "title": "VitePress",
-        "icon": "VitePress_icon.webp",
-        "url": "https://vitepress.dev/zh",
-        "description": "基于 Vite 与 Vue 驱动的极速静态站点生成器，支持 Markdown 编写、Vue 组件扩展、快速构建与高性能页面加载，适合构建文档、博客、知识库与技术站点，提供完整指南、主题配置、自定义扩展与部署方案，是打造高质量技术内容与知识库的绝佳工具",
-        "category": "学习成长"
+        "title": "高校名录数据可视化",
+        "icon": "高校名录数据可视化_icon.webp",
+        "url": "https://uni.utities.online",
+        "description": "全国高校数据可视化展示平台，通过地图、图表与列表方式展示全国高校的分布结构、办学类型与层次差异，可按地区、省份、学校类型、办学性质等维度进行筛选与对比，快速洞察教育资源布局、区域发展差异与高校结构特征，是查询高校信息的便捷工具",
+        "category": "新知百态"
     },
     {
-        "title": "Markdown 教程",
-        "icon": "Markdown_教程_icon.webp",
-        "url": "https://www.markdownlang.com/zh",
-        "description": "",
-        "category": "学习成长"
+        "title": "日本海景车站",
+        "icon": "日本海景车站_icon.webp",
+        "url": "https://seaside-station.com",
+        "description": "探索日本 276 座可眺望大海的绝美车站，涵盖北海道、本州、四国、九州与离岛地区，以都道府县索引呈现海景车站的实拍照片、地理特色、景点亮点与旅行灵感，让你轻松规划一段“海与铁道同行”的疗愈旅程，感受铁道、海风与蓝色地平线交织的独特风景",
+        "category": "新知百态"
     },
     {
-        "title": "Bun",
-        "icon": "Bun_icon.webp",
-        "url": "https://www.bunjs.com.cn/zh-cn",
-        "description": "",
-        "category": "学习成长"
+        "title": "摸鱼热榜",
+        "icon": "摸鱼热榜_icon.webp",
+        "url": "https://moyuhot.com/bold",
+        "description": "全网热榜浏览平台，汇集微博、知乎、B站、抖音等全网公开热榜的极简热度索引站，实时更新标题、排名与热度，不抓正文、不做摘要，纯净无干扰，只展示必要信息，快速了解今日热点，判断是否值得点开原站继续阅读，让你以最低干扰掌握当日网络风向",
+        "category": "新知百态"
     },
     {
-        "title": "LetMeEnglish",
-        "icon": "LetMeEnglish_icon.webp",
-        "url": "https://letmeenglish.com/zh-hans",
-        "description": "高质量免费的英语学习平台，提供系统化的英文文法解析、常用字汇讲解、实用句型整理、日常英文表达、听力训练与发音技巧等多维度模块，内容结构清晰、示例丰富、解释直观，适合零基础、学生、上班族与留学需求者，是提升英文能力的高效学习资源",
-        "category": "学习成长"
+        "title": "读典籍",
+        "icon": "读典籍_icon.webp",
+        "url": "https://dudianji.com",
+        "description": "中国古典文化的在线阅读平台，收录大量中国传统典籍，包括四书五经、史书、子部文献、诗词文言等内容，支持原文阅读、注释参考、段落对照与分类导航等功能，界面极简，适合学习国学、研究古文与快速查阅典籍内容，是高质量的古籍阅读与学习平台",
+        "category": "新知百态"
     },
     {
-        "title": "LanguageGuide",
-        "icon": "LanguageGuide_icon.webp",
-        "url": "https://www.languageguide.org/cn",
-        "description": "",
-        "category": "学习成长"
+        "title": "书格",
+        "icon": "书格_icon.webp",
+        "url": "https://www.shuge.org",
+        "description": "自由开放的数字古籍图书馆，汇聚全球机构的高清古籍善本、珍稀文献与字画影像，全部基于公共版权整理，支持在线阅读、原文下载、高分辨率影像与专业分类，涵盖宋元珍本、明清善本、金石碑帖、舆图、地方志等资源，以开放共享的方式传播文明典籍",
+        "category": "新知百态"
     },
     {
-        "title": "Type Words",
-        "icon": "Type_Words_icon.webp",
-        "url": "https://typewords.cc",
-        "description": "",
-        "category": "学习成长"
+        "title": "神人高校网",
+        "icon": "神人高校网_icon.webp",
+        "url": "https://www.srgaoxiao.cn",
+        "description": "全国大学真实评价平台，提供全国高校的宿舍、食堂、师资、就业、环境、氛围、安全等多维度信息，支持院校对比、专业查询、志愿填报参考等功能，为考生与家长全面了解目标院校，做出更贴合实际的升学与生活决策，是了解高校真实情况的重要参考工具",
+        "category": "新知百态"
     },
     {
-        "title": "W3School",
-        "icon": "W3School_icon.webp",
-        "url": "https://www.w3school.com.cn",
-        "description": "",
-        "category": "学习成长"
+        "title": "Redian",
+        "icon": "Redian_icon.webp",
+        "url": "https://www.redian.me",
+        "description": "热点资讯聚合平台，汇聚多平台热榜与优质内容，涵盖科技、开发者、财经、娱乐、生活与社会动态等核心领域，每日更新热榜与深度报道，轻松浏览高质量内容，掌握每日最新动态与趋势焦点，为用户提供快速掌握最新动态，是获取资讯与交流的重要社区",
+        "category": "新知百态"
     },
     {
-        "title": "Typing Learner",
-        "icon": "Typing_Learner_icon.webp",
-        "url": "https://www.typinglearner.com",
-        "description": "",
-        "category": "学习成长"
+        "title": "国家中小学智慧教育平台",
+        "icon": "国家中小学智慧教育平台_icon.webp",
+        "url": "https://basic.smartedu.cn",
+        "description": "国家中小学智慧教育平台，由教育部主办，整合德育、课程教学、体育、美育、劳动教育、教师研修、家庭教育等全学段优质资源，支持小学到高中课程、精品课、作业资源、AI 教育、科普内容与无障碍访问，所有资源免费开放，推动优质教育资源普惠共享",
+        "category": "新知百态"
     },
     {
-        "title": "LabEx",
-        "icon": "LabEx_icon.webp",
-        "url": "https://labex.io/zh",
-        "description": "",
-        "category": "学习成长"
+        "title": "大学生活质量指北",
+        "icon": "大学生活质量指北_icon.webp",
+        "url": "https://colleges.chat",
+        "description": "真实高校生活体验查询平台，由学生问卷与社区贡献汇总，揭秘招生简章不会说的宿舍条件、食堂味道、校园安全、通勤便利、社团氛围、学习压力、就业支持等关键信息，帮助准大学生理性择校、提前了解真实校园生活，助力每一位学生找到适合自己的大学",
+        "category": "新知百态"
     },
     {
-        "title": "BALA 公考",
-        "icon": "BALA_公考_icon.webp",
-        "url": "https://www.baijing1.top",
-        "description": "",
-        "category": "学习成长"
+        "title": "即时热点",
+        "icon": "即时热点_icon.webp",
+        "url": "https://nowhots.com/mobile",
+        "description": "即时全网热点聚合平台，实时追踪微博、知乎、抖音、头条等主流社交媒体与新闻热搜，提供简洁明了的热点摘要、趋势分析与话题排行，覆盖社会、娱乐、科技、体育、财经等，支持关键词订阅，24小时更新全网热门话题，免费便捷浏览全网最新热门资讯",
+        "category": "新知百态"
     },
     {
-        "title": "VitePress",
-        "icon": "VitePress_icon.webp",
-        "url": "https://vitepress.yiov.top",
-        "description": "",
-        "category": "学习成长"
+        "title": "老画报",
+        "icon": "老画报_icon.webp",
+        "url": "http://www.laohuabao.com",
+        "description": "怀旧连环画、老漫画在线欣赏交流平台，海量收录七八十年代原版期刊，汇集王叔晖、卢延光等名家名绘、获奖连环画，涵盖古典名著、历史传说、文学改编等题材，高清原版扫描，免费在线阅览，提供作品赏析、期刊史料与同好交流空间，重温传统美术经典",
+        "category": "新知百态"
     },
     {
-        "title": "考试酷",
-        "icon": "考试酷_icon.webp",
-        "url": "https://www.examcoo.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "摄影技术学习",
-        "icon": "摄影技术学习_icon.webp",
-        "url": "https://www.photographystudy.online",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "格言人",
-        "icon": "格言人_icon.webp",
-        "url": "https://kyrgk.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "格言人-英语",
-        "icon": "格言人-英语_icon.webp",
-        "url": "https://en.kyrgk.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "DevDocs",
-        "icon": "DevDocs_icon.webp",
-        "url": "https://devdocs.io",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "LingoHut",
-        "icon": "LingoHut_icon.webp",
-        "url": "https://www.lingohut.com/zh",
-        "description": "",
-        "category": "学习成长"
+        "title": "寻迹",
+        "icon": "寻迹_icon.webp",
+        "url": "https://xunjimap.online",
+        "description": "国内古迹文保地图平台，收录历代帝王陵、名人古墓、古遗址，覆盖汉唐宋明清各级文保单位，内设唐宋八大家、竹林七贤等名家专题，汇总各省文保官方入口，为历史、考古、古迹爱好者提供墓址检索、古迹溯源服务，实地探访文史遗迹，读懂千年墓葬文脉",
+        "category": "新知百态"
     }
 ]

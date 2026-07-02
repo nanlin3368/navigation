@@ -1,107 +1,177 @@
 [
     {
-        "title": "SnapWC",
-        "icon": "SnapWC_icon.webp",
-        "url": "https://snapwc.com/zh",
-        "description": "免费、极速全能视频下载工具，支持全球 10000+ 网站，包括 YouTube、TikTok、Instagram、X 等热门平台，一键获取高清视频、音频和图片，支持多格式输出，免注册、跨平台、极速解析，完全免费使用，让你随时随地保存喜爱的视频与音频内容",
-        "category": "视频提取"
+        "title": "哲风壁纸",
+        "icon": "哲风壁纸_icon.webp",
+        "url": "https://haowallpaper.com",
+        "description": "4K–8K 高清壁纸资源综合平台，提供电脑壁纸、手机壁纸、动态壁纸、素材图片与头像制作等内容，全部支持免费下载，支持按图搜索、壁纸裁剪、多维度分类与智能推荐功能，提供Win、Mac、网页三端同步，为用户带来高质量壁纸获取与个性化桌面体验",
+        "category": "视觉灵感"
     },
     {
-        "title": "GreenVideo",
-        "icon": "GreenVideo_icon.webp",
-        "url": "https://greenvideo.cc",
-        "description": "完全免费的多平台在线视频下载工具，支持 YouTube、X、Instagram、TikTok、B站、抖音、快手、小红书、微博等全球 1000+ 视频平台，提供高速解析、无次数限制、无水印下载，支持 VIP 视频解析与在线播放器功能，是视频保存与素材收集的高效工具",
-        "category": "视频提取"
+        "title": "Unsplash",
+        "icon": "Unsplash_icon.webp",
+        "url": "https://unsplash.com",
+        "description": "全球顶尖的高清摄影创作图库，提供极具美感且无版权限制的高质量影像素材，涵盖自然、人物、科技、商业、旅行、美食等主题，所有图片均可免费使用，支持主题搜索与分类，适用于社交媒体、内容创作与视觉展示，是创意表达与视觉叙事的灵感源泉",
+        "category": "视觉灵感"
     },
     {
-        "title": "i导航解析器",
-        "icon": "i导航解析器_icon.webp",
-        "url": "https://www.idaohang123.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "Pexels",
+        "icon": "Pexels_icon.webp",
+        "url": "https://www.pexels.com/zh-cn/",
+        "description": "全球领先的免费图库平台，提供高质量照片与视频，全部可商用且无需署名，支持中文搜索、智能分类与主题合集，覆盖自然、人像、科技、商业等多元内容，用于海报、广告、网页与品牌内容制作，大幅提升创作效率与视觉表现力，是常用的视觉素材资源库",
+        "category": "视觉灵感"
     },
     {
-        "title": "短视频解析",
-        "icon": "短视频解析_icon.webp",
-        "url": "https://sv.bugpk.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "Httpster",
+        "icon": "Httpster_icon.webp",
+        "url": "https://httpster.net",
+        "description": "精选全球优秀网页设计与前端创意的网站展示平台，收录来自独立开发者与设计团队的高质量站点案例，以极简呈现与严格筛选著称，展示真实项目的视觉风格与交互细节，可在此获取灵感、探索最新网页设计趋势，是寻找独立站点与视觉创意的高质量参考库",
+        "category": "视觉灵感"
     },
     {
-        "title": "HelloTik",
-        "icon": "HelloTik_icon.webp",
-        "url": "https://www.hellotik.app/zh",
-        "description": "",
-        "category": "视频提取"
+        "title": "Behance",
+        "icon": "Behance_icon.webp",
+        "url": "https://www.behance.net",
+        "description": "全球最大的创意作品展示平台，聚合设计、摄影、插画、UI/UX、动画、品牌、建筑等多元创意项目，平台以高质量作品集展示为核心，通过项目标签、精选合集、主题策展与智能推荐机制，让优秀作品获得持续曝光，成为全球创意行业的重要灵感与人才库",
+        "category": "视觉灵感"
     },
     {
-        "title": "Vdown",
-        "icon": "Vdown_icon.webp",
-        "url": "https://xiazaishipin.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "Dribbble",
+        "icon": "Dribbble_icon.webp",
+        "url": "https://dribbble.com",
+        "description": "全球知名的设计师社区与作品展示平台，汇聚插画、UI/UX、品牌设计、动效与网页视觉等高质量作品，设计师可在此展示作品集、交流创意，平台同时提供招聘渠道与自由职业机会，帮助设计人才提升曝光度与职业发展，是灵感探索与人才发现的重要阵地",
+        "category": "视觉灵感"
     },
     {
-        "title": "TwitDloader",
-        "icon": "TwitDloader_icon.webp",
-        "url": "https://twitdloader.toolooz.com/zh-CN",
-        "description": "",
-        "category": "视频提取"
+        "title": "APPLORE",
+        "icon": "APPLORE_icon.webp",
+        "url": "https://app.uiboy.com",
+        "description": "全球 App 图标探索与灵感平台，收录超过 5000+ 高质量应用图标，支持按分类、颜色、风格、发布时间等维度智能筛选，提供便捷的图标参考、应用信息浏览、设计趋势洞察与灵感收集体验，是灵感收集、界面设计与产品调研提供更全面、直观的视觉参考",
+        "category": "视觉灵感"
     },
     {
-        "title": "SD视频下载工具",
-        "icon": "SD视频下载工具_icon.webp",
-        "url": "https://sd.wzjun.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "Aiart Pics",
+        "icon": "Aiart_Pics_icon.webp",
+        "url": "https://aiart.pics",
+        "description": "AI 图像视觉探索平台，支持多风格艺术创作、照片级视觉生成、智能修图与创意效果处理，通过简单指令快速生成高质量视觉作品，用于设计灵感、品牌素材、社交媒体内容与项目展示，平台内置多种模型与风格模板，让每个人都能轻松创造独特视觉作品",
+        "category": "视觉灵感"
     },
     {
-        "title": "效率坊",
-        "icon": "效率坊_icon.webp",
-        "url": "https://www.xiaolvfang.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "2DWallpapers",
+        "icon": "2DWallpapers_icon.webp",
+        "url": "https://www.2dwallpapers.com",
+        "description": "高品质动漫与游戏壁纸分享平台，精选全球最新最热门的优质动漫与二次元高清壁纸资源，提供角色立绘、场景背景、插画作品、同人创作等多种主题，支持免登录直接获取图片，所有资源均可免费下载且无水印，是 ACG 爱好者寻找精美视觉资源的优质网站",
+        "category": "视觉灵感"
     },
     {
-        "title": "KuKuTool",
-        "icon": "KuKuTool_icon.webp",
-        "url": "https://dy.kukutool.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "Foodiesfeed",
+        "icon": "Foodiesfeed_icon.webp",
+        "url": "https://www.foodiesfeed.com/zh",
+        "description": "高质量的美食摄影图库，汇集全球摄影师分享的数千张高分辨率美食图片，涵盖咖啡、甜点、早餐、寿司、汉堡、披萨等场景，所有资源均可免费下载，可用于商业和个人用途，无需署名，图片高清、风格自然、种类丰富，是获取美食视觉素材的首选图库",
+        "category": "视觉灵感"
     },
     {
-        "title": "AnyToCopy",
-        "icon": "AnyToCopy_icon.webp",
-        "url": "https://www.anytocopy.com",
-        "description": "视频文案提取与去水印工具，支持抖音、小红书、快手、B站、YouTube 等 50+ 主流平台，AI智能识别，一键提取视频文案、转音频MP3、批量下载图片与视频，完全免费、无次数限制使用，是创作者快速获取视频文字、音频与高清无水印素材的效率工具",
-        "category": "视频提取"
+        "title": "AURA 壁纸",
+        "icon": "AURA_壁纸_icon.webp",
+        "url": "https://gallery.wallaura.cn",
+        "description": "纯粹且优雅的高质量壁纸聚合平台，收录数万张经人工审核的高清原图，提供 4K/8K 超清壁纸下载，涵盖风光摄影、动漫角色、国风艺术、AI场景、Windows聚焦、游戏主题等分类，并每日更新热门专题与精选合集，是寻找高品质壁纸与视觉灵感的优质平台",
+        "category": "视觉灵感"
     },
     {
-        "title": "YT1s",
-        "icon": "YT1s_icon.webp",
-        "url": "https://yt1s.media/zh-cn",
-        "description": "完全免费的 YouTube 视频下载工具，提供稳定的 YouTube 视频下载与格式转换服务，支持高品质 MP3 音频提取与 4K MP4 高清视频下载，解析速度快、操作简单，无次数限制，适用于音乐收藏、教学视频保存、影视片段提取、短视频素材下载等多种用途",
-        "category": "视频提取"
-    },    
-    {
-        "title": "全能媒体下载器",
-        "icon": "全能媒体下载器_icon.webp",
-        "url": "https://downloader.bhwa233.com/zh",
-        "description": "多平台媒体下载工具，支持抖音、TikTok、微博、小红书、Instagram 等平台，一键解析视频、图片、音频并下载视频、图片或音频文件，永久免费、无需登录、不限次数，粘贴链接即可高速下载原始媒体文件，适用于内容备份、素材收集与跨平台创作",
-        "category": "视频提取"
+        "title": "AirPano",
+        "icon": "AirPano_icon.webp",
+        "url": "https://airpano.org.cn",
+        "description": "360° 全景航拍影像平台，汇集全球顶级航拍与 360° 全景影像，提供高清航拍视频、虚拟漫游与沉浸式全景图，覆盖自然奇观、城市地标与文化遗产，通过专业航拍视角与交互体验，带您俯瞰世界美景，激发旅行灵感与摄影创意，是探索地球之美的首选平台",
+        "category": "视觉灵感"
     },
     {
-        "title": "TwitterXZ",
-        "icon": "TwitterXZ_icon.webp",
-        "url": "https://twitterxz.com",
-        "description": "",
-        "category": "视频提取"
+        "title": "Akspic",
+        "icon": "Akspic_icon.webp",
+        "url": "https://wallspic.com/cn",
+        "description": "免费高清壁纸聚合平台，收录上万张高质量壁纸，涵盖 4K/8K超清图、手机与桌面背景、风景、人像、动漫、插画等多元主题，支持多分辨率选择、一键下载与多设备适配，持续更新精选图片，确保高质量与专业视觉效果，是寻找高质量背景图的便捷图库",
+        "category": "视觉灵感"
     },
     {
-        "title": "免费视频文案提取工具",
-        "icon": "免费视频文案提取工具_icon.webp",
-        "url": "https://www.transcriptgenerate.com/zh-CN",
-        "description": "",
-        "category": "视频提取"
+        "title": "MakerWorld",
+        "icon": "MakerWorld_icon.webp",
+        "url": "https://makerworld.com.cn/zh",
+        "description": "全球 3D 打印模型与创意分享平台，提供海量 3D 模型下载、STL文件、创意项目、教程与社区交流，覆盖玩具、家居、机械、宠物用品等多元领域，支持作品发布、比赛活动与创客协作，帮助用户快速获取灵感、提升创作效率，打造活跃而专业的 3D 打印生态",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "图叙",
+        "icon": "图叙_icon.webp",
+        "url": "https://www.tuxuai.com/inspiration",
+        "description": "AI 驱动的视觉灵感与设计创作平台，汇聚高质量图集、案例与模板，覆盖品牌视觉、电商设计、UI/UX、插画、建筑与工业设计等领域，支持智能搜索、灵感采集与创意复用，帮助设计师快速获取趋势参考，高效产出专业级作品，提升创作效率与视觉表达力",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Deviant Art",
+        "icon": "Deviant_Art_icon.webp",
+        "url": "https://www.deviantart.com",
+        "description": "数字艺术创作与交流社区，聚合插画、3D 艺术、涂鸦、漫画、摄影、传统、科幻与原创等多元视觉内容，为创作者提供作品展示、社群互动、收藏管理、个性主页与创作变现等完整生态，让你的艺术被更多人发现、关注与支持，是艺术创作与曝光的核心阵地",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "拾光壁纸",
+        "icon": "拾光壁纸_icon.webp",
+        "url": "https://gallery.timeline.ink",
+        "description": "纯粹且优雅的高质量壁纸聚合平台，收录数万张经人工审核的高清原图，提供 4K/8K 超清壁纸下载，涵盖风光摄影、动漫角色、国风艺术、AI场景、Windows聚焦、游戏主题等分类，并每日更新热门专题与精选合集，是寻找高品质壁纸与视觉灵感的优质平台",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "AppleWalls",
+        "icon": "AppleWalls_icon.webp",
+        "url": "https://www.applewalls.com/zh",
+        "description": "高品质苹果生态壁纸资源平台，涵盖 4K/5K 超清、动态特效、极简设计、艺术插画与自然摄影等多元主题，全面适配 iPhone、iPad 与 Mac 全系列设备，提供智能分类、热门标签、高速检索与每日更新，支持快速预览与一键保存，是获取高品质苹果壁纸的资源库",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Chiikawa 壁纸",
+        "icon": "Chiikawa_壁纸_icon.webp",
+        "url": "https://chiikawawallpaper.com/zh-Hans",
+        "description": "高质量 Chiikawa 壁纸免费下载平台，收录吉伊卡哇、乌萨奇、飞鼠、小八等人气角色的精美插画与场景图，提供手机壁纸、电脑桌面、动态 GIF、透明 PNG 以及 4K 超清背景图，所有素材持续更新，让你轻松获取可爱、治愈系的 Chiikawa 动态与静态背景图",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "backiee",
+        "icon": "backiee_icon.webp",
+        "url": "https://backiee.com",
+        "description": "高质量超清壁纸图库平台，提供 4K/5K/8K 超清壁纸下载，涵盖自然、城市、动漫、科技等热门主题，支持桌面、平板与手机多端适配，提供 AI 壁纸与动态壁纸等创新分类，让用户轻松获取个性化桌面与手机壁纸，是寻找超清壁纸与灵感素材的优质资源站点",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "OpenNana",
+        "icon": "OpenNana_icon.webp",
+        "url": "https://opennana.com/awesome-prompt-gallery",
+        "description": "高质量的 AI 提示词与创作灵感库，精选高质量 Prompt 模板与分类示例，覆盖写作、视觉设计、编程、营销、效率工具等核心场景，提供可复制可调优的实用范例与社区分享，支持多语言与持续更新，帮助用户快速迭代提示工程、提升生成效果与创意效率",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Wallpaper Gallery",
+        "icon": "Wallpaper_Gallery_icon.webp",
+        "url": "https://wallpaper.061129.xyz/mobile",
+        "description": "开源、跨端优化的高清壁纸平台，提供手机壁纸、电脑壁纸、头像制作、每日 Bing 归档四大系列，支持模糊搜索、搜索建议、关键词高亮、分辨率筛选、在线裁剪、真机预览、一键下载等完整功能，致力于为用户提供高效、可定制的高清壁纸与个性化体验",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "gooood",
+        "icon": "gooood_icon.webp",
+        "url": "https://www.gooood.cn",
+        "description": "领先的建筑与设计内容平台，聚合全球建筑、景观、室内与城市更新案例，呈现深度报道、材料解析、行业趋势与项目招募，为设计师、从业者与机构提供高质量灵感与专业资源，助力创意实践、跨领域合作与行业交流，适合快速获取建筑灵感与设计资源",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "Bing Wallpaper",
+        "icon": "Bing_Wallpaper_icon.webp",
+        "url": "https://bing.ioliu.cn",
+        "description": "必应每日壁纸聚合平台，持续更新全球精选高清图片，涵盖自然风光、城市建筑、动物生态、艺术摄影等多元主题，用户不仅可浏览历年壁纸、下载无损原图，还能查看图片故事、拍摄地点与相关科普信息，为桌面美化、视觉灵感收集与创意设计提供丰富素材",
+        "category": "视觉灵感"
+    },
+    {
+        "title": "PhWalls",
+        "icon": "PhWalls_icon.webp",
+        "url": "https://phwalls.com/zh",
+        "description": "全品牌手机原生壁纸聚合平台，覆盖华为、小米、OPPO、vivo、三星、iPhone、Pixel等手机，适配 Windows、Ubuntu 等电脑系统，收录新机原生壁纸与 Android 全系系统壁纸，海量 4K 超清资源，无需登录，全部无水印免费下载，轻松美化手机与电脑桌面",
+        "category": "视觉灵感"
     }
 ]

@@ -1,51 +1,93 @@
 [
     {
-        "title": "SSR-V2ray-Trojan机场推荐",
-        "icon": "SSR-V2ray-Trojan机场推荐_icon.webp",
-        "url": "https://github.com/hwanz/SSR-V2ray-Trojan",
-        "description": "深度聚合网络协议相关的前沿资讯与技术评测，通过系统化的选型建议与数据反馈，助力用户构建稳定可靠的互联环境",
-        "category": "项目汇总"
+        "title": "ChatGPT",
+        "icon": "ChatGPT_icon.webp",
+        "url": "https://chatgpt.com",
+        "description": "全球顶尖的 AI 对话平台，支持文本生成、创意写作、代码解释、数据分析、语言翻译、学习辅导与商业内容创作，通过先进的自然语言处理技术，ChatGPT 能理解用户需求并生成准确且高质量内容，帮助用户更高效完成任务、优化工作流程并解决多种类型问题",
+        "category": "人工智能"
     },
     {
-        "title": "awesome-shizuku",
-        "icon": "awesome-shizuku_icon.webp",
-        "url": "https://github.com/timschneeb/awesome-shizuku/blob/master/README_cn.md",
-        "description": "精选 Shizuku 生态应用集锦，全方位展示调用 Android 系统底层接口的黑科技工具，是发掘移动端进阶功能的硬核指南",
-        "category": "项目汇总"
+        "title": "Claude",
+        "icon": "Claude_icon.webp",
+        "url": "https://claude.ai",
+        "description": "由 Anthropic 推出的高性能 AI 助手，擅长写作、总结、分析、推理、知识问答、代码解释、商业内容创作等多种任务，输出风格自然、逻辑清晰且高度可靠，无论你是内容创作者还是企业团队，Claude 都能帮助你提升效率、拓展思维并构建更强的数字化工作流",
+        "category": "人工智能"
     },
     {
-        "title": "Public APIs",
-        "icon": "Public_APIs_icon.webp",
-        "url": "https://github.com/public-apis/public-apis",
-        "description": "全球最大的开源 API 资源库，汇集上千种涵盖各领域的公共接口，是开发者进行原型快速验证与数据集成的首选宝库",
-        "category": "项目汇总"
+        "title": "Copilot",
+        "icon": "Copilot_icon.webp",
+        "url": "https://copilot.microsoft.com",
+        "description": "深度集成于微软生态的智能助手，可用于写作、搜索、学习、办公自动化与创意构思等多场景任务处理，依托微软云与大模型技术，能在 Microsoft 生态等场景中提供实时协作、智能总结、数据洞察与创意支持，帮助个人与团队显著提升生产效率与内容质量",
+        "category": "人工智能"
     },
     {
-        "title": "Datawhale",
-        "icon": "Datawhale_icon.webp",
-        "url": "https://github.com/datawhalechina",
-        "description": "",
-        "category": "项目汇总"
+        "title": "DeepSeek",
+        "icon": "DeepSeek_icon.webp",
+        "url": "https://chat.deepseek.com",
+        "description": "中国领先的新一代开源大模型平台，融合顶尖的推理模型和开源生态，以极高性价比、强推理能力与可本地化部署，相比同级闭源模型，在代码编程、深度思考、知识问答及复杂任务处理上响应迅速、表现卓越，适用于企业私有化部署、AI 应用开发与科研创新",
+        "category": "人工智能"
     },
     {
-        "title": "GitHub中文排行榜",
-        "icon": "GitHub中文排行榜_icon.webp",
-        "url": "https://github.com/GrowingGit/GitHub-Chinese-Top-Charts",
-        "description": "专门收集与整理 GitHub 上高品质的中文开源项目，通过多维度的热度追踪与趋势分析，精准捕捉华语技术圈的创新动向",
-        "category": "项目汇总"
+        "title": "Grok",
+        "icon": "Grok_icon.webp",
+        "url": "https://grok.com",
+        "description": "由 xAI 推出的新一代 AI 模型，深度融合 X 平台实时资讯，提供实时知识检索、快速生成文章、摘要、标题、脚本、代码与深度分析内容，通过实时抓取 X 平台讨论与网络信息，Grok 的回答更贴近当前语境与趋势，它不仅能写，还能“知道现在正在发生什么”",
+        "category": "人工智能"
     },
     {
-        "title": "TelegramGroup",
-        "icon": "TelegramGroup_icon.webp",
-        "url": "https://github.com/itgoyo/TelegramGroup",
-        "description": "大规模数字化社群索引枢纽，深度聚合上万个优质群组、频道与机器人资源，是实现跨领域信息交互与资源获取的连接器",
-        "category": "项目汇总"
+        "title": "Gemini",
+        "icon": "Gemini_icon.webp",
+        "url": "https://gemini.google.com",
+        "description": "谷歌推出的原生多模态大模型，深度集成谷歌生态体系，具备强大的理解、生成与推理能力，支持文本、图像、音频与视频的跨模态理解与高效处理，Gemini 以高性能、多模态与广泛适用性著称，在教育科研、内容生产、软件开发与企业智能化场景中表现突出",
+        "category": "人工智能"
     },
     {
-        "title": "百分之千-定制版应用收藏",
-        "icon": "百分之千_icon.webp",
-        "url": "https://gitee.com/ww3w/dzb",
-        "description": "深度发掘厂商定制版纯净应用，提供上千款精简版软件的详细评测与选择建议，助力用户摆脱臃肿广告，回归极致体验",
-        "category": "项目汇总"
+        "title": "Midjourney",
+        "icon": "Midjourney_icon.webp",
+        "url": "https://www.midjourney.com",
+        "description": "艺术级 AI 图像生成平台，依托先进的深度学习模型生成逼真、风格化或艺术级图像，提供文字生图、图生图、风格迁移、角色一致性、智能编辑器、风格库等专业功能，无论是设计师、品牌团队还是内容创作者，都能快速构建独特视觉风格与高质量创意作品",
+        "category": "人工智能"
+    },
+    {
+        "title": "Perplexity",
+        "icon": "Perplexity_icon.webp",
+        "url": "https://www.perplexity.ai",
+        "description": "革命性的 AI 问答搜索引擎，融合多源信息与结构化回答，支持学习、研究、写作、商业分析与日常查询，提供快速、准确、可验证的内容，引用透明、答案直接、结构清晰，帮助用户快速获取可靠答案，提升搜索效率与决策质量，是智能搜索体验的代表产品",
+        "category": "人工智能"
+    },
+    {
+        "title": "kimi",
+        "icon": "kimi_icon.webp",
+        "url": "https://www.kimi.com",
+        "description": "基于 K2 多模态大模型的智能助手，支持长文档处理、AI 写作、代码生成、网页构建、知识库管理与深度研究，通过高效 Agent 协作与知识处理能力，Kimi 能帮助用户快速获取信息、整理内容、生成创意并完成复杂任务，是学习、办公与创作的全场景 AI 助手",
+        "category": "人工智能"
+    },
+    {
+        "title": "元宝",
+        "icon": "元宝_icon.webp",
+        "url": "https://yuanbao.tencent.com",
+        "description": "腾讯推出的智能 AI 创作与办公平台，基于混元大模型并融合 DeepSeek 能力，提供智能搜索、AI 写作、文档速读、图片理解、代码生成等多模态功能，支持网页、桌面端与微信生态无缝使用，为办公协作、学习研究与创意创作提供高效、精准、自然的智能体验",
+        "category": "人工智能"
+    },
+    {
+        "title": "豆包",
+        "icon": "豆包_icon.webp",
+        "url": "https://www.doubao.com/chat",
+        "description": "字节跳动旗下的 AI 智能助手，提供智能聊天、文案创作、翻译润色、编程指导、识图转文字、AI 生图提示词、视频生成等功能，无论是创意灵感、学习辅导、办公效率还是日常聊天，都能提供高效、便捷、智能的对话体验，是工作、学习与创作的高效 AI 工具",
+        "category": "人工智能"
+    },
+    {
+        "title": "千问",
+        "icon": "千问_icon.webp",
+        "url": "https://www.qianwen.com",
+        "description": "基于阿里 Qwen 大模型打造，提供智能问答、文档解析、AI 生图、代码生成、PPT 自动生成与长文本处理等能力，覆盖学习、办公与创作场景，支持多端同步与隐私保护，核心功能可免费使用，帮助用户高效生成内容、提升工作效率，获得稳定可靠的 AI 体验",
+        "category": "人工智能"
+    },
+    {
+        "title": "秘塔Ai",
+        "icon": "秘塔Ai_icon.webp",
+        "url": "https://metaso.cn",
+        "description": "基于先进大模型驱动的智能搜索引擎，具备深度语义理解、实时信息抓取、知识推理与多源内容整合能力，通过智能摘要与结构化呈现，提供精准、无广告、低噪音的高质量答案，显著提升学习、科研、写作与专业检索效率，帮助用户快速获取可靠信息与洞见",
+        "category": "人工智能"
     }
 ]

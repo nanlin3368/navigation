@@ -1,44 +1,51 @@
 [
     {
-        "title": "51CTO 博客",
-        "icon": "51CTO博客_icon.webp",
-        "url": "https://blog.51cto.com",
-        "description": "国内主流的 IT 技术博客平台，聚合大量 IT 从业者与原创技术内容，涵盖网络安全、系统软件、人工智能、数据库、移动开发、编程等领域，提供技术分享、学习交流、专家博客、博客之星评选及多类技术赛事，是技术学习、知识沉淀与社区交流的重要阵地",
-        "category": "技术社区"
+        "title": "SSR-V2ray-Trojan机场推荐",
+        "icon": "SSR-V2ray-Trojan机场推荐_icon.webp",
+        "url": "https://github.com/hwanz/SSR-V2ray-Trojan",
+        "description": "",
+        "category": "项目汇总"
     },
     {
-        "title": "稀土掘金",
-        "icon": "稀土掘金_icon.webp",
-        "url": "https://juejin.cn",
-        "description": "面向发者的综合技术社区，涵盖前端、后端、移动开发、AI编程等多领域内容，社区由技术大牛与极客共同编辑优质文章，提供技术分享、学习资源、沸点讨论、课程与直播，为开发者提供灵感、学习路径与实践经验，是获取技术头条与提升技能的核心平台",
-        "category": "技术社区"
+        "title": "awesome-shizuku",
+        "icon": "awesome-shizuku_icon.webp",
+        "url": "https://github.com/timschneeb/awesome-shizuku/blob/master/README_cn.md",
+        "description": "基于 Shizuku 的精选工具与应用清单，系统汇总自动化、权限操作、系统调优、文件管理、个性化增强等多领域，配套开发库、rish终端脚本与厂商专属适配工具，附带开源协议、付费与广告标注，支持中英文文档，是安卓玩家寻找免 Root 系统工具的首选站点",
+        "category": "项目汇总"
     },
     {
-        "title": "Oschina",
-        "icon": "Oschina_icon.webp",
-        "url": "https://www.oschina.net",
-        "description": "国内最大的开源技术社区平台，提供开源资讯、软件项目、AI动态、技术文章、开发者工具与社区交流，覆盖前端、后端、AI、云原生、移动开发等领域，提供开源项目检索、技术学习、行业趋势洞察与技术生态服务，是获取开源资源与技术内容的首选平台",
-        "category": "技术社区"
+        "title": "Public APIs",
+        "icon": "Public_APIs_icon.webp",
+        "url": "https://github.com/public-apis/public-apis",
+        "description": "",
+        "category": "项目汇总"
     },
     {
-        "title": "CSDN",
-        "icon": "CSDN_icon.webp",
-        "url": "https://www.csdn.net",
-        "description": "国内最大的 IT 技术社区与知识平台，聚合数千万技术从业者，提供技术文章、博客、问答、下载、课程等多元内容，覆盖 AI、云计算、编程、架构、运维等领域，为开发者提供学习、分享与职业成长的一站式服务，是学习技术、解决问题与交流分享的权威平台",
-        "category": "技术社区"
+        "title": "Datawhale",
+        "icon": "Datawhale_icon.webp",
+        "url": "https://github.com/datawhalechina",
+        "description": "",
+        "category": "项目汇总"
     },
     {
-        "title": "博客园",
-        "icon": "博客园_icon.webp",
-        "url": "https://www.cnblogs.com",
-        "description": "国内领先的技术博客与知识分享社区，聚合数百万篇开发者原创文章，涵盖前端技术、后端开发、人工智能、云原生、数据库、架构设计、项目实战等领域，提供个人博客托管、技术分享、问答互动与社区交流，是程序员学习、分享与提升技术能力的核心阵地",
-        "category": "技术社区"
+        "title": "GitHub中文排行榜",
+        "icon": "GitHub中文排行榜_icon.webp",
+        "url": "https://github.com/GrowingGit/GitHub-Chinese-Top-Charts",
+        "description": "由社区共建的开源项目榜单，系统整理优质中文开源项目，设有总榜、增速榜、新秀榜排行，区分软件类与资料类，覆盖 Java、Python、Vue 等全主流编程语言，持续更新榜单数据，筛选活跃优质仓库，助力开发者快速检索学习源码、技术教程与实战项目",
+        "category": "项目汇总"
     },
     {
-        "title": "MT 论坛",
-        "icon": "MT论坛_icon.webp",
-        "url": "https://bbs.binmt.cc",
-        "description": "MT管理器官方社区，论坛以实践驱动为特色，用户不仅可以学习 MT 管理器的多种用法，还能深入理解安卓应用的内部结构，许多资深玩家会发布逆向案例、调试思路、自动化脚本、模块开发技巧等高质量内容，使论坛成为移动端逆向学习者的重要知识库",
-        "category": "技术社区"
+        "title": "TelegramGroup",
+        "icon": "TelegramGroup_icon.webp",
+        "url": "https://github.com/itgoyo/TelegramGroup",
+        "description": "",
+        "category": "项目汇总"
+    },
+    {
+        "title": "百分之千-定制版应用收藏",
+        "icon": "百分之千_icon.webp",
+        "url": "https://gitee.com/ww3w/dzb",
+        "description": "开源纯净 APP 目录仓库，收录 98+ 定制版应用、1000+版本资源，覆盖华为、小米、OPPO、vivo等主流机型，汇总各版本特性、实测反馈与下载索引，划分定制 APP 库、版本拐点两大板块，附带降级方案与常见问题解答，方便用户筛选稳定好用的定制安装包",
+        "category": "项目汇总"
     }
 ]

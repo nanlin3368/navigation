@@ -1,163 +1,205 @@
 [
     {
-        "title": "哲风壁纸",
-        "icon": "哲风壁纸_icon.webp",
-        "url": "https://haowallpaper.com",
-        "description": "4K–8K 高清壁纸资源综合平台，提供电脑壁纸、手机壁纸、动态壁纸、素材图片与头像制作等内容，全部支持免费下载，支持按图搜索、壁纸裁剪、多维度分类与智能推荐功能，提供 Win/Mac/网页三端同步，为用户带来高质量壁纸获取与个性化桌面体验",
-        "category": "视觉灵感"
+        "title": "theSVG",
+        "icon": "theSVG_icon.webp",
+        "url": "https://thesvg.org",
+        "description": "高质量 SVG 图标与矢量素材资源库，提供简洁、可编辑、开源的图形文件，适用于网页设计、UI 界面、品牌视觉与前端开发，用户可快速搜索、下载并自由使用多种风格的 SVG 图标，支持自定义与二次创作，帮助设计师与开发者提升效率、优化项目视觉表现",
+        "category": "创意设计"
     },
     {
-        "title": "Unsplash",
-        "icon": "Unsplash_icon.webp",
-        "url": "https://unsplash.com",
-        "description": "全球顶尖的高清摄影创作图库，提供极具美感且无版权限制的高质量影像素材，涵盖自然、人物、科技、商业、旅行、美食等主题，所有图片均可免费使用，支持主题搜索与分类，适用于社交媒体、内容创作与视觉展示，是创意表达与视觉叙事的灵感源泉",
-        "category": "视觉灵感"
+        "title": "Proicon",
+        "icon": "Proicon_icon.webp",
+        "url": "https://proicons.com",
+        "description": "聚合 32 万+ 免费开源图标的专业资源库，收录 168 套高质量图标集，支持 SVG、PNG、Vue、Figma 等多种格式，提供授权说明、智能搜索、风格分类与主题筛选，内置 PNG 压缩、ICO 转换、Favicon 生成等设计工具，可用于网站、App、品牌与 UI 设计项目",
+        "category": "创意设计"
     },
     {
-        "title": "Pexels",
-        "icon": "Pexels_icon.webp",
-        "url": "https://www.pexels.com/zh-cn/",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "Remix Icon",
+        "icon": "Remix_Icon_icon.webp",
+        "url": "https://remixicon.com",
+        "description": "开源的中性风格图标库，收录超过 3200 个像素级精致的 SVG 图标，覆盖常用 UI、系统操作与业务等场景，风格统一、线条干净、适配性强，支持 Outlined 与 Filled 双风格，可免费用于商业项目与个人用途，适用于 UI 设计、Web 开发与移动应用界面构建",
+        "category": "创意设计"
     },
     {
-        "title": "Httpster",
-        "icon": "Httpster_icon.webp",
-        "url": "https://httpster.net",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "Uiverse",
+        "icon": "Uiverse_icon.webp",
+        "url": "https://uiverse.io",
+        "description": "全球最大的开源 UI 元素库，收录 7000+ 个高质量开源组件，包括按钮、卡片、加载动画、输入框、切换开关等，全部免费可商用，支持 CSS、Tailwind、HTML、React 与 Figma，所有组件均可一键复制使用，旨在为前端开发与视觉设计注入无限创意灵感",
+        "category": "创意设计"
     },
     {
-        "title": "Behance",
-        "icon": "Behance_icon.webp",
-        "url": "https://www.behance.net",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "Google Fonts",
+        "icon": "Google_Fonts_icon.webp",
+        "url": "https://fonts.google.com",
+        "description": "由 Google 提供的免费开源字体库，收录超过 1000+ 高质量字体，覆盖拉丁、中文、日文、韩文、阿拉伯语、希腊语等多语种字符集，支持现代变量字体技术，让同一字体文件即可呈现多种字重、宽度与风格，大幅减少加载体积，提升排版灵活度与网页性能",
+        "category": "创意设计"
     },
     {
-        "title": "Dribbble",
-        "icon": "Dribbble_icon.webp",
-        "url": "https://dribbble.com",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "Emoji Directory",
+        "icon": "Emoji_Directory_icon.webp",
+        "url": "https://emojidir.com/zh-CN",
+        "description": "专业的 Emoji 收录与展示平台，整合 Fluent Emoji、Noto Emoji、Apple Emoji 等多平台样式展示，提供分类筛选、关键词搜索、风格对比、一键复制与 PNG/SVG 下载，用户可快速浏览 3D、彩色、扁平、线性等多种风格，是全球创作者查找 Emoji 的便捷工具",
+        "category": "创意设计"
     },
     {
-        "title": "2DWallpapers",
-        "icon": "2DWallpapers_icon.webp",
-        "url": "https://www.2dwallpapers.com",
-        "description": "高品质动漫与游戏壁纸分享平台，精选全球最新最热门的优质动漫与二次元高清壁纸资源，提供角色立绘、场景背景、插画作品、同人创作等多种主题，支持免登录直接获取图片，所有资源均可免费下载且无水印，是 ACG 爱好者寻找精美视觉资源的优质网站",
-        "category": "视觉灵感"
+        "title": "阿里巴巴矢量图标库",
+        "icon": "阿里巴巴矢量图标库_icon.webp",
+        "url": "https://www.iconfont.cn",
+        "description": "国内最大的矢量图标与设计素材平台，提供超过 3300 万图标、插画、3D素材与 Lottie动效，支持 SVG/PNG/AI/FontIcon 等多格式下载，具备智能搜索、在线编辑、可变字体、多色图标、项目管理与团队协作等功能，是国内最受欢迎的图标与设计素材平台",
+        "category": "创意设计"
     },
     {
-        "title": "Foodiesfeed",
-        "icon": "Foodiesfeed_icon.webp",
-        "url": "https://www.foodiesfeed.com/zh",
-        "description": "高质量的美食摄影图库，汇集全球摄影师分享的数千张高分辨率美食图片，涵盖咖啡、甜点、早餐、寿司、汉堡、披萨等场景，所有资源均可免费下载，可用于商业和个人用途，无需署名，图片高清、风格自然、种类丰富，是获取美食视觉素材的首选图库",
-        "category": "视觉灵感"
+        "title": "Undraw",
+        "icon": "Undraw_icon.webp",
+        "url": "https://undraw.co/illustrations",
+        "description": "开源的 SVG 插画库，提供数千张风格统一、可无限缩放的 SVG 插画，全部可免费商用且无需署名，支持关键词搜索、自定义插画主色调、高质量矢量下载，插画涵盖商业、科技、人物、设计、应用场景等主题，适用于网站、App、演示文稿、博客与营销内容",
+        "category": "创意设计"
     },
     {
-        "title": "AURA 壁纸",
-        "icon": "AURA_壁纸_icon.webp",
-        "url": "https://gallery.wallaura.cn",
-        "description": "纯粹且优雅的高质量壁纸聚合平台，收录数万张经人工审核的高清原图，提供 4K/8K 超清壁纸下载，涵盖风光摄影、动漫角色、国风艺术、AI场景、Windows聚焦、游戏主题等分类，并每日更新热门专题与精选合集，是寻找高品质壁纸与视觉灵感的优质平台",
-        "category": "视觉灵感"
+        "title": "中国传统配色",
+        "icon": "中国传统配色_icon.webp",
+        "url": "https://nevertoday.github.io/zhongguo-traditional-colors",
+        "description": "中国传统配色平台，提供 742 组经典色卡，涵盖 HEX、RGB、CMYK 数值，支持在线取色、配色生成、场景试色与灵感探索，设计师、前端与品牌从业者可快速获取高质量国风色彩方案，用于网页、UI、插画与视觉设计创作，是专业可靠的中国色参考工具平台",
+        "category": "创意设计"
     },
     {
-        "title": "AirPano",
-        "icon": "AirPano_icon.webp",
-        "url": "https://airpano.org.cn",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "YouIcons",
+        "icon": "YouIcons_icon.webp",
+        "url": "https://cn.youicons.com",
+        "description": "聚合 4800 万+ 高质量矢量图标、品牌徽标与创意插图，支持 SVG、PNG、JPG 多格式下载与复制 SVG 代码，提供精细分类、单色与多色系列、智能搜索与可视化预览，用于 UI 设计、网页开发、品牌视觉，帮助设计师与开发者快速获取专业素材并提升创意效率",
+        "category": "创意设计"
     },
     {
-        "title": "Akspic",
-        "icon": "Akspic_icon.webp",
-        "url": "https://wallspic.com/cn",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "All SVG Icons",
+        "icon": "All_SVG_Icons_icon.webp",
+        "url": "https://allsvgicons.com",
+        "description": "探索超过 28.6 万个免费开源 SVG 图标，汇集 220+ 精选图标库，支持复制 SVG 代码、下载 PNG、JSX、Base64 等格式，无需注册即可使用，兼容 React、Tailwind、Vue 等主流框架，适合网页、App 和 UI 设计项目，助力开发者与设计师高效打造现代界面",
+        "category": "创意设计"
     },
     {
-        "title": "MakerWorld",
-        "icon": "MakerWorld_icon.webp",
-        "url": "https://makerworld.com.cn/zh",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "CocoMaterial",
+        "icon": "CocoMaterial_icon.webp",
+        "url": "https://cocomaterial.com",
+        "description": "开源手绘插画素材库，提供数千张可自定义的线稿插画，支持在线搜索、编辑、调色与免费下载，所有插画均基于开源授权，可自由使用、修改与商用，适合网页设计、品牌视觉、教育内容、演示文稿与创意项目，是内容创作者获取轻量级视觉素材的理想来源",
+        "category": "创意设计"
     },
     {
-        "title": "gooood",
-        "icon": "gooood_icon.webp",
-        "url": "https://www.gooood.cn",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "西瓜封面设计",
+        "icon": "西瓜封面设计_icon.webp",
+        "url": "https://cover.xgdh.cn",
+        "description": "在线封面设计工具，无需注册，完全免费使用，支持纯色、渐变与图片背景，自定义标题、水印与图标库，提供主题模式、一键切换与实时预览功能，支持多格式导出、自定义尺寸与高质量图片生成，适用于文章封面、课程封面、博客头图等多种创作场景",
+        "category": "创意设计"
     },
     {
-        "title": "Deviant Art",
-        "icon": "Deviant_Art_icon.webp",
-        "url": "https://www.deviantart.com",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "PerlerBeads",
+        "icon": "PerlerBeads_icon.webp",
+        "url": "https://perlerbeads.net/zh",
+        "description": "免费在线拼豆图纸生成器，支持上传 JPG、PNG 照片一键像素化，提供自动调色与色差优化、颗粒数量智能统计、色板精准匹配、画布尺寸调节与实时预览效果，可导出高清成品图，兼容多品牌色号体系，适合新手、手工创作者快速制作挂件、杯垫拼豆图案",
+        "category": "创意设计"
     },
     {
-        "title": "拾光壁纸",
-        "icon": "拾光壁纸_icon.webp",
-        "url": "https://gallery.timeline.ink",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "yesicon",
+        "icon": "yesicon_icon.webp",
+        "url": "https://yesicon.app",
+        "description": "超大规模开源矢量图标平台，整合 200+ 开源图标库与 29 万+ 矢量图标，支持中文关键词检索、风格筛选、颜色与尺寸在线调整，提供 SVG/PNG 下载与多框架代码复制，无需注册即可使用，帮助设计师、前端开发者与产品团队快速查找、编辑与集成图标资源",
+        "category": "创意设计"
     },
     {
-        "title": "AppleWalls",
-        "icon": "AppleWalls_icon.webp",
-        "url": "https://www.applewalls.com/zh",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "svgl",
+        "icon": "svgl_icon.webp",
+        "url": "https://svgl.app",
+        "description": "免费开源的矢量标识资源库，收录 600+ 国际品牌、技术框架、AI工具与软件服务的矢量图标，支持快速搜索、复制 SVG 代码、免费下载与自由使用，适用于网站UI、前端项目、移动应用、设计稿与产品展示，以轻量、快速，为你的项目提供专业级图标资源",
+        "category": "创意设计"
     },
     {
-        "title": "Chiikawa 壁纸",
-        "icon": "Chiikawa_壁纸_icon.webp",
-        "url": "https://chiikawawallpaper.com/zh-Hans",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "FreeDownloadLogo",
+        "icon": "FreeDownloadLogo_icon.webp",
+        "url": "https://www.freedownloadlogo.com/cn",
+        "description": "免费下载数百万个高质量矢量徽标，获取顶级设计灵感，提供超过 260 万来自全球顶级企业设计师和创意人员的 LOGO 矢量文件，涵盖各类行业品牌标志，支持中文搜索、浏览和免费下载 SVG、PNG 格式 LOGO，海量新品每日更新，助力品牌设计与创意灵感",
+        "category": "创意设计"
+    },
+    {
+        "title": "SignatureFont",
+        "icon": "SignatureFont_icon.webp",
+        "url": "https://signaturefont.net/zh",
+        "description": "在线免费签名字体生成器，输入姓名立即生成专业手写签名字体，支持 74+ 种优雅草书、画笔与正式签名风格，一键导出透明 PNG，完美用于电子邮件签名、文档、Logo 设计与品牌，100% 免费、安全、免注册，快速创建个性化数字签名，提升专业形象",
+        "category": "创意设计"
+    },
+    {
+        "title": "Flaticon",
+        "icon": "Flaticon_icon.webp",
+        "url": "https://www.flaticon.com",
+        "description": "海量免费矢量图标下载库，超过 1800万+ 高质量免费图标，支持 SVG、PNG、EPS 等多种格式，包含各种风格的矢量图标、插图和 Logo，支持免费商用（需署名），一键编辑颜色与大小，高效提升设计效率，适合设计师、开发者快速用于网站、APP 和演示文稿",
+        "category": "创意设计"
+    },
+    {
+        "title": "Iconbuddy",
+        "icon": "Iconbuddy_icon.webp",
+        "url": "https://iconbuddy.com",
+        "description": "强大的免费 SVG 图标搜索引擎，汇集超过 30 万款开源高质量图标，提供 70+ 主流图标库，支持快速搜索、自定义颜色与大小，一键下载 SVG、PNG、JSX 等多种格式，用于网页、App、Figma 和设计项目，让创作者轻松找到并使用理想图标，提升设计效率",
+        "category": "创意设计"
+    },
+    {
+        "title": "3D图标库",
+        "icon": "3D图标库_icon.webp",
+        "url": "https://www.ai-suguan.com",
+        "description": "探索海量高质量 3D 图标库，涵盖动物、水果、蔬菜、风景、设备等各类精美 3D 图标资源，内容风格统一、细节精致，支持关键词搜索，免费下载无背景 PNG 图标，适用于 UI 设计、网页开发、品牌视觉和演示项目，助力设计师与开发者快速提升创作表现力",
+        "category": "创意设计"
+    },
+    {
+        "title": "Dashboard Icons",
+        "icon": "Dashboard_Icons_icon.webp",
+        "url": "https://dashboardicons.com",
+        "description": "图标与界面元素资源平台，收录海量精致矢量图标、仪表盘组件与 UI 控件，覆盖数据、操作、导航等核心场景，支持 SVG、PNG、ICO 等多种格式下载、可定制配色与尺寸，提供免费试用与商业授权，助力设计师与开发者快速构建高品质界面与报表视觉系统",
+        "category": "创意设计"
+    },
+    {
+        "title": "Worldvectorlogo",
+        "icon": "Worldvectorlogo_icon.webp",
+        "url": "https://worldvectorlogo.com/zh",
+        "description": "全球海量品牌矢量标志下载平台，收录数万款知名企业、公司 Logo，涵盖科技、时尚、体育、AI、食品等各行业标志，提供 SVG 格式下载，无需注册账号，即可无限免费下载使用，助力品牌设计、项目制作与创意灵感，是寻找品牌标志的灵感宝库与素材基地",
+        "category": "创意设计"
+    },
+    {
+        "title": "Lordicon",
+        "icon": "Lordicon_icon.webp",
+        "url": "https://lordicon.com",
+        "description": "专业动态图标素材站，收录 43900+ 静态与动态图标，涵盖手绘涂鸦、简约系统、潮流线条等多风格，支持在线自定义配色、动画，可导出 Lottie、SVG、GIF、MP4 等多格式，图标支持悬停、循环、形变交互动效，适用于网站、PPT、短视频、APP 设计",
+        "category": "创意设计"
     },
     {
         "title": "21st",
         "icon": "21st_icon.webp",
         "url": "https://21st.dev/community/components",
-        "description": "",
-        "category": "视觉灵感"
+        "description": "高质量的开源组件库，提供专业级的 React 与 Tailwind UI 开源组件，涵盖按钮、导航、Hero、AI Chat、表单等核心界面模块，全部采用 MIT 授权，可直接用于生产环境，支持复制代码、主题定制与真实界面示例，帮助开发者快速构建现代 Web UI 与 AI 产品界面",
+        "category": "创意设计"
     },
     {
-        "title": "backiee",
-        "icon": "backiee_icon.webp",
-        "url": "https://backiee.com",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "七卡瓦",
+        "icon": "七卡瓦_icon.webp",
+        "url": "https://perlerbeads.zippland.com",
+        "description": "拼豆图纸制作工具，适配主流拼豆色板，智能像素化、合并杂色、精准统计豆粒用量，支持手动修图、导出图纸与采购清单，内置社区画廊分享像素作品，网页免安装即用，新手、手工爱好者、像素创作者均可快速制作动漫、人像拼豆图案，让像素创意更轻松",
+        "category": "创意设计"
     },
     {
-        "title": "图叙",
-        "icon": "图叙_icon.webp",
-        "url": "https://www.tuxuai.com/inspiration",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "Cover Page",
+        "icon": "Cover_Page_icon.webp",
+        "url": "https://www.coverpage.one",
+        "description": "免费无水印在线封面制作工具，拖拽式操作搭配海量精美模板，支持纯色、渐变、多图拼贴设计，适配小红书、公众号、抖音图文等主流平台标准尺寸，可自定义上传图片、添加文字特效，轻松导出高清大图，操作流畅、出图快速，几秒做出专业吸睛社媒封面",
+        "category": "创意设计"
     },
     {
-        "title": "Aiart Pics",
-        "icon": "Aiart_Pics_icon.webp",
-        "url": "https://aiart.pics",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "HTMLrev",
+        "icon": "HTMLrev_icon.webp",
+        "url": "https://htmlrev.com",
+        "description": "HTML 网站模板资源库，提供免费且高质量的 HTML 网站模板，涵盖作品集、登陆页、博客、仪表盘等多类型页面，所有模板采用现代化设计、响应式布局与清晰的代码结构，支持实时预览、跨浏览器兼容，是寻找免费网页模板与前端 UI 资源的重要站点",
+        "category": "创意设计"
     },
     {
-        "title": "OpenNana",
-        "icon": "OpenNana_icon.webp",
-        "url": "https://opennana.com/awesome-prompt-gallery",
-        "description": "",
-        "category": "视觉灵感"
-    },
-    {
-        "title": "Wallpaper Gallery",
-        "icon": "Wallpaper_Gallery_icon.webp",
-        "url": "https://wallpaper.061129.xyz/mobile",
-        "description": "",
-        "category": "视觉灵感"
+        "title": "比特拼豆",
+        "icon": "比特拼豆_icon.webp",
+        "url": "https://bitbead.pomodiary.com/zh",
+        "description": "完全免费的照片转拼豆图纸生成器，支持 Perler、Hama、Artkal、MARD 四大品牌色卡，采用 CIEDE2000 专业算法，自动生成总豆数、真实尺寸与每色采购清单，支持画笔微调，可导出高清 PNG、打印 PDF，内置海量新手图纸模板，快速制作专业拼豆图纸",
+        "category": "创意设计"
     }
 ]
