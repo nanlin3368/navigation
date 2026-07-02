@@ -928,14 +928,20 @@
         position     : relative;
         background   : var(--primary-bg);
         border-radius: 28px;
-        padding      : 36px 32px 28px;
-        width        : min(92vw, 420px);
+        padding      : 36px 28px 28px;
+        width        : min(94vw, 480px);
+        max-height   : 80vh;
+        overflow-y   : auto;
         box-shadow   : 16px 16px 40px var(--shadow-dark), -8px -8px 24px var(--shadow-light),
                        0 20px 60px rgba(0, 0, 0, 0.25);
         transform    : scale(0.88) translateY(20px);
         transition   : transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
         text-align   : center;
+        /* 隐藏滚动条（两端通用） */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
       }
+      .sponsor-panel::-webkit-scrollbar { display: none; }
       #sponsorModal.open .sponsor-panel {
         transform: scale(1) translateY(0);
       }
@@ -964,6 +970,7 @@
         font-weight: 700;
         color      : var(--text-primary);
         margin-bottom: 6px;
+        padding-right: 24px;
       }
       .sponsor-sub {
         font-size  : 0.9rem;
@@ -973,6 +980,7 @@
       .sponsor-qr-row {
         display        : flex;
         justify-content: center;
+        align-items    : flex-start;
         gap            : 20px;
       }
       .sponsor-qr-item {
@@ -980,12 +988,15 @@
         flex-direction: column;
         align-items   : center;
         gap           : 10px;
+        flex           : 1;
+        min-width      : 0;
       }
       .sponsor-qr-img {
-        width        : 140px;
-        height       : 140px;
+        width        : 100%;
+        max-width    : 230px;
+        height       : auto;
         border-radius: 18px;
-        object-fit   : cover;
+        object-fit   : contain;
         box-shadow   : 6px 6px 14px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
       }
       .sponsor-qr-label {
@@ -1813,7 +1824,8 @@
 
         /* 遮罩层保持全屏，面板从底部滑入 */
         #toolboxModal,
-        #disclaimerModal {
+        #disclaimerModal,
+        #sponsorModal {
           align-items     : flex-end;
           justify-content : stretch;
         }
@@ -1823,6 +1835,7 @@
           width            : 100%;
           max-width        : 100%;
           border-radius    : 24px 24px 0 0;
+          height           : 82vh;
           height           : 82vh;
           max-height       : 82vh;
           padding          : 20px 28px 32px;
@@ -1852,6 +1865,7 @@
           width            : 100%;
           max-width        : 100%;
           border-radius    : 24px 24px 0 0;
+          height           : 82vh;
           max-height       : 82vh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
@@ -1874,6 +1888,36 @@
           opacity      : 0.45;
         }
         #disclaimerModal .disclaimer-title { padding-right: 0; }
+
+        /* 赞赏支持底部面板 */
+        #sponsorModal .sponsor-panel {
+          width            : 100%;
+          max-width        : 100%;
+          border-radius    : 24px 24px 0 0;          
+          max-height       : 82vh;
+          padding          : 25px 28px 32px;
+          transform        : translateY(100%);
+          transition       : transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.22);
+        }
+        #sponsorModal.open .sponsor-panel {
+          transform: translateY(0);
+        }
+
+        /* 赞赏支持底部面板：同样加把手条 */
+        #sponsorModal .sponsor-panel::before {
+          content      : '';
+          display      : block;
+          width        : 40px;
+          height       : 4px;
+          border-radius: 2px;
+          background   : var(--shadow-dark);
+          margin       : 0 auto 16px;
+          opacity      : 0.45;
+        }
+        #sponsorModal .sponsor-title { padding-right: 0; }       
+        #sponsorModal .sponsor-qr-row { gap: 14px; }
+        #sponsorModal .sponsor-qr-img { max-width: 190px; }
 
         /* 左侧抽屉打开: 悬浮按钮禁止点击 */
         body.drawer-open #backToTop,
@@ -1898,7 +1942,7 @@
         <aside class="sidebar">
           <!-- 标题区：与移动端抽屉共用同一套 HTML 结构 -->
           <div class="site-header">
-            <h1>💫 星源导航</h1>
+            <h1>星源导航</h1>
             <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
           </div>
           <nav class="sidebar-nav" id="sidebarNav">
@@ -1957,6 +2001,7 @@
       <div class="categories mobile-categories" id="categoriesEl">
         <button class="category-btn active"><span class="cat-label">🌟 全部分类</span></button>
         <button class="category-btn"><span class="cat-label">🌍 全球门户</span></button>
+        <button class="category-btn"><span class="cat-label">🔥 国内主流</span></button>
         <button class="category-btn"><span class="cat-label">🧠 人工智能</span></button>
         <button class="category-btn"><span class="cat-label">🐙 项目汇总</span></button>
         <button class="category-btn"><span class="cat-label">👥 技术社区</span></button>
@@ -1999,7 +2044,7 @@
     <aside class="mobile-drawer" id="mobileDrawer">
       <!-- 标题区：与桌面端侧边栏共用同一套 HTML 结构 -->
       <div class="site-header">
-        <h1>💫 星源导航</h1>
+        <h1>星源导航</h1>
         <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
       </div>
       <nav class="mobile-drawer-nav" id="mobileDrawerNav">
@@ -2042,7 +2087,7 @@
       <div class="sponsor-panel">
         <button class="sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
         <p class="sponsor-title">🌿 赞赏支持</p>
-        <p class="sponsor-sub"> 如果本站对您有帮助，欢迎支持一下 ☕</p>
+        <p class="sponsor-sub">如果本站对你有帮助，欢迎支持一下 ☕</p>
         <div class="sponsor-qr-row">
           <div class="sponsor-qr-item">
             <img class="sponsor-qr-img" src="assets/picture/wx.webp" alt="微信赞赏">
@@ -2133,7 +2178,7 @@
 
     <!-- 在线工具列表配置 -->
     <script>
-      const TOOLS_BASE = 'tools/tools1/'
+      const TOOLS_BASE = 'tools/tools/'
 
       const TOOL_GROUPS = [
         {
