@@ -70,6 +70,11 @@
         scrollbar-gutter  : stable;
       }
 
+      body.theme-transitioning,
+      body.theme-transitioning .theme-anim {
+        transition        : none !important;
+      }
+
       html, body, .main-content {
         overscroll-behavior: none;
       }
@@ -106,20 +111,8 @@
       @keyframes skeletonShimmer {
         0%   { background-position:  200% 0; }
         100% { background-position: -200% 0; }
-      }
-
-      /* ── 主题切换平滑过渡 ── */
-      body.theme-transitioning {
-        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                    color            0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      body.theme-transitioning .theme-anim {
-        transition      : background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                          background       0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                          color            0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                          box-shadow       0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;        
-      }
-
+      }     
+                          
       /* ── 站点标题（两端共用同一套 HTML，CSS 分别控制尺寸） ── */
       .site-header h1 {
         background             : var(--accent-gradient);
@@ -2058,7 +2051,7 @@
       </div>
     </div>
 
-    <!-- 复制链接成功提示 -->
+    <!-- ── 复制链接成功提示 ── -->
     <div id="copyLinkToast">✅ 成功复制本站链接</div>
 
     <!-- ── 关于本站模态框 ── -->
@@ -2197,17 +2190,19 @@
       const TOOLS = TOOL_GROUPS.flatMap(g => g.tools)
     </script>
     
-    <!-- 禁止脚本 -->
+    <!-- 安全策略 + 搜索引擎配置 -->
     <script src="src/scripts/security.js" defer></script>
-
-    <!-- 搜索引擎配置 -->
     <script src="src/scripts/config.js"></script>
+
+    <!-- ════════════════════════════════════════════════════════
+         主逻辑脚本（两端共用，移动/桌面差异通过 innerWidth 分支处理）
+         ════════════════════════════════════════════════════════ -->
     <script>
       const searchBox    = document.getElementById('searchBox')
       const grid         = document.getElementById('toolsGrid')
       const categoryBtns = document.querySelectorAll('.category-btn')
 
-      // ── 搜索引擎选择器 ────────────────────────────────────────
+      /* ── §A 搜索引擎选择与切换 ── */
       const ENGINES     = typeof SB_ENGINES     !== 'undefined' ? SB_ENGINES     : {}
       const ENGINE_META = typeof SB_ENGINE_META !== 'undefined' ? SB_ENGINE_META : {}
 
@@ -2342,6 +2337,7 @@
       }
       searchSubmit.addEventListener('click', doWebSearch)
 
+      /* ── §B 分类数据加载与卡片渲染（懒加载分页） ── */
       // ── 分类按钮索引初始化 ────────────────────────────────────
       categoryBtns.forEach((btn, i) => { btn.dataset.index = i })
 
@@ -2533,6 +2529,7 @@
       // ── 初始化：显示全部分类 ──────────────────────────────────
       showCategory(0)
 
+      /* ── §C 悬浮控件：回顶部 / 底部发光 / 主题切换 / 设置 FAB ── */
       // ── 回顶部 & 底部发光 ──────────────────────────────────────
       const backToTopBtn     = document.getElementById('backToTop')
       const scrollBottomGlow = document.getElementById('scrollBottomGlow')
@@ -2673,6 +2670,7 @@
         }
       }
 
+      /* ── §D 模态框：赞赏支持 / 复制链接 / 关于本站 ── */
       // ── 赞赏模态框 ────────────────────────────────────────────
       const sponsorBtn   = document.getElementById('sponsorBtn')
       const sponsorModal = document.getElementById('sponsorModal')
@@ -2790,6 +2788,7 @@
         }
       })
 
+      /* ── §E 移动端专属交互：分类抽屉同步 / 侧滑抽屉开关 ── */
       // ── 分类列表：桌面端移入侧边栏 / 移动端移入抽屉 ──────────
       const categoriesEl    = document.getElementById('categoriesEl')
       const sidebarNav      = document.getElementById('sidebarNav')
@@ -2871,6 +2870,7 @@
         })
       }
 
+      /* ── §F 在线工具模态框：列表渲染、搜索、开关 ── */
       // ── 在线工具模态框 ──────────────────────────────────────
       const toolboxBtn         = document.getElementById('toolboxBtn')
       const toolboxModal       = document.getElementById('toolboxModal')
