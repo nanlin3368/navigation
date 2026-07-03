@@ -49,8 +49,7 @@
         --skeleton-shine  : #eef0f6;
       }
 
-      body.dark {
-        
+      body.dark {        
         --primary-bg      : #1e1e2e;
         --secondary-bg    : #2a2a3e;
         --shadow-light    : #2a2a3e;
@@ -61,7 +60,7 @@
         --glass-border    : rgba(255, 255, 255, 0.08);
         --skeleton-base   : #2c2c42;
         --skeleton-shine  : #3a3a56;
-      }
+      }      
 
       body {
         background        : var(--primary-bg);
@@ -114,38 +113,11 @@
         transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                     color            0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      body.theme-transitioning .container,
-      body.theme-transitioning .sidebar,
-      body.theme-transitioning .search-bar,
-      body.theme-transitioning .engine-dropdown,
-      body.theme-transitioning .category-btn,
-      body.theme-transitioning .tool-card,
-      body.theme-transitioning .tool-link,
-      body.theme-transitioning footer,
-      body.theme-transitioning #themeToggle,
-      body.theme-transitioning #sponsorBtn,
-      body.theme-transitioning #copyLinkBtn,
-      body.theme-transitioning #disclaimerBtn,
-      body.theme-transitioning #toolboxBtn,
-      body.theme-transitioning #settingsFab,
-      body.theme-transitioning #backToTop,
-      body.theme-transitioning .mobile-drawer,
-      body.theme-transitioning .mobile-drawer-nav,
-      body.theme-transitioning .mobile-drawer .site-header,
-      body.theme-transitioning .mobile-drawer .category-btn,
-      body.theme-transitioning .search-wrapper,
-      body.theme-transitioning .mobile-menu-btn,
-      body.theme-transitioning .search-container,
-      body.theme-transitioning .engine-trigger,
-      body.theme-transitioning .search-box,
-      body.theme-transitioning .search-clear,
-      body.theme-transitioning .search-submit {
+      body.theme-transitioning .theme-anim {
         transition      : background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                           background       0.4s cubic-bezier(0.4, 0, 0.2, 1),
                           color            0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                          box-shadow       0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        animation-duration: 0s !important;
-        animation-delay   : 0s !important;
+                          box-shadow       0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;        
       }
 
       /* ── 站点标题（两端共用同一套 HTML，CSS 分别控制尺寸） ── */
@@ -1375,21 +1347,6 @@
         letter-spacing: 0.02em;
       }
 
-      /* ── 主题切换过渡：工具箱相关元素同步 ── */
-      body.theme-transitioning #toolboxModal,
-      body.theme-transitioning .toolbox-panel,
-      body.theme-transitioning .toolbox-close,
-      body.theme-transitioning .toolbox-item,
-      body.theme-transitioning .toolbox-search,
-      body.theme-transitioning #toolboxBtn {
-        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                    background       0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                    color            0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                    box-shadow       0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        animation-duration: 0s !important;
-        animation-delay   : 0s !important;
-      }
-
       /* ── 底部到达发光条（fixed，仅内容区滚动到底部时触发） ── */
       #scrollBottomGlow {
         position        : fixed;
@@ -1933,13 +1890,13 @@
     </style>  
   </head>
   <body>   
-    <div class="container">
+    <div class="container theme-anim">
       <div class="desktop-layout">
 
         <!-- ══════════════════════════════════════════
              左侧导航栏（桌面端可见，移动端隐藏）
              ══════════════════════════════════════════ -->
-        <aside class="sidebar">
+        <aside class="sidebar theme-anim">
           <!-- 标题区：与移动端抽屉共用同一套 HTML 结构 -->
           <div class="site-header">
             <h1>星源导航</h1>
@@ -1954,21 +1911,21 @@
              ══════════════════════════════════════════ -->
         <main class="main-content">
 
-          <div class="search-wrapper">
-            <div class="search-container">
-              <div class="search-bar" id="searchBar">
-                <button class="engine-trigger" id="engineTrigger" aria-label="选择搜索引擎" aria-expanded="false">
+          <div class="search-wrapper theme-anim">
+            <div class="search-container theme-anim">
+              <div class="search-bar theme-anim" id="searchBar">
+                <button class="engine-trigger theme-anim" id="engineTrigger" aria-label="选择搜索引擎" aria-expanded="false">
                   <span class="engine-icon" id="triggerIcon"></span>
                   <span class="engine-caret">▼</span>
                 </button>
-                <input type="text" class="search-box" id="searchBox" placeholder="搜索关键词..." />
-                <button class="search-clear" id="searchClear" aria-label="清除搜索">
+                <input type="text" class="search-box theme-anim" id="searchBox" placeholder="搜索关键词..." />
+                <button class="search-clear theme-anim" id="searchClear" aria-label="清除搜索">
                   <svg viewBox="0 0 14 14">
                     <line x1="2" y1="2" x2="12" y2="12"/>
                     <line x1="12" y1="2" x2="2" y2="12"/>
                   </svg>
                 </button>
-                <button class="search-submit" id="searchSubmit" aria-label="搜索">
+                <button class="search-submit theme-anim" id="searchSubmit" aria-label="搜索">
                   <svg viewBox="0 0 24 24">
                     <circle cx="11" cy="11" r="8" />
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -1976,7 +1933,7 @@
                 </button>
               </div><!-- /search-bar -->
 
-              <div class="engine-dropdown" id="engineDropdown" role="listbox">
+              <div class="engine-dropdown theme-anim" id="engineDropdown" role="listbox">
                 <div class="engine-local-row selected" id="engineLocal" role="option" data-engine="local">
                   <div class="engine-local-icon">🔍</div>
                   <div class="engine-local-info">
@@ -1989,7 +1946,7 @@
             </div><!-- /search-container -->
 
             <!-- 汉堡菜单按钮（仅移动端显示） -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开导航菜单">
+            <button class="mobile-menu-btn theme-anim" id="mobileMenuBtn" aria-label="打开导航菜单">
               <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
                 <line x1="3" y1="6"  x2="21" y2="6"  />
                 <line x1="3" y1="12" x2="21" y2="12" />
@@ -1999,36 +1956,36 @@
           </div><!-- /search-wrapper -->
 
       <div class="categories mobile-categories" id="categoriesEl">
-        <button class="category-btn active"><span class="cat-label">🌟 全部分类</span></button>
-        <button class="category-btn"><span class="cat-label">🌍 全球门户</span></button>
-        <button class="category-btn"><span class="cat-label">🔥 国内主流</span></button>
-        <button class="category-btn"><span class="cat-label">🧠 人工智能</span></button>
-        <button class="category-btn"><span class="cat-label">🐙 项目汇总</span></button>
-        <button class="category-btn"><span class="cat-label">👥 技术社区</span></button>
-        <button class="category-btn"><span class="cat-label">🍉 新知百态</span></button>
-        <button class="category-btn"><span class="cat-label">📖 学习成长</span></button>
-        <button class="category-btn"><span class="cat-label">🧲 开发辅助</span></button>
-        <button class="category-btn"><span class="cat-label">📦 资源基地</span></button>
-        <button class="category-btn"><span class="cat-label">🛠️ 综合效率</span></button>
-        <button class="category-btn"><span class="cat-label">🖼️ 图像处理</span></button>
-        <button class="category-btn"><span class="cat-label">🎬 媒体创作</span></button>
-        <button class="category-btn"><span class="cat-label">📝 文档办公</span></button>
-        <button class="category-btn"><span class="cat-label">🎨 创意设计</span></button>
-        <button class="category-btn"><span class="cat-label">🌈 视觉灵感</span></button>
-        <button class="category-btn"><span class="cat-label">📤 视频提取</span></button>
-        <button class="category-btn"><span class="cat-label">🔍 聚合搜索</span></button>
-        <button class="category-btn"><span class="cat-label">🎧 影音娱乐</span></button>
-        <button class="category-btn"><span class="cat-label">🔮 漫步次元</span></button>
-        <button class="category-btn"><span class="cat-label">✈️ 跨境互联</span></button>
-        <button class="category-btn"><span class="cat-label">🧰 网络驿站</span></button>
-        <button class="category-btn"><span class="cat-label">🤖 安卓镜像</span></button>
-        <button class="category-btn"><span class="cat-label">💻 桌面生态</span></button>
-        <button class="category-btn"><span class="cat-label">🧭 更多导航</span></button>
+        <button class="category-btn active theme-anim"><span class="cat-label">🌟 全部分类</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🌍 全球门户</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🔥 国内主流</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🧠 人工智能</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🐙 项目汇总</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">👥 技术社区</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🍉 新知百态</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">📖 学习成长</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🧲 开发辅助</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">📦 资源基地</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🛠️ 综合效率</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🖼️ 图像处理</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🎬 媒体创作</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">📝 文档办公</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🎨 创意设计</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🌈 视觉灵感</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">📤 视频提取</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🔍 聚合搜索</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🎧 影音娱乐</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🔮 漫步次元</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">✈️ 跨境互联</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🧰 网络驿站</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🤖 安卓镜像</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">💻 桌面生态</span></button>
+        <button class="category-btn theme-anim"><span class="cat-label">🧭 更多导航</span></button>
       </div>
 
           <div class="tools-grid" id="toolsGrid"></div>
 
-          <footer>
+          <footer class="theme-anim">
             <p>© 2026 星源导航 | 极简 · 纯粹 · 高效</p>
             <p>本站由 [ <a href="https://nanlin3368.github.io/navigation" target="_blank" rel="noopener noreferrer" class="author-highlight" style="color:#40C8E0; text-decoration:none;">闲月</a> ] 倾心制作并整理内容</p>
           </footer>
@@ -2041,18 +1998,18 @@
          移动端抽屉（与 .container 平级，fixed 定位）
          ══════════════════════════════════════════ -->
     <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-    <aside class="mobile-drawer" id="mobileDrawer">
+    <aside class="mobile-drawer theme-anim" id="mobileDrawer">
       <!-- 标题区：与桌面端侧边栏共用同一套 HTML 结构 -->
-      <div class="site-header">
+      <div class="site-header theme-anim">
         <h1>星源导航</h1>
         <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
       </div>
-      <nav class="mobile-drawer-nav" id="mobileDrawerNav">
+      <nav class="mobile-drawer-nav theme-anim" id="mobileDrawerNav">
       </nav>
     </aside>
 
     <!-- ── 悬浮按钮 ── -->
-    <button id="backToTop" title="回到顶部" aria-label="回到顶部">
+    <button id="backToTop" title="回到顶部" aria-label="回到顶部" class="theme-anim">
       <svg viewBox="0 0 24 24">
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
@@ -2061,17 +2018,17 @@
     <!-- ── 设置 FAB 菜单 ── -->
     <div id="settingsFabGroup">
       <!-- 子按钮：在线工具 -->
-      <button id="toolboxBtn" title="在线工具" aria-label="在线工具">🧰</button>
+      <button id="toolboxBtn" title="在线工具" aria-label="在线工具" class="theme-anim">🧰</button>
       <!-- 子按钮：关于本站 -->
-      <button id="disclaimerBtn" title="关于本站" aria-label="关于本站">📘</button>
+      <button id="disclaimerBtn" title="关于本站" aria-label="关于本站" class="theme-anim">📘</button>
       <!-- 子按钮：赞赏支持 -->
-      <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持">🌿</button>
+      <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持" class="theme-anim">🌿</button>
       <!-- 子按钮：复制链接 -->
-      <button id="copyLinkBtn" title="复制链接" aria-label="复制链接">📋</button>
+      <button id="copyLinkBtn" title="复制链接" aria-label="复制链接" class="theme-anim">📋</button>
       <!-- 子按钮：主题切换 -->
-      <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式" class="fab-child">☀️</button>
+      <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式" class="fab-child theme-anim">☀️</button>
       <!-- 主触发按钮 "+" -->
-      <button id="settingsFab" title="设置" aria-label="设置">
+      <button id="settingsFab" title="设置" aria-label="设置" class="theme-anim">
         <svg id="settingsFabIcon" viewBox="0 0 24 24" width="22" height="22"
              stroke="currentColor" stroke-width="2.5"
              stroke-linecap="round" fill="none">
@@ -2401,7 +2358,7 @@
 
       function buildCard(site, i) {
         const card     = document.createElement('div')
-        card.className = 'tool-card'
+        card.className = 'tool-card theme-anim'
         const PERIOD   = 3000, STAGGER = 400
         const phaseMs  = (performance.now() + i * STAGGER) % PERIOD
         const delay    = -(phaseMs / 1000).toFixed(3)
@@ -2412,7 +2369,7 @@
           ${iconHtml}
           <h3 class="tool-title">${site.title || ''}</h3>
           <p class="tool-description">${site.description || ''}</p>
-          <a href="${site.url || '#'}" target="_blank" class="tool-link">访问</a>
+          <a href="${site.url || '#'}" target="_blank" class="tool-link theme-anim">访问</a>
         `
         card.addEventListener('click', function(e) {
           if (!e.target.classList.contains('tool-link')) {
