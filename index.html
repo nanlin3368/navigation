@@ -47,6 +47,18 @@
         --glass-border    : rgba(255, 255, 255, 0.18);
         --skeleton-base   : #dde0ea;
         --skeleton-shine  : #eef0f6;
+
+        /* ── 设置 FAB 子按钮高亮光晕色（展开时每个按钮独立配色，统一在此维护） ── */
+        --fab-toolbox-glow      : #3B82F6;             /* 🧰 在线工具：蓝色 */
+        --fab-toolbox-glow-soft : rgba(59, 130, 246, 0.5);
+        --fab-disclaimer-glow      : #A855F7;          /* 📘 关于本站：紫色 */
+        --fab-disclaimer-glow-soft : rgba(168, 85, 247, 0.5);
+        --fab-sponsor-glow      : #22C55E;             /* 🌿 赞赏支持：绿色 */
+        --fab-sponsor-glow-soft : rgba(34, 197, 94, 0.5);
+        --fab-copylink-glow      : #F59E0B;            /* 📋 复制链接：橙色 */
+        --fab-copylink-glow-soft : rgba(245, 158, 11, 0.5);
+        --fab-theme-glow      : #EC4899;               /* ☀️/🌙 主题切换：粉色 */
+        --fab-theme-glow-soft : rgba(236, 72, 153, 0.5);
       }
 
       body.dark {        
@@ -150,8 +162,10 @@
         align-items    : center;
         background     : var(--primary-bg);
         border-radius  : 28px;
+        border         : 2px solid var(--accent-color);
         box-shadow     : inset 8px 8px 16px var(--shadow-dark),
-                         inset -8px -8px 16px var(--shadow-light);
+                         inset -8px -8px 16px var(--shadow-light),
+                         0 0 8px 1px rgba(102, 126, 234, 0.18);
         transition     : box-shadow 0.3s ease;
         overflow       : visible;
         position       : relative;
@@ -159,7 +173,7 @@
       .search-bar:focus-within {
         box-shadow: inset 10px 10px 20px var(--shadow-dark),
                     inset -10px -10px 20px var(--shadow-light),
-                    0 0 0 3px rgba(102, 126, 234, 0.2);
+                    0 0 8px 1px rgba(102, 126, 234, 0.18);
       }
 
       /* ── 引擎触发按钮 ── */
@@ -662,18 +676,19 @@
         width        : 52px;
         height       : 52px;
         border-radius: 18px;
-        border       : none;
+        border       : 2px solid var(--accent-color);
         cursor       : pointer;
         display      : flex;
         align-items  : center;
         justify-content: center;
         background   : var(--primary-bg);
         color        : var(--text-primary);
-        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
-        transition   : box-shadow 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow   : 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light),
+                       0 0 14px 2px rgba(102, 126, 234, 0.5);
+        transition   : box-shadow 0.25s ease, border-color 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
         flex-shrink  : 0;
       }
-      #settingsFab:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
+      #settingsFab:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light), 0 0 14px 2px rgba(102, 126, 234, 0.5); transform: translateY(-2px) scale(1.06); }
       #settingsFab:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
       #settingsFab.open   { background: var(--primary-bg); color: var(--accent-color);  transform: rotate(45deg); }
       #settingsFab.open:hover { transform: rotate(45deg) translateY(-2px) scale(1.06); }
@@ -685,7 +700,7 @@
         width        : 52px;
         height       : 52px;
         border-radius: 50%;
-        border       : none;
+        border       : 2px solid transparent;
         cursor       : pointer;
         display      : flex;
         align-items  : center;
@@ -700,18 +715,20 @@
         transform    : translateX(20px) scale(0.7);
         transition   : opacity 0.25s ease, visibility 0.25s ease,
                        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease;
+                       box-shadow 0.25s ease, border-color 0.25s ease;
         pointer-events: none;
       }
       #themeToggle:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
       #themeToggle:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
 
-      /* 展开状态 */
+      /* 展开状态：粉色高亮光晕 + 彩色边框 */
       #settingsFabGroup.expanded #themeToggle {
         opacity      : 1;
         visibility   : visible;
         transform    : translateX(0) scale(1);
         pointer-events: auto;
+        border-color : var(--fab-theme-glow);
+        box-shadow   : 0 0 14px 2px var(--fab-theme-glow-soft), 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       }
 
       /* 赞赏支持子按钮 */
@@ -719,7 +736,7 @@
         width        : 52px;
         height       : 52px;
         border-radius: 50%;
-        border       : none;
+        border       : 2px solid transparent;
         cursor       : pointer;
         display      : flex;
         align-items  : center;
@@ -734,17 +751,20 @@
         transform    : translateX(20px) scale(0.7);
         transition   : opacity 0.25s ease, visibility 0.25s ease,
                        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease;
+                       box-shadow 0.25s ease, border-color 0.25s ease;
         pointer-events: none;
       }
       #sponsorBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
       #sponsorBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
 
+      /* 展开状态：绿色高亮光晕 + 彩色边框 */
       #settingsFabGroup.expanded #sponsorBtn {
         opacity      : 1;
         visibility   : visible;
         transform    : translateX(0) scale(1);
         pointer-events: auto;
+        border-color : var(--fab-sponsor-glow);
+        box-shadow   : 0 0 14px 2px var(--fab-sponsor-glow-soft), 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       }
 
       /* 复制链接子按钮 */
@@ -752,7 +772,7 @@
         width        : 52px;
         height       : 52px;
         border-radius: 50%;
-        border       : none;
+        border       : 2px solid transparent;
         cursor       : pointer;
         display      : flex;
         align-items  : center;
@@ -767,17 +787,20 @@
         transform    : translateX(20px) scale(0.7);
         transition   : opacity 0.25s ease, visibility 0.25s ease,
                        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease;
+                       box-shadow 0.25s ease, border-color 0.25s ease;
         pointer-events: none;
       }
       #copyLinkBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
       #copyLinkBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
 
+      /* 展开状态：橙色高亮光晕 + 彩色边框 */
       #settingsFabGroup.expanded #copyLinkBtn {
         opacity      : 1;
         visibility   : visible;
         transform    : translateX(0) scale(1);
         pointer-events: auto;
+        border-color : var(--fab-copylink-glow);
+        box-shadow   : 0 0 14px 2px var(--fab-copylink-glow-soft), 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       }
 
       /* 关于本站子按钮 */
@@ -785,7 +808,7 @@
         width        : 52px;
         height       : 52px;
         border-radius: 50%;
-        border       : none;
+        border       : 2px solid transparent;
         cursor       : pointer;
         display      : flex;
         align-items  : center;
@@ -799,17 +822,20 @@
         transform    : translateX(20px) scale(0.7);
         transition   : opacity 0.25s ease, visibility 0.25s ease,
                        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease;
+                       box-shadow 0.25s ease, border-color 0.25s ease;
         pointer-events: none;
       }
       #disclaimerBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
       #disclaimerBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
 
+      /* 展开状态：紫色高亮光晕 + 彩色边框 */
       #settingsFabGroup.expanded #disclaimerBtn {
         opacity      : 1;
         visibility   : visible;
         transform    : translateX(0) scale(1);
         pointer-events: auto;
+        border-color : var(--fab-disclaimer-glow);
+        box-shadow   : 0 0 14px 2px var(--fab-disclaimer-glow-soft), 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       }
 
       /* 在线工具子按钮 */
@@ -817,7 +843,7 @@
         width        : 52px;
         height       : 52px;
         border-radius: 50%;
-        border       : none;
+        border       : 2px solid transparent;
         cursor       : pointer;
         display      : flex;
         align-items  : center;
@@ -831,16 +857,20 @@
         transform    : translateX(20px) scale(0.7);
         transition   : opacity 0.25s ease, visibility 0.25s ease,
                        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease;
+                       box-shadow 0.25s ease, border-color 0.25s ease;
         pointer-events: none;
       }
       #toolboxBtn:hover  { box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light); transform: translateY(-2px) scale(1.06); }
       #toolboxBtn:active { box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); transform: scale(0.94); }
+
+      /* 展开状态：蓝色高亮光晕 + 彩色边框 */
       #settingsFabGroup.expanded #toolboxBtn {
         opacity      : 1;
         visibility   : visible;
         transform    : translateX(0) scale(1);
         pointer-events: auto;
+        border-color : var(--fab-toolbox-glow);
+        box-shadow   : 0 0 14px 2px var(--fab-toolbox-glow-soft), 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       }
 
       /* ── 复制链接 Toast 提示 ── */
@@ -1527,19 +1557,21 @@
         /* 搜索区 */
         .search-container {
           margin-bottom: 28px;
-          align-items  : flex-start;
+          align-items  : center;
           animation    : none;
         }
         .search-bar {
-          max-width    : 550px;
+          width        : 650px;
+          max-width    : 650px;
           height       : 58px;
           border-radius: 29px;
         }
         .search-box { font-size: 1.15rem; padding: 0 14px; }
         .engine-trigger { padding: 0 12px 0 20px; gap: 6px; font-size: 0.88rem; }
         .engine-dropdown {
-          max-width: 550px;
-          left     : 0;
+          width    : 420px;
+          max-width: 420px;
+          left     : calc(50% - 325px);
           transform: none;
         }
         .engine-trigger .engine-caret {
@@ -1607,16 +1639,22 @@
         }
         .sidebar { display: none !important; }
 
-        /* ── 顶部搜索栏（sticky 吸顶） ── */
+        /* ── 顶部搜索栏（悬浮固定，透明容器，与设置/回顶部按钮同一套 fixed 实现） ── */
         .search-wrapper {
-          position  : sticky;
-          top       : 0;
-          z-index   : 50;
-          background: var(--primary-bg);
-          padding   : 12px 28px 12px;
+          position  : fixed;
+          top       : 14px;
+          left      : 0;
+          right     : 0;
+          z-index   : 150;
+          background: transparent;
+          padding   : 0 28px;
           display   : flex;
           align-items: center;
           gap       : 10px;
+        }
+        /* 抽屉打开时与悬浮按钮一致：禁止点击穿透 */
+        body.drawer-open .search-wrapper {
+          pointer-events: none;
         }
         .search-wrapper .search-container {
           flex     : 1;
@@ -1647,19 +1685,24 @@
           width        : 50px;
           height       : 50px;
           border-radius: 16px;
-          border       : none;
+          border       : 2px solid var(--accent-color);
           cursor       : pointer;
           display      : flex;
           align-items  : center;
           justify-content: center;
           background   : var(--primary-bg);
           color        : var(--text-primary);
-          box-shadow   : 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
-          transition   : box-shadow 0.2s, transform 0.15s;
+          box-shadow   : 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light),
+                         0 0 8px 1px rgba(102, 126, 234, 0.18);
+          transition   : box-shadow 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
         }
         .mobile-menu-btn:active {
           box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -2px -2px 6px var(--shadow-light);
           transform : scale(0.94);
+        }
+        /* 抽屉展开时：图标高亮为主题色，呼应设置 FAB 的 .open 状态 */
+        .mobile-menu-btn.open {
+          color: var(--accent-color);
         }
 
         /* ── 分类网格隐藏（移入抽屉） ── */
@@ -1677,7 +1720,7 @@
         .tool-title       { font-size: 1.4rem; }
         .tool-description { font-size: 1rem; }
         .tool-link        { font-size: 1.2rem; padding: 8px 16px; border-radius: 12px; }
-        .tools-grid       { grid-template-columns: 1fr; gap: 20px; margin-bottom: 8px; padding: 16px 28px; }
+        .tools-grid       { grid-template-columns: 1fr; gap: 20px; margin-bottom: 8px; padding: 80px 28px 16px; }
         .tool-card        { padding: 20px; border-radius: 20px; }
         footer            { margin: 0 28px 26px; padding: 18px 16px; font-size: 0.9rem; border-radius: 18px; }
 
@@ -1905,6 +1948,15 @@
         <main class="main-content">
 
           <div class="search-wrapper theme-anim">
+            <!-- 汉堡菜单按钮（仅移动端显示） -->
+            <button class="mobile-menu-btn theme-anim" id="mobileMenuBtn" aria-label="打开导航菜单">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
+                <line x1="3" y1="6"  x2="21" y2="6"  />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+
             <div class="search-container theme-anim">
               <div class="search-bar theme-anim" id="searchBar">
                 <button class="engine-trigger theme-anim" id="engineTrigger" aria-label="选择搜索引擎" aria-expanded="false">
@@ -1937,15 +1989,6 @@
                 <div class="engine-grid" id="engineGrid"></div>
               </div><!-- /engine-dropdown -->
             </div><!-- /search-container -->
-
-            <!-- 汉堡菜单按钮（仅移动端显示） -->
-            <button class="mobile-menu-btn theme-anim" id="mobileMenuBtn" aria-label="打开导航菜单">
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
-                <line x1="3" y1="6"  x2="21" y2="6"  />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
           </div><!-- /search-wrapper -->
 
       <div class="categories mobile-categories" id="categoriesEl">
@@ -2824,6 +2867,8 @@
         document.documentElement.style.overflow = 'hidden'
         // 侧滑栏打开：FAB 沉入遮罩之下（见 §3 CSS .drawer-open 规则）
         document.body.classList.add('drawer-open')
+        // 汉堡按钮图标高亮，呼应设置 FAB 的展开态
+        if (mobileMenuBtn) mobileMenuBtn.classList.add('open')
         // 推入历史记录，使设备返回键可关闭抽屉
         history.pushState({ drawerOpen: true }, '')
       }
@@ -2833,6 +2878,8 @@
         document.documentElement.style.overflow = ''
         // 侧滑栏关闭：恢复 FAB 层级与可点击状态
         document.body.classList.remove('drawer-open')
+        // 汉堡按钮图标恢复默认颜色
+        if (mobileMenuBtn) mobileMenuBtn.classList.remove('open')
         mobileDrawerOverlay.addEventListener('transitionend', function handler() {
           if (!mobileDrawerOverlay.classList.contains('open')) {
             mobileDrawerOverlay.style.display = 'none'
