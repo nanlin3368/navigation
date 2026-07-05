@@ -285,9 +285,9 @@
       /* ── 全网搜索提交按钮 ── */
       .search-submit {
         flex-shrink   : 0;
-        width         : 40px;
-        height        : 40px;
-        margin-right  : 10px;
+        width         : 56px;
+        height        : 44px;
+        margin-right  : 6px;
         border-radius : 14px;
         border        : none;
         cursor        : pointer;
@@ -309,8 +309,8 @@
       .search-submit:hover  { transform: scale(1.08); }
       .search-submit:active { transform: scale(0.94); }
       .search-submit svg {
-        width           : 18px;
-        height          : 18px;
+        width           : 23px;
+        height          : 23px;
         stroke          : #fff;
         stroke-width    : 2.5;
         stroke-linecap  : round;
@@ -352,43 +352,19 @@
         to   { opacity: 1; transform: translateX(-50%) translateY(0)     scale(1);   }
       }
 
-      /* ── 站内搜索行 ── */
-      .engine-local-row {
-        display       : flex;
-        align-items   : center;
-        gap           : 10px;
-        padding       : 10px 12px 14px;
-        border-radius : 14px;
-        cursor        : pointer;
-        transition    : background 0.2s;
-        margin-bottom : 10px;
-        border-bottom : 1.5px solid rgba(128, 128, 160, 0.15);
-      }
-      .engine-local-row:hover    { background: rgba(102, 126, 234, 0.08); }
-      .engine-local-row.selected { background: rgba(102, 126, 234, 0.13); color: var(--accent-color); font-weight: 600; }
-
+      /* ── 站内搜索项（并入引擎网格，样式对齐 .engine-item） ── */
+      .engine-local-row.selected { box-shadow: inset 4px 4px 10px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light); }
       .engine-local-icon {
-        width         : 42px;
-        height        : 42px;
-        border-radius : 12px;
         background    : var(--accent-gradient);
-        display       : flex;
-        align-items   : center;
-        justify-content: center;
-        flex-shrink   : 0;
-        font-size     : 20px;
-        box-shadow    : 0 4px 12px rgba(102, 126, 234, 0.35);
+        font-size     : 18px;
+        box-shadow    : 0 4px 10px rgba(102, 126, 234, 0.35);
       }
-      .engine-local-info    { display: flex; flex-direction: column; }
-      .engine-local-name    { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
-      .engine-local-desc    { font-size: 0.75rem; color: var(--text-secondary); margin-top: 1px; }
-      .engine-local-row.selected .engine-local-name { color: var(--accent-color); }
-      body.dark .engine-local-row { border-bottom-color: rgba(128, 128, 160, 0.15); }
+      .engine-local-row.selected .engine-item-label { color: var(--accent-color); font-weight: 700; }
 
       /* ── 搜索引擎网格 ── */
       .engine-grid {
         display              : grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         gap                  : 8px;
       }
       .engine-item {
@@ -397,7 +373,7 @@
         align-items    : center;
         justify-content: flex-start;
         gap            : 6px;
-        padding        : 10px 6px 8px;
+        padding        : 10px 6px 10px;
         border-radius  : 14px;
         cursor         : pointer;
         transition     : background 0.2s, transform 0.15s, box-shadow 0.2s;
@@ -411,9 +387,9 @@
       .engine-item.selected { box-shadow: inset 4px 4px 10px var(--shadow-dark), inset -3px -3px 8px var(--shadow-light); }
 
       .engine-item-icon {
-        width        : 36px;
-        height       : 36px;
-        border-radius: 12px;
+        width        : 30px;
+        height       : 30px;
+        border-radius: 8px;
         display      : flex;
         align-items  : center;
         justify-content: center;
@@ -1561,17 +1537,17 @@
           animation    : none;
         }
         .search-bar {
-          width        : 650px;
-          max-width    : 650px;
+          width        : 680px;
+          max-width    : 680px;
           height       : 58px;
-          border-radius: 29px;
+          border-radius: 18px;
         }
-        .search-box { font-size: 1.15rem; padding: 0 14px; }
-        .engine-trigger { padding: 0 12px 0 20px; gap: 6px; font-size: 0.88rem; }
+        .search-box { font-size: 1.15rem; padding: 0 10px; }
+        .engine-trigger { padding: 0 8px 0 12px; gap: 4px; font-size: 0.88rem; }
         .engine-dropdown {
-          width    : 420px;
-          max-width: 420px;
-          left     : calc(50% - 325px);
+          width    : 680px;
+          max-width: 680px;
+          left     : auto;
           transform: none;
         }
         .engine-trigger .engine-caret {
@@ -1662,18 +1638,18 @@
           margin-bottom: 0;
         }
         .search-bar {
-          border-radius: 22px;
+          border-radius: 16px;
           height       : 50px;
           max-width    : none;
           width        : 100%;
         }
-        .engine-trigger  { padding: 0 8px 0 14px; gap: 4px; }
-        .search-box      { padding: 0 10px; font-size: 1rem; }
-        .search-submit   { width: 35px; height: 35px; margin-right: 6px; border-radius: 12px; }
+        .engine-trigger  { padding: 0 6px 0 8px; gap: 4px; }
+        .search-box      { padding: 0 8px; font-size: 1rem; }
+        .search-submit   { width: 48px; height: 36px; margin-right: 6px; border-radius: 12px; }
         .engine-dropdown { max-width: calc(100vw - 24px); padding: 12px; border-radius: 18px; }
         .engine-grid     { grid-template-columns: repeat(4, 1fr); gap: 6px; }
-        .engine-item     { padding: 8px 4px 6px; }
-        .engine-item-icon { width: 30px; height: 30px; border-radius: 10px; }
+        .engine-item     { padding: 8px 4px 8px; }
+        .engine-item-icon { width: 30px; height: 30px; border-radius: 8px; }
         .engine-trigger .engine-caret {
           font-size    : 0.8rem;
           margin-left  : 1px;
@@ -1979,14 +1955,12 @@
               </div><!-- /search-bar -->
 
               <div class="engine-dropdown theme-anim" id="engineDropdown" role="listbox">
-                <div class="engine-local-row selected" id="engineLocal" role="option" data-engine="local">
-                  <div class="engine-local-icon">🔍</div>
-                  <div class="engine-local-info">
-                    <span class="engine-local-name">站内搜索</span>
-                    <span class="engine-local-desc">在导航内容中搜索网站</span>
+                <div class="engine-grid" id="engineGrid">
+                  <div class="engine-item engine-local-row selected" id="engineLocal" role="option" data-engine="local">
+                    <div class="engine-item-icon engine-local-icon">🔍</div>
+                    <span class="engine-item-label engine-local-name">站内</span>
                   </div>
                 </div>
-                <div class="engine-grid" id="engineGrid"></div>
               </div><!-- /engine-dropdown -->
             </div><!-- /search-container -->
           </div><!-- /search-wrapper -->
@@ -2278,7 +2252,7 @@
 
       // ── 引擎触发器状态 ────────────────────────────────────────
       function setTriggerLocal() {
-        triggerIcon.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
+        triggerIcon.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
         engineTrigger.classList.remove('engine-selected')
         searchBox.placeholder = '搜索关键词...'
       }
@@ -2297,7 +2271,7 @@
 
       // ── 引擎网格 ──────────────────────────────────────────────
       function buildEngineGrid() {
-        engineGrid.innerHTML = ''
+        engineGrid.querySelectorAll('.engine-item:not(#engineLocal)').forEach(el => el.remove())
         Object.keys(ENGINE_META).forEach(key => {
           const meta = ENGINE_META[key]
           const item = document.createElement('div')
