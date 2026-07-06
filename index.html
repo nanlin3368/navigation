@@ -49,16 +49,16 @@
         --skeleton-shine  : #eef0f6;
 
         /* ── 设置 FAB 子按钮高亮光晕色（展开时每个按钮独立配色，统一在此维护） ── */
-        --fab-toolbox-glow      : #3B82F6;             /* 🧰 在线工具：蓝色 */
-        --fab-toolbox-glow-soft : rgba(59, 130, 246, 0.5);
-        --fab-disclaimer-glow      : #A855F7;          /* 📘 关于本站：紫色 */
-        --fab-disclaimer-glow-soft : rgba(168, 85, 247, 0.5);
-        --fab-sponsor-glow      : #22C55E;             /* 🌿 赞赏支持：绿色 */
-        --fab-sponsor-glow-soft : rgba(34, 197, 94, 0.5);
-        --fab-copylink-glow      : #F59E0B;            /* 📋 复制链接：橙色 */
-        --fab-copylink-glow-soft : rgba(245, 158, 11, 0.5);
-        --fab-theme-glow      : #EC4899;               /* ☀️/🌙 主题切换：粉色 */
-        --fab-theme-glow-soft : rgba(236, 72, 153, 0.5);
+        --fab-toolbox-glow      : #EC4899;             /* 🧰 简单工具：粉色 */
+        --fab-toolbox-glow-soft : rgba(236, 72, 153, 0.5);
+        --fab-disclaimer-glow      : #3B82F6;          /* 📘 关于本站：蓝色 */
+        --fab-disclaimer-glow-soft : rgba(59, 130, 246, 0.5);
+        --fab-sponsor-glow      : #F59E0B;             /* ☕ 赞赏支持：橙色 */
+        --fab-sponsor-glow-soft : rgba(245, 158, 11, 0.5);
+        --fab-copylink-glow      : #22C55E;            /* 🔗 复制链接：绿色 */
+        --fab-copylink-glow-soft : rgba(34, 197, 94, 0.5);
+        --fab-theme-glow      : #A855F7;               /* ☀️/🌙 主题切换：紫色 */
+        --fab-theme-glow-soft : rgba(168, 85, 247, 0.5);
       }
 
       body.dark {        
@@ -814,7 +814,7 @@
         box-shadow   : 0 0 14px 2px var(--fab-disclaimer-glow-soft), 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
       }
 
-      /* 在线工具子按钮 */
+      /* 简单工具子按钮 */
       #toolboxBtn {
         width        : 52px;
         height       : 52px;
@@ -1086,7 +1086,7 @@
         font-weight: 700;
       }
 
-      /* ── 在线工具模态框遮罩 ── */
+      /* ── 简单工具模态框遮罩 ── */
       #toolboxModal {
         position        : fixed;
         top             : 0; left: 0; right: 0; bottom: 0;  /* iOS Safari 兼容，替代 inset:0 */
@@ -1103,7 +1103,7 @@
       }
       #toolboxModal.open { opacity: 1; visibility: visible; }
 
-      /* ── 在线工具面板 ── */
+      /* ── 简单工具面板 ── */
       .toolbox-panel {
         position     : relative;
         background   : var(--primary-bg);
@@ -1122,7 +1122,7 @@
       .toolbox-panel { scrollbar-width: none; -ms-overflow-style: none; }
       .toolbox-panel::-webkit-scrollbar { display: none; }
 
-      /* ── 在线工具关闭按钮 ── */
+      /* ── 简单工具关闭按钮 ── */
       .toolbox-close {
         position     : absolute;
         top          : 14px;
@@ -1144,7 +1144,7 @@
       .toolbox-close:hover  { box-shadow: 5px 5px 10px var(--shadow-dark), -4px -4px 8px var(--shadow-light); transform: scale(1.1); }
       .toolbox-close:active { box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -2px -2px 4px var(--shadow-light); transform: scale(0.92); }
 
-      /* ── 在线工具标题 ── */
+      /* ── 简单工具标题 ── */
       .toolbox-title {
         font-size    : 1.4rem;
         font-weight  : 700;
@@ -1154,7 +1154,7 @@
         padding-right: 24px;
       }
 
-      /* ── 在线工具搜索框区域 ── */
+      /* ── 简单工具搜索框区域 ── */
       .toolbox-search-wrap {
         position     : relative;
         margin-bottom: 16px;
@@ -1257,7 +1257,7 @@
         margin-bottom: 0;
       }
 
-      /* ── 在线工具列表（两列网格） ── */
+      /* ── 简单工具列表（两列网格） ── */
       .toolbox-list {
         display              : grid;
         grid-template-columns: 1fr 1fr;
@@ -1320,7 +1320,7 @@
         padding    : 28px 0;
       }
 
-      /* ── 在线工具分组标题 ── */
+      /* ── 简单工具分组标题 ── */
       .toolbox-group {
         display      : contents;  /* 让子元素直接参与外层 grid 排列 */
       }
@@ -2027,14 +2027,14 @@
 
     <!-- ── 设置 FAB 菜单 ── -->
     <div id="settingsFabGroup">
-      <!-- 子按钮：在线工具 -->
-      <button id="toolboxBtn" title="在线工具" aria-label="在线工具" class="theme-anim">🧰</button>
+      <!-- 子按钮：简单工具 -->
+      <button id="toolboxBtn" title="简单工具" aria-label="简单工具" class="theme-anim">🧰</button>
       <!-- 子按钮：关于本站 -->
       <button id="disclaimerBtn" title="关于本站" aria-label="关于本站" class="theme-anim">📘</button>
       <!-- 子按钮：赞赏支持 -->
-      <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持" class="theme-anim">🌿</button>
+      <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持" class="theme-anim">☕</button>
       <!-- 子按钮：复制链接 -->
-      <button id="copyLinkBtn" title="复制链接" aria-label="复制链接" class="theme-anim">📋</button>
+      <button id="copyLinkBtn" title="复制链接" aria-label="复制链接" class="theme-anim">🔗</button>
       <!-- 子按钮：主题切换 -->
       <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式" class="fab-child theme-anim">☀️</button>
       <!-- 主触发按钮 "+" -->
@@ -2053,8 +2053,8 @@
     <div id="sponsorModal" role="dialog" aria-modal="true" aria-label="赞赏支持">
       <div class="sponsor-panel">
         <button class="sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
-        <p class="sponsor-title">🌿 赞赏支持</p>
-        <p class="sponsor-sub">如果本站对你有帮助，欢迎支持一下 ☕</p>
+        <p class="sponsor-title">赞赏支持</p>
+        <p class="sponsor-sub">收集整理不易，欢迎随缘支持 ❤️</p>
         <div class="sponsor-qr-row">
           <div class="sponsor-qr-item">
             <img class="sponsor-qr-img" src="assets/picture/wx.webp" alt="微信赞赏">
@@ -2075,7 +2075,7 @@
     <div id="disclaimerModal" role="dialog" aria-modal="true" aria-label="关于本站">
       <div class="disclaimer-panel">
         <button class="disclaimer-close" id="disclaimerClose" aria-label="关闭">✕</button>
-        <p class="disclaimer-title">📘 关于本站</p>
+        <p class="disclaimer-title">关于本站</p>
         <ul class="disclaimer-list">
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
@@ -2123,11 +2123,11 @@
       </div>
     </div>
 
-    <!-- ── 在线工具模态框 ── -->
-    <div id="toolboxModal" role="dialog" aria-modal="true" aria-label="在线工具箱">
+    <!-- ── 简单工具模态框 ── -->
+    <div id="toolboxModal" role="dialog" aria-modal="true" aria-label="简单工具">
       <div class="toolbox-panel">
         <button class="toolbox-close" id="toolboxClose" aria-label="关闭">✕</button>
-        <p class="toolbox-title">🧰 简单工具</p>
+        <p class="toolbox-title">简单工具</p>
         <div class="toolbox-search-row">
           <div class="toolbox-count-badge" id="toolboxCountBadge" title="当前显示工具数">
             <span class="toolbox-count-badge-num" id="toolboxCountNum">0</span>
@@ -2143,7 +2143,7 @@
       </div>
     </div>
 
-    <!-- 在线工具列表配置 -->
+    <!-- 简单工具列表配置 -->
     <script>
       const TOOLS_BASE = 'tools/tools/'
 
@@ -2862,7 +2862,7 @@
         })
       }
 
-      // 设备返回键（popstate）：优先关闭在线工具 → 关于本站 → 赞赏模态框 → 抽屉
+      // 设备返回键（popstate）：优先关闭简单工具 → 关于本站 → 赞赏模态框 → 抽屉
       window.addEventListener('popstate', function(e) {
         if (toolboxModal.classList.contains('open')) {
           closeToolbox()
@@ -2891,8 +2891,8 @@
         })
       }
 
-      /* ── §F 在线工具模态框：列表渲染、搜索、开关 ── */
-      // ── 在线工具模态框 ──────────────────────────────────────
+      /* ── §F 简单工具模态框：列表渲染、搜索、开关 ── */
+      // ── 简单工具模态框 ──────────────────────────────────────
       const toolboxBtn         = document.getElementById('toolboxBtn')
       const toolboxModal       = document.getElementById('toolboxModal')
       const toolboxClose       = document.getElementById('toolboxClose')
