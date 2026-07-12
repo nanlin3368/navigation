@@ -47,8 +47,10 @@
         --glass-border    : rgba(255, 255, 255, 0.18);
         --skeleton-base   : #dde0ea;
         --skeleton-shine  : #eef0f6;
+        --tooltip-bg      : #2d2d3a;
+        --tooltip-text    : #ffffff;
 
-        /* ── 设置 FAB 子按钮高亮光晕色 ── */
+        /* ── 菜单 FAB 子按钮高亮光晕色 ── */
         --fab-toolbox-glow      : #EC4899;             /* 🧰 简单工具：粉色 */
         --fab-toolbox-glow-soft : rgba(236, 72, 153, 0.5);
         --fab-disclaimer-glow      : #3B82F6;          /* 📘 关于本站：蓝色 */
@@ -72,6 +74,8 @@
         --glass-border    : rgba(255, 255, 255, 0.08);
         --skeleton-base   : #2c2c42;
         --skeleton-shine  : #3a3a56;
+        --tooltip-bg      : #e6e7ee;       
+        --tooltip-text    : #1e1e2e;
       }      
 
       body {
@@ -635,7 +639,7 @@
         filter          : drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
       }
 
-      /* ── 设置 FAB 组 ── */
+      /* ── 菜单 FAB 组 ── */
       #settingsFabGroup {
         position : fixed;
         right    : 32px;
@@ -901,7 +905,7 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 80vh;
+        max-height   : 85vh;
         overflow-y   : auto;
         box-shadow   : 16px 16px 40px var(--shadow-dark), -8px -8px 24px var(--shadow-light),
                        0 20px 60px rgba(0, 0, 0, 0.25);
@@ -998,7 +1002,7 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 80vh;
+        max-height   : 85vh;
         overflow-y   : auto;
         box-shadow   : 16px 16px 40px var(--shadow-dark), -8px -8px 24px var(--shadow-light),
                        0 20px 60px rgba(0, 0, 0, 0.25);
@@ -1108,7 +1112,7 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 80vh;
+        max-height   : 85vh;
         overflow-y   : auto;
         box-shadow   : 16px 16px 40px var(--shadow-dark), -8px -8px 24px var(--shadow-light),
                        0 20px 60px rgba(0, 0, 0, 0.25);
@@ -1344,6 +1348,106 @@
         letter-spacing: 0.02em;
       }
 
+      /* 给 FAB 所有子按钮开启相对定位，以此作为提示框的定位参考点 */
+      #settingsFabGroup button {
+        position      : relative;
+      }
+
+      /* ── 确保主按钮是定位容器 ── */
+      #settingsFab {
+        position      : relative;
+      }
+
+      /* ── 提示框（回到顶部 & 菜单主按钮） ── */
+      #backToTop::after,
+      #settingsFab::after {
+        content       : attr(data-tooltip);
+        position      : absolute;
+        right         : calc(100% + 14px);
+        top           : 50%;
+        transform     : translateY(-50%);
+        background    : var(--tooltip-bg);
+        color         : var(--tooltip-text);
+        padding       : 6px 12px;
+        border-radius : 6px;
+        font-size     : 13px;
+        white-space   : nowrap;
+        box-shadow    : 0 4px 8px rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+
+      #backToTop::before,
+      #settingsFab::before {
+        content       : '';
+        position      : absolute;
+        right         : calc(100% + 6px);
+        top           : 50%;
+        transform     : translateY(-50%);
+        border-top    : 6px solid transparent;
+        border-bottom : 6px solid transparent;
+        border-left   : 6px solid var(--tooltip-bg);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+
+      /* ── 子按钮（.fab-child）：提示框显示在上方 ── */
+      .fab-child::after {
+        content       : attr(data-tooltip);
+        position      : absolute;
+        bottom        : calc(100% + 14px);
+        left          : 50%;
+        transform     : translateX(-50%);
+        background    : var(--tooltip-bg);
+        color         : var(--tooltip-text);
+        padding       : 6px 12px;
+        border-radius : 6px;
+        font-size     : 13px;
+        white-space   : nowrap;
+        box-shadow    : 0 4px 8px rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+
+      .fab-child::before {
+        content       : '';
+        position      : absolute;
+        bottom        : calc(100% + 6px);
+        left          : 50%;
+        transform     : translateX(-50%);
+        border-left   : 6px solid transparent;
+        border-right  : 6px solid transparent;
+        border-top    : 6px solid var(--tooltip-bg);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+      
+      /* ── 展开 FAB 子按钮时，强制隐藏菜单主按钮提示框 ── */
+      #settingsFabGroup.expanded #settingsFab::after,
+      #settingsFabGroup.expanded #settingsFab::before {
+        opacity   : 0 !important;
+        visibility: hidden !important;
+      }
+
+      /* ── 悬停（触发）状态 ── */      
+      #backToTop:hover::after,
+      #backToTop:hover::before,
+      #settingsFab:hover::after,
+      #settingsFab:hover::before,
+      #settingsFabGroup.expanded button:hover::after,
+      #settingsFabGroup.expanded button:hover::before {
+        opacity   : 1;
+        visibility: visible;
+      }
+
       /* ── 底部到达发光条（fixed，仅内容区滚动到底部时触发） ── */
       #scrollBottomGlow {
         position        : fixed;
@@ -1394,7 +1498,8 @@
         box-shadow: 0 0 22px 8px  rgba(252, 165, 165, 0.55),
                     0 0 70px 24px rgba(252, 165, 165, 0.22),
                     0 -10px 48px 0 rgba(239,  68,  68, 0.20);
-      }
+      }      
+
 
       /* ════════════════════════════════════════════════════════
          §2  桌面端布局（min-width: 769px）
@@ -1613,7 +1718,7 @@
         }
         .sidebar { display: none !important; }
 
-        /* ── 顶部搜索栏（悬浮固定，透明容器，与设置/回顶部按钮同一套 fixed 实现） ── */
+        /* ── 顶部搜索栏（悬浮固定，透明容器，与菜单/回顶部按钮同一套 fixed 实现） ── */
         .search-wrapper {
           position  : fixed;
           top       : 14px;
@@ -1653,7 +1758,7 @@
           margin-left  : 1px;
         }
 
-        /* ── 移动端菜单按钮 ── */
+        /* ── 移动端侧栏按钮 ── */
         .mobile-menu-btn {
           flex-shrink  : 0;
           width        : 50px;
@@ -1674,7 +1779,7 @@
           box-shadow: inset 3px 3px 8px var(--shadow-dark), inset -2px -2px 6px var(--shadow-light);
           transform : scale(0.94);
         }
-        /* 抽屉展开时：图标高亮为主题色，呼应设置 FAB 的 .open 状态 */
+        /* 抽屉展开时：图标高亮为主题色，呼应菜单 FAB 的 .open 状态 */
         .mobile-menu-btn.open {
           color: var(--accent-color);
         }
@@ -1885,6 +1990,16 @@
         #sponsorModal .sponsor-title { padding-right: 0; }       
         #sponsorModal .sponsor-qr-img { max-width: 360px; }
 
+        /* ── 移动端隐藏悬浮提示框和小箭头 ── */      
+        #backToTop::after,
+        #backToTop::before,
+        #settingsFab::after,
+        #settingsFab::before,
+        .fab-child::after,
+        .fab-child::before {
+          display: none !important;
+        }
+
         /* 左侧抽屉打开: 悬浮按钮禁止点击 */
         body.drawer-open #backToTop,
         body.drawer-open #settingsFabGroup {
@@ -1921,8 +2036,8 @@
         <main class="main-content">
 
           <div class="search-wrapper theme-anim">
-            <!-- 汉堡菜单按钮（仅移动端显示） -->
-            <button class="mobile-menu-btn theme-anim" id="mobileMenuBtn" aria-label="打开导航菜单">
+            <!-- 汉堡侧栏按钮（仅移动端显示） -->
+            <button class="mobile-menu-btn theme-anim" id="mobileMenuBtn" aria-label="打开导航侧栏">
               <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
                 <line x1="3" y1="6"  x2="21" y2="6"  />
                 <line x1="3" y1="12" x2="21" y2="12" />
@@ -2016,26 +2131,26 @@
     </aside>
 
     <!-- ── 悬浮按钮 ── -->
-    <button id="backToTop" title="回到顶部" aria-label="回到顶部" class="theme-anim">
+    <button id="backToTop" data-tooltip="回到顶部" aria-label="回到顶部" class="theme-anim">
       <svg viewBox="0 0 24 24">
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
 
-    <!-- ── 设置 FAB 菜单 ── -->
+    <!-- ── 功能菜单 ── -->
     <div id="settingsFabGroup">
       <!-- 子按钮：简单工具 -->
-      <button id="toolboxBtn" title="简单工具" aria-label="简单工具" class="theme-anim">🧰</button>
+      <button id="toolboxBtn" data-tooltip="简单工具" aria-label="简单工具" class="fab-child theme-anim">🧰</button>
       <!-- 子按钮：关于本站 -->
-      <button id="disclaimerBtn" title="关于本站" aria-label="关于本站" class="theme-anim">📘</button>
+      <button id="disclaimerBtn" data-tooltip="关于本站" aria-label="关于本站" class="fab-child theme-anim">📘</button>
       <!-- 子按钮：赞赏支持 -->
-      <button id="sponsorBtn" title="赞赏支持" aria-label="赞赏支持" class="theme-anim">☕</button>
+      <button id="sponsorBtn" data-tooltip="赞赏支持" aria-label="赞赏支持" class="fab-child theme-anim">☕</button>
       <!-- 子按钮：复制链接 -->
-      <button id="copyLinkBtn" title="复制链接" aria-label="复制链接" class="theme-anim">🔗</button>
+      <button id="copyLinkBtn" data-tooltip="复制链接" aria-label="复制链接" class="fab-child theme-anim">🔗</button>
       <!-- 子按钮：主题切换 -->
-      <button id="themeToggle" title="切换主题" aria-label="切换深色/浅色模式" class="fab-child theme-anim">☀️</button>
+      <button id="themeToggle" data-tooltip="切换主题" aria-label="切换深色/浅色模式" class="fab-child theme-anim">☀️</button>
       <!-- 主触发按钮 "+" -->
-      <button id="settingsFab" title="设置" aria-label="设置" class="theme-anim">
+      <button id="settingsFab" data-tooltip="菜单" aria-label="菜单" class="theme-anim">
         <svg id="settingsFabIcon" viewBox="0 0 24 24" width="22" height="22"
              stroke="currentColor" stroke-width="2.5"
              stroke-linecap="round" fill="none">
@@ -2225,6 +2340,15 @@
       const triggerIcon    = document.getElementById('triggerIcon')
       const searchSubmit   = document.getElementById('searchSubmit')
       const searchClear    = document.getElementById('searchClear')
+
+      // ── 点击标题刷新网页 ──────────────────────────────────────────
+      document.querySelectorAll('.site-header h1').forEach(function(el) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function(e) {
+          e.stopPropagation()
+          location.reload()
+        })
+      })
 
       // ── 清除叉号显隐 ──────────────────────────────────────────
       function updateClearBtn() {
@@ -2559,7 +2683,7 @@
       // ── 初始化：显示全部分类 ──────────────────────────────────
       showCategory(0)
 
-      /* ── §C 悬浮控件：回顶部 / 底部发光 / 主题切换 / 设置 FAB ── */
+      /* ── §C 悬浮控件：回顶部 / 底部发光 / 主题切换 / 菜单 FAB ── */
       // ── 回顶部 & 底部发光 ──────────────────────────────────────
       const backToTopBtn     = document.getElementById('backToTop')
       const scrollBottomGlow = document.getElementById('scrollBottomGlow')
@@ -2637,8 +2761,8 @@
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
               document.body.classList.toggle('dark', isDark)
-              themeToggleBtn.textContent = isDark ? '🌙' : '☀️'
-              themeToggleBtn.title       = isDark ? '切换浅色模式' : '切换深色模式'
+              themeToggleBtn.textContent = isDark ? '☀️' : '🌙'              
+              themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式'
             })
           })
           themeTimer = setTimeout(() => {
@@ -2647,8 +2771,8 @@
           }, 400)
         } else {
           document.body.classList.toggle('dark', isDark)
-          themeToggleBtn.textContent = isDark ? '🌙' : '☀️'
-          themeToggleBtn.title       = isDark ? '切换浅色模式' : '切换深色模式'
+          themeToggleBtn.textContent = isDark ? '☀️' : '🌙'          
+          themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式'
         }
       }
 
@@ -2663,7 +2787,7 @@
         localStorage.setItem(DARK_KEY, isDark ? 'true' : 'false')
       })
 
-      // ── 设置 FAB 展开/收起 ────────────────────────────────────
+      // ── 菜单 FAB 展开/收起 ────────────────────────────────────
       const settingsFabBtn   = document.getElementById('settingsFab')
       const settingsFabGroup = document.getElementById('settingsFabGroup')
 
@@ -2854,7 +2978,7 @@
         document.documentElement.style.overflow = 'hidden'
         // 侧滑栏打开：FAB 沉入遮罩之下（见 §3 CSS .drawer-open 规则）
         document.body.classList.add('drawer-open')
-        // 汉堡按钮图标高亮，呼应设置 FAB 的展开态
+        // 汉堡按钮图标高亮，呼应菜单 FAB 的展开态
         if (mobileMenuBtn) mobileMenuBtn.classList.add('open')
         // 推入历史记录，使设备返回键可关闭抽屉
         history.pushState({ drawerOpen: true }, '')
@@ -3009,6 +3133,14 @@
         renderToolList('')
         toolboxSearch.focus()
       })
+      
+      // 物理删除原生 title 白框，换成自定义文字
+      document.querySelectorAll('#settingsFabGroup button, #backToTop').forEach(el => {
+        if (el.title) {
+          el.setAttribute('data-tooltip', el.title);
+          el.removeAttribute('title');
+        }
+      });
     </script>   
   </body>
 </html>
