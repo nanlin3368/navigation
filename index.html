@@ -51,16 +51,16 @@
         --tooltip-text    : #ffffff;
 
         /* ── 菜单 FAB 子按钮高亮光晕色 ── */
-        --fab-toolbox-glow      : #EC4899;             /* 🧰 简单工具：粉色 */
-        --fab-toolbox-glow-soft : rgba(236, 72, 153, 0.5);
+        --fab-toolbox-glow         : #EC4899;             /* 🧰 简单工具：粉色 */
+        --fab-toolbox-glow-soft    : rgba(236, 72, 153, 0.5);
         --fab-disclaimer-glow      : #3B82F6;          /* 📘 关于本站：蓝色 */
         --fab-disclaimer-glow-soft : rgba(59, 130, 246, 0.5);
-        --fab-sponsor-glow      : #F59E0B;             /* ☕ 赞赏支持：橙色 */
-        --fab-sponsor-glow-soft : rgba(245, 158, 11, 0.5);
-        --fab-copylink-glow      : #22C55E;            /* 🔗 复制链接：绿色 */
-        --fab-copylink-glow-soft : rgba(34, 197, 94, 0.5);
-        --fab-theme-glow      : #A855F7;               /* ☀️/🌙 主题切换：紫色 */
-        --fab-theme-glow-soft : rgba(168, 85, 247, 0.5);
+        --fab-sponsor-glow         : #F59E0B;             /* ☕ 赞赏支持：橙色 */
+        --fab-sponsor-glow-soft    : rgba(245, 158, 11, 0.5);
+        --fab-copylink-glow        : #22C55E;            /* 🔗 复制链接：绿色 */
+        --fab-copylink-glow-soft   : rgba(34, 197, 94, 0.5);
+        --fab-theme-glow           : #A855F7;               /* ☀️/🌙 主题切换：紫色 */
+        --fab-theme-glow-soft      : rgba(168, 85, 247, 0.5);
       }
 
       body.dark {        
@@ -175,9 +175,9 @@
         position       : relative;
       }
       .search-bar:focus-within {
-        box-shadow: inset 10px 10px 20px var(--shadow-dark),
-                    inset -10px -10px 20px var(--shadow-light),
-                    0 0 8px 1px rgba(102, 126, 234, 0.18);
+        box-shadow     : inset 10px 10px 20px var(--shadow-dark),
+                         inset -10px -10px 20px var(--shadow-light),
+                         0 0 8px 1px rgba(102, 126, 234, 0.18);
       }
 
       /* ── 引擎触发按钮 ── */
@@ -2323,817 +2323,817 @@
          主逻辑脚本（两端共用，移动/桌面差异通过 innerWidth 分支处理）
          ════════════════════════════════════════════════════════ -->
     <script>
-      const searchBox    = document.getElementById('searchBox')
-      const grid         = document.getElementById('toolsGrid')
-      const categoryBtns = document.querySelectorAll('.category-btn')
+      const searchBox = document.getElementById('searchBox');
+      const grid = document.getElementById('toolsGrid');
+      const categoryBtns = document.querySelectorAll('.category-btn');
 
       /* ── §A 搜索引擎选择与切换 ── */
-      const ENGINES     = typeof SB_ENGINES     !== 'undefined' ? SB_ENGINES     : {}
-      const ENGINE_META = typeof SB_ENGINE_META !== 'undefined' ? SB_ENGINE_META : {}
+      const ENGINES = typeof SB_ENGINES !== 'undefined' ? SB_ENGINES : {};
+      const ENGINE_META = typeof SB_ENGINE_META !== 'undefined' ? SB_ENGINE_META : {};
 
-      let currentEngine = 'local'
+      let currentEngine = 'local';
 
-      const engineTrigger  = document.getElementById('engineTrigger')
-      const engineDropdown = document.getElementById('engineDropdown')
-      const engineGrid     = document.getElementById('engineGrid')
-      const engineLocal    = document.getElementById('engineLocal')
-      const triggerIcon    = document.getElementById('triggerIcon')
-      const searchSubmit   = document.getElementById('searchSubmit')
-      const searchClear    = document.getElementById('searchClear')
+      const engineTrigger = document.getElementById('engineTrigger');
+      const engineDropdown = document.getElementById('engineDropdown');
+      const engineGrid = document.getElementById('engineGrid');
+      const engineLocal = document.getElementById('engineLocal');
+      const triggerIcon = document.getElementById('triggerIcon');
+      const searchSubmit = document.getElementById('searchSubmit');
+      const searchClear = document.getElementById('searchClear');
 
       // ── 点击标题刷新网页 ──────────────────────────────────────────
       document.querySelectorAll('.site-header h1').forEach(function(el) {
         el.style.cursor = 'pointer';
         el.addEventListener('click', function(e) {
-          e.stopPropagation()
-          location.reload()
-        })
-      })
+          e.stopPropagation();
+          location.reload();
+        });
+      });
 
       // ── 清除叉号显隐 ──────────────────────────────────────────
       function updateClearBtn() {
-        searchClear.classList.toggle('visible', searchBox.value.length > 0)
+        searchClear.classList.toggle('visible', searchBox.value.length > 0);
       }
 
       searchClear.addEventListener('click', () => {
-        searchBox.value = ''
-        searchClear.classList.remove('visible')
-        searchBox.focus()
+        searchBox.value = '';
+        searchClear.classList.remove('visible');
+        searchBox.focus();
         if (currentEngine === 'local') {
           const catSites = currentIndex === 0
             ? allSites
-            : allSites.filter(s => s._catIndex === currentIndex)
-          renderCards(catSites)
+            : allSites.filter(s => s._catIndex === currentIndex);
+          renderCards(catSites);
         }
-      })
+      });
 
       // ── 引擎触发器状态 ────────────────────────────────────────
       function setTriggerLocal() {
-        triggerIcon.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>'
-        engineTrigger.classList.remove('engine-selected')
-        searchBox.placeholder = '搜索关键词...'
+        triggerIcon.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+        engineTrigger.classList.remove('engine-selected');
+        searchBox.placeholder = '搜索关键词...';
       }
 
       function setTriggerEngine(key) {
-        const meta = ENGINE_META[key]
-        if (!meta) return
-        const iconDiv = document.createElement('div')
-        iconDiv.style.cssText = `width:100%;height:100%;border-radius:inherit;background:${meta.bg};display:flex;align-items:center;justify-content:center;overflow:hidden;`
-        iconDiv.innerHTML = meta.svgIcon || ''
-        triggerIcon.innerHTML = ''
-        triggerIcon.appendChild(iconDiv)
-        engineTrigger.classList.add('engine-selected')
-        searchBox.placeholder = meta.placeholder || `用 ${meta.label} 搜索…`
+        const meta = ENGINE_META[key];
+        if (!meta) return;
+        const iconDiv = document.createElement('div');
+        iconDiv.style.cssText = `width:100%;height:100%;border-radius:inherit;background:${meta.bg};display:flex;align-items:center;justify-content:center;overflow:hidden;`;
+        iconDiv.innerHTML = meta.svgIcon || '';
+        triggerIcon.innerHTML = '';
+        triggerIcon.appendChild(iconDiv);
+        engineTrigger.classList.add('engine-selected');
+        searchBox.placeholder = meta.placeholder || `用 ${meta.label} 搜索…`;
       }
 
       // ── 引擎网格 ──────────────────────────────────────────────
       function buildEngineGrid() {
-        engineGrid.querySelectorAll('.engine-item:not(#engineLocal)').forEach(el => el.remove())
+        engineGrid.querySelectorAll('.engine-item:not(#engineLocal)').forEach(el => el.remove());
         Object.keys(ENGINE_META).forEach(key => {
-          const meta = ENGINE_META[key]
-          const item = document.createElement('div')
-          item.className = 'engine-item'
-          item.dataset.engine = key
-          item.setAttribute('role', 'option')
+          const meta = ENGINE_META[key];
+          const item = document.createElement('div');
+          item.className = 'engine-item';
+          item.dataset.engine = key;
+          item.setAttribute('role', 'option');
           item.innerHTML = `
             <div class="engine-item-icon" style="background:${meta.bg}">${meta.svgIcon || ''}</div>
             <span class="engine-item-label">${meta.label}</span>
-          `
-          item.addEventListener('click', () => selectEngine(key))
-          engineGrid.appendChild(item)
-        })
+          `;
+          item.addEventListener('click', () => selectEngine(key));
+          engineGrid.appendChild(item);
+        });
       }
 
-      buildEngineGrid()
-      setTriggerLocal()
+      buildEngineGrid();
+      setTriggerLocal();
 
       // ── 引擎切换 ──────────────────────────────────────────────
       function selectEngine(key) {
-        currentEngine = key
-        document.querySelectorAll('.engine-item').forEach(el => el.classList.toggle('selected', el.dataset.engine === key))
-        engineLocal.classList.remove('selected')
-        setTriggerEngine(key)
-        searchSubmit.classList.add('visible')
-        searchBox.value = ''
-        searchClear.classList.remove('visible')
-        closeDropdown()
-        searchBox.focus()
+        currentEngine = key;
+        document.querySelectorAll('.engine-item').forEach(el => el.classList.toggle('selected', el.dataset.engine === key));
+        engineLocal.classList.remove('selected');
+        setTriggerEngine(key);
+        searchSubmit.classList.add('visible');
+        searchBox.value = '';
+        searchClear.classList.remove('visible');
+        closeDropdown();
+        searchBox.focus();
       }
 
       function selectLocal() {
-        currentEngine = 'local'
-        document.querySelectorAll('.engine-item').forEach(el => el.classList.remove('selected'))
-        engineLocal.classList.add('selected')
-        setTriggerLocal()
-        searchSubmit.classList.remove('visible')
-        searchBox.value = ''
-        searchClear.classList.remove('visible')
+        currentEngine = 'local';
+        document.querySelectorAll('.engine-item').forEach(el => el.classList.remove('selected'));
+        engineLocal.classList.add('selected');
+        setTriggerLocal();
+        searchSubmit.classList.remove('visible');
+        searchBox.value = '';
+        searchClear.classList.remove('visible');
         const catSites = currentIndex === 0
           ? allSites
-          : allSites.filter(s => s._catIndex === currentIndex)
-        renderCards(catSites)
-        closeDropdown()
-        searchBox.focus()
+          : allSites.filter(s => s._catIndex === currentIndex);
+        renderCards(catSites);
+        closeDropdown();
+        searchBox.focus();
       }
 
-      engineLocal.addEventListener('click', selectLocal)
+      engineLocal.addEventListener('click', selectLocal);
 
       // ── 下拉面板开关 ──────────────────────────────────────────
       function openDropdown() {
-        engineDropdown.classList.add('open')
-        engineTrigger.classList.add('open')
-        engineTrigger.setAttribute('aria-expanded', 'true')
-        history.pushState({ dropdownOpen: true }, '')
+        engineDropdown.classList.add('open');
+        engineTrigger.classList.add('open');
+        engineTrigger.setAttribute('aria-expanded', 'true');
+        history.pushState({ dropdownOpen: true }, '');
       }
       function closeDropdown() {
-        engineDropdown.classList.remove('open')
-        engineTrigger.classList.remove('open')
-        engineTrigger.setAttribute('aria-expanded', 'false')
+        engineDropdown.classList.remove('open');
+        engineTrigger.classList.remove('open');
+        engineTrigger.setAttribute('aria-expanded', 'false');
       }
 
       window.addEventListener('popstate', () => {
-        if (engineDropdown.classList.contains('open')) closeDropdown()
-      })
+        if (engineDropdown.classList.contains('open')) closeDropdown();
+      });
       engineTrigger.addEventListener('click', e => {
-        e.stopPropagation()
-        engineDropdown.classList.contains('open') ? closeDropdown() : openDropdown()
-      })
+        e.stopPropagation();
+        engineDropdown.classList.contains('open') ? closeDropdown() : openDropdown();
+      });
       document.addEventListener('click', e => {
-        if (!engineDropdown.contains(e.target) && !engineTrigger.contains(e.target)) closeDropdown()
-      })
+        if (!engineDropdown.contains(e.target) && !engineTrigger.contains(e.target)) closeDropdown();
+      });
 
       // ── 全网搜索 ──────────────────────────────────────────────
       function doWebSearch() {
-        const q = searchBox.value.trim()
-        if (!q || currentEngine === 'local') return
-        const fn = ENGINES[currentEngine]
-        if (fn) window.open(fn(q), '_blank', 'noopener')
+        const q = searchBox.value.trim();
+        if (!q || currentEngine === 'local') return;
+        const fn = ENGINES[currentEngine];
+        if (fn) window.open(fn(q), '_blank', 'noopener');
       }
-      searchSubmit.addEventListener('click', doWebSearch)
+      searchSubmit.addEventListener('click', doWebSearch);
 
       /* ── §B 分类数据加载与卡片渲染（懒加载分页） ── */
       // ── 分类按钮索引初始化 ────────────────────────────────────
-      categoryBtns.forEach((btn, i) => { btn.dataset.index = i })
+      categoryBtns.forEach((btn, i) => { btn.dataset.index = i; });
 
-      let currentIndex    = 0
-      let allSites        = []
-      let loadedIndexes   = new Set()
-      const totalCategories = categoryBtns.length - 1
+      let currentIndex = 0;
+      let allSites = [];
+      let loadedIndexes = new Set();
+      const totalCategories = categoryBtns.length - 1;
 
       // ── 渲染卡片（懒加载分页版）─────────────────────────────
-      const PAGE_SIZE   = 20
-      let _lazyItems    = []
-      let _lazyOffset   = 0
-      let _lazyObserver = null
+      const PAGE_SIZE = 20;
+      let _lazyItems = [];
+      let _lazyOffset = 0;
+      let _lazyObserver = null;
 
       function buildCard(site, i) {
-        const card     = document.createElement('div')
-        card.className = 'tool-card theme-anim'
-        const PERIOD   = 3000, STAGGER = 400
-        const phaseMs  = (performance.now() + i * STAGGER) % PERIOD
-        const delay    = -(phaseMs / 1000).toFixed(3)
+        const card = document.createElement('div');
+        card.className = 'tool-card theme-anim';
+        const PERIOD = 3000, STAGGER = 400;
+        const phaseMs = (performance.now() + i * STAGGER) % PERIOD;
+        const delay = -(phaseMs / 1000).toFixed(3);
         const iconHtml = site.icon
           ? `<img class="tool-icon" src="assets/siteicons/${site.icon}" alt="${site.title}" loading="lazy" style="animation-delay:${delay}s" onerror="this.outerHTML='<span class=\\'tool-icon-skeleton\\'></span>'">`
-          : `<span class="tool-icon-skeleton"></span>`
+          : `<span class="tool-icon-skeleton"></span>`;
         card.innerHTML = `
           ${iconHtml}
           <h3 class="tool-title">${site.title || ''}</h3>
           <p class="tool-description">${site.description || ''}</p>
           <a href="${site.url || '#'}" target="_blank" class="tool-link theme-anim">访问</a>
-        `
+        `;
         card.addEventListener('click', function(e) {
           if (!e.target.classList.contains('tool-link')) {
-            const link = this.querySelector('.tool-link')
-            if (link) link.click()
+            const link = this.querySelector('.tool-link');
+            if (link) link.click();
           }
-        })
-        return card
+        });
+        return card;
       }
 
       function appendChunk() {
-        if (_lazyOffset >= _lazyItems.length) return
-        const oldSentinel = grid.querySelector('.lazy-sentinel')
-        if (oldSentinel) oldSentinel.remove()
-        const chunk = _lazyItems.slice(_lazyOffset, _lazyOffset + PAGE_SIZE)
-        const frag  = document.createDocumentFragment()
-        chunk.forEach((site, j) => frag.appendChild(buildCard(site, _lazyOffset + j)))
-        _lazyOffset += chunk.length
+        if (_lazyOffset >= _lazyItems.length) return;
+        const oldSentinel = grid.querySelector('.lazy-sentinel');
+        if (oldSentinel) oldSentinel.remove();
+        const chunk = _lazyItems.slice(_lazyOffset, _lazyOffset + PAGE_SIZE);
+        const frag = document.createDocumentFragment();
+        chunk.forEach((site, j) => frag.appendChild(buildCard(site, _lazyOffset + j)));
+        _lazyOffset += chunk.length;
         if (_lazyOffset < _lazyItems.length) {
-          const sentinel = document.createElement('div')
-          sentinel.className = 'lazy-sentinel'
-          sentinel.style.cssText = 'height:1px;grid-column:1/-1'
-          frag.appendChild(sentinel)
-          grid.appendChild(frag)
-          _lazyObserver.observe(sentinel)
+          const sentinel = document.createElement('div');
+          sentinel.className = 'lazy-sentinel';
+          sentinel.style.cssText = 'height:1px;grid-column:1/-1';
+          frag.appendChild(sentinel);
+          grid.appendChild(frag);
+          _lazyObserver.observe(sentinel);
         } else {
-          grid.appendChild(frag)
+          grid.appendChild(frag);
         }
       }
 
       function renderCards(sites, searchTerm = '') {
-        if (_lazyObserver) { _lazyObserver.disconnect(); _lazyObserver = null }
-        grid.innerHTML = ''
-        const term  = searchTerm.toLowerCase().trim()
-        _lazyItems  = sites.filter(site => {
-          if (!term) return true
+        if (_lazyObserver) { _lazyObserver.disconnect(); _lazyObserver = null; }
+        grid.innerHTML = '';
+        const term = searchTerm.toLowerCase().trim();
+        _lazyItems = sites.filter(site => {
+          if (!term) return true;
           return (site.title || '').toLowerCase().includes(term) ||
-                 (site.description || '').toLowerCase().includes(term)
-        })
-        _lazyOffset = 0
+                 (site.description || '').toLowerCase().includes(term);
+        });
+        _lazyOffset = 0;
         if (_lazyItems.length === 0) {
-          grid.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">📭 暂无内容</p>'
-          return
+          grid.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">📭 暂无内容</p>';
+          return;
         }
         const scrollRoot = window.innerWidth >= 769
           ? document.querySelector('.main-content')
-          : null
+          : null;
         _lazyObserver = new IntersectionObserver(entries => {
           if (entries[0].isIntersecting) {
-            entries[0].target.remove()
-            appendChunk()
+            entries[0].target.remove();
+            appendChunk();
           }
-        }, { root: scrollRoot, rootMargin: '200px' })
-        appendChunk()
+        }, { root: scrollRoot, rootMargin: '200px' });
+        appendChunk();
       }
 
       // ── 更新分类按钮数字 ──────────────────────────────────────
       function updateCount(index) {
-        const btn = categoryBtns[index]
-        if (!btn) return
+        const btn = categoryBtns[index];
+        if (!btn) return;
         const count = index === 0
           ? allSites.length
-          : allSites.filter(s => s._catIndex === index).length
-        let badge = btn.querySelector('.cat-count')
+          : allSites.filter(s => s._catIndex === index).length;
+        let badge = btn.querySelector('.cat-count');
         if (!badge) {
-          badge = document.createElement('span')
-          badge.className = 'cat-count'
-          btn.appendChild(badge)
+          badge = document.createElement('span');
+          badge.className = 'cat-count';
+          btn.appendChild(badge);
         }
-        badge.textContent = count
+        badge.textContent = count;
       }
 
       // ── 加载单个 JSON ─────────────────────────────────────────
       async function loadCategory(index) {
-        if (loadedIndexes.has(index)) return
+        if (loadedIndexes.has(index)) return;
         try {
-          const res  = await fetch(`sites/sites_${index}.json`)
-          if (!res.ok) return
-          const data = await res.json()
-          const arr  = Array.isArray(data) ? data : []
-          arr.forEach(site => (site._catIndex = index))
-          allSites = allSites.concat(arr)
-          loadedIndexes.add(index)
-          updateCount(index)
-          updateCount(0)
+          const res = await fetch(`sites/sites_${index}.json`);
+          if (!res.ok) return;
+          const data = await res.json();
+          const arr = Array.isArray(data) ? data : [];
+          arr.forEach(site => (site._catIndex = index));
+          allSites = allSites.concat(arr);
+          loadedIndexes.add(index);
+          updateCount(index);
+          updateCount(0);
         } catch (e) {
-          console.warn(`sites_${index}.json 加载失败`, e)
+          console.warn(`sites_${index}.json 加载失败`, e);
         }
       }
 
       // ── 显示分类 ──────────────────────────────────────────────
       async function showCategory(index) {
-        currentIndex = index
-        const term   = searchBox.value
+        currentIndex = index;
+        const term = searchBox.value;
         if (index === 0) {
-          const tasks = []
+          const tasks = [];
           for (let i = 1; i <= totalCategories; i++) {
-            if (!loadedIndexes.has(i)) tasks.push(loadCategory(i))
+            if (!loadedIndexes.has(i)) tasks.push(loadCategory(i));
           }
-          await Promise.all(tasks)
-          allSites.sort((a, b) => a._catIndex - b._catIndex)
-          renderCards(allSites, term)
+          await Promise.all(tasks);
+          allSites.sort((a, b) => a._catIndex - b._catIndex);
+          renderCards(allSites, term);
         } else {
-          await loadCategory(index)
-          renderCards(allSites.filter(s => s._catIndex === index), term)
+          await loadCategory(index);
+          renderCards(allSites.filter(s => s._catIndex === index), term);
         }
       }
 
       // ── 分类按钮点击 ──────────────────────────────────────────
       categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-          categoryBtns.forEach(b => b.classList.remove('active'))
-          this.classList.add('active')
+          categoryBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
           // 切换分类时清空搜索栏内容
           if (searchBox.value) {
-            searchBox.value = ''
-            updateClearBtn()
+            searchBox.value = '';
+            updateClearBtn();
           }
           if (window.innerWidth >= 769) {
-            const mainContent = document.querySelector('.main-content')
-            if (mainContent) mainContent.scrollTop = 0
+            const mainContent = document.querySelector('.main-content');
+            if (mainContent) mainContent.scrollTop = 0;
           } else {
             // 移动端：切换分类时回到页面顶部
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 0);
           }
-          showCategory(parseInt(this.dataset.index))
-        })
-      })      
+          showCategory(parseInt(this.dataset.index));
+        });
+      });
 
       // ── 搜索输入 ──────────────────────────────────────────────
       searchBox.addEventListener('input', function() {
-        updateClearBtn()
-        if (currentEngine !== 'local') return
-        const term = this.value.toLowerCase().trim()
+        updateClearBtn();
+        if (currentEngine !== 'local') return;
+        const term = this.value.toLowerCase().trim();
         if (term) {
-          renderCards(allSites, term)
+          renderCards(allSites, term);
         } else {
           const catSites = currentIndex === 0
             ? allSites
-            : allSites.filter(s => s._catIndex === currentIndex)
-          renderCards(catSites)
+            : allSites.filter(s => s._catIndex === currentIndex);
+          renderCards(catSites);
         }
-        scrollContentToTop()
-      })
+        scrollContentToTop();
+      });
 
       // ── 内容滚动回顶部（用于搜索出结果等内容变化场景） ──────────
       function scrollContentToTop() {
         if (window.innerWidth >= 769) {
-          const mainContent = document.querySelector('.main-content')
-          if (mainContent) mainContent.scrollTop = 0
+          const mainContent = document.querySelector('.main-content');
+          if (mainContent) mainContent.scrollTop = 0;
         } else {
-          window.scrollTo(0, 0)
+          window.scrollTo(0, 0);
         }
       }
 
       // ── 键盘快捷键 ────────────────────────────────────────────
       document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-          e.preventDefault()
-          searchBox.focus()
+          e.preventDefault();
+          searchBox.focus();
         }
         if (e.key === 'Escape') {
-          if (engineDropdown.classList.contains('open')) { closeDropdown(); return }
+          if (engineDropdown.classList.contains('open')) { closeDropdown(); return; }
           if (document.activeElement === searchBox) {
-            searchBox.value = ''
-            searchClear.classList.remove('visible')
+            searchBox.value = '';
+            searchClear.classList.remove('visible');
             if (currentEngine === 'local') {
               const catSites = currentIndex === 0
                 ? allSites
-                : allSites.filter(s => s._catIndex === currentIndex)
-              renderCards(catSites)
+                : allSites.filter(s => s._catIndex === currentIndex);
+              renderCards(catSites);
             }
-            searchBox.blur()
+            searchBox.blur();
           }
         }
         if (e.key === 'Enter' && document.activeElement === searchBox) {
-          if (currentEngine !== 'local') doWebSearch()
+          if (currentEngine !== 'local') doWebSearch();
         }
-      })
+      });
 
       // ── 初始化：显示全部分类 ──────────────────────────────────
-      showCategory(0)
+      showCategory(0);
 
       /* ── §C 悬浮控件：回顶部 / 底部发光 / 主题切换 / 菜单 FAB ── */
       // ── 回顶部 & 底部发光 ──────────────────────────────────────
-      const backToTopBtn     = document.getElementById('backToTop')
-      const scrollBottomGlow = document.getElementById('scrollBottomGlow')
-      const SCROLL_THRESHOLD = 300
-      const mainContentEl    = document.querySelector('.main-content')
+      const backToTopBtn = document.getElementById('backToTop');
+      const scrollBottomGlow = document.getElementById('scrollBottomGlow');
+      const SCROLL_THRESHOLD = 300;
+      const mainContentEl = document.querySelector('.main-content');
 
-      let _glowOn       = false
-      let _glowOffTimer = null
+      let _glowOn = false;
+      let _glowOffTimer = null;
 
       function glowShow() {
-        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null }
-        if (_glowOn) return
-        _glowOn = true
-        scrollBottomGlow.classList.remove('fade-out')
-        scrollBottomGlow.classList.add('active')
+        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null; }
+        if (_glowOn) return;
+        _glowOn = true;
+        scrollBottomGlow.classList.remove('fade-out');
+        scrollBottomGlow.classList.add('active');
       }
 
       function glowHide() {
-        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null }
-        if (!_glowOn) return
-        _glowOn = false
-        scrollBottomGlow.classList.remove('active')
-        scrollBottomGlow.classList.add('fade-out')
-        setTimeout(function() { scrollBottomGlow.classList.remove('fade-out') }, 550)
+        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null; }
+        if (!_glowOn) return;
+        _glowOn = false;
+        scrollBottomGlow.classList.remove('active');
+        scrollBottomGlow.classList.add('fade-out');
+        setTimeout(function() { scrollBottomGlow.classList.remove('fade-out'); }, 550);
       }
 
       // 在底部收到 scroll → 亮起，并将熄灭计时器顺延 350ms
       function glowAtBottom() {
-        glowShow()
-        if (_glowOffTimer) clearTimeout(_glowOffTimer)
-        _glowOffTimer = setTimeout(glowHide, 350)
+        glowShow();
+        if (_glowOffTimer) clearTimeout(_glowOffTimer);
+        _glowOffTimer = setTimeout(glowHide, 350);
       }
 
       // 桌面端：只监听 .main-content（侧边栏等其他滚动容器不触发）
       mainContentEl.addEventListener('scroll', function() {
-        if (window.innerWidth < 769) return
-        const st = mainContentEl.scrollTop
-        const ch = mainContentEl.clientHeight
-        const sh = mainContentEl.scrollHeight
-        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD)
-        if (st + ch >= sh - 4) { glowAtBottom() } else { glowHide() }
-      }, { passive: true })
+        if (window.innerWidth < 769) return;
+        const st = mainContentEl.scrollTop;
+        const ch = mainContentEl.clientHeight;
+        const sh = mainContentEl.scrollHeight;
+        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD);
+        if (st + ch >= sh - 4) { glowAtBottom(); } else { glowHide(); }
+      }, { passive: true });
 
       // 移动端：只监听 window
       window.addEventListener('scroll', function() {
-        if (window.innerWidth >= 769) return
-        const st = window.scrollY
-        const ch = window.innerHeight
-        const sh = document.documentElement.scrollHeight
-        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD)
-        if (st + ch >= sh - 4) { glowAtBottom() } else { glowHide() }
-      }, { passive: true })
+        if (window.innerWidth >= 769) return;
+        const st = window.scrollY;
+        const ch = window.innerHeight;
+        const sh = document.documentElement.scrollHeight;
+        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD);
+        if (st + ch >= sh - 4) { glowAtBottom(); } else { glowHide(); }
+      }, { passive: true });
 
       backToTopBtn.addEventListener('click', function() {
         if (window.innerWidth >= 769) {
-          mainContentEl.scrollTo({ top: 0, behavior: 'smooth' })
+          mainContentEl.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' })
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      })
+      });
 
       // ── 主题切换 ──────────────────────────────────────────────
-      const themeToggleBtn    = document.getElementById('themeToggle')
-      const themeColorMeta    = document.getElementById('themeColorMeta')
-      const DARK_KEY          = 'xingyuan-dark-mode'   // 新 key，彻底与旧存档隔离
-      const THEME_COLOR_LIGHT = '#e6e7ee'
-      const THEME_COLOR_DARK  = '#1e1e2e'
-      let themeTimer = null
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const themeColorMeta = document.getElementById('themeColorMeta');
+      const DARK_KEY = 'xingyuan-dark-mode';   // 新 key，彻底与旧存档隔离
+      const THEME_COLOR_LIGHT = '#e6e7ee';
+      const THEME_COLOR_DARK = '#1e1e2e';
+      let themeTimer = null;
 
       function applyTheme(isDark, animate = false) {
-        themeColorMeta.setAttribute('content', isDark ? THEME_COLOR_DARK : THEME_COLOR_LIGHT)
+        themeColorMeta.setAttribute('content', '#667eea');
         if (animate) {
-          if (themeTimer) clearTimeout(themeTimer)
-          document.body.classList.add('theme-transitioning')
+          if (themeTimer) clearTimeout(themeTimer);
+          document.body.classList.add('theme-transitioning');
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              document.body.classList.toggle('dark', isDark)
-              themeToggleBtn.textContent = isDark ? '☀️' : '🌙'              
-              themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式'
-            })
-          })
+              document.body.classList.toggle('dark', isDark);
+              themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+              themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式';
+            });
+          });
           themeTimer = setTimeout(() => {
-            document.body.classList.remove('theme-transitioning')
-            themeTimer = null
-          }, 400)
+            document.body.classList.remove('theme-transitioning');
+            themeTimer = null;
+          }, 400);
         } else {
-          document.body.classList.toggle('dark', isDark)
-          themeToggleBtn.textContent = isDark ? '☀️' : '🌙'          
-          themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式'
+          document.body.classList.toggle('dark', isDark);
+          themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+          themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式';
         }
       }
 
       // 无用户记录时默认浅色模式（不跟随系统）
-      const savedDark   = localStorage.getItem(DARK_KEY)
-      const prefersDark = savedDark === 'true'
-      applyTheme(prefersDark, false)
+      const savedDark = localStorage.getItem(DARK_KEY);
+      const prefersDark = savedDark === 'true';
+      applyTheme(prefersDark, false);
 
       themeToggleBtn.addEventListener('click', function() {
-        const isDark = !document.body.classList.contains('dark')
-        applyTheme(isDark, true)
-        localStorage.setItem(DARK_KEY, isDark ? 'true' : 'false')
-      })
+        const isDark = !document.body.classList.contains('dark');
+        applyTheme(isDark, true);
+        localStorage.setItem(DARK_KEY, isDark ? 'true' : 'false');
+      });
 
       // ── 菜单 FAB 展开/收起 ────────────────────────────────────
-      const settingsFabBtn   = document.getElementById('settingsFab')
-      const settingsFabGroup = document.getElementById('settingsFabGroup')
+      const settingsFabBtn = document.getElementById('settingsFab');
+      const settingsFabGroup = document.getElementById('settingsFabGroup');
 
       settingsFabBtn.addEventListener('click', function(e) {
-        e.stopPropagation()
-        const isOpen = settingsFabGroup.classList.toggle('expanded')
-        settingsFabBtn.classList.toggle('open', isOpen)
-      })
+        e.stopPropagation();
+        const isOpen = settingsFabGroup.classList.toggle('expanded');
+        settingsFabBtn.classList.toggle('open', isOpen);
+      });
 
       // 点击页面其他区域关闭 FAB 菜单
       document.addEventListener('click', function(e) {
         if (!settingsFabGroup.contains(e.target)) {
-          settingsFabGroup.classList.remove('expanded')
-          settingsFabBtn.classList.remove('open')
+          settingsFabGroup.classList.remove('expanded');
+          settingsFabBtn.classList.remove('open');
         }
-      })
+      });
 
       // ── 背景滚动锁（模态框打开时禁止页面滚动，关闭后恢复） ──────
       // 使用计数器支持多个模态框同时存在的场景
-      let _modalLockCount = 0
+      let _modalLockCount = 0;
 
       function lockScroll() {
-        _modalLockCount++
+        _modalLockCount++;
         if (_modalLockCount === 1) {
-          document.body.classList.add('modal-open')
-          document.documentElement.classList.add('modal-open')
+          document.body.classList.add('modal-open');
+          document.documentElement.classList.add('modal-open');
         }
       }
       function unlockScroll() {
-        if (_modalLockCount > 0) _modalLockCount--
+        if (_modalLockCount > 0) _modalLockCount--;
         if (_modalLockCount === 0) {
-          document.body.classList.remove('modal-open')
-          document.documentElement.classList.remove('modal-open')
+          document.body.classList.remove('modal-open');
+          document.documentElement.classList.remove('modal-open');
         }
       }
 
       /* ── §D 模态框：赞赏支持 / 复制链接 / 关于本站 ── */
       // ── 赞赏模态框 ────────────────────────────────────────────
-      const sponsorBtn   = document.getElementById('sponsorBtn')
-      const sponsorModal = document.getElementById('sponsorModal')
-      const sponsorClose = document.getElementById('sponsorClose')
+      const sponsorBtn = document.getElementById('sponsorBtn');
+      const sponsorModal = document.getElementById('sponsorModal');
+      const sponsorClose = document.getElementById('sponsorClose');
 
       function openSponsor() {
-        sponsorModal.classList.add('open')
-        lockScroll()                                    // 锁定背景滚动
+        sponsorModal.classList.add('open');
+        lockScroll();                                    // 锁定背景滚动
         // 关闭 FAB 展开菜单
-        settingsFabGroup.classList.remove('expanded')
-        settingsFabBtn.classList.remove('open')
+        settingsFabGroup.classList.remove('expanded');
+        settingsFabBtn.classList.remove('open');
         // 推入历史，使设备任意返回键可关闭模态框
-        history.pushState({ sponsorOpen: true }, '')
+        history.pushState({ sponsorOpen: true }, '');
       }
       function closeSponsor() {
-        sponsorModal.classList.remove('open')
-        unlockScroll()                                  // 恢复背景滚动
+        sponsorModal.classList.remove('open');
+        unlockScroll();                                  // 恢复背景滚动
       }
 
       sponsorBtn.addEventListener('click', function(e) {
-        e.stopPropagation()
-        openSponsor()
-      })
+        e.stopPropagation();
+        openSponsor();
+      });
       sponsorClose.addEventListener('click', function() {
         // 同步撤销 pushState，避免关闭后返回键退出页面
-        if (history.state && history.state.sponsorOpen) history.back()
-        else closeSponsor()
-      })
+        if (history.state && history.state.sponsorOpen) history.back();
+        else closeSponsor();
+      });
       // 点击模态框背景关闭
       sponsorModal.addEventListener('click', function(e) {
         if (e.target === sponsorModal) {
-          if (history.state && history.state.sponsorOpen) history.back()
-          else closeSponsor()
+          if (history.state && history.state.sponsorOpen) history.back();
+          else closeSponsor();
         }
-      })
+      });
       // ESC 键关闭
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && sponsorModal.classList.contains('open')) {
-          if (history.state && history.state.sponsorOpen) history.back()
-          else closeSponsor()
+          if (history.state && history.state.sponsorOpen) history.back();
+          else closeSponsor();
         }
-      })
+      });
 
       // ── 复制链接 ──────────────────────────────────────────
-      const copyLinkBtn  = document.getElementById('copyLinkBtn')
-      const copyLinkToast = document.getElementById('copyLinkToast')
+      const copyLinkBtn = document.getElementById('copyLinkBtn');
+      const copyLinkToast = document.getElementById('copyLinkToast');
       // ★ 在此处替换为实际网页链接 ★
-      const SITE_URL     = 'https://nanlin3368.github.io/navigation'
+      const SITE_URL = 'https://nanlin3368.github.io/navigation';
 
-      let _copyToastTimer = null
+      let _copyToastTimer = null;
       function showCopyToast() {
-        if (_copyToastTimer) clearTimeout(_copyToastTimer)
-        copyLinkToast.classList.add('show')
+        if (_copyToastTimer) clearTimeout(_copyToastTimer);
+        copyLinkToast.classList.add('show');
         _copyToastTimer = setTimeout(function() {
-          copyLinkToast.classList.remove('show')
-          _copyToastTimer = null
-        }, 2000)
+          copyLinkToast.classList.remove('show');
+          _copyToastTimer = null;
+        }, 2000);
       }
 
       copyLinkBtn.addEventListener('click', function(e) {
-        e.stopPropagation()
-        const url = SITE_URL || location.href
+        e.stopPropagation();
+        const url = SITE_URL || location.href;
         navigator.clipboard.writeText(url).then(function() {
-          showCopyToast()
+          showCopyToast();
         }).catch(function() {
           // 降级：创建临时 input 复制
-          const inp = document.createElement('input')
-          inp.value = url
-          document.body.appendChild(inp)
-          inp.select()
-          document.execCommand('copy')
-          document.body.removeChild(inp)
-          showCopyToast()
-        })
+          const inp = document.createElement('input');
+          inp.value = url;
+          document.body.appendChild(inp);
+          inp.select();
+          document.execCommand('copy');
+          document.body.removeChild(inp);
+          showCopyToast();
+        });
         // 关闭 FAB 菜单
-        settingsFabGroup.classList.remove('expanded')
-        settingsFabBtn.classList.remove('open')
-      })
+        settingsFabGroup.classList.remove('expanded');
+        settingsFabBtn.classList.remove('open');
+      });
 
       // ── 关于本站模态框 ──────────────────────────────────────
-      const disclaimerBtn   = document.getElementById('disclaimerBtn')
-      const disclaimerModal = document.getElementById('disclaimerModal')
-      const disclaimerClose = document.getElementById('disclaimerClose')
+      const disclaimerBtn = document.getElementById('disclaimerBtn');
+      const disclaimerModal = document.getElementById('disclaimerModal');
+      const disclaimerClose = document.getElementById('disclaimerClose');
 
       function openDisclaimer() {
-        disclaimerModal.classList.add('open')
-        lockScroll()                                    // 锁定背景滚动
-        settingsFabGroup.classList.remove('expanded')
-        settingsFabBtn.classList.remove('open')
-        history.pushState({ disclaimerOpen: true }, '')
+        disclaimerModal.classList.add('open');
+        lockScroll();                                    // 锁定背景滚动
+        settingsFabGroup.classList.remove('expanded');
+        settingsFabBtn.classList.remove('open');
+        history.pushState({ disclaimerOpen: true }, '');
       }
       function closeDisclaimer() {
-        disclaimerModal.classList.remove('open')
-        unlockScroll()                                  // 恢复背景滚动
+        disclaimerModal.classList.remove('open');
+        unlockScroll();                                  // 恢复背景滚动
       }
 
       disclaimerBtn.addEventListener('click', function(e) {
-        e.stopPropagation()
-        openDisclaimer()
-      })
+        e.stopPropagation();
+        openDisclaimer();
+      });
       disclaimerClose.addEventListener('click', function() {
-        if (history.state && history.state.disclaimerOpen) history.back()
-        else closeDisclaimer()
-      })
+        if (history.state && history.state.disclaimerOpen) history.back();
+        else closeDisclaimer();
+      });
       disclaimerModal.addEventListener('click', function(e) {
         if (e.target === disclaimerModal) {
-          if (history.state && history.state.disclaimerOpen) history.back()
-          else closeDisclaimer()
+          if (history.state && history.state.disclaimerOpen) history.back();
+          else closeDisclaimer();
         }
-      })
+      });
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && disclaimerModal.classList.contains('open')) {
-          if (history.state && history.state.disclaimerOpen) history.back()
-          else closeDisclaimer()
+          if (history.state && history.state.disclaimerOpen) history.back();
+          else closeDisclaimer();
         }
-      })
+      });
 
       /* ── §E 移动端专属交互：分类抽屉同步 / 侧滑抽屉开关 ── */
       // ── 分类列表：桌面端移入侧边栏 / 移动端移入抽屉 ──────────
-      const categoriesEl    = document.getElementById('categoriesEl')
-      const sidebarNav      = document.getElementById('sidebarNav')
-      const mobileDrawerNav = document.getElementById('mobileDrawerNav')
+      const categoriesEl = document.getElementById('categoriesEl');
+      const sidebarNav = document.getElementById('sidebarNav');
+      const mobileDrawerNav = document.getElementById('mobileDrawerNav');
 
       function syncCategoriesPlacement() {
         if (window.innerWidth >= 769) {
           if (sidebarNav && categoriesEl.parentNode !== sidebarNav) {
-            categoriesEl.classList.add('mobile-categories')
-            sidebarNav.appendChild(categoriesEl)
+            categoriesEl.classList.add('mobile-categories');
+            sidebarNav.appendChild(categoriesEl);
           }
         } else {
           if (mobileDrawerNav && categoriesEl.parentNode !== mobileDrawerNav) {
-            categoriesEl.classList.remove('mobile-categories')
-            mobileDrawerNav.appendChild(categoriesEl)
+            categoriesEl.classList.remove('mobile-categories');
+            mobileDrawerNav.appendChild(categoriesEl);
           }
         }
       }
 
-      syncCategoriesPlacement()
-      window.addEventListener('resize', syncCategoriesPlacement)
+      syncCategoriesPlacement();
+      window.addEventListener('resize', syncCategoriesPlacement);
 
       // ── 移动端抽屉开关 ────────────────────────────────────────
-      const mobileMenuBtn       = document.getElementById('mobileMenuBtn')
-      const mobileDrawer        = document.getElementById('mobileDrawer')
-      const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay')
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay');
 
       function openDrawer() {
-        mobileDrawer.classList.add('open')
-        mobileDrawerOverlay.style.display = 'block'
-        mobileDrawerOverlay.offsetHeight  // 触发 reflow
-        mobileDrawerOverlay.classList.add('open')
-        document.documentElement.style.overflow = 'hidden'
+        mobileDrawer.classList.add('open');
+        mobileDrawerOverlay.style.display = 'block';
+        mobileDrawerOverlay.offsetHeight;  // 触发 reflow
+        mobileDrawerOverlay.classList.add('open');
+        document.documentElement.style.overflow = 'hidden';
         // 侧滑栏打开：FAB 沉入遮罩之下（见 §3 CSS .drawer-open 规则）
-        document.body.classList.add('drawer-open')
+        document.body.classList.add('drawer-open');
         // 汉堡按钮图标高亮，呼应菜单 FAB 的展开态
-        if (mobileMenuBtn) mobileMenuBtn.classList.add('open')
+        if (mobileMenuBtn) mobileMenuBtn.classList.add('open');
         // 推入历史记录，使设备返回键可关闭抽屉
-        history.pushState({ drawerOpen: true }, '')
+        history.pushState({ drawerOpen: true }, '');
       }
       function closeDrawer() {
-        mobileDrawer.classList.remove('open')
-        mobileDrawerOverlay.classList.remove('open')
-        document.documentElement.style.overflow = ''
+        mobileDrawer.classList.remove('open');
+        mobileDrawerOverlay.classList.remove('open');
+        document.documentElement.style.overflow = '';
         // 侧滑栏关闭：恢复 FAB 层级与可点击状态
-        document.body.classList.remove('drawer-open')
+        document.body.classList.remove('drawer-open');
         // 汉堡按钮图标恢复默认颜色
-        if (mobileMenuBtn) mobileMenuBtn.classList.remove('open')
+        if (mobileMenuBtn) mobileMenuBtn.classList.remove('open');
         mobileDrawerOverlay.addEventListener('transitionend', function handler() {
           if (!mobileDrawerOverlay.classList.contains('open')) {
-            mobileDrawerOverlay.style.display = 'none'
+            mobileDrawerOverlay.style.display = 'none';
           }
-          mobileDrawerOverlay.removeEventListener('transitionend', handler)
-        })
+          mobileDrawerOverlay.removeEventListener('transitionend', handler);
+        });
       }
 
       // 设备返回键（popstate）：优先关闭简单工具 → 关于本站 → 赞赏模态框 → 抽屉
       window.addEventListener('popstate', function(e) {
         if (toolboxModal.classList.contains('open')) {
-          closeToolbox()
+          closeToolbox();
         } else if (disclaimerModal.classList.contains('open')) {
-          closeDisclaimer()
+          closeDisclaimer();
         } else if (sponsorModal.classList.contains('open')) {
-          closeSponsor()
+          closeSponsor();
         } else if (mobileDrawer.classList.contains('open')) {
-          closeDrawer()
+          closeDrawer();
         }
-      })
+      });
 
-      if (mobileMenuBtn)       mobileMenuBtn.addEventListener('click', openDrawer)
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
       if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', function() {
         // 点击遮罩关闭：同步撤销 pushState，避免返回键出现空历史
-        if (history.state && history.state.drawerOpen) history.back()
-        else closeDrawer()
-      })
+        if (history.state && history.state.drawerOpen) history.back();
+        else closeDrawer();
+      });
       if (mobileDrawerNav) {
         mobileDrawerNav.addEventListener('click', function(e) {
           if (e.target.closest('.category-btn')) {
             // 点击分类关闭：同步撤销 pushState
-            if (history.state && history.state.drawerOpen) history.back()
-            else closeDrawer()
+            if (history.state && history.state.drawerOpen) history.back();
+            else closeDrawer();
           }
-        })
+        });
       }
 
       /* ── §F 简单工具模态框：列表渲染、搜索、开关 ── */
       // ── 简单工具模态框 ──────────────────────────────────────
-      const toolboxBtn         = document.getElementById('toolboxBtn')
-      const toolboxModal       = document.getElementById('toolboxModal')
-      const toolboxClose       = document.getElementById('toolboxClose')
-      const toolboxSearch      = document.getElementById('toolboxSearch')
-      const toolboxSearchClear = document.getElementById('toolboxSearchClear')
+      const toolboxBtn = document.getElementById('toolboxBtn');
+      const toolboxModal = document.getElementById('toolboxModal');
+      const toolboxClose = document.getElementById('toolboxClose');
+      const toolboxSearch = document.getElementById('toolboxSearch');
+      const toolboxSearchClear = document.getElementById('toolboxSearchClear');
 
       function renderToolList(keyword) {
-        const list = document.getElementById('toolboxList')
-        if (!list) return
-        const kw = (keyword || '').trim().toLowerCase()
+        const list = document.getElementById('toolboxList');
+        if (!list) return;
+        const kw = (keyword || '').trim().toLowerCase();
 
         // ── 搜索模式：跨分组平铺展示 ──
         if (kw) {
-          const filtered = TOOLS.filter(t => t.name.toLowerCase().includes(kw))
-          const countNum = document.getElementById('toolboxCountNum')
-          if (countNum) countNum.textContent = filtered.length
+          const filtered = TOOLS.filter(t => t.name.toLowerCase().includes(kw));
+          const countNum = document.getElementById('toolboxCountNum');
+          if (countNum) countNum.textContent = filtered.length;
           if (filtered.length === 0) {
-            list.innerHTML = `<p class="toolbox-empty">🤷 没有找到"${keyword}"相关工具</p>`
-            return
+            list.innerHTML = `<p class="toolbox-empty">🤷 没有找到"${keyword}"相关工具</p>`;
+            return;
           }
-          list.innerHTML = ''
+          list.innerHTML = '';
           filtered.forEach(function(tool) {
-            const a     = document.createElement('a')
-            a.className = 'toolbox-item'
-            a.href      = TOOLS_BASE + tool.file
-            a.target    = '_blank'
-            a.rel       = 'noopener noreferrer'
-            a.innerHTML = `<span class="toolbox-item-name">${tool.name}</span><span class="toolbox-item-arrow">›</span>`
-            list.appendChild(a)
-          })
-          return
+            const a = document.createElement('a');
+            a.className = 'toolbox-item';
+            a.href = TOOLS_BASE + tool.file;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.innerHTML = `<span class="toolbox-item-name">${tool.name}</span><span class="toolbox-item-arrow">›</span>`;
+            list.appendChild(a);
+          });
+          return;
         }
 
         // ── 默认模式：按分组渲染 ──
-        const countNum = document.getElementById('toolboxCountNum')
-        if (countNum) countNum.textContent = TOOLS.length
-        list.innerHTML = ''
+        const countNum = document.getElementById('toolboxCountNum');
+        if (countNum) countNum.textContent = TOOLS.length;
+        list.innerHTML = '';
         TOOL_GROUPS.forEach(function(group) {
           // 分组标题
-          const header = document.createElement('div')
-          header.className = 'toolbox-group-header'
-          header.innerHTML = `<span class="toolbox-group-icon">${group.icon}</span><span class="toolbox-group-name">${group.label}</span>`
-          list.appendChild(header)
+          const header = document.createElement('div');
+          header.className = 'toolbox-group-header';
+          header.innerHTML = `<span class="toolbox-group-icon">${group.icon}</span><span class="toolbox-group-name">${group.label}</span>`;
+          list.appendChild(header);
           // 分组工具项
           group.tools.forEach(function(tool) {
-            const a     = document.createElement('a')
-            a.className = 'toolbox-item'
-            a.href      = TOOLS_BASE + tool.file
-            a.target    = '_blank'
-            a.rel       = 'noopener noreferrer'
-            a.innerHTML = `<span class="toolbox-item-name">${tool.name}</span><span class="toolbox-item-arrow">›</span>`
-            list.appendChild(a)
-          })
-        })
+            const a = document.createElement('a');
+            a.className = 'toolbox-item';
+            a.href = TOOLS_BASE + tool.file;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.innerHTML = `<span class="toolbox-item-name">${tool.name}</span><span class="toolbox-item-arrow">›</span>`;
+            list.appendChild(a);
+          });
+        });
       }
 
       function openToolbox() {
-        renderToolList('')
-        toolboxSearch.value = ''
-        toolboxSearchClear.classList.remove('visible')
-        toolboxModal.classList.add('open')
-        lockScroll()
-        settingsFabGroup.classList.remove('expanded')
-        settingsFabBtn.classList.remove('open')
-        history.pushState({ toolboxOpen: true }, '')
+        renderToolList('');
+        toolboxSearch.value = '';
+        toolboxSearchClear.classList.remove('visible');
+        toolboxModal.classList.add('open');
+        lockScroll();
+        settingsFabGroup.classList.remove('expanded');
+        settingsFabBtn.classList.remove('open');
+        history.pushState({ toolboxOpen: true }, '');
       }
       function closeToolbox() {
-        toolboxModal.classList.remove('open')
-        unlockScroll()
+        toolboxModal.classList.remove('open');
+        unlockScroll();
       }
 
       toolboxBtn.addEventListener('click', function(e) {
-        e.stopPropagation()
-        openToolbox()
-      })
+        e.stopPropagation();
+        openToolbox();
+      });
       toolboxClose.addEventListener('click', function() {
-        if (history.state && history.state.toolboxOpen) history.back()
-        else closeToolbox()
-      })
+        if (history.state && history.state.toolboxOpen) history.back();
+        else closeToolbox();
+      });
       toolboxModal.addEventListener('click', function(e) {
         if (e.target === toolboxModal) {
-          if (history.state && history.state.toolboxOpen) history.back()
-          else closeToolbox()
+          if (history.state && history.state.toolboxOpen) history.back();
+          else closeToolbox();
         }
-      })
+      });
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && toolboxModal.classList.contains('open')) {
-          if (history.state && history.state.toolboxOpen) history.back()
-          else closeToolbox()
+          if (history.state && history.state.toolboxOpen) history.back();
+          else closeToolbox();
         }
-      })
+      });
       // 搜索输入 + 叉号显隐
       toolboxSearch.addEventListener('input', function() {
-        const val = this.value
-        toolboxSearchClear.classList.toggle('visible', val.length > 0)
-        renderToolList(val)
-      })
+        const val = this.value;
+        toolboxSearchClear.classList.toggle('visible', val.length > 0);
+        renderToolList(val);
+      });
       toolboxSearchClear.addEventListener('click', function() {
-        toolboxSearch.value = ''
-        toolboxSearchClear.classList.remove('visible')
-        renderToolList('')
-        toolboxSearch.focus()
-      })
-      
+        toolboxSearch.value = '';
+        toolboxSearchClear.classList.remove('visible');
+        renderToolList('');
+        toolboxSearch.focus();
+      });
+
       // 物理删除原生 title 白框，换成自定义文字
       document.querySelectorAll('#settingsFabGroup button, #backToTop').forEach(el => {
         if (el.title) {
