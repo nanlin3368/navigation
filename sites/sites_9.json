@@ -124,5 +124,19 @@
         "url": "https://www.17sucai.com",
         "description": "前端网页特效与设计资源平台，提供 jQuery 网页特效、HTML5/CSS3 动画代码、网站模板、整站源码、UI图标与网页素材等前端资源，支持在线预览、分类检索与快速下载等功能，覆盖从基础布局到高级交互的多场景需求，是前端设计与网页制作的高效素材库",
         "category": "资源基地"
+    },
+    {
+        "title": "高考真题大全",
+        "icon": "高考真题大全_icon.webp",
+        "url": "https://t.urongda.com",
+        "description": "高考真题资源平台，汇集 2023-2026 历年全国各省份语文、数学、英语等 12 科真题与完整答案解析，拥有 8000+ 套真题资源，64年真题跨度，支持一键检索下载，全部资料仅供学习交流，无收费门槛，为高中生提供完整刷题备考素材，助力考生高效备战高考",
+        "category": "资源基地"
+    },
+    {
+        "title": "OfficePLUS",
+        "icon": "OfficePLUS_icon.webp",
+        "url": "https://www.officeplus.cn",
+        "description": "微软官方办公模板平台，海量PPT、Word、Excel原创模板，覆盖工作总结、毕业答辩、教学课件、商业计划书、简历等全场景，内置 AI一键美化、PDF互转、图表素材工具，支持 Office 插件直用，助力学生、职场人快速打造专业文档，大幅提升办公创作效率",
+        "category": "资源基地"
     }
 ]

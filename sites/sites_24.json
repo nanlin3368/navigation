@@ -28,6 +28,13 @@
         "category": "更多导航"
     },
     {
+        "title": "奎章阁",
+        "icon": "奎章阁_icon.webp",
+        "url": "https://www.wenxianxue.cn",
+        "description": "公益古典文献导航平台，整合全国古籍资源库、汉籍影像、甲骨、佛经、量化史学等数字人文资源，直达国图古籍库、识典古籍、中研院数位库等权威站点，内置古文断句、古籍检索、知识图谱工具，提供高清古籍影像与文献检索指引，助力古代文学科研学习",
+        "category": "更多导航"
+    },
+    {
         "title": "秋木科技",
         "icon": "秋木科技_icon.webp",
         "url": "https://qiumu1998.github.io",

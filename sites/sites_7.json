@@ -82,7 +82,7 @@
         "url": "https://www.bunjs.com.cn/zh-cn",
         "description": "高性能 JavaScript 运行时与一体化开发工具包，集成运行时、极速包管理器、并发测试与零配置打包器，兼容 Node.js，支持 TypeScript/JSX/React、内置数据库驱动与 Docker 镜像，安装简便，构建与测试速度领先，适合现代 Web 与后端开发者提升效率",
         "category": "学习成长"
-    },
+    },    
     {
         "title": "LetMeEnglish",
         "icon": "LetMeEnglish_icon.webp",

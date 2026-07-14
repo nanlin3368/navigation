@@ -390,5 +390,19 @@
         "url": "http://www.atools.live/zh-cn",
         "description": "",
         "category": "综合效率"
+    },
+    {
+        "title": "LabUp",
+        "icon": "LabUp_icon.webp",
+        "url": "https://labup.net",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "AI智研社",
+        "icon": "AI智研社_icon.webp",
+        "url": "https://wxaiway.com",
+        "description": "",
+        "category": "综合效率"
     }
 ]

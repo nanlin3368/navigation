@@ -56,6 +56,13 @@
         "category": "图像处理"
     },
     {
+        "title": "BulkPicTools",
+        "icon": "BulkPicTools_icon.webp",
+        "url": "https://bulkpictools.com/zh",
+        "description": "",
+        "category": "图像处理"
+    },
+    {
         "title": "隐私图片压缩",
         "icon": "隐私图片压缩_icon.webp",
         "url": "https://compressimage.cn/zh-CN",

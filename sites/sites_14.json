@@ -33,7 +33,7 @@
         "url": "https://fonts.google.com",
         "description": "由 Google 提供的免费开源字体库，收录超过 1000+ 高质量字体，覆盖拉丁、中文、日文、韩文、阿拉伯语、希腊语等多语种字符集，支持现代变量字体技术，让同一字体文件即可呈现多种字重、宽度与风格，大幅减少加载体积，提升排版灵活度与网页性能",
         "category": "创意设计"
-    },
+    },   
     {
         "title": "Emoji Directory",
         "icon": "Emoji_Directory_icon.webp",
@@ -200,6 +200,20 @@
         "icon": "比特拼豆_icon.webp",
         "url": "https://bitbead.pomodiary.com/zh",
         "description": "完全免费的照片转拼豆图纸生成器，支持 Perler、Hama、Artkal、MARD 四大品牌色卡，采用 CIEDE2000 专业算法，自动生成总豆数、真实尺寸与每色采购清单，支持画笔微调，可导出高清 PNG、打印 PDF，内置海量新手图纸模板，快速制作专业拼豆图纸",
+        "category": "创意设计"
+    },
+    {
+        "title": "Refero",
+        "icon": "Refero_icon.webp",
+        "url": "https://refero.design",
+        "description": "",
+        "category": "创意设计"
+    },
+    {
+        "title": "中国大学矢量校徽大全",
+        "icon": "中国大学矢量校徽大全_icon.webp",
+        "url": "https://www.urongda.com",
+        "description": "",
         "category": "创意设计"
     }
 ]

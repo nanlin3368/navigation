@@ -327,5 +327,26 @@
         "url": "https://www.anitabi.cn/map",
         "description": "二次元圣地巡礼专用地图平台，收录海量动画实景取景坐标，支持按番剧、城市检索，可对照动画截图与街景，一键导航规划巡礼路线，支持用户投稿补充地标共建数据库，搭配坐标导航，轻松规划二次元线下巡礼与线上云打卡之旅，奔赴动漫名场面现实圣地",
         "category": "网络驿站"
+    },
+    {
+        "title": "王牌竞速数据整合站",
+        "icon": "王牌竞速数据整合站_icon.webp",
+        "url": "https://wnqs.github.io/acerace-station/main.html",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "世界首富体验",
+        "icon": "世界首富体验_icon.webp",
+        "url": "https://2367283b.pinme.dev",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "Infinity新标签页",
+        "icon": "Infinity新标签页_icon.webp",
+        "url": "https://m.inftab.com/#/",
+        "description": "",
+        "category": "网络驿站"
     }
 ]
