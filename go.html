@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>安全跳转中…</title>
+    <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
+    <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
+    <script src="src/scripts/security.js" defer></script>    
+    <style>
+      
+      /* ----- 全局重置 ----- */
+      * {
+        margin     : 0;
+        padding    : 0;
+        box-sizing : border-box;
+        font-family:
+          "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* ----- CSS 变量（浅色/深色） ----- */
+      :root {
+        --primary-bg     : #e6e7ee;
+        --secondary-bg   : #ffffff;
+        --shadow-light   : #ffffff;
+        --shadow-dark    : #d1d9e6;
+        --accent-color   : #667eea;
+        --accent-gradient: linear-gradient(135deg, #667eea 0%, #667eea 100%);
+        --text-primary   : #2d3748;
+        --text-secondary : #718096;
+        /* 倒计时圆环尺寸 */
+        --circle-size    : 100px;
+        --circle-radius  : 44px;
+        --circle-stroke  : 5px;
+      }
+
+      body.dark {
+        --primary-bg    : #1e1e2e;
+        --secondary-bg  : #2a2a3e;
+        --shadow-light  : #2a2a3e;
+        --shadow-dark   : #12121e;
+        --text-primary  : #c8cde8;
+        --text-secondary: #8b93c4;
+      }
+
+      /* ----- 页面固定居中 ----- */
+      html,
+      body {
+        height  : 100%;
+        overflow: hidden;
+        margin  : 0;
+        padding : 0;
+      }
+
+      body {
+        background     : var(--primary-bg);
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+        padding        : 28px;
+        transition     : background 0.3s;
+      }
+
+      /* ----- 跳转卡片 ----- */
+      .redirect-card {
+        background   : var(--secondary-bg);
+        max-width    : 480px;
+        width        : 100%;
+        padding      : 36px 28px 28px;
+        border-radius: 32px;
+        box-shadow   :
+          16px 16px 40px var(--shadow-dark),
+          -8px -8px 24px var(--shadow-light);
+        text-align   : center;
+        animation    : fadeUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        max-height   : 85vh;
+        overflow-y   : auto;
+        scrollbar-width   : none;
+        -ms-overflow-style: none;
+      }
+      .redirect-card::-webkit-scrollbar {
+        display    : none;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity  : 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        to {
+          opacity  : 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .redirect-icon {
+        font-size    : 3.2rem;
+        display      : block;
+        margin-bottom: 6px;
+      }
+
+      .redirect-card h1 {
+        font-size    : 1.5rem;
+        font-weight  : 700;
+        color        : var(--text-primary);
+        margin-bottom: 6px;
+      }
+
+      .redirect-desc {
+        color        : var(--text-secondary);
+        font-size    : 0.92rem;
+        line-height  : 1.5;
+        margin-bottom: 22px;
+      }
+
+      /* ----- 目标网址显示框 ----- */
+      .redirect-url-box {
+        background   : var(--primary-bg);
+        padding      : 12px 16px;
+        border-radius: 14px;
+        box-shadow   :
+          inset 4px 4px 10px var(--shadow-dark),
+          inset -3px -3px 8px var(--shadow-light);
+        margin-bottom: 28px;
+        word-break   : break-all;
+        font-size    : 0.88rem;
+        font-weight  : 500;
+        color        : var(--text-primary);
+        border       : 1px solid rgba(128, 128, 160, 0.08);
+      }
+      .redirect-url-box span {
+        opacity      : 0.7;
+      }
+
+      /* ----- 倒计时圆环（核心修改） ----- */
+      .countdown-wrap {
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+        gap            : 14px;
+        font-size      : 1.1rem;
+        color          : var(--text-secondary);
+        margin-bottom  : 30px;
+      }
+
+      /* 圆环容器 */
+      .countdown-circle {
+        position       : relative;
+        width          : var(--circle-size);
+        height         : var(--circle-size);
+        flex-shrink    : 0;
+      }
+
+      .countdown-circle svg {
+        width          : 100%;
+        height         : 100%;
+        transform      : rotate(-90deg);  /* 从顶部开始 */
+      }
+
+      /* 背景圆环 */
+      .circle-bg {
+        fill           : none;
+        stroke         : var(--shadow-dark);
+        stroke-width   : var(--circle-stroke);
+        opacity        : 0.3;
+      }
+
+      /* 进度圆环（动态变化） */
+      .circle-progress {
+        fill           : none;
+        stroke         : url(#accentGradient);
+        stroke-width   : var(--circle-stroke);
+        stroke-linecap : round;
+        transition     : stroke-dashoffset 0.3s ease;
+      }
+
+      /* 圆环内的数字 */
+      .countdown-number {
+        position       : absolute;
+        top            : 50%;
+        left           : 50%;
+        transform      : translate(-50%, -50%);
+        font-size      : 2.2rem;
+        font-weight    : 800;
+        background     : var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height    : 1;
+        letter-spacing : -0.02em;
+      }
+
+      .countdown-label {
+        font-size      : 1rem;
+        color          : var(--text-secondary);
+      }
+
+      /* ----- 继续按钮 ----- */
+      .btn-wrap {
+        text-align   : center;
+      }
+      .btn-go {
+        display      : inline-block;
+        padding      : 8px 22px;
+        border       : none;
+        border-radius: 12px;
+        font-size    : 1.2rem;
+        font-weight  : 700;
+        cursor       : pointer;
+        background   : var(--accent-gradient);
+        color        : #fff;
+        box-shadow   : 0 6px 20px rgba(102, 126, 234, 0.45);
+        transition   : all 0.25s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-go:hover {
+        transform : translateY(-2px);
+        box-shadow: 0 8px 28px rgba(102, 126, 234, 0.6);
+      }
+      .btn-go:active {
+        transform : scale(0.96);
+      }
+
+      /* ----- 移动端适配 ----- */
+      @media (max-width: 480px) {
+        .redirect-card {
+          padding  : 32px 18px 24px;
+        }
+        .redirect-card h1 {
+          font-size: 1.5rem;
+        }
+        .redirect-desc {
+          font-size: 0.85rem;
+        }
+        .countdown-number {
+          font-size: 1.8rem;
+        }
+        .countdown-label {
+          font-size: 0.9rem;
+        }
+        .btn-go {
+          padding  : 8px 20px;
+          font-size: 1.1rem;
+        }
+        :root {
+          --circle-size  : 80px;
+          --circle-radius: 34px;
+          --circle-stroke: 4px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        :root {
+          --circle-size  : 70px;
+          --circle-radius: 29px;
+          --circle-stroke: 4px;
+        }
+        .countdown-number {
+          font-size      : 1.5rem;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="redirect-card">
+      <span class="redirect-icon">🚀</span>
+      <h1>即将离开本站</h1>
+      <p class="redirect-desc">
+        即将离开星源导航页面，正在前往第三方网站，<br />
+        请自行甄别信息真伪，保护好个人隐私
+      </p>
+
+      <div class="redirect-url-box">
+        <span id="targetDisplay">加载中...</span>
+      </div>
+
+      <!-- ===== 倒计时圆环 ===== -->
+      <div class="countdown-wrap">
+        <div class="countdown-circle">
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#667eea" />
+                <stop offset="100%" stop-color="#764ba2" />
+              </linearGradient>
+            </defs>
+            <!-- 背景圆环 -->
+            <circle class="circle-bg" cx="60" cy="60" r="52" />
+            <!-- 进度圆环 -->
+            <circle class="circle-progress" id="progressCircle" cx="60" cy="60" r="52" 
+                    stroke-dasharray="326.726" stroke-dashoffset="0" />
+          </svg>
+          <span class="countdown-number" id="countdownNum">10</span>
+        </div>
+        <span class="countdown-label">秒后自动跳转</span>
+      </div>
+
+      <div class="btn-wrap">
+        <button class="btn-go" id="goBtn">继续</button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        /* ==========================================
+           §1  获取并校验目标链接
+           ========================================== */
+        const params = new URLSearchParams(window.location.search);
+        let targetUrl = params.get("url");
+
+        if (!targetUrl || targetUrl === "null" || targetUrl === "undefined") {
+          window.location.replace("/");
+          return;
+        }
+
+        try {
+          targetUrl = decodeURIComponent(targetUrl);
+        } catch (e) {}
+
+        // 安全校验：防止危险协议
+        if (
+          !targetUrl.startsWith("http://") &&
+          !targetUrl.startsWith("https://")
+        ) {
+          if (
+            targetUrl.includes("javascript:") ||
+            targetUrl.includes("data:")
+          ) {
+            window.location.replace("/");
+            return;
+          }
+          targetUrl = "https://" + targetUrl;
+        }
+
+        /* ==========================================
+           §2  显示友好域名
+           ========================================== */
+        try {
+          const urlObj = new URL(targetUrl);
+          let display = urlObj.hostname;
+          if (urlObj.pathname && urlObj.pathname !== "/") {
+            display += urlObj.pathname;
+          }
+          if (display.length > 60) display = display.substring(0, 60) + "…";
+          document.getElementById("targetDisplay").textContent = display;
+        } catch {
+          document.getElementById("targetDisplay").textContent = targetUrl;
+        }
+
+        /* ==========================================
+           §3  同步深色模式
+           ========================================== */
+        const darkKey = "xingyuan-dark-mode";
+        if (localStorage.getItem(darkKey) === "true") {
+          document.body.classList.add("dark");
+        }
+
+        /* ==========================================
+           §4  倒计时逻辑（带圆环进度）
+           ========================================== */
+        const TOTAL_SECONDS = 10;
+        let countdown = TOTAL_SECONDS;
+        const countdownEl = document.getElementById("countdownNum");
+        const progressCircle = document.getElementById("progressCircle");
+        let timer = null;
+
+        // 圆环周长 = 2 * π * 52 ≈ 326.726
+        const CIRCUMFERENCE = 326.726;
+
+        function updateCircle(remaining) {
+          const offset = CIRCUMFERENCE * (1 - remaining / TOTAL_SECONDS);
+          progressCircle.style.strokeDashoffset = offset;
+        }
+
+        function startCountdown() {
+          if (timer) clearInterval(timer);
+          timer = setInterval(function () {
+            countdown--;
+            countdownEl.textContent = countdown;
+            updateCircle(countdown);
+
+            if (countdown <= 0) {
+              clearInterval(timer);
+              timer = null;
+              window.location.replace(targetUrl);
+            }
+          }, 1000);
+        }
+
+        function goNow() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+          window.location.replace(targetUrl);
+        }
+
+        /* ==========================================
+           §5  绑定事件
+           ========================================== */
+        document.getElementById("goBtn").addEventListener("click", goNow);
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            goNow();
+          }
+        });
+
+        /* ==========================================
+           §6  启动倒计时（初始化圆环为完整状态）
+           ========================================== */
+        // 初始状态：圆环完整（offset = 0）
+        progressCircle.style.strokeDashoffset = 0;
+        countdownEl.textContent = TOTAL_SECONDS;
+        startCountdown();
+
+      })();
+    </script>
+  </body>
+</html>

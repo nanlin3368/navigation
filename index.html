@@ -2133,7 +2133,7 @@
     <!-- ── 悬浮按钮 ── -->
     <button id="backToTop" data-tooltip="回到顶部" aria-label="回到顶部" class="theme-anim">
       <svg viewBox="0 0 24 24">
-        <polyline points="18 15 12 9 6 15"></polyline>
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
     </button>
 
@@ -2499,7 +2499,7 @@
           ${iconHtml}
           <h3 class="tool-title">${site.title || ''}</h3>
           <p class="tool-description">${site.description || ''}</p>
-          <a href="${site.url || '#'}" target="_blank" class="tool-link theme-anim">访问</a>
+          <a href="go.html?url=${encodeURIComponent(site.url)}" target="_blank" rel="noopener noreferrer nofollow ugc" class="tool-link theme-anim">访问</a>
         `;
         card.addEventListener('click', function(e) {
           if (!e.target.classList.contains('tool-link')) {
