@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#667eea" />
     <title>安全跳转中…</title>
     <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
     <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
@@ -31,7 +33,6 @@
         --text-secondary : #718096;
         /* 倒计时圆环尺寸 */
         --circle-size    : 100px;
-        --circle-radius  : 44px;
         --circle-stroke  : 5px;
       }
 
@@ -133,7 +134,7 @@
         opacity      : 0.7;
       }
 
-      /* ----- 倒计时圆环（核心修改） ----- */
+      /* ----- 倒计时圆环 ----- */
       .countdown-wrap {
         display        : flex;
         align-items    : center;
@@ -144,7 +145,6 @@
         margin-bottom  : 30px;
       }
 
-      /* 圆环容器 */
       .countdown-circle {
         position       : relative;
         width          : var(--circle-size);
@@ -155,10 +155,9 @@
       .countdown-circle svg {
         width          : 100%;
         height         : 100%;
-        transform      : rotate(-90deg);  /* 从顶部开始 */
+        transform      : rotate(-90deg);
       }
 
-      /* 背景圆环 */
       .circle-bg {
         fill           : none;
         stroke         : var(--shadow-dark);
@@ -166,16 +165,14 @@
         opacity        : 0.3;
       }
 
-      /* 进度圆环（动态变化） */
       .circle-progress {
         fill           : none;
         stroke         : url(#accentGradient);
         stroke-width   : var(--circle-stroke);
         stroke-linecap : round;
-        transition     : stroke-dashoffset 0.3s ease;
+        transition     : stroke-dashoffset 0.1s ease;
       }
 
-      /* 圆环内的数字 */
       .countdown-number {
         position       : absolute;
         top            : 50%;
@@ -200,6 +197,7 @@
       .btn-wrap {
         text-align   : center;
       }
+
       .btn-go {
         display      : inline-block;
         padding      : 8px 22px;
@@ -214,10 +212,12 @@
         transition   : all 0.25s ease;
         -webkit-tap-highlight-color: transparent;
       }
+
       .btn-go:hover {
         transform : translateY(-2px);
         box-shadow: 0 8px 28px rgba(102, 126, 234, 0.6);
       }
+
       .btn-go:active {
         transform : scale(0.96);
       }
@@ -245,7 +245,6 @@
         }
         :root {
           --circle-size  : 80px;
-          --circle-radius: 34px;
           --circle-stroke: 4px;
         }
       }
@@ -253,7 +252,6 @@
       @media (max-width: 380px) {
         :root {
           --circle-size  : 70px;
-          --circle-radius: 29px;
           --circle-stroke: 4px;
         }
         .countdown-number {
@@ -361,13 +359,12 @@
            §4  倒计时逻辑（带圆环进度）
            ========================================== */
         const TOTAL_SECONDS = 10;
+        const CIRCUMFERENCE = 326.726;
+
         let countdown = TOTAL_SECONDS;
         const countdownEl = document.getElementById("countdownNum");
         const progressCircle = document.getElementById("progressCircle");
         let timer = null;
-
-        // 圆环周长 = 2 * π * 52 ≈ 326.726
-        const CIRCUMFERENCE = 326.726;
 
         function updateCircle(remaining) {
           const offset = CIRCUMFERENCE * (1 - remaining / TOTAL_SECONDS);
@@ -384,9 +381,22 @@
             if (countdown <= 0) {
               clearInterval(timer);
               timer = null;
-              window.location.replace(targetUrl);
+              safeRedirect(targetUrl);
             }
           }, 1000);
+        }
+
+        /* ==========================================
+           §5  安全跳转函数（防止卡死）
+           ========================================== */
+        function safeRedirect(url) {
+          try {
+            // 优先使用 replace（替换历史记录）
+            window.location.replace(url);
+          } catch (e) {
+            // 降级方案：使用 href
+            window.location.href = url;
+          }
         }
 
         function goNow() {
@@ -394,11 +404,11 @@
             clearInterval(timer);
             timer = null;
           }
-          window.location.replace(targetUrl);
+          safeRedirect(targetUrl);
         }
 
         /* ==========================================
-           §5  绑定事件
+           §6  绑定事件
            ========================================== */
         document.getElementById("goBtn").addEventListener("click", goNow);
 
@@ -410,9 +420,8 @@
         });
 
         /* ==========================================
-           §6  启动倒计时（初始化圆环为完整状态）
+           §7  启动倒计时
            ========================================== */
-        // 初始状态：圆环完整（offset = 0）
         progressCircle.style.strokeDashoffset = 0;
         countdownEl.textContent = TOTAL_SECONDS;
         startCountdown();
