@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" id="themeColorMeta" content="#e6e7ee" />
     <title>星源导航 | 你的网络小助手</title>
-    <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
-    <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="/assets/picture/nav.webp" />
+    <link rel="icon" href="/assets/picture/nav.webp" type="image/webp" />
     <script>
       history.scrollRestoration = 'manual'
       window.scrollTo(0, 0)
@@ -2189,7 +2189,14 @@
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">本站定位与目的</p>
-              <p class="disclaimer-item-text">本站只是一个简单的网站导航入口，便于快速查找各类在线工具、资源与服务。<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>，仅作为信息索引平台存在。</p>
+              <p class="disclaimer-item-text">本站整合了纯前端实用工具与第三方资源导航，便于日常查找使用。对于本站所收录的外部第三方资源与网站，<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>。</p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="disclaimer-item-dot"></div>
+            <div class="disclaimer-item-body">
+              <p class="disclaimer-item-title">内置工具与隐私</p>
+              <p class="disclaimer-item-text">本站提供了一些纯前端实用工具，<strong>所有计算与处理均在本地浏览器中完成，无需将任何数据或操作记录上传至服务器</strong>，在保障隐私安全的同时带来即开即用的流畅体验。</p>
             </div>
           </li>
           <li class="disclaimer-item">
@@ -2260,54 +2267,52 @@
           icon : '💻',
           label: '开发者工具',
           tools: [
-            { name: 'JSON 压缩',    file: 'JSON压缩.html'    },
-            { name: 'JSON 格式化',  file: 'JSON格式化.html'  },
-            { name: '代码对比',     file: '代码对比.html'    },
-            { name: '色彩选择器',  file: '色彩选择器.html'  },            
-            { name: 'CSS 动画效果', file: 'CSS动画效果.html' },
-            { name: '网页源码获取', file: '网页源码获取.html' },
-            { name: 'IP 信息查询',  file: 'IP信息查询.html'  },            
-            { name: '浏览器起始页',   file: '浏览器起始页.html'  },
+            { name: '代码对比',     file: 'code-diff.html'    },
+            { name: '色彩选择器',  file: 'color-picker.html'  },                        
+            { name: 'JSON 压缩',    file: 'json-minifier.html'    },
+            { name: 'JSON 格式化',  file: 'json-formatter.html'  },                                   
+            { name: 'CSS 动画效果', file: 'css-animations.html' }, 
+            { name: 'Git 命令速查', file: 'git-cheat-sheet.html'   },
           ],
         },
         {
           icon : '🖼️',
           label: '图片与多媒体',
           tools: [
-            { name: '图片格式转换',   file: '图片格式转换.html' },
-            { name: '图像编辑',       file: '图像编辑.html'     },
-            { name: '图片对比',       file: '图片对比.html'     },
-            { name: '图片分割',       file: '图片分割.html'     },
-            { name: '图片转 Base64',  file: '图片转Base64.html' },
-            { name: 'Base64 转图片',  file: 'Base64转图片.html' },
+            { name: '图片格式转换',   file: 'image-converter.html' },
+            { name: '图片裁切',       file: 'image-cropper.html'     },
+            { name: '图片对比',       file: 'image-comparison.html'     },
+            { name: '图片切图分割',       file: 'image-splitter.html'     },
+            { name: '图片转 Base64',  file: 'image-to-base64.html' },
+            { name: 'Base64 转图片',  file: 'base64-to-image.html' },
           ],
         },
         {
           icon : '✍️',
           label: '文本与效率',
           tools: [
-            { name: 'Markdown 编辑器', file: 'Markdown编辑器.html' },
-            { name: '密码生成器',      file: '密码生成器.html'     },
-            { name: '手写签名',        file: '手写签名.html'       },
-            { name: '汉字转拼音',      file: '汉字转拼音.html'     },            
-            { name: '简体转繁体',    file: '简体转繁体.html'   },
-            { name: '繁体转简体',    file: '繁体转简体.html'   },
-            { name: 'Emoji 表情库', file: 'Emoji表情库.html' },
-            { name: '特殊符号大全',    file: '特殊符号大全.html'   },
+            { name: 'Markdown 编辑器', file: 'markdown-editor.html' },
+            { name: '随机密码生成器',   file: 'password-generator.html'     },
+            { name: '手写签名',      file: 'signature-pad.html'       },
+            { name: '汉字转拼音',     file: 'chinese-to-pinyin.html'     },            
+            { name: '简体转繁体',    file: 'simplified-to-traditional.html'   },
+            { name: '繁体转简体',    file: 'traditional-to-simplified.html'   },
+            { name: 'Emoji 表情库', file: 'emoji-library.html' },
+            { name: '特殊符号大全',    file: 'special-characters.html'   },
           ],
         },        
         {
           icon : '🎈',
           label: '日常生活/趣味',
           tools: [           
-            { name: '在线黄历',     file: '在线黄历.html'     },
-            { name: '天气预报',     file: '天气预报.html'     },
-            { name: '常用号码查询',     file: '常用号码查询.html'     },
-            { name: '国际区号查询',     file: '国际区号查询.html'     },
-            { name: '单位换算',     file: '单位换算.html'     },
-            { name: '二维码生成',   file: '二维码生成.html'  },
-            { name: '每日一言',     file: '每日一言.html'     },
-            { name: '反应速度测试', file: '反应速度测试.html' },
+            { name: '在线黄历',     file: 'chinese-almanac.html'     },
+            { name: '天气预报',     file: 'weather-forecast.html'     },
+            { name: '常用号码查询',     file: 'useful-numbers.html'     },
+            { name: '国际区号查询',     file: 'country-codes.html'     },
+            { name: '单位换算',     file: 'unit-converter.html'     },
+            { name: '二维码生成',   file: 'qr-code-generator.html'  },
+            { name: '每日一言',     file: 'daily-quote.html'     },
+            { name: '反应速度测试', file: 'reaction-test.html' },
           ],
         },
       ]
