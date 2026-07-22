@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>图片对比</title>
+    <link rel="apple-touch-icon" href="/assets/picture/nav.webp" />
+    <link rel="icon" href="/assets/picture/nav.webp" type="image/webp" />
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --green: #34c759;
+        --orange: #ff9f0a;
+        --red-bg: rgba(255, 59, 48, 0.09);
+        --green-bg: rgba(52, 199, 89, 0.1);
+        --orange-bg: rgba(255, 159, 10, 0.12);
+        --blue-bg: rgba(0, 113, 227, 0.1);
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用容器（移动端默认纵向排列） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-left {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-right {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 桌面端响应式布局（左右双栏） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-left {
+          flex: 0 0 32%;
+          min-width: 0;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        .panel-right {
+          flex: 1 1 68%;
+          min-width: 0;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-left,
+      .panel-right {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 区块标题与元信息 --- */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0;
+        flex: 1;
+      }
+      .meta-info {
+        font-size: 12px;
+        color: var(--sub);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        white-space: nowrap;
+      }
+
+      /* --- 操作按钮组 --- */
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        flex: 1;
+        min-width: 100px;
+        border: none;
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          background-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
+      .btn-danger {
+        background: var(--bg);
+        color: var(--red);
+        border: 1px solid var(--line);
+      }
+
+      .actions-card .btn-row {
+        margin-top: 0;
+      }
+
+      /* --- 隐藏的文件输入 --- */
+      #fileInputA,
+      #fileInputB {
+        display: none;
+      }
+
+      /* --- 图片导入区域（拖拽 + 点击上传） --- */
+      .img-drop {
+        position: relative;
+        border: 1.5px dashed var(--line);
+        border-radius: var(--radius-sm);
+        background: var(--bg);
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s;
+      }
+      .img-drop:hover {
+        border-color: var(--accent);
+      }
+      .img-drop.dragover {
+        border-color: var(--accent);
+        background: var(--blue-bg);
+      }
+      .img-drop.has-image {
+        border-style: solid;
+      }
+      .img-placeholder {
+        text-align: center;
+        color: var(--sub);
+        font-size: 13px;
+        padding: 20px;
+        pointer-events: none;
+      }
+      .img-placeholder-icon {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+      .img-preview {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* --- 图片信息展示区 --- */
+      .img-info {
+        margin-top: 12px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 11px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .img-info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12.5px;
+        gap: 10px;
+      }
+      .img-info-row span:first-child {
+        color: var(--sub);
+        flex: 0 0 auto;
+      }
+      .img-info-row span:last-child {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-weight: 500;
+        color: var(--ink);
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      /* --- 右侧结果面板 --- */
+      .result-card {
+        flex: 1;
+      }
+
+      /* --- 对比模式切换（滑动 / 并排 / 叠加透明） --- */
+      .mode-switch {
+        display: flex;
+        gap: 6px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 4px;
+        margin-bottom: 12px;
+      }
+      .mode-btn {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 10px 6px;
+        border-radius: 11px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+      }
+      .mode-btn.active {
+        background: var(--card);
+        color: var(--accent);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --- 透明度控制（仅叠加透明模式） --- */
+      .opacity-control {
+        display: none;
+        align-items: center;
+        gap: 12px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 11px 16px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: var(--sub);
+      }
+      .opacity-control input[type="range"] {
+        flex: 1;
+        accent-color: var(--accent);
+      }
+      #opacityValue {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-weight: 600;
+        color: var(--ink);
+        width: 42px;
+        text-align: right;
+        flex: 0 0 auto;
+      }
+
+      /* --- 对比状态栏 --- */
+      .result-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 13px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--sub);
+        margin-bottom: 14px;
+      }
+      .result-status.done {
+        background: var(--green-bg);
+        color: #1f8a3d;
+        border-color: rgba(52, 199, 89, 0.25);
+      }
+      .stat-pill {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 12.5px;
+        font-weight: 600;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.04);
+      }
+      .stat-pill.info {
+        color: var(--accent);
+        background: var(--blue-bg);
+      }
+      .stat-pill.same {
+        color: #1f8a3d;
+        background: var(--green-bg);
+      }
+      .stat-pill.warn {
+        color: #b96b00;
+        background: var(--orange-bg);
+      }
+
+      /* --- 对比展示容器 --- */
+      .result-body {
+        flex: 0 0 auto;
+        height: 62vh;
+        min-height: 420px;
+        overflow: hidden;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+      }
+      @media (min-width: 860px) {
+        .panel-right {
+          align-self: flex-start;
+        }
+        .result-body {
+          height: 735px;
+          min-height: 735px;
+        }
+      }
+      .result-placeholder {
+        height: 100%;
+        min-height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--sub);
+        font-size: 14px;
+        text-align: center;
+        padding: 30px;
+      }
+
+      /* --- 对比舞台（滑动模式） --- */
+      .compare-stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        touch-action: none;
+      }
+      .stage-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        user-select: none;
+        -webkit-user-drag: none;
+        background: var(--bg);
+      }
+      .slide-divider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #fff;
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.12),
+          0 0 10px rgba(0, 0, 0, 0.3);
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .slide-handle {
+        position: absolute;
+        top: 50%;
+        width: 42px;
+        height: 42px;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        cursor: ew-resize;
+      }
+      .stage-label {
+        position: absolute;
+        top: 10px;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 999px;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .label-a {
+        left: 10px;
+      }
+      .label-b {
+        right: 10px;
+      }
+
+      /* --- 并排对比模式 --- */
+      .side-by-side {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      .side-half {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: var(--bg);
+      }
+      .side-half:first-child {
+        border-right: 1px solid var(--line);
+      }
+      .side-half img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      /* --- 叠加透明模式 --- */
+      .overlay-stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .overlay-stage .stage-img {
+        background: var(--bg);
+      }
+
+      /* --- 滚动条 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Toast 提示容器 -->
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <!-- 顶部标题 -->
+    <div class="topbar">
+      <h1>🖼️ 图片对比</h1>
+      <p>纯本地安全比对 · 数据不上传或存储</p>
+    </div>
+
+    <!-- 主应用 -->
+    <div class="app">
+      <!-- 左侧面板：导入 A / 导入 B / 操作按钮 -->
+      <div class="panel-left">
+        <!-- 图片 A 导入卡片 -->
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">导入图片 A</p>
+            <span class="meta-info" id="metaA">未导入</span>
+          </div>
+          <input type="file" id="fileInputA" accept="image/*" />
+          <div class="img-drop" id="dropA">
+            <div class="img-placeholder" id="placeholderA">
+              <div class="img-placeholder-icon">🖼️</div>
+              <div>点击或拖拽图片到这里</div>
+            </div>
+            <img class="img-preview" id="previewA" style="display: none" />
+          </div>
+          <div class="img-info" id="infoA" style="display: none">
+            <div class="img-info-row">
+              <span>文件名</span><span id="infoNameA">-</span>
+            </div>
+            <div class="img-info-row">
+              <span>尺寸</span><span id="infoSizeA">-</span>
+            </div>
+            <div class="img-info-row">
+              <span>大小</span><span id="infoBytesA">-</span>
+            </div>
+            <div class="img-info-row">
+              <span>格式</span><span id="infoTypeA">-</span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="importA">导入图片 A</button>
+            <button class="btn btn-danger" id="clearAOnly">清空 A</button>
+          </div>
+        </div>
+
+        <!-- 图片 B 导入卡片 -->
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">导入图片 B</p>
+            <span class="meta-info" id="metaB">未导入</span>
+          </div>
+          <input type="file" id="fileInputB" accept="image/*" />
+          <div class="img-drop" id="dropB">
+            <div class="img-placeholder" id="placeholderB">
+              <div class="img-placeholder-icon">🖼️</div>
+              <div>点击或拖拽图片到这里</div>
+            </div>
+            <img class="img-preview" id="previewB" style="display: none" />
+          </div>
+          <div class="img-info" id="infoB" style="display: none">
+            <div class="img-info-row">
+              <span>文件名</span><span id="infoNameB">-</span>
+            </div>
+            <div class="img-info-row">
+              <span>尺寸</span><span id="infoSizeB">-</span>
+            </div>
+            <div class="img-info-row">
+              <span>大小</span><span id="infoBytesB">-</span>
+            </div>
+            <div class="img-info-row">
+              <span>格式</span><span id="infoTypeB">-</span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="importB">导入图片 B</button>
+            <button class="btn btn-danger" id="clearBOnly">清空 B</button>
+          </div>
+        </div>
+
+        <!-- 全局操作卡片 -->
+        <div class="card actions-card">
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="clearAll">🧹 全部清空</button>
+            <button class="btn btn-primary" id="compareBtn">
+              ⚡ 一键精准比对
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧面板：对比模式 / 对比结果 -->
+      <div class="panel-right">
+        <div class="card result-card">
+          <div class="section-header">
+            <p class="section-title">对比模式 / 对比结果</p>
+          </div>
+
+          <!-- 模式切换标签 -->
+          <div class="mode-switch" id="modeSwitch">
+            <button class="mode-btn active" data-mode="slide">
+              ↔ 滑动对比
+            </button>
+            <button class="mode-btn" data-mode="side">▥ 并排对比</button>
+            <button class="mode-btn" data-mode="overlay">◐ 叠加透明</button>
+          </div>
+
+          <!-- 透明度控制（仅叠加模式可见） -->
+          <div class="opacity-control" id="opacityControl">
+            <span>B 图透明度</span>
+            <input
+              type="range"
+              id="opacitySlider"
+              min="0"
+              max="100"
+              value="50"
+            />
+            <span id="opacityValue">50%</span>
+          </div>
+
+          <!-- 对比状态栏 -->
+          <div class="result-status" id="resultStatus">
+            ⏳ 暂未进行比对，请在左侧导入 A、B 两张图片后点击 "一键精准比对"
+          </div>
+
+          <!-- 对比展示容器 -->
+          <div class="result-body" id="resultBody">
+            <div class="result-placeholder">💡 等待左侧图片导入...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        /* --- DOM 元素引用 --- */
+        const fileInputA = document.getElementById("fileInputA");
+        const fileInputB = document.getElementById("fileInputB");
+        const dropA = document.getElementById("dropA");
+        const dropB = document.getElementById("dropB");
+        const importA = document.getElementById("importA");
+        const importB = document.getElementById("importB");
+        const clearAOnly = document.getElementById("clearAOnly");
+        const clearBOnly = document.getElementById("clearBOnly");
+        const clearAll = document.getElementById("clearAll");
+        const compareBtn = document.getElementById("compareBtn");
+
+        const modeSwitch = document.getElementById("modeSwitch");
+        const modeButtons = Array.from(
+          modeSwitch.querySelectorAll(".mode-btn"),
+        );
+        const opacityControl = document.getElementById("opacityControl");
+        const opacitySlider = document.getElementById("opacitySlider");
+        const opacityValueEl = document.getElementById("opacityValue");
+
+        const resultStatus = document.getElementById("resultStatus");
+        const resultBody = document.getElementById("resultBody");
+        const toast = document.getElementById("toast");
+
+        /* --- 状态变量 --- */
+        let imgAData = null; // 图片 A 的数据对象 { dataURL, width, height, size, name, type }
+        let imgBData = null; // 图片 B 的数据对象
+        let currentMode = "slide"; // 当前对比模式：slide / side / overlay
+        let compared = false; // 是否已完成对比
+        let draggingSlide = false; // 滑动模式是否正在拖拽
+
+        /* --- Toast 轻提示逻辑 --- */
+        let toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg || "操作成功";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1600);
+        }
+
+        /* --- 工具函数：格式化文件大小 --- */
+        function formatBytes(bytes) {
+          if (bytes < 1024) return bytes + " B";
+          if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+          return (bytes / 1024 / 1024).toFixed(2) + " MB";
+        }
+
+        /* --- 重置结果面板到初始状态 --- */
+        function resetResultPanel() {
+          compared = false;
+          resultStatus.className = "result-status";
+          resultStatus.textContent =
+            '⏳ 暂未进行比对，请在左侧导入 A、B 两张图片后点击 "一键精准比对"';
+          resultBody.innerHTML =
+            '<div class="result-placeholder">💡 等待左侧图片导入...</div>';
+        }
+
+        /* --- 加载图片文件（读取为 DataURL 并解析尺寸） --- */
+        function loadImageFile(file, slot) {
+          if (!file || !file.type || !file.type.startsWith("image/")) {
+            showToast("请选择有效的图片文件");
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const dataURL = e.target.result;
+            const img = new Image();
+            img.onload = () => {
+              setImageData(slot, {
+                dataURL,
+                width: img.naturalWidth,
+                height: img.naturalHeight,
+                size: file.size,
+                name: file.name,
+                type: file.type,
+              });
+            };
+            img.onerror = () => showToast("图片解析失败，请更换文件");
+            img.src = dataURL;
+          };
+          reader.readAsDataURL(file);
+        }
+
+        /* --- 设置图片数据并更新 UI（预览、信息、元数据） --- */
+        function setImageData(slot, data) {
+          if (slot === "A") imgAData = data;
+          else imgBData = data;
+
+          const preview = document.getElementById("preview" + slot);
+          const placeholder = document.getElementById("placeholder" + slot);
+          const drop = document.getElementById("drop" + slot);
+          const info = document.getElementById("info" + slot);
+          const meta = document.getElementById("meta" + slot);
+
+          preview.src = data.dataURL;
+          preview.style.display = "block";
+          placeholder.style.display = "none";
+          drop.classList.add("has-image");
+
+          info.style.display = "flex";
+          document.getElementById("infoName" + slot).textContent = data.name;
+          document.getElementById("infoSize" + slot).textContent =
+            `${data.width} × ${data.height}px`;
+          document.getElementById("infoBytes" + slot).textContent = formatBytes(
+            data.size,
+          );
+          document.getElementById("infoType" + slot).textContent = (
+            data.type.split("/")[1] ||
+            data.type ||
+            "未知"
+          ).toUpperCase();
+          meta.textContent = `${data.width}×${data.height}`;
+
+          resetResultPanel();
+          showToast(`图片 ${slot} 导入成功`);
+        }
+
+        /* --- 清空指定槽位的图片 --- */
+        function clearSlot(slot) {
+          if (slot === "A") imgAData = null;
+          else imgBData = null;
+
+          const preview = document.getElementById("preview" + slot);
+          const placeholder = document.getElementById("placeholder" + slot);
+          const drop = document.getElementById("drop" + slot);
+          const info = document.getElementById("info" + slot);
+          const meta = document.getElementById("meta" + slot);
+          const fileInput = slot === "A" ? fileInputA : fileInputB;
+
+          preview.src = "";
+          preview.style.display = "none";
+          placeholder.style.display = "block";
+          drop.classList.remove("has-image");
+          info.style.display = "none";
+          meta.textContent = "未导入";
+          fileInput.value = "";
+
+          resetResultPanel();
+        }
+
+        /* --- 事件绑定：导入按钮、拖拽上传、清空按钮（A 和 B 共用逻辑） --- */
+        [
+          ["A", dropA, fileInputA, importA, clearAOnly],
+          ["B", dropB, fileInputB, importB, clearBOnly],
+        ].forEach(([slot, drop, fileInput, importBtn, clearBtn]) => {
+          drop.addEventListener("click", () => fileInput.click());
+          importBtn.addEventListener("click", () => fileInput.click());
+          fileInput.addEventListener("change", (e) =>
+            loadImageFile(e.target.files[0], slot),
+          );
+
+          drop.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            drop.classList.add("dragover");
+          });
+          drop.addEventListener("dragleave", () =>
+            drop.classList.remove("dragover"),
+          );
+          drop.addEventListener("drop", (e) => {
+            e.preventDefault();
+            drop.classList.remove("dragover");
+            if (e.dataTransfer.files.length > 0)
+              loadImageFile(e.dataTransfer.files[0], slot);
+          });
+
+          clearBtn.addEventListener("click", () => {
+            clearSlot(slot);
+            showToast(`已清空 ${slot}`);
+          });
+        });
+
+        /* --- 全部清空 --- */
+        clearAll.addEventListener("click", () => {
+          clearSlot("A");
+          clearSlot("B");
+          showToast("已全部清空");
+        });
+
+        /* --- 对比模式切换 --- */
+        modeButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            currentMode = btn.dataset.mode;
+            modeButtons.forEach((b) => b.classList.toggle("active", b === btn));
+            opacityControl.style.display =
+              currentMode === "overlay" ? "flex" : "none";
+            if (compared) renderStage();
+          });
+        });
+
+        /* --- 透明度滑块控制（叠加模式） --- */
+        opacitySlider.addEventListener("input", () => {
+          const val = opacitySlider.value;
+          opacityValueEl.textContent = val + "%";
+          if (currentMode === "overlay") {
+            const ob = document.getElementById("overlayImgB");
+            const lbl = document.querySelector("#overlayStage .label-b");
+            if (ob) ob.style.opacity = val / 100;
+            if (lbl) lbl.textContent = `B · ${val}%`;
+          }
+        });
+
+        /* --- 渲染对比舞台（根据当前模式生成 HTML） --- */
+        function renderStage() {
+          if (currentMode === "slide") {
+            resultBody.innerHTML = `
+        <div class="compare-stage" id="compareStage">
+          <img src="${imgAData.dataURL}" class="stage-img" id="stageImgA">
+          <img src="${imgBData.dataURL}" class="stage-img" id="stageImgB" style="clip-path:inset(0 0 0 50%)">
+          <div class="slide-divider" id="slideDivider" style="left:50%"></div>
+          <div class="slide-handle" id="slideHandle" style="left:50%">⇔</div>
+          <span class="stage-label label-a">A</span>
+          <span class="stage-label label-b">B</span>
+        </div>`;
+          } else if (currentMode === "side") {
+            resultBody.innerHTML = `
+        <div class="side-by-side">
+          <div class="side-half">
+            <img src="${imgAData.dataURL}">
+            <span class="stage-label label-a">A</span>
+          </div>
+          <div class="side-half">
+            <img src="${imgBData.dataURL}">
+            <span class="stage-label label-b">B</span>
+          </div>
+        </div>`;
+          } else {
+            const val = opacitySlider.value;
+            resultBody.innerHTML = `
+        <div class="overlay-stage" id="overlayStage">
+          <img src="${imgAData.dataURL}" class="stage-img">
+          <img src="${imgBData.dataURL}" class="stage-img" id="overlayImgB" style="opacity:${val / 100}">
+          <span class="stage-label label-a">A</span>
+          <span class="stage-label label-b">B · ${val}%</span>
+        </div>`;
+          }
+        }
+
+        /* --- 滑动对比拖拽控制（事件委托，适配重新渲染） --- */
+        function updateSlidePercent(clientX) {
+          const stage = document.getElementById("compareStage");
+          if (!stage) return;
+          const rect = stage.getBoundingClientRect();
+          let pct = ((clientX - rect.left) / rect.width) * 100;
+          pct = Math.max(0, Math.min(100, pct));
+          const divider = document.getElementById("slideDivider");
+          const handle = document.getElementById("slideHandle");
+          const imgB = document.getElementById("stageImgB");
+          if (divider) divider.style.left = pct + "%";
+          if (handle) handle.style.left = pct + "%";
+          if (imgB) imgB.style.clipPath = `inset(0 0 0 ${pct}%)`;
+        }
+
+        resultBody.addEventListener("pointerdown", (e) => {
+          if (currentMode !== "slide") return;
+          if (!document.getElementById("compareStage")) return;
+          draggingSlide = true;
+          updateSlidePercent(e.clientX);
+        });
+        document.addEventListener("pointermove", (e) => {
+          if (!draggingSlide) return;
+          updateSlidePercent(e.clientX);
+        });
+        document.addEventListener("pointerup", () => {
+          draggingSlide = false;
+        });
+        document.addEventListener("pointercancel", () => {
+          draggingSlide = false;
+        });
+
+        /* --- 更新比对状态栏（显示分辨率信息及是否一致） --- */
+        function updateStatus() {
+          const sameRes =
+            imgAData.width === imgBData.width &&
+            imgAData.height === imgBData.height;
+          resultStatus.className = "result-status done";
+          resultStatus.innerHTML =
+            `✅ 对比生成成功　` +
+            `<span class="stat-pill info">A ${imgAData.width}×${imgAData.height}</span>` +
+            `<span class="stat-pill info">B ${imgBData.width}×${imgBData.height}</span>` +
+            (sameRes
+              ? `<span class="stat-pill same">分辨率一致</span>`
+              : `<span class="stat-pill warn">分辨率不同</span>`);
+        }
+
+        /* --- 核心：执行比对 --- */
+        function runCompare() {
+          if (!imgAData || !imgBData) {
+            showToast("请先导入 A、B 两张图片");
+            return;
+          }
+          compared = true;
+          renderStage();
+          updateStatus();
+          showToast("对比生成成功");
+        }
+
+        /* --- 绑定"一键精准比对"按钮 --- */
+        compareBtn.addEventListener("click", runCompare);
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

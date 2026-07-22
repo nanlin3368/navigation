@@ -1,0 +1,1727 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>色彩选择器</title>
+    <link rel="apple-touch-icon" href="/assets/picture/nav.webp" />
+    <link rel="icon" href="/assets/picture/nav.webp" type="image/webp" />
+    <style>
+      /* --- 全局变量 & 设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --yellow: #ff9f0a;
+        --green: #34c759;
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用容器（移动端默认纵向） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        min-height: auto;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-settings {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-results {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px 20px 22px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+      }
+      .panel-settings,
+      .panel-results {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .results-card {
+        display: flex;
+        flex-direction: column;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* --- 棋盘格背景（用于透明预览） --- */
+      .checker {
+        background-image:
+          linear-gradient(45deg, #d9d9dc 25%, transparent 25%),
+          linear-gradient(-45deg, #d9d9dc 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #d9d9dc 75%),
+          linear-gradient(-45deg, transparent 75%, #d9d9dc 75%);
+        background-size: 14px 14px;
+        background-position:
+          0 0,
+          0 7px,
+          7px -7px,
+          -7px 0px;
+        background-color: #fff;
+      }
+
+      /* --- 当前颜色预览块 --- */
+      .preview-wrap {
+        position: relative;
+        height: 140px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        cursor: pointer;
+        transition: transform 0.08s ease;
+      }
+      .preview-wrap:active {
+        transform: scale(0.985);
+      }
+      .preview-fill {
+        position: absolute;
+        inset: 0;
+        transition: background-color 0.15s ease;
+      }
+      .preview-copy-hint {
+        position: absolute;
+        right: 14px;
+        bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        color: inherit;
+        padding: 5px 10px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        opacity: 0.85;
+      }
+      .preview-copy-hint svg {
+        width: 13px;
+        height: 13px;
+      }
+      .preview-tag {
+        position: absolute;
+        left: 14px;
+        bottom: 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 5px 12px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        letter-spacing: 0.02em;
+      }
+
+      /* --- 颜色输入行（色板、hex输入、屏幕取色） --- */
+      .color-input-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .swatch-trigger {
+        flex: 0 0 auto;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .swatch-trigger .fill {
+        position: absolute;
+        inset: 0;
+      }
+      .swatch-trigger input[type="color"] {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .hex-input {
+        flex: 1;
+        min-width: 0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 11px 14px;
+        background: var(--bg);
+        letter-spacing: 0.03em;
+      }
+      .hex-input:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: -1px;
+      }
+      .eyedrop-btn {
+        flex: 0 0 auto;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        color: var(--accent);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .eyedrop-btn svg {
+        width: 19px;
+        height: 19px;
+      }
+      .eyedrop-btn:active {
+        background: rgba(0, 113, 227, 0.1);
+      }
+
+      /* --- 滑块（H/S/L/A） --- */
+      .slider-block {
+        margin-bottom: 18px;
+      }
+      .slider-block:last-child {
+        margin-bottom: 0;
+      }
+      .slider-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+      .slider-head .val {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent);
+      }
+      .track-wrap {
+        position: relative;
+        height: 22px;
+        display: flex;
+        align-items: center;
+      }
+      .track-bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 8px;
+        transform: translateY(-50%);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .track-bg.hue-bg {
+        background: linear-gradient(
+          to right,
+          #ff0000,
+          #ffff00,
+          #00ff00,
+          #00ffff,
+          #0000ff,
+          #ff00ff,
+          #ff0000
+        );
+      }
+      .track-wrap input[type="range"] {
+        position: relative;
+        z-index: 1;
+        -webkit-appearance: none;
+        width: 100%;
+        height: 22px;
+        background: transparent;
+        outline: none;
+        margin: 0;
+      }
+      .track-wrap input[type="range"]::-webkit-slider-runnable-track {
+        height: 8px;
+        background: transparent;
+      }
+      .track-wrap input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow:
+          0 1px 4px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        margin-top: -8px;
+      }
+      .track-wrap input[type="range"]::-moz-range-track {
+        height: 8px;
+        background: transparent;
+      }
+      .track-wrap input[type="range"]::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #fff;
+        border: none;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+
+      /* --- 预设色板网格 --- */
+      .preset-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+      }
+      .preset-swatch {
+        aspect-ratio: 1/1;
+        border-radius: 11px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        position: relative;
+        padding: 0;
+      }
+      .preset-swatch.active::after {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        border-radius: 14px;
+        border: 2px solid var(--accent);
+      }
+
+      /* --- 图片上传取色区域 --- */
+      .dropzone {
+        border: 1.5px dashed var(--line);
+        border-radius: 14px;
+        padding: 26px 16px;
+        text-align: center;
+        cursor: pointer;
+        color: var(--sub);
+        font-size: 13px;
+        transition:
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+      .dropzone:active {
+        background: var(--bg);
+      }
+      .dropzone.drag {
+        border-color: var(--accent);
+        background: rgba(0, 113, 227, 0.05);
+      }
+      .dropzone svg {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 8px;
+        color: var(--sub);
+      }
+
+      .image-stage {
+        display: none;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--bg);
+      }
+      .image-stage.show {
+        display: block;
+      }
+      .image-stage canvas {
+        display: block;
+        width: 100%;
+        max-height: 660px;
+        height: auto;
+        cursor: crosshair;
+      }
+      .image-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px 6px;
+      }
+      .image-hint {
+        font-size: 12px;
+        color: var(--sub);
+      }
+      .image-clear {
+        background: none;
+        border: none;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 2px 0;
+      }
+
+      /* --- 通用按钮 --- */
+      .btn-row {
+        display: flex;
+        gap: 10px;
+      }
+      .btn {
+        flex: 1;
+        border: none;
+        border-radius: 14px;
+        padding: 14px 16px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          opacity 0.15s ease;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--red);
+        border: 1px solid var(--line);
+      }
+
+      /* --- 复制全部按钮 --- */
+      .copy-all {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--accent);
+        background: #fff;
+        border: 1.5px solid var(--accent);
+        border-radius: 999px;
+        cursor: pointer;
+        padding: 8px 18px;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.08s ease;
+      }
+      .copy-all:active {
+        transform: scale(0.96);
+      }
+      .copy-all.copied {
+        background: var(--green);
+        border-color: var(--green);
+        color: #fff;
+      }
+
+      /* --- 格式列表（HEX/RGB/HSL等） --- */
+      .format-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .format-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 13px 14px;
+      }
+      .format-item .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        flex: 0 0 auto;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .format-item .meta {
+        flex: 1;
+        min-width: 0;
+      }
+      .format-item .fmt-label {
+        font-size: 11px;
+        color: var(--sub);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .format-item .fmt-value {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 15px;
+        margin-top: 2px;
+        word-break: break-all;
+      }
+      .copy-btn {
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        border: none;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+      }
+      .copy-btn.copied {
+        color: var(--green);
+      }
+      .copy-btn svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* --- 最近使用颜色 --- */
+      .recent-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .recent-swatch {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        cursor: pointer;
+        padding: 0;
+      }
+      .recent-empty {
+        font-size: 13px;
+        color: var(--sub);
+      }
+      .clear-recent {
+        background: none;
+        border: none;
+        color: var(--sub);
+        font-size: 13px;
+        cursor: pointer;
+        padding: 0;
+      }
+      .clear-recent:active {
+        color: var(--red);
+      }
+
+      /* --- 滚动条 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* --- 桌面端布局（≥860px） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: flex-start;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          flex: 0 0 450px;
+        }
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Toast 提示容器 -->
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <!-- 顶部标题 -->
+    <div class="topbar">
+      <h1>🎨 色彩选择器</h1>
+      <p>本地处理 · 不会上传或存储</p>
+    </div>
+
+    <!-- 主应用 -->
+    <div class="app">
+      <!-- 左侧设置面板 -->
+      <div class="panel-settings">
+        <!-- 当前颜色预览 & 输入 -->
+        <div class="card">
+          <p class="section-title">当前颜色</p>
+          <div
+            class="preview-wrap checker"
+            id="previewWrap"
+            title="点击复制颜色值"
+          >
+            <div class="preview-fill" id="previewFill"></div>
+            <span class="preview-tag" id="previewTag">#0071E3</span>
+            <span class="preview-copy-hint" id="previewCopyHint">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+              点击复制
+            </span>
+          </div>
+          <div class="color-input-row">
+            <button
+              class="swatch-trigger checker"
+              id="swatchTrigger"
+              type="button"
+              aria-label="系统取色器"
+            >
+              <span class="fill" id="swatchFill"></span>
+              <input type="color" id="nativeColor" value="#0071e3" />
+            </button>
+            <input
+              type="text"
+              class="hex-input"
+              id="hexInput"
+              maxlength="9"
+              spellcheck="false"
+              value="#0071E3"
+            />
+            <button
+              class="eyedrop-btn"
+              id="eyedropBtn"
+              type="button"
+              aria-label="屏幕取色"
+              style="display: none"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m2 22 1-4 9.5-9.5" />
+                <path d="M16.5 4.5a2.12 2.12 0 0 1 3 3L17 10l-3-3Z" />
+                <path d="m3 21 3-3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- HSL 滑块 -->
+        <div class="card">
+          <p class="section-title">色相 / 饱和度 / 明度</p>
+
+          <div class="slider-block">
+            <div class="slider-head">
+              <span>色相 Hue</span><span class="val" id="hueVal">210°</span>
+            </div>
+            <div class="track-wrap">
+              <div class="track-bg hue-bg"></div>
+              <input
+                type="range"
+                id="hueSlider"
+                min="0"
+                max="360"
+                value="210"
+              />
+            </div>
+          </div>
+
+          <div class="slider-block">
+            <div class="slider-head">
+              <span>饱和度 Saturation</span
+              ><span class="val" id="satVal">100%</span>
+            </div>
+            <div class="track-wrap">
+              <div class="track-bg" id="satBg"></div>
+              <input
+                type="range"
+                id="satSlider"
+                min="0"
+                max="100"
+                value="100"
+              />
+            </div>
+          </div>
+
+          <div class="slider-block">
+            <div class="slider-head">
+              <span>明度 Lightness</span
+              ><span class="val" id="lightVal">45%</span>
+            </div>
+            <div class="track-wrap">
+              <div class="track-bg" id="lightBg"></div>
+              <input
+                type="range"
+                id="lightSlider"
+                min="0"
+                max="100"
+                value="45"
+              />
+            </div>
+          </div>
+
+          <div class="slider-block">
+            <div class="slider-head">
+              <span>透明度 Alpha</span
+              ><span class="val" id="alphaVal">100%</span>
+            </div>
+            <div class="track-wrap">
+              <div class="track-bg checker" style="padding: 0">
+                <div id="alphaBg" style="position: absolute; inset: 0"></div>
+              </div>
+              <input
+                type="range"
+                id="alphaSlider"
+                min="0"
+                max="100"
+                value="100"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 预设颜色 -->
+        <div class="card">
+          <p class="section-title">预设颜色</p>
+          <div class="preset-grid" id="presetGrid"></div>
+        </div>
+
+        <!-- 图片取色 -->
+        <div class="card" id="imageCard">
+          <p class="section-title">上传图片取色</p>
+          <div class="dropzone" id="dropzone">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="3" />
+              <circle cx="8.5" cy="9.5" r="1.5" />
+              <path d="M21 15l-5-5L5 21" />
+            </svg>
+            <div>点击或拖拽上传图片</div>
+          </div>
+          <input type="file" id="imageInput" accept="image/*" hidden />
+          <div class="image-stage" id="imageStage">
+            <canvas id="imageCanvas"></canvas>
+            <div class="image-actions">
+              <span class="image-hint">点击图片任意位置取色</span>
+              <button class="image-clear" id="imageClear" type="button">
+                更换图片
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 重置 / 随机 -->
+        <div class="btn-row">
+          <button class="btn btn-secondary" id="resetBtn">重置</button>
+          <button class="btn btn-primary" id="randomBtn">随机颜色</button>
+        </div>
+      </div>
+
+      <!-- 右侧结果面板 -->
+      <div class="panel-results">
+        <!-- 格式列表 + 复制全部 -->
+        <div class="card results-card">
+          <div
+            class="results-header"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 12px;
+            "
+          >
+            <p class="section-title" style="margin: 0">格式转换</p>
+            <button class="copy-all" id="copyAllBtn">复制全部</button>
+          </div>
+          <div class="format-list" id="formatList"></div>
+        </div>
+
+        <!-- 最近使用 -->
+        <div class="card">
+          <p class="section-title">
+            最近使用
+            <button class="clear-recent" id="clearRecentBtn">清空</button>
+          </p>
+          <div class="recent-grid" id="recentGrid">
+            <span class="recent-empty" id="recentEmpty"
+              >暂无记录，选择颜色后会显示在这里</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        /* --- DOM 元素引用 --- */
+        const hueSlider = document.getElementById("hueSlider");
+        const satSlider = document.getElementById("satSlider");
+        const lightSlider = document.getElementById("lightSlider");
+        const alphaSlider = document.getElementById("alphaSlider");
+        const hueVal = document.getElementById("hueVal");
+        const satVal = document.getElementById("satVal");
+        const lightVal = document.getElementById("lightVal");
+        const alphaVal = document.getElementById("alphaVal");
+        const satBg = document.getElementById("satBg");
+        const lightBg = document.getElementById("lightBg");
+        const alphaBg = document.getElementById("alphaBg");
+
+        const previewFill = document.getElementById("previewFill");
+        const previewTag = document.getElementById("previewTag");
+        const previewWrap = document.getElementById("previewWrap");
+        const previewCopyHint = document.getElementById("previewCopyHint");
+        const swatchFill = document.getElementById("swatchFill");
+        const nativeColor = document.getElementById("nativeColor");
+        const hexInput = document.getElementById("hexInput");
+        const eyedropBtn = document.getElementById("eyedropBtn");
+
+        const presetGrid = document.getElementById("presetGrid");
+        const dropzone = document.getElementById("dropzone");
+        const imageInput = document.getElementById("imageInput");
+        const imageStage = document.getElementById("imageStage");
+        const imageCanvas = document.getElementById("imageCanvas");
+        const imageClear = document.getElementById("imageClear");
+
+        const resetBtn = document.getElementById("resetBtn");
+        const randomBtn = document.getElementById("randomBtn");
+        const formatList = document.getElementById("formatList");
+        const copyAllBtn = document.getElementById("copyAllBtn");
+        const recentGrid = document.getElementById("recentGrid");
+        const recentEmpty = document.getElementById("recentEmpty");
+        const clearRecentBtn = document.getElementById("clearRecentBtn");
+        const toast = document.getElementById("toast");
+
+        /* --- 初始状态常量 --- */
+        const DEFAULT_STATE = { h: 210, s: 100, l: 45, a: 100 };
+        let state = { ...DEFAULT_STATE };
+        let recent = [];
+
+        /* --- 颜色转换工具函数 --- */
+        function hslToRgb(h, s, l) {
+          s /= 100;
+          l /= 100;
+          const c = (1 - Math.abs(2 * l - 1)) * s;
+          const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+          const m = l - c / 2;
+          let r = 0,
+            g = 0,
+            b = 0;
+          if (h < 60) {
+            r = c;
+            g = x;
+            b = 0;
+          } else if (h < 120) {
+            r = x;
+            g = c;
+            b = 0;
+          } else if (h < 180) {
+            r = 0;
+            g = c;
+            b = x;
+          } else if (h < 240) {
+            r = 0;
+            g = x;
+            b = c;
+          } else if (h < 300) {
+            r = x;
+            g = 0;
+            b = c;
+          } else {
+            r = c;
+            g = 0;
+            b = x;
+          }
+          return {
+            r: Math.round((r + m) * 255),
+            g: Math.round((g + m) * 255),
+            b: Math.round((b + m) * 255),
+          };
+        }
+
+        function rgbToHsl(r, g, b) {
+          r /= 255;
+          g /= 255;
+          b /= 255;
+          const max = Math.max(r, g, b),
+            min = Math.min(r, g, b);
+          let h = 0,
+            s = 0;
+          const l = (max + min) / 2;
+          const d = max - min;
+          if (d !== 0) {
+            s = d / (1 - Math.abs(2 * l - 1));
+            switch (max) {
+              case r:
+                h = 60 * (((g - b) / d) % 6);
+                break;
+              case g:
+                h = 60 * ((b - r) / d + 2);
+                break;
+              case b:
+                h = 60 * ((r - g) / d + 4);
+                break;
+            }
+          }
+          if (h < 0) h += 360;
+          return {
+            h: Math.round(h),
+            s: Math.round(s * 100),
+            l: Math.round(l * 100),
+          };
+        }
+
+        function toHex2(n) {
+          return n.toString(16).padStart(2, "0").toUpperCase();
+        }
+
+        function rgbToHex(r, g, b, a) {
+          let hex = "#" + toHex2(r) + toHex2(g) + toHex2(b);
+          if (a !== undefined && a < 1) {
+            hex += toHex2(Math.round(a * 255));
+          }
+          return hex;
+        }
+
+        function parseColorInput(str) {
+          if (!str) return null;
+          str = str.trim();
+          if (str[0] !== "#") str = "#" + str;
+          if (/^#[0-9a-f]{3}$/i.test(str)) {
+            const r = parseInt(str[1] + str[1], 16),
+              g = parseInt(str[2] + str[2], 16),
+              b = parseInt(str[3] + str[3], 16);
+            return { r, g, b, a: 1 };
+          }
+          if (/^#[0-9a-f]{4}$/i.test(str)) {
+            const r = parseInt(str[1] + str[1], 16),
+              g = parseInt(str[2] + str[2], 16),
+              b = parseInt(str[3] + str[3], 16),
+              a = parseInt(str[4] + str[4], 16) / 255;
+            return { r, g, b, a };
+          }
+          if (/^#[0-9a-f]{6}$/i.test(str)) {
+            const r = parseInt(str.slice(1, 3), 16),
+              g = parseInt(str.slice(3, 5), 16),
+              b = parseInt(str.slice(5, 7), 16);
+            return { r, g, b, a: 1 };
+          }
+          if (/^#[0-9a-f]{8}$/i.test(str)) {
+            const r = parseInt(str.slice(1, 3), 16),
+              g = parseInt(str.slice(3, 5), 16),
+              b = parseInt(str.slice(5, 7), 16),
+              a = parseInt(str.slice(7, 9), 16) / 255;
+            return { r, g, b, a };
+          }
+          return null;
+        }
+
+        function luminance(r, g, b) {
+          return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+        }
+
+        function currentRgb() {
+          return hslToRgb(state.h, state.s, state.l);
+        }
+
+        /* --- 剪贴板辅助 --- */
+        function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return Promise.resolve();
+        }
+
+        /* --- 图标生成（复制/对勾） --- */
+        function svgCopyIcon() {
+          return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+        }
+        function svgCheckIcon() {
+          return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        }
+
+        /* --- Toast 轻提示 --- */
+        let toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg || "已复制到剪贴板";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1600);
+        }
+
+        /* --- 格式列表构建（HEX, RGB, HSL 等） --- */
+        let formatItems = {};
+        let lastFormatTexts = [];
+
+        function buildFormatList() {
+          const defs = ["HEX", "HEX8", "RGB", "RGBA", "HSL", "HSLA"];
+          formatList.innerHTML = "";
+          formatItems = {};
+          defs.forEach((key) => {
+            const item = document.createElement("div");
+            item.className = "format-item";
+            item.innerHTML = `
+        <span class="dot"></span>
+        <div class="meta">
+          <div class="fmt-label">${key}</div>
+          <div class="fmt-value"></div>
+        </div>
+        <button class="copy-btn" type="button" aria-label="复制">${svgCopyIcon()}</button>
+      `;
+            const dot = item.querySelector(".dot");
+            const valueEl = item.querySelector(".fmt-value");
+            const btn = item.querySelector(".copy-btn");
+            btn.addEventListener("click", () => {
+              const text = valueEl.textContent;
+              copyText(text).then(() => {
+                showToast("已复制到剪贴板");
+                btn.classList.add("copied");
+                btn.innerHTML = svgCheckIcon();
+                setTimeout(() => {
+                  btn.classList.remove("copied");
+                  btn.innerHTML = svgCopyIcon();
+                }, 1200);
+              });
+            });
+            formatList.appendChild(item);
+            formatItems[key] = { dot, valueEl };
+          });
+        }
+
+        /* --- 核心渲染函数：应用当前 state 到所有 UI 元素 --- */
+        function applyColor(skipInputs) {
+          const { r, g, b } = currentRgb();
+          const a = state.a / 100;
+          const rgbaCss = `rgba(${r},${g},${b},${a})`;
+          const hex6 = rgbToHex(r, g, b);
+          const hex8 = rgbToHex(r, g, b, a);
+
+          previewFill.style.background = rgbaCss;
+          previewTag.textContent = a < 1 ? hex8 : hex6;
+          previewTag.style.color =
+            luminance(r, g, b) > 0.6 ? "#1d1d1f" : "#ffffff";
+          previewTag.style.background =
+            luminance(r, g, b) > 0.6
+              ? "rgba(255,255,255,0.65)"
+              : "rgba(0,0,0,0.4)";
+          previewCopyHint.style.color = previewTag.style.color;
+          previewCopyHint.style.background = previewTag.style.background;
+
+          swatchFill.style.background = rgbaCss;
+          nativeColor.value = hex6;
+
+          if (!skipInputs) {
+            hexInput.value = a < 1 ? hex8 : hex6;
+          }
+
+          satBg.style.background = `linear-gradient(to right, hsl(${state.h},0%,50%), hsl(${state.h},100%,50%))`;
+          lightBg.style.background = `linear-gradient(to right, #000, hsl(${state.h},100%,50%), #fff)`;
+          alphaBg.style.background = `linear-gradient(to right, rgba(${r},${g},${b},0), rgba(${r},${g},${b},1))`;
+
+          hueVal.textContent = Math.round(state.h) + "°";
+          satVal.textContent = Math.round(state.s) + "%";
+          lightVal.textContent = Math.round(state.l) + "%";
+          alphaVal.textContent = Math.round(state.a) + "%";
+
+          hueSlider.value = state.h;
+          satSlider.value = state.s;
+          lightSlider.value = state.l;
+          alphaSlider.value = state.a;
+
+          const hsl = `hsl(${state.h}, ${Math.round(state.s)}%, ${Math.round(state.l)}%)`;
+          const hsla = `hsla(${state.h}, ${Math.round(state.s)}%, ${Math.round(state.l)}%, ${a.toFixed(2)})`;
+          const rgb = `rgb(${r}, ${g}, ${b})`;
+          const rgba = `rgba(${r}, ${g}, ${b}, ${a.toFixed(2)})`;
+
+          const values = {
+            HEX: hex6,
+            HEX8: hex8,
+            RGB: rgb,
+            RGBA: rgba,
+            HSL: hsl,
+            HSLA: hsla,
+          };
+          lastFormatTexts = [];
+          Object.keys(values).forEach((key) => {
+            const el = formatItems[key];
+            if (!el) return;
+            el.valueEl.textContent = values[key];
+            el.dot.style.background = rgbaCss;
+            lastFormatTexts.push(`${key}: ${values[key]}`);
+          });
+        }
+
+        /* --- 从 RGB 设置颜色（并更新 HSL 状态） --- */
+        function setFromRgb(r, g, b, a) {
+          const hsl = rgbToHsl(r, g, b);
+          state = {
+            h: hsl.h,
+            s: hsl.s,
+            l: hsl.l,
+            a: a !== undefined ? Math.round(a * 100) : state.a,
+          };
+          applyColor();
+        }
+
+        /* --- 预设颜色列表及渲染 --- */
+        const PRESET_COLORS = [
+          "#FF3B30",
+          "#FF9500",
+          "#FFCC00",
+          "#34C759",
+          "#00C7BE",
+          "#30B0C7",
+          "#0071E3",
+          "#5856D6",
+          "#AF52DE",
+          "#FF2D55",
+          "#A2845E",
+          "#8E8E93",
+          "#1D1D1F",
+          "#48484A",
+          "#86868B",
+          "#F5F5F7",
+          "#FFFFFF",
+          "#000000",
+          "#FF6B6B",
+          "#4ECDC4",
+          "#FFE66D",
+          "#1A535C",
+          "#7FB069",
+          "#FFD23F",
+        ];
+        function buildPresets() {
+          presetGrid.innerHTML = "";
+          PRESET_COLORS.forEach((hex) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "preset-swatch";
+            btn.style.background = hex;
+            btn.dataset.hex = hex.toUpperCase();
+            btn.addEventListener("click", () => {
+              const c = parseColorInput(hex);
+              setFromRgb(c.r, c.g, c.b, 1);
+              markActivePreset(btn.dataset.hex);
+              addRecent();
+            });
+            presetGrid.appendChild(btn);
+          });
+        }
+        function markActivePreset(hex) {
+          presetGrid.querySelectorAll(".preset-swatch").forEach((el) => {
+            el.classList.toggle("active", el.dataset.hex === hex.toUpperCase());
+          });
+        }
+
+        /* --- 最近颜色管理 --- */
+        function addRecent() {
+          const { r, g, b } = currentRgb();
+          const hex = rgbToHex(
+            r,
+            g,
+            b,
+            state.a / 100 < 1 ? state.a / 100 : undefined,
+          );
+          if (recent[0] === hex) return;
+          recent = [hex, ...recent.filter((c) => c !== hex)].slice(0, 18);
+          renderRecent();
+        }
+        function renderRecent() {
+          recentGrid.innerHTML = "";
+          if (!recent.length) {
+            recentGrid.appendChild(recentEmpty);
+            return;
+          }
+          recent.forEach((hex) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "recent-swatch checker";
+            const inner = document.createElement("span");
+            inner.style.cssText =
+              "display:block;width:100%;height:100%;border-radius:9px;background:" +
+              hex;
+            btn.appendChild(inner);
+            btn.addEventListener("click", () => {
+              const c = parseColorInput(hex);
+              setFromRgb(c.r, c.g, c.b, c.a);
+              markActivePreset(hex.slice(0, 7));
+            });
+            recentGrid.appendChild(btn);
+          });
+        }
+        clearRecentBtn.addEventListener("click", () => {
+          recent = [];
+          renderRecent();
+        });
+
+        /* --- 滑块事件绑定 --- */
+        function onSliderInput() {
+          state.h = parseFloat(hueSlider.value);
+          state.s = parseFloat(satSlider.value);
+          state.l = parseFloat(lightSlider.value);
+          state.a = parseFloat(alphaSlider.value);
+          applyColor();
+        }
+        [hueSlider, satSlider, lightSlider, alphaSlider].forEach((el) => {
+          el.addEventListener("input", onSliderInput);
+          el.addEventListener("change", addRecent);
+        });
+
+        /* --- Hex 输入框变更 --- */
+        hexInput.addEventListener("change", () => {
+          const c = parseColorInput(hexInput.value);
+          if (!c) {
+            applyColor();
+            showToast("颜色格式无法识别");
+            return;
+          }
+          setFromRgb(c.r, c.g, c.b, c.a);
+          addRecent();
+        });
+
+        /* --- 系统原生取色器 --- */
+        nativeColor.addEventListener("input", () => {
+          const c = parseColorInput(nativeColor.value);
+          if (c) setFromRgb(c.r, c.g, c.b, 1);
+        });
+        nativeColor.addEventListener("change", addRecent);
+
+        /* --- 屏幕取色器（EyeDropper API） --- */
+        if ("EyeDropper" in window) {
+          eyedropBtn.style.display = "flex";
+          eyedropBtn.addEventListener("click", async () => {
+            try {
+              const ed = new window.EyeDropper();
+              const result = await ed.open();
+              const c = parseColorInput(result.sRGBHex);
+              if (c) {
+                setFromRgb(c.r, c.g, c.b, 1);
+                addRecent();
+              }
+            } catch (e) {}
+          });
+        }
+
+        /* --- 图片上传取色 --- */
+        const ctx = imageCanvas.getContext("2d", { willReadFrequently: true });
+
+        function loadImageFile(file) {
+          if (!file || !file.type.startsWith("image/")) return;
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+              const maxW = 600;
+              const scale = Math.min(1, maxW / img.naturalWidth);
+              imageCanvas.width = Math.round(img.naturalWidth * scale);
+              imageCanvas.height = Math.round(img.naturalHeight * scale);
+              ctx.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
+              ctx.drawImage(img, 0, 0, imageCanvas.width, imageCanvas.height);
+              dropzone.style.display = "none";
+              imageStage.classList.add("show");
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+
+        dropzone.addEventListener("click", () => imageInput.click());
+        imageInput.addEventListener("change", () => {
+          if (imageInput.files[0]) loadImageFile(imageInput.files[0]);
+        });
+        ["dragover", "dragenter"].forEach((evt) => {
+          dropzone.addEventListener(evt, (e) => {
+            e.preventDefault();
+            dropzone.classList.add("drag");
+          });
+        });
+        ["dragleave", "drop"].forEach((evt) => {
+          dropzone.addEventListener(evt, (e) => {
+            e.preventDefault();
+            dropzone.classList.remove("drag");
+          });
+        });
+        dropzone.addEventListener("drop", (e) => {
+          const file = e.dataTransfer.files && e.dataTransfer.files[0];
+          if (file) loadImageFile(file);
+        });
+
+        imageCanvas.addEventListener("click", (e) => {
+          const rect = imageCanvas.getBoundingClientRect();
+          const scaleX = imageCanvas.width / rect.width;
+          const scaleY = imageCanvas.height / rect.height;
+          const x = Math.floor((e.clientX - rect.left) * scaleX);
+          const y = Math.floor((e.clientY - rect.top) * scaleY);
+          if (
+            x < 0 ||
+            x >= imageCanvas.width ||
+            y < 0 ||
+            y >= imageCanvas.height
+          ) {
+            showToast("请点击图片有效区域");
+            return;
+          }
+          try {
+            const data = ctx.getImageData(x, y, 1, 1).data;
+            if (data[3] === 0) {
+              showToast("点击到了透明区域");
+              return;
+            }
+            setFromRgb(data[0], data[1], data[2], data[3] / 255);
+            addRecent();
+            showToast("已拾取颜色");
+          } catch (err) {
+            showToast("取色失败，请重试");
+          }
+        });
+
+        imageClear.addEventListener("click", () => {
+          imageInput.value = "";
+          imageStage.classList.remove("show");
+          dropzone.style.display = "";
+        });
+
+        /* --- 重置与随机 --- */
+        resetBtn.addEventListener("click", () => {
+          state = { ...DEFAULT_STATE };
+          applyColor();
+          imageInput.value = "";
+          imageStage.classList.remove("show");
+          dropzone.style.display = "";
+          markActivePreset("");
+        });
+
+        randomBtn.addEventListener("click", () => {
+          state = {
+            h: Math.floor(Math.random() * 360),
+            s: 55 + Math.floor(Math.random() * 45),
+            l: 35 + Math.floor(Math.random() * 30),
+            a: 100,
+          };
+          applyColor();
+          addRecent();
+          markActivePreset("");
+        });
+
+        /* --- 复制全部 --- */
+        copyAllBtn.addEventListener("click", () => {
+          if (!lastFormatTexts.length) return;
+          copyText(lastFormatTexts.join("\n")).then(() => {
+            showToast("已复制到剪贴板");
+            const old = copyAllBtn.textContent;
+            copyAllBtn.textContent = "已复制";
+            copyAllBtn.classList.add("copied");
+            setTimeout(() => {
+              copyAllBtn.textContent = old;
+              copyAllBtn.classList.remove("copied");
+            }, 1200);
+          });
+        });
+
+        /* --- 预览块点击复制颜色值 --- */
+        previewWrap.addEventListener("click", () => {
+          const text = previewTag.textContent;
+          copyText(text).then(() => {
+            showToast("已复制 " + text);
+          });
+        });
+
+        /* --- 响应式：图片取色卡片在桌面端移至右侧面板 --- */
+        const imageCard = document.getElementById("imageCard");
+        const panelResults = document.querySelector(".panel-results");
+        const imageCardHomeParent = imageCard.parentNode;
+        const imageCardHomeNext = imageCard.nextSibling;
+        const desktopMq = window.matchMedia("(min-width: 860px)");
+        function placeImageCard(mqEvent) {
+          if (mqEvent.matches) {
+            panelResults.appendChild(imageCard);
+          } else {
+            imageCardHomeParent.insertBefore(imageCard, imageCardHomeNext);
+          }
+        }
+        placeImageCard(desktopMq);
+        if (desktopMq.addEventListener) {
+          desktopMq.addEventListener("change", placeImageCard);
+        } else if (desktopMq.addListener) {
+          desktopMq.addListener(placeImageCard);
+        }
+
+        /* --- 初始化 --- */
+        buildFormatList();
+        buildPresets();
+        applyColor();
+        renderRecent();
+        markActivePreset("#0071E3");
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

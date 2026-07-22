@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Git 命令速查</title>
+    <link rel="apple-touch-icon" href="/assets/picture/nav.webp" />
+    <link rel="icon" href="/assets/picture/nav.webp" type="image/webp" />
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --radius: 18px;
+        --radius-sm: 12px;
+        --code-bg: #282c34;
+        --code-fg: #61afef;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用容器 --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-settings {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-results {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 移动端分类标签布局：3列 --- */
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      /* --- Git 命令网格 --- */
+      .cmd-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 12px;
+        padding: 4px 0;
+      }
+
+      /* --- 移动端固定高度，卡片内滚动 --- */
+      .cmd-container-scroll {
+        max-height: 480px;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
+
+      /* --- 数据看板统计行 --- */
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .stat-row .val {
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 16px;
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-settings,
+      .panel-results {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 区块标题 --- */
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 14px;
+      }
+
+      /* --- 分类胶囊按钮 --- */
+      .cat-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 6px;
+        border: 1px solid transparent;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .cat-btn:hover {
+        background: rgba(0, 0, 0, 0.03);
+      }
+      .cat-btn.active {
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* --- Git 命令卡片样式 --- */
+      .cmd-item {
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+        cursor: pointer;
+        transition:
+          transform 0.1s ease,
+          background-color 0.15s;
+        user-select: none;
+        border: 1px solid transparent;
+      }
+      .cmd-item:hover {
+        background: rgba(0, 0, 0, 0.04);
+        transform: scale(1.02);
+      }
+      .cmd-item:active {
+        transform: scale(0.98);
+        background: var(--line);
+      }
+      .cmd-name {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--sub);
+      }
+      .cmd-code {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+        word-break: break-all;
+      }
+
+      /* --- 桌面端左右双栏布局（≥860px） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: flex-start;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          flex: 0 0 280px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        /* 分类卡片：固定高度内部滚动 */
+        .category-card {
+          height: 400px;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        .category-card .category-group {
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
+          overflow-y: auto;
+          gap: 8px;
+          padding-right: 6px;
+        }
+
+        .category-card .cat-btn {
+          flex: 0 0 auto;
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 14px;
+          line-height: 1.4;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .cmd-container-scroll {
+          height: 550px;
+          max-height: none;
+          overflow-y: auto;
+        }
+      }
+
+      /* --- 滚动条 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <div class="topbar">
+      <h1>⚡ Git 命令速查</h1>
+      <p>纯本地开发备忘录 · 点击秒级复制 Git 常用命令</p>
+    </div>
+
+    <div class="app">
+      <div class="panel-settings">
+        <div class="card">
+          <p class="section-title">数据看板</p>
+          <div class="stat-row">
+            <span>已收录命令总数</span>
+            <span class="val" id="totalCountVal">0 条</span>
+          </div>
+        </div>
+
+        <div class="card category-card">
+          <p class="section-title">功能分类</p>
+          <div class="category-group" id="categorySelector"></div>
+        </div>
+      </div>
+
+      <div class="panel-results">
+        <div class="card" style="flex: 1">
+          <p class="section-title" id="gridTitle">全部指令</p>
+          <div class="cmd-container-scroll">
+            <div class="cmd-grid" id="cmdGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        "use strict";
+
+        /* --- 纯本地内置 Git 常用命令数据库（按功能分组） --- */
+        const GIT_DATA = [
+          {
+            name: "配置与初始化",
+            commands: [
+              {
+                name: "设置全局用户名",
+                code: 'git config --global user.name "Your Name"',
+              },
+              {
+                name: "设置全局邮箱",
+                code: 'git config --global user.email "email@example.com"',
+              },
+              { name: "初始化本地仓库", code: "git init" },
+              { name: "克隆远程仓库", code: "git clone <url>" },
+              { name: "查看当前配置", code: "git config --list" },
+              {
+                name: "给命令设置别名",
+                code: "git config --global alias.co checkout",
+              },
+            ],
+          },
+          {
+            name: "变更与提交",
+            commands: [
+              { name: "查看工作区状态", code: "git status" },
+              { name: "追踪指定文件", code: "git add <filename>" },
+              { name: "追踪所有修改", code: "git add ." },
+              { name: "交互式暂存", code: "git add -p" },
+              {
+                name: "提交暂存区变更",
+                code: 'git commit -m "commit message"',
+              },
+              { name: "修改上次提交信息", code: "git commit --amend" },
+              { name: "跳过暂存直接提交", code: 'git commit -am "message"' },
+            ],
+          },
+          {
+            name: "分支与合并",
+            commands: [
+              { name: "查看本地分支", code: "git branch" },
+              { name: "查看所有远程与本地分支", code: "git branch -a" },
+              { name: "创建新分支", code: "git branch <branch-name>" },
+              { name: "切换分支", code: "git checkout <branch-name>" },
+              { name: "创建并切换分支", code: "git checkout -b <branch-name>" },
+              { name: "合并指定分支", code: "git merge <branch-name>" },
+              { name: "删除本地分支", code: "git branch -d <branch-name>" },
+              {
+                name: "强制删除未合并分支",
+                code: "git branch -D <branch-name>",
+              },
+            ],
+          },
+          {
+            name: "变基与拣选",
+            commands: [
+              { name: "变基到目标分支", code: "git rebase <branch-name>" },
+              {
+                name: "交互式变基(合并/修改近N次提交)",
+                code: "git rebase -i HEAD~n",
+              },
+              { name: "解决冲突后继续变基", code: "git rebase --continue" },
+              { name: "放弃当前变基", code: "git rebase --abort" },
+              {
+                name: "遴选/拣选单个 commit",
+                code: "git cherry-pick <commit-id>",
+              },
+            ],
+          },
+          {
+            name: "远程协作与同步",
+            commands: [
+              { name: "查看关联远程库", code: "git remote -v" },
+              { name: "关联远程仓库", code: "git remote add origin <url>" },
+              { name: "拉取最新代码并合并", code: "git pull" },
+              { name: "推送代码到远程", code: "git push -u origin main" },
+              {
+                name: "强推到远程（谨慎）",
+                code: "git push --force-with-lease",
+              },
+              {
+                name: "删除远程分支",
+                code: "git push origin --delete <branch>",
+              },
+              { name: "抓取远程更新但不合并", code: "git fetch" },
+            ],
+          },
+          {
+            name: "撤销与回滚",
+            commands: [
+              {
+                name: "丢弃工作区指定文件修改",
+                code: "git checkout -- <filename>",
+              },
+              { name: "取消指定文件暂存", code: "git reset HEAD <filename>" },
+              {
+                name: "软回滚（保留改动到暂存区）",
+                code: "git reset --soft HEAD~1",
+              },
+              {
+                name: "硬回滚（彻底丢弃所有修改）",
+                code: "git reset --hard HEAD~1",
+              },
+              { name: "反转/撤销某次 Commit", code: "git revert <commit-id>" },
+            ],
+          },
+          {
+            name: "暂存与清理",
+            commands: [
+              { name: "暂存当前未提交修改", code: "git stash" },
+              { name: "暂存并附带描述", code: 'git stash save "message"' },
+              { name: "查看暂存列表", code: "git stash list" },
+              { name: "恢复最近暂存内容并删除", code: "git stash pop" },
+              { name: "应用指定暂存", code: "git stash apply stash@{0}" },
+              { name: "预览将被清理的未追踪文件", code: "git clean -nd" },
+              { name: "强制清理未追踪文件与目录", code: "git clean -fd" },
+            ],
+          },
+          {
+            name: "日志、救急与诊断",
+            commands: [
+              { name: "查看提交历史", code: "git log" },
+              {
+                name: "单行图形化日志",
+                code: "git log --oneline --graph --all",
+              },
+              { name: "查看所有操作记录(救急用)", code: "git reflog" },
+              { name: "查看未暂存差异", code: "git diff" },
+              { name: "查看暂存区差异", code: "git diff --staged" },
+              { name: "逐行排查文件修改者", code: "git blame <filename>" },
+            ],
+          },
+          {
+            name: "标签与子模块",
+            commands: [
+              { name: "列出所有标签", code: "git tag" },
+              {
+                name: "创建附注标签",
+                code: 'git tag -a v1.0.0 -m "release v1.0.0"',
+              },
+              { name: "推送指定标签到远程", code: "git push origin v1.0.0" },
+              { name: "推送所有标签到远程", code: "git push origin --tags" },
+              { name: "添加子模块", code: "git submodule add <url> <path>" },
+              {
+                name: "更新子模块",
+                code: "git submodule update --init --recursive",
+              },
+            ],
+          },
+        ];
+
+        /* --- 状态变量：当前选中的分类索引 --- */
+        let activeIndex = 0;
+
+        /* --- DOM 元素引用 --- */
+        const categorySelector = document.getElementById("categorySelector");
+        const cmdGrid = document.getElementById("cmdGrid");
+        const gridTitle = document.getElementById("gridTitle");
+        const totalCountVal = document.getElementById("totalCountVal");
+        const toast = document.getElementById("toast");
+        let toastTimer = null;
+
+        /* --- Toast 轻提示逻辑 --- */
+        function showToast(msg) {
+          toast.textContent = msg;
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1500);
+        }
+
+        /* --- 复制文本到剪贴板 --- */
+        function copyToClipboard(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return Promise.resolve();
+        }
+
+        /* --- 计算总条目数并更新统计 --- */
+        function calculateTotalNumbers() {
+          const total = GIT_DATA.reduce(
+            (sum, category) => sum + category.commands.length,
+            0,
+          );
+          totalCountVal.textContent = `${total} 条`;
+        }
+
+        /* --- 渲染指定分类下的命令卡片 --- */
+        function renderCommands(index) {
+          const category = GIT_DATA[index];
+          gridTitle.textContent = `${category.name} (${category.commands.length})`;
+
+          cmdGrid.innerHTML = category.commands
+            .map(
+              (item) => `
+      <div class="cmd-item" data-code="${item.code}" title="点击复制命令">
+        <span class="cmd-name">${item.name}</span>
+        <code class="cmd-code">${item.code}</code>
+      </div>
+    `,
+            )
+            .join("");
+
+          // 绑定点击复制事件
+          cmdGrid.querySelectorAll(".cmd-item").forEach((item) => {
+            item.addEventListener("click", () => {
+              const code = item.dataset.code;
+              copyToClipboard(code).then(() => {
+                showToast(`✅ 已复制: ${code}`);
+              });
+            });
+          });
+        }
+
+        /* --- 渲染分类按钮 --- */
+        function renderCategories() {
+          categorySelector.innerHTML = GIT_DATA.map(
+            (cat, idx) => `
+      <button class="cat-btn${idx === activeIndex ? " active" : ""}" data-index="${idx}">${cat.name}</button>
+    `,
+          ).join("");
+
+          categorySelector.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const idx = parseInt(btn.dataset.index, 10);
+              activeIndex = idx;
+
+              categorySelector
+                .querySelectorAll(".cat-btn")
+                .forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+
+              renderCommands(activeIndex);
+            });
+          });
+        }
+
+        /* --- 初始化 --- */
+        function init() {
+          calculateTotalNumbers();
+          renderCategories();
+          renderCommands(activeIndex);
+        }
+
+        init();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>
