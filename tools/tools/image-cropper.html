@@ -7,8 +7,15 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
     <title>图片裁切</title>
-    <link rel="apple-touch-icon" href="/assets/picture/nav.webp" />
-    <link rel="icon" href="/assets/picture/nav.webp" type="image/webp" />
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"
@@ -160,11 +167,27 @@
         margin: 0;
         flex: 1;
       }
-      .meta-info {
-        font-size: 12px;
-        color: var(--sub);
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        white-space: nowrap;
+
+      /* --- 状态指示小圆点 --- */
+      .status-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        transition:
+          background-color 0.3s ease,
+          opacity 0.3s ease;
+        background-color: var(--sub);
+        opacity: 0.25;
+      }
+      .status-dot.success {
+        background-color: var(--green);
+        opacity: 1;
+      }
+      .status-dot.error {
+        background-color: var(--red);
+        opacity: 1;
       }
 
       /* --- 操作按钮组 --- */
@@ -242,7 +265,7 @@
       /* --- 图片上传区域 --- */
       .img-drop {
         position: relative;
-        border: 1.5px dashed var(--line);
+        border: 2px dashed var(--line);
         border-radius: var(--radius-sm);
         background: var(--bg);
         min-height: 500px;
@@ -381,14 +404,12 @@
         flex: 1;
         min-height: 480px;
         background: var(--bg);
-        border: 1px solid var(--line);
         border-radius: var(--radius-sm);
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         position: relative;
-        touch-action: none;
       }
       .stage-placeholder {
         width: 100%;
@@ -529,6 +550,8 @@
         <div class="card result-card">
           <div class="section-header">
             <p class="section-title">预览区与互动裁切框</p>
+            <!-- 状态指示小圆点 -->
+            <span class="status-dot" id="statusDot"></span>
           </div>
 
           <div class="crop-stage" id="cropStage">
@@ -614,7 +637,7 @@
         const cropWrapper = document.getElementById("cropWrapper");
         const imageEl = document.getElementById("imageEl");
         const downloadBtn = document.getElementById("downloadBtn");
-        const targetMeta = document.getElementById("targetMeta");
+        const statusDot = document.getElementById("statusDot");
         const toast = document.getElementById("toast");
 
         /* --- 应用核心变量 --- */
@@ -637,6 +660,21 @@
           }, 1600);
         }
 
+        /* --- 状态指示器 --- */
+        function setStatus(state) {
+          statusDot.className = "status-dot";
+          if (state === "success") {
+            statusDot.classList.add("success");
+          } else if (state === "error") {
+            statusDot.classList.add("error");
+          }
+          // idle 状态不需要额外 class，默认就是灰色半透明
+        }
+
+        function resetStatus() {
+          statusDot.className = "status-dot";
+        }
+
         /* --- 字节格式化辅助函数 --- */
         function formatBytes(bytes) {
           if (bytes === 0) return "0 B";
@@ -653,8 +691,7 @@
           }
           downloadBtn.classList.add("btn-disabled");
           downloadBtn.removeAttribute("href");
-          targetMeta.textContent =
-            "拖拽裁切框内部移动 · 外部平移图片 · 滚轮缩放";
+          resetStatus();
         }
 
         /* --- 初始化 Cropper --- */
@@ -842,7 +879,11 @@
 
         // 裁切并导出
         cropBtn.addEventListener("click", () => {
-          if (!cropper) return;
+          if (!cropper) {
+            setStatus("error");
+            showToast("请先载入图片");
+            return;
+          }
 
           const canvas = cropper.getCroppedCanvas({
             imageSmoothingEnabled: true,
@@ -850,12 +891,14 @@
           });
 
           if (!canvas) {
+            setStatus("error");
             showToast("导出失败");
             return;
           }
 
           canvas.toBlob((blob) => {
             if (!blob) {
+              setStatus("error");
               showToast("生成图片失败");
               return;
             }
@@ -870,7 +913,8 @@
             downloadBtn.download = `${rawName}_cropped.png`;
             downloadBtn.classList.remove("btn-disabled");
 
-            targetMeta.textContent = `PNG · ${formatBytes(blob.size)}`;
+            // 裁切成功 → 绿点
+            setStatus("success");
             showToast("裁切成功！点击保存按钮下载");
           }, "image/png");
         });

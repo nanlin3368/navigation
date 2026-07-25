@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>图片切图分割</title>
+    <title>Icon 生成器</title>
     <link
       rel="apple-touch-icon"
       href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
@@ -307,7 +307,7 @@
         white-space: nowrap;
       }
 
-      /* --- 分割设置控件 --- */
+      /* --- Favicon 参数设置 --- */
       .setting-item {
         display: flex;
         flex-direction: column;
@@ -321,74 +321,155 @@
         display: flex;
         justify-content: space-between;
       }
-      .setting-label span {
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        color: var(--accent);
+
+      /* 优化：适应移动端的自适应规格网格 */
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 8px;
+        width: 100%;
+      }
+      .checkbox-card {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 12.5px;
+        user-select: none;
+        transition:
+          border-color 0.15s,
+          background-color 0.15s;
+        min-width: 0;
+      }
+      .checkbox-card:hover {
+        border-color: var(--accent);
+      }
+      .checkbox-card input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        accent-color: var(--accent);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .checkbox-card .size-desc {
+        font-size: 10px;
+        color: var(--sub);
+        margin-left: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .grid-inputs {
+      /* 分段选择器 */
+      .segmented-control {
+        display: flex;
+        background: var(--bg);
+        padding: 3px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+      }
+      .segmented-option {
+        flex: 1;
+        text-align: center;
+        padding: 6px 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        cursor: pointer;
+        border-radius: calc(var(--radius-sm) - 3px);
+        transition: all 0.2s ease;
+        user-select: none;
+      }
+      .segmented-option.active {
+        background: #ffffff;
+        color: var(--ink);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 导出格式与圆角配置 */
+      .select-group {
         display: flex;
         gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
       }
-      .input-group {
+
+      /* 左侧：分段选择器 */
+      .segmented-control {
+        flex: 1 1 50%;
+        width: 50%;
+        display: flex;
+        background: var(--bg);
+        padding: 3px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        box-sizing: border-box; /* 确保 border 不撑大宽度 */
+      }
+      .segmented-option {
         flex: 1;
+        text-align: center;
+        padding: 6px 2px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        cursor: pointer;
+        border-radius: calc(var(--radius-sm) - 3px);
+        transition: all 0.2s ease;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .segmented-option.active {
+        background: #ffffff;
+        color: var(--ink);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 右侧：圆角率输入框 */
+      .input-group {
+        flex: 1 1 50%;
+        width: 50%;
+        min-width: 0;
         display: flex;
         align-items: center;
         background: var(--bg);
         border: 1px solid var(--line);
         border-radius: var(--radius-sm);
-        padding: 8px 12px;
+        padding: 6px 10px;
+        box-sizing: border-box; /* 确保 border 不撑大宽度 */
       }
       .input-group span {
         font-size: 12px;
         color: var(--sub);
-        margin-right: 8px;
+        margin-right: 6px;
         white-space: nowrap;
+        flex-shrink: 0;
       }
       .input-group input {
         width: 100%;
+        min-width: 0;
         border: none;
         background: transparent;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 600;
         color: var(--ink);
         outline: none;
+        padding: 0;
       }
 
-      .preset-selector {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        background: var(--bg);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 4px;
-      }
-      .preset-btn {
-        border: none;
-        background: transparent;
-        padding: 8px 0;
-        border-radius: 10px;
-        font-size: 12.5px;
-        font-weight: 600;
-        color: var(--sub);
-        cursor: pointer;
-        transition: all 0.15s ease;
-      }
-      .preset-btn.active {
-        background: var(--card);
-        color: var(--accent);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      }
-
-      /* --- 右侧结果展示区及网格分割 --- */
+      /* --- 右侧结果展示区 --- */
       .result-card {
         display: flex;
         flex-direction: column;
       }
       .result-body {
         flex: 1;
-        min-height: 550px;
+        min-height: 480px;
         max-height: 550px;
         background: var(--bg);
         border: 1px solid var(--line);
@@ -408,47 +489,58 @@
         padding: 30px;
       }
 
-      /* --- 网格显示区域 --- */
-      .slices-grid {
+      /* Favicon 列表布局 */
+      .icons-grid {
         display: grid;
-        gap: 8px;
-        max-width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
         width: 100%;
-        margin: 0 auto;
       }
-
-      .slice-item {
-        position: relative;
-        border-radius: 8px;
-        overflow: hidden;
+      .icon-card {
+        background: var(--card);
         border: 2px solid transparent;
-        background: rgba(0, 0, 0, 0.03);
+        border-radius: var(--radius-sm);
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
         transition: all 0.2s ease;
-        aspect-ratio: 1 / 1;
-        min-width: 0;
+        position: relative;
       }
-
-      .slice-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+      .icon-card:hover {
+        transform: translateY(-2px);
       }
-      .slice-item.selected {
+      .icon-card.selected {
         border-color: var(--accent);
         box-shadow: 0 0 0 3px var(--blue-bg);
       }
-      .slice-badge {
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        background: rgba(0, 0, 0, 0.6);
-        color: #fff;
-        font-size: 11px;
-        padding: 2px 6px;
-        border-radius: 4px;
-        backdrop-filter: blur(4px);
+      .icon-box {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: repeating-conic-gradient(#e5e5e7 0% 25%, transparent 0% 50%)
+          50% / 12px 12px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .icon-box img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .icon-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .icon-tag {
+        font-size: 10px;
+        color: var(--sub);
         font-family: ui-monospace, SFMono-Regular, monospace;
       }
 
@@ -483,8 +575,8 @@
     <div class="toast" id="toast">提示信息</div>
 
     <div class="topbar">
-      <h1>✂️ 图片切图分割</h1>
-      <p>纯本地切图处理 · 自由网格分割 · 高清无损导出</p>
+      <h1>🖼️ Icon 生成器</h1>
+      <p>纯本地解析生成 · 自动切图裁剪 · 多尺寸规格导出</p>
     </div>
 
     <div class="app">
@@ -497,12 +589,12 @@
           <input
             type="file"
             id="fileInput"
-            accept="image/png, image/jpeg, image/webp, image/bmp"
+            accept="image/png, image/jpeg, image/webp, image/svg+xml"
           />
           <div class="img-drop" id="dropZone">
             <div class="img-placeholder" id="placeholder">
-              <div class="img-placeholder-icon">🖼️</div>
-              <div>点击或拖拽图片到此处上传</div>
+              <div class="img-placeholder-icon">🎨</div>
+              <div>点击或拖拽 Logo / 图片到此处</div>
             </div>
             <img class="img-preview" id="sourcePreview" style="display: none" />
           </div>
@@ -527,45 +619,75 @@
 
         <div class="card">
           <div class="section-header">
-            <p class="section-title">图片分割设置</p>
+            <p class="section-title">Favicon 参数设置</p>
           </div>
 
           <div class="setting-item">
-            <div class="setting-label">快捷预设</div>
-            <div class="preset-selector" id="presetSelector">
-              <button class="preset-btn active" data-rows="3" data-cols="3">
-                3x3 (九宫格)
-              </button>
-              <button class="preset-btn" data-rows="2" data-cols="2">
-                2x2 (四宫格)
-              </button>
-              <button class="preset-btn" data-rows="1" data-cols="3">
-                1x3 (三连图)
-              </button>
+            <div class="setting-label">目标尺寸规格</div>
+            <div class="checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" value="16" checked />
+                <span>16x16</span>
+                <span class="size-desc">网页</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="32" checked />
+                <span>32x32</span>
+                <span class="size-desc">标准</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="48" checked />
+                <span>48x48</span>
+                <span class="size-desc">桌面</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="64" />
+                <span>64x64</span>
+                <span class="size-desc">高清</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="128" />
+                <span>128x128</span>
+                <span class="size-desc">应用</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="180" checked />
+                <span>180x180</span>
+                <span class="size-desc">iOS</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="192" checked />
+                <span>192x192</span>
+                <span class="size-desc">安卓</span>
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" value="512" />
+                <span>512x512</span>
+                <span class="size-desc">PWA</span>
+              </label>
             </div>
           </div>
 
           <div class="setting-item">
-            <div class="setting-label">自定义行列数</div>
-            <div class="grid-inputs">
-              <div class="input-group">
-                <span>行数</span>
-                <input
-                  type="number"
-                  id="rowsInput"
-                  min="1"
-                  max="20"
-                  value="3"
-                />
+            <div class="setting-label">导出格式与圆角</div>
+            <div class="select-group">
+              <div class="segmented-control" id="formatControl">
+                <div class="segmented-option active" data-value="image/png">
+                  PNG
+                </div>
+                <div class="segmented-option" data-value="image/x-icon">
+                  ICO
+                </div>
               </div>
               <div class="input-group">
-                <span>列数</span>
+                <span>圆角率</span>
                 <input
                   type="number"
-                  id="colsInput"
-                  min="1"
-                  max="20"
-                  value="3"
+                  id="radiusInput"
+                  min="0"
+                  max="50"
+                  value="0"
+                  placeholder="%"
                 />
               </div>
             </div>
@@ -573,10 +695,10 @@
 
           <button
             class="btn btn-primary btn-disabled"
-            id="splitBtn"
+            id="generateBtn"
             style="width: 100%; margin-top: 6px"
           >
-            ✂️ 开始分割图片
+            ✨ 生成 Favicon 图标
           </button>
         </div>
       </div>
@@ -584,27 +706,23 @@
       <div class="panel-right">
         <div class="card result-card">
           <div class="section-header">
-            <p class="section-title">分割切片预览 (点击切片可独立选中)</p>
+            <p class="section-title">生成列表预览 (点击可单独选中)</p>
             <span class="meta-info" id="targetMeta">未生成</span>
           </div>
 
           <div class="result-body" id="resultBody">
             <div class="result-placeholder" id="resultPlaceholder">
-              💡 在左侧导入图片并配置参数后点击“开始分割图片”
+              💡 在左侧上传原图并勾选尺寸后，点击“生成 Favicon 图标”
             </div>
-            <div class="slices-grid" id="slicesGrid"></div>
+            <div class="icons-grid" id="iconsGrid" style="display: none"></div>
           </div>
 
           <div class="img-info" id="targetInfo" style="display: none">
             <div class="img-info-row">
-              <span>生成总数</span><span id="totalSlicesCount">-</span>
+              <span>生成总数</span><span id="totalIconsCount">-</span>
             </div>
             <div class="img-info-row">
-              <span>单图尺寸</span><span id="sliceDimension">-</span>
-            </div>
-            <div class="img-info-row">
-              <span>当前选中切片</span
-              ><span id="selectedSliceText">未选择</span>
+              <span>当前选中规格</span><span id="selectedIconText">未选择</span>
             </div>
           </div>
 
@@ -613,10 +731,10 @@
               class="btn btn-secondary btn-disabled"
               id="downloadSelectedBtn"
             >
-              💾 保存选中项
+              💾 保存选中尺寸
             </button>
             <button class="btn btn-primary btn-disabled" id="downloadAllBtn">
-              📦 下载全部
+              📦 下载全部尺寸
             </button>
           </div>
         </div>
@@ -624,7 +742,7 @@
     </div>
 
     <script>
-      // 禁用历史滚动恢复
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
@@ -644,18 +762,16 @@
         const fileDimensions = document.getElementById("fileDimensions");
         const fileSize = document.getElementById("fileSize");
 
-        const presetBtns = document.querySelectorAll(".preset-btn");
-        const rowsInput = document.getElementById("rowsInput");
-        const colsInput = document.getElementById("colsInput");
-        const splitBtn = document.getElementById("splitBtn");
+        const formatControl = document.getElementById("formatControl");
+        const radiusInput = document.getElementById("radiusInput");
+        const generateBtn = document.getElementById("generateBtn");
 
         const resultPlaceholder = document.getElementById("resultPlaceholder");
-        const slicesGrid = document.getElementById("slicesGrid");
+        const iconsGrid = document.getElementById("iconsGrid");
         const targetMeta = document.getElementById("targetMeta");
         const targetInfo = document.getElementById("targetInfo");
-        const totalSlicesCount = document.getElementById("totalSlicesCount");
-        const sliceDimension = document.getElementById("sliceDimension");
-        const selectedSliceText = document.getElementById("selectedSliceText");
+        const totalIconsCount = document.getElementById("totalIconsCount");
+        const selectedIconText = document.getElementById("selectedIconText");
 
         const downloadSelectedBtn = document.getElementById(
           "downloadSelectedBtn",
@@ -666,8 +782,11 @@
         /* --- 状态变量 --- */
         let currentFile = null;
         let imageElement = null;
-        let generatedSlices = []; // 存储 { url, index, name }
-        let selectedIndex = -1;
+        let selectedFormat = "image/png"; // 当前选中的格式
+
+        // 保存生成的图标：Map<size, { url, size, name, format, radius } >
+        let generatedMap = new Map();
+        let selectedSize = -1;
 
         /* --- Toast 提示 --- */
         let toastTimer = null;
@@ -687,6 +806,17 @@
           if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
           return (bytes / 1024 / 1024).toFixed(2) + " MB";
         }
+
+        /* --- 切换格式控制 --- */
+        formatControl.addEventListener("click", (e) => {
+          const option = e.target.closest(".segmented-option");
+          if (!option) return;
+          formatControl
+            .querySelectorAll(".segmented-option")
+            .forEach((opt) => opt.classList.remove("active"));
+          option.classList.add("active");
+          selectedFormat = option.dataset.value;
+        });
 
         /* --- 文件读取与载入 --- */
         function handleFileSelect(file) {
@@ -714,7 +844,7 @@
               fileSize.textContent = formatBytes(file.size);
               sourceMeta.textContent = `${img.naturalWidth}×${img.naturalHeight}`;
 
-              splitBtn.classList.remove("btn-disabled");
+              generateBtn.classList.remove("btn-disabled");
               resetResult();
               showToast("原图加载完成");
             };
@@ -725,14 +855,14 @@
           reader.readAsDataURL(file);
         }
 
-        /* --- 重置结果 --- */
+        /* --- 完全重置结果 --- */
         function resetResult() {
-          generatedSlices.forEach((slice) => URL.revokeObjectURL(slice.url));
-          generatedSlices = [];
+          generatedMap.forEach((icon) => URL.revokeObjectURL(icon.url));
+          generatedMap.clear();
           clearSelection();
 
-          slicesGrid.innerHTML = "";
-          slicesGrid.style.display = "none";
+          iconsGrid.innerHTML = "";
+          iconsGrid.style.display = "none";
           resultPlaceholder.style.display = "block";
 
           targetInfo.style.display = "none";
@@ -743,11 +873,11 @@
 
         /* --- 清除选中状态 --- */
         function clearSelection() {
-          selectedIndex = -1;
+          selectedSize = -1;
           document
-            .querySelectorAll(".slice-item")
+            .querySelectorAll(".icon-card")
             .forEach((item) => item.classList.remove("selected"));
-          selectedSliceText.textContent = "未选择";
+          selectedIconText.textContent = "未选择";
           downloadSelectedBtn.classList.add("btn-disabled");
         }
 
@@ -765,26 +895,10 @@
           sourceInfo.style.display = "none";
           sourceMeta.textContent = "未选择";
 
-          splitBtn.classList.add("btn-disabled");
+          generateBtn.classList.add("btn-disabled");
           resetResult();
           showToast("已清空所有内容");
         }
-
-        /* --- 快捷预设联动 --- */
-        presetBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            presetBtns.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-            rowsInput.value = btn.dataset.rows;
-            colsInput.value = btn.dataset.cols;
-          });
-        });
-
-        [rowsInput, colsInput].forEach((input) => {
-          input.addEventListener("input", () => {
-            presetBtns.forEach((b) => b.classList.remove("active"));
-          });
-        });
 
         /* --- 事件绑定 --- */
         dropZone.addEventListener("click", () => fileInput.click());
@@ -809,148 +923,215 @@
             handleFileSelect(e.dataTransfer.files[0]);
         });
 
-        /* --- 核心：图片切片分割逻辑 --- */
-        splitBtn.addEventListener("click", () => {
-          if (!imageElement || !currentFile) return;
-          let rows = parseInt(rowsInput.value) || 1;
-          let cols = parseInt(colsInput.value) || 1;
-          // 1. 限制范围在 1 ~ 20 之间
-          if (rows < 1) rows = 1;
-          if (rows > 20) rows = 20;
-          if (cols < 1) cols = 1;
-          if (cols > 20) cols = 20;
-          // 同步回输入框显示
-          rowsInput.value = rows;
-          colsInput.value = cols;
+        /* --- 渲染单张生成的图标卡片 --- */
+        function renderCard(iconObj) {
+          const cardEl = document.createElement("div");
+          cardEl.className = "icon-card";
+          cardEl.dataset.size = iconObj.size;
 
-          resetResult();
+          const boxEl = document.createElement("div");
+          boxEl.className = "icon-box";
+          const imgEl = document.createElement("img");
+          imgEl.src = iconObj.url;
+          boxEl.appendChild(imgEl);
 
-          const totalWidth = imageElement.naturalWidth;
-          const totalHeight = imageElement.naturalHeight;
-          const sliceW = Math.floor(totalWidth / cols);
-          const sliceH = Math.floor(totalHeight / rows);
+          const labelEl = document.createElement("div");
+          labelEl.className = "icon-label";
+          labelEl.textContent = `${iconObj.size} × ${iconObj.size}`;
 
-          slicesGrid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-          slicesGrid.style.display = "grid";
+          const tagEl = document.createElement("div");
+          tagEl.className = "icon-tag";
+          tagEl.textContent = iconObj.ext.toUpperCase();
 
-          const rawName =
-            currentFile.name.substring(0, currentFile.name.lastIndexOf(".")) ||
-            "slice";
-          let count = 0;
-          const total = rows * cols;
+          cardEl.appendChild(boxEl);
+          cardEl.appendChild(labelEl);
+          cardEl.appendChild(tagEl);
 
-          // 核心修复1：提前按顺序创建 DOM 占位容器，保障严格按 1 ~ N 的顺序排列
-          const sliceNodes = [];
-          for (let i = 0; i < total; i++) {
-            const index = i + 1;
-            const sliceEl = document.createElement("div");
-            sliceEl.className = "slice-item";
-            sliceEl.dataset.index = index;
+          // 点击选中卡片
+          cardEl.addEventListener("click", () => {
+            if (selectedSize === iconObj.size) {
+              clearSelection();
+            } else {
+              document
+                .querySelectorAll(".icon-card")
+                .forEach((item) => item.classList.remove("selected"));
+              cardEl.classList.add("selected");
+              selectedSize = iconObj.size;
+              downloadSelectedBtn.classList.remove("btn-disabled");
+              selectedIconText.textContent = `${iconObj.size} × ${iconObj.size} (${iconObj.ext.toUpperCase()})`;
+            }
+          });
 
-            const badge = document.createElement("div");
-            badge.className = "slice-badge";
-            badge.textContent = `#${index}`;
+          return cardEl;
+        }
 
-            sliceEl.appendChild(badge);
+        /* --- 重新绘制与更新网格 DOM --- */
+        function updateIconsDisplay() {
+          iconsGrid.innerHTML = "";
 
-            // 核心修复2：点击支持“选中/取消选中”双向切换
-            sliceEl.addEventListener("click", () => {
-              if (selectedIndex === index) {
-                // 如果已选中，再次点击则取消选中
-                clearSelection();
-              } else {
-                // 选中新切片
-                document
-                  .querySelectorAll(".slice-item")
-                  .forEach((item) => item.classList.remove("selected"));
-                sliceEl.classList.add("selected");
-                selectedIndex = index;
-                downloadSelectedBtn.classList.remove("btn-disabled");
-                selectedSliceText.textContent = `第 ${index} 张切片`;
-              }
-            });
-
-            slicesGrid.appendChild(sliceEl);
-            sliceNodes.push(sliceEl);
+          if (generatedMap.size === 0) {
+            resetResult();
+            return;
           }
 
-          for (let r = 0; r < rows; r++) {
-            for (let c = 0; c < cols; c++) {
-              const canvas = document.createElement("canvas");
-              canvas.width = sliceW;
-              canvas.height = sliceH;
-              const ctx = canvas.getContext("2d");
+          // 将 Map 按照尺寸从小到大排序
+          const sortedList = Array.from(generatedMap.values()).sort(
+            (a, b) => a.size - b.size,
+          );
 
-              ctx.drawImage(
-                imageElement,
-                c * sliceW,
-                r * sliceH,
-                sliceW,
-                sliceH,
-                0,
-                0,
-                sliceW,
-                sliceH,
-              );
+          sortedList.forEach((iconObj) => {
+            const card = renderCard(iconObj);
+            if (iconObj.size === selectedSize) {
+              card.classList.add("selected");
+            }
+            iconsGrid.appendChild(card);
+          });
 
-              const index = r * cols + c + 1;
-              const node = sliceNodes[index - 1];
+          iconsGrid.style.display = "grid";
+          resultPlaceholder.style.display = "none";
+          targetInfo.style.display = "flex";
 
-              canvas.toBlob((blob) => {
-                const url = URL.createObjectURL(blob);
-                generatedSlices.push({
-                  url: url,
-                  index: index,
-                  name: `${rawName}_part${index}.png`,
-                });
+          totalIconsCount.textContent = `${sortedList.length} 个图标`;
+          targetMeta.textContent = `已生成 ${sortedList.length} 个规格`;
+          downloadAllBtn.classList.remove("btn-disabled");
+        }
 
-                const imgEl = document.createElement("img");
-                imgEl.src = url;
-                node.appendChild(imgEl);
+        /* --- 生成与增量更新逻辑 --- */
+        generateBtn.addEventListener("click", () => {
+          if (!imageElement || !currentFile) return;
 
-                count++;
-                if (count === total) {
-                  generatedSlices.sort((a, b) => a.index - b.index);
-                  resultPlaceholder.style.display = "none";
-                  targetInfo.style.display = "flex";
+          const checkedBoxes = Array.from(
+            document.querySelectorAll(
+              '.checkbox-grid input[type="checkbox"]:checked',
+            ),
+          );
+          if (checkedBoxes.length === 0) {
+            showToast("请至少勾选一种尺寸！");
+            return;
+          }
 
-                  totalSlicesCount.textContent = `${total} 张 (${rows}行 × ${cols}列)`;
-                  sliceDimension.textContent = `${sliceW} × ${sliceH} px`;
-                  targetMeta.textContent = `共 ${total} 个切片`;
+          const targetSizes = checkedBoxes.map((cb) => parseInt(cb.value));
+          let radiusPercent = parseInt(radiusInput.value) || 0;
+          if (radiusPercent < 0) radiusPercent = 0;
+          if (radiusPercent > 50) radiusPercent = 50;
+          radiusInput.value = radiusPercent;
 
-                  downloadAllBtn.classList.remove("btn-disabled");
-                  showToast("分割完成！");
-                }
-              }, "image/png");
+          const ext = selectedFormat === "image/x-icon" ? "ico" : "png";
+
+          // 1. 移除取消勾选的尺寸
+          for (const [size, iconObj] of generatedMap.entries()) {
+            if (!targetSizes.includes(size)) {
+              URL.revokeObjectURL(iconObj.url);
+              generatedMap.delete(size);
             }
           }
-        });
 
-        /* --- 左侧按键：下载选中切片 --- */
-        downloadSelectedBtn.addEventListener("click", () => {
-          if (selectedIndex === -1) return;
-          const slice = generatedSlices.find((s) => s.index === selectedIndex);
-          if (slice) {
-            const a = document.createElement("a");
-            a.href = slice.url;
-            a.download = slice.name;
-            a.click();
-            showToast(`正在保存第 ${slice.index} 张切片`);
+          // 2. 筛选出需要新生成的尺寸（当前不在 Map 中 或 格式/圆角发生了变化）
+          const sizesToGenerate = targetSizes.filter((size) => {
+            if (!generatedMap.has(size)) return true;
+            const existing = generatedMap.get(size);
+            return (
+              existing.format !== selectedFormat ||
+              existing.radius !== radiusPercent
+            );
+          });
+
+          if (sizesToGenerate.length === 0) {
+            updateIconsDisplay();
+            showToast("所选尺寸已是最新生成状态");
+            return;
           }
+
+          let completed = 0;
+          sizesToGenerate.forEach((size) => {
+            const canvas = document.createElement("canvas");
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext("2d");
+
+            const nw = imageElement.naturalWidth;
+            const nh = imageElement.naturalHeight;
+            let sw, sh, sx, sy;
+
+            if (nw > nh) {
+              sh = nh;
+              sw = nh;
+              sx = (nw - nh) / 2;
+              sy = 0;
+            } else {
+              sw = nw;
+              sh = nw;
+              sx = 0;
+              sy = (nh - nw) / 2;
+            }
+
+            if (radiusPercent > 0) {
+              const r = (size * radiusPercent) / 100;
+              ctx.beginPath();
+              ctx.moveTo(r, 0);
+              ctx.arcTo(size, 0, size, size, r);
+              ctx.arcTo(size, size, 0, size, r);
+              ctx.arcTo(0, size, 0, 0, r);
+              ctx.arcTo(0, 0, size, 0, r);
+              ctx.closePath();
+              ctx.clip();
+            }
+
+            ctx.drawImage(imageElement, sx, sy, sw, sh, 0, 0, size, size);
+
+            canvas.toBlob((blob) => {
+              // 如果已有旧版本，释放旧内存
+              if (generatedMap.has(size)) {
+                URL.revokeObjectURL(generatedMap.get(size).url);
+              }
+
+              const url = URL.createObjectURL(blob);
+              const iconName = `favicon-${size}x${size}.${ext}`;
+
+              generatedMap.set(size, {
+                url: url,
+                size: size,
+                name: iconName,
+                format: selectedFormat,
+                ext: ext,
+                radius: radiusPercent,
+              });
+
+              completed++;
+              if (completed === sizesToGenerate.length) {
+                updateIconsDisplay();
+                showToast("图标生成/增量更新完成！");
+              }
+            }, selectedFormat);
+          });
         });
 
-        /* --- 右侧按键：下载全部切片 --- */
-        downloadAllBtn.addEventListener("click", () => {
-          if (generatedSlices.length === 0) return;
-          showToast("开始依次下载所有切片...");
+        /* --- 下载单个选中尺寸 --- */
+        downloadSelectedBtn.addEventListener("click", () => {
+          if (selectedSize === -1 || !generatedMap.has(selectedSize)) return;
+          const icon = generatedMap.get(selectedSize);
+          const a = document.createElement("a");
+          a.href = icon.url;
+          a.download = icon.name;
+          a.click();
+          showToast(`正在保存 ${icon.size}x${icon.size} 图标`);
+        });
 
-          generatedSlices.forEach((slice, idx) => {
+        /* --- 下载全部尺寸 --- */
+        downloadAllBtn.addEventListener("click", () => {
+          if (generatedMap.size === 0) return;
+          showToast("开始依次下载所有尺寸...");
+
+          const sortedList = Array.from(generatedMap.values()).sort(
+            (a, b) => a.size - b.size,
+          );
+          sortedList.forEach((icon, idx) => {
             setTimeout(() => {
               const a = document.createElement("a");
-              a.href = slice.url;
-              a.download = slice.name;
+              a.href = icon.url;
+              a.download = icon.name;
               a.click();
-            }, idx * 200); // 间隔防被浏览器拦截
+            }, idx * 200);
           });
         });
       })();

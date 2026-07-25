@@ -7,8 +7,15 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
     <title>Base64 转图片</title>
-    <link rel="apple-touch-icon" href="/assets/picture/nav.webp" />
-    <link rel="icon" href="/assets/picture/nav.webp" type="image/webp" />
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
     <style>
       /* --- 全局变量与设计令牌 --- */
       :root {
@@ -443,7 +450,7 @@
 
         /* --- 重置预览区到空状态 --- */
         function resetOutputUI() {
-          imageOutput.src = "";
+          imageOutput.removeAttribute("src");
           imageOutput.style.display = "none";
           placeholderText.style.display = "block";
           outputMeta.textContent = "暂无图片";
@@ -514,10 +521,11 @@
         /* --- 事件绑定：下载图片（自动识别格式后缀） --- */
         downloadBtn.addEventListener("click", () => {
           const src = imageOutput.src;
-          if (!src) {
+          if (!src || !src.startsWith("data:image/")) {
             showToast("没有可下载的有效图片");
             return;
           }
+
           let ext = "png";
           const match = src.match(/^data:image\/([a-zA-Z+]+);base64,/);
           if (match && match[1]) ext = match[1].replace("+xml", "xml");

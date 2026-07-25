@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>图片转 Base64</title>
+    <title>字数统计</title>
     <link
       rel="apple-touch-icon"
       href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
@@ -54,7 +54,7 @@
         flex-direction: column;
       }
 
-      /* --- 顶部导航栏入场动画 --- */
+      /* --- 顶部导航栏 --- */
       .topbar {
         padding: env(safe-area-inset-top, 0) 0 0 0;
         text-align: center;
@@ -75,18 +75,6 @@
         color: var(--sub);
       }
 
-      /* --- 主应用容器（移动端默认纵向排列） --- */
-      .app {
-        flex: 1 1 auto;
-        width: 100%;
-        max-width: 1800px;
-        margin: 0 auto;
-        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-
       /* --- 弹性入场动画 --- */
       @keyframes fadeUp {
         from {
@@ -99,7 +87,18 @@
         }
       }
 
-      /* 给左右面板加交错入场效果 */
+      /* --- 应用主容器 --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
       .panel-left {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
       }
@@ -107,7 +106,7 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 桌面端响应式布局（左右等宽双栏） --- */
+      /* --- 桌面端双栏响应式 --- */
       @media (min-width: 860px) {
         .app {
           flex-direction: row;
@@ -116,10 +115,11 @@
         }
         .panel-left,
         .panel-right {
-          flex: 1 1 50%; /* 左右各占一半 */
+          flex: 1 1 50%;
           min-width: 0;
           display: flex;
           flex-direction: column;
+          gap: 14px;
         }
       }
 
@@ -135,14 +135,7 @@
         display: flex;
         flex-direction: column;
       }
-      .panel-left,
-      .panel-right {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
 
-      /* --- 区块标题与元信息 --- */
       .section-header {
         display: flex;
         align-items: center;
@@ -158,89 +151,116 @@
         margin: 0;
         flex: 1;
       }
-      .meta-info {
+
+      /* --- 输入框控制 --- */
+      .text-area-wrapper {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        display: flex;
+      }
+      .text-input {
+        width: 100%;
+        height: 100%;
+        min-height: 550px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        background: var(--bg);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.6;
+        font-family: inherit;
+        resize: none;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s;
+      }
+      .text-input:focus {
+        border-color: var(--accent);
+        background: #ffffff;
+      }
+
+      /* --- 数据高亮看板（顶部概览） --- */
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: rgba(0, 113, 227, 0.05);
+        border: 1px solid rgba(0, 113, 227, 0.12);
+        border-radius: var(--radius-sm);
+        padding: 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .stat-label {
         font-size: 12px;
         color: var(--sub);
+        font-weight: 500;
+      }
+      .stat-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--accent);
         font-family: ui-monospace, SFMono-Regular, monospace;
       }
 
-      /* --- 图片拖拽与预览容器（含棋盘格背景） --- */
-      .drop-container {
-        width: 100%;
-        flex: 1;
-        min-height: 550px;
-        max-height: 550px;
-        background: var(--bg);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
+      /* --- 信息列表容器 --- */
+      .info-container {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: auto;
-        position: relative;
-        cursor: pointer;
-        transition: border-color 0.2s;
-        /* 棋盘透明底背景，辅助预览透明 PNG */
-        background-image:
-          linear-gradient(45deg, rgba(0, 0, 0, 0.03) 25%, transparent 25%),
-          linear-gradient(-45deg, rgba(0, 0, 0, 0.03) 25%, transparent 25%),
-          linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.03) 75%),
-          linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.03) 75%);
-        background-size: 16px 16px;
-        background-position:
-          0 0,
-          0 8px,
-          8px -8px,
-          -8px 0px;
-      }
-      .drop-container:hover {
-        border-color: var(--accent);
-      }
-      .drop-container img {
-        max-width: 95%;
-        max-height: 95%;
-        object-fit: contain;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border-radius: 4px;
-        display: none;
-      }
-      .drop-placeholder {
-        color: var(--sub);
-        font-size: 14px;
-        opacity: 0.6;
-        position: absolute;
-        text-align: center;
-        padding: 20px;
-        pointer-events: none;
-        line-height: 1.6;
-      }
-
-      /* --- Base64 输出文本框 --- */
-      textarea {
-        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+        overflow-y: auto;
         flex: 1;
-        min-height: 550px;
+        min-height: 460px;
+        max-height: 460px;
+        padding-right: 4px;
+      }
+      .info-card {
         background: var(--bg);
-        border: 1px solid var(--line);
         border-radius: var(--radius-sm);
-        padding: 14px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px;
-        line-height: 1.5;
+        padding: 16px;
+        border: 1px solid var(--line);
+      }
+      .info-card-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 12px 0;
         color: var(--ink);
-        resize: none;
-        outline: none;
-        transition: border-color 0.2s;
       }
-      textarea:focus {
-        border-color: var(--accent);
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
-      textarea::placeholder {
+      .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+        padding-bottom: 6px;
+      }
+      .info-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .info-label {
         color: var(--sub);
-        opacity: 0.6;
+      }
+      .info-value {
+        font-weight: 500;
+        color: var(--ink);
+        text-align: right;
+        font-family: ui-monospace, SFMono-Regular, monospace;
       }
 
-      /* --- 操作按钮组 --- */
+      /* --- 按钮操作栏 --- */
       .btn-row {
         display: flex;
         gap: 10px;
@@ -249,10 +269,10 @@
       }
       .btn {
         flex: 1;
-        min-width: 100px;
+        min-width: 90px;
         border: none;
         border-radius: 14px;
-        padding: 13px 16px;
+        padding: 13px 12px;
         font-size: 15px;
         font-weight: 600;
         cursor: pointer;
@@ -288,7 +308,6 @@
         border: 1px solid var(--line);
       }
 
-      /* --- 隐藏的文件输入 --- */
       #fileInput {
         display: none;
       }
@@ -334,30 +353,35 @@
     <div class="toast" id="toast">已复制到剪贴板</div>
 
     <div class="topbar">
-      <h1>🖼️ 图片转 Base64</h1>
-      <p>本地安全编码 · 纯前端处理不消耗流量</p>
+      <h1>📝 字数统计</h1>
+      <p>本地实时计算 · 支持中英混合与多维度分析</p>
     </div>
 
     <div class="app">
       <div class="panel-left">
         <div class="card">
           <div class="section-header">
-            <p class="section-title">选择或拖拽图片</p>
-            <span class="meta-info" id="inputMeta">暂无图片</span>
+            <p class="section-title">文本输入框</p>
           </div>
 
-          <div class="drop-container" id="dropZone">
-            <div class="drop-placeholder" id="placeholderText">
-              点击此区域选择图片<br />或直接将图片拖拽到这里...
-            </div>
-            <img id="imagePreview" alt="图片预览" />
+          <div class="text-area-wrapper">
+            <textarea
+              class="text-input"
+              id="textInput"
+              placeholder="请在此输入或粘贴文本内容，或通过下方“导入文件”直接载入文本文件..."
+            ></textarea>
           </div>
+
+          <input
+            type="file"
+            id="fileInput"
+            accept=".txt,.md,.json,.csv,.html,.xml,.js,.css,.py,.java,.c,.cpp"
+          />
 
           <div class="btn-row">
-            <input type="file" id="fileInput" accept="image/*" />
-            <button class="btn btn-secondary" id="importBtn">选择图片</button>
-            <button class="btn btn-danger" id="clearBtn">清空</button>
-            <button class="btn btn-primary" id="convertBtn">一键转换</button>
+            <button class="btn btn-secondary" id="importBtn">导入文件</button>
+            <button class="btn btn-primary" id="copyBtn">复制文本</button>
+            <button class="btn btn-danger" id="clearBtn">清空内容</button>
           </div>
         </div>
       </div>
@@ -365,53 +389,127 @@
       <div class="panel-right">
         <div class="card">
           <div class="section-header">
-            <p class="section-title">Base64 输出结果</p>
-            <span class="meta-info" id="outputMeta">0 字符</span>
+            <p class="section-title">统计分析结果</p>
           </div>
-          <textarea
-            id="base64Output"
-            placeholder="转换后的 Base64 字符串将显示在这里..."
-            readonly
-            spellcheck="false"
-          ></textarea>
+
+          <div class="overview-grid">
+            <div class="stat-box">
+              <span class="stat-label">总字符数 (含空格)</span>
+              <span class="stat-value" id="totalChars">0</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">总字数 (中汉字+英文单词)</span>
+              <span class="stat-value" id="totalWords">0</span>
+            </div>
+          </div>
+
+          <div class="info-container">
+            <div class="info-card">
+              <div class="info-card-title">字符细节</div>
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="info-label">总字符数 (不含空格)</span>
+                  <span class="info-value" id="charsNoSpace">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">中文字符 (汉字)</span>
+                  <span class="info-value" id="cnChars">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">英文字母数</span>
+                  <span class="info-value" id="enLetters">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">数字个数</span>
+                  <span class="info-value" id="digitsCount">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-title">结构与标点</div>
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="info-label">英文单词数</span>
+                  <span class="info-value" id="enWords">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">中文标点符号</span>
+                  <span class="info-value" id="cnPunct">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">英文标点符号</span>
+                  <span class="info-value" id="enPunct">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">自然段落数</span>
+                  <span class="info-value" id="paragraphs">0</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">行数 (换行符)</span>
+                  <span class="info-value" id="lines">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-title">阅读预估</div>
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="info-label">预计阅读时间</span>
+                  <span class="info-value" id="readTime">0 分钟</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">预计朗读时间</span>
+                  <span class="info-value" id="speakTime">0 分钟</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="btn-row">
-            <button class="btn btn-secondary" id="downloadBtn">下载文本</button>
-            <button class="btn btn-primary" id="copyBtn">复制结果</button>
+            <button class="btn btn-primary" id="copyResultBtn">
+              复制统计数据
+            </button>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      // 禁用历史滚动恢复
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
 
       (function () {
-        /* --- DOM 元素引用 --- */
-        const dropZone = document.getElementById("dropZone");
-        const imagePreview = document.getElementById("imagePreview");
-        const placeholderText = document.getElementById("placeholderText");
-        const inputMeta = document.getElementById("inputMeta");
-        const base64Output = document.getElementById("base64Output");
-        const outputMeta = document.getElementById("outputMeta");
-
+        const textInput = document.getElementById("textInput");
         const fileInput = document.getElementById("fileInput");
         const importBtn = document.getElementById("importBtn");
         const clearBtn = document.getElementById("clearBtn");
-        const convertBtn = document.getElementById("convertBtn");
-
-        const downloadBtn = document.getElementById("downloadBtn");
         const copyBtn = document.getElementById("copyBtn");
+        const copyResultBtn = document.getElementById("copyResultBtn");
         const toast = document.getElementById("toast");
 
-        /* --- 状态变量 --- */
-        let currentFile = null; // 当前选中的文件对象
-        let toastTimer = null;
+        // DOM 元素绑定
+        const doms = {
+          totalChars: document.getElementById("totalChars"),
+          totalWords: document.getElementById("totalWords"),
+          charsNoSpace: document.getElementById("charsNoSpace"),
+          cnChars: document.getElementById("cnChars"),
+          enLetters: document.getElementById("enLetters"),
+          digitsCount: document.getElementById("digitsCount"),
+          enWords: document.getElementById("enWords"),
+          cnPunct: document.getElementById("cnPunct"),
+          enPunct: document.getElementById("enPunct"),
+          paragraphs: document.getElementById("paragraphs"),
+          lines: document.getElementById("lines"),
+          readTime: document.getElementById("readTime"),
+          speakTime: document.getElementById("speakTime"),
+        };
 
-        /* --- Toast 轻提示逻辑 --- */
+        /* --- Toast 轻提示 --- */
+        let toastTimer = null;
         function showToast(msg) {
           toast.textContent = msg || "操作成功";
           toast.classList.add("show");
@@ -421,131 +519,175 @@
           }, 1600);
         }
 
-        /* --- 实时更新输出区的字符计数 --- */
-        function updateOutputMeta() {
-          const len = base64Output.value.length;
-          outputMeta.textContent = `${len} 字符`;
+        /* --- 核心字数统计算法 --- */
+        function analyzeText(text) {
+          if (!text) {
+            return {
+              totalChars: 0,
+              charsNoSpace: 0,
+              cnChars: 0,
+              enLetters: 0,
+              digitsCount: 0,
+              enWords: 0,
+              cnPunct: 0,
+              enPunct: 0,
+              paragraphs: 0,
+              lines: 0,
+              totalWords: 0,
+              readTime: "0 分钟",
+              speakTime: "0 分钟",
+            };
+          }
+
+          const totalChars = text.length;
+          const charsNoSpace = text.replace(/\s/g, "").length;
+
+          // 匹配中文字符（CJK统一表意文字）
+          const cnMatches = text.match(/[\u4e00-\u9fa5]/g) || [];
+          const cnChars = cnMatches.length;
+
+          // 匹配英文字母
+          const enLetters = (text.match(/[a-zA-Z]/g) || []).length;
+
+          // 匹配数字
+          const digitsCount = (text.match(/[0-9]/g) || []).length;
+
+          // 匹配英文单词
+          const enWordsMatches = text.match(/[a-zA-Z0-9]+('[a-zA-Z]+)?/g) || [];
+          const enWords = enWordsMatches.length;
+
+          // 中文标点
+          const cnPunct = (
+            text.match(
+              /[\u3001\u3002\uff0c\uff1a\uff1b\uff1f\uff01\u201c\u201d\u2018\u2019\u3030\u300a\u300b\u300e\u300f\u3010\u3011\u2026\u2014\uff08\uff09]/g,
+            ) || []
+          ).length;
+
+          // 英文标点
+          const enPunct = (
+            text.match(/[!\"#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]/g) || []
+          ).length;
+
+          // 计算总字数：汉字数 + 英文单词数
+          const totalWords = cnChars + enWords;
+
+          // 计算段落数（排除全空白段）
+          const paragraphs = text
+            .split(/\n+/)
+            .filter((p) => p.trim().length > 0).length;
+
+          // 行数
+          const lines = text ? text.split("\n").length : 0;
+
+          // 阅读与朗读预估
+          const readMinutes = Math.max(1, Math.ceil(totalWords / 400));
+          const speakMinutes = Math.max(1, Math.ceil(totalWords / 250));
+
+          return {
+            totalChars,
+            charsNoSpace,
+            cnChars,
+            enLetters,
+            digitsCount,
+            enWords,
+            cnPunct,
+            enPunct,
+            paragraphs,
+            lines,
+            totalWords,
+            readTime: totalWords === 0 ? "0 分钟" : `约 ${readMinutes} 分钟`,
+            speakTime: totalWords === 0 ? "0 分钟" : `约 ${speakMinutes} 分钟`,
+          };
         }
 
-        /* --- 处理图片文件：读取并预览，同时记录文件信息 --- */
-        function handleImageFile(file) {
-          if (!file || !file.type.startsWith("image/")) {
-            showToast("请选择有效的图片文件！");
-            return;
-          }
-          currentFile = file;
+        // 更新 UI
+        function updateUI() {
+          const val = textInput.value;
+          const res = analyzeText(val);
+
+          doms.totalChars.textContent = res.totalChars.toLocaleString();
+          doms.totalWords.textContent = res.totalWords.toLocaleString();
+          doms.charsNoSpace.textContent = res.charsNoSpace.toLocaleString();
+          doms.cnChars.textContent = res.cnChars.toLocaleString();
+          doms.enLetters.textContent = res.enLetters.toLocaleString();
+          doms.digitsCount.textContent = res.digitsCount.toLocaleString();
+          doms.enWords.textContent = res.enWords.toLocaleString();
+          doms.cnPunct.textContent = res.cnPunct.toLocaleString();
+          doms.enPunct.textContent = res.enPunct.toLocaleString();
+          doms.paragraphs.textContent = res.paragraphs.toLocaleString();
+          doms.lines.textContent = res.lines.toLocaleString();
+          doms.readTime.textContent = res.readTime;
+          doms.speakTime.textContent = res.speakTime;
+        }
+
+        // 事件监听：实时打字分析
+        textInput.addEventListener("input", updateUI);
+
+        // 导入文件逻辑
+        importBtn.addEventListener("click", () => fileInput.click());
+
+        fileInput.addEventListener("change", (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
 
           const reader = new FileReader();
-          reader.onload = function (e) {
-            imagePreview.src = e.target.result;
-            imagePreview.style.display = "block";
-            placeholderText.style.display = "none";
-
-            // 获取图片原始分辨率（通过临时 Image 对象）
-            const img = new Image();
-            img.onload = function () {
-              inputMeta.textContent = `${img.width} × ${img.height} | ${(file.size / 1024).toFixed(1)} KB`;
-            };
-            img.src = e.target.result;
-            showToast("图片加载成功，请点击一键转换");
+          reader.onload = function (event) {
+            textInput.value = event.target.result;
+            updateUI();
+            showToast(`已成功导入：${file.name}`);
+            fileInput.value = ""; // 重置 input 允许再次选择同名文件
           };
-          reader.readAsDataURL(file);
-        }
-
-        /* --- 核心转换：将预览的 DataURL 直接输出到文本框 --- */
-        function processImage() {
-          if (!currentFile || !imagePreview.src) {
-            showToast("请先选择或拖拽一张图片");
-            return;
-          }
-          base64Output.value = imagePreview.src;
-          updateOutputMeta();
-          showToast("转换成功");
-        }
-
-        /* --- 重置图片预览区到初始状态 --- */
-        function resetInputUI() {
-          currentFile = null;
-          imagePreview.src = "";
-          imagePreview.style.display = "none";
-          placeholderText.style.display = "block";
-          inputMeta.textContent = "暂无图片";
-        }
-
-        /* --- 事件绑定：导入按钮与点击区域触发文件选择 --- */
-        importBtn.addEventListener("click", () => fileInput.click());
-        dropZone.addEventListener("click", () => fileInput.click());
-        fileInput.addEventListener("change", (e) =>
-          handleImageFile(e.target.files[0]),
-        );
-
-        /* --- 事件绑定：拖拽图片到 drop 区域 --- */
-        dropZone.addEventListener("dragover", (e) => {
-          e.preventDefault();
-        });
-        dropZone.addEventListener("drop", (e) => {
-          e.preventDefault();
-          if (e.dataTransfer.files.length > 0) {
-            handleImageFile(e.dataTransfer.files[0]);
-          }
+          reader.onerror = function () {
+            showToast("文件读取失败，请确保选择的是可读文本文件");
+          };
+          reader.readAsText(file, "UTF-8");
         });
 
-        /* --- 清空按钮：重置所有状态 --- */
+        // 清空
         clearBtn.addEventListener("click", () => {
-          base64Output.value = "";
-          fileInput.value = "";
-          resetInputUI();
-          updateOutputMeta();
-          showToast("已清空");
+          if (!textInput.value) {
+            showToast("暂无内容可清空");
+            return;
+          }
+          textInput.value = "";
+          updateUI();
+          showToast("已清空内容");
         });
 
-        /* --- 一键转换按钮 --- */
-        convertBtn.addEventListener("click", processImage);
-
-        /* --- 复制结果（兼容低版本浏览器） --- */
-        function copyText(text) {
-          if (navigator.clipboard && window.isSecureContext) {
-            return navigator.clipboard.writeText(text);
-          }
-          const ta = document.createElement("textarea");
-          ta.value = text;
-          ta.style.position = "fixed";
-          ta.style.opacity = "0";
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand("copy");
-          document.body.removeChild(ta);
-          return Promise.resolve();
-        }
-
+        // 复制输入框文本
         copyBtn.addEventListener("click", () => {
-          const outputVal = base64Output.value;
-          if (!outputVal) {
-            showToast("没有可复制的有效结果");
+          if (!textInput.value) {
+            showToast("暂无文本可复制");
             return;
           }
-          copyText(outputVal).then(() => showToast("结果已复制到剪贴板"));
+          navigator.clipboard
+            .writeText(textInput.value)
+            .then(() => showToast("已复制文本"))
+            .catch(() => showToast("复制失败"));
         });
 
-        /* --- 下载 Base64 文本为 .txt 文件 --- */
-        downloadBtn.addEventListener("click", () => {
-          const outputVal = base64Output.value;
-          if (!outputVal) {
-            showToast("没有可下载的有效结果");
+        // 复制分析数据 summary
+        copyResultBtn.addEventListener("click", () => {
+          const val = textInput.value;
+          if (!val) {
+            showToast("暂无统计数据");
             return;
           }
-          const blob = new Blob([outputVal], {
-            type: "text/plain;charset=utf-8;",
-          });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = `base64_text_${Date.now()}.txt`;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          showToast("文本已开始下载");
+          const res = analyzeText(val);
+          const summary = `【文本统计报告】
+- 总字符数 (含空格): ${res.totalChars}
+- 总字数 (中+英词): ${res.totalWords}
+- 不含空格字符数: ${res.charsNoSpace}
+- 中文字符数: ${res.cnChars}
+- 英文单词数: ${res.enWords}
+- 数字个数: ${res.digitsCount}
+- 段落数: ${res.paragraphs}
+- 预估阅读时间: ${res.readTime}`;
+
+          navigator.clipboard
+            .writeText(summary)
+            .then(() => showToast("统计结果已复制到剪贴板"))
+            .catch(() => showToast("复制失败"));
         });
       })();
     </script>

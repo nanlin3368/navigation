@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>反应速度测试</title>
+    <title>Word 转 HTML</title>
     <link
       rel="apple-touch-icon"
       href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
@@ -16,6 +16,7 @@
       href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
       type="image/webp"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     <style>
       /* --- 全局变量与设计令牌 --- */
       :root {
@@ -27,9 +28,7 @@
         --accent-press: #0059b3;
         --line: rgba(0, 0, 0, 0.08);
         --red: #ff3b30;
-        --red-bg: rgba(255, 59, 48, 0.1);
         --green: #34c759;
-        --green-bg: rgba(52, 199, 89, 0.15);
         --radius: 18px;
         --radius-sm: 12px;
       }
@@ -77,7 +76,7 @@
         color: var(--sub);
       }
 
-      /* --- 主应用布局容器 --- */
+      /* --- 应用主容器（移动端默认纵向排列） --- */
       .app {
         flex: 1 1 auto;
         width: 100%;
@@ -85,6 +84,7 @@
         margin: 0 auto;
         padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
         display: flex;
+        flex-direction: column;
         gap: 18px;
       }
 
@@ -100,7 +100,7 @@
         }
       }
 
-      /* 给左右面板加交错入场效果 */
+      /* --- 给左右面板加交错入场效果 ---*/
       .panel-left {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
       }
@@ -108,48 +108,19 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 桌面端响应式 (≥860px) --- */
+      /* --- 桌面端响应式布局（左右等宽双栏） --- */
       @media (min-width: 860px) {
         .app {
           flex-direction: row;
           align-items: stretch;
           padding-bottom: 45px;
         }
-        .panel-left {
-          flex: 0 0 400px;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-        }
+        .panel-left,
         .panel-right {
-          flex: 1;
+          flex: 1 1 50%;
+          min-width: 0;
           display: flex;
           flex-direction: column;
-          align-self: flex-start;
-        }
-      }
-
-      /* --- 移动端响应式 (<860px) 重排顺序 --- */
-      @media (max-width: 860px) {
-        .app {
-          flex-direction: column;
-        }
-        .panel-left {
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-          order: 2; /* 统计区域排中间 */
-        }
-        .panel-right {
-          display: flex;
-          flex-direction: column;
-          order: 1; /* 测试区域排最顶部 */
-        }
-        .card-history {
-          order: 4; /* 历史记录排最底部 */
-        }
-        .card-controls {
-          order: 3; /* 按钮区域排中间偏下 */
         }
       }
 
@@ -165,142 +136,159 @@
         display: flex;
         flex-direction: column;
       }
-      .panel-right .card {
-        flex: 1;
+      .panel-left,
+      .panel-right {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
       }
 
-      /* --- 区块标题 --- */
+      /* --- 区块标题与元信息 --- */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
       .section-title {
         font-size: 13px;
         font-weight: 600;
         color: var(--sub);
         text-transform: uppercase;
         letter-spacing: 0.04em;
-        margin: 0 0 12px 0;
+        margin: 0;
+        flex: 1;
       }
-
-      /* --- 统计面板网格 --- */
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      }
-      .stat-box {
-        background: var(--bg);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        padding: 12px 8px;
-        text-align: center;
-      }
-      .stat-label {
+      .meta-info {
         font-size: 12px;
         color: var(--sub);
-        margin-bottom: 4px;
-      }
-      .stat-val {
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--ink);
         font-family: ui-monospace, SFMono-Regular, monospace;
       }
 
-      /* --- 历史记录列表 --- */
-      .history-list {
-        background: var(--bg);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        max-height: 190px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-      }
-      .history-item {
-        display: flex;
-        justify-content: between;
-        align-items: center;
-        padding: 10px 14px;
-        border-bottom: 1px solid var(--line);
-        font-size: 13px;
-      }
-      .history-item:last-child {
-        border-bottom: none;
-      }
-      .history-index {
-        color: var(--sub);
-        font-weight: 500;
-      }
-      .history-time {
-        margin-left: auto;
-        font-weight: 600;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-      }
-
-      /* --- 核心测试交互区 (状态驱动) --- */
-      .test-zone {
+      /* --- 左侧拖拽上传区域 --- */
+      .drop-zone {
         width: 100%;
         flex: 1;
         min-height: 550px;
+        background: var(--bg);
+        border: 2px dashed var(--line);
         border-radius: var(--radius-sm);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-        user-select: none;
-        transition: background-color 0.15s ease;
+        padding: 20px;
         text-align: center;
-        padding: 24px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s;
       }
-
-      /* 状态一：就绪/常规态 */
-      .state-ready {
-        background: #e8e8ed;
-        color: var(--ink);
-        border: 1px dashed rgba(0, 0, 0, 0.15);
+      .drop-zone.dragover {
+        border-color: var(--accent);
+        background: rgba(0, 113, 227, 0.04);
       }
-      .state-ready:hover {
-        background: #dfdfe5;
+      .drop-zone-icon {
+        font-size: 32px;
+        margin-bottom: 8px;
       }
-
-      /* 状态二：等待态 (红色预警) */
-      .state-waiting {
-        background: var(--red);
-        color: #ffffff;
-      }
-
-      /* 状态三：触发反应态 (绿色爆发) */
-      .state-now {
-        background: var(--green);
-        color: #ffffff;
-      }
-
-      .test-icon {
-        font-size: 42px;
-        margin-bottom: 12px;
-      }
-      .test-main-text {
-        font-size: 22px;
+      .drop-zone-title {
+        font-size: 16px;
         font-weight: 600;
-        letter-spacing: -0.01em;
         margin-bottom: 6px;
       }
-      .test-sub-text {
-        font-size: 14px;
-        opacity: 0.75;
+      .drop-zone-desc {
+        font-size: 13px;
+        color: var(--sub);
       }
 
-      /* --- 按钮与控件 --- */
+      /* --- 左侧 HTML 代码框 --- */
+      textarea.code-input {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 14px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--ink);
+        resize: none;
+        outline: none;
+        display: none;
+        transition: border-color 0.2s;
+      }
+      textarea.code-input:focus {
+        border-color: var(--accent);
+      }
+      textarea.code-input::placeholder {
+        color: var(--sub);
+        opacity: 0.6;
+      }
+      .drop-zone:hover {
+        border-color: var(--accent);
+      }
+      .drop-zone:active {
+        border-color: var(--accent-press);
+      }
+
+      /* --- 右侧网页渲染预览容器 --- */
+      .preview-container {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        max-height: 550px;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 20px;
+        overflow-y: auto;
+        color: var(--ink);
+        line-height: 1.6;
+      }
+
+      /* Word 预览排版样式修饰 */
+      .preview-container img {
+        max-width: 100%;
+        height: auto;
+      }
+      .preview-container table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 12px 0;
+      }
+      .preview-container table,
+      .preview-container th,
+      .preview-container td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      .empty-tip {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: var(--sub);
+        font-size: 14px;
+      }
+
+      /* --- 操作按钮组 --- */
       .btn-row {
         display: flex;
         gap: 10px;
-        margin-top: 2px;
+        margin-top: 14px;
+        flex-wrap: wrap;
       }
       .btn {
         flex: 1;
+        min-width: 100px;
         border: none;
         border-radius: 14px;
         padding: 13px 16px;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 600;
         cursor: pointer;
         transition:
@@ -321,13 +309,22 @@
       .btn-primary:active {
         background: var(--accent-press);
       }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
       .btn-danger {
         background: var(--bg);
         color: var(--red);
         border: 1px solid var(--line);
       }
-      .btn-danger:hover {
-        background: rgba(255, 59, 48, 0.05);
+
+      #fileInput {
+        display: none;
       }
 
       /* --- 滚动条美化 --- */
@@ -336,7 +333,7 @@
         height: 6px;
       }
       ::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.12);
+        background: rgba(0, 0, 0, 0.15);
         border-radius: 3px;
       }
 
@@ -368,98 +365,93 @@
     </style>
   </head>
   <body>
-    <!-- --- Toast 提示容器 --- -->
     <div class="toast" id="toast">操作成功</div>
 
-    <!-- --- 顶部标题栏 --- -->
     <div class="topbar">
-      <h1>⚡ 反应速度测试</h1>
-      <p>纯前端高精度毫秒捕获 · 评估你的神经反射屏障</p>
+      <h1>📄 Word 转 HTML</h1>
+      <p>本地安全处理 · 不会上传任何数据</p>
     </div>
 
-    <!-- --- 主应用区域 (左右布局) --- -->
     <div class="app">
-      <!-- --- 左侧面板: 统计 / 控制 / 历史 --- -->
       <div class="panel-left">
-        <!-- 统计卡片 -->
         <div class="card">
-          <p class="section-title">成绩统计面板</p>
-          <div class="stats-grid">
-            <div class="stat-box">
-              <div class="stat-label">平均用时</div>
-              <div class="stat-val" id="avgVal">--</div>
+          <div class="section-header">
+            <p class="section-title" id="leftSectionTitle">
+              导入 Word 文档 (.docx)
+            </p>
+            <span class="meta-info" id="inputMeta">未选择文件</span>
+          </div>
+
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">📄</div>
+            <div class="drop-zone-title" id="fileTitle">
+              点击或拖拽 Word 文件到这里
             </div>
-            <div class="stat-box">
-              <div class="stat-label">最佳反应</div>
-              <div class="stat-val" id="bestVal" style="color: var(--green)">
-                --
-              </div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-label">最差记录</div>
-              <div class="stat-val" id="worstVal" style="color: var(--red)">
-                --
-              </div>
+            <div class="drop-zone-desc" id="fileDesc">
+              支持 .docx 格式文件，导入后自动转换
             </div>
           </div>
-        </div>
 
-        <!-- 控制按钮卡片 -->
-        <div class="card card-controls">
-          <p class="section-title">流程控制中心</p>
+          <textarea
+            id="htmlCode"
+            class="code-input"
+            placeholder="也可在此直接粘贴或修改 HTML 代码..."
+            spellcheck="false"
+          ></textarea>
+
           <div class="btn-row">
-            <button class="btn btn-danger" id="resetStatsBtn">重置统计</button>
-            <button class="btn btn-primary" id="restartBtn">重新开始</button>
+            <input type="file" id="fileInput" accept=".docx" />
+            <button class="btn btn-secondary" id="importBtn">导入文件</button>
+            <button class="btn btn-danger" id="clearBtn">清空全部</button>
+            <button class="btn btn-primary" id="copyBtn">复制代码</button>
           </div>
-        </div>
-
-        <!-- 历史记录卡片 -->
-        <div class="card card-history">
-          <p class="section-title">历史追踪记录 (最近10次)</p>
-          <div class="history-list" id="historyContainer"></div>
         </div>
       </div>
 
-      <!-- --- 右侧面板: 反应测试区 --- -->
       <div class="panel-right">
         <div class="card">
-          <p class="section-title">反应交互感应区</p>
-          <div class="test-zone state-ready" id="testBlock">
-            <div class="test-icon" id="testIcon">🔘</div>
-            <div class="test-main-text" id="mainText">点击此区域开始测试</div>
-            <div class="test-sub-text" id="subText">测试开始后请保持专注</div>
+          <div class="section-header">
+            <p class="section-title">网页实时预览区</p>
+            <span class="meta-info" id="outputMeta">实时渲染中</span>
+          </div>
+
+          <div class="preview-container" id="htmlPreview">
+            <div class="empty-tip">暂无转换内容，请在左侧导入 Word 文档</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="downloadBtn">
+              下载 HTML 文件
+            </button>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
 
       (function () {
         /* --- DOM 元素引用 --- */
-        const testBlock = document.getElementById("testBlock");
-        const testIcon = document.getElementById("testIcon");
-        const mainText = document.getElementById("mainText");
-        const subText = document.getElementById("subText");
+        const dropZone = document.getElementById("dropZone");
+        const fileTitle = document.getElementById("fileTitle");
+        const fileDesc = document.getElementById("fileDesc");
+        const fileInput = document.getElementById("fileInput");
 
-        const avgVal = document.getElementById("avgVal");
-        const bestVal = document.getElementById("bestVal");
-        const worstVal = document.getElementById("worstVal");
-        const historyContainer = document.getElementById("historyContainer");
+        const htmlCode = document.getElementById("htmlCode");
+        const htmlPreview = document.getElementById("htmlPreview");
 
-        const restartBtn = document.getElementById("restartBtn");
-        const resetStatsBtn = document.getElementById("resetStatsBtn");
+        const leftSectionTitle = document.getElementById("leftSectionTitle");
+        const inputMeta = document.getElementById("inputMeta");
+        const outputMeta = document.getElementById("outputMeta");
+
+        const importBtn = document.getElementById("importBtn");
+        const clearBtn = document.getElementById("clearBtn");
+        const copyBtn = document.getElementById("copyBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
         const toast = document.getElementById("toast");
-
-        /* --- 状态变量与核心数据 --- */
-        let currentState = "ready"; // 'ready' | 'waiting' | 'now' | 'result'
-        let timerTimeout = null;
-        let startTime = 0;
-        let records = []; // 存储所有历史记录（毫秒数）
 
         /* --- Toast 轻提示逻辑 --- */
         let toastTimer = null;
@@ -469,119 +461,145 @@
           clearTimeout(toastTimer);
           toastTimer = setTimeout(() => {
             toast.classList.remove("show");
-          }, 1500);
+          }, 1600);
         }
 
-        /* --- UI 更新函数 (统计面板 & 历史记录) --- */
-        function updateStatsUI() {
-          if (records.length === 0) {
-            avgVal.textContent = "--";
-            bestVal.textContent = "--";
-            worstVal.textContent = "--";
-            historyContainer.innerHTML =
-              '<div style="color:var(--sub);font-size:13px;text-align:center;padding:20px;opacity:0.6;">暂无历史记录</div>';
+        /* --- 实时更新右侧渲染画面与字符统计 --- */
+        function updatePreview() {
+          const code = htmlCode.value;
+          if (!code.trim()) {
+            htmlPreview.innerHTML =
+              '<div class="empty-tip">暂无转换内容，请在左侧导入 Word 文档</div>';
+            inputMeta.textContent = "未选择文件";
+            outputMeta.textContent = "未渲染";
+            return;
+          }
+          htmlPreview.innerHTML = code;
+          inputMeta.textContent = `${code.length} 字符`;
+          outputMeta.textContent = "渲染成功";
+        }
+
+        /* --- 解析与转换 Word (.docx) --- */
+        function convertWordFile(file) {
+          if (!file) return;
+          if (!file.name.endsWith(".docx")) {
+            showToast("仅支持 .docx 格式的 Word 文件");
             return;
           }
 
-          // 筛选计算
-          const sum = records.reduce((a, b) => a + b, 0);
-          const avg = Math.round(sum / records.length);
-          const best = Math.min(...records);
-          const worst = Math.max(...records);
-
-          avgVal.textContent = `${avg} ms`;
-          bestVal.textContent = `${best} ms`;
-          worstVal.textContent = `${worst} ms`;
-
-          // 渲染最近10次历史记录（倒序排列，最新在最上方）
-          const recentRecords = records.slice(-10).reverse();
-          historyContainer.innerHTML = recentRecords
-            .map((score, index) => {
-              const displayIndex = records.length - index;
-              return `
-        <div class="history-item">
-          <span class="history-index">第 ${displayIndex} 次测试</span>
-          <span class="history-time">${score} ms</span>
-        </div>
-      `;
-            })
-            .join("");
-        }
-
-        /* --- 核心交互逻辑 (状态机) --- */
-        function handleBlockClick() {
-          if (currentState === "ready" || currentState === "result") {
-            // 1. 进入等待态 (红色)
-            currentState = "waiting";
-            testBlock.className = "test-zone state-waiting";
-            testIcon.textContent = "⏳";
-            mainText.textContent = "看到绿色时，立即点击！";
-            subText.textContent = "若提前点击将视为违规作弊";
-
-            // 设定 2 秒到 5 秒之间的随机触发器
-            const randomDelay = Math.random() * 3000 + 2000;
-            timerTimeout = setTimeout(() => {
-              // 2. 进入触发态 (绿色)
-              currentState = "now";
-              testBlock.className = "test-zone state-now";
-              testIcon.textContent = "⚡";
-              mainText.textContent = "快点击！！";
-              subText.textContent = "反射弧测量中...";
-              startTime = performance.now(); // 使用高精度时间戳
-            }, randomDelay);
-          } else if (currentState === "waiting") {
-            // 3. 犯规作弊 (点早了)
-            clearTimeout(timerTimeout);
-            currentState = "result";
-            testBlock.className = "test-zone state-ready";
-            testIcon.textContent = "⚠️";
-            mainText.textContent = "点早了！";
-            subText.textContent = "请在变绿后再进行点击，点击卡片重试";
-            showToast("操作违规：变绿前请勿点击");
-          } else if (currentState === "now") {
-            // 4. 成功捕获时间
-            const endTime = performance.now();
-            const reactionTime = Math.round(endTime - startTime);
-
-            records.push(reactionTime);
-            currentState = "result";
-
-            testBlock.className = "test-zone state-ready";
-            testIcon.textContent = "🎉";
-            mainText.textContent = `${reactionTime} ms`;
-            subText.textContent = "极佳！点击卡片可再度发起下一轮";
-
-            updateStatsUI();
+          if (typeof mammoth === "undefined") {
+            showToast("转换解析组件未加载完，请刷新重试！");
+            return;
           }
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const arrayBuffer = e.target.result;
+            mammoth
+              .convertToHtml({ arrayBuffer: arrayBuffer })
+              .then(function (result) {
+                htmlCode.value = result.value || "";
+                dropZone.style.display = "none";
+                htmlCode.style.display = "block";
+                leftSectionTitle.textContent = "HTML 源码编辑";
+                updatePreview();
+                showToast("转换成功，已被替换为 HTML 源码！");
+              })
+              .catch(function (err) {
+                htmlCode.value = ``;
+                dropZone.style.display = "none";
+                htmlCode.style.display = "block";
+                updatePreview();
+                showToast("解析遇到错误");
+              });
+          };
+          reader.readAsArrayBuffer(file);
         }
 
-        /* --- 控件事件绑定 (重置 / 重开) --- */
-        function doRestart() {
-          clearTimeout(timerTimeout);
-          currentState = "ready";
-          testBlock.className = "test-zone state-ready";
-          testIcon.textContent = "🔘";
-          mainText.textContent = "点击此区域开始测试";
-          subText.textContent = "测试开始后请保持专注";
-          showToast("测试盘已复位");
-        }
-
-        function doResetStats() {
-          if (confirm("确认清空所有累计的成绩统计和历史记录吗？")) {
-            records = [];
-            updateStatsUI();
-            doRestart(); // 同时复位右侧看板
-            showToast("统计数据已全部重置");
+        /* --- 复制剪贴板 --- */
+        function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
           }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return Promise.resolve();
         }
 
-        /* --- 事件监听挂载 & 初始化 --- */
-        testBlock.addEventListener("click", handleBlockClick);
-        restartBtn.addEventListener("click", doRestart);
-        resetStatsBtn.addEventListener("click", doResetStats);
+        /* --- 事件监听 --- */
+        importBtn.addEventListener("click", () => fileInput.click());
+        dropZone.addEventListener("click", () => fileInput.click());
 
-        // 初始化数据面板
-        updateStatsUI();
+        fileInput.addEventListener("change", (e) => {
+          if (e.target.files.length > 0) {
+            convertWordFile(e.target.files[0]);
+          }
+        });
+
+        dropZone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          dropZone.classList.add("dragover");
+        });
+
+        dropZone.addEventListener("dragleave", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+        });
+
+        dropZone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+          if (e.dataTransfer.files.length > 0) {
+            convertWordFile(e.dataTransfer.files[0]);
+          }
+        });
+
+        htmlCode.addEventListener("input", updatePreview);
+
+        clearBtn.addEventListener("click", () => {
+          fileInput.value = "";
+          htmlCode.value = "";
+          dropZone.style.display = "flex";
+          htmlCode.style.display = "none";
+          leftSectionTitle.textContent = "导入 Word 文档 (.docx)";
+          updatePreview();
+          showToast("已清空全部");
+        });
+
+        copyBtn.addEventListener("click", () => {
+          const code = htmlCode.value;
+          if (!code) {
+            showToast("没有可复制的 HTML 内容");
+            return;
+          }
+          copyText(code).then(() => showToast("HTML 代码已复制到剪贴板"));
+        });
+
+        downloadBtn.addEventListener("click", () => {
+          const code = htmlCode.value;
+          if (!code) {
+            showToast("没有可下载的 HTML 内容");
+            return;
+          }
+          const blob = new Blob([code], {
+            type: "text/html;charset=utf-8;",
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `converted_${Date.now()}.html`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showToast("文件已开始下载");
+        });
       })();
     </script>
 
