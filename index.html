@@ -2285,6 +2285,8 @@
             { name: '图片切图分割',       file: 'image-splitter.html'     },
             { name: '图片转 Base64',  file: 'image-to-base64.html' },
             { name: 'Base64 转图片',  file: 'base64-to-image.html' },
+            { name: 'Icon 生成器',   file: 'favicon-generator.html' },
+            { name: 'EXIF 信息查看器', file: 'exif-viewer.html' },
           ],
         },
         {
@@ -2292,27 +2294,27 @@
           label: '文本与效率',
           tools: [
             { name: 'Markdown 编辑器', file: 'markdown-editor.html' },
-            { name: '随机密码生成器',   file: 'password-generator.html'     },
-            { name: '手写签名',      file: 'signature-pad.html'       },
+            { name: '字数统计',     file: 'word-count.html'     },           
+            { name: 'Word 转 HTML',   file: 'word-to-html.html'   },
             { name: '汉字转拼音',     file: 'chinese-to-pinyin.html'     },            
             { name: '简体转繁体',    file: 'simplified-to-traditional.html'   },
             { name: '繁体转简体',    file: 'traditional-to-simplified.html'   },
             { name: 'Emoji 表情库', file: 'emoji-library.html' },
-            { name: '特殊符号大全',    file: 'special-characters.html'   },
+            { name: '特殊符号大全',    file: 'special-characters.html'   },            
           ],
         },        
         {
           icon : '🎈',
           label: '日常生活/趣味',
-          tools: [           
-            { name: '在线黄历',     file: 'chinese-almanac.html'     },
-            { name: '天气预报',     file: 'weather-forecast.html'     },
-            { name: '常用号码查询',     file: 'useful-numbers.html'     },
-            { name: '国际区号查询',     file: 'country-codes.html'     },
+          tools: [
+            { name: '随机密码生成器',   file: 'password-generator.html'     },
             { name: '单位换算',     file: 'unit-converter.html'     },
             { name: '二维码生成',   file: 'qr-code-generator.html'  },
             { name: '每日一言',     file: 'daily-quote.html'     },
             { name: '反应速度测试', file: 'reaction-test.html' },
+            { name: '交通标志查询',     file: 'traffic-signs.html'     },
+            { name: '常用号码查询',     file: 'useful-numbers.html'     },
+            { name: '国际区号查询',     file: 'country-codes.html'     },            
           ],
         },
       ]
@@ -3145,7 +3147,7 @@
           el.setAttribute('data-tooltip', el.title);
           el.removeAttribute('title');
         }
-      });
+      });            
     </script>   
   </body>
 </html>
