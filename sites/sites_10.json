@@ -404,5 +404,12 @@
         "url": "https://wxaiway.com",
         "description": "",
         "category": "综合效率"
+    },
+    {
+        "title": "PixConvert",
+        "icon": "PixConvert_icon.webp",
+        "url": "https://www.pixconvert.com/zh",
+        "description": "",
+        "category": "综合效率"
     }
 ]

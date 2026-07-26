@@ -348,5 +348,26 @@
         "url": "https://m.inftab.com/#/",
         "description": "",
         "category": "网络驿站"
+    },
+    {
+        "title": "Sweezy Cursors",
+        "icon": "Sweezy_Cursors_icon.webp",
+        "url": "https://sweezy-cursors.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "EmojiTerra",
+        "icon": "EmojiTerra_icon.webp",
+        "url": "https://emojiterra.com",
+        "description": "",
+        "category": "网络驿站"
+    },
+    {
+        "title": "计算器3000",
+        "icon": "计算器3000_icon.webp",
+        "url": "https://jsq3000.com",
+        "description": "",
+        "category": "网络驿站"
     }
 ]

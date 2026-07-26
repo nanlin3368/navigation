@@ -105,10 +105,24 @@
         "category": "桌面生态"
     },
     {
+        "title": "Codex",
+        "icon": "Codex_icon.webp",
+        "url": "https://chatgpt.com/zh-Hans-CN/codex",
+        "description": "",
+        "category": "桌面生态"
+    },
+    {
         "title": "Visual Studio Code",
         "icon": "Visual_Studio_Code_icon.webp",
         "url": "https://code.visualstudio.com",
         "description": "开源轻量级代码编辑器，支持几乎所有主流编程语言，拥有极其庞大的插件生态系统，集成了智能代码补全、调试、Git 版本控制及终端功能",
+        "category": "桌面生态"
+    },
+    {
+        "title": "GitHub Desktop",
+        "icon": "GitHub_Desktop_icon.webp",
+        "url": "https://desktop.github.com/download",
+        "description": "",
         "category": "桌面生态"
     },
     {

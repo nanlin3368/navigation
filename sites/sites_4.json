@@ -1,5 +1,12 @@
 [
     {
+        "title": "Webstack",
+        "icon": "Webstack_icon.webp",
+        "url": "https://github.com/WebStackPage/WebStackPage.github.io",
+        "description": "开源静态网址导航模板，基于 Bootstrap 开发，适配多套WordPress、Go、Vue等后台主题，内置设计、开发、素材等优质站点分类，可静态托管快速部署，支持自定义图标与站点分类，开源免费无付费 Pro 版本，源码可二次开发，适合搭建个人、行业导航站",
+        "category": "项目汇总"
+    },
+    {
         "title": "SSR-V2ray-Trojan机场推荐",
         "icon": "SSR-V2ray-Trojan机场推荐_icon.webp",
         "url": "https://github.com/hwanz/SSR-V2ray-Trojan",
@@ -28,10 +35,10 @@
         "category": "项目汇总"
     },
     {
-        "title": "GitHub中文排行榜",
-        "icon": "GitHub中文排行榜_icon.webp",
-        "url": "https://github.com/GrowingGit/GitHub-Chinese-Top-Charts",
-        "description": "由社区共建的开源项目榜单，系统整理优质中文开源项目，设有总榜、增速榜、新秀榜排行，区分软件类与资料类，覆盖 Java、Python、Vue 等全主流编程语言，持续更新榜单数据，筛选活跃优质仓库，助力开发者快速检索学习源码、技术教程与实战项目",
+        "title": "ChinaTextbook",
+        "icon": "ChinaTextbook_icon.webp",
+        "url": "https://github.com/TapXWorld/ChinaTextbook",
+        "description": "",
         "category": "项目汇总"
     },
     {

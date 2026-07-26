@@ -180,5 +180,12 @@
         "url": "https://www.lingohut.com/zh",
         "description": "完全免费的在线语言学习平台，覆盖 45 种语言，提供基础词汇、核心短语、情境对话与听力训练等多维内容，无需注册即可开始学习，课程以短时高效为特点，结合标准音频示范与互动练习，快速建立听说能力，适合零基础入门、旅行速成与日常沟通练习",
         "category": "学习成长"
+    },
+    {
+        "title": "黄油单词",
+        "icon": "黄油单词_icon.webp",
+        "url": "https://waiyuka.cc/zh-CN",
+        "description": "",
+        "category": "学习成长"
     }
 ]

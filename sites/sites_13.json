@@ -35,6 +35,13 @@
         "category": "文档办公"
     },
     {
+        "title": "草料二维码",
+        "icon": "草料二维码_icon.webp",
+        "url": "https://cli.im",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
         "title": "FileUNZIP",
         "icon": "FileUNZIP_icon.webp",
         "url": "https://cn.fileunzip.com",
@@ -381,6 +388,13 @@
         "title": "烁皓的工具箱",
         "icon": "烁皓的工具箱_icon.webp",
         "url": "https://eternityspring.github.io/article-tools",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "记灵",
+        "icon": "记灵_icon.webp",
+        "url": "https://remeins.com",
         "description": "",
         "category": "文档办公"
     }
