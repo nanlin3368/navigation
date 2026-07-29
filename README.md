@@ -48,4 +48,4 @@
 
 如果你觉得这个导航页用着顺手，欢迎微信扫一扫支持一下。
 
-![微信赞赏码](assets/picture/wxzs.webp)
+![微信赞赏码](https://nanlin3368.github.io/navigation/assets/picture/wxzs.webp)
