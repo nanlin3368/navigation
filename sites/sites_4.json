@@ -3,7 +3,7 @@
         "title": "Webstack",
         "icon": "Webstack_icon.webp",
         "url": "https://github.com/WebStackPage/WebStackPage.github.io",
-        "description": "开源静态网址导航模板，基于 Bootstrap 开发，适配多套WordPress、Go、Vue等后台主题，内置设计、开发、素材等优质站点分类，可静态托管快速部署，支持自定义图标与站点分类，开源免费无付费 Pro 版本，源码可二次开发，适合搭建个人、行业导航站",
+        "description": "",
         "category": "项目汇总"
     },
     {
@@ -17,7 +17,7 @@
         "title": "awesome-shizuku",
         "icon": "awesome-shizuku_icon.webp",
         "url": "https://github.com/timschneeb/awesome-shizuku/blob/master/README_cn.md",
-        "description": "基于 Shizuku 的精选工具与应用清单，系统汇总自动化、权限操作、系统调优、文件管理、个性化增强等多领域，配套开发库、rish终端脚本与厂商专属适配工具，附带开源协议、付费与广告标注，支持中英文文档，是安卓玩家寻找免 Root 系统工具的首选站点",
+        "description": "",
         "category": "项目汇总"
     },
     {
@@ -52,7 +52,7 @@
         "title": "百分之千-定制版应用收藏",
         "icon": "百分之千_icon.webp",
         "url": "https://gitee.com/ww3w/dzb",
-        "description": "开源纯净 APP 目录仓库，收录 98+ 定制版应用、1000+版本资源，覆盖华为、小米、OPPO、vivo等主流机型，汇总各版本特性、实测反馈与下载索引，划分定制 APP 库、版本拐点两大板块，附带降级方案与常见问题解答，方便用户筛选稳定好用的定制安装包",
+        "description": "",
         "category": "项目汇总"
     }
 ]

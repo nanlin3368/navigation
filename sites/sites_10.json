@@ -3,63 +3,63 @@
         "title": "Mikutools",
         "icon": "Mikutools_icon.webp",
         "url": "https://okmiku.com",
-        "description": "极客风轻量化在线工具箱，汇聚 AI 图像音视频处理、PDF/文件格式转换、文本编辑、加密解密、开发者运维、动漫素材等百款实用功能，所有工具均可免费使用，无需下载软件，操作简单，兼顾办公、设计、开发、娱乐场景，高效解决各类素材与文档处理需求",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "蜻蜓工具",
         "icon": "蜻蜓工具_icon.webp",
         "url": "https://33tool.com",
-        "description": "全能免费在线工具箱，覆盖开发工具、编码加密、办公日常及生活娱乐等多元分类，提供时间戳转换、汉字转拼音、PDF处理、正则测试、Base64加解密等实用功能，无需注册登录，免费使用，操作简单高效，是开发者、日常用户提升工作效率必备实用工具站",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "Wux Webtools",
         "icon": "Wux_Webtools_icon.webp",
         "url": "https://wuxwebtools.com/zh-CN",
-        "description": "完全免费的在线工具合集，提供图片/视频压缩、PDF拆分/合并、EXIF清理、DNS解析、SEO检测、格式转换、密码哈希生成等 50+ 专业工具，无需安装与注册、快速高效，全程操作本地浏览器运算，主打隐私与安全，适合开发者、设计师与日常用户高效办公",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "FastDo",
         "icon": "FastDo_icon.webp",
         "url": "https://fastdo.tools",
-        "description": "多媒体在线效率工具平台，集成文档、电商、视频三大工具板块，支持 PDF合并/转换、OCR识别、智能抠图、视频剪辑、字幕配音等 200+ 功能，上传文件即可自动匹配工具，适合办公、电商、短视频创作者，高效解决文档转换、图片修图、视频剪辑需求",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "ImageOnline",
         "icon": "ImageOnline_co_icon.webp",
         "url": "https://imageonline.co/cn",
-        "description": "终极免费在线工具套件，探索超过 250+ 免费在线工具，涵盖图像裁剪、格式转换、滤镜增强、视频合并、音频剪辑、GIF制作、PDF 合并与拆分、JSON/CSS/HTML工具、硬件诊断等实用功能，100%免费、快速、安全，可在任何设备上高速使用",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "ToolDuck",
         "icon": "ToolDuck_icon.webp",
         "url": "https://toolduck.cn",
-        "description": "高质量的免费在线工具库，提供 350+ 免费在线工具，覆盖AI助手、智能写作、图片处理、文本转换、效率提升、开发辅助等多领域工具，无需下载，即开即用，支持便捷分类与快速检索，帮助用户高效查找并使用各种在线工具，让办公、学习、开发更高效",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "LocallyTools",
         "icon": "LocallyTools_icon.webp",
         "url": "https://locallytools.com/zh-Hans",
-        "description": "安全、免费、可离线使用的本地工具集合，汇集图片压缩与格式转换、PDF拆分/合并、文本与编码工具、代码格式化、UUID生成等开发者功能，所有操作均在本地浏览器完成，无需上传文件，确保隐私零泄露，为用户提供快速、高效、安全的使用体验",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "一个木函",
         "icon": "一个木函_icon.webp",
         "url": "https://ol.woobx.cn",
-        "description": "全能在线效率工具，提供超过 80+ 实用工具，支持短网址生成、网络测速、图片压缩、正则表达式大全、JSON/YAML转换等高频需求，网页端无需安装，即开即用，部分工具支持会员增强功能，是创作、办公、学习、开发于一体的高效在线工具",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "帮小忙",
         "icon": "帮小忙_icon.webp",
         "url": "https://tool.browser.qq.com",
-        "description": "腾讯推出的在线多功能工具箱平台，覆盖图片处理、PDF 转换、文档格式转换、视频处理、生活服务、教育学习、开发者工具等多类场景，所有工具均可在线即开即用，部分功能限时免费，适用于办公、学习、自媒体创作、生活查询等多种需求",
+        "description": "",
         "category": "综合效率"
     },
     {
@@ -73,42 +73,42 @@
         "title": "奇妙工具箱",
         "icon": "奇妙工具箱_icon.webp",
         "url": "https://www.magicalbox.cn",
-        "description": "集日常娱乐、文档办公、图片处理、文本优化、开发应用等于一体的在线工具集合平台，支持 PDF/图片/音视频转换、OCR识别、数据查询、单位换算、加密解密、正则工具等上百种实用功能，轻量便捷、随开随用，高效完成各种工作与生活任务",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "多功能工具箱",
         "icon": "多功能工具箱_icon.webp",
         "url": "https://www.996day.com",
-        "description": "极致纯净的纯前端工具集，涵盖文本处理、图片编辑、视频剪辑、音频转换、OCR文字识别、屏幕录制、格式转换、图片压缩、JSON查看、颜色工具等 40+ 高效实用工具，所有功能均在浏览器本地运行，安全高效，适用于办公、设计、开发等多场景",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "Tools-Web",
         "icon": "Tools-Web_icon.webp",
         "url": "https://tools.ranblogs.com",
-        "description": "开源免费的在线工具聚合平台，提供URL编码/解码、图片格式转换、文本对比、ASCll码表、Color选择器、数据图表等多种 Web 工具，无需安装即可使用，平台界面简洁、加载快速，是程序员、学生、设计师与内容创作者的实用在线工具箱”",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "Next BConvert",
         "icon": "Next_BConvert_icon.webp",
         "url": "https://nextbconvert.com/zh",
-        "description": "免费的在线文件转换工具，支持图片转换、视频压缩、音频提取、文档格式互转、HEIC转JPG、MP4转MP3、PDF转Word等功能，浏览器本地处理，隐私安全，支持批量任务与离线模式，兼容移动端与PC端，满足日常办公、学习与内容创作多场景需求",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "iToTii 工具箱",
         "icon": "iToTii_工具箱_icon.webp",
         "url": "https://tool.itotii.com",
-        "description": "免费、高效且功能全面的在线工具箱，覆盖智能工具、生活工具、站长工具、文本处理、数学计算、PDF转换、图片拼接、加密解密、编码转码等多领域在线工具，界面简洁、操作简单，是一个全面、便捷、稳定的在线工具集合站",
+        "description": "",
         "category": "综合效率"
     },
     {
         "title": "123Apps",
         "icon": "123Apps_icon.webp",
         "url": "https://123apps.com/cn",
-        "description": "极简风格的在线工具集，涵盖视频、音频、PDF文件编辑、多格式文件转换等分类，支持剪辑、合并、录制、压缩、格式转换等功能，操作简单、无需安装、在线即可快速处理各类文件，适合日常用户与内容创作者便捷使用，让文件处理更高效、更轻松",
+        "description": "",
         "category": "综合效率"
     },
     {

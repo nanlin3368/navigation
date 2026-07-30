@@ -3,7 +3,7 @@
         "title": "科学上网",
         "icon": "科学上网_icon.webp",
         "url": "https://www.zoio.net",
-        "description": "科学上网与网络技术中文博客，分享最新代理客户端、机场节点推荐、免费节点订阅、3x-ui 面板搭建、Hysteria2 / Trojan 教程、软路由 OpenWrt / iStoreOS 配置、Docker NAS 部署等实用指南，帮助用户稳定高效访问全球网络，拥抱互联网开放与自由精神",
+        "description": "",
         "category": "跨境互联"
     },
     {
@@ -17,14 +17,14 @@
         "title": "润土分享",
         "icon": "润土分享_icon.webp",
         "url": "https://runtushare.net",
-        "description": "知名的前沿技术分享平台，深度聚焦数字化生存解决方案，提供详尽的海外服务订阅教程与科学的网络环境配置指南",
+        "description": "",
         "category": "跨境互联"
     },
     {
         "title": "一个朋友",
         "icon": "一个朋友_icon.webp",
         "url": "https://ygpy.net",
-        "description": "跨境出海工具导航站，涵盖机场推荐、软件列表和网址导航等内容，致力于解决用户上网难题，是探索互联网的第一站",
+        "description": "",
         "category": "跨境互联"
     },
     {
