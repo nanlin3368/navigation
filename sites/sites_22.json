@@ -4,69 +4,69 @@
         "icon": "APKMirror_icon.webp",
         "url": "https://www.apkmirror.com",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "AppTeka",
         "icon": "AppTeka_icon.webp",
         "url": "https://appteka.store/apps",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "F-Droid",
         "icon": "F-Droid_icon.webp",
         "url": "https://f-droid.org/zh_Hans/packages",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "Uptodown",
         "icon": "Uptodown_icon.webp",
         "url": "https://cn.uptodown.com",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "APKPure",
         "icon": "APKPure_icon.webp",
         "url": "https://m.apkpure.com/cn",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "A2ZAPK",
         "icon": "A2ZAPK_icon.webp",
         "url": "https://a2zapk.co",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "APKCombo",
         "icon": "APKCombo_icon.webp",
         "url": "https://apkcombo.com/zh",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "OpenAPK",
         "icon": "OpenAPK_icon.webp",
         "url": "https://www.openapk.net/zh/",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "APKToy",
         "icon": "APKToy_icon.webp",
         "url": "https://m.apktoy.com",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     },
     {
         "title": "Sfile Mobi",
         "icon": "Sfile_Mobi_icon.webp",
         "url": "https://sfile.mobi",
         "description": "",
-        "category": "安卓镜像"
+        "category": "应用分发"
     }
 ]

@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Fmhy",
+        "icon": "FMHY_icon.webp",
+        "url": "https://fmhy.net",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "行书指南",
+        "icon": "行书指南_icon.webp",
+        "url": "https://xszn.org/zh",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "优设导航",
+        "icon": "优设导航_icon.webp",
+        "url": "https://hao.uisdc.com",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "创作者导航",
+        "icon": "创作者导航_icon.webp",
+        "url": "https://bbab.net",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "奎章阁",
+        "icon": "奎章阁_icon.webp",
+        "url": "https://www.wenxianxue.cn",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "秋木科技",
+        "icon": "秋木科技_icon.webp",
+        "url": "https://qiumu1998.github.io",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "AI 工具集",
+        "icon": "AI_工具集_icon.webp",
+        "url": "https://ai-bot.cn",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "格律诗的软件世界",
+        "icon": "格律诗的软件世界_icon.webp",
+        "url": "https://www.jamecling.com",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "纯净派",
+        "icon": "纯净派_icon.webp",
+        "url": "https://chunjing.app",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "那些免费的砖",
+        "icon": "那些免费的砖_icon.webp",
+        "url": "https://www.thosefree.com",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "阅读指南",
+        "icon": "阅读指南_icon.webp",
+        "url": "https://readzn.com",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "我的收藏",
+        "icon": "我的收藏_icon.webp",
+        "url": "https://link.pixcat.cn",
+        "description": "",
+        "category": "更多导航"
+    }
+]
