@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>EXIF 信息查看器</title>
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --green: #34c759;
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 应用主容器（移动端默认纵向排列） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* --- 给左右面板加交错入场效果 ---*/
+      .panel-left {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-right {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 桌面端响应式布局（左右等宽双栏） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-left,
+        .panel-right {
+          flex: 1 1 50%;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-left,
+      .panel-right {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 区块标题与元信息 --- */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0;
+        flex: 1;
+      }
+      .meta-info {
+        font-size: 12px;
+        color: var(--sub);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+      }
+
+      /* --- 左侧拖拽上传区域 --- */
+      .drop-zone {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        background: var(--bg);
+        border: 2px dashed var(--line);
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s;
+      }
+      .drop-zone-icon {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+      .drop-zone-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .drop-zone-desc {
+        font-size: 13px;
+        color: var(--sub);
+      }
+      .drop-zone.dragover {
+        border-color: var(--accent);
+        background: rgba(0, 113, 227, 0.04);
+      }
+      .drop-zone:hover {
+        border-color: var(--accent);
+      }
+      .drop-zone:active {
+        border-color: var(--accent-press);
+      }
+
+      .image-preview-wrapper {
+        width: 100%;
+        min-height: 550px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .image-preview-wrapper img {
+        max-width: 100%;
+        max-height: 550px;
+        object-fit: contain;
+      }
+
+      /* --- 信息卡片展示区 --- */
+      .info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow-y: auto;
+        min-height: 550px;
+        max-height: 550px;
+        padding-right: 4px;
+      }
+      .info-card {
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        padding: 16px;
+        border: 1px solid var(--line);
+      }
+      .info-card-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 12px 0;
+        color: var(--ink);
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+        padding-bottom: 6px;
+      }
+      .info-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .info-label {
+        color: var(--sub);
+      }
+      .info-value {
+        font-weight: 500;
+        color: var(--ink);
+        text-align: right;
+        word-break: break-all;
+      }
+
+      .empty-tip {
+        display: flex;
+        height: 280px;
+        align-items: center;
+        justify-content: center;
+        color: var(--sub);
+        font-size: 14px;
+      }
+
+      /* --- 操作按钮组 --- */
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        flex: 1;
+        min-width: 100px;
+        border: none;
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          background-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
+      .btn-danger {
+        background: var(--bg);
+        color: var(--red);
+        border: 1px solid var(--line);
+      }
+
+      #fileInput {
+        display: none;
+      }
+
+      /* --- 滚动条美化 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toast" id="toast">操作成功</div>
+
+    <div class="topbar">
+      <h1>🖼️ EXIF 信息查看器</h1>
+      <p>本地安全解析 · 隐私保护不上传</p>
+    </div>
+
+    <div class="app">
+      <div class="panel-left">
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">选择图片</p>
+          </div>
+
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">📷</div>
+            <div class="drop-zone-title">选择或拖拽图片</div>
+            <div class="drop-zone-desc">支持 JPG, PNG, WEBP 等格式</div>
+          </div>
+
+          <div class="image-preview-wrapper" id="previewWrapper">
+            <img id="imgPreview" src="" alt="预览图" />
+          </div>
+
+          <div class="btn-row">
+            <input type="file" id="fileInput" accept="image/*" />
+            <button class="btn btn-primary" id="selectBtn">选择图片</button>
+            <button class="btn btn-danger" id="clearBtn">重置</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-right">
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">元数据详情</p>
+          </div>
+
+          <div class="info-container" id="infoContainer">
+            <div class="empty-tip">请在左侧上传图片以查看 EXIF 信息</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="downloadMetaBtn">
+              导出元数据图片
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        const dropZone = document.getElementById("dropZone");
+        const previewWrapper = document.getElementById("previewWrapper");
+        const imgPreview = document.getElementById("imgPreview");
+        const fileInput = document.getElementById("fileInput");
+        const selectBtn = document.getElementById("selectBtn");
+        const clearBtn = document.getElementById("clearBtn");
+        const infoContainer = document.getElementById("infoContainer");
+        const downloadMetaBtn = document.getElementById("downloadMetaBtn");
+        const toast = document.getElementById("toast");
+
+        let currentFileName = "";
+
+        /* --- Toast 轻提示逻辑 --- */
+        let toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg || "操作成功";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1600);
+        }
+
+        // 文件触发逻辑
+        selectBtn.addEventListener("click", () => fileInput.click());
+        dropZone.addEventListener("click", () => fileInput.click());
+
+        fileInput.addEventListener("change", (e) => {
+          if (e.target.files.length > 0) handleFile(e.target.files[0]);
+        });
+
+        // 拖拽逻辑
+        dropZone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          dropZone.classList.add("dragover");
+        });
+        dropZone.addEventListener("dragleave", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+        });
+        dropZone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+          if (e.dataTransfer.files.length > 0)
+            handleFile(e.dataTransfer.files[0]);
+        });
+
+        // 重置清空
+        clearBtn.addEventListener("click", () => {
+          fileInput.value = "";
+          imgPreview.src = "";
+          currentFileName = "";
+          dropZone.style.display = "flex";
+          previewWrapper.style.display = "none";
+          infoContainer.innerHTML =
+            '<div class="empty-tip">请在左侧上传图片以查看 EXIF 信息</div>';
+          showToast("已重置内容");
+        });
+
+        // 处理解析文件
+        function handleFile(file) {
+          if (!file.type.startsWith("image/")) {
+            showToast("请选择正确的图片格式");
+            return;
+          }
+          currentFileName = file.name;
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const dataUrl = e.target.result;
+            imgPreview.src = dataUrl;
+            dropZone.style.display = "none";
+            previewWrapper.style.display = "flex";
+
+            // 创建 Image 对象以获取实际像素宽高
+            const imgObj = new Image();
+            imgObj.onload = function () {
+              parseExif(file, imgObj.width, imgObj.height);
+            };
+            imgObj.src = dataUrl;
+          };
+          reader.readAsDataURL(file);
+        }
+
+        // 解析 EXIF
+        function parseExif(file, imgWidth, imgHeight) {
+          EXIF.getData(file, function () {
+            const exifData = EXIF.getAllTags(this);
+            renderInfoCards(file, imgWidth, imgHeight, exifData);
+            showToast("解析成功");
+          });
+        }
+
+        // 格式化输出 UI
+        function renderInfoCards(file, width, height, exif) {
+          const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2) + " MB";
+          const modTime = new Date(file.lastModified).toLocaleString();
+
+          // 核心 EXIF 数据获取
+          const make = exif.Make || "-";
+          const model = exif.Model || "-";
+          const software = exif.Software || "-";
+          const artist = exif.Artist || "-";
+          const orientation = exif.Orientation || "-";
+
+          const fNumber = exif.FNumber ? `f/${exif.FNumber}` : "-";
+          const exposureTime = exif.ExposureTime
+            ? exif.ExposureTime < 1
+              ? `1/${Math.round(1 / exif.ExposureTime)}s`
+              : `${exif.ExposureTime}s`
+            : "-";
+          const iso = exif.ISOSpeedRatings || "-";
+          const focalLength = exif.FocalLength ? `${exif.FocalLength}mm` : "-";
+          const flash = exif.Flash
+            ? exif.Flash.indexOf("Flash fired") !== -1
+              ? "开启"
+              : "关闭"
+            : "-";
+          const whiteBalance = exif.WhiteBalance || "-";
+          const meterMode = exif.MeteringMode || "-";
+
+          const gpsDate = exif.GPSDateStamp ? `${exif.GPSDateStamp}` : "-";
+          const dateTimeOriginal = exif.DateTimeOriginal || "-";
+
+          infoContainer.innerHTML = `
+            <div class="info-card">
+              <div class="info-card-title">常规信息</div>
+              <div class="info-grid">
+                <div class="info-item"><span class="info-label">文件名</span><span class="info-value">${file.name}</span></div>
+                <div class="info-item"><span class="info-label">文件类型</span><span class="info-value">${file.type || "image/unknown"}</span></div>
+                <div class="info-item"><span class="info-label">文件大小</span><span class="info-value">${fileSizeMB}</span></div>
+                <div class="info-item"><span class="info-label">宽度</span><span class="info-value">${width} px</span></div>
+                <div class="info-item"><span class="info-label">高度</span><span class="info-value">${height} px</span></div>
+                <div class="info-item"><span class="info-label">修改时间</span><span class="info-value">${modTime}</span></div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-title">设备信息</div>
+              <div class="info-grid">
+                <div class="info-item"><span class="info-label">制造商</span><span class="info-value">${make}</span></div>
+                <div class="info-item"><span class="info-label">设备型号</span><span class="info-value">${model}</span></div>
+                <div class="info-item"><span class="info-label">编辑软件</span><span class="info-value">${software}</span></div>
+                <div class="info-item"><span class="info-label">作者</span><span class="info-value">${artist}</span></div>
+                <div class="info-item"><span class="info-label">旋转方向</span><span class="info-value">${orientation}</span></div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-title">拍摄参数</div>
+              <div class="info-grid">
+                <div class="info-item"><span class="info-label">光圈值</span><span class="info-value">${fNumber}</span></div>
+                <div class="info-item"><span class="info-label">曝光时间</span><span class="info-value">${exposureTime}</span></div>
+                <div class="info-item"><span class="info-label">ISO感光度</span><span class="info-value">${iso}</span></div>
+                <div class="info-item"><span class="info-label">焦距</span><span class="info-value">${focalLength}</span></div>
+                <div class="info-item"><span class="info-label">闪光灯</span><span class="info-value">${flash}</span></div>
+                <div class="info-item"><span class="info-label">白平衡</span><span class="info-value">${whiteBalance}</span></div>
+                <div class="info-item"><span class="info-label">测光模式</span><span class="info-value">${meterMode}</span></div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-title">GPS信息</div>
+              <div class="info-grid">
+                <div class="info-item"><span class="info-label">GPS日期</span><span class="info-value">${gpsDate}</span></div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-title">时间信息</div>
+              <div class="info-grid">
+                <div class="info-item"><span class="info-label">拍摄时间</span><span class="info-value">${dateTimeOriginal}</span></div>
+              </div>
+            </div>
+          `;
+        }
+
+        // --- 导出元数据图片逻辑 ---
+        downloadMetaBtn.addEventListener("click", () => {
+          if (infoContainer.querySelector(".empty-tip")) {
+            showToast("暂无可导出的元数据，请先上传图片");
+            return;
+          }
+
+          showToast("正在生成元数据图片...");
+
+          // 1. 克隆当前容器，与真实 DOM 完全解耦
+          const clone = infoContainer.cloneNode(true);
+          // 移除克隆体的 ID，防止冲突
+          clone.removeAttribute("id");
+
+          // 2. 计算原始容器的宽度（剔除滚动条宽度）
+          const originalRect = infoContainer.getBoundingClientRect();
+
+          // 3. 将克隆体移出屏幕外，并解除所有高度限制
+          clone.style.position = "absolute";
+          clone.style.left = "-9999px";
+          clone.style.top = "0";
+          clone.style.width = originalRect.width + "px";
+          clone.style.maxHeight = "none";
+          clone.style.overflowY = "visible";
+          clone.style.height = "auto";
+          clone.style.paddingRight = "4px";
+          clone.style.display = "flex";
+          clone.style.flexDirection = "column";
+          clone.style.backgroundColor = "#ffffff";
+
+          document.body.appendChild(clone);
+
+          // 4. 等待一帧确保克隆体已被浏览器渲染
+          requestAnimationFrame(() => {
+            html2canvas(clone, {
+              backgroundColor: "#ffffff",
+              scale: 2,
+              useCORS: true,
+              logging: false,
+              height: clone.scrollHeight,
+              width: clone.scrollWidth,
+            })
+              .then((canvas) => {
+                if (clone.parentNode) clone.parentNode.removeChild(clone);
+
+                const baseName = currentFileName
+                  ? currentFileName.replace(/\.[^/.]+$/, "")
+                  : "metadata";
+                const downloadLink = document.createElement("a");
+                downloadLink.download = `EXIF_${baseName}.png`;
+                downloadLink.href = canvas.toDataURL("image/png");
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+
+                showToast("元数据图片导出成功！");
+              })
+              .catch((err) => {
+                if (clone.parentNode) clone.parentNode.removeChild(clone);
+                console.error(err);
+                showToast("导出失败，请重试");
+              });
+          });
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

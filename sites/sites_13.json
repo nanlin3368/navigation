@@ -3,42 +3,49 @@
         "title": "PDFCraft",
         "icon": "PDFCraft_icon.webp",
         "url": "http://pdfcraft.devtoolcafe.com/zh",
-        "description": "专业级在线 PDF 办公套件，提供 120+ 款功能，覆盖 PDF 文字编辑、合并、拆分、压缩、OCR识别、格式转换、页面管理与安全加密等全套工具，所有处理均在浏览器本地完成，100%隐私安全，无注册、完全免费，适用于办公、学习、文档管理与扫描文件",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "QwikPDF",
         "icon": "QwikPDF_icon.webp",
         "url": "https://qwikpdf.com",
-        "description": "免费全能在线 PDF 办公，提供 20+ 全能工具，在线编辑 PDF 文字、合并拆分、压缩、PDF与图片互转，支持签名、标注、涂黑脱敏，可批量处理文件，旋转删除裁剪页面、设计印刷海报，编辑元数据、添加页码与水印，适合高效处理合同、简历与办公文档",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "iLovePDF",
         "icon": "iLovePDF_icon.webp",
         "url": "https://www.ilovepdf.com/zh-cn",
-        "description": "全功能 PDF 在线工具平台，提供 PDF转换、压缩、合并、拆分、编辑、OCR识别、图片转PDF 等全套文档处理功能，覆盖学习、办公、合同处理、内容创作等场景，支持多格式互转与跨平台使用，操作简单、快速处理，是高效处理 PDF 文件的首选平台",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "PDF24",
         "icon": "PDF24_icon.webp",
         "url": "https://tools.pdf24.org/zh/all-tools",
-        "description": "完全免费的在线 PDF 工具集，包括 PDF合并、拆分、压缩、编辑、签署、OCR识别、PDF转Word/Excel/PPT、图片转PDF、PDF转图片、网页转PDF 等功能，支持无水印、无次数限制、多设备访问，文件传输全程加密，是处理 PDF 的高效、安全、可靠选择",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "Stirling PDF",
         "icon": "Stirling_PDF_icon.webp",
         "url": "https://spdf.tinyrui.com",
-        "description": "一站式 PDF 工具平台，涵盖 PDF 合并、拆分、压缩、OCR识别、加水印、签名修复、加密解密、PDF与Word/图片/Markdown互转等全功能，支持批量处理、页面裁剪、空白页清理、证书签名、文档对比，工具无需频繁切换，高效完成各类 PDF 编辑转换需求",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "草料二维码",
+        "icon": "草料二维码_icon.webp",
+        "url": "https://cli.im",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "FileUNZIP",
         "icon": "FileUNZIP_icon.webp",
         "url": "https://cn.fileunzip.com",
-        "description": "免费云端在线解压工具，无需安装软件，浏览器直接解压ZIP、RAR、7Z、ISO等 50 余种格式，支持加密压缩包，云端高速处理，最大支持 1GB 文件，文件加密上传，24小时自动清除保障隐私，解压后可预览并批量下载文件，让办公学习快速提取各类压缩资源",
+        "description": "",
         "category": "文档办公"
     },
     {
@@ -150,28 +157,28 @@
         "title": "魔方简历",
         "icon": "魔方简历_icon.webp",
         "url": "https://magicv.art/zh",
-        "description": "基于 AI 技术的智能在线简历制作平台，提供智能润色、语法检查、自动排版、多模板选择、本地存储等专业辅助功能，支持 PDF 与 JSON 格式一键导出，适配不同求职场景与平台需求，无需注册即可使用，帮助用户快速创建结构清晰、表达专业的高质量简历",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "ZIZIYI Office",
         "icon": "ZIZIYI_Office_icon.webp",
         "url": "https://office.ziziyi.com",
-        "description": "免费的在线 Office 编辑器，支持在浏览器中直接打开与编辑 DOCX、XLSX、PPTX、PDF 等格式，文件本地处理，确保隐私与安全，提供 Word、Excel、PPT 免费模板库，覆盖教育、商务、创意等主题，无需注册即可使用，提升办公效率与内容制作质量",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "Diagrams",
         "icon": "Diagrams_icon.webp",
         "url": "https://www.drawio.com",
-        "description": "开源、免费的在线图表编辑器，支持流程图、组织结构图、网络拓扑图、思维导图等多种专业图表绘制，具备拖拽式编辑、智能对齐、多人协作、丰富导出格式等功能，无需注册即可使用，支持本地与云端存储，提供桌面版下载，是 Visio 的高质量替代方案",
+        "description": "",
         "category": "文档办公"
     },
     {
         "title": "懒人办公",
         "icon": "懒人办公_icon.webp",
         "url": "https://www.lanren.work",
-        "description": "专业的在线办公工具平台，支持 PDF合并、拆分、加密、解密、OCR、压缩等功能，提供图片去背景、文字提取、格式转换、拼接长图等工具，拥有丰富的 PPT、Word、Excel 模板免费下载，无需安装软件，即开即用，是高效便捷的一站式在线办公平台",
+        "description": "",
         "category": "文档办公"
     },
     {
@@ -381,6 +388,13 @@
         "title": "烁皓的工具箱",
         "icon": "烁皓的工具箱_icon.webp",
         "url": "https://eternityspring.github.io/article-tools",
+        "description": "",
+        "category": "文档办公"
+    },
+    {
+        "title": "记灵",
+        "icon": "记灵_icon.webp",
+        "url": "https://remeins.com",
         "description": "",
         "category": "文档办公"
     }

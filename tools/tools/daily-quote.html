@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>每日一言</title>
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --yellow: #ff9f0a;
+        --green: #34c759;
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用容器（移动端默认纵向排列） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-settings {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-results {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 桌面端响应式布局（左右双栏） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          flex: 0 0 320px;
+        }
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          align-self: flex-start;
+        }
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-settings {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .panel-results {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 区块标题 --- */
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 14px;
+      }
+
+      /* --- 分类按钮组（移动端 3 列网格） --- */
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .cat-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 6px;
+        border: 1px solid transparent;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* 桌面端分类按钮（垂直堆叠、左对齐） */
+      @media (min-width: 860px) {
+        .category-group {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .cat-btn {
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+      }
+
+      .cat-btn:hover {
+        background: rgba(0, 0, 0, 0.03);
+      }
+      .cat-btn.active {
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* --- 统计条目 --- */
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .meta-row .val {
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 16px;
+      }
+
+      /* --- 一言展示核心区域 --- */
+      .quote-display {
+        display: flex;
+        flex-direction: column;
+        min-height: 280px;
+        justify-content: center;
+      }
+
+      .quote-tag {
+        align-self: flex-start;
+        background: rgba(0, 113, 227, 0.1);
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        letter-spacing: 0.04em;
+      }
+
+      /* --- 配图容器 --- */
+      .quote-image-wrap {
+        width: 100%;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
+        background: var(--bg);
+        border: 1px solid var(--line);
+      }
+      .quote-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        transition: opacity 0.3s ease;
+      }
+
+      /* 桌面端配图高度自适应 */
+      @media (min-width: 860px) {
+        .panel-results .card {
+          min-height: 0;
+        }
+        .quote-display {
+          flex: 1;
+          min-height: 560px;
+        }
+        .quote-image-wrap {
+          flex: 1 1 auto;
+          min-height: 160px;
+          max-height: 560px;
+        }
+        .quote-image {
+          height: 100%;
+        }
+        .quote-tag,
+        .quote-text,
+        .quote-author {
+          flex-shrink: 0;
+        }
+      }
+
+      .img-loading-mask {
+        position: absolute;
+        inset: 0;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        color: var(--sub);
+        transition: opacity 0.3s;
+      }
+      .img-refresh-btn {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .img-refresh-btn:active {
+        transform: scale(0.92) rotate(45deg);
+        background: #fff;
+      }
+
+      /* --- 句子主体 --- */
+      .quote-text {
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.6;
+        color: var(--ink);
+        margin: 10px 0 14px;
+        word-break: break-all;
+      }
+      .quote-author {
+        font-size: 14px;
+        color: var(--sub);
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: right;
+      }
+
+      /* --- 加载骨架屏 --- */
+      .quote-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 0;
+        gap: 12px;
+        color: var(--sub);
+        font-size: 14px;
+      }
+      .spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid var(--line);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* --- 按钮与操作控件 --- */
+      .btn-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .btn-sub-pair {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+      }
+      .btn {
+        border: none;
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          background-color 0.15s ease,
+          color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+
+      #copyBtn,
+      #speakBtn {
+        flex: 1;
+        min-width: 0;
+      }
+      #randomBtn {
+        width: 100%;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
+      .btn-speaking,
+      .btn-speaking:hover,
+      .btn-speaking:active {
+        background: var(--green);
+        color: #fff;
+      }
+
+      /* 桌面端按钮布局调整 */
+      @media (min-width: 860px) {
+        .btn-row {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .btn-sub-pair {
+          display: contents;
+        }
+        .btn {
+          flex: 1;
+          min-width: 100px;
+        }
+        #randomBtn {
+          width: auto;
+        }
+      }
+
+      /* --- 滚动条 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Toast 提示容器 -->
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <!-- 顶部标题 -->
+    <div class="topbar">
+      <h1>📖 每日一言</h1>
+      <p>随机佳句 · 语音朗读 · 本地安全品味</p>
+    </div>
+
+    <!-- 主应用 -->
+    <div class="app">
+      <!-- 左侧设置面板 -->
+      <div class="panel-settings">
+        <!-- 今日阅览卡片 -->
+        <div class="card">
+          <p class="section-title">今日阅览</p>
+          <div class="meta-row">
+            <span>已获取佳句数</span>
+            <span class="val" id="todayCountVal">0 次</span>
+          </div>
+        </div>
+
+        <!-- 佳句分类卡片 -->
+        <div class="card">
+          <p class="section-title">佳句分类</p>
+          <div class="category-group" id="categorySelector"></div>
+        </div>
+      </div>
+
+      <!-- 右侧结果面板 -->
+      <div class="panel-results">
+        <div class="card" style="flex: 1">
+          <p class="section-title">一言空间</p>
+
+          <!-- 名言展示区域 -->
+          <div class="quote-display" id="quoteDisplay">
+            <div class="quote-loading">
+              <div class="spinner"></div>
+              <span>正在寻找佳句…</span>
+            </div>
+          </div>
+
+          <!-- 操作按钮组 -->
+          <div class="btn-row">
+            <div class="btn-sub-pair">
+              <button class="btn btn-secondary" id="copyBtn">
+                📋 复制文本
+              </button>
+              <button class="btn btn-secondary" id="speakBtn">
+                🔊 语音朗读
+              </button>
+            </div>
+            <button class="btn btn-primary" id="randomBtn">
+              🎲 随机下一句
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        /* --- 分类配置数据 --- */
+        const CATEGORIES = [
+          { code: "", name: "全部视野" },
+          { code: "a", name: "动漫次元" },
+          { code: "b", name: "文学经典" },
+          { code: "c", name: "影视荧幕" },
+          { code: "d", name: "古风诗词" },
+          { code: "e", name: "原创情感" },
+          { code: "f", name: "名人哲思" },
+          { code: "i", name: "逆风励志" },
+          { code: "j", name: "网易云乐评" },
+        ];
+
+        /* --- API 数据源配置 --- */
+        const API_SOURCES = [
+          {
+            name: "hitokoto",
+            url: (cat) => `https://v1.hitokoto.cn/${cat ? "?c=" + cat : ""}`,
+            parse: (d) => ({
+              text: d.hitokoto,
+              author: d.from_who || d.from || "佚名",
+              source: d.from || "",
+              type: d.type,
+            }),
+          },
+          {
+            name: "gushi",
+            url: () => "https://api.gushi.ci/all.json",
+            parse: (d) => ({
+              text: d.content,
+              author: d.origin?.author || "佚名",
+              source: d.origin?.title || "",
+              type: "d",
+            }),
+          },
+          {
+            name: "btstu",
+            url: () =>
+              "https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json",
+            parse: (d) => ({
+              text: d.text || d.content,
+              author: d.source || "格言网",
+              source: "",
+              type: "f",
+            }),
+          },
+          {
+            name: "yiyan_v2",
+            url: () => "https://yiyan.us.kg/",
+            parse: (d) => ({
+              text: d.hitokoto,
+              author: d.from_who || d.from || "佚名",
+              source: d.from || "",
+              type: d.type,
+            }),
+          },
+        ];
+
+        /* --- 配图素材池（Picsum 图片 ID 列表） --- */
+        const IMAGE_POOL = [
+          ...[
+            10, 15, 20, 25, 27, 29, 36, 39, 42, 43, 48, 57, 64, 65, 67, 73, 74,
+            82, 83, 84, 85, 87, 91, 93, 94, 99, 100, 106, 110, 112, 116, 119,
+            120, 127, 130, 137, 139, 143, 145, 147, 152, 155, 160, 166, 168,
+            172, 175, 181, 190, 193, 196, 200, 201, 202, 203, 204, 205, 210,
+            214, 217, 219, 220, 222, 225, 228, 229, 230, 232, 237, 239, 244,
+            247, 250, 256, 257, 260, 266, 267, 271, 274, 277, 280, 284, 287,
+            290, 292, 293, 295, 299, 301, 303, 306, 308, 311, 312, 315, 316,
+            317, 318, 319, 320, 321,
+          ].map((id) => `https://picsum.photos/id/${id}/700/350`),
+        ];
+
+        /* --- 本地备用名言库（API 失效时使用） --- */
+        const LOCAL_QUOTES = [
+          {
+            text: "生命中最困难的阶段不是没有人懂你，而是你不懂自己。",
+            author: "尼采",
+            source: "《悲剧的诞生》",
+            type: "f",
+          },
+          {
+            text: "如果你长时间凝视深渊，深渊也会凝视你。",
+            author: "尼采",
+            source: "《善恶的彼岸》",
+            type: "f",
+          },
+          {
+            text: "我慢慢明白了为什么我不快乐，因为我总是期待一个结果。",
+            author: "村上春树",
+            source: "《挪威的森林》",
+            type: "b",
+          },
+          {
+            text: "不管全世界所有人怎么说，我都认为自己的感受才是正确的。",
+            author: "宫崎骏",
+            source: "《龙猫》",
+            type: "a",
+          },
+          {
+            text: "世界上只有一种真正的英雄主义，就是认清生活的真相后依然热爱生活。",
+            author: "罗曼·罗兰",
+            source: "《约翰·克里斯朵夫》",
+            type: "f",
+          },
+          {
+            text: "生如夏花之绚烂，死如秋叶之静美。",
+            author: "泰戈尔",
+            source: "《飞鸟集》",
+            type: "b",
+          },
+          {
+            text: "每一个不曾起舞的日子，都是对生命的辜负。",
+            author: "尼采",
+            source: "",
+            type: "i",
+          },
+          {
+            text: "千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。",
+            author: "柳宗元",
+            source: "《江雪》",
+            type: "d",
+          },
+          {
+            text: "此情可待成追忆，只是当时已惘然。",
+            author: "李商隐",
+            source: "《锦瑟》",
+            type: "d",
+          },
+          {
+            text: "人生若只如初见，何事秋风悲画扇。",
+            author: "纳兰性德",
+            source: "《木兰词》",
+            type: "d",
+          },
+          {
+            text: "你的时间有限，所以不要浪费时间去过别人的生活。",
+            author: "乔布斯",
+            source: "",
+            type: "i",
+          },
+        ];
+
+        /* --- 本地存储 Key --- */
+        const STORAGE_TODAY = "dyq_today_v2";
+
+        /* --- 状态变量 --- */
+        let currentQuote = null;
+        let currentCategory = "";
+        let isSpeaking = false;
+        let todayCount = 0;
+        let usedImgIndices = [];
+
+        /* --- DOM 引用 --- */
+        const toastEl = document.getElementById("toast");
+        let toastTimer = null;
+
+        /* --- Toast 提示函数 --- */
+        function showToast(msg) {
+          toastEl.textContent = msg;
+          toastEl.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toastEl.classList.remove("show");
+          }, 1600);
+        }
+
+        /* --- 工具函数：获取分类中文名 --- */
+        function getCatName(type) {
+          const map = {
+            a: "动漫",
+            b: "文学",
+            c: "影视",
+            d: "诗词",
+            e: "原创",
+            f: "经典",
+            i: "励志",
+            j: "网易云",
+          };
+          return map[type] || "佳句";
+        }
+
+        /* --- 工具函数：随机获取配图（避免重复） --- */
+        function getRandomImage() {
+          if (usedImgIndices.length >= IMAGE_POOL.length) usedImgIndices = [];
+          let idx;
+          do {
+            idx = Math.floor(Math.random() * IMAGE_POOL.length);
+          } while (usedImgIndices.includes(idx));
+          usedImgIndices.push(idx);
+          return IMAGE_POOL[idx];
+        }
+
+        /* --- 工具函数：加载今日阅读次数 --- */
+        function loadTodayCount() {
+          const todayKey = new Date().toDateString();
+          try {
+            const td = JSON.parse(localStorage.getItem(STORAGE_TODAY));
+            todayCount = td && td.date === todayKey ? td.count || 0 : 0;
+          } catch {
+            todayCount = 0;
+          }
+          document.getElementById("todayCountVal").textContent =
+            `${todayCount} 次`;
+        }
+
+        /* --- 工具函数：保存今日阅读次数 --- */
+        function saveTodayCount() {
+          localStorage.setItem(
+            STORAGE_TODAY,
+            JSON.stringify({
+              date: new Date().toDateString(),
+              count: todayCount,
+            }),
+          );
+          document.getElementById("todayCountVal").textContent =
+            `${todayCount} 次`;
+        }
+
+        /* --- 核心：渲染名言与配图 --- */
+        function renderQuote(quote, imgUrl) {
+          const catName = getCatName(quote.type);
+          const authorLine = quote.author ? `—— ${quote.author}` : "";
+          const sourceLine = quote.source ? ` 《${quote.source}》` : "";
+
+          document.getElementById("quoteDisplay").innerHTML = `
+      <div class="quote-tag">${catName}</div>
+      <div class="quote-image-wrap">
+        <img class="quote-image" src="${imgUrl}" alt="配图">
+        <button class="img-refresh-btn" id="imgRefreshBtn" title="更换配图">🔄</button>
+        <div class="img-loading-mask" id="imgMask">配图精心加载中…</div>
+      </div>
+      <div class="quote-text">“ ${quote.text} ”</div>
+      <div class="quote-author">${authorLine}${sourceLine}</div>
+    `;
+
+          const img = document.querySelector(".quote-image");
+          const mask = document.getElementById("imgMask");
+          img.addEventListener("load", () => {
+            mask.style.opacity = "0";
+            setTimeout(() => (mask.style.display = "none"), 300);
+          });
+          if (img.complete) {
+            mask.style.display = "none";
+          }
+
+          document
+            .getElementById("imgRefreshBtn")
+            .addEventListener("click", () => {
+              const newImg = getRandomImage();
+              mask.style.display = "flex";
+              mask.style.opacity = "1";
+              img.src = newImg;
+              showToast("已无缝更换壁纸 🖼️");
+            });
+        }
+
+        /* --- 核心：加载状态切换 --- */
+        function setLoading(on) {
+          const btn = document.getElementById("randomBtn");
+          if (on) {
+            btn.disabled = true;
+            btn.textContent = "⏳ 加载中…";
+            document.getElementById("quoteDisplay").innerHTML = `
+        <div class="quote-loading">
+          <div class="spinner"></div>
+          <span>正在寻觅远方的灵感佳句…</span>
+        </div>`;
+          } else {
+            btn.disabled = false;
+            btn.textContent = "🎲 随机下一句";
+          }
+        }
+
+        /* --- 核心：尝试从 API 获取名言 --- */
+        async function tryFetchFromSource(src, cat) {
+          const resp = await fetch(src.url(cat), {
+            signal: AbortSignal.timeout(4000),
+          });
+          if (!resp.ok) throw new Error("non-200");
+          const data = await resp.json();
+          const parsed = src.parse(data);
+          if (!parsed || !parsed.text) throw new Error("empty");
+          return parsed;
+        }
+
+        /* --- 核心：获取名言（API 优先，本地备用） --- */
+        async function fetchQuote() {
+          for (const src of API_SOURCES) {
+            try {
+              return await tryFetchFromSource(src, currentCategory);
+            } catch {}
+          }
+          const pool = currentCategory
+            ? LOCAL_QUOTES.filter((q) => q.type === currentCategory)
+            : LOCAL_QUOTES;
+          const candidates = pool.length ? pool : LOCAL_QUOTES;
+          return candidates[Math.floor(Math.random() * candidates.length)];
+        }
+
+        /* --- 核心：获取新名言并刷新界面 --- */
+        async function getNewQuote() {
+          setLoading(true);
+          if (isSpeaking) toggleSpeak();
+          try {
+            const quote = await fetchQuote();
+            currentQuote = quote;
+            todayCount++;
+            saveTodayCount();
+            renderQuote(quote, getRandomImage());
+          } catch {
+            const q =
+              LOCAL_QUOTES[Math.floor(Math.random() * LOCAL_QUOTES.length)];
+            currentQuote = q;
+            renderQuote(q, getRandomImage());
+            showToast("网络微调，已启用本地名言保护机制");
+          }
+          setLoading(false);
+        }
+
+        /* --- 语音朗读控制 --- */
+        function toggleSpeak() {
+          const btn = document.getElementById("speakBtn");
+          if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            btn.classList.remove("btn-speaking");
+            btn.textContent = "🔊 语音朗读";
+            return;
+          }
+          if (!currentQuote) return;
+          const utter = new SpeechSynthesisUtterance(currentQuote.text);
+          utter.lang = "zh-CN";
+          utter.rate = 0.95;
+          utter.onend = () => {
+            isSpeaking = false;
+            btn.classList.remove("btn-speaking");
+            btn.textContent = "🔊 语音朗读";
+          };
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak(utter);
+          isSpeaking = true;
+          btn.classList.add("btn-speaking");
+          btn.textContent = "⏹️ 停止朗读";
+        }
+
+        /* --- 复制名言到剪贴板 --- */
+        function copyQuote() {
+          if (!currentQuote) return;
+          const authorPart = currentQuote.author
+            ? ` — ${currentQuote.author}`
+            : "";
+          const srcPart = currentQuote.source
+            ? `《${currentQuote.source}》`
+            : "";
+          const text = `“${currentQuote.text}”${authorPart}${srcPart}`;
+
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard
+              .writeText(text)
+              .then(() => showToast("已成功复制到剪贴板"));
+          } else {
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+            showToast("已成功复制到剪贴板");
+          }
+        }
+
+        /* --- 渲染分类选择器 --- */
+        function renderCategorySelector() {
+          const el = document.getElementById("categorySelector");
+          el.innerHTML = CATEGORIES.map(
+            (cat) => `
+      <button class="cat-btn${cat.code === currentCategory ? " active" : ""}" data-code="${cat.code}">${cat.name}</button>`,
+          ).join("");
+
+          el.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              currentCategory = btn.dataset.code;
+              el.querySelectorAll(".cat-btn").forEach((b) =>
+                b.classList.remove("active"),
+              );
+              btn.classList.add("active");
+              getNewQuote();
+            });
+          });
+        }
+
+        /* --- 初始化与事件绑定 --- */
+        function init() {
+          loadTodayCount();
+          renderCategorySelector();
+
+          document
+            .getElementById("randomBtn")
+            .addEventListener("click", getNewQuote);
+          document
+            .getElementById("copyBtn")
+            .addEventListener("click", copyQuote);
+          document
+            .getElementById("speakBtn")
+            .addEventListener("click", toggleSpeak);
+
+          getNewQuote();
+        }
+
+        init();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

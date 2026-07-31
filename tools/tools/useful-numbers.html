@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>常用号码查询</title>
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用容器（移动端默认纵向排列） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-settings {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-results {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 左右面板（移动端均为纵向） --- */
+      .panel-settings,
+      .panel-results {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 区块标题 --- */
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 14px;
+        flex: 0 0 auto;
+      }
+
+      /* --- 分类按钮组（移动端3列） --- */
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      /* --- 号码网格（自适应列宽） --- */
+      .phone-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+        padding: 4px 0;
+      }
+
+      /* --- 号码列表滚动容器（移动端高度） --- */
+      .phone-container-scroll {
+        max-height: 560px;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
+
+      /* --- 数据看板统计行 --- */
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .stat-row .val {
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 16px;
+      }
+
+      /* --- 分类按钮样式 --- */
+      .cat-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 6px;
+        border: 1px solid transparent;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .cat-btn:hover {
+        background: rgba(0, 0, 0, 0.03);
+      }
+      .cat-btn.active {
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* --- 单个号码卡片样式 --- */
+      .phone-item {
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        padding: 14px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        transition:
+          transform 0.1s ease,
+          background-color 0.15s;
+        user-select: none;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+      .phone-item:hover {
+        background: rgba(0, 0, 0, 0.04);
+        transform: scale(1.04);
+      }
+      .phone-item:active {
+        transform: scale(0.98);
+        background: var(--line);
+      }
+      .phone-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .phone-number {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+      }
+      /* 紧急号码特殊颜色 */
+      .emergency .phone-number {
+        color: #ff3b30;
+      }
+
+      /* --- 滚动条美化 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* --- 桌面端响应式布局（≥860px） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: flex-start;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          flex: 0 0 280px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        /* 分类卡片：桌面端固定高度内部滚动 */
+        .category-card {
+          height: 400px;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+
+        /* 滚动列表容器：改为 Flex 纵向排列并开启滚动 */
+        .category-card .category-group {
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
+          overflow-y: auto;
+          gap: 8px;
+          padding-right: 6px;
+        }
+
+        /* 修正分类按钮样式与文字展示 */
+        .category-card .cat-btn {
+          flex: 0 0 auto;
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 14px;
+          line-height: 1.4;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .phone-container-scroll {
+          height: 550px;
+          max-height: none;
+          overflow-y: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- --- Toast 提示容器 --- -->
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <!-- --- 顶部标题栏 --- -->
+    <div class="topbar">
+      <h1>☎️ 常用号码查询</h1>
+      <p>纯本地分类快捷查阅 · 点击秒级复制或拨打</p>
+    </div>
+
+    <div class="app">
+      <div class="panel-settings">
+        <!-- 数据看板卡片 -->
+        <div class="card">
+          <p class="section-title">数据看板</p>
+          <div class="stat-row">
+            <span>已收录号码总数</span>
+            <span class="val" id="totalCountVal">0 个</span>
+          </div>
+        </div>
+
+        <!-- 分类卡片 -->
+        <div class="card category-card">
+          <p class="section-title">号码分类</p>
+          <div class="category-group" id="categorySelector"></div>
+        </div>
+      </div>
+
+      <!-- --- 右侧结果面板 --- -->
+      <div class="panel-results">
+        <div class="card" style="flex: 1">
+          <p class="section-title" id="gridTitle">全部号码</p>
+          <div class="phone-container-scroll">
+            <div class="phone-grid" id="phoneGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        "use strict";
+
+        /* --- 内置常用号码数据库（按分类组织） --- */
+        const PHONE_DATA = [
+          {
+            name: "紧急求助",
+            isEmergency: true,
+            phone: [
+              { name: "报警", num: "110" },
+              { name: "火警", num: "119" },
+              { name: "急救中心", num: "120" },
+              { name: "交通事故", num: "122" },
+              { name: "水上求救", num: "12395" },
+              { name: "森林火警", num: "12119" },
+              { name: "红十字急救", num: "999" },
+            ],
+          },
+          {
+            name: "生活服务",
+            phone: [
+              { name: "号码查询", num: "114" },
+              { name: "天气预报", num: "12121" },
+              { name: "报时服务", num: "12117" },
+              { name: "电力服务", num: "95598" },
+              { name: "供水服务", num: "12319" },
+              { name: "燃气服务", num: "96777" },
+              { name: "有线电视", num: "96566" },
+              { name: "邮政服务", num: "11185" },
+              { name: "社区服务", num: "12349" },
+            ],
+          },
+          {
+            name: "投诉举报",
+            phone: [
+              { name: "消费者投诉", num: "12315" },
+              { name: "质量监督", num: "12365" },
+              { name: "价格举报", num: "12358" },
+              { name: "环保投诉", num: "12369" },
+              { name: "税务举报", num: "12366" },
+              { name: "电力监管", num: "12398" },
+              { name: "机构编制违规举报", num: "12310" },
+              { name: "网络不良信息举报", num: "12321" },
+              { name: "旅游投诉", num: "12301" },
+              { name: "食品药品投诉", num: "12331" },
+              { name: "知识产权举报", num: "12330" },
+              { name: "文化市场举报", num: "12318" },
+              { name: "城管热线", num: "12319" },
+            ],
+          },
+          {
+            name: "交通出行",
+            phone: [
+              { name: "高速公路救援", num: "12122" },
+              { name: "铁路客服", num: "12306" },
+              { name: "国航客服", num: "95583" },
+              { name: "东航客服", num: "95530" },
+              { name: "南航客服", num: "95539" },
+              { name: "海航客服", num: "95339" },
+              { name: "滴滴出行", num: "400-000-0999" },
+              { name: "神州租车", num: "400-616-6666" },
+              { name: "哈啰出行", num: "95218900" },
+            ],
+          },
+          {
+            name: "通信运营商",
+            phone: [
+              { name: "中国移动客服", num: "10086" },
+              { name: "中国联通客服", num: "10010" },
+              { name: "中国电信客服", num: "10000" },
+              { name: "中国广电客服", num: "10099" },
+              { name: "中国移动投诉", num: "10080" },
+              { name: "中国联通投诉", num: "10015" },
+              { name: "中国电信投诉", num: "10005" },
+            ],
+          },
+          {
+            name: "银行客服",
+            phone: [
+              { name: "工商银行", num: "95588" },
+              { name: "农业银行", num: "95599" },
+              { name: "中国银行", num: "95566" },
+              { name: "建设银行", num: "95533" },
+              { name: "交通银行", num: "95559" },
+              { name: "招商银行", num: "95555" },
+              { name: "中信银行", num: "95558" },
+              { name: "光大银行", num: "95595" },
+              { name: "民生银行", num: "95568" },
+              { name: "广发银行", num: "95508" },
+              { name: "浦发银行", num: "95528" },
+              { name: "兴业银行", num: "95561" },
+              { name: "华夏银行", num: "95577" },
+              { name: "平安银行", num: "95511" },
+              { name: "邮储银行", num: "95580" },
+              { name: "北京银行", num: "95526" },
+              { name: "上海银行", num: "95594" },
+            ],
+          },
+          {
+            name: "保险客服",
+            phone: [
+              { name: "中国人寿", num: "95519" },
+              { name: "平安保险", num: "95511" },
+              { name: "太平洋保险", num: "95500" },
+              { name: "人保财险", num: "95518" },
+              { name: "泰康人寿", num: "95522" },
+              { name: "新华保险", num: "95567" },
+              { name: "中华保险", num: "95585" },
+            ],
+          },
+          {
+            name: "快递物流",
+            phone: [
+              { name: "顺丰速运", num: "95338" },
+              { name: "圆通速递", num: "95554" },
+              { name: "中通快递", num: "95311" },
+              { name: "申通快递", num: "95543" },
+              { name: "韵达快递", num: "95546" },
+              { name: "中国邮政速递", num: "11183" },
+              { name: "德邦快递", num: "95353" },
+              { name: "京东物流", num: "950616" },
+              { name: "菜鸟驿站", num: "9519666" },
+              { name: "极兔速递", num: "956025" },
+              { name: "苏宁物流", num: "95315" },
+            ],
+          },
+          {
+            name: "电商客服",
+            phone: [
+              { name: "淘宝", num: "9510211" },
+              { name: "天猫", num: "9510211" },
+              { name: "京东", num: "950618" },
+              { name: "拼多多", num: "021-53395288" },
+              { name: "苏宁易购", num: "95101818" },
+              { name: "微信支付", num: "95017" },
+              { name: "支付宝", num: "95188" },
+              { name: "腾讯客服", num: "0755-83765566" },
+              { name: "百度客服", num: "400-921-9999" },
+              { name: "抖音客服", num: "95152" },
+              { name: "快手客服", num: "400-101-0738" },
+              { name: "美团", num: "10107888" },
+              { name: "饿了么", num: "10105757" },
+              { name: "携程旅行", num: "95010" },
+              { name: "去哪儿网", num: "95117" },
+              { name: "滴滴出行", num: "400-000-0999" },
+            ],
+          },
+          {
+            name: "政务服务",
+            phone: [
+              { name: "政务服务热线", num: "12345" },
+              { name: "纳税服务", num: "12366" },
+              { name: "海关服务", num: "12360" },
+              { name: "三农服务", num: "12316" },
+              { name: "卫生热线", num: "12320" },
+              { name: "法律援助", num: "12348" },
+              { name: "妇女维权", num: "12338" },
+              { name: "青少年服务", num: "12355" },
+              { name: "残疾人服务", num: "12385" },
+              { name: "扶贫监督", num: "12317" },
+            ],
+          },
+        ];
+
+        /* --- 状态变量与 DOM 引用 --- */
+        let activeIndex = 0;
+        const categorySelector = document.getElementById("categorySelector");
+        const phoneGrid = document.getElementById("phoneGrid");
+        const gridTitle = document.getElementById("gridTitle");
+        const totalCountVal = document.getElementById("totalCountVal");
+        const toast = document.getElementById("toast");
+        let toastTimer = null;
+
+        /* --- Toast 轻提示逻辑 --- */
+        function showToast(msg) {
+          toast.textContent = msg;
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1500);
+        }
+
+        /* --- 复制文本到剪贴板（兼容降级） --- */
+        function copyToClipboard(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return Promise.resolve();
+        }
+
+        /* --- 计算总号码数并更新统计 --- */
+        function calculateTotalNumbers() {
+          const total = PHONE_DATA.reduce(
+            (sum, category) => sum + category.phone.length,
+            0,
+          );
+          totalCountVal.textContent = `${total} 个`;
+        }
+
+        /* --- 渲染指定分类下的号码卡片 --- */
+        function renderNumbers(index) {
+          const category = PHONE_DATA[index];
+          gridTitle.textContent = `${category.name} (${category.phone.length})`;
+          const isEmergencyClass = category.isEmergency ? " emergency" : "";
+
+          phoneGrid.innerHTML = category.phone
+            .map(
+              (item) => `
+      <div class="phone-item${isEmergencyClass}" data-num="${item.num}" title="点击复制/拨打">
+        <span class="phone-name">${item.name}</span>
+        <span class="phone-number">${item.num}</span>
+      </div>
+    `,
+            )
+            .join("");
+
+          // 绑定点击复制（单击）和双击拨打（tel: 链接）事件
+          phoneGrid.querySelectorAll(".phone-item").forEach((item) => {
+            item.addEventListener("click", () => {
+              const num = item.dataset.num;
+              copyToClipboard(num).then(() => {
+                showToast(`✅ 成功复制号码: ${num}`);
+              });
+            });
+            item.addEventListener("dblclick", () => {
+              window.location.href = `tel:${item.dataset.num}`;
+            });
+          });
+        }
+
+        /* --- 渲染分类按钮 --- */
+        function renderCategories() {
+          categorySelector.innerHTML = PHONE_DATA.map(
+            (cat, idx) => `
+      <button class="cat-btn${idx === activeIndex ? " active" : ""}" data-index="${idx}">${cat.name}</button>
+    `,
+          ).join("");
+
+          categorySelector.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const idx = parseInt(btn.dataset.index, 10);
+              activeIndex = idx;
+              categorySelector
+                .querySelectorAll(".cat-btn")
+                .forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+              renderNumbers(activeIndex);
+            });
+          });
+        }
+
+        /* --- 初始化 --- */
+        function init() {
+          calculateTotalNumbers();
+          renderCategories();
+          renderNumbers(activeIndex);
+        }
+
+        init();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

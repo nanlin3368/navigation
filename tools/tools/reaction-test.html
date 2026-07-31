@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>反应速度测试</title>
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --red-bg: rgba(255, 59, 48, 0.1);
+        --green: #34c759;
+        --green-bg: rgba(52, 199, 89, 0.15);
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用布局容器 --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-left {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-right {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 桌面端响应式 (≥860px) --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-left {
+          flex: 0 0 400px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .panel-right {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-self: flex-start;
+        }
+      }
+
+      /* --- 移动端响应式 (<860px) 重排顺序 --- */
+      @media (max-width: 860px) {
+        .app {
+          flex-direction: column;
+        }
+        .panel-left {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          order: 2; /* 统计区域排中间 */
+        }
+        .panel-right {
+          display: flex;
+          flex-direction: column;
+          order: 1; /* 测试区域排最顶部 */
+        }
+        .card-history {
+          order: 4; /* 历史记录排最底部 */
+        }
+        .card-controls {
+          order: 3; /* 按钮区域排中间偏下 */
+        }
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-right .card {
+        flex: 1;
+      }
+
+      /* --- 区块标题 --- */
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 12px 0;
+      }
+
+      /* --- 统计面板网格 --- */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .stat-box {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 12px 8px;
+        text-align: center;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--sub);
+        margin-bottom: 4px;
+      }
+      .stat-val {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+      }
+
+      /* --- 历史记录列表 --- */
+      .history-list {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        max-height: 190px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .history-item {
+        display: flex;
+        justify-content: between;
+        align-items: center;
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+      }
+      .history-item:last-child {
+        border-bottom: none;
+      }
+      .history-index {
+        color: var(--sub);
+        font-weight: 500;
+      }
+      .history-time {
+        margin-left: auto;
+        font-weight: 600;
+        font-family: ui-monospace, SFMono-Regular, monospace;
+      }
+
+      /* --- 核心测试交互区 (状态驱动) --- */
+      .test-zone {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.15s ease;
+        text-align: center;
+        padding: 24px;
+      }
+
+      /* 状态一：就绪/常规态 */
+      .state-ready {
+        background: #e8e8ed;
+        color: var(--ink);
+        border: 1px dashed rgba(0, 0, 0, 0.15);
+      }
+      .state-ready:hover {
+        background: #dfdfe5;
+      }
+
+      /* 状态二：等待态 (红色预警) */
+      .state-waiting {
+        background: var(--red);
+        color: #ffffff;
+      }
+
+      /* 状态三：触发反应态 (绿色爆发) */
+      .state-now {
+        background: var(--green);
+        color: #ffffff;
+      }
+
+      .test-icon {
+        font-size: 42px;
+        margin-bottom: 12px;
+      }
+      .test-main-text {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 6px;
+      }
+      .test-sub-text {
+        font-size: 14px;
+        opacity: 0.75;
+      }
+
+      /* --- 按钮与控件 --- */
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 2px;
+      }
+      .btn {
+        flex: 1;
+        border: none;
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          background-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-danger {
+        background: var(--bg);
+        color: var(--red);
+        border: 1px solid var(--line);
+      }
+      .btn-danger:hover {
+        background: rgba(255, 59, 48, 0.05);
+      }
+
+      /* --- 滚动条美化 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.12);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- --- Toast 提示容器 --- -->
+    <div class="toast" id="toast">操作成功</div>
+
+    <!-- --- 顶部标题栏 --- -->
+    <div class="topbar">
+      <h1>⚡ 反应速度测试</h1>
+      <p>纯前端高精度毫秒捕获 · 评估你的神经反射屏障</p>
+    </div>
+
+    <!-- --- 主应用区域 (左右布局) --- -->
+    <div class="app">
+      <!-- --- 左侧面板: 统计 / 控制 / 历史 --- -->
+      <div class="panel-left">
+        <!-- 统计卡片 -->
+        <div class="card">
+          <p class="section-title">成绩统计面板</p>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">平均用时</div>
+              <div class="stat-val" id="avgVal">--</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">最佳反应</div>
+              <div class="stat-val" id="bestVal" style="color: var(--green)">
+                --
+              </div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">最差记录</div>
+              <div class="stat-val" id="worstVal" style="color: var(--red)">
+                --
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 控制按钮卡片 -->
+        <div class="card card-controls">
+          <p class="section-title">流程控制中心</p>
+          <div class="btn-row">
+            <button class="btn btn-danger" id="resetStatsBtn">重置统计</button>
+            <button class="btn btn-primary" id="restartBtn">重新开始</button>
+          </div>
+        </div>
+
+        <!-- 历史记录卡片 -->
+        <div class="card card-history">
+          <p class="section-title">历史追踪记录 (最近10次)</p>
+          <div class="history-list" id="historyContainer"></div>
+        </div>
+      </div>
+
+      <!-- --- 右侧面板: 反应测试区 --- -->
+      <div class="panel-right">
+        <div class="card">
+          <p class="section-title">反应交互感应区</p>
+          <div class="test-zone state-ready" id="testBlock">
+            <div class="test-icon" id="testIcon">🔘</div>
+            <div class="test-main-text" id="mainText">点击此区域开始测试</div>
+            <div class="test-sub-text" id="subText">测试开始后请保持专注</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        /* --- DOM 元素引用 --- */
+        const testBlock = document.getElementById("testBlock");
+        const testIcon = document.getElementById("testIcon");
+        const mainText = document.getElementById("mainText");
+        const subText = document.getElementById("subText");
+
+        const avgVal = document.getElementById("avgVal");
+        const bestVal = document.getElementById("bestVal");
+        const worstVal = document.getElementById("worstVal");
+        const historyContainer = document.getElementById("historyContainer");
+
+        const restartBtn = document.getElementById("restartBtn");
+        const resetStatsBtn = document.getElementById("resetStatsBtn");
+        const toast = document.getElementById("toast");
+
+        /* --- 状态变量与核心数据 --- */
+        let currentState = "ready"; // 'ready' | 'waiting' | 'now' | 'result'
+        let timerTimeout = null;
+        let startTime = 0;
+        let records = []; // 存储所有历史记录（毫秒数）
+
+        /* --- Toast 轻提示逻辑 --- */
+        let toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg || "操作成功";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1500);
+        }
+
+        /* --- UI 更新函数 (统计面板 & 历史记录) --- */
+        function updateStatsUI() {
+          if (records.length === 0) {
+            avgVal.textContent = "--";
+            bestVal.textContent = "--";
+            worstVal.textContent = "--";
+            historyContainer.innerHTML =
+              '<div style="color:var(--sub);font-size:13px;text-align:center;padding:20px;opacity:0.6;">暂无历史记录</div>';
+            return;
+          }
+
+          // 筛选计算
+          const sum = records.reduce((a, b) => a + b, 0);
+          const avg = Math.round(sum / records.length);
+          const best = Math.min(...records);
+          const worst = Math.max(...records);
+
+          avgVal.textContent = `${avg} ms`;
+          bestVal.textContent = `${best} ms`;
+          worstVal.textContent = `${worst} ms`;
+
+          // 渲染最近10次历史记录（倒序排列，最新在最上方）
+          const recentRecords = records.slice(-10).reverse();
+          historyContainer.innerHTML = recentRecords
+            .map((score, index) => {
+              const displayIndex = records.length - index;
+              return `
+        <div class="history-item">
+          <span class="history-index">第 ${displayIndex} 次测试</span>
+          <span class="history-time">${score} ms</span>
+        </div>
+      `;
+            })
+            .join("");
+        }
+
+        /* --- 核心交互逻辑 (状态机) --- */
+        function handleBlockClick() {
+          if (currentState === "ready" || currentState === "result") {
+            // 1. 进入等待态 (红色)
+            currentState = "waiting";
+            testBlock.className = "test-zone state-waiting";
+            testIcon.textContent = "⏳";
+            mainText.textContent = "看到绿色时，立即点击！";
+            subText.textContent = "若提前点击将视为违规作弊";
+
+            // 设定 2 秒到 5 秒之间的随机触发器
+            const randomDelay = Math.random() * 3000 + 2000;
+            timerTimeout = setTimeout(() => {
+              // 2. 进入触发态 (绿色)
+              currentState = "now";
+              testBlock.className = "test-zone state-now";
+              testIcon.textContent = "⚡";
+              mainText.textContent = "快点击！！";
+              subText.textContent = "反射弧测量中...";
+              startTime = performance.now(); // 使用高精度时间戳
+            }, randomDelay);
+          } else if (currentState === "waiting") {
+            // 3. 犯规作弊 (点早了)
+            clearTimeout(timerTimeout);
+            currentState = "result";
+            testBlock.className = "test-zone state-ready";
+            testIcon.textContent = "⚠️";
+            mainText.textContent = "点早了！";
+            subText.textContent = "请在变绿后再进行点击，点击卡片重试";
+            showToast("操作违规：变绿前请勿点击");
+          } else if (currentState === "now") {
+            // 4. 成功捕获时间
+            const endTime = performance.now();
+            const reactionTime = Math.round(endTime - startTime);
+
+            records.push(reactionTime);
+            currentState = "result";
+
+            testBlock.className = "test-zone state-ready";
+            testIcon.textContent = "🎉";
+            mainText.textContent = `${reactionTime} ms`;
+            subText.textContent = "极佳！点击卡片可再度发起下一轮";
+
+            updateStatsUI();
+          }
+        }
+
+        /* --- 控件事件绑定 (重置 / 重开) --- */
+        function doRestart() {
+          clearTimeout(timerTimeout);
+          currentState = "ready";
+          testBlock.className = "test-zone state-ready";
+          testIcon.textContent = "🔘";
+          mainText.textContent = "点击此区域开始测试";
+          subText.textContent = "测试开始后请保持专注";
+          showToast("测试盘已复位");
+        }
+
+        function doResetStats() {
+          if (confirm("确认清空所有累计的成绩统计和历史记录吗？")) {
+            records = [];
+            updateStatsUI();
+            doRestart(); // 同时复位右侧看板
+            showToast("统计数据已全部重置");
+          }
+        }
+
+        /* --- 事件监听挂载 & 初始化 --- */
+        testBlock.addEventListener("click", handleBlockClick);
+        restartBtn.addEventListener("click", doRestart);
+        resetStatsBtn.addEventListener("click", doResetStats);
+
+        // 初始化数据面板
+        updateStatsUI();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

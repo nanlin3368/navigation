@@ -3,182 +3,189 @@
         "title": "菜鸟教程",
         "icon": "菜鸟教程_icon.webp",
         "url": "https://www.runoob.com",
-        "description": "国内最受欢迎的编程入门学习网站，提供HTML、CSS、JavaScript、Python、Java、PHP、Linux 等数百门编程语言与技术的免费教程，内容通俗易懂、结构严谨、实例丰富，适合零基础入门与开发者快速查阅，是中文开发者最信赖的技术学习平台",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "wikiHow",
         "icon": "wikiHow_icon.webp",
         "url": "https://zh.wikihow.com",
-        "description": "全球知名的生活技能百科网站中文版，拥有上万篇详细图文教程，涵盖生活技巧、技能学习、健康、电脑、数码、职场等几乎所有领域，提供清晰步骤、插图与实用技巧，帮助你快速学习生活、工作与兴趣相关的各种技能，是解决日常问题、学习新技能的免费实用百科",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "W3Schools",
         "icon": "W3Schools_icon.webp",
         "url": "https://www.w3schools.com",
-        "description": "全球最受欢迎的网页开发学习平台，涵盖HTML、CSS、JavaScript、Python等技术的简洁教程，提供在线实例、代码编辑器和实时演示，让用户在学习过程中快速理解语法与概念，内容清晰实用、示例丰富，是快速学习与查阅前端后端知识的经典参考站点",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Qwerty Learner",
         "icon": "Qwerty_Learner_icon.webp",
         "url": "https://qwerty.kaiyi.cool/mobile",
-        "description": "免费开源英语单词记忆与打字练习平台，通过输入单词练习肌肉记忆，支持 CET4/6、IELTS、TOEFL 等多类词库，提供带音标发音、默写模式、速度统计与实时输入反馈等功能，高效提升英语水平和打字速度，适用于学习备考、日常英语提升与专业写作场景",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Edclub",
         "icon": "Edclub_icon.webp",
         "url": "https://www.edclub.com/zh/",
-        "description": "全球领先的在线学习平台，核心课程涵盖 TypingClub 键盘打字训练、拼写与词汇提升、数字素养与数字公民教育等领域，支持互动教学、实时反馈、跨设备使用，并为教师提供班级管理、作业分配与学习数据分析工具，帮助学习者提升键盘技能与语言能力",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Musicca",
         "icon": "Musicca_icon.webp",
         "url": "https://www.musicca.com/zh",
-        "description": "永久免费使用的在线乐理学习平台，提供趣味化、游戏式的在线乐理课程与练习，包括节奏、音程、和弦、乐器训练等内容，永久免费、无广告，适合学生、自学者与学校课堂使用，并支持教师追踪学习进度，提升读谱、记谱与演奏能力，从 Musicca 开始",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Fold'N Fly",
         "icon": "Fold_N_Fly_icon.webp",
         "url": "https://www.foldnfly.com",
-        "description": "全球最全纸飞机折叠教学平台，收录 57 款经典与创新纸飞机设计，提供清晰易懂的折纸步骤、视频教程与可打印折线图，帮助你轻松折出飞行距离远、停空时间长、稳定性强的纸飞机，无论你是初学者还是纸飞机高手，都能在这里找到适合自己的模型与技巧",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Geeksforgeeks",
         "icon": "Geeksforgeeks_icon.webp",
         "url": "https://www.geeksforgeeks.org",
-        "description": "全球知名的计算机科学与编程学习平台，提供数据结构、算法、编程语言、系统设计、Web开发、机器学习等高质量教程与题解，拥有海量技术文章、代码示例、面试题库与学习路径，帮助开发者从基础到进阶全面提升技能、准备技术面试并解决实际开发问题",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "你缺失的那门计算机课",
         "icon": "你缺失的那门计算机课_icon.webp",
         "url": "https://www.criwits.top/missing",
-        "description": "《你缺失的那门计算机课》是一套为电脑小白打造的零门槛入门课程，从文件管理、软件安装到系统维护与常见问题处理，循序渐进、易懂实用，同时涵盖生成式AI、网络安全、云计算等前沿技术，内容持续更新，开放共享，是提升电脑能力的高质量学习入口",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "VitePress",
         "icon": "VitePress_icon.webp",
         "url": "https://vitepress.dev/zh",
-        "description": "基于 Vite 与 Vue 驱动的极速静态站点生成器，支持 Markdown 编写、Vue 组件扩展、快速构建与高性能页面加载，适合构建文档、博客、知识库与技术站点，提供完整指南、主题配置、自定义扩展与部署方案，是打造高质量技术内容与知识库的绝佳工具",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Markdown 教程",
         "icon": "Markdown_教程_icon.webp",
         "url": "https://www.markdownlang.com/zh",
-        "description": "Markdown 中文教程平台，提供从基础语法到进阶技巧的完整学习指南，涵盖标题、列表、引用、表格、链接、图片、代码块等常用写法，支持在线示例、语法对照与实用技巧，帮助用户在写作、文档、博客中提升排版效率，是学习 Markdown 的优质学习资源",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Bun",
         "icon": "Bun_icon.webp",
         "url": "https://www.bunjs.com.cn/zh-cn",
-        "description": "高性能 JavaScript 运行时与一体化开发工具包，集成运行时、极速包管理器、并发测试与零配置打包器，兼容 Node.js，支持 TypeScript/JSX/React、内置数据库驱动与 Docker 镜像，安装简便，构建与测试速度领先，适合现代 Web 与后端开发者提升效率",
+        "description": "",
         "category": "学习成长"
-    },    
+    },
     {
         "title": "LetMeEnglish",
         "icon": "LetMeEnglish_icon.webp",
         "url": "https://letmeenglish.com/zh-hans",
-        "description": "高质量免费的英语学习平台，提供系统化的英文文法解析、常用字汇讲解、实用句型整理、日常英文表达、听力训练与发音技巧等多维度模块，内容结构清晰、示例丰富、解释直观，适合零基础、学生、上班族与留学需求者，是提升英文能力的高效学习资源",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "LanguageGuide",
         "icon": "LanguageGuide_icon.webp",
         "url": "https://www.languageguide.org/cn",
-        "description": "互动式在线语言学习平台，提供英语、法语、西班牙语等多语种的词汇、发音与图像化学习内容，通过可视化词汇表、母语者标准音频、主题场景教学与直观操作界面，帮助用户快速积累基础词汇、提升听力与口语表达，适合入门者与自学者高效掌握新语言",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Type Words",
         "icon": "Type_Words_icon.webp",
         "url": "https://typewords.cc",
-        "description": "在线打字练习与速度测试平台，提供多模式训练、实时成绩分析、个性化提升路径与全球排行榜，支持多语言与自定义文本，全面强化打字速度与准确率，平台包含课程练习、错词回顾、进度追踪、键位热图与社交挑战功能，适合高效提升词汇量与输入能力",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "W3School",
         "icon": "W3School_icon.webp",
         "url": "https://www.w3school.com.cn",
-        "description": "领先的在线编程学习平台，提供 HTML、CSS、JavaScript、Python 等主流技术的系统教程，内容结构严谨、示例可在线运行，配有清晰语法说明与实用案例，帮助初学者快速入门，支持开发者查阅文档、巩固技能，是学习前端与后端技术的高质量知识库",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "Typing Learner",
         "icon": "Typing_Learner_icon.webp",
         "url": "https://www.typinglearner.com",
-        "description": "在线英语打字练习平台，提供多词库训练、实时速度与准确率统计、可视化键位提示与多模式练习，帮助学习者循序渐进提升打字速度与准确度，支持课堂教学、家庭练习与自主学习场景，适用于课堂教学与个人技能提升，助力培养数字素养与键盘操作能力",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "LabEx",
         "icon": "LabEx_icon.webp",
         "url": "https://labex.io/zh",
-        "description": "Linux 在线实验平台，提供真实环境终端、交互式实验与任务式练习，覆盖基础命令、系统管理、Shell、网络与 DevOps，结合技能树与项目实战，并支持 RHCSA、RHCE、CKA 认证路径，助力快速获得工程级实战能力，适合从入门到专业运维的全阶段用户",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "BALA 公考",
         "icon": "BALA_公考_icon.webp",
         "url": "https://www.baijing1.top",
-        "description": "公务员与事业单位考生的智能备考平台，整合行测题库、申论范文、历年真题解析、专项强化训练与智能错题本，结合每日时政热点、专项突破与个性化学习计划，支持在线刷题、能力评估、学习进度追踪与高质量资料下载，全面助力考生高效备考与成功上岸",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "VitePress",
         "icon": "VitePress_icon.webp",
         "url": "https://vitepress.yiov.top",
-        "description": "基于 Vite 的轻量级静态站点生成器，汇集主题示例、进阶配置、Markdown 扩展与性能优化技巧，助开发者快速搭建专业级技术文档、知识库与项目官网，支持自动导航、即时热更新、暗黑模式与高度可定制化主题，为开发者提供高效、优雅的内容构建方案",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "考试酷",
         "icon": "考试酷_icon.webp",
         "url": "https://www.examcoo.com",
-        "description": "综合性在线考试与作业平台，提供题库管理、智能组卷、自动阅卷、模拟测评与学习数据分析，覆盖学校教学、机构测评与企业培训，支持真题练习、错题巩固、实时监测与多端同步，满足教学测评、员工培训、技能考核等需求，助力高效教学与智能化评测",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "摄影技术学习",
         "icon": "摄影技术学习_icon.webp",
         "url": "https://www.photographystudy.online",
-        "description": "摄影技术学习平台，系统覆盖基础理论、拍摄技巧、场景风格、后期处理与器材指南等内容，通过可视化参数模拟、风格解析与真实案例拆解，从零基础逐步掌握构图、曝光控制、光线运用与创意表达，构建完整且实用的摄影知识体系，提升审美与实战能力",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "格言人",
         "icon": "格言人_icon.webp",
         "url": "https://kyrgk.com",
-        "description": "专注公务员与事业单位备考，严选行测、申论、面试与资料分析资源，提供高质量资料、系统课程与智能刷题工具，以命题趋势分析、结构化知识体系与实战方法论为核心，帮助考生高效提升理解力、记忆力与解题能力，打造纯粹、可信赖的备考学习平台",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "格言人-英语",
         "icon": "格言人-英语_icon.webp",
         "url": "https://en.kyrgk.com",
-        "description": "面向四级、六级与考研英语的高质量原生题库平台，提供精准词汇释义、长难句解析、真题拆解与语境例句，支持交互式查词、阅读逻辑训练与学术表达提升，帮助学习者高效突破听力、词汇、写作与翻译难点，构建稳定语言理解能力，轻松备考各类英语考试",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "DevDocs",
         "icon": "DevDocs_icon.webp",
         "url": "https://devdocs.io",
-        "description": "高速技术文档聚合平台，整合超过 100 种主流编程语言、框架与库的官方文档，覆盖从前端到后端、从系统工具到数据库的完整技术生态，支持即时搜索、离线缓存、键盘快捷操作，帮助程序员快速查阅 API、提升编码与学习效率，是不可或缺的技术参考工具",
+        "description": "",
         "category": "学习成长"
     },
     {
         "title": "LingoHut",
         "icon": "LingoHut_icon.webp",
         "url": "https://www.lingohut.com/zh",
-        "description": "完全免费的在线语言学习平台，覆盖 45 种语言，提供基础词汇、核心短语、情境对话与听力训练等多维内容，无需注册即可开始学习，课程以短时高效为特点，结合标准音频示范与互动练习，快速建立听说能力，适合零基础入门、旅行速成与日常沟通练习",
+        "description": "",
+        "category": "学习成长"
+    },
+    {
+        "title": "黄油单词",
+        "icon": "黄油单词_icon.webp",
+        "url": "https://waiyuka.cc/zh-CN",
+        "description": "",
         "category": "学习成长"
     }
 ]

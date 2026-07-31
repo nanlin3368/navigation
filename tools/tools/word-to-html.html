@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Word 转 HTML</title>
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --green: #34c759;
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 应用主容器（移动端默认纵向排列） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* --- 给左右面板加交错入场效果 ---*/
+      .panel-left {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-right {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 桌面端响应式布局（左右等宽双栏） --- */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-left,
+        .panel-right {
+          flex: 1 1 50%;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-left,
+      .panel-right {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 区块标题与元信息 --- */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0;
+        flex: 1;
+      }
+      .meta-info {
+        font-size: 12px;
+        color: var(--sub);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+      }
+
+      /* --- 左侧拖拽上传区域 --- */
+      .drop-zone {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        background: var(--bg);
+        border: 2px dashed var(--line);
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s;
+      }
+      .drop-zone.dragover {
+        border-color: var(--accent);
+        background: rgba(0, 113, 227, 0.04);
+      }
+      .drop-zone-icon {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+      .drop-zone-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .drop-zone-desc {
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 左侧 HTML 代码框 --- */
+      textarea.code-input {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 14px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--ink);
+        resize: none;
+        outline: none;
+        display: none;
+        transition: border-color 0.2s;
+      }
+      textarea.code-input:focus {
+        border-color: var(--accent);
+      }
+      textarea.code-input::placeholder {
+        color: var(--sub);
+        opacity: 0.6;
+      }
+      .drop-zone:hover {
+        border-color: var(--accent);
+      }
+      .drop-zone:active {
+        border-color: var(--accent-press);
+      }
+
+      /* --- 右侧网页渲染预览容器 --- */
+      .preview-container {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        max-height: 550px;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 20px;
+        overflow-y: auto;
+        color: var(--ink);
+        line-height: 1.6;
+      }
+
+      /* Word 预览排版样式修饰 */
+      .preview-container img {
+        max-width: 100%;
+        height: auto;
+      }
+      .preview-container table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 12px 0;
+      }
+      .preview-container table,
+      .preview-container th,
+      .preview-container td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      .empty-tip {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: var(--sub);
+        font-size: 14px;
+      }
+
+      /* --- 操作按钮组 --- */
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        flex: 1;
+        min-width: 100px;
+        border: none;
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          background-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
+      .btn-danger {
+        background: var(--bg);
+        color: var(--red);
+        border: 1px solid var(--line);
+      }
+
+      #fileInput {
+        display: none;
+      }
+
+      /* --- 滚动条美化 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toast" id="toast">操作成功</div>
+
+    <div class="topbar">
+      <h1>📄 Word 转 HTML</h1>
+      <p>本地安全处理 · 不会上传任何数据</p>
+    </div>
+
+    <div class="app">
+      <div class="panel-left">
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title" id="leftSectionTitle">
+              导入 Word 文档 (.docx)
+            </p>
+            <span class="meta-info" id="inputMeta">未选择文件</span>
+          </div>
+
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">📄</div>
+            <div class="drop-zone-title" id="fileTitle">
+              点击或拖拽 Word 文件到这里
+            </div>
+            <div class="drop-zone-desc" id="fileDesc">
+              支持 .docx 格式文件，导入后自动转换
+            </div>
+          </div>
+
+          <textarea
+            id="htmlCode"
+            class="code-input"
+            placeholder="也可在此直接粘贴或修改 HTML 代码..."
+            spellcheck="false"
+          ></textarea>
+
+          <div class="btn-row">
+            <input type="file" id="fileInput" accept=".docx" />
+            <button class="btn btn-secondary" id="importBtn">导入文件</button>
+            <button class="btn btn-danger" id="clearBtn">清空全部</button>
+            <button class="btn btn-primary" id="copyBtn">复制代码</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-right">
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">网页实时预览区</p>
+            <span class="meta-info" id="outputMeta">实时渲染中</span>
+          </div>
+
+          <div class="preview-container" id="htmlPreview">
+            <div class="empty-tip">暂无转换内容，请在左侧导入 Word 文档</div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="downloadBtn">
+              下载 HTML 文件
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        /* --- DOM 元素引用 --- */
+        const dropZone = document.getElementById("dropZone");
+        const fileTitle = document.getElementById("fileTitle");
+        const fileDesc = document.getElementById("fileDesc");
+        const fileInput = document.getElementById("fileInput");
+
+        const htmlCode = document.getElementById("htmlCode");
+        const htmlPreview = document.getElementById("htmlPreview");
+
+        const leftSectionTitle = document.getElementById("leftSectionTitle");
+        const inputMeta = document.getElementById("inputMeta");
+        const outputMeta = document.getElementById("outputMeta");
+
+        const importBtn = document.getElementById("importBtn");
+        const clearBtn = document.getElementById("clearBtn");
+        const copyBtn = document.getElementById("copyBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const toast = document.getElementById("toast");
+
+        /* --- Toast 轻提示逻辑 --- */
+        let toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg || "操作成功";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1600);
+        }
+
+        /* --- 实时更新右侧渲染画面与字符统计 --- */
+        function updatePreview() {
+          const code = htmlCode.value;
+          if (!code.trim()) {
+            htmlPreview.innerHTML =
+              '<div class="empty-tip">暂无转换内容，请在左侧导入 Word 文档</div>';
+            inputMeta.textContent = "未选择文件";
+            outputMeta.textContent = "未渲染";
+            return;
+          }
+          htmlPreview.innerHTML = code;
+          inputMeta.textContent = `${code.length} 字符`;
+          outputMeta.textContent = "渲染成功";
+        }
+
+        /* --- 解析与转换 Word (.docx) --- */
+        function convertWordFile(file) {
+          if (!file) return;
+          if (!file.name.endsWith(".docx")) {
+            showToast("仅支持 .docx 格式的 Word 文件");
+            return;
+          }
+
+          if (typeof mammoth === "undefined") {
+            showToast("转换解析组件未加载完，请刷新重试！");
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const arrayBuffer = e.target.result;
+            mammoth
+              .convertToHtml({ arrayBuffer: arrayBuffer })
+              .then(function (result) {
+                htmlCode.value = result.value || "";
+                dropZone.style.display = "none";
+                htmlCode.style.display = "block";
+                leftSectionTitle.textContent = "HTML 源码编辑";
+                updatePreview();
+                showToast("转换成功，已被替换为 HTML 源码！");
+              })
+              .catch(function (err) {
+                htmlCode.value = ``;
+                dropZone.style.display = "none";
+                htmlCode.style.display = "block";
+                updatePreview();
+                showToast("解析遇到错误");
+              });
+          };
+          reader.readAsArrayBuffer(file);
+        }
+
+        /* --- 复制剪贴板 --- */
+        function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return Promise.resolve();
+        }
+
+        /* --- 事件监听 --- */
+        importBtn.addEventListener("click", () => fileInput.click());
+        dropZone.addEventListener("click", () => fileInput.click());
+
+        fileInput.addEventListener("change", (e) => {
+          if (e.target.files.length > 0) {
+            convertWordFile(e.target.files[0]);
+          }
+        });
+
+        dropZone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          dropZone.classList.add("dragover");
+        });
+
+        dropZone.addEventListener("dragleave", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+        });
+
+        dropZone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+          if (e.dataTransfer.files.length > 0) {
+            convertWordFile(e.dataTransfer.files[0]);
+          }
+        });
+
+        htmlCode.addEventListener("input", updatePreview);
+
+        clearBtn.addEventListener("click", () => {
+          fileInput.value = "";
+          htmlCode.value = "";
+          dropZone.style.display = "flex";
+          htmlCode.style.display = "none";
+          leftSectionTitle.textContent = "导入 Word 文档 (.docx)";
+          updatePreview();
+          showToast("已清空全部");
+        });
+
+        copyBtn.addEventListener("click", () => {
+          const code = htmlCode.value;
+          if (!code) {
+            showToast("没有可复制的 HTML 内容");
+            return;
+          }
+          copyText(code).then(() => showToast("HTML 代码已复制到剪贴板"));
+        });
+
+        downloadBtn.addEventListener("click", () => {
+          const code = htmlCode.value;
+          if (!code) {
+            showToast("没有可下载的 HTML 内容");
+            return;
+          }
+          const blob = new Blob([code], {
+            type: "text/html;charset=utf-8;",
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `converted_${Date.now()}.html`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showToast("文件已开始下载");
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

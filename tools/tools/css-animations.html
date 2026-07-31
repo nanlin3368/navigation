@@ -1,0 +1,1747 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>CSS 动画效果</title>
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+      type="image/webp"
+    />
+    <style>
+      /* --- 全局变量与设计令牌 --- */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* --- 重置 & 基础排版 --- */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 顶部导航栏入场动画 --- */
+      .topbar {
+        padding: env(safe-area-inset-top, 0) 0 0 0;
+        text-align: center;
+        padding-top: max(28px, env(safe-area-inset-top));
+        padding-bottom: 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* --- 主应用容器（移动端默认纵向排列） --- */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* --- 弹性入场动画 --- */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* 给左右面板加交错入场效果 */
+      .panel-settings {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-results {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* --- 分类按钮组（移动端3列网格） --- */
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding-bottom: 4px;
+      }
+
+      /* --- 动画卡片网格（自适应列宽） --- */
+      .phone-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 12px;
+        padding: 4px 0;
+      }
+
+      /* --- 可滚动容器（移动端固定高度） --- */
+      .phone-container-scroll {
+        height: 340px;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
+
+      /* --- 数据看板统计行 --- */
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .stat-row .val {
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 16px;
+      }
+
+      /* --- 右侧底部组（列表 + 代码，移动端纵向排列） --- */
+      .results-bottom-group {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 桌面端双栏布局（≥960px） --- */
+      @media (min-width: 960px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          flex: 0 0 280px;
+        }
+        /* 桌面端恢复为单列垂直列表 */
+        .category-group {
+          grid-template-columns: 1fr;
+        }
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        /* 底部列表与代码块并排两列，严格防止溢出 */
+        .results-bottom-group {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+          align-items: stretch;
+        }
+
+        /* 统一拉长列表和代码容器高度 */
+        .phone-container-scroll {
+          height: 400px;
+        }
+        pre {
+          height: 400px !important;
+          max-height: 400px !important;
+        }
+      }
+
+      /* --- 卡片组件 --- */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      .panel-settings,
+      .panel-results {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* --- 区块标题 --- */
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 14px;
+      }
+
+      /* --- 分类胶囊按钮 --- */
+      .cat-btn {
+        flex: 0 0 auto;
+        text-align: center;
+        padding: 10px 6px;
+        border: 1px solid transparent;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+      @media (min-width: 960px) {
+        .cat-btn {
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 14px;
+          line-height: 1.4;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+      .cat-btn:hover {
+        background: rgba(0, 0, 0, 0.03);
+      }
+      .cat-btn.active {
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* --- 动画条目卡片 --- */
+      .phone-item {
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        padding: 14px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        transition:
+          transform 0.12s ease,
+          background-color 0.15s,
+          border-color 0.15s;
+        user-select: none;
+        border: 2px solid transparent;
+        text-align: center;
+      }
+      .phone-item:hover {
+        background: rgba(0, 0, 0, 0.03);
+        transform: translateY(-2px);
+      }
+      .phone-item.active {
+        background: #fff;
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(0, 113, 227, 0.08);
+      }
+      .phone-name {
+        font-size: 12px;
+        color: var(--sub);
+        font-family: monospace;
+        word-break: break-all;
+      }
+      .phone-number {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      /* --- 预览区与参数控制（两列自适应） --- */
+      .preview-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 4px;
+      }
+      @media (min-width: 600px) {
+        .preview-section {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .preview-box {
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .animate-box {
+        width: 68px;
+        height: 68px;
+        background: linear-gradient(135deg, #0071e3, #3399ff);
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(0, 113, 227, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      /* --- 参数调节控件 --- */
+      .param-controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+      .control-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+      }
+      .control-row label {
+        width: 65px;
+        color: var(--sub);
+        font-weight: 500;
+      }
+      .control-row input[type="range"] {
+        flex: 1;
+        -webkit-appearance: none;
+        height: 4px;
+        background: var(--bg);
+        border-radius: 2px;
+        outline: none;
+      }
+      .control-row input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--accent);
+        cursor: pointer;
+      }
+      .control-row .val {
+        width: 45px;
+        text-align: right;
+        font-family: monospace;
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* --- 播放控制按钮组 --- */
+      .player-btns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .btn {
+        border: none;
+        padding: 10px;
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.15s;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      .btn:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn.primary:hover {
+        background: var(--accent-press);
+      }
+
+      /* --- 代码展示区（带复制按钮） --- */
+      .code-area {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: 100%;
+        min-width: 0;
+        justify-content: space-between;
+      }
+      pre {
+        margin: 0;
+        background: #1c1c1e;
+        color: #f5f5f7;
+        padding: 14px;
+        border-radius: var(--radius-sm);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+      .copy-actions {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .btn-sm {
+        font-size: 12px;
+        padding: 10px 4px;
+        background: var(--bg);
+        color: var(--ink);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        text-align: center;
+      }
+      .btn-sm:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* --- 滚动条 --- */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* --- Toast 轻提示 --- */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Toast 提示容器 -->
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <!-- 顶部标题 -->
+    <div class="topbar">
+      <h1>🎬 CSS 动画效果</h1>
+      <p>纯本地多维度过滤 · 参数微调与完整代码提取</p>
+    </div>
+
+    <!-- 主应用 -->
+    <div class="app">
+      <!-- 左侧设置面板 -->
+      <div class="panel-settings">
+        <!-- 数据看板 -->
+        <div class="card">
+          <p class="section-title">数据看板</p>
+          <div class="stat-row">
+            <span>已内置动画总数</span>
+            <span class="val" id="totalCountVal">0 个</span>
+          </div>
+        </div>
+
+        <!-- 动画分类按钮 -->
+        <div class="card">
+          <p class="section-title">动画分类</p>
+          <div class="category-group" id="categorySelector"></div>
+        </div>
+      </div>
+
+      <!-- 右侧结果面板 -->
+      <div class="panel-results">
+        <!-- 实时工作台（预览 + 参数 + 播放控制） -->
+        <div class="card">
+          <p class="section-title">实时工作台</p>
+          <div class="preview-section">
+            <div class="preview-box">
+              <div class="animate-box" id="animateBox">动画</div>
+            </div>
+            <div class="param-controls">
+              <div class="control-row">
+                <label>持续时间</label>
+                <input
+                  type="range"
+                  id="paramDuration"
+                  min="0.1"
+                  max="3"
+                  step="0.1"
+                  value="0.6"
+                />
+                <span class="val" id="valDuration">0.6s</span>
+              </div>
+              <div class="control-row">
+                <label>动画延迟</label>
+                <input
+                  type="range"
+                  id="paramDelay"
+                  min="0"
+                  max="2"
+                  step="0.1"
+                  value="0"
+                />
+                <span class="val" id="valDelay">0s</span>
+              </div>
+              <div class="control-row">
+                <label>循环次数</label>
+                <input
+                  type="range"
+                  id="paramIteration"
+                  min="1"
+                  max="10"
+                  step="1"
+                  value="1"
+                />
+                <span class="val" id="valIteration">1次</span>
+              </div>
+              <div class="player-btns">
+                <button class="btn primary" id="btnPlay">播放一次</button>
+                <button class="btn" id="btnLoop">循环播放</button>
+                <button class="btn" id="btnStop">停止</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 底部：动画列表 + 代码展示（桌面端并排） -->
+        <div class="results-bottom-group">
+          <!-- 动画列表卡片 -->
+          <div class="card">
+            <p class="section-title" id="gridTitle">全部特效</p>
+            <div class="phone-container-scroll">
+              <div class="phone-grid" id="phoneGrid"></div>
+            </div>
+          </div>
+
+          <!-- 代码展示与复制卡片 -->
+          <div class="card">
+            <p class="section-title">实时完整 CSS 代码</p>
+            <div class="code-area">
+              <pre id="codeOutput"></pre>
+              <div class="copy-actions">
+                <button class="btn-sm" id="copyFull">📋 复制完整 CSS</button>
+                <button class="btn-sm" id="copyKeyframes">
+                  ✨ 仅复制关键帧
+                </button>
+                <button class="btn-sm" id="copyClass">🎨 仅复制类名</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 动态注入动画样式 -->
+    <style id="dynamicAnimationInject"></style>
+
+    <script>
+      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      (function () {
+        "use strict";
+
+        /* --- 完整动画数据库（按分类组织，含名称、中文名、图标、关键帧） --- */
+        const animations = [
+          // ---- 弹跳类 ----
+          {
+            name: "bounceIn",
+            nameCn: "弹入",
+            category: "bounce",
+            icon: "🏀",
+            keyframes:
+              "0% { opacity: 0; transform: scale(0.3); } 50% { opacity: 1; transform: scale(1.05); } 70% { transform: scale(0.9); } 100% { transform: scale(1); }",
+          },
+          {
+            name: "bounceInDown",
+            nameCn: "向下弹入",
+            category: "bounce",
+            icon: "⬇️",
+            keyframes:
+              "0% { opacity: 0; transform: translateY(-1000px); } 60% { opacity: 1; transform: translateY(30px); } 80% { transform: translateY(-10px); } 100% { transform: translateY(0); }",
+          },
+          {
+            name: "bounceInUp",
+            nameCn: "向上弹入",
+            category: "bounce",
+            icon: "⬆️",
+            keyframes:
+              "0% { opacity: 0; transform: translateY(1000px); } 60% { opacity: 1; transform: translateY(-30px); } 80% { transform: translateY(10px); } 100% { transform: translateY(0); }",
+          },
+          {
+            name: "bounceInLeft",
+            nameCn: "向左弹入",
+            category: "bounce",
+            icon: "⬅️",
+            keyframes:
+              "0% { opacity: 0; transform: translateX(-1000px); } 60% { opacity: 1; transform: translateX(30px); } 80% { transform: translateY(-10px); } 100% { transform: translateX(0); }",
+          },
+          {
+            name: "bounceInRight",
+            nameCn: "向右弹入",
+            category: "bounce",
+            icon: "➡️",
+            keyframes:
+              "0% { opacity: 0; transform: translateX(1000px); } 60% { opacity: 1; transform: translateX(-30px); } 80% { transform: translateY(10px); } 100% { transform: translateX(0); }",
+          },
+          {
+            name: "bounceOut",
+            nameCn: "弹出",
+            category: "bounce",
+            icon: "💨",
+            keyframes:
+              "0% { transform: scale(1); } 30% { transform: scale(1.25); } 50% { opacity: 1; } 100% { opacity: 0; transform: scale(0.3); }",
+          },
+          {
+            name: "bounceOutDown",
+            nameCn: "向下弹出",
+            category: "bounce",
+            icon: "📉",
+            keyframes:
+              "0% { transform: translateY(0); } 20% { opacity: 1; transform: translateY(-20px); } 100% { opacity: 0; transform: translateY(1000px); }",
+          },
+          {
+            name: "bounceOutUp",
+            nameCn: "向上弹出",
+            category: "bounce",
+            icon: "📈",
+            keyframes:
+              "0% { transform: translateY(0); } 20% { opacity: 1; transform: translateY(20px); } 100% { opacity: 0; transform: translateY(-1000px); }",
+          },
+          {
+            name: "bounceOutLeft",
+            nameCn: "向左弹出",
+            category: "bounce",
+            icon: "👈",
+            keyframes:
+              "0% { transform: translateX(0); } 20% { opacity: 1; transform: translateX(20px); } 100% { opacity: 0; transform: translateX(-1000px); }",
+          },
+          {
+            name: "bounceOutRight",
+            nameCn: "向右弹出",
+            category: "bounce",
+            icon: "👉",
+            keyframes:
+              "0% { transform: translateX(0); } 20% { opacity: 1; transform: translateX(-20px); } 100% { opacity: 0; transform: translateX(1000px); }",
+          },
+          // ---- 淡入淡出类 ----
+          {
+            name: "fadeIn",
+            nameCn: "淡入",
+            category: "fade",
+            icon: "👻",
+            keyframes: "from { opacity: 0; } to { opacity: 1; }",
+          },
+          {
+            name: "fadeInDown",
+            nameCn: "向下淡入",
+            category: "fade",
+            icon: "⬇️",
+            keyframes:
+              "from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); }",
+          },
+          {
+            name: "fadeInUp",
+            nameCn: "向上淡入",
+            category: "fade",
+            icon: "⬆️",
+            keyframes:
+              "from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); }",
+          },
+          {
+            name: "fadeInLeft",
+            nameCn: "向左淡入",
+            category: "fade",
+            icon: "⬅️",
+            keyframes:
+              "from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); }",
+          },
+          {
+            name: "fadeInRight",
+            nameCn: "向右淡入",
+            category: "fade",
+            icon: "➡️",
+            keyframes:
+              "from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); }",
+          },
+          {
+            name: "fadeInDownBig",
+            nameCn: "大幅向下淡入",
+            category: "fade",
+            icon: "🔽",
+            keyframes:
+              "from { opacity: 0; transform: translateY(-1000px); } to { opacity: 1; transform: translateY(0); }",
+          },
+          {
+            name: "fadeInUpBig",
+            nameCn: "大幅向上淡入",
+            category: "fade",
+            icon: "🔼",
+            keyframes:
+              "from { opacity: 0; transform: translateY(1000px); } to { opacity: 1; transform: translateY(0); }",
+          },
+          {
+            name: "fadeInLeftBig",
+            nameCn: "大幅向左淡入",
+            category: "fade",
+            icon: "◀️",
+            keyframes:
+              "from { opacity: 0; transform: translateX(-1000px); } to { opacity: 1; transform: translateX(0); }",
+          },
+          {
+            name: "fadeInRightBig",
+            nameCn: "大幅向右淡入",
+            category: "fade",
+            icon: "▶️",
+            keyframes:
+              "from { opacity: 0; transform: translateX(1000px); } to { opacity: 1; transform: translateY(0); }",
+          },
+          {
+            name: "fadeOut",
+            nameCn: "淡出",
+            category: "fade",
+            icon: "👋",
+            keyframes: "from { opacity: 1; } to { opacity: 0; }",
+          },
+          {
+            name: "fadeOutDown",
+            nameCn: "向下淡出",
+            category: "fade",
+            icon: "📉",
+            keyframes:
+              "from { opacity: 1; } to { opacity: 0; transform: translateY(40px); }",
+          },
+          {
+            name: "fadeOutUp",
+            nameCn: "向上淡出",
+            category: "fade",
+            icon: "📈",
+            keyframes:
+              "from { opacity: 1; } to { opacity: 0; transform: translateY(-40px); }",
+          },
+          {
+            name: "fadeOutLeft",
+            nameCn: "向左淡出",
+            category: "fade",
+            icon: "👈",
+            keyframes:
+              "from { opacity: 1; } to { opacity: 0; transform: translateX(-40px); }",
+          },
+          {
+            name: "fadeOutRight",
+            nameCn: "向右淡出",
+            category: "fade",
+            icon: "👉",
+            keyframes:
+              "from { opacity: 1; } to { opacity: 0; transform: translateX(40px); }",
+          },
+          {
+            name: "fadeOutDownBig",
+            nameCn: "大幅向下淡出",
+            category: "fade",
+            icon: "🔽",
+            keyframes:
+              "from { opacity: 1; } to { opacity: 0; transform: translateY(1000px); }",
+          },
+          {
+            name: "fadeOutUpBig",
+            nameCn: "大幅向上淡出",
+            category: "fade",
+            icon: "🔼",
+            keyframes:
+              "from { opacity: 1; } to { opacity: 0; transform: translateY(-1000px); }",
+          },
+          // ---- 翻转类 ----
+          {
+            name: "flipInX",
+            nameCn: "X轴翻入",
+            category: "flip",
+            icon: "🪙",
+            keyframes:
+              "from { transform: perspective(400px) rotateX(90deg); opacity: 0; } to { transform: perspective(400px) rotateX(0); opacity: 1; }",
+          },
+          {
+            name: "flipInY",
+            nameCn: "Y轴翻入",
+            category: "flip",
+            icon: "🃏",
+            keyframes:
+              "from { transform: perspective(400px) rotateY(90deg); opacity: 0; } to { transform: perspective(400px) rotateY(0); opacity: 1; }",
+          },
+          {
+            name: "flipOutX",
+            nameCn: "X轴翻出",
+            category: "flip",
+            icon: "🪙",
+            keyframes:
+              "from { transform: perspective(400px) rotateX(0); opacity: 1; } to { transform: perspective(400px) rotateX(90deg); opacity: 0; }",
+          },
+          {
+            name: "flipOutY",
+            nameCn: "Y轴翻出",
+            category: "flip",
+            icon: "🃏",
+            keyframes:
+              "from { transform: perspective(400px) rotateY(0); opacity: 1; } to { transform: perspective(400px) rotateY(90deg); opacity: 0; }",
+          },
+          {
+            name: "flip",
+            nameCn: "翻转",
+            category: "flip",
+            icon: "🔄",
+            keyframes:
+              "0% { transform: perspective(400px) rotateY(0); } 100% { transform: perspective(400px) rotateY(360deg); }",
+          },
+          {
+            name: "flipReverse",
+            nameCn: "反向翻转",
+            category: "flip",
+            icon: "🔃",
+            keyframes:
+              "0% { transform: perspective(400px) rotateY(360deg); } 100% { transform: perspective(400px) rotateY(0); }",
+          },
+          // ---- 光速类 ----
+          {
+            name: "lightSpeedIn",
+            nameCn: "光速进入",
+            category: "lightSpeed",
+            icon: "⚡",
+            keyframes:
+              "from { transform: translateX(100%) skewX(-30deg); opacity: 0; } 60% { transform: skewX(20deg); opacity: 1; } 80% { transform: skewX(-5deg); } to { transform: translateX(0); }",
+          },
+          {
+            name: "lightSpeedInRight",
+            nameCn: "右侧光速进入",
+            category: "lightSpeed",
+            icon: "⚡➡️",
+            keyframes:
+              "from { transform: translateX(100%) skewX(-30deg); opacity: 0; } 60% { transform: skewX(20deg); opacity: 1; } 80% { transform: skewX(-5deg); } to { transform: translateX(0); }",
+          },
+          {
+            name: "lightSpeedInLeft",
+            nameCn: "左侧光速进入",
+            category: "lightSpeed",
+            icon: "⬅️⚡",
+            keyframes:
+              "from { transform: translateX(-100%) skewX(30deg); opacity: 0; } 60% { transform: skewX(-20deg); opacity: 1; } 80% { transform: skewX(5deg); } to { transform: translateX(0); }",
+          },
+          {
+            name: "lightSpeedOut",
+            nameCn: "光速退出",
+            category: "lightSpeed",
+            icon: "💫",
+            keyframes:
+              "from { opacity: 1; } to { transform: translateX(100%) skewX(30deg); opacity: 0; }",
+          },
+          // ---- 旋转类 ----
+          {
+            name: "rotateIn",
+            nameCn: "旋转进入",
+            category: "rotate",
+            icon: "🔄",
+            keyframes:
+              "from { transform: rotate(-200deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; }",
+          },
+          {
+            name: "rotateInDownLeft",
+            nameCn: "左下旋转进入",
+            category: "rotate",
+            icon: "↙️",
+            keyframes:
+              "from { transform: rotate(-45deg); opacity: 0; transform-origin: left bottom; } to { transform: rotate(0); opacity: 1; }",
+          },
+          {
+            name: "rotateInDownRight",
+            nameCn: "右下旋转进入",
+            category: "rotate",
+            icon: "↘️",
+            keyframes:
+              "from { transform: rotate(45deg); opacity: 0; transform-origin: right bottom; } to { transform: rotate(0); opacity: 1; }",
+          },
+          {
+            name: "rotateInUpLeft",
+            nameCn: "左上旋转进入",
+            category: "rotate",
+            icon: "↖️",
+            keyframes:
+              "from { transform: rotate(45deg); opacity: 0; transform-origin: left bottom; } to { transform: rotate(0); opacity: 1; }",
+          },
+          {
+            name: "rotateInUpRight",
+            nameCn: "右上旋转进入",
+            category: "rotate",
+            icon: "↗️",
+            keyframes:
+              "from { transform: rotate(-45deg); opacity: 0; transform-origin: right bottom; } to { transform: rotate(0); opacity: 1; }",
+          },
+          {
+            name: "rotateOut",
+            nameCn: "旋转退出",
+            category: "rotate",
+            icon: "🔄",
+            keyframes:
+              "from { opacity: 1; } to { transform: rotate(200deg); opacity: 0; }",
+          },
+          {
+            name: "rotateOutDownLeft",
+            nameCn: "左下旋转退出",
+            category: "rotate",
+            icon: "↙️",
+            keyframes:
+              "from { opacity: 1; transform-origin: left bottom; } to { transform: rotate(45deg); opacity: 0; }",
+          },
+          {
+            name: "rotateOutUpRight",
+            nameCn: "右上旋转退出",
+            category: "rotate",
+            icon: "↗️",
+            keyframes:
+              "from { opacity: 1; transform-origin: right bottom; } to { transform: rotate(-90deg); opacity: 0; }",
+          },
+          // ---- 缩放类 ----
+          {
+            name: "zoomIn",
+            nameCn: "放大进入",
+            category: "zoom",
+            icon: "🔍",
+            keyframes:
+              "from { opacity: 0; transform: scale(0.3); } to { opacity: 1; transform: scale(1); }",
+          },
+          {
+            name: "zoomInDown",
+            nameCn: "向下放大进入",
+            category: "zoom",
+            icon: "🔍⬇️",
+            keyframes:
+              "from { opacity: 0; transform: scale(0.1) translateY(-1000px); } to { opacity: 1; transform: scale(1) translateY(0); }",
+          },
+          {
+            name: "zoomInUp",
+            nameCn: "向上放大进入",
+            category: "zoom",
+            icon: "🔍⬆️",
+            keyframes:
+              "from { opacity: 0; transform: scale(0.1) translateY(1000px); } to { opacity: 1; transform: scale(1) translateY(0); }",
+          },
+          {
+            name: "zoomInLeft",
+            nameCn: "向左放大进入",
+            category: "zoom",
+            icon: "🔍⬅️",
+            keyframes:
+              "from { opacity: 0; transform: scale(0.1) translateX(-1000px); } to { opacity: 1; transform: scale(1) translateX(0); }",
+          },
+          {
+            name: "zoomInRight",
+            nameCn: "向右放大进入",
+            category: "zoom",
+            icon: "🔍➡️",
+            keyframes:
+              "from { opacity: 0; transform: scale(0.1) translateX(1000px); } to { opacity: 1; transform: scale(1) translateX(0); }",
+          },
+          {
+            name: "zoomOut",
+            nameCn: "缩小退出",
+            category: "zoom",
+            icon: "🔬",
+            keyframes:
+              "from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.3); }",
+          },
+          {
+            name: "zoomOutDown",
+            nameCn: "向下缩小退出",
+            category: "zoom",
+            icon: "🔬⬇️",
+            keyframes:
+              "from { opacity: 1; transform: scale(1) translateY(0); } to { opacity: 0; transform: scale(0.1) translateY(1000px); }",
+          },
+          {
+            name: "zoomOutUp",
+            nameCn: "向上缩小退出",
+            category: "zoom",
+            icon: "🔬⬆️",
+            keyframes:
+              "from { opacity: 1; transform: scale(1) translateY(0); } to { opacity: 0; transform: scale(0.1) translateY(-1000px); }",
+          },
+          // ---- 滑动类 ----
+          {
+            name: "slideInDown",
+            nameCn: "向下滑入",
+            category: "slide",
+            icon: "📥",
+            keyframes:
+              "from { transform: translateY(-100%); } to { transform: translateY(0); }",
+          },
+          {
+            name: "slideInUp",
+            nameCn: "向上滑入",
+            category: "slide",
+            icon: "📤",
+            keyframes:
+              "from { transform: translateY(100%); } to { transform: translateY(0); }",
+          },
+          {
+            name: "slideInLeft",
+            nameCn: "向左滑入",
+            category: "slide",
+            icon: "📨",
+            keyframes:
+              "from { transform: translateX(-100%); } to { transform: translateX(0); }",
+          },
+          {
+            name: "slideInRight",
+            nameCn: "向右滑入",
+            category: "slide",
+            icon: "📩",
+            keyframes:
+              "from { transform: translateX(100%); } to { transform: translateX(0); }",
+          },
+          {
+            name: "slideOutDown",
+            nameCn: "向下滑出",
+            category: "slide",
+            icon: "📭",
+            keyframes:
+              "from { transform: translateY(0); } to { transform: translateY(100%); }",
+          },
+          {
+            name: "slideOutUp",
+            nameCn: "向上滑出",
+            category: "slide",
+            icon: "📫",
+            keyframes:
+              "from { transform: translateY(0); } to { transform: translateY(-100%); }",
+          },
+          {
+            name: "slideOutLeft",
+            nameCn: "向左滑出",
+            category: "slide",
+            icon: "📪",
+            keyframes:
+              "from { transform: translateX(0); } to { transform: translateX(-100%); }",
+          },
+          {
+            name: "slideOutRight",
+            nameCn: "向右滑出",
+            category: "slide",
+            icon: "📬",
+            keyframes:
+              "from { transform: translateX(0); } to { transform: translateX(100%); }",
+          },
+          // ---- 特殊类 ----
+          {
+            name: "hinge",
+            nameCn: "铰链",
+            category: "special",
+            icon: "🚪",
+            keyframes:
+              "0% { transform: rotate(0); } 20%,60% { transform: rotate(80deg); } 40% { transform: rotate(60deg); } 80%,100% { opacity: 0; transform: rotate(80deg) translateY(700px); }",
+          },
+          {
+            name: "jackInTheBox",
+            nameCn: "盒中弹出",
+            category: "special",
+            icon: "🎪",
+            keyframes:
+              "0% { opacity: 0; transform: scale(0.1) rotate(30deg); } 50% { transform: rotate(-10deg); } 70% { transform: rotate(3deg); } 100% { opacity: 1; transform: scale(1); }",
+          },
+          {
+            name: "rollIn",
+            nameCn: "滚入",
+            category: "special",
+            icon: "🧻",
+            keyframes:
+              "from { opacity: 0; transform: translateX(-100%) rotate(-120deg); } to { opacity: 1; transform: translateX(0) rotate(0deg); }",
+          },
+          {
+            name: "rollOut",
+            nameCn: "滚出",
+            category: "special",
+            icon: "🧻",
+            keyframes:
+              "from { opacity: 1; transform: translateX(0) rotate(0deg); } to { opacity: 0; transform: translateX(100%) rotate(120deg); }",
+          },
+          {
+            name: "dropIn",
+            nameCn: "滴入",
+            category: "special",
+            icon: "💧",
+            keyframes:
+              "0% { transform: translateY(-100px) scale(2); opacity: 0; } 60% { transform: translateY(10px) scale(0.9); opacity: 1; } 80% { transform: translateY(-5px) scale(1.02); } 100% { transform: translateY(0) scale(1); }",
+          },
+          {
+            name: "popIn",
+            nameCn: "爆裂弹入",
+            category: "special",
+            icon: "💥",
+            keyframes:
+              "0% { transform: scale(0); opacity: 0; } 80% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; }",
+          },
+          // ---- 强调类 ----
+          {
+            name: "bounce",
+            nameCn: "弹跳",
+            category: "emphasis",
+            icon: "🏀",
+            keyframes:
+              "0%,100% { transform: translateY(0); } 40% { transform: translateY(-30px); } 60% { transform: translateY(-15px); } 80% { transform: translateY(-5px); }",
+          },
+          {
+            name: "flash",
+            nameCn: "闪烁",
+            category: "emphasis",
+            icon: "📸",
+            keyframes: "0%,50%,100% { opacity: 1; } 25%,75% { opacity: 0; }",
+          },
+          {
+            name: "pulse",
+            nameCn: "脉冲",
+            category: "emphasis",
+            icon: "💓",
+            keyframes:
+              "0%,100% { transform: scale(1); } 50% { transform: scale(1.1); }",
+          },
+          {
+            name: "rubberBand",
+            nameCn: "橡皮筋",
+            category: "emphasis",
+            icon: "🫧",
+            keyframes:
+              "0% { transform: scale(1); } 30% { transform: scale(1.25,0.75); } 40% { transform: scale(0.75,1.25); } 50% { transform: scale(1.15,0.85); } 65% { transform: scale(0.95,1.05); } 75% { transform: scale(1.05,0.95); } 100% { transform: scale(1); }",
+          },
+          {
+            name: "shakeX",
+            nameCn: "横向抖动",
+            category: "emphasis",
+            icon: "🤝",
+            keyframes:
+              "0%,100% { transform: translateX(0); } 10%,30%,50%,70%,90% { transform: translateX(-8px); } 20%,40%,60%,80% { transform: translateX(8px); }",
+          },
+          {
+            name: "shakeY",
+            nameCn: "纵向抖动",
+            category: "emphasis",
+            icon: "📳",
+            keyframes:
+              "0%,100% { transform: translateY(0); } 10%,30%,50%,70%,90% { transform: translateY(-6px); } 20%,40%,60%,80% { transform: translateY(6px); }",
+          },
+          {
+            name: "headShake",
+            nameCn: "摇头",
+            category: "emphasis",
+            icon: "🙂‍↔️",
+            keyframes:
+              "0% { transform: translateX(0); } 6.5% { transform: translateX(-6px) rotateY(-9deg); } 18.5% { transform: translateX(5px) rotateY(7deg); } 31.5% { transform: translateX(-3px) rotateY(-5deg); } 43.5% { transform: translateX(2px) rotateY(3deg); } 50% { transform: translateX(0); }",
+          },
+          {
+            name: "swing",
+            nameCn: "摇摆",
+            category: "emphasis",
+            icon: "🎭",
+            keyframes:
+              "0% { transform: rotate(0deg); } 20% { transform: rotate(15deg); } 40% { transform: rotate(-10deg); } 60% { transform: rotate(5deg); } 80% { transform: rotate(-5deg); } 100% { transform: rotate(0deg); }",
+          },
+          {
+            name: "tada",
+            nameCn: "锵锵",
+            category: "emphasis",
+            icon: "🎉",
+            keyframes:
+              "0% { transform: scale(1) rotate(0deg); } 10%,20% { transform: scale(0.9) rotate(-3deg); } 30%,50%,70%,90% { transform: scale(1.1) rotate(3deg); } 40%,60%,80% { transform: scale(1.1) rotate(-3deg); } 100% { transform: scale(1) rotate(0deg); }",
+          },
+          {
+            name: "wobble",
+            nameCn: "摇晃",
+            category: "emphasis",
+            icon: "🪀",
+            keyframes:
+              "0% { transform: translateX(0); } 15% { transform: translateX(-25px) rotate(-5deg); } 30% { transform: translateX(20px) rotate(3deg); } 45% { transform: translateX(-15px) rotate(-3deg); } 60% { transform: translateX(10px) rotate(2deg); } 75% { transform: translateX(-5px) rotate(-1deg); } 100% { transform: translateX(0); }",
+          },
+          {
+            name: "jello",
+            nameCn: "果冻",
+            category: "emphasis",
+            icon: "🍮",
+            keyframes:
+              "0%,100% { transform: skewX(0deg) skewY(0deg); } 30% { transform: skewX(-12deg) skewY(-12deg); } 40% { transform: skewX(10deg) skewY(10deg); } 50% { transform: skewX(-6deg) skewY(-6deg); } 65% { transform: skewX(4deg) skewY(4deg); } 75% { transform: skewX(-2deg) skewY(-2deg); }",
+          },
+          {
+            name: "heartBeat",
+            nameCn: "心跳",
+            category: "emphasis",
+            icon: "💗",
+            keyframes:
+              "0% { transform: scale(1); } 14% { transform: scale(1.3); } 28% { transform: scale(1); } 42% { transform: scale(1.3); } 70% { transform: scale(1); }",
+          },
+          // ---- 连续类 ----
+          {
+            name: "spin",
+            nameCn: "旋转",
+            category: "continuous",
+            icon: "🔄",
+            keyframes:
+              "from { transform: rotate(0deg); } to { transform: rotate(360deg); }",
+          },
+          {
+            name: "spinReverse",
+            nameCn: "反向旋转",
+            category: "continuous",
+            icon: "🔃",
+            keyframes:
+              "from { transform: rotate(360deg); } to { transform: rotate(0deg); }",
+          },
+          {
+            name: "float",
+            nameCn: "浮动",
+            category: "continuous",
+            icon: "🎈",
+            keyframes:
+              "0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); }",
+          },
+          {
+            name: "glow",
+            nameCn: "发光",
+            category: "continuous",
+            icon: "✨",
+            keyframes:
+              "0%,100% { box-shadow: 0 0 8px rgba(255,200,50,0.4); } 50% { box-shadow: 0 0 24px rgba(255,200,50,0.9); }",
+          },
+          {
+            name: "breathing",
+            nameCn: "呼吸",
+            category: "continuous",
+            icon: "🫁",
+            keyframes:
+              "0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: 0.7; }",
+          },
+        ];
+
+        /* --- 分类定义（含全部） --- */
+        const categories = [
+          { id: "all", name: "全部" },
+          { id: "bounce", name: "弹跳" },
+          { id: "fade", name: "淡入" },
+          { id: "flip", name: "翻转" },
+          { id: "lightSpeed", name: "光速" },
+          { id: "rotate", name: "旋转" },
+          { id: "zoom", name: "缩放" },
+          { id: "slide", name: "滑动" },
+          { id: "special", name: "特殊" },
+          { id: "emphasis", name: "强调" },
+          { id: "continuous", name: "连续" },
+        ];
+
+        /* --- 状态变量 --- */
+        let currentCategory = "all";
+        let selectedAnim = animations[0];
+
+        /* --- DOM 元素引用 --- */
+        const categorySelector = document.getElementById("categorySelector");
+        const phoneGrid = document.getElementById("phoneGrid");
+        const gridTitle = document.getElementById("gridTitle");
+        const totalCountVal = document.getElementById("totalCountVal");
+        const animateBox = document.getElementById("animateBox");
+        const dynamicAnimationInject = document.getElementById(
+          "dynamicAnimationInject",
+        );
+        const codeOutput = document.getElementById("codeOutput");
+        const toast = document.getElementById("toast");
+
+        const paramDuration = document.getElementById("paramDuration");
+        const paramDelay = document.getElementById("paramDelay");
+        const paramIteration = document.getElementById("paramIteration");
+        const valDuration = document.getElementById("valDuration");
+        const valDelay = document.getElementById("valDelay");
+        const valIteration = document.getElementById("valIteration");
+
+        const btnPlay = document.getElementById("btnPlay");
+        const btnLoop = document.getElementById("btnLoop");
+        const btnStop = document.getElementById("btnStop");
+
+        let toastTimer = null;
+
+        /* --- Toast 轻提示逻辑 --- */
+        function showToast(msg) {
+          toast.textContent = msg;
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1500);
+        }
+
+        /* --- 复制文本到剪贴板（兼容降级） --- */
+        function copyToClipboard(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          return Promise.resolve();
+        }
+
+        /* --- 生成 CSS 代码（含类名 + @keyframes） --- */
+        /* loopOverride: null=正常, "infinite"=无限循环, "stop"=停止状态 */
+        function buildCSS(loopOverride = null) {
+          const dur = paramDuration.value + "s";
+          const del = paramDelay.value + "s";
+          let iter = paramIteration.value;
+          if (loopOverride === "infinite") iter = "infinite";
+          if (loopOverride === "stop")
+            return { full: "", keyframes: "", className: "" };
+
+          const keyframesBlock = `@keyframes ${selectedAnim.name} {\n  ${selectedAnim.keyframes}\n}`;
+          const classBlock = `.${selectedAnim.name} {\n  animation: ${selectedAnim.name} ${dur} ease ${del} ${iter} normal both;\n}`;
+
+          return {
+            full: `${classBlock}\n\n${keyframesBlock}`,
+            keyframes: keyframesBlock,
+            className: classBlock,
+          };
+        }
+
+        /* --- 更新代码展示区 --- */
+        function renderCodeBlock() {
+          const css = buildCSS();
+          codeOutput.textContent = css.full || "/* 动画已停止 */";
+        }
+
+        /* --- 应用动画到预览盒子 --- */
+        function applyAnimation(mode = "play") {
+          // 先清除旧动画以重置状态
+          animateBox.style.animation = "none";
+          dynamicAnimationInject.innerHTML = "";
+          void animateBox.offsetWidth; // 触发回流确保重置生效
+
+          if (mode === "stop") return;
+
+          // 注入完整 CSS（含 @keyframes 和类）
+          const css = buildCSS(mode === "loop" ? "infinite" : null);
+          dynamicAnimationInject.innerHTML = css.full;
+
+          // 直接通过 style 应用动画，确保参数实时生效
+          animateBox.style.animation = `${selectedAnim.name} ${paramDuration.value}s ease ${paramDelay.value}s ${mode === "loop" ? "infinite" : paramIteration.value} normal both`;
+        }
+
+        /* --- 渲染动画列表（根据当前分类筛选） --- */
+        function renderGrid() {
+          const filtered =
+            currentCategory === "all"
+              ? animations
+              : animations.filter((a) => a.category === currentCategory);
+
+          gridTitle.textContent = `${categories.find((c) => c.id === currentCategory).name}列表 (${filtered.length})`;
+
+          phoneGrid.innerHTML = filtered
+            .map(
+              (item) => `
+      <div class="phone-item ${item.name === selectedAnim.name ? "active" : ""}" data-name="${item.name}">
+        <span class="phone-number">${item.icon} ${item.nameCn}</span>
+        <span class="phone-name">${item.name}</span>
+      </div>
+    `,
+            )
+            .join("");
+
+          // 点击卡片切换当前动画
+          phoneGrid.querySelectorAll(".phone-item").forEach((card) => {
+            card.addEventListener("click", () => {
+              const targetName = card.dataset.name;
+              selectedAnim = animations.find((a) => a.name === targetName);
+
+              phoneGrid
+                .querySelectorAll(".phone-item")
+                .forEach((c) => c.classList.remove("active"));
+              card.classList.add("active");
+
+              renderCodeBlock();
+              applyAnimation("play");
+            });
+          });
+        }
+
+        /* --- 渲染分类按钮 --- */
+        function renderCategories() {
+          totalCountVal.textContent = `${animations.length} 个`;
+
+          categorySelector.innerHTML = categories
+            .map((cat) => {
+              const count =
+                cat.id === "all"
+                  ? animations.length
+                  : animations.filter((a) => a.category === cat.id).length;
+              return `<button class="cat-btn ${cat.id === currentCategory ? "active" : ""}" data-id="${cat.id}">
+        <span>${cat.name}</span>
+        <small style="opacity:0.6; font-size:11px;">(${count})</small>
+      </button>`;
+            })
+            .join("");
+
+          categorySelector.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              currentCategory = btn.dataset.id;
+              categorySelector
+                .querySelectorAll(".cat-btn")
+                .forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+              renderGrid();
+            });
+          });
+        }
+
+        /* --- 参数滑块事件绑定 --- */
+        paramDuration.addEventListener("input", () => {
+          valDuration.textContent = paramDuration.value + "s";
+          renderCodeBlock();
+          applyAnimation("play");
+        });
+        paramDelay.addEventListener("input", () => {
+          valDelay.textContent = paramDelay.value + "s";
+          renderCodeBlock();
+          applyAnimation("play");
+        });
+        paramIteration.addEventListener("input", () => {
+          valIteration.textContent = paramIteration.value + "次";
+          renderCodeBlock();
+          applyAnimation("play");
+        });
+
+        /* --- 播放控制按钮 --- */
+        btnPlay.addEventListener("click", () => applyAnimation("play"));
+        btnLoop.addEventListener("click", () => applyAnimation("loop"));
+        btnStop.addEventListener("click", () => applyAnimation("stop"));
+
+        /* --- 复制按钮：完整 CSS --- */
+        document.getElementById("copyFull").addEventListener("click", () => {
+          copyToClipboard(buildCSS().full).then(() =>
+            showToast("✅ 完整 CSS 代码已复制！"),
+          );
+        });
+        /* --- 复制按钮：仅 @keyframes --- */
+        document
+          .getElementById("copyKeyframes")
+          .addEventListener("click", () => {
+            copyToClipboard(buildCSS().keyframes).then(() =>
+              showToast("✨ @keyframes 块已单独复制！"),
+            );
+          });
+        /* --- 复制按钮：仅类名 --- */
+        document.getElementById("copyClass").addEventListener("click", () => {
+          copyToClipboard(buildCSS().className).then(() =>
+            showToast("🎨 CSS 类选择器已单独复制！"),
+          );
+        });
+
+        /* --- 初始化 --- */
+        function init() {
+          renderCategories();
+          renderGrid();
+          renderCodeBlock();
+          applyAnimation("play");
+        }
+
+        init();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var k = e.key ? e.key.toLowerCase() : "";
+
+          if (e.key === "F12") {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && !e.shiftKey && ["u", "s", "p"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          if (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(k)) {
+            e.preventDefault();
+            return false;
+          }
+
+          var isPrtSc = e.key === "PrintScreen";
+          var isMacShot =
+            e.metaKey && e.shiftKey && ["3", "4", "5", "6"].includes(e.key);
+          var isWinShot = e.key === "PrintScreen" && (e.metaKey || e.altKey);
+          if (isPrtSc || isMacShot || isWinShot) {
+            _showCaptureOverlay();
+            e.preventDefault();
+            setTimeout(_hideCaptureOverlay, 400);
+          }
+
+          if (
+            (e.ctrlKey || e.metaKey) &&
+            ["+", "-", "=", "0"].includes(e.key)
+          ) {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        var _devToolsBlocked = false;
+
+        function _checkDevTools() {
+          var wGap = window.outerWidth - window.innerWidth;
+          var hGap = window.outerHeight - window.innerHeight;
+          if ((wGap > 160 || hGap > 160) && !_devToolsBlocked) {
+            _devToolsBlocked = true;
+            var isDark = _isDarkMode();
+            var bg = isDark ? "#000000" : "#F2F2F7";
+            var fg = isDark ? "#EBEBF5" : "#3C3C43";
+            document.body.innerHTML =
+              '<div style="display:flex;align-items:center;justify-content:center;' +
+              "height:100vh;background:" +
+              bg +
+              ';font-family:-apple-system,sans-serif;">' +
+              '<p style="font-size:18px;color:' +
+              fg +
+              ';text-align:center;">' +
+              "⚠️ 页面加载异常，请刷新后重试</p></div>";
+          }
+        }
+
+        setInterval(_checkDevTools, 1000);
+
+        var _overlay = null;
+
+        function _showCaptureOverlay() {
+          if (_overlay) return;
+          _overlay = document.createElement("div");
+          _overlay.style.cssText = [
+            "position:fixed",
+            "inset:0",
+            "z-index:2147483647",
+            "background:#000",
+            "opacity:0",
+            "transition:opacity .1s ease",
+            "pointer-events:none",
+            "will-change:opacity",
+          ].join(";");
+          document.body.appendChild(_overlay);
+          requestAnimationFrame(function () {
+            _overlay.style.opacity = "1";
+          });
+        }
+
+        function _hideCaptureOverlay() {
+          if (!_overlay) return;
+          _overlay.style.opacity = "0";
+          var o = _overlay;
+          setTimeout(function () {
+            if (o && o.parentNode) o.parentNode.removeChild(o);
+            if (_overlay === o) _overlay = null;
+          }, 150);
+        }
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            _showCaptureOverlay();
+          } else {
+            setTimeout(_hideCaptureOverlay, 80);
+          }
+        });
+
+        var _trap = /./;
+        _trap.toString = function () {
+          return "⚠️ 禁止调试";
+        };
+        setInterval(function () {
+          console.log("%c", _trap);
+        }, 2000);
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>
