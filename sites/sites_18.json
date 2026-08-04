@@ -103,5 +103,12 @@
         "url": "http://music.zkkp.nyc.mn/",
         "description": "",
         "category": "影音娱乐"
+    },
+    {
+        "title": "白嫖者联盟",
+        "icon": "白嫖者联盟_icon.webp",
+        "url": "https://bpz.app",
+        "description": "",
+        "category": "影音娱乐"
     }
 ]

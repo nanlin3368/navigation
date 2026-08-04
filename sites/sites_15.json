@@ -173,5 +173,12 @@
         "url": "https://phwalls.com/zh",
         "description": "",
         "category": "视觉灵感"
+    },
+    {
+        "title": "壁纸汇",
+        "icon": "壁纸汇_icon.webp",
+        "url": "https://www.bizhihui.com",
+        "description": "",
+        "category": "视觉灵感"
     }
 ]

@@ -152,5 +152,12 @@
         "url": "https://xunjimap.online",
         "description": "",
         "category": "新知百态"
+    },
+    {
+        "title": "软科",
+        "icon": "软科_icon.webp",
+        "url": "https://www.shanghairanking.cn",
+        "description": "",
+        "category": "新知百态"
     }
 ]

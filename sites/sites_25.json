@@ -56,6 +56,13 @@
         "category": "更多导航"
     },
     {
+        "title": "橘子的导航",
+        "icon": "橘子的导航_icon.webp",
+        "url": "https://orangecj.cn/navhub.html",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
         "title": "纯净派",
         "icon": "纯净派_icon.webp",
         "url": "https://chunjing.app",
@@ -80,6 +87,13 @@
         "title": "我的收藏",
         "icon": "我的收藏_icon.webp",
         "url": "https://link.pixcat.cn",
+        "description": "",
+        "category": "更多导航"
+    },
+    {
+        "title": "硬核指南",
+        "icon": "硬核指南_icon.webp",
+        "url": "https://yinghezhinan.com",
         "description": "",
         "category": "更多导航"
     }

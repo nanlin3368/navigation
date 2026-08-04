@@ -96,5 +96,12 @@
         "url": "https://fridaytools.dpdns.org",
         "description": "",
         "category": "开发辅助"
+    },
+    {
+        "title": "ToolsForCode",
+        "icon": "ToolsForCode_icon.webp",
+        "url": "https://www.toolsforcode.com/zh",
+        "description": "",
+        "category": "开发辅助"
     }
 ]

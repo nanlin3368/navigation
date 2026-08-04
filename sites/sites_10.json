@@ -411,5 +411,19 @@
         "url": "https://www.pixconvert.com/zh",
         "description": "",
         "category": "综合效率"
+    },
+    {
+        "title": "ToolKnit",
+        "icon": "ToolKnit_icon.webp",
+        "url": "https://toolknit.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "工具箱",
+        "icon": "工具箱_icon.webp",
+        "url": "https://www.itinfotools.com",
+        "description": "",
+        "category": "综合效率"
     }
 ]

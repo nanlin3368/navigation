@@ -33,5 +33,19 @@
         "url": "https://haisou.cc",
         "description": "",
         "category": "聚合搜索"
+    },
+    {
+        "title": "PanHub",
+        "icon": "PanHub_icon.webp",
+        "url": "https://panhub.shenzjd.com",
+        "description": "",
+        "category": "聚合搜索"
+    },
+    {
+        "title": "极刻云搜",
+        "icon": "极刻云搜_icon.webp",
+        "url": "https://www.jikeyunsou.com",
+        "description": "",
+        "category": "聚合搜索"
     }
 ]

@@ -180,5 +180,26 @@
         "url": "https://github.com/MatsuriDayo/NekoBoxForAndroid",
         "description": "",
         "category": "安卓专区"
+    },   
+    {
+        "title": "Aurora Store",
+        "icon": "Aurora_Store_icon.webp",
+        "url": "https://gitlab.com/AuroraOSS/AuroraStore",
+        "description": "",
+        "category": "安卓专区"
+    },
+    {
+        "title": "LX Music",
+        "icon": "LX_Music_icon.webp",
+        "url": "https://lxmusic.toside.cn",
+        "description": "",
+        "category": "安卓专区"
+    },
+    {
+        "title": "EhViewer",
+        "icon": "EhViewer_icon.webp",
+        "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+        "description": "",
+        "category": "安卓专区"
     }
 ]
