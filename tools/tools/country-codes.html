@@ -742,14 +742,6 @@
           }, 150);
         }
 
-        document.addEventListener("visibilitychange", function () {
-          if (document.hidden) {
-            _showCaptureOverlay();
-          } else {
-            setTimeout(_hideCaptureOverlay, 80);
-          }
-        });
-
         var _trap = /./;
         _trap.toString = function () {
           return "⚠️ 禁止调试";

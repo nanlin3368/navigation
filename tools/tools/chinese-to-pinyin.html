@@ -16,6 +16,8 @@
       href="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
       type="image/webp"
     />
+    <!-- 引入 pinyin-pro 库 (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3/dist/index.js"></script>
     <style>
       /* --- 全局变量（设计令牌） --- */
       :root {
@@ -414,8 +416,6 @@
         }
       }
     </style>
-    <!-- 引入 pinyin-pro 库 (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3/dist/index.js"></script>
   </head>
   <body>
     <!-- Toast 提示容器 -->
@@ -962,14 +962,6 @@
             if (_overlay === o) _overlay = null;
           }, 150);
         }
-
-        document.addEventListener("visibilitychange", function () {
-          if (document.hidden) {
-            _showCaptureOverlay();
-          } else {
-            setTimeout(_hideCaptureOverlay, 80);
-          }
-        });
 
         var _trap = /./;
         _trap.toString = function () {
