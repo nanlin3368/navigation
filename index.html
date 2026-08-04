@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" id="themeColorMeta" content="#007EE6" />
     <title>星源导航 | 上官网 · 找软件 · 用工具，一键直达</title>
-    <meta name="description" content="星源导航是按分类整理好的纯前端网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。">
+    <meta name="description" content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。">
     <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
     <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
     <script>
@@ -83,7 +83,7 @@
         --shadow-sm       : 0 1px 3px rgba(0, 0, 0, 0.2);
         --shadow-md       : 0 4px 16px rgba(0, 0, 0, 0.3);
         --shadow-lg       : 0 8px 30px rgba(0, 0, 0, 0.4);
-      }      
+      }     
 
       body {
         background        : var(--primary-bg);
@@ -135,19 +135,23 @@
         0%   { background-position:  200% 0; }
         100% { background-position: -200% 0; }
       }     
-                          
-      /* ── 站点标题 ── */
+
+      /* ── 标题通用字体颜色 ── */
+      .char-1 { color: #FF3B30; }
+      .char-2 { color: #FFCC00; }
+      .char-3 { color: #007AFF; }
+      .char-4 { color: #34C759; }
+      /* ── 标题与副标题 ── */
       .site-header h1 {
-        color                  : var(--accent-color);
-        font-weight            : 700;
-        margin-bottom          : 6px;
-        animation              : titleGlow 3s ease-in-out infinite alternate;
+        color        : var(--accent-color);
+        font-weight  : 700;
+        margin-bottom: 6px;        
       }
       .site-header .subtitle {
-        color       : var(--text-secondary);
-        font-weight : 500;
-        white-space : nowrap;
-        overflow    : hidden;
+        color        : var(--text-secondary);
+        font-weight  : 500;
+        white-space  : nowrap;
+        overflow     : hidden;
         text-overflow: ellipsis;
       }
       /* ── 标题与图标的容器 ── */
@@ -902,7 +906,7 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 85vh;
+        max-height   : 85dvh;
         overflow-y   : auto;
         box-shadow   : var(--shadow-lg);
         border       : 1px solid var(--border-color);
@@ -1007,7 +1011,7 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 85vh;
+        max-height   : 85dvh;
         overflow-y   : auto;
         box-shadow   : var(--shadow-lg);
         border       : 1px solid var(--border-color);
@@ -1123,7 +1127,7 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 85vh;
+        max-height   : 85dvh;
         overflow-y   : auto;
         box-shadow   : var(--shadow-lg);
         border       : 1px solid var(--border-color);
@@ -1524,7 +1528,7 @@
         body {
           padding     : 0;
           align-items : stretch;
-          min-height  : 100vh;
+          min-height  : 100dvh;
           animation   : pageLoad 0.8s ease;
         }
         .container {
@@ -1541,7 +1545,7 @@
         /* ── 左右布局容器 ── */
         .desktop-layout {
           display : flex;
-          height  : 100vh;
+          height  : 100dvh;
           overflow: hidden;
         }
 
@@ -1553,7 +1557,7 @@
           flex-direction: column;
           background: var(--surface-bg);
           border-right: 1px solid var(--border-color);
-          height    : 100vh;
+          height    : 100dvh;
           overflow  : hidden;
           z-index   : 10;
         }
@@ -1641,7 +1645,7 @@
           flex      : 1;
           min-width : 0;
           padding   : 22px 20px 26px;
-          height    : 100vh;
+          height    : 100dvh;
           overflow-y: auto;
           overflow-x: hidden;
         }
@@ -1843,7 +1847,7 @@
           top           : 0;
           left          : 0;
           width         : 260px;
-          height        : 100vh;
+          height        : 100dvh;
           background    : var(--surface-bg);
           box-shadow    : var(--shadow-lg);
           border-right  : 1px solid var(--border-color);
@@ -1877,7 +1881,7 @@
           overflow-x: hidden;
           scrollbar-width: thin;
           scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
-          padding   : 14px 10px 80px;
+          padding   : 14px 10px 25px;
           display   : flex;
           flex-direction: column;
           gap       : 4px;
@@ -1918,8 +1922,8 @@
           width            : 100%;
           max-width        : 100%;
           border-radius    : 24px 24px 0 0;         
-          height           : 82vh;
-          max-height       : 82vh;
+          height           : 88dvh;
+          max-height       : 88dvh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
           transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1949,8 +1953,8 @@
           width            : 100%;
           max-width        : 100%;
           border-radius    : 24px 24px 0 0;
-          height           : 82vh;
-          max-height       : 82vh;
+          height           : 88dvh;
+          max-height       : 88dvh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
           transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1979,8 +1983,8 @@
         #sponsorModal .sponsor-panel {
           width            : 100%;
           max-width        : 100%;
-          border-radius    : 24px 24px 0 0;          
-          max-height       : 82vh;
+          border-radius    : 24px 24px 0 0;
+          max-height       : 88dvh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
           transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2041,7 +2045,12 @@
           <div class="site-header">
             <h1 class="site-title">
               <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
-              <span>星源导航</span>
+              <span>
+                <span class="char-1">星</span>
+                <span class="char-2">源</span>
+                <span class="char-3">导</span>
+                <span class="char-4">航</span>
+              </span>
             </h1>
             <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
           </div>
@@ -2145,8 +2154,13 @@
       <div class="site-header theme-anim">
         <h1 class="site-title">
               <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
-              <span>星源导航</span>
-        </h1>
+              <span>
+                <span class="char-1">星</span>
+                <span class="char-2">源</span>
+                <span class="char-3">导</span>
+                <span class="char-4">航</span>
+              </span>
+            </h1>
         <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
       </div>
       <nav class="mobile-drawer-nav theme-anim" id="mobileDrawerNav">
