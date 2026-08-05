@@ -369,5 +369,12 @@
         "url": "https://jsq3000.com",
         "description": "",
         "category": "扩展空间"
+    },
+    {
+        "title": "乡土游戏馆",
+        "icon": "乡土游戏馆_icon.webp",
+        "url": "https://youxi.pomodiary.com",
+        "description": "",
+        "category": "扩展空间"
     }
 ]

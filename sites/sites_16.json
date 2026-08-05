@@ -110,5 +110,12 @@
         "url": "https://www.transcriptgenerate.com/zh-CN",
         "description": "",
         "category": "视频提取"
+    },
+    {
+        "title": "ParseShort",
+        "icon": "ParseShort_icon.webp",
+        "url": "https://parse.shenzjd.com",
+        "description": "",
+        "category": "视频提取"
     }
 ]

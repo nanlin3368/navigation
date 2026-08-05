@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" id="themeColorMeta" content="#007EE6" />
-    <title>星源导航 | 你的网络小助手</title>
+    <title>星源导航 - 上官网 · 找软件 · 用工具，一键直达</title>
+    <meta name="description" content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。">
     <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
     <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
     <script>
@@ -49,12 +50,12 @@
         --tooltip-bg      : #1c1c1e;
         --tooltip-text    : #ffffff;
 
-        /* 极简阴影（替代新拟态） */
+        /* 极简阴影 */
         --shadow-sm       : 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
         --shadow-md       : 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
         --shadow-lg       : 0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
 
-        /* ── 菜单 FAB 子按钮高亮色（仅保留边框与文字颜色） ── */
+        /* ── 菜单 FAB 子按钮高亮色 ── */
         --fab-toolbox-glow         : #EC4899;
         --fab-toolbox-glow-soft    : rgba(236, 72, 153, 0.2);
         --fab-disclaimer-glow      : #3B82F6;
@@ -82,7 +83,7 @@
         --shadow-sm       : 0 1px 3px rgba(0, 0, 0, 0.2);
         --shadow-md       : 0 4px 16px rgba(0, 0, 0, 0.3);
         --shadow-lg       : 0 8px 30px rgba(0, 0, 0, 0.4);
-      }      
+      }     
 
       body {
         background        : var(--primary-bg);
@@ -134,19 +135,23 @@
         0%   { background-position:  200% 0; }
         100% { background-position: -200% 0; }
       }     
-                          
-      /* ── 站点标题（采用纯色强调，去除渐变文字） ── */
+
+      /* ── 标题通用字体颜色 ── */
+      .char-1 { color: #e5484d; }
+      .char-2 { color: #e5a500; }
+      .char-3 { color: #007AFF; }
+      .char-4 { color: #22a06b; }
+      /* ── 标题与副标题 ── */
       .site-header h1 {
-        color                  : var(--accent-color);
-        font-weight            : 700;
-        margin-bottom          : 6px;
-        animation              : titleGlow 3s ease-in-out infinite alternate;
+        color        : var(--accent-color);
+        font-weight  : 700;
+        margin-bottom: 6px;        
       }
       .site-header .subtitle {
-        color       : var(--text-secondary);
-        font-weight : 500;
-        white-space : nowrap;
-        overflow    : hidden;
+        color        : var(--text-secondary);
+        font-weight  : 500;
+        white-space  : nowrap;
+        overflow     : hidden;
         text-overflow: ellipsis;
       }
       /* ── 标题与图标的容器 ── */
@@ -478,18 +483,7 @@
         position     : relative;
         overflow     : hidden;
         cursor       : pointer;
-      }
-      .tool-card::before {
-        content   : '';
-        position  : absolute;
-        top       : 0;
-        left      : -100%;
-        width     : 100%;
-        height    : 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-        transition: left 0.8s;
-      }
-      .tool-card:hover::before { left: 100%; }
+      }      
       .tool-card:hover {
         transform : translateY(-5px);
         box-shadow: var(--shadow-lg);
@@ -892,10 +886,15 @@
         display         : flex;
         align-items     : center;
         justify-content : center;
-        background      : rgba(0, 0, 0, 0.5);     
+        background      : rgba(0, 0, 0, 0.5);
         opacity         : 0;
         visibility      : hidden;
-        transition      : opacity 0.3s ease, visibility 0.3s ease;
+        /* 优化闪屏：统一过渡曲线，开启硬件加速 */
+        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change     : opacity, visibility;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
       #sponsorModal.open {
         opacity   : 1;
@@ -907,16 +906,19 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 85vh;
+        max-height   : 85dvh;
         overflow-y   : auto;
         box-shadow   : var(--shadow-lg);
         border       : 1px solid var(--border-color);
         transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         text-align   : center;
         /* 隐藏滚动条（两端通用） */
         scrollbar-width: none;
         -ms-overflow-style: none;
+        will-change     : transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
       .sponsor-panel::-webkit-scrollbar { display: none; }
       #sponsorModal.open .sponsor-panel {
@@ -989,10 +991,15 @@
         display         : flex;
         align-items     : center;
         justify-content : center;
-        background      : rgba(0, 0, 0, 0.5); 
+        background      : rgba(0, 0, 0, 0.5);
         opacity         : 0;
         visibility      : hidden;
-        transition      : opacity 0.3s ease, visibility 0.3s ease;
+        /* 优化闪屏：统一过渡曲线，开启硬件加速 */
+        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change     : opacity, visibility;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
       #disclaimerModal.open {
         opacity   : 1;
@@ -1004,15 +1011,18 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 85vh;
+        max-height   : 85dvh;
         overflow-y   : auto;
         box-shadow   : var(--shadow-lg);
         border       : 1px solid var(--border-color);
         transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         /* 隐藏滚动条（两端通用） */
         scrollbar-width: none;
         -ms-overflow-style: none;
+        will-change     : transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
       .disclaimer-panel::-webkit-scrollbar { display: none; }
       #disclaimerModal.open .disclaimer-panel {
@@ -1098,10 +1108,15 @@
         display         : flex;
         align-items     : center;
         justify-content : center;
-        background      : rgba(0, 0, 0, 0.5);        
+        background      : rgba(0, 0, 0, 0.5);
         opacity         : 0;
         visibility      : hidden;
-        transition      : opacity 0.3s ease, visibility 0.3s ease;
+        /* 优化闪屏：统一过渡曲线，开启硬件加速 */
+        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change     : opacity, visibility;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
       #toolboxModal.open { opacity: 1; visibility: visible; }
 
@@ -1112,12 +1127,15 @@
         border-radius: 28px;
         padding      : 36px 28px 28px;
         width        : min(94vw, 480px);
-        max-height   : 85vh;
+        max-height   : 85dvh;
         overflow-y   : auto;
         box-shadow   : var(--shadow-lg);
         border       : 1px solid var(--border-color);
         transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change     : transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
       #toolboxModal.open .toolbox-panel { transform: scale(1) translateY(0); }
       /* 隐藏滚动条（两端通用） */
@@ -1510,7 +1528,7 @@
         body {
           padding     : 0;
           align-items : stretch;
-          min-height  : 100vh;
+          min-height  : 100dvh;
           animation   : pageLoad 0.8s ease;
         }
         .container {
@@ -1527,7 +1545,7 @@
         /* ── 左右布局容器 ── */
         .desktop-layout {
           display : flex;
-          height  : 100vh;
+          height  : 100dvh;
           overflow: hidden;
         }
 
@@ -1539,7 +1557,7 @@
           flex-direction: column;
           background: var(--surface-bg);
           border-right: 1px solid var(--border-color);
-          height    : 100vh;
+          height    : 100dvh;
           overflow  : hidden;
           z-index   : 10;
         }
@@ -1627,7 +1645,7 @@
           flex      : 1;
           min-width : 0;
           padding   : 22px 20px 26px;
-          height    : 100vh;
+          height    : 100dvh;
           overflow-y: auto;
           overflow-x: hidden;
         }
@@ -1667,17 +1685,17 @@
           gap          : 18px;
           margin-bottom: 0;
         }
-        .tool-card    { padding: 18px 20px; border-radius: 18px; }
+        .tool-card    { padding: 20px 20px 18px; border-radius: 18px; }
         .tool-icon,
         .tool-icon-skeleton {
           width        : 50px;
           height       : 50px;
-          margin-bottom: 10px;
+          margin-bottom: 16px;
         }
         .tool-icon-fallback { font-size: 2.2rem; margin-bottom: 10px; }
-        .tool-title         { font-size: 1.35rem; margin-bottom: 8px; }
-        .tool-description   { font-size: 0.98rem; margin-bottom: 14px; }
-        .tool-link          { font-size: 1.1rem; padding: 8px 18px; border-radius: 12px; }
+        .tool-title         { font-size: 1.25rem; margin-bottom: 16px; }
+        .tool-description   { font-size: 0.98rem; margin-bottom: 16px; }
+        .tool-link          { font-size: 1rem; padding: 6px 16px; border-radius: 10px; }
         footer              { font-size: 0.95rem; margin-top: 28px; }
 
         /* ── 隐藏移动端专属元素 ── */
@@ -1794,11 +1812,11 @@
         }
 
         /* 工具卡片 */
-        .tool-title       { font-size: 1.2rem; }
+        .tool-title       { font-size: 1rem; }
         .tool-description { font-size: 1rem; }
         .tool-link        { font-size: 1rem; padding: 8px 16px; border-radius: 12px; }
-        .tools-grid       { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 8px; padding: 80px 15px 16px; }
-        .tool-card        { padding: 20px; border-radius: 20px; }
+        .tools-grid       { grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 8px; padding: 80px 15px 16px; }
+        .tool-card        { padding: 20px 20px 18px; border-radius: 20px; }
         footer            { margin: 0 15px 26px; padding: 18px 16px; font-size: 0.9rem; border-radius: 18px; }
 
         /* 悬浮按钮移动端尺寸 */
@@ -1829,7 +1847,7 @@
           top           : 0;
           left          : 0;
           width         : 260px;
-          height        : 100vh;
+          height        : 100dvh;
           background    : var(--surface-bg);
           box-shadow    : var(--shadow-lg);
           border-right  : 1px solid var(--border-color);
@@ -1863,7 +1881,7 @@
           overflow-x: hidden;
           scrollbar-width: thin;
           scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
-          padding   : 14px 10px 80px;
+          padding   : 14px 10px 25px;
           display   : flex;
           flex-direction: column;
           gap       : 4px;
@@ -1904,11 +1922,11 @@
           width            : 100%;
           max-width        : 100%;
           border-radius    : 24px 24px 0 0;         
-          height           : 82vh;
-          max-height       : 82vh;
+          height           : 88dvh;
+          max-height       : 88dvh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
-          transition       : transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+          transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.15);
           border           : none;
           border-top       : 1px solid var(--border-color);
@@ -1935,11 +1953,11 @@
           width            : 100%;
           max-width        : 100%;
           border-radius    : 24px 24px 0 0;
-          height           : 82vh;
-          max-height       : 82vh;
+          height           : 88dvh;
+          max-height       : 88dvh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
-          transition       : transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+          transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.15);
           border           : none;
           border-top       : 1px solid var(--border-color);
@@ -1965,11 +1983,11 @@
         #sponsorModal .sponsor-panel {
           width            : 100%;
           max-width        : 100%;
-          border-radius    : 24px 24px 0 0;          
-          max-height       : 82vh;
+          border-radius    : 24px 24px 0 0;
+          max-height       : 88dvh;
           padding          : 20px 28px 32px;
           transform        : translateY(100%);
-          transition       : transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+          transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.15);
           border           : none;
           border-top       : 1px solid var(--border-color);
@@ -2027,7 +2045,12 @@
           <div class="site-header">
             <h1 class="site-title">
               <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
-              <span>星源导航</span>
+              <span>
+                <span class="char-1">星</span>
+                <span class="char-2">源</span>
+                <span class="char-3">导</span>
+                <span class="char-4">航</span>
+              </span>
             </h1>
             <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
           </div>
@@ -2114,11 +2137,9 @@
           <div class="tools-grid" id="toolsGrid"></div>
 
           <footer class="theme-anim">
-            <p>© 2026 星源导航 | 极简 · 纯粹 · 高效</p>
-            <p>本站由 [ <a href="https://github.com/nanlin3368/navigation" target="_blank" rel="noopener noreferrer" class="author-highlight" style="color:#40C8E0; text-decoration:none;">闲月</a> ] 倾心制作并整理内容</p>
+            <p>© 2026 星源导航 - 极简 · 纯粹 · 高效</p> 
           </footer>
         </main><!-- /main-content -->
-
       </div><!-- /desktop-layout -->
     </div><!-- /container -->
 
@@ -2131,8 +2152,13 @@
       <div class="site-header theme-anim">
         <h1 class="site-title">
               <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
-              <span>星源导航</span>
-        </h1>
+              <span>
+                <span class="char-1">星</span>
+                <span class="char-2">源</span>
+                <span class="char-3">导</span>
+                <span class="char-4">航</span>
+              </span>
+            </h1>
         <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
       </div>
       <nav class="mobile-drawer-nav theme-anim" id="mobileDrawerNav">
@@ -2846,18 +2872,42 @@
       const sponsorModal = document.getElementById('sponsorModal');
       const sponsorClose = document.getElementById('sponsorClose');
 
+      // 优化闪屏：使用 requestAnimationFrame 延迟添加类，并监听 transitionend 解锁滚动
       function openSponsor() {
-        sponsorModal.classList.add('open');
-        lockScroll();                                    // 锁定背景滚动
-        // 关闭 FAB 展开菜单
-        settingsFabGroup.classList.remove('expanded');
-        settingsFabBtn.classList.remove('open');
-        // 推入历史，使设备任意返回键可关闭模态框
-        history.pushState({ sponsorOpen: true }, '');
+        // 先确保移除 open 类，重置状态
+        sponsorModal.classList.remove('open');
+        // 强制重排
+        void sponsorModal.offsetHeight;
+        // 在下一帧添加类，让过渡从正确初始状态开始
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            sponsorModal.classList.add('open');
+            lockScroll();
+            settingsFabGroup.classList.remove('expanded');
+            settingsFabBtn.classList.remove('open');
+            history.pushState({ sponsorOpen: true }, '');
+          });
+        });
       }
+
+      let _sponsorCloseTimer = null;
       function closeSponsor() {
         sponsorModal.classList.remove('open');
-        unlockScroll();                                  // 恢复背景滚动
+        // 移除之前可能残留的定时器
+        if (_sponsorCloseTimer) clearTimeout(_sponsorCloseTimer);
+        // 监听 transitionend 事件，确保动画完成后解锁滚动
+        const onTransitionEnd = () => {
+          sponsorModal.removeEventListener('transitionend', onTransitionEnd);
+          unlockScroll();
+          _sponsorCloseTimer = null;
+        };
+        sponsorModal.addEventListener('transitionend', onTransitionEnd);
+        // 但为防止事件未触发（例如元素隐藏），设置一个保底定时器（400ms 后强制解锁）
+        _sponsorCloseTimer = setTimeout(() => {
+          sponsorModal.removeEventListener('transitionend', onTransitionEnd);
+          unlockScroll();
+          _sponsorCloseTimer = null;
+        }, 450);
       }
 
       sponsorBtn.addEventListener('click', function(e) {
@@ -2865,18 +2915,15 @@
         openSponsor();
       });
       sponsorClose.addEventListener('click', function() {
-        // 同步撤销 pushState，避免关闭后返回键退出页面
         if (history.state && history.state.sponsorOpen) history.back();
         else closeSponsor();
       });
-      // 点击模态框背景关闭
       sponsorModal.addEventListener('click', function(e) {
         if (e.target === sponsorModal) {
           if (history.state && history.state.sponsorOpen) history.back();
           else closeSponsor();
         }
       });
-      // ESC 键关闭
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && sponsorModal.classList.contains('open')) {
           if (history.state && history.state.sponsorOpen) history.back();
@@ -2925,16 +2972,36 @@
       const disclaimerModal = document.getElementById('disclaimerModal');
       const disclaimerClose = document.getElementById('disclaimerClose');
 
+      // 优化闪屏：与赞赏模态框相同策略
       function openDisclaimer() {
-        disclaimerModal.classList.add('open');
-        lockScroll();                                    // 锁定背景滚动
-        settingsFabGroup.classList.remove('expanded');
-        settingsFabBtn.classList.remove('open');
-        history.pushState({ disclaimerOpen: true }, '');
+        disclaimerModal.classList.remove('open');
+        void disclaimerModal.offsetHeight;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            disclaimerModal.classList.add('open');
+            lockScroll();
+            settingsFabGroup.classList.remove('expanded');
+            settingsFabBtn.classList.remove('open');
+            history.pushState({ disclaimerOpen: true }, '');
+          });
+        });
       }
+
+      let _disclaimerCloseTimer = null;
       function closeDisclaimer() {
         disclaimerModal.classList.remove('open');
-        unlockScroll();                                  // 恢复背景滚动
+        if (_disclaimerCloseTimer) clearTimeout(_disclaimerCloseTimer);
+        const onTransitionEnd = () => {
+          disclaimerModal.removeEventListener('transitionend', onTransitionEnd);
+          unlockScroll();
+          _disclaimerCloseTimer = null;
+        };
+        disclaimerModal.addEventListener('transitionend', onTransitionEnd);
+        _disclaimerCloseTimer = setTimeout(() => {
+          disclaimerModal.removeEventListener('transitionend', onTransitionEnd);
+          unlockScroll();
+          _disclaimerCloseTimer = null;
+        }, 450);
       }
 
       disclaimerBtn.addEventListener('click', function(e) {
@@ -3102,19 +3169,39 @@
         });
       }
 
+      // 优化闪屏：与赞赏模态框相同策略
       function openToolbox() {
         renderToolList('');
         toolboxSearch.value = '';
         toolboxSearchClear.classList.remove('visible');
-        toolboxModal.classList.add('open');
-        lockScroll();
-        settingsFabGroup.classList.remove('expanded');
-        settingsFabBtn.classList.remove('open');
-        history.pushState({ toolboxOpen: true }, '');
+        toolboxModal.classList.remove('open');
+        void toolboxModal.offsetHeight;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            toolboxModal.classList.add('open');
+            lockScroll();
+            settingsFabGroup.classList.remove('expanded');
+            settingsFabBtn.classList.remove('open');
+            history.pushState({ toolboxOpen: true }, '');
+          });
+        });
       }
+
+      let _toolboxCloseTimer = null;
       function closeToolbox() {
         toolboxModal.classList.remove('open');
-        unlockScroll();
+        if (_toolboxCloseTimer) clearTimeout(_toolboxCloseTimer);
+        const onTransitionEnd = () => {
+          toolboxModal.removeEventListener('transitionend', onTransitionEnd);
+          unlockScroll();
+          _toolboxCloseTimer = null;
+        };
+        toolboxModal.addEventListener('transitionend', onTransitionEnd);
+        _toolboxCloseTimer = setTimeout(() => {
+          toolboxModal.removeEventListener('transitionend', onTransitionEnd);
+          unlockScroll();
+          _toolboxCloseTimer = null;
+        }, 450);
       }
 
       toolboxBtn.addEventListener('click', function(e) {

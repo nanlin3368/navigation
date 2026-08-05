@@ -199,6 +199,7 @@
         width: 100%;
         flex: 1;
         min-height: 550px;
+        max-height: 550px;
         background: var(--bg);
         border: 1px solid var(--line);
         border-radius: var(--radius-sm);
@@ -795,14 +796,6 @@
             if (_overlay === o) _overlay = null;
           }, 150);
         }
-
-        document.addEventListener("visibilitychange", function () {
-          if (document.hidden) {
-            _showCaptureOverlay();
-          } else {
-            setTimeout(_hideCaptureOverlay, 80);
-          }
-        });
 
         var _trap = /./;
         _trap.toString = function () {
