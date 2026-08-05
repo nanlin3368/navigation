@@ -1530,6 +1530,7 @@
           align-items : stretch;
           min-height  : 100dvh;
           animation   : pageLoad 0.8s ease;
+          overflow    : hidden !important;
         }
         .container {
           max-width   : none;
@@ -1648,6 +1649,18 @@
           height    : 100dvh;
           overflow-y: auto;
           overflow-x: hidden;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
+        }
+        .main-content::-webkit-scrollbar {
+          width: 4px;
+        }
+        .main-content::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+          background: rgba(128, 128, 160, 0.35);
+          border-radius: 2px;
         }
 
         /* 搜索区 */
