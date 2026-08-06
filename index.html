@@ -55,17 +55,9 @@
         --shadow-md       : 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
         --shadow-lg       : 0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
 
-        /* ── 菜单 FAB 子按钮高亮色 ── */
-        --fab-toolbox-glow         : #EC4899;
-        --fab-toolbox-glow-soft    : rgba(236, 72, 153, 0.2);
-        --fab-disclaimer-glow      : #3B82F6;
-        --fab-disclaimer-glow-soft : rgba(59, 130, 246, 0.2);
-        --fab-sponsor-glow         : #F59E0B;
-        --fab-sponsor-glow-soft    : rgba(245, 158, 11, 0.2);
-        --fab-copylink-glow        : #22C55E;
-        --fab-copylink-glow-soft   : rgba(34, 197, 94, 0.2);
-        --fab-theme-glow           : #A855F7;
-        --fab-theme-glow-soft      : rgba(168, 85, 247, 0.2);
+        /* ── 菜单 FAB 子按钮高亮色（统一变量） ── */
+        --fab-glow-default      : #A855F7;
+        --fab-glow-soft-default : rgba(168, 85, 247, 0.2);
       }
 
       body.dark {        
@@ -103,7 +95,7 @@
       }
 
       /* ════════════════════════════════════════════════════════
-         §1  通用基础样式（与布局无关，两端共用）
+         §1  通用基础样式
          ════════════════════════════════════════════════════════ */
 
       /* ── 入场动画 ── */
@@ -565,7 +557,7 @@
         border       : 1px solid rgba(0, 122, 255, 0.1);
       }
 
-      /* ── Footer ── */
+      /* ── 底部页脚卡片 ── */
       footer {
         margin-top   : 32px;
         text-align   : center;
@@ -577,895 +569,9 @@
         border       : 1px solid var(--border-color);
         box-shadow   : var(--shadow-sm);
         animation    : footerFade 0.8s ease 1.2s both;
-      }
+      }      
 
-      .hidden { display: none !important; }
-
-      /* 作者名高亮 */
-      .author-highlight {
-        color   : #40C8E0; }
-
-      /* ════════════════════════════════════════════════════════
-         §1.5  通用浮层组件（两端共用：FAB、模态框、Toast）
-         ════════════════════════════════════════════════════════ */
-
-      /* ── 模态框打开时锁定背景滚动（移动端 + 桌面端通用） ── */
-      body.modal-open {
-        overflow : hidden;
-      }
-      /* iOS Safari：html 层也需要锁定 */
-      html.modal-open {
-        overflow : hidden;
-        height   : 100%;
-      }
-
-      /* ── 回顶部悬浮按钮 ── */
-      #backToTop {
-        position     : fixed;
-        right        : 50px;
-        width        : 52px;
-        height       : 52px;
-        border-radius: 18px;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        z-index      : 999;
-        transition   : opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, box-shadow 0.25s ease;
-        bottom    : 26px;
-        background: var(--surface-bg);
-        box-shadow: var(--shadow-md);
-        opacity   : 0;
-        visibility: hidden;
-        transform : translateY(16px) scale(0.85);
-      }
-      #backToTop.visible {
-        opacity   : 1;
-        visibility: visible;
-        transform : translateY(0) scale(1);
-      }
-      #backToTop:hover  { box-shadow: var(--shadow-lg); transform: translateY(-3px) scale(1.07); }
-      #backToTop:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-      #backToTop svg {
-        width           : 22px;
-        height          : 22px;
-        stroke          : var(--accent-color);
-        stroke-width    : 2.5;
-        stroke-linecap  : round;
-        stroke-linejoin : round;
-        fill            : none;
-      }
-
-      /* ── 菜单 FAB 组 ── */
-      #settingsFabGroup {
-        position : fixed;
-        right    : 50px;
-        bottom   : 95px;
-        z-index  : 999;
-        display  : flex;
-        flex-direction: row;
-        align-items   : center;
-        gap      : 22px;
-      }
-
-      /* 主触发按钮 */
-      #settingsFab {
-        width        : 52px;
-        height       : 52px;
-        border-radius: 18px;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        color        : var(--text-primary);
-        box-shadow   : var(--shadow-md);
-        transition   : box-shadow 0.25s ease, border-color 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        flex-shrink  : 0;
-      }
-      #settingsFab:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #settingsFab:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-      #settingsFab.open   { background: var(--surface-bg); color: var(--accent-color);  transform: rotate(45deg); }
-      #settingsFab.open:hover { transform: rotate(45deg) translateY(-2px) scale(1.06); }
-
-      /* ── FAB 子按钮公共状态（初始隐藏，展开时显示） ── */
-
-      /* 主题切换子按钮 */
-      #themeToggle {
-        width        : 52px;
-        height       : 52px;
-        border-radius: 50%;
-        border       : 1px solid transparent;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-md);
-        font-size    : 22px;
-        line-height  : 1;
-        /* 初始隐藏，展开时显示 */
-        opacity      : 0;
-        visibility   : hidden;
-        transform    : translateX(20px) scale(0.7);
-        transition   : opacity 0.25s ease, visibility 0.25s ease,
-                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease, border-color 0.25s ease;
-        pointer-events: none;
-      }
-      #themeToggle:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #themeToggle:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-
-      /* 展开状态：紫色高亮光晕 + 彩色边框 */
-      #settingsFabGroup.expanded #themeToggle {
-        opacity      : 1;
-        visibility   : visible;
-        transform    : translateX(0) scale(1);
-        pointer-events: auto;
-        border-color : var(--fab-theme-glow);
-        box-shadow   : 0 0 12px 2px var(--fab-theme-glow-soft), var(--shadow-md);
-      }
-
-      /* 赞赏支持子按钮 */
-      #sponsorBtn {
-        width        : 52px;
-        height       : 52px;
-        border-radius: 50%;
-        border       : 1px solid transparent;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-md);
-        font-size    : 22px;
-        line-height  : 1;
-        /* 初始隐藏，展开时显示 */
-        opacity      : 0;
-        visibility   : hidden;
-        transform    : translateX(20px) scale(0.7);
-        transition   : opacity 0.25s ease, visibility 0.25s ease,
-                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease, border-color 0.25s ease;
-        pointer-events: none;
-      }
-      #sponsorBtn:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #sponsorBtn:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-
-      /* 展开状态：橙色高亮光晕 + 彩色边框 */
-      #settingsFabGroup.expanded #sponsorBtn {
-        opacity      : 1;
-        visibility   : visible;
-        transform    : translateX(0) scale(1);
-        pointer-events: auto;
-        border-color : var(--fab-sponsor-glow);
-        box-shadow   : 0 0 12px 2px var(--fab-sponsor-glow-soft), var(--shadow-md);
-      }
-
-      /* 复制链接子按钮 */
-      #copyLinkBtn {
-        width        : 52px;
-        height       : 52px;
-        border-radius: 50%;
-        border       : 1px solid transparent;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-md);
-        font-size    : 22px;
-        line-height  : 1;
-        /* 初始隐藏，展开时显示 */
-        opacity      : 0;
-        visibility   : hidden;
-        transform    : translateX(20px) scale(0.7);
-        transition   : opacity 0.25s ease, visibility 0.25s ease,
-                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease, border-color 0.25s ease;
-        pointer-events: none;
-      }
-      #copyLinkBtn:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #copyLinkBtn:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-
-      /* 展开状态：绿色高亮光晕 + 彩色边框 */
-      #settingsFabGroup.expanded #copyLinkBtn {
-        opacity      : 1;
-        visibility   : visible;
-        transform    : translateX(0) scale(1);
-        pointer-events: auto;
-        border-color : var(--fab-copylink-glow);
-        box-shadow   : 0 0 12px 2px var(--fab-copylink-glow-soft), var(--shadow-md);
-      }
-
-      /* 关于本站子按钮 */
-      #disclaimerBtn {
-        width        : 52px;
-        height       : 52px;
-        border-radius: 50%;
-        border       : 1px solid transparent;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-md);
-        font-size    : 22px;
-        line-height  : 1;
-        opacity      : 0;
-        visibility   : hidden;
-        transform    : translateX(20px) scale(0.7);
-        transition   : opacity 0.25s ease, visibility 0.25s ease,
-                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease, border-color 0.25s ease;
-        pointer-events: none;
-      }
-      #disclaimerBtn:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #disclaimerBtn:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-
-      /* 展开状态：蓝色高亮光晕 + 彩色边框 */
-      #settingsFabGroup.expanded #disclaimerBtn {
-        opacity      : 1;
-        visibility   : visible;
-        transform    : translateX(0) scale(1);
-        pointer-events: auto;
-        border-color : var(--fab-disclaimer-glow);
-        box-shadow   : 0 0 12px 2px var(--fab-disclaimer-glow-soft), var(--shadow-md);
-      }
-
-      /* 简单工具子按钮 */
-      #toolboxBtn {
-        width        : 52px;
-        height       : 52px;
-        border-radius: 50%;
-        border       : 1px solid transparent;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-md);
-        font-size    : 22px;
-        line-height  : 1;
-        opacity      : 0;
-        visibility   : hidden;
-        transform    : translateX(20px) scale(0.7);
-        transition   : opacity 0.25s ease, visibility 0.25s ease,
-                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease, border-color 0.25s ease;
-        pointer-events: none;
-      }
-      #toolboxBtn:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #toolboxBtn:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-
-      /* 展开状态：粉色高亮光晕 + 彩色边框 */
-      #settingsFabGroup.expanded #toolboxBtn {
-        opacity      : 1;
-        visibility   : visible;
-        transform    : translateX(0) scale(1);
-        pointer-events: auto;
-        border-color : var(--fab-toolbox-glow);
-        box-shadow   : 0 0 12px 2px var(--fab-toolbox-glow-soft), var(--shadow-md);
-      }
-
-      /* ── 复制链接 Toast 提示 ── */
-      #copyLinkToast {
-        position        : fixed;
-        bottom          : 36px;
-        left            : 50%;
-        transform       : translateX(-50%) translateY(20px);
-        background      : var(--tooltip-bg);
-        color           : var(--tooltip-text);
-        padding         : 13px 28px;
-        border-radius   : 50px;
-        font-size       : 0.95rem;
-        font-weight     : 600;
-        letter-spacing  : 0.01em;
-        white-space     : nowrap;
-        box-shadow      : var(--shadow-lg);
-        opacity         : 0;
-        pointer-events  : none;
-        z-index         : 9999;
-        transition      : opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-        display         : flex;
-        align-items     : center;
-        gap             : 8px;
-      }
-      #copyLinkToast.show {
-        opacity         : 1;
-        transform       : translateX(-50%) translateY(0);
-      }
-
-      /* ── 赞赏支持模态框 ── */
-      #sponsorModal {
-        position        : fixed;
-        inset           : 0;
-        z-index         : 2000;
-        display         : flex;
-        align-items     : center;
-        justify-content : center;
-        background      : rgba(0, 0, 0, 0.5);
-        opacity         : 0;
-        visibility      : hidden;
-        /* 优化闪屏：统一过渡曲线，开启硬件加速 */
-        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change     : opacity, visibility;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      #sponsorModal.open {
-        opacity   : 1;
-        visibility: visible;
-      }
-      .sponsor-panel {
-        position     : relative;
-        background   : var(--primary-bg);
-        border-radius: 28px;
-        padding      : 36px 28px 28px;
-        width        : min(94vw, 480px);
-        max-height   : 85dvh;
-        overflow-y   : auto;
-        box-shadow   : var(--shadow-lg);
-        border       : 1px solid var(--border-color);
-        transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        text-align   : center;
-        /* 隐藏滚动条（两端通用） */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        will-change     : transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      .sponsor-panel::-webkit-scrollbar { display: none; }
-      #sponsorModal.open .sponsor-panel {
-        transform: scale(1) translateY(0);
-      }
-      .sponsor-close {
-        position     : absolute;
-        top          : 14px;
-        right        : 16px;
-        width        : 32px;
-        height       : 32px;
-        border-radius: 50%;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        color        : var(--text-secondary);
-        font-size    : 16px;
-        box-shadow   : var(--shadow-sm);
-        transition   : box-shadow 0.2s, transform 0.15s;
-      }
-      .sponsor-close:hover  { box-shadow: var(--shadow-md); transform: scale(1.1); }
-      .sponsor-close:active { box-shadow: var(--shadow-sm); transform: scale(0.92); }
-      .sponsor-title {
-        font-size  : 1.4rem;
-        font-weight: 700;
-        color      : var(--text-primary);
-        margin-bottom: 6px;
-        padding-right: 24px;
-      }
-      .sponsor-sub {
-        font-size  : 0.9rem;
-        color      : var(--text-secondary);
-        margin-bottom: 24px;
-      }
-      .sponsor-qr-row {
-        display        : flex;
-        justify-content: center;
-        align-items    : flex-start;
-      }
-      .sponsor-qr-item {
-        display       : flex;
-        flex-direction: column;
-        align-items   : center;
-        gap           : 10px;
-        width          : 100%;
-      }
-      .sponsor-qr-img {
-        width        : 100%;
-        max-width    : 360px;
-        height       : auto;
-        border-radius: 18px;
-        object-fit   : contain;
-        border       : 1px solid var(--border-color);
-        box-shadow   : var(--shadow-sm);
-      }
-      .sponsor-qr-label {
-        font-size  : 0.85rem;
-        color      : var(--text-secondary);
-        font-weight: 500;
-      }
-
-      /* ── 关于本站模态框 ── */
-      #disclaimerModal {
-        position        : fixed;
-        inset           : 0;
-        z-index         : 2000;
-        display         : flex;
-        align-items     : center;
-        justify-content : center;
-        background      : rgba(0, 0, 0, 0.5);
-        opacity         : 0;
-        visibility      : hidden;
-        /* 优化闪屏：统一过渡曲线，开启硬件加速 */
-        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change     : opacity, visibility;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      #disclaimerModal.open {
-        opacity   : 1;
-        visibility: visible;
-      }
-      .disclaimer-panel {
-        position     : relative;
-        background   : var(--primary-bg);
-        border-radius: 28px;
-        padding      : 36px 28px 28px;
-        width        : min(94vw, 480px);
-        max-height   : 85dvh;
-        overflow-y   : auto;
-        box-shadow   : var(--shadow-lg);
-        border       : 1px solid var(--border-color);
-        transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        /* 隐藏滚动条（两端通用） */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        will-change     : transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      .disclaimer-panel::-webkit-scrollbar { display: none; }
-      #disclaimerModal.open .disclaimer-panel {
-        transform: scale(1) translateY(0);
-      }
-      .disclaimer-close {
-        position     : absolute;
-        top          : 14px;
-        right        : 16px;
-        width        : 32px;
-        height       : 32px;
-        border-radius: 50%;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        color        : var(--text-secondary);
-        font-size    : 16px;
-        box-shadow   : var(--shadow-sm);
-        transition   : box-shadow 0.2s, transform 0.15s;
-      }
-      .disclaimer-close:hover  { box-shadow: var(--shadow-md); transform: scale(1.1); }
-      .disclaimer-close:active { box-shadow: var(--shadow-sm); transform: scale(0.92); }
-      .disclaimer-title {
-        font-size    : 1.4rem;
-        font-weight  : 700;
-        color        : var(--text-primary);
-        margin-bottom: 18px;
-        text-align   : center;
-        padding-right: 24px;
-      }
-      .disclaimer-list {
-        list-style  : none;
-        padding     : 0;
-        margin      : 0;
-        display     : flex;
-        flex-direction: column;
-        gap         : 14px;
-      }
-      .disclaimer-item {
-        display        : flex;
-        align-items    : flex-start;
-        gap            : 10px;
-        padding        : 14px 16px;
-        border-radius  : 16px;
-        background     : var(--surface-bg);
-        border         : 1px solid var(--border-color);
-      }
-      .disclaimer-item-dot {
-        width       : 8px;
-        height      : 8px;
-        border-radius: 50%;
-        background  : var(--accent-color);
-        flex-shrink : 0;
-        margin-top  : 6px;
-      }
-      .disclaimer-item-body {
-        flex: 1;
-      }
-      .disclaimer-item-title {
-        font-size  : 0.9rem;
-        font-weight: 700;
-        color      : var(--text-primary);
-        margin-bottom: 4px;
-      }
-      .disclaimer-item-text {
-        font-size  : 0.83rem;
-        color      : var(--text-secondary);
-        line-height: 1.6;
-      }
-      .disclaimer-item-text strong {
-        color      : var(--text-primary);
-        font-weight: 700;
-      }
-
-      /* ── 简单工具模态框遮罩 ── */
-      #toolboxModal {
-        position        : fixed;
-        top             : 0; left: 0; right: 0; bottom: 0;  /* iOS Safari 兼容，替代 inset:0 */
-        z-index         : 2000;
-        display         : flex;
-        align-items     : center;
-        justify-content : center;
-        background      : rgba(0, 0, 0, 0.5);
-        opacity         : 0;
-        visibility      : hidden;
-        /* 优化闪屏：统一过渡曲线，开启硬件加速 */
-        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change     : opacity, visibility;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      #toolboxModal.open { opacity: 1; visibility: visible; }
-
-      /* ── 简单工具面板 ── */
-      .toolbox-panel {
-        position     : relative;
-        background   : var(--primary-bg);
-        border-radius: 28px;
-        padding      : 36px 28px 28px;
-        width        : min(94vw, 480px);
-        max-height   : 85dvh;
-        overflow-y   : auto;
-        box-shadow   : var(--shadow-lg);
-        border       : 1px solid var(--border-color);
-        transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change     : transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      #toolboxModal.open .toolbox-panel { transform: scale(1) translateY(0); }
-      /* 隐藏滚动条（两端通用） */
-      .toolbox-panel { scrollbar-width: none; -ms-overflow-style: none; }
-      .toolbox-panel::-webkit-scrollbar { display: none; }
-
-      /* ── 简单工具关闭按钮 ── */
-      .toolbox-close {
-        position     : absolute;
-        top          : 14px;
-        right        : 16px;
-        width        : 32px;
-        height       : 32px;
-        border-radius: 50%;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--surface-bg);
-        color        : var(--text-secondary);
-        font-size    : 16px;
-        box-shadow   : var(--shadow-sm);
-        transition   : box-shadow 0.2s, transform 0.15s;
-      }
-      .toolbox-close:hover  { box-shadow: var(--shadow-md); transform: scale(1.1); }
-      .toolbox-close:active { box-shadow: var(--shadow-sm); transform: scale(0.92); }
-
-      /* ── 简单工具标题 ── */
-      .toolbox-title {
-        font-size    : 1.4rem;
-        font-weight  : 700;
-        color        : var(--text-primary);
-        margin-bottom: 18px;
-        text-align   : center;
-        padding-right: 24px;
-      }
-
-      /* ── 简单工具搜索框区域 ── */
-      .toolbox-search-wrap {
-        position     : relative;
-        margin-bottom: 16px;
-        display      : flex;
-        align-items  : center;
-      }
-      .toolbox-search {
-        width        : 100%;
-        padding      : 13px 44px 13px 18px;
-        border-radius: 16px;
-        border       : 1px solid var(--border-color);
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-sm);
-        color        : var(--text-primary);
-        font-size    : 1rem;
-        outline      : none;
-        transition   : box-shadow 0.2s, border-color 0.2s;
-      }
-      .toolbox-search::placeholder { color: var(--text-secondary); }
-      .toolbox-search::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
-      .toolbox-search::-ms-clear { display: none; }
-      .toolbox-search:focus {
-        box-shadow   : var(--shadow-md);
-        border-color : var(--accent-color);
-      }
-      /* 叉号清除按钮 */
-      .toolbox-search-clear {
-        position     : absolute;
-        right        : 10px;
-        width        : 28px;
-        height       : 28px;
-        border-radius: 50%;
-        border       : none;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
-        justify-content: center;
-        background   : var(--accent-gradient);
-        color        : #fff;
-        font-size    : 13px;
-        line-height  : 1;
-        box-shadow   : 0 2px 8px rgba(0, 122, 255, 0.3);
-        opacity      : 0;
-        pointer-events: none;
-        transform    : scale(0.6);
-        transition   : opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s;
-      }
-      .toolbox-search-clear.visible {
-        opacity      : 1;
-        pointer-events: auto;
-        transform    : scale(1);
-      }
-      .toolbox-search-clear:hover  { box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4); transform: scale(1.1); }
-      .toolbox-search-clear:active { transform: scale(0.88); }
-
-      /* ── 工具总数统计徽章 ── */
-      .toolbox-count-badge {
-        flex-shrink   : 0;
-        display       : flex;
-        flex-direction: column;
-        align-items   : center;
-        justify-content: center;
-        margin-right  : 10px;
-        min-width     : 48px;
-        height        : 46px;
-        border-radius : 14px;
-        background    : var(--surface-bg);
-        border        : 1px solid var(--border-color);
-        box-shadow    : var(--shadow-sm);
-        padding       : 0 10px;
-        gap           : 2px;
-        user-select   : none;
-        transition    : box-shadow 0.2s;
-      }
-      .toolbox-count-badge-num {
-        font-size  : 1.1rem;
-        font-weight: 700;
-        line-height: 1;
-        color      : var(--accent-color);
-      }
-      .toolbox-count-badge-label {
-        font-size  : 0.58rem;
-        font-weight: 600;
-        color      : var(--text-secondary);
-        line-height: 1;
-        white-space: nowrap;
-      }
-
-      /* ── 搜索区域外层包裹（徽章 + 搜索框横排） ── */
-      .toolbox-search-row {
-        display    : flex;
-        align-items: center;
-        margin-bottom: 16px;
-      }
-      /* 原 toolbox-search-wrap 不再自带 margin-bottom，由外层行承担 */
-      .toolbox-search-row .toolbox-search-wrap {
-        flex         : 1;
-        margin-bottom: 0;
-      }
-
-      /* ── 简单工具列表（两列网格） ── */
-      .toolbox-list {
-        display              : grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap                  : 10px;
-        min-height           : 480px;
-        align-content        : start;
-      }
-
-      /* ── 单个工具项 ── */
-      .toolbox-item {
-        display        : flex;
-        align-items    : center;
-        justify-content: space-between;
-        padding        : 13px 12px;
-        border-radius  : 16px;
-        background     : var(--surface-bg);
-        border         : 1px solid var(--border-color);
-        box-shadow     : var(--shadow-sm);
-        cursor         : pointer;
-        text-decoration: none;
-        transition     : box-shadow 0.2s, transform 0.15s;
-        -webkit-tap-highlight-color: transparent;
-        min-width      : 0;
-      }
-      .toolbox-item:hover  {
-        box-shadow: var(--shadow-md);
-        transform : translateY(-1px);
-      }
-      .toolbox-item:active {
-        box-shadow: var(--shadow-sm);
-        transform : scale(0.97);
-      }
-
-      /* 工具名 */
-      .toolbox-item-name {
-        font-size  : 0.82rem;
-        font-weight: 600;
-        color      : var(--text-primary);
-        flex       : 1;
-        min-width  : 0;
-        white-space: nowrap;
-        overflow   : hidden;
-        text-overflow: ellipsis;
-      }
-
-      /* 右箭头 */
-      .toolbox-item-arrow {
-        font-size   : 0.8rem;
-        color       : var(--text-secondary);
-        opacity     : 0.5;
-        flex-shrink : 0;
-        margin-left : 4px;
-      }
-
-      /* 无搜索结果 */
-      .toolbox-empty {
-        grid-column: 1 / -1;
-        text-align : center;
-        color      : var(--text-secondary);
-        font-size  : 0.88rem;
-        padding    : 28px 0;
-      }
-
-      /* ── 简单工具分组标题 ── */
-      .toolbox-group {
-        display      : contents;  /* 让子元素直接参与外层 grid 排列 */
-      }
-      .toolbox-group-header {
-        grid-column  : 1 / -1;
-        display      : flex;
-        align-items  : center;
-        gap          : 8px;
-        margin-top   : 10px;
-        padding-bottom: 4px;
-        border-bottom: 1.5px solid var(--border-color);
-      }
-      .toolbox-group-header:first-child { margin-top: 0; }
-      .toolbox-group-icon {
-        font-size    : 0.95rem;
-        line-height  : 1;
-        flex-shrink  : 0;
-      }
-      .toolbox-group-name {
-        font-size    : 0.95rem;
-        font-weight  : 700;
-        color        : var(--text-secondary);
-        letter-spacing: 0.02em;
-      }
-
-      /* 给 FAB 所有子按钮开启相对定位，以此作为提示框的定位参考点 */
-      #settingsFabGroup button {
-        position      : relative;
-      }
-
-      /* ── 确保主按钮是定位容器 ── */
-      #settingsFab {
-        position      : relative;
-      }
-
-      /* ── 提示框（回到顶部 & 菜单主按钮） ── */
-      #backToTop::after,
-      #settingsFab::after {
-        content       : attr(data-tooltip);
-        position      : absolute;
-        right         : calc(100% + 14px);
-        top           : 50%;
-        transform     : translateY(-50%);
-        background    : var(--tooltip-bg);
-        color         : var(--tooltip-text);
-        padding       : 6px 12px;
-        border-radius : 6px;
-        font-size     : 13px;
-        white-space   : nowrap;
-        box-shadow    : var(--shadow-md);
-        pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
-      }
-
-      #backToTop::before,
-      #settingsFab::before {
-        content       : '';
-        position      : absolute;
-        right         : calc(100% + 6px);
-        top           : 50%;
-        transform     : translateY(-50%);
-        border-top    : 6px solid transparent;
-        border-bottom : 6px solid transparent;
-        border-left   : 6px solid var(--tooltip-bg);
-        pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
-      }
-
-      /* ── 子按钮（.fab-child）：提示框显示在上方 ── */
-      .fab-child::after {
-        content       : attr(data-tooltip);
-        position      : absolute;
-        bottom        : calc(100% + 14px);
-        left          : 50%;
-        transform     : translateX(-50%);
-        background    : var(--tooltip-bg);
-        color         : var(--tooltip-text);
-        padding       : 6px 12px;
-        border-radius : 6px;
-        font-size     : 13px;
-        white-space   : nowrap;
-        box-shadow    : var(--shadow-md);
-        pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
-      }
-
-      .fab-child::before {
-        content       : '';
-        position      : absolute;
-        bottom        : calc(100% + 6px);
-        left          : 50%;
-        transform     : translateX(-50%);
-        border-left   : 6px solid transparent;
-        border-right  : 6px solid transparent;
-        border-top    : 6px solid var(--tooltip-bg);
-        pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
-      }
-      
-      /* ── 展开 FAB 子按钮时，强制隐藏菜单主按钮提示框 ── */
-      #settingsFabGroup.expanded #settingsFab::after,
-      #settingsFabGroup.expanded #settingsFab::before {
-        opacity   : 0 !important;
-        visibility: hidden !important;
-      }
-
-      /* ── 悬停（触发）状态 ── */      
-      #backToTop:hover::after,
-      #backToTop:hover::before,
-      #settingsFab:hover::after,
-      #settingsFab:hover::before,
-      #settingsFabGroup.expanded button:hover::after,
-      #settingsFabGroup.expanded button:hover::before {
-        opacity   : 1;
-        visibility: visible;
-      }
-
-      /* ── 底部到达发光条（fixed，仅内容区滚动到底部时触发） ── */
+      /* ── 底部到达发光条 ── */
       #scrollBottomGlow {
         position        : fixed;
         bottom          : 0;
@@ -1515,9 +621,582 @@
         box-shadow: 0 0 22px 8px  rgba(252, 165, 165, 0.55),
                     0 0 70px 24px rgba(252, 165, 165, 0.22),
                     0 -10px 48px 0 rgba(239,  68,  68, 0.20);
-      }      
+      }
 
+      /* ════════════════════════════════════════════════════════
+         §1.5  通用浮层组件（两端共用：FAB、模态框、Toast）
+         ════════════════════════════════════════════════════════ */
+     
+      /* ── 回到顶部按钮 ── */
+      #backToTop {
+        position     : fixed;
+        right        : 50px;
+        width        : 52px;
+        height       : 52px;
+        border-radius: 18px;
+        border       : 1px solid var(--border-color);
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        z-index      : 999;
+        transition   : opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, box-shadow 0.25s ease;
+        bottom    : 26px;
+        background: var(--surface-bg);
+        box-shadow: var(--shadow-md);
+        opacity   : 0;
+        visibility: hidden;
+        transform : translateY(16px) scale(0.85);
+      }
+      #backToTop.visible {
+        opacity   : 1;
+        visibility: visible;
+        transform : translateY(0) scale(1);
+      }
+      #backToTop:hover  { box-shadow: var(--shadow-lg); transform: translateY(-3px) scale(1.07); }
+      #backToTop:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
+      #backToTop svg {
+        width           : 22px;
+        height          : 22px;
+        stroke          : var(--accent-color);
+        stroke-width    : 2.5;
+        stroke-linecap  : round;
+        stroke-linejoin : round;
+        fill            : none;
+      }
 
+      /* ── 菜单按钮 ── */
+      #settingsFab {
+        width        : 52px;
+        height       : 52px;
+        border-radius: 18px;
+        border       : 1px solid var(--border-color);
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--surface-bg);
+        color        : var(--text-primary);
+        box-shadow   : var(--shadow-md);
+        transition   : box-shadow 0.25s ease, border-color 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        flex-shrink  : 0;
+      }
+      #settingsFab:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
+      #settingsFab:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
+      #settingsFab.open   { background: var(--surface-bg); color: var(--accent-color);  transform: rotate(45deg); }
+      #settingsFab.open:hover { transform: rotate(45deg) translateY(-2px) scale(1.06); }
+
+      /* ── 菜单 FAB 组 ── */
+      #settingsFabGroup {
+        position : fixed;
+        right    : 50px;
+        bottom   : 95px;
+        z-index  : 999;
+        display  : flex;
+        flex-direction: row;
+        align-items   : center;
+        gap      : 22px;
+      }
+
+      /* ── FAB 子按钮通用样式 ── */
+      .fab-child {
+        width        : 52px;
+        height       : 52px;
+        border-radius: 50%;
+        border       : 1px solid transparent;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--surface-bg);
+        box-shadow   : var(--shadow-md);
+        font-size    : 22px;
+        line-height  : 1;
+        opacity      : 0;
+        visibility   : hidden;
+        transform    : translateX(20px) scale(0.7);
+        transition   : opacity 0.25s ease, visibility 0.25s ease,
+                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                       box-shadow 0.25s ease, border-color 0.25s ease;
+        pointer-events: none;
+        /* 各子按钮特有颜色通过 CSS 变量覆盖，见展开状态 */
+      }
+      .fab-child:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
+      .fab-child:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
+
+      /* 展开状态：所有子按钮统一出现，颜色由各自的 CSS 变量控制 */
+      #settingsFabGroup.expanded .fab-child {
+        opacity      : 1;
+        visibility   : visible;
+        transform    : translateX(0) scale(1);
+        pointer-events: auto;
+        border-color : var(--fab-glow, var(--fab-glow-default));
+        box-shadow   : 0 0 12px 2px var(--fab-glow-soft, var(--fab-glow-soft-default)), var(--shadow-md);
+      }
+
+      /* 各子按钮专属颜色（仅需设置变量，样式复用） */
+      #themeToggle   { --fab-glow: #A855F7; --fab-glow-soft: rgba(168, 85, 247, 0.2); }
+      #sponsorBtn    { --fab-glow: #F59E0B; --fab-glow-soft: rgba(245, 158, 11, 0.2); }
+      #copyLinkBtn   { --fab-glow: #22C55E; --fab-glow-soft: rgba(34, 197, 94, 0.2); }
+      #disclaimerBtn { --fab-glow: #3B82F6; --fab-glow-soft: rgba(59, 130, 246, 0.2); }
+      #toolboxBtn    { --fab-glow: #EC4899; --fab-glow-soft: rgba(236, 72, 153, 0.2); }
+
+      /* 给 FAB 所有子按钮开启相对定位，用于提示框 */
+      #settingsFabGroup button {
+        position      : relative;
+      }
+      #settingsFab {
+        position      : relative;
+      }
+
+      /* ── 提示框（回到顶部 & 菜单主按钮） ── */
+      #backToTop::after,
+      #settingsFab::after {
+        content       : attr(data-tooltip);
+        position      : absolute;
+        right         : calc(100% + 14px);
+        top           : 50%;
+        transform     : translateY(-50%);
+        background    : var(--tooltip-bg);
+        color         : var(--tooltip-text);
+        padding       : 6px 12px;
+        border-radius : 6px;
+        font-size     : 13px;
+        white-space   : nowrap;
+        box-shadow    : var(--shadow-md);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+      #backToTop::before,
+      #settingsFab::before {
+        content       : '';
+        position      : absolute;
+        right         : calc(100% + 6px);
+        top           : 50%;
+        transform     : translateY(-50%);
+        border-top    : 6px solid transparent;
+        border-bottom : 6px solid transparent;
+        border-left   : 6px solid var(--tooltip-bg);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+
+      .fab-child::after {
+        content       : attr(data-tooltip);
+        position      : absolute;
+        bottom        : calc(100% + 14px);
+        left          : 50%;
+        transform     : translateX(-50%);
+        background    : var(--tooltip-bg);
+        color         : var(--tooltip-text);
+        padding       : 6px 12px;
+        border-radius : 6px;
+        font-size     : 13px;
+        white-space   : nowrap;
+        box-shadow    : var(--shadow-md);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+      .fab-child::before {
+        content       : '';
+        position      : absolute;
+        bottom        : calc(100% + 6px);
+        left          : 50%;
+        transform     : translateX(-50%);
+        border-left   : 6px solid transparent;
+        border-right  : 6px solid transparent;
+        border-top    : 6px solid var(--tooltip-bg);
+        pointer-events: none;
+        opacity       : 0;
+        visibility    : hidden;
+        transition    : opacity 0.2s ease, visibility 0.2s ease;
+      }
+      
+      #settingsFabGroup.expanded #settingsFab::after,
+      #settingsFabGroup.expanded #settingsFab::before {
+        opacity   : 0 !important;
+        visibility: hidden !important;
+      }
+
+      #backToTop:hover::after,
+      #backToTop:hover::before,
+      #settingsFab:hover::after,
+      #settingsFab:hover::before,
+      #settingsFabGroup.expanded button:hover::after,
+      #settingsFabGroup.expanded button:hover::before {
+        opacity   : 1;
+        visibility: visible;
+      }
+
+      /* ── 模态框打开时锁定背景滚动 ── */
+      body.modal-open {
+        overflow : hidden;
+      }
+      html.modal-open {
+        overflow : hidden;
+        height   : 100%;
+      }
+
+      /* ── 通用模态框遮罩与面板（toolbox / disclaimer / sponsor） ── */
+      .modal-overlay {
+        position        : fixed;
+        inset           : 0;
+        z-index         : 2000;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        background      : rgba(0, 0, 0, 0.5);
+        opacity         : 0;
+        visibility      : hidden;
+        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change     : opacity, visibility;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .modal-overlay.open {
+        opacity   : 1;
+        visibility: visible;
+      }
+
+      .modal-panel {
+        position     : relative;
+        background   : var(--primary-bg);
+        border-radius: 28px;
+        padding      : 36px 28px 28px;
+        width        : min(94vw, 480px);
+        max-height   : 85dvh;
+        overflow-y   : auto;
+        box-shadow   : var(--shadow-lg);
+        border       : 1px solid var(--border-color);
+        transform    : scale(0.88) translateY(20px);
+        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        will-change     : transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .modal-panel::-webkit-scrollbar { display: none; }
+      .modal-overlay.open .modal-panel {
+        transform: scale(1) translateY(0);
+      }
+
+      .modal-close {
+        position     : absolute;
+        top          : 14px;
+        right        : 16px;
+        width        : 32px;
+        height       : 32px;
+        border-radius: 50%;
+        border       : 1px solid var(--border-color);
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--surface-bg);
+        color        : var(--text-secondary);
+        font-size    : 16px;
+        box-shadow   : var(--shadow-sm);
+        transition   : box-shadow 0.2s, transform 0.15s;
+      }
+      .modal-close:hover  { box-shadow: var(--shadow-md); transform: scale(1.1); }
+      .modal-close:active { box-shadow: var(--shadow-sm); transform: scale(0.92); }
+
+      .modal-title {
+        font-size    : 1.4rem;
+        font-weight  : 700;
+        color        : var(--text-primary);
+        text-align   : center;
+        padding-right: 24px;
+      }
+      .modal-title.with-mb { margin-bottom: 18px; }
+           
+      /* ── 简单工具面板特有 ── */
+      .toolbox-search-row {
+        display    : flex;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .toolbox-search-wrap {
+        position     : relative;
+        flex         : 1;
+        margin-bottom: 0;
+        display      : flex;
+        align-items  : center;
+      }
+      .toolbox-search {
+        width        : 100%;
+        padding      : 13px 44px 13px 18px;
+        border-radius: 16px;
+        border       : 1px solid var(--border-color);
+        background   : var(--surface-bg);
+        box-shadow   : var(--shadow-sm);
+        color        : var(--text-primary);
+        font-size    : 1rem;
+        outline      : none;
+        transition   : box-shadow 0.2s, border-color 0.2s;
+      }
+      .toolbox-search::placeholder { color: var(--text-secondary); }
+      .toolbox-search::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
+      .toolbox-search::-ms-clear { display: none; }
+      .toolbox-search:focus {
+        box-shadow   : var(--shadow-md);
+        border-color : var(--accent-color);
+      }
+      .toolbox-search-clear {
+        position     : absolute;
+        right        : 10px;
+        width        : 28px;
+        height       : 28px;
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        display      : flex;
+        align-items  : center;
+        justify-content: center;
+        background   : var(--accent-gradient);
+        color        : #fff;
+        font-size    : 13px;
+        line-height  : 1;
+        box-shadow   : 0 2px 8px rgba(0, 122, 255, 0.3);
+        opacity      : 0;
+        pointer-events: none;
+        transform    : scale(0.6);
+        transition   : opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s;
+      }
+      .toolbox-search-clear.visible {
+        opacity      : 1;
+        pointer-events: auto;
+        transform    : scale(1);
+      }
+      .toolbox-search-clear:hover  { box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4); transform: scale(1.1); }
+      .toolbox-search-clear:active { transform: scale(0.88); }
+
+      .toolbox-count-badge {
+        flex-shrink   : 0;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        justify-content: center;
+        margin-right  : 10px;
+        min-width     : 48px;
+        height        : 46px;
+        border-radius : 14px;
+        background    : var(--surface-bg);
+        border        : 1px solid var(--border-color);
+        box-shadow    : var(--shadow-sm);
+        padding       : 0 10px;
+        gap           : 2px;
+        user-select   : none;
+        transition    : box-shadow 0.2s;
+      }
+      .toolbox-count-badge-num {
+        font-size  : 1.1rem;
+        font-weight: 700;
+        line-height: 1;
+        color      : var(--accent-color);
+      }
+      .toolbox-count-badge-label {
+        font-size  : 0.58rem;
+        font-weight: 600;
+        color      : var(--text-secondary);
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .toolbox-list {
+        display              : grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap                  : 10px;
+        min-height           : 480px;
+        align-content        : start;
+      }
+      .toolbox-item {
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+        padding        : 13px 12px;
+        border-radius  : 16px;
+        background     : var(--surface-bg);
+        border         : 1px solid var(--border-color);
+        box-shadow     : var(--shadow-sm);
+        cursor         : pointer;
+        text-decoration: none;
+        transition     : box-shadow 0.2s, transform 0.15s;
+        -webkit-tap-highlight-color: transparent;
+        min-width      : 0;
+      }
+      .toolbox-item:hover  {
+        box-shadow: var(--shadow-md);
+        transform : translateY(-1px);
+      }
+      .toolbox-item:active {
+        box-shadow: var(--shadow-sm);
+        transform : scale(0.97);
+      }
+      .toolbox-item-name {
+        font-size  : 0.82rem;
+        font-weight: 600;
+        color      : var(--text-primary);
+        flex       : 1;
+        min-width  : 0;
+        white-space: nowrap;
+        overflow   : hidden;
+        text-overflow: ellipsis;
+      }
+      .toolbox-item-arrow {
+        font-size   : 0.8rem;
+        color       : var(--text-secondary);
+        opacity     : 0.5;
+        flex-shrink : 0;
+        margin-left : 4px;
+      }
+      .toolbox-empty {
+        grid-column: 1 / -1;
+        text-align : center;
+        color      : var(--text-secondary);
+        font-size  : 0.88rem;
+        padding    : 28px 0;
+      }
+      .toolbox-group {
+        display      : contents;
+      }
+      .toolbox-group-header {
+        grid-column  : 1 / -1;
+        display      : flex;
+        align-items  : center;
+        gap          : 8px;
+        margin-top   : 10px;
+        padding-bottom: 4px;
+        border-bottom: 1.5px solid var(--border-color);
+      }
+      .toolbox-group-header:first-child { margin-top: 0; }
+      .toolbox-group-icon {
+        font-size    : 0.95rem;
+        line-height  : 1;
+        flex-shrink  : 0;
+      }
+      .toolbox-group-name {
+        font-size    : 0.95rem;
+        font-weight  : 700;
+        color        : var(--text-secondary);
+        letter-spacing: 0.02em;
+      }
+
+      /* ── 关于本站面板特有 ── */
+      .disclaimer-list {
+        list-style  : none;
+        padding     : 0;
+        margin      : 0;
+        display     : flex;
+        flex-direction: column;
+        gap         : 14px;
+      }
+      .disclaimer-item {
+        display        : flex;
+        align-items    : flex-start;
+        gap            : 10px;
+        padding        : 14px 16px;
+        border-radius  : 16px;
+        background     : var(--surface-bg);
+        border         : 1px solid var(--border-color);
+      }
+      .disclaimer-item-dot {
+        width       : 8px;
+        height      : 8px;
+        border-radius: 50%;
+        background  : var(--accent-color);
+        flex-shrink : 0;
+        margin-top  : 6px;
+      }
+      .disclaimer-item-body {
+        flex: 1;
+      }
+      .disclaimer-item-title {
+        font-size  : 0.9rem;
+        font-weight: 700;
+        color      : var(--text-primary);
+        margin-bottom: 4px;
+      }
+      .disclaimer-item-text {
+        font-size  : 0.83rem;
+        color      : var(--text-secondary);
+        line-height: 1.6;
+      }
+      .disclaimer-item-text strong {
+        color      : var(--text-primary);
+        font-weight: 700;
+      }
+
+      /* ── 赞赏支持面板特有 ── */
+      .sponsor-sub {
+        font-size  : 0.9rem;
+        color      : var(--text-secondary);
+        margin-bottom: 24px;
+        text-align : center;
+      }
+      .sponsor-qr-row {
+        display        : flex;
+        justify-content: center;
+        align-items    : flex-start;
+      }
+      .sponsor-qr-item {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        gap           : 10px;
+        width          : 100%;
+      }
+      .sponsor-qr-img {
+        width        : 100%;
+        max-width    : 360px;
+        height       : auto;
+        border-radius: 18px;
+        object-fit   : contain;
+        border       : 1px solid var(--border-color);
+        box-shadow   : var(--shadow-sm);
+      }
+      .sponsor-qr-label {
+        font-size  : 0.85rem;
+        color      : var(--text-secondary);
+        font-weight: 500;
+      }
+
+      /* ── 复制链接 Toast ── */
+      #copyLinkToast {
+        position        : fixed;
+        bottom          : 36px;
+        left            : 50%;
+        transform       : translateX(-50%) translateY(20px);
+        background      : var(--tooltip-bg);
+        color           : var(--tooltip-text);
+        padding         : 13px 28px;
+        border-radius   : 50px;
+        font-size       : 0.95rem;
+        font-weight     : 600;
+        letter-spacing  : 0.01em;
+        white-space     : nowrap;
+        box-shadow      : var(--shadow-lg);
+        opacity         : 0;
+        pointer-events  : none;
+        z-index         : 9999;
+        transition      : opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        display         : flex;
+        align-items     : center;
+        gap             : 8px;
+      }
+      #copyLinkToast.show {
+        opacity         : 1;
+        transform       : translateX(-50%) translateY(0);
+      }
+            
       /* ════════════════════════════════════════════════════════
          §2  桌面端布局（min-width: 769px）
          ════════════════════════════════════════════════════════ */
@@ -1563,7 +1242,7 @@
           z-index   : 10;
         }
 
-        /* 侧边栏标题区 */
+        /* ── 侧边栏标题区 ── */
         .sidebar .site-header {
           padding      : 22px 18px 16px;
           border-bottom: 1px solid var(--border-color);
@@ -1581,7 +1260,7 @@
           line-height: 1.4;
         }
 
-        /* 侧边栏导航区（可滚动） */
+        /* ── 侧边栏导航区（可滚动） ── */
         .sidebar-nav {
           flex      : 1;
           overflow-y: auto;
@@ -1593,7 +1272,7 @@
         .sidebar-nav::-webkit-scrollbar-track { background: transparent; }
         .sidebar-nav::-webkit-scrollbar-thumb { background: rgba(128, 128, 160, 0.35); border-radius: 2px; }
 
-        /* 分类列表在侧边栏内的布局 */
+        /* ── 分类列表在侧边栏内的布局 ── */
         .sidebar .categories,
         .sidebar-nav .categories,
         .sidebar .mobile-categories,
@@ -1606,7 +1285,7 @@
           animation     : none;
         }
 
-        /* 分类按钮：桌面端横向列表样式 */
+        /* ── 分类按钮：桌面端横向列表样式 ── */
         .category-btn {
           flex-direction : row;
           justify-content: space-between;
@@ -1663,7 +1342,7 @@
           border-radius: 2px;
         }
 
-        /* 搜索区 */
+        /* ── 搜索区 ── */
         .search-container {
           margin-bottom: 28px;
           align-items  : center;
@@ -1692,7 +1371,7 @@
           to   { opacity: 1; transform: translateY(0)    scale(1);    }
         }        
 
-        /* 工具网格：3 列 */
+        /* ── 工具网格：3 列 ── */
         .tools-grid {
           grid-template-columns: repeat(4, 1fr);
           gap          : 18px;
@@ -1740,7 +1419,7 @@
           animation    : none;
         }
 
-        /* 布局容器退化为普通块流 */
+        /* ── 布局容器退化为普通块流 ── */
         .desktop-layout {
           display : block;
           height  : auto;
@@ -1748,7 +1427,7 @@
         }
         .sidebar { display: none !important; }
 
-        /* ── 顶部搜索栏（悬浮固定，透明容器，与菜单/回顶部按钮同一套 fixed 实现） ── */
+        /* ── 顶部搜索栏 ── */
         .search-wrapper {
           position  : fixed;
           top       : 14px;
@@ -1808,7 +1487,7 @@
           box-shadow: var(--shadow-sm);
           transform : scale(0.94);
         }
-        /* 抽屉展开时：图标高亮为主题色，呼应菜单 FAB 的 .open 状态 */
+        /* 图标高亮为主题色 */
         .mobile-menu-btn.open {
           color: var(--accent-color);
         }
@@ -1822,25 +1501,7 @@
           height  : auto;
           overflow: visible;
           padding : 0;
-        }
-
-        /* 工具卡片 */
-        .tool-title       { font-size: 1rem; }
-        .tool-description { font-size: 1rem; }
-        .tool-link        { font-size: 1rem; padding: 8px 16px; border-radius: 12px; }
-        .tools-grid       { grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 8px; padding: 80px 15px 16px; }
-        .tool-card        { padding: 20px 20px 18px; border-radius: 20px; }
-        footer            { margin: 0 15px 26px; padding: 18px 16px; font-size: 0.9rem; border-radius: 18px; }
-
-        /* 悬浮按钮移动端尺寸 */
-        #backToTop         { right: 24px; bottom: 26px; width: 46px; height: 46px; border-radius: 16px; }
-        #settingsFabGroup  { right: 24px; bottom: 90px; gap: 18px; }
-        #settingsFab       { width: 46px; height: 46px; border-radius: 15px; }
-        #themeToggle       { width: 46px; height: 46px; font-size: 20px; }
-        #sponsorBtn        { width: 46px; height: 46px; font-size: 20px; }
-        #copyLinkBtn       { width: 46px; height: 46px; font-size: 20px; }
-        #disclaimerBtn     { width: 46px; height: 46px; font-size: 20px; }
-        #toolboxBtn        { width: 46px; height: 46px; font-size: 20px; }
+        }        
 
         /* ── 遮罩层 ── */
         .mobile-drawer-overlay {
@@ -1874,7 +1535,7 @@
         }
         .mobile-drawer.open { transform: translateX(0); }
 
-        /* 抽屉标题区 */
+        /* ── 抽屉标题区 ── */
         .mobile-drawer .site-header {
           padding      : 16px 18px 16px;
           border-bottom: 1px solid var(--border-color);
@@ -1887,7 +1548,7 @@
         }
         .mobile-drawer .site-header .subtitle { font-size: 0.9rem; }
 
-        /* 抽屉导航滚动区 */
+        /* ── 抽屉导航滚动区 ── */
         .mobile-drawer-nav {
           flex      : 1;
           overflow-y: auto;
@@ -1902,27 +1563,41 @@
         .mobile-drawer-nav::-webkit-scrollbar       { width: 3px; }
         .mobile-drawer-nav::-webkit-scrollbar-thumb { background: rgba(128, 128, 160, 0.35); border-radius: 2px; }
 
-        /* 分类按钮：抽屉内横向列表样式 */
+        /* ── 分类按钮：抽屉内横向列表样式 ── */
         .mobile-drawer-nav .category-btn {
-          flex-direction : row !important;
-          align-items    : center !important;
-          justify-content: space-between !important;
-          padding        : 16px 14px !important;
-          border-radius  : 12px !important;
-          font-size      : 0.95rem !important;
-          gap            : 0 !important;
-          width          : 100% !important;
-          text-align     : left !important;
-          box-shadow     : none !important;
-          background     : transparent !important;
+          flex-direction : row ;
+          align-items    : center ;
+          justify-content: space-between ;
+          padding        : 16px 14px ;
+          border-radius  : 12px ;
+          font-size      : 0.95rem ;
+          gap            : 0 ;
+          width          : 100% ;
+          text-align     : left ;
+          box-shadow     : none ;
+          background     : transparent ;
         }
-        .mobile-drawer-nav .category-btn:hover  { transform: none !important; background: var(--primary-bg) !important; }
-        .mobile-drawer-nav .category-btn.active { background: var(--accent-gradient) !important; color: white !important; box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3) !important; }
+        .mobile-drawer-nav .category-btn:hover  { transform: none ; background: var(--primary-bg) ; }
+        .mobile-drawer-nav .category-btn.active { background: var(--accent-gradient) ; color: white ; box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3) ; }
         .mobile-drawer-nav .cat-label           { flex: 1; word-spacing: 0; }
-        .mobile-drawer-nav .cat-count           { display: inline-block !important; font-size: 0.8rem; padding: 2px 6.5px; border-radius: 8px; margin-left: 6px; flex-shrink: 0; }
-        .mobile-drawer-nav .category-btn.active .cat-count { background: rgba(255, 255, 255, 0.25) !important; color: white !important; }
+        .mobile-drawer-nav .cat-count           { display: inline-block ; font-size: 0.8rem; padding: 2px 6.5px; border-radius: 8px; margin-left: 6px; flex-shrink: 0; }
+        .mobile-drawer-nav .category-btn.active .cat-count { background: rgba(255, 255, 255, 0.25) ; color: white ; }
 
-        /* 遮罩层保持全屏，面板从底部滑入 */
+        /* ── 工具卡片 ── */
+        .tool-title       { font-size: 1rem; }
+        .tool-description { font-size: 1rem; }
+        .tool-link        { font-size: 1rem; padding: 8px 16px; border-radius: 12px; }
+        .tools-grid       { grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 8px; padding: 80px 15px 16px; }
+        .tool-card        { padding: 20px 20px 18px; border-radius: 20px; }
+        footer            { margin: 0 15px 26px; padding: 18px 16px; font-size: 0.9rem; border-radius: 18px; }
+
+        /* ── 悬浮按钮移动端尺寸 ── */
+        #backToTop         { right: 24px; bottom: 26px; width: 46px; height: 46px; border-radius: 16px; }
+        #settingsFabGroup  { right: 24px; bottom: 90px; gap: 18px; }
+        #settingsFab       { width: 46px; height: 46px; border-radius: 15px; }
+        .fab-child         { width: 46px; height: 46px; font-size: 20px; }
+
+        /* ── 遮罩层保持全屏，面板从底部滑入 ── */
         #toolboxModal,
         #disclaimerModal,
         #sponsorModal {
@@ -1930,7 +1605,7 @@
           justify-content : stretch;
         }
 
-        /* 工具箱底部面板 */
+        /* ── 工具箱底部面板 ── */
         #toolboxModal .toolbox-panel {
           width            : 100%;
           max-width        : 100%;
@@ -1948,7 +1623,7 @@
           transform: translateY(0);
         }
 
-        /* 工具箱底部面板标题：居中，顶部加"把手"条 */
+        /* ── 工具箱底部面板标题：居中，顶部加"把手"条 ── */
         #toolboxModal .toolbox-panel::before {
           content      : '';
           display      : block;
@@ -1961,7 +1636,7 @@
         }
         #toolboxModal .toolbox-title { padding-right: 0; }
 
-        /* 关于本站底部面板 */
+        /* ── 关于本站底部面板 ── */
         #disclaimerModal .disclaimer-panel {
           width            : 100%;
           max-width        : 100%;
@@ -1979,7 +1654,7 @@
           transform: translateY(0);
         }
 
-        /* 关于本站底部面板：同样加把手条 */
+        /* ── 关于本站底部面板：同样加把手条 ── */
         #disclaimerModal .disclaimer-panel::before {
           content      : '';
           display      : block;
@@ -1992,7 +1667,7 @@
         }
         #disclaimerModal .disclaimer-title { padding-right: 0; }
 
-        /* 赞赏支持底部面板 */
+        /* ── 赞赏支持底部面板 ── */
         #sponsorModal .sponsor-panel {
           width            : 100%;
           max-width        : 100%;
@@ -2009,7 +1684,7 @@
           transform: translateY(0);
         }
 
-        /* 赞赏支持底部面板：同样加把手条 */
+        /* ── 赞赏支持底部面板：同样加把手条 ── */
         #sponsorModal .sponsor-panel::before {
           content      : '';
           display      : block;
@@ -2050,11 +1725,8 @@
     <div class="container theme-anim">
       <div class="desktop-layout">
 
-        <!-- ══════════════════════════════════════════
-             左侧导航栏（桌面端可见，移动端隐藏）
-             ══════════════════════════════════════════ -->
+        <!-- 电脑端标题 -->
         <aside class="sidebar theme-anim">
-          <!-- 标题区：与移动端抽屉共用同一套 HTML 结构 -->
           <div class="site-header">
             <h1 class="site-title">
               <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
@@ -2105,7 +1777,7 @@
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
                   </svg>
                 </button>
-              </div><!-- /search-bar -->
+              </div>
 
               <div class="engine-dropdown theme-anim" id="engineDropdown" role="listbox">
                 <div class="engine-grid" id="engineGrid">
@@ -2114,10 +1786,11 @@
                     <span class="engine-item-label engine-local-name">站内</span>
                   </div>
                 </div>
-              </div><!-- /engine-dropdown -->
-            </div><!-- /search-container -->
-          </div><!-- /search-wrapper -->
+              </div>
+            </div>
+          </div>
 
+      <!-- 分类标签 -->
       <div class="categories mobile-categories" id="categoriesEl">
         <button class="category-btn active theme-anim"><span class="cat-label">🌟 全部分类</span></button>
         <button class="category-btn theme-anim"><span class="cat-label">🌍 全球门户</span></button>
@@ -2149,19 +1822,17 @@
 
           <div class="tools-grid" id="toolsGrid"></div>
 
+          <!-- 底部页脚 -->
           <footer class="theme-anim">
             <p>© 2026 星源导航 - 极简 · 纯粹 · 高效</p> 
           </footer>
-        </main><!-- /main-content -->
-      </div><!-- /desktop-layout -->
-    </div><!-- /container -->
+        </main>
+      </div>
+    </div>
 
-    <!-- ══════════════════════════════════════════
-         移动端抽屉（与 .container 平级，fixed 定位）
-         ══════════════════════════════════════════ -->
+    <!-- 移动端端标题 -->
     <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
     <aside class="mobile-drawer theme-anim" id="mobileDrawer">
-      <!-- 标题区：与桌面端侧边栏共用同一套 HTML 结构 -->
       <div class="site-header theme-anim">
         <h1 class="site-title">
               <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
@@ -2178,26 +1849,20 @@
       </nav>
     </aside>
 
-    <!-- ── 悬浮按钮 ── -->
+    <!-- 回到顶部悬浮按钮 -->
     <button id="backToTop" data-tooltip="回到顶部" aria-label="回到顶部" class="theme-anim">
       <svg viewBox="0 0 24 24">
         <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
     </button>
 
-    <!-- ── 功能菜单 ── -->
+    <!-- 功能菜单（子按钮统一使用 .fab-child） -->
     <div id="settingsFabGroup">
-      <!-- 子按钮：简单工具 -->
       <button id="toolboxBtn" data-tooltip="简单工具" aria-label="简单工具" class="fab-child theme-anim">🧰</button>
-      <!-- 子按钮：关于本站 -->
       <button id="disclaimerBtn" data-tooltip="关于本站" aria-label="关于本站" class="fab-child theme-anim">📘</button>
-      <!-- 子按钮：赞赏支持 -->
       <button id="sponsorBtn" data-tooltip="赞赏支持" aria-label="赞赏支持" class="fab-child theme-anim">☕</button>
-      <!-- 子按钮：复制链接 -->
       <button id="copyLinkBtn" data-tooltip="复制链接" aria-label="复制链接" class="fab-child theme-anim">🔗</button>
-      <!-- 子按钮：主题切换 -->
       <button id="themeToggle" data-tooltip="切换主题" aria-label="切换深色/浅色模式" class="fab-child theme-anim">☀️</button>
-      <!-- 主触发按钮 "+" -->
       <button id="settingsFab" data-tooltip="菜单" aria-label="菜单" class="theme-anim">
         <svg id="settingsFabIcon" viewBox="0 0 24 24" width="22" height="22"
              stroke="currentColor" stroke-width="2.5"
@@ -2209,29 +1874,31 @@
     </div>
     <div id="scrollBottomGlow"></div>
 
-    <!-- ── 赞赏模态框 ── -->
-    <div id="sponsorModal" role="dialog" aria-modal="true" aria-label="赞赏支持">
-      <div class="sponsor-panel">
-        <button class="sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
-        <p class="sponsor-title">☕ 请作者喝杯咖啡</p>
-        <p class="sponsor-sub">如果觉得有用，欢迎随缘赞赏</p>
-        <div class="sponsor-qr-row">
-          <div class="sponsor-qr-item">
-            <img class="sponsor-qr-img" src="assets/picture/wxzs.webp" alt="微信赞赏">
-            <span class="sponsor-qr-label">微信「 扫一扫 」</span>
+    <!-- 简单工具模态框 -->
+    <div id="toolboxModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="简单工具">
+      <div class="modal-panel toolbox-panel">
+        <button class="modal-close toolbox-close" id="toolboxClose" aria-label="关闭">✕</button>
+        <p class="modal-title toolbox-title with-mb">🧰 简单工具</p>
+        <div class="toolbox-search-row">
+          <div class="toolbox-count-badge" id="toolboxCountBadge" title="当前显示工具数">
+            <span class="toolbox-count-badge-num" id="toolboxCountNum">0</span>
+            <span class="toolbox-count-badge-label">个工具</span>
+          </div>
+          <div class="toolbox-search-wrap">
+            <input class="toolbox-search" id="toolboxSearch" type="search"
+                   placeholder="搜索工具名称…" autocomplete="off" />
+            <button class="toolbox-search-clear" id="toolboxSearchClear" aria-label="清除搜索">✕</button>
           </div>
         </div>
+        <div class="toolbox-list" id="toolboxList"></div>
       </div>
     </div>
 
-    <!-- ── 复制链接成功提示 ── -->
-    <div id="copyLinkToast">✅ 成功复制本站链接</div>
-
-    <!-- ── 关于本站模态框 ── -->
-    <div id="disclaimerModal" role="dialog" aria-modal="true" aria-label="关于本站">
-      <div class="disclaimer-panel">
-        <button class="disclaimer-close" id="disclaimerClose" aria-label="关闭">✕</button>
-        <p class="disclaimer-title">📘 关于本站</p>
+    <!-- 关于本站模态框 -->
+    <div id="disclaimerModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="关于本站">
+      <div class="modal-panel disclaimer-panel">
+        <button class="modal-close disclaimer-close" id="disclaimerClose" aria-label="关闭">✕</button>
+        <p class="modal-title disclaimer-title with-mb">📘 关于本站</p>
         <ul class="disclaimer-list">
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
@@ -2285,26 +1952,24 @@
         </ul>
       </div>
     </div>
-
-    <!-- ── 简单工具模态框 ── -->
-    <div id="toolboxModal" role="dialog" aria-modal="true" aria-label="简单工具">
-      <div class="toolbox-panel">
-        <button class="toolbox-close" id="toolboxClose" aria-label="关闭">✕</button>
-        <p class="toolbox-title">🧰 简单工具</p>
-        <div class="toolbox-search-row">
-          <div class="toolbox-count-badge" id="toolboxCountBadge" title="当前显示工具数">
-            <span class="toolbox-count-badge-num" id="toolboxCountNum">0</span>
-            <span class="toolbox-count-badge-label">个工具</span>
-          </div>
-          <div class="toolbox-search-wrap">
-            <input class="toolbox-search" id="toolboxSearch" type="search"
-                   placeholder="搜索工具名称…" autocomplete="off" />
-            <button class="toolbox-search-clear" id="toolboxSearchClear" aria-label="清除搜索">✕</button>
+   
+    <!-- 赞赏支持模态框 -->
+    <div id="sponsorModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="赞赏支持">
+      <div class="modal-panel sponsor-panel">
+        <button class="modal-close sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
+        <p class="modal-title sponsor-title">☕ 请作者喝杯咖啡</p>
+        <p class="sponsor-sub">如果觉得有用，欢迎随缘赞赏</p>
+        <div class="sponsor-qr-row">
+          <div class="sponsor-qr-item">
+            <img class="sponsor-qr-img" src="assets/picture/wxzs.webp" alt="微信赞赏">
+            <span class="sponsor-qr-label">微信「 扫一扫 」</span>
           </div>
         </div>
-        <div class="toolbox-list" id="toolboxList"></div>
       </div>
     </div>
+
+    <!-- 复制链接成功提示 -->
+    <div id="copyLinkToast">✅ 成功复制本站链接</div>
 
     <!-- 简单工具列表配置 -->
     <script>
@@ -2495,6 +2160,8 @@
 
       // ── 下拉面板开关 ──────────────────────────────────────────
       function openDropdown() {
+        settingsFabGroup.classList.remove('expanded');
+        settingsFabBtn.classList.remove('open');
         engineDropdown.classList.add('open');
         engineTrigger.classList.add('open');
         engineTrigger.setAttribute('aria-expanded', 'true');
@@ -2677,7 +2344,6 @@
             const mainContent = document.querySelector('.main-content');
             if (mainContent) mainContent.scrollTop = 0;
           } else {
-            // 移动端：切换分类时回到页面顶部
             window.scrollTo(0, 0);
           }
           showCategory(parseInt(this.dataset.index));
@@ -2700,7 +2366,7 @@
         scrollContentToTop();
       });
 
-      // ── 内容滚动回顶部（用于搜索出结果等内容变化场景） ──────────
+      // ── 内容滚动回顶部 ────────────────────────────────────────
       function scrollContentToTop() {
         if (window.innerWidth >= 769) {
           const mainContent = document.querySelector('.main-content');
@@ -2765,14 +2431,12 @@
         setTimeout(function() { scrollBottomGlow.classList.remove('fade-out'); }, 550);
       }
 
-      // 在底部收到 scroll → 亮起，并将熄灭计时器顺延 350ms
       function glowAtBottom() {
         glowShow();
         if (_glowOffTimer) clearTimeout(_glowOffTimer);
         _glowOffTimer = setTimeout(glowHide, 350);
       }
 
-      // 桌面端：只监听 .main-content（侧边栏等其他滚动容器不触发）
       mainContentEl.addEventListener('scroll', function() {
         if (window.innerWidth < 769) return;
         const st = mainContentEl.scrollTop;
@@ -2782,7 +2446,6 @@
         if (st + ch >= sh - 4) { glowAtBottom(); } else { glowHide(); }
       }, { passive: true });
 
-      // 移动端：只监听 window
       window.addEventListener('scroll', function() {
         if (window.innerWidth >= 769) return;
         const st = window.scrollY;
@@ -2803,9 +2466,7 @@
       // ── 主题切换 ──────────────────────────────────────────────
       const themeToggleBtn = document.getElementById('themeToggle');
       const themeColorMeta = document.getElementById('themeColorMeta');
-      const DARK_KEY = 'xingyuan-dark-mode';   // 新 key，彻底与旧存档隔离
-      const THEME_COLOR_LIGHT = '#e6e7ee';
-      const THEME_COLOR_DARK = '#1e1e2e';
+      const DARK_KEY = 'xingyuan-dark-mode';
       let themeTimer = null;
 
       function applyTheme(isDark, animate = false) {
@@ -2831,7 +2492,6 @@
         }
       }
 
-      // 无用户记录时默认浅色模式（不跟随系统）
       const savedDark = localStorage.getItem(DARK_KEY);
       const prefersDark = savedDark === 'true';
       applyTheme(prefersDark, false);
@@ -2847,12 +2507,12 @@
       const settingsFabGroup = document.getElementById('settingsFabGroup');
 
       settingsFabBtn.addEventListener('click', function(e) {
+        closeDropdown();
         e.stopPropagation();
         const isOpen = settingsFabGroup.classList.toggle('expanded');
         settingsFabBtn.classList.toggle('open', isOpen);
       });
 
-      // 点击页面其他区域关闭 FAB 菜单
       document.addEventListener('click', function(e) {
         if (!settingsFabGroup.contains(e.target)) {
           settingsFabGroup.classList.remove('expanded');
@@ -2860,8 +2520,7 @@
         }
       });
 
-      // ── 背景滚动锁（模态框打开时禁止页面滚动，关闭后恢复） ──────
-      // 使用计数器支持多个模态框同时存在的场景
+      // ── 背景滚动锁 ────────────────────────────────────────────
       let _modalLockCount = 0;
 
       function lockScroll() {
@@ -2879,82 +2538,131 @@
         }
       }
 
-      /* ── §D 模态框：赞赏支持 / 复制链接 / 关于本站 ── */
-      // ── 赞赏模态框 ────────────────────────────────────────────
-      const sponsorBtn = document.getElementById('sponsorBtn');
-      const sponsorModal = document.getElementById('sponsorModal');
-      const sponsorClose = document.getElementById('sponsorClose');
+      /* ── 通用模态框工厂函数 ────────────────────────── */
+      function createModalHandler(modalId, stateKey) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return null;
+        let closeTimer = null;
 
-      // 优化闪屏：使用 requestAnimationFrame 延迟添加类，并监听 transitionend 解锁滚动
-      function openSponsor() {
-        // 先确保移除 open 类，重置状态
-        sponsorModal.classList.remove('open');
-        // 强制重排
-        void sponsorModal.offsetHeight;
-        // 在下一帧添加类，让过渡从正确初始状态开始
-        requestAnimationFrame(() => {
+        function open() {
+          closeDropdown();
+          modal.classList.remove('open');
+          void modal.offsetHeight;
           requestAnimationFrame(() => {
-            sponsorModal.classList.add('open');
-            lockScroll();
-            settingsFabGroup.classList.remove('expanded');
-            settingsFabBtn.classList.remove('open');
-            history.pushState({ sponsorOpen: true }, '');
+            requestAnimationFrame(() => {
+              modal.classList.add('open');
+              lockScroll();
+              settingsFabGroup.classList.remove('expanded');
+              settingsFabBtn.classList.remove('open');
+              const state = {};
+              state[stateKey] = true;
+              history.pushState(state, '');
+            });
           });
-        });
+        }
+
+        function close() {
+          modal.classList.remove('open');
+          if (closeTimer) clearTimeout(closeTimer);
+          const onTransitionEnd = () => {
+            modal.removeEventListener('transitionend', onTransitionEnd);
+            unlockScroll();
+            closeTimer = null;
+          };
+          modal.addEventListener('transitionend', onTransitionEnd);
+          closeTimer = setTimeout(() => {
+            modal.removeEventListener('transitionend', onTransitionEnd);
+            unlockScroll();
+            closeTimer = null;
+          }, 450);
+        }
+
+        return { open, close, modal };
       }
 
-      let _sponsorCloseTimer = null;
-      function closeSponsor() {
-        sponsorModal.classList.remove('open');
-        // 移除之前可能残留的定时器
-        if (_sponsorCloseTimer) clearTimeout(_sponsorCloseTimer);
-        // 监听 transitionend 事件，确保动画完成后解锁滚动
-        const onTransitionEnd = () => {
-          sponsorModal.removeEventListener('transitionend', onTransitionEnd);
-          unlockScroll();
-          _sponsorCloseTimer = null;
-        };
-        sponsorModal.addEventListener('transitionend', onTransitionEnd);
-        // 但为防止事件未触发（例如元素隐藏），设置一个保底定时器（400ms 后强制解锁）
-        _sponsorCloseTimer = setTimeout(() => {
-          sponsorModal.removeEventListener('transitionend', onTransitionEnd);
-          unlockScroll();
-          _sponsorCloseTimer = null;
-        }, 450);
-      }
-
-      sponsorBtn.addEventListener('click', function(e) {
+      /* ── §D 模态框：赞赏 / 关于本站 / 简单工具 ── */
+      // ── 赞赏 ──
+      const sponsorHandler = createModalHandler('sponsorModal', 'sponsorOpen');
+      document.getElementById('sponsorBtn').addEventListener('click', (e) => {
         e.stopPropagation();
-        openSponsor();
+        if (sponsorHandler) sponsorHandler.open();
       });
-      sponsorClose.addEventListener('click', function() {
+      document.getElementById('sponsorClose').addEventListener('click', () => {
         if (history.state && history.state.sponsorOpen) history.back();
-        else closeSponsor();
+        else if (sponsorHandler) sponsorHandler.close();
       });
-      sponsorModal.addEventListener('click', function(e) {
-        if (e.target === sponsorModal) {
+      document.getElementById('sponsorModal').addEventListener('click', function(e) {
+        if (e.target === this) {
           if (history.state && history.state.sponsorOpen) history.back();
-          else closeSponsor();
+          else if (sponsorHandler) sponsorHandler.close();
         }
       });
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sponsorModal.classList.contains('open')) {
+        if (e.key === 'Escape' && document.getElementById('sponsorModal').classList.contains('open')) {
           if (history.state && history.state.sponsorOpen) history.back();
-          else closeSponsor();
+          else if (sponsorHandler) sponsorHandler.close();
+        }
+      });
+
+      // ── 关于本站 ──
+      const disclaimerHandler = createModalHandler('disclaimerModal', 'disclaimerOpen');
+      document.getElementById('disclaimerBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (disclaimerHandler) disclaimerHandler.open();
+      });
+      document.getElementById('disclaimerClose').addEventListener('click', () => {
+        if (history.state && history.state.disclaimerOpen) history.back();
+        else if (disclaimerHandler) disclaimerHandler.close();
+      });
+      document.getElementById('disclaimerModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          if (history.state && history.state.disclaimerOpen) history.back();
+          else if (disclaimerHandler) disclaimerHandler.close();
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('disclaimerModal').classList.contains('open')) {
+          if (history.state && history.state.disclaimerOpen) history.back();
+          else if (disclaimerHandler) disclaimerHandler.close();
+        }
+      });
+
+      // ── 简单工具 ──
+      const toolboxHandler = createModalHandler('toolboxModal', 'toolboxOpen');
+      document.getElementById('toolboxBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderToolList('');
+        document.getElementById('toolboxSearch').value = '';
+        document.getElementById('toolboxSearchClear').classList.remove('visible');
+        if (toolboxHandler) toolboxHandler.open();
+      });
+      document.getElementById('toolboxClose').addEventListener('click', () => {
+        if (history.state && history.state.toolboxOpen) history.back();
+        else if (toolboxHandler) toolboxHandler.close();
+      });
+      document.getElementById('toolboxModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          if (history.state && history.state.toolboxOpen) history.back();
+          else if (toolboxHandler) toolboxHandler.close();
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('toolboxModal').classList.contains('open')) {
+          if (history.state && history.state.toolboxOpen) history.back();
+          else if (toolboxHandler) toolboxHandler.close();
         }
       });
 
       // ── 复制链接 ──────────────────────────────────────────
       const copyLinkBtn = document.getElementById('copyLinkBtn');
       const copyLinkToast = document.getElementById('copyLinkToast');
-      // ★ 在此处替换为实际网页链接 ★
       const SITE_URL = 'https://nanlin3368.github.io/navigation';
-
       let _copyToastTimer = null;
+
       function showCopyToast() {
         if (_copyToastTimer) clearTimeout(_copyToastTimer);
         copyLinkToast.classList.add('show');
-        _copyToastTimer = setTimeout(function() {
+        _copyToastTimer = setTimeout(() => {
           copyLinkToast.classList.remove('show');
           _copyToastTimer = null;
         }, 2000);
@@ -2963,10 +2671,9 @@
       copyLinkBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         const url = SITE_URL || location.href;
-        navigator.clipboard.writeText(url).then(function() {
+        navigator.clipboard.writeText(url).then(() => {
           showCopyToast();
-        }).catch(function() {
-          // 降级：创建临时 input 复制
+        }).catch(() => {
           const inp = document.createElement('input');
           inp.value = url;
           document.body.appendChild(inp);
@@ -2975,71 +2682,11 @@
           document.body.removeChild(inp);
           showCopyToast();
         });
-        // 关闭 FAB 菜单
         settingsFabGroup.classList.remove('expanded');
         settingsFabBtn.classList.remove('open');
       });
 
-      // ── 关于本站模态框 ──────────────────────────────────────
-      const disclaimerBtn = document.getElementById('disclaimerBtn');
-      const disclaimerModal = document.getElementById('disclaimerModal');
-      const disclaimerClose = document.getElementById('disclaimerClose');
-
-      // 优化闪屏：与赞赏模态框相同策略
-      function openDisclaimer() {
-        disclaimerModal.classList.remove('open');
-        void disclaimerModal.offsetHeight;
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            disclaimerModal.classList.add('open');
-            lockScroll();
-            settingsFabGroup.classList.remove('expanded');
-            settingsFabBtn.classList.remove('open');
-            history.pushState({ disclaimerOpen: true }, '');
-          });
-        });
-      }
-
-      let _disclaimerCloseTimer = null;
-      function closeDisclaimer() {
-        disclaimerModal.classList.remove('open');
-        if (_disclaimerCloseTimer) clearTimeout(_disclaimerCloseTimer);
-        const onTransitionEnd = () => {
-          disclaimerModal.removeEventListener('transitionend', onTransitionEnd);
-          unlockScroll();
-          _disclaimerCloseTimer = null;
-        };
-        disclaimerModal.addEventListener('transitionend', onTransitionEnd);
-        _disclaimerCloseTimer = setTimeout(() => {
-          disclaimerModal.removeEventListener('transitionend', onTransitionEnd);
-          unlockScroll();
-          _disclaimerCloseTimer = null;
-        }, 450);
-      }
-
-      disclaimerBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openDisclaimer();
-      });
-      disclaimerClose.addEventListener('click', function() {
-        if (history.state && history.state.disclaimerOpen) history.back();
-        else closeDisclaimer();
-      });
-      disclaimerModal.addEventListener('click', function(e) {
-        if (e.target === disclaimerModal) {
-          if (history.state && history.state.disclaimerOpen) history.back();
-          else closeDisclaimer();
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && disclaimerModal.classList.contains('open')) {
-          if (history.state && history.state.disclaimerOpen) history.back();
-          else closeDisclaimer();
-        }
-      });
-
       /* ── §E 移动端专属交互：分类抽屉同步 / 侧滑抽屉开关 ── */
-      // ── 分类列表：桌面端移入侧边栏 / 移动端移入抽屉 ──────────
       const categoriesEl = document.getElementById('categoriesEl');
       const sidebarNav = document.getElementById('sidebarNav');
       const mobileDrawerNav = document.getElementById('mobileDrawerNav');
@@ -3061,31 +2708,26 @@
       syncCategoriesPlacement();
       window.addEventListener('resize', syncCategoriesPlacement);
 
-      // ── 移动端抽屉开关 ────────────────────────────────────────
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
       const mobileDrawer = document.getElementById('mobileDrawer');
       const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay');
 
       function openDrawer() {
+        closeDropdown();
         mobileDrawer.classList.add('open');
         mobileDrawerOverlay.style.display = 'block';
-        mobileDrawerOverlay.offsetHeight;  // 触发 reflow
+        mobileDrawerOverlay.offsetHeight;
         mobileDrawerOverlay.classList.add('open');
         document.documentElement.style.overflow = 'hidden';
-        // 侧滑栏打开：FAB 沉入遮罩之下（见 §3 CSS .drawer-open 规则）
         document.body.classList.add('drawer-open');
-        // 汉堡按钮图标高亮，呼应菜单 FAB 的展开态
         if (mobileMenuBtn) mobileMenuBtn.classList.add('open');
-        // 推入历史记录，使设备返回键可关闭抽屉
         history.pushState({ drawerOpen: true }, '');
       }
       function closeDrawer() {
         mobileDrawer.classList.remove('open');
         mobileDrawerOverlay.classList.remove('open');
         document.documentElement.style.overflow = '';
-        // 侧滑栏关闭：恢复 FAB 层级与可点击状态
         document.body.classList.remove('drawer-open');
-        // 汉堡按钮图标恢复默认颜色
         if (mobileMenuBtn) mobileMenuBtn.classList.remove('open');
         mobileDrawerOverlay.addEventListener('transitionend', function handler() {
           if (!mobileDrawerOverlay.classList.contains('open')) {
@@ -3095,14 +2737,13 @@
         });
       }
 
-      // 设备返回键（popstate）：优先关闭简单工具 → 关于本站 → 赞赏模态框 → 抽屉
-      window.addEventListener('popstate', function(e) {
-        if (toolboxModal.classList.contains('open')) {
-          closeToolbox();
-        } else if (disclaimerModal.classList.contains('open')) {
-          closeDisclaimer();
-        } else if (sponsorModal.classList.contains('open')) {
-          closeSponsor();
+      window.addEventListener('popstate', function() {
+        if (document.getElementById('toolboxModal').classList.contains('open')) {
+          if (toolboxHandler) toolboxHandler.close();
+        } else if (document.getElementById('disclaimerModal').classList.contains('open')) {
+          if (disclaimerHandler) disclaimerHandler.close();
+        } else if (document.getElementById('sponsorModal').classList.contains('open')) {
+          if (sponsorHandler) sponsorHandler.close();
         } else if (mobileDrawer.classList.contains('open')) {
           closeDrawer();
         }
@@ -3110,25 +2751,19 @@
 
       if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
       if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', function() {
-        // 点击遮罩关闭：同步撤销 pushState，避免返回键出现空历史
         if (history.state && history.state.drawerOpen) history.back();
         else closeDrawer();
       });
       if (mobileDrawerNav) {
         mobileDrawerNav.addEventListener('click', function(e) {
           if (e.target.closest('.category-btn')) {
-            // 点击分类关闭：同步撤销 pushState
             if (history.state && history.state.drawerOpen) history.back();
             else closeDrawer();
           }
         });
       }
 
-      /* ── §F 简单工具模态框：列表渲染、搜索、开关 ── */
-      // ── 简单工具模态框 ──────────────────────────────────────
-      const toolboxBtn = document.getElementById('toolboxBtn');
-      const toolboxModal = document.getElementById('toolboxModal');
-      const toolboxClose = document.getElementById('toolboxClose');
+      /* ── §F 简单工具列表渲染与搜索 ── */
       const toolboxSearch = document.getElementById('toolboxSearch');
       const toolboxSearchClear = document.getElementById('toolboxSearchClear');
 
@@ -3137,7 +2772,6 @@
         if (!list) return;
         const kw = (keyword || '').trim().toLowerCase();
 
-        // ── 搜索模式：跨分组平铺展示 ──
         if (kw) {
           const filtered = TOOLS.filter(t => t.name.toLowerCase().includes(kw));
           const countNum = document.getElementById('toolboxCountNum');
@@ -3159,17 +2793,14 @@
           return;
         }
 
-        // ── 默认模式：按分组渲染 ──
         const countNum = document.getElementById('toolboxCountNum');
         if (countNum) countNum.textContent = TOOLS.length;
         list.innerHTML = '';
         TOOL_GROUPS.forEach(function(group) {
-          // 分组标题
           const header = document.createElement('div');
           header.className = 'toolbox-group-header';
           header.innerHTML = `<span class="toolbox-group-icon">${group.icon}</span><span class="toolbox-group-name">${group.label}</span>`;
           list.appendChild(header);
-          // 分组工具项
           group.tools.forEach(function(tool) {
             const a = document.createElement('a');
             a.className = 'toolbox-item';
@@ -3182,62 +2813,6 @@
         });
       }
 
-      // 优化闪屏：与赞赏模态框相同策略
-      function openToolbox() {
-        renderToolList('');
-        toolboxSearch.value = '';
-        toolboxSearchClear.classList.remove('visible');
-        toolboxModal.classList.remove('open');
-        void toolboxModal.offsetHeight;
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            toolboxModal.classList.add('open');
-            lockScroll();
-            settingsFabGroup.classList.remove('expanded');
-            settingsFabBtn.classList.remove('open');
-            history.pushState({ toolboxOpen: true }, '');
-          });
-        });
-      }
-
-      let _toolboxCloseTimer = null;
-      function closeToolbox() {
-        toolboxModal.classList.remove('open');
-        if (_toolboxCloseTimer) clearTimeout(_toolboxCloseTimer);
-        const onTransitionEnd = () => {
-          toolboxModal.removeEventListener('transitionend', onTransitionEnd);
-          unlockScroll();
-          _toolboxCloseTimer = null;
-        };
-        toolboxModal.addEventListener('transitionend', onTransitionEnd);
-        _toolboxCloseTimer = setTimeout(() => {
-          toolboxModal.removeEventListener('transitionend', onTransitionEnd);
-          unlockScroll();
-          _toolboxCloseTimer = null;
-        }, 450);
-      }
-
-      toolboxBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openToolbox();
-      });
-      toolboxClose.addEventListener('click', function() {
-        if (history.state && history.state.toolboxOpen) history.back();
-        else closeToolbox();
-      });
-      toolboxModal.addEventListener('click', function(e) {
-        if (e.target === toolboxModal) {
-          if (history.state && history.state.toolboxOpen) history.back();
-          else closeToolbox();
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && toolboxModal.classList.contains('open')) {
-          if (history.state && history.state.toolboxOpen) history.back();
-          else closeToolbox();
-        }
-      });
-      // 搜索输入 + 叉号显隐
       toolboxSearch.addEventListener('input', function() {
         const val = this.value;
         toolboxSearchClear.classList.toggle('visible', val.length > 0);
