@@ -1,96 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
     <meta name="theme-color" id="themeColorMeta" content="#007EE6" />
     <title>星源导航 - 上官网 · 找软件 · 用工具，一键直达</title>
-    <meta name="description" content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。">
+    <meta
+      name="description"
+      content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。"
+    />
     <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
     <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
     <script>
-      history.scrollRestoration = 'manual'
-      window.scrollTo(0, 0)
-      ;(function() {
-        var saved = localStorage.getItem('xingyuan-dark-mode')
-        if (saved !== 'true') {
-          localStorage.removeItem('xingyuan-dark-mode')
+      history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+      (function () {
+        var saved = localStorage.getItem("xingyuan-dark-mode");
+        if (saved !== "true") {
+          localStorage.removeItem("xingyuan-dark-mode");
         }
-      })()
+      })();
     </script>
     <style>
-
       /* ════════════════════════════════════════════════════════
          §0  全局重置 & CSS 变量
          ════════════════════════════════════════════════════════ */
 
       * {
-        box-sizing              : border-box;
-        margin                  : 0;
-        padding                 : 0;
-        font-family             : 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
         -webkit-tap-highlight-color: transparent;
       }
 
       :root {
-        --primary-bg      : #EEEDF2;
-        --surface-bg      : #ffffff;
-        --border-color    : #e5e5ea;
-        --accent-color    : #007EE6;
-        --accent-gradient : #007EE6;
-        --success-color   : #34c759;
-        --danger-color    : #ff3b30;
-        --warning-color   : #ff9500;
-        --text-primary    : #1c1c1e;
-        --text-secondary  : #8e8e93;
-        --glass-bg        : rgba(255, 255, 255, 0.8);
-        --glass-border    : rgba(255, 255, 255, 0.3);
-        --skeleton-base   : #e5e5ea;
-        --skeleton-shine  : #f0f0f2;
-        --tooltip-bg      : #1c1c1e;
-        --tooltip-text    : #ffffff;
+        --primary-bg: #eeedf2;
+        --surface-bg: #ffffff;
+        --border-color: #e5e5ea;
+        --accent-color: #007ee6;
+        --accent-gradient: #007ee6;
+        --success-color: #34c759;
+        --danger-color: #ff3b30;
+        --warning-color: #ff9500;
+        --text-primary: #1c1c1e;
+        --text-secondary: #8e8e93;
+        --glass-bg: rgba(255, 255, 255, 0.8);
+        --glass-border: rgba(255, 255, 255, 0.3);
+        --skeleton-base: #e5e5ea;
+        --skeleton-shine: #f0f0f2;
+        --tooltip-bg: #1c1c1e;
+        --tooltip-text: #ffffff;
 
         /* 极简阴影 */
-        --shadow-sm       : 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
-        --shadow-md       : 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
-        --shadow-lg       : 0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+        --shadow-sm:
+          0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+        --shadow-md:
+          0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+        --shadow-lg:
+          0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
 
         /* ── 菜单 FAB 子按钮高亮色（统一变量） ── */
-        --fab-glow-default      : #A855F7;
-        --fab-glow-soft-default : rgba(168, 85, 247, 0.2);
+        --fab-glow-default: #a855f7;
+        --fab-glow-soft-default: rgba(168, 85, 247, 0.2);
       }
 
-      body.dark {        
-        --primary-bg      : #000000;
-        --surface-bg      : #1B1B1D;
-        --border-color    : #3a3a3c;
-        --text-primary    : #ffffff;
-        --text-secondary  : #98989e;
-        --glass-bg        : rgba(0, 0, 0, 0.6);
-        --glass-border    : rgba(255, 255, 255, 0.08);
-        --skeleton-base   : #3a3a3c;
-        --skeleton-shine  : #4a4a4c;
-        --tooltip-bg      : #e5e5ea;
-        --tooltip-text    : #1c1c1e;
-        --shadow-sm       : 0 1px 3px rgba(0, 0, 0, 0.2);
-        --shadow-md       : 0 4px 16px rgba(0, 0, 0, 0.3);
-        --shadow-lg       : 0 8px 30px rgba(0, 0, 0, 0.4);
-      }     
+      body.dark {
+        --primary-bg: #000000;
+        --surface-bg: #1b1b1d;
+        --border-color: #3a3a3c;
+        --text-primary: #ffffff;
+        --text-secondary: #98989e;
+        --glass-bg: rgba(0, 0, 0, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --skeleton-base: #3a3a3c;
+        --skeleton-shine: #4a4a4c;
+        --tooltip-bg: #e5e5ea;
+        --tooltip-text: #1c1c1e;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+      }
 
       body {
-        background        : var(--primary-bg);
-        min-height        : 100dvh;
-        margin            : 0;
-        padding           : 0;
-        scrollbar-gutter  : stable;
+        background: var(--primary-bg);
+        min-height: 100dvh;
+        margin: 0;
+        padding: 0;
+        scrollbar-gutter: stable;
       }
 
       body.theme-transitioning,
       body.theme-transitioning .theme-anim {
-        transition        : none !important;
+        transition: none;
       }
 
-      html, body, .main-content {
+      html,
+      body,
+      .main-content {
         overscroll-behavior: none;
       }
 
@@ -100,728 +111,908 @@
 
       /* ── 入场动画 ── */
       @keyframes pageLoad {
-        from { opacity: 0; transform: translateY(20px); }
-        to   { opacity: 1; transform: translateY(0);    }
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       @keyframes containerFloat {
-        from { opacity: 0; transform: translateY(30px) scale(0.95); }
-        to   { opacity: 1; transform: translateY(0)    scale(1);    }
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
       }
       @keyframes titleGlow {
-        from { filter: brightness(1);   }
-        to   { filter: brightness(1.2); }
+        from {
+          filter: brightness(1);
+        }
+        to {
+          filter: brightness(1.2);
+        }
       }
       @keyframes categoriesSlide {
-        from { opacity: 0; transform: translateY(20px); }
-        to   { opacity: 1; transform: translateY(0);    }
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       @keyframes toolsSlide {
-        from { opacity: 0; transform: translateY(30px); }
-        to   { opacity: 1; transform: translateY(0);    }
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       @keyframes footerFade {
-        from { opacity: 0; }
-        to   { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
       @keyframes skeletonShimmer {
-        0%   { background-position:  200% 0; }
-        100% { background-position: -200% 0; }
-      }     
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
 
       /* ── 标题通用字体颜色 ── */
-      .char-1 { color: #e5484d; }
-      .char-2 { color: #e5a500; }
-      .char-3 { color: #007AFF; }
-      .char-4 { color: #22a06b; }
+      .char-1 {
+        color: #e5484d;
+      }
+      .char-2 {
+        color: #e5a500;
+      }
+      .char-3 {
+        color: #007aff;
+      }
+      .char-4 {
+        color: #22a06b;
+      }
       /* ── 标题与副标题 ── */
       .site-header h1 {
-        color        : var(--accent-color);
-        font-weight  : 700;
-        margin-bottom: 6px;        
+        color: var(--accent-color);
+        font-weight: 700;
+        margin-bottom: 6px;
       }
       .site-header .subtitle {
-        color        : var(--text-secondary);
-        font-weight  : 500;
-        white-space  : nowrap;
-        overflow     : hidden;
+        color: var(--text-secondary);
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
         text-overflow: ellipsis;
       }
       /* ── 标题与图标的容器 ── */
-      .site-title, 
-      .logo-title-container { 
-        display    : flex;
-        align-items: center;     /* 垂直居中 */
+      .site-title,
+      .logo-title-container {
+        display: flex;
+        align-items: center; /* 垂直居中 */
         justify-content: center; /* 水平居中 */
-        gap        : 8px;        /* 图标与文字的间距 */
+        gap: 8px; /* 图标与文字的间距 */
       }
       /* ── 设置图标为圆角正方形 ── */
       .site-title img,
       .title-icon {
-        width        : 36px;   /* 设置固定宽度 */
-        height       : 36px;   /* 设置固定高度 */
-        border-radius: 6px;    /* 设置圆角大小 */
-        object-fit   : cover;  /* 确保图片自适应填充不变形 */
-        flex-shrink  : 0;      /* 防止图标被挤压变形 */
+        width: 36px; /* 设置固定宽度 */
+        height: 36px; /* 设置固定高度 */
+        border-radius: 6px; /* 设置圆角大小 */
+        object-fit: cover; /* 确保图片自适应填充不变形 */
+        flex-shrink: 0; /* 防止图标被挤压变形 */
       }
 
       /* ── 搜索容器 ── */
       .search-container {
-        display        : flex;
-        flex-direction : column;
-        align-items    : center;
-        gap            : 0;
-        position       : relative;
-        z-index        : 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        position: relative;
+        z-index: 100;
       }
 
       /* ── 搜索栏外壳 ── */
       .search-bar {
-        width          : 100%;
-        max-width      : 600px;
-        height         : 56px;
-        display        : flex;
-        align-items    : center;
-        background     : var(--surface-bg);
-        border-radius  : 28px;
-        border         : 1px solid var(--border-color);
-        box-shadow     : var(--shadow-sm);
-        transition     : box-shadow 0.3s ease, border-color 0.3s ease;
-        overflow       : visible;
-        position       : relative;
+        width: 100%;
+        max-width: 600px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        background: var(--surface-bg);
+        border-radius: 28px;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+        transition:
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+        overflow: visible;
+        position: relative;
       }
       .search-bar:focus-within {
-        box-shadow     : var(--shadow-md);
-        border-color   : var(--accent-color);
+        box-shadow: var(--shadow-md);
+        border-color: var(--accent-color);
       }
 
       /* ── 引擎触发按钮 ── */
       .engine-trigger {
-        flex-shrink   : 0;
-        display       : flex;
-        align-items   : center;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        gap           : 4px;
-        padding       : 0 10px 0 14px;
-        height        : 100%;
-        cursor        : pointer;
-        border        : none;
-        background    : transparent;
-        color         : var(--text-secondary);
-        font-size     : 0.82rem;
-        font-weight   : 600;
-        border-right  : 1.5px solid var(--border-color);
-        transition    : color 0.2s;
-        user-select   : none;
-        border-radius : 28px 0 0 28px;
-        white-space   : nowrap;
+        gap: 4px;
+        padding: 0 10px 0 14px;
+        height: 100%;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.82rem;
+        font-weight: 600;
+        border-right: 1.5px solid var(--border-color);
+        transition: color 0.2s;
+        user-select: none;
+        border-radius: 28px 0 0 28px;
+        white-space: nowrap;
       }
-      .engine-trigger:hover { color: var(--accent-color); }
+      .engine-trigger:hover {
+        color: var(--accent-color);
+      }
 
       .engine-trigger .engine-icon {
-        width        : 30px;
-        height       : 30px;
+        width: 30px;
+        height: 30px;
         border-radius: 8px;
-        display      : flex;
-        align-items  : center;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        flex-shrink  : 0;
-        overflow     : hidden;
-        transition   : none;
+        flex-shrink: 0;
+        overflow: hidden;
+        transition: none;
       }
       .engine-trigger.engine-selected .engine-icon {
-        width        : 30px;
-        height       : 30px;
+        width: 30px;
+        height: 30px;
         border-radius: 8px;
       }
-      .engine-trigger .engine-icon svg { display: block; }
-      .engine-trigger.engine-selected .engine-name { display: none; }
+      .engine-trigger .engine-icon svg {
+        display: block;
+      }
+      .engine-trigger.engine-selected .engine-name {
+        display: none;
+      }
 
       .engine-trigger .engine-name {
-        font-size  : 0.82rem;
+        font-size: 0.82rem;
         font-weight: 600;
-        color      : inherit;
+        color: inherit;
         line-height: 1;
       }
       .engine-trigger .engine-caret {
-        font-size  : 9px;
-        opacity    : 0.6;
-        transition : transform 0.25s;
+        font-size: 9px;
+        opacity: 0.6;
+        transition: transform 0.25s;
         margin-left: 1px;
       }
-      .engine-trigger.open .engine-caret { transform: rotate(180deg); }
+      .engine-trigger.open .engine-caret {
+        transform: rotate(180deg);
+      }
 
       /* ── 输入框 ── */
       .search-box {
-        flex      : 1;
-        padding   : 0 12px;
-        height    : 100%;
+        flex: 1;
+        padding: 0 12px;
+        height: 100%;
         background: transparent;
-        border    : none;
-        color     : var(--text-primary);
-        font-size : 1.1rem;
+        border: none;
+        color: var(--text-primary);
+        font-size: 1.1rem;
         font-weight: 500;
-        min-width : 0;
+        min-width: 0;
       }
-      .search-box:focus { outline: none; }
+      .search-box:focus {
+        outline: none;
+      }
 
       /* ── 清除按钮 ── */
       .search-clear {
-        flex-shrink   : 0;
-        width         : 28px;
-        height        : 28px;
-        margin-right  : 15px;
-        border-radius : 50%;
-        border        : none;
-        cursor        : pointer;
-        display       : flex;
-        align-items   : center;
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        margin-right: 15px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        background    : var(--accent-gradient);
-        color         : #fff;
-        opacity       : 0;
+        background: var(--accent-gradient);
+        color: #fff;
+        opacity: 0;
         pointer-events: none;
-        transform     : scale(0.6);
-        transition    : opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s;
-        box-shadow    : 0 2px 8px rgba(0, 122, 255, 0.3);
+        transform: scale(0.6);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
       }
       .search-clear.visible {
-        opacity       : 1;
+        opacity: 1;
         pointer-events: auto;
-        transform     : scale(1);
+        transform: scale(1);
       }
-      .search-clear:hover  { box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4); transform: scale(1.08); }
-      .search-clear:active { transform: scale(0.88); box-shadow: 0 1px 4px rgba(0, 122, 255, 0.2); }
+      .search-clear:hover {
+        box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
+        transform: scale(1.08);
+      }
+      .search-clear:active {
+        transform: scale(0.88);
+        box-shadow: 0 1px 4px rgba(0, 122, 255, 0.2);
+      }
       .search-clear svg {
-        width         : 11px;
-        height        : 11px;
-        stroke        : #fff;
-        stroke-width  : 2.8;
+        width: 11px;
+        height: 11px;
+        stroke: #fff;
+        stroke-width: 2.8;
         stroke-linecap: round;
-        fill          : none;
+        fill: none;
       }
 
       /* ── 全网搜索提交按钮 ── */
       .search-submit {
-        flex-shrink   : 0;
-        width         : 56px;
-        height        : 44px;
-        margin-right  : 6px;
-        border-radius : 14px;
-        border        : none;
-        cursor        : pointer;
-        display       : flex;
-        align-items   : center;
+        flex-shrink: 0;
+        width: 56px;
+        height: 44px;
+        margin-right: 6px;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        transition    : all 0.25s ease;
-        background    : var(--accent-gradient);
-        box-shadow    : 0 2px 8px rgba(0, 122, 255, 0.3);
-        opacity       : 0;
+        transition: all 0.25s ease;
+        background: var(--accent-gradient);
+        box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+        opacity: 0;
         pointer-events: none;
-        transform     : scale(0.7);
+        transform: scale(0.7);
       }
       .search-submit.visible {
-        opacity       : 1;
+        opacity: 1;
         pointer-events: auto;
-        transform     : scale(1);
+        transform: scale(1);
       }
-      .search-submit:hover  { transform: scale(1.08); box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4); }
-      .search-submit:active { transform: scale(0.94); }
+      .search-submit:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
+      }
+      .search-submit:active {
+        transform: scale(0.94);
+      }
       .search-submit svg {
-        width           : 23px;
-        height          : 23px;
-        stroke          : #fff;
-        stroke-width    : 2.5;
-        stroke-linecap  : round;
-        stroke-linejoin : round;
-        fill            : none;
+        width: 23px;
+        height: 23px;
+        stroke: #fff;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
       }
 
       /* ── 搜索引擎下拉面板 ── */
       .engine-dropdown {
-        position     : absolute;
-        top          : calc(100% + 10px);
-        left         : 50%;
-        transform    : translateX(-50%);
-        width        : 100%;
-        max-width    : 600px;
-        background   : var(--surface-bg);
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 600px;
+        background: var(--surface-bg);
         border-radius: 22px;
-        box-shadow   : var(--shadow-lg);
-        border       : 1px solid var(--border-color);
-        padding      : 16px;
-        z-index      : 200;
-        display      : none;
-        animation    : dropdownIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border-color);
+        padding: 16px;
+        z-index: 200;
+        display: none;
+        animation: dropdownIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
       }
-      .engine-dropdown.open { display: block; }
+      .engine-dropdown.open {
+        display: block;
+      }
 
       @keyframes dropdownIn {
-        from { opacity: 0; transform: translateX(-50%) translateY(-8px) scale(0.97); }
-        to   { opacity: 1; transform: translateX(-50%) translateY(0)     scale(1);   }
+        from {
+          opacity: 0;
+          transform: translateX(-50%) translateY(-8px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0) scale(1);
+        }
       }
 
-      /* ── 站内搜索项（并入引擎网格，样式对齐 .engine-item） ── */
-      .engine-local-row.selected { background: var(--primary-bg); border-radius: 14px; }
-      .engine-local-icon {
-        background    : var(--accent-gradient);
-        font-size     : 18px;
-        box-shadow    : 0 4px 10px rgba(0, 122, 255, 0.3);
+      /* ── 站内搜索项 ── */
+      .engine-local-row.selected {
+        background: var(--primary-bg);
+        border-radius: 14px;
       }
-      .engine-local-row.selected .engine-item-label { color: var(--accent-color); font-weight: 700; }
+      .engine-local-icon {
+        background: var(--accent-gradient);
+        font-size: 18px;
+        box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+      }
+      .engine-local-row.selected .engine-item-label {
+        color: var(--accent-color);
+        font-weight: 700;
+      }
 
       /* ── 搜索引擎网格 ── */
       .engine-grid {
-        display              : grid;
+        display: grid;
         grid-template-columns: repeat(8, 1fr);
-        gap                  : 8px;
+        gap: 8px;
       }
       .engine-item {
-        display        : flex;
-        flex-direction : column;
-        align-items    : center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: flex-start;
-        gap            : 6px;
-        padding        : 10px 6px 10px;
-        border-radius  : 14px;
-        cursor         : pointer;
-        transition     : background 0.2s, transform 0.15s, box-shadow 0.2s;
-        user-select    : none;
-        text-align     : center;
-        background     : transparent;
+        gap: 6px;
+        padding: 10px 6px 10px;
+        border-radius: 14px;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+        user-select: none;
+        text-align: center;
+        background: transparent;
       }
-      .engine-item:hover  { background: var(--primary-bg); transform: translateY(-2px); }
-      .engine-item:active { transform: scale(0.95); background: var(--primary-bg); }
-      .engine-item.selected { background: var(--primary-bg); }
+      .engine-item:hover {
+        background: var(--primary-bg);
+        transform: translateY(-2px);
+      }
+      .engine-item:active {
+        transform: scale(0.95);
+        background: var(--primary-bg);
+      }
+      .engine-item.selected {
+        background: var(--primary-bg);
+      }
 
       .engine-item-icon {
-        width        : 30px;
-        height       : 30px;
+        width: 30px;
+        height: 30px;
         border-radius: 8px;
-        display      : flex;
-        align-items  : center;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        box-shadow   : 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-        flex-shrink  : 0;
-        overflow     : hidden;
+        box-shadow:
+          0 4px 10px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(0, 0, 0, 0.06);
+        flex-shrink: 0;
+        overflow: hidden;
       }
       .engine-item-label {
-        font-size    : 0.62rem;
-        font-weight  : 600;
-        color        : var(--text-primary);
-        text-align   : center;
-        width        : 100%;
-        white-space  : nowrap;
-        overflow     : hidden;
+        font-size: 0.62rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
         text-overflow: ellipsis;
-        line-height  : 1.2;
+        line-height: 1.2;
       }
-      .engine-item.selected .engine-item-label { color: var(--accent-color); font-weight: 700; }
+      .engine-item.selected .engine-item-label {
+        color: var(--accent-color);
+        font-weight: 700;
+      }
 
       /* ── 分类按钮（通用基础，两端覆盖细节） ── */
       .categories {
         animation: categoriesSlide 0.8s ease 0.8s both;
       }
       .category-btn {
-        background  : transparent;
-        border      : none;
-        cursor      : pointer;
-        transition  : all 0.3s ease;
-        position    : relative;
-        overflow    : hidden;
-        display     : flex;
-        align-items : center;
-        white-space : nowrap;
-        font-size   : 0.78rem;
-        font-weight : 600;
-        color       : var(--text-primary);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text-primary);
       }
       .cat-label {
-        overflow     : hidden;
+        overflow: hidden;
         text-overflow: ellipsis;
-        white-space  : nowrap;
+        white-space: nowrap;
       }
       .cat-count {
-        font-size    : 0.68rem;
-        font-weight  : 700;
-        line-height  : 1;
-        padding      : 1px 7px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        line-height: 1;
+        padding: 1px 7px;
         border-radius: 8px;
-        background   : rgba(0, 122, 255, 0.1);
-        color        : var(--accent-color);
-        transition   : all 0.3s ease;
-        min-width    : 20px;
-        text-align   : center;
+        background: rgba(0, 122, 255, 0.1);
+        color: var(--accent-color);
+        transition: all 0.3s ease;
+        min-width: 20px;
+        text-align: center;
       }
       .category-btn.active .cat-count {
         background: rgba(255, 255, 255, 0.25);
-        color     : white;
+        color: white;
       }
 
       /* ── 工具卡片网格 ── */
       .tools-grid {
-        display              : grid;
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap                  : 24px;
-        margin-bottom        : 32px;
-        animation            : toolsSlide 0.8s ease 1s both;
+        gap: 24px;
+        margin-bottom: 32px;
+        animation: toolsSlide 0.8s ease 1s both;
       }
       .tool-card {
-        background   : var(--surface-bg);
+        background: var(--surface-bg);
         border-radius: 25px;
-        padding      : 30px;
-        box-shadow   : var(--shadow-md);
-        border       : 1px solid var(--border-color);
-        transition   : all 0.3s ease;
-        position     : relative;
-        overflow     : hidden;
-        cursor       : pointer;
-      }      
+        padding: 30px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
       .tool-card:hover {
-        transform : translateY(-5px);
+        transform: translateY(-5px);
         box-shadow: var(--shadow-lg);
         border-color: rgba(0, 122, 255, 0.15);
       }
 
       @keyframes iconFloat {
-        0%   { transform: translateY(0px);   }
-        50%  { transform: translateY(-10px); }
-        100% { transform: translateY(0px);   }
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
       .tool-icon {
-        width        : 52px;
-        height       : 52px;
+        width: 52px;
+        height: 52px;
         margin-bottom: 16px;
-        display      : block;
+        display: block;
         border-radius: 12px;
-        object-fit   : cover;
-        filter       : drop-shadow(0 4px 8px rgba(0, 122, 255, 0.15));
-        animation    : iconFloat 3s ease-in-out infinite;
+        object-fit: cover;
+        filter: drop-shadow(0 4px 8px rgba(0, 122, 255, 0.15));
+        animation: iconFloat 3s ease-in-out infinite;
       }
       .tool-icon-fallback {
-        font-size    : 2.8rem;
+        font-size: 2.8rem;
         margin-bottom: 16px;
-        display      : block;
-        animation    : iconFloat 3s ease-in-out infinite;
+        display: block;
+        animation: iconFloat 3s ease-in-out infinite;
       }
       .tool-icon-skeleton {
-        width            : 52px;
-        height           : 52px;
-        margin-bottom    : 16px;
-        display          : block;
-        border-radius    : 12px;
-        background       : linear-gradient(90deg,
-                             var(--skeleton-base)  25%,
-                             var(--skeleton-shine) 50%,
-                             var(--skeleton-base)  75%);
-        background-size  : 200% 100%;
-        animation        : skeletonShimmer 1.6s ease-in-out infinite;
-        flex-shrink      : 0;
+        width: 52px;
+        height: 52px;
+        margin-bottom: 16px;
+        display: block;
+        border-radius: 12px;
+        background: linear-gradient(
+          90deg,
+          var(--skeleton-base) 25%,
+          var(--skeleton-shine) 50%,
+          var(--skeleton-base) 75%
+        );
+        background-size: 200% 100%;
+        animation: skeletonShimmer 1.6s ease-in-out infinite;
+        flex-shrink: 0;
       }
 
       .tool-title {
-        font-size              : 1.4rem;
-        font-weight            : 600;
-        color                  : var(--text-primary);
-        margin-bottom          : 12px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 12px;
       }
       .tool-description {
-        color        : var(--text-secondary);
-        line-height  : 1.6;
+        color: var(--text-secondary);
+        line-height: 1.6;
         margin-bottom: 20px;
-        font-weight  : 500;
+        font-weight: 500;
       }
       .tool-link {
-        display      : inline-block;
-        padding      : 12px 24px;
-        background   : var(--accent-gradient);
-        color        : white;
+        display: inline-block;
+        padding: 12px 24px;
+        background: var(--accent-gradient);
+        color: white;
         text-decoration: none;
         border-radius: 15px;
-        font-weight  : 600;
-        transition   : all 0.3s ease;
-        box-shadow   : 0 2px 8px rgba(0, 122, 255, 0.3);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
       }
       .tool-link:hover {
-        transform : translateY(-2px);
+        transform: translateY(-2px);
         box-shadow: 0 6px 16px rgba(0, 122, 255, 0.35);
       }
-      .tool-tags { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
+      .tool-tags {
+        display: flex;
+        gap: 8px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
       .tool-tag {
-        padding      : 4px 12px;
-        background   : rgba(0, 122, 255, 0.08);
-        color        : var(--accent-color);
+        padding: 4px 12px;
+        background: rgba(0, 122, 255, 0.08);
+        color: var(--accent-color);
         border-radius: 12px;
-        font-size    : 0.85rem;
-        font-weight  : 500;
-        border       : 1px solid rgba(0, 122, 255, 0.1);
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(0, 122, 255, 0.1);
       }
 
       /* ── 底部页脚卡片 ── */
       footer {
-        margin-top   : 32px;
-        text-align   : center;
-        color        : var(--text-secondary);
-        font-size    : 0.95rem;
-        padding      : 22px 24px;
-        background   : var(--surface-bg);
+        margin-top: 32px;
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        padding: 22px 24px;
+        background: var(--surface-bg);
         border-radius: 20px;
-        border       : 1px solid var(--border-color);
-        box-shadow   : var(--shadow-sm);
-        animation    : footerFade 0.8s ease 1.2s both;
-      }      
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+        animation: footerFade 0.8s ease 1.2s both;
+      }
 
       /* ── 底部到达发光条 ── */
       #scrollBottomGlow {
-        position        : fixed;
-        bottom          : 0;
-        left            : 0;
-        right           : 0;
-        height          : 3px;
-        pointer-events  : none;
-        z-index         : 9999;
-        background      : linear-gradient(
-                            90deg,
-                            transparent              0%,
-                            rgba(239,  68,  68, 0.7) 20%,
-                            rgba(220,  38,  38, 0.95) 50%,
-                            rgba(239,  68,  68, 0.7) 80%,
-                            transparent              100%
-                          );
-        opacity         : 0;
-        transform       : scaleX(0.55);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        pointer-events: none;
+        z-index: 9999;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(239, 68, 68, 0.7) 20%,
+          rgba(220, 38, 38, 0.95) 50%,
+          rgba(239, 68, 68, 0.7) 80%,
+          transparent 100%
+        );
+        opacity: 0;
+        transform: scaleX(0.55);
         transform-origin: center;
-        box-shadow      : none;
-        transition      : opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+        box-shadow: none;
+        transition:
+          opacity 0.18s ease,
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
       }
       #scrollBottomGlow.active {
-        opacity   : 1;
-        transform : scaleX(1);
-        box-shadow: 0 0 18px 6px  rgba(239,  68,  68, 0.55),
-                    0 0 60px 20px rgba(239,  68,  68, 0.20),
-                    0 -8px  36px 0 rgba(220,  38,  38, 0.16);
+        opacity: 1;
+        transform: scaleX(1);
+        box-shadow:
+          0 0 18px 6px rgba(239, 68, 68, 0.55),
+          0 0 60px 20px rgba(239, 68, 68, 0.2),
+          0 -8px 36px 0 rgba(220, 38, 38, 0.16);
       }
       #scrollBottomGlow.fade-out {
-        opacity   : 0;
-        transform : scaleX(1);
+        opacity: 0;
+        transform: scaleX(1);
         box-shadow: none;
-        transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease,
+          box-shadow 0.5s ease;
       }
       body.dark #scrollBottomGlow {
         background: linear-gradient(
-                      90deg,
-                      transparent               0%,
-                      rgba(252, 165, 165, 0.60) 20%,
-                      rgba(239,  68,  68, 0.92) 50%,
-                      rgba(252, 165, 165, 0.60) 80%,
-                      transparent               100%
-                    );
+          90deg,
+          transparent 0%,
+          rgba(252, 165, 165, 0.6) 20%,
+          rgba(239, 68, 68, 0.92) 50%,
+          rgba(252, 165, 165, 0.6) 80%,
+          transparent 100%
+        );
       }
       body.dark #scrollBottomGlow.active {
-        box-shadow: 0 0 22px 8px  rgba(252, 165, 165, 0.55),
-                    0 0 70px 24px rgba(252, 165, 165, 0.22),
-                    0 -10px 48px 0 rgba(239,  68,  68, 0.20);
+        box-shadow:
+          0 0 22px 8px rgba(252, 165, 165, 0.55),
+          0 0 70px 24px rgba(252, 165, 165, 0.22),
+          0 -10px 48px 0 rgba(239, 68, 68, 0.2);
       }
 
       /* ════════════════════════════════════════════════════════
          §1.5  通用浮层组件（两端共用：FAB、模态框、Toast）
          ════════════════════════════════════════════════════════ */
-     
+
       /* ── 回到顶部按钮 ── */
       #backToTop {
-        position     : fixed;
-        right        : 50px;
-        width        : 52px;
-        height       : 52px;
+        position: fixed;
+        right: 50px;
+        width: 52px;
+        height: 52px;
         border-radius: 18px;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        z-index      : 999;
-        transition   : opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, box-shadow 0.25s ease;
-        bottom    : 26px;
+        z-index: 999;
+        transition:
+          opacity 0.35s ease,
+          visibility 0.35s ease,
+          transform 0.35s ease,
+          box-shadow 0.25s ease;
+        bottom: 26px;
         background: var(--surface-bg);
         box-shadow: var(--shadow-md);
-        opacity   : 0;
+        opacity: 0;
         visibility: hidden;
-        transform : translateY(16px) scale(0.85);
+        transform: translateY(16px) scale(0.85);
       }
       #backToTop.visible {
-        opacity   : 1;
+        opacity: 1;
         visibility: visible;
-        transform : translateY(0) scale(1);
+        transform: translateY(0) scale(1);
       }
-      #backToTop:hover  { box-shadow: var(--shadow-lg); transform: translateY(-3px) scale(1.07); }
-      #backToTop:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
+      #backToTop:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-3px) scale(1.07);
+      }
+      #backToTop:active {
+        box-shadow: var(--shadow-sm);
+        transform: scale(0.94);
+      }
       #backToTop svg {
-        width           : 22px;
-        height          : 22px;
-        stroke          : var(--accent-color);
-        stroke-width    : 2.5;
-        stroke-linecap  : round;
-        stroke-linejoin : round;
-        fill            : none;
+        width: 22px;
+        height: 22px;
+        stroke: var(--accent-color);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
       }
 
       /* ── 菜单按钮 ── */
       #settingsFab {
-        width        : 52px;
-        height       : 52px;
+        width: 52px;
+        height: 52px;
         border-radius: 18px;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        background   : var(--surface-bg);
-        color        : var(--text-primary);
-        box-shadow   : var(--shadow-md);
-        transition   : box-shadow 0.25s ease, border-color 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        flex-shrink  : 0;
+        background: var(--surface-bg);
+        color: var(--text-primary);
+        box-shadow: var(--shadow-md);
+        transition:
+          box-shadow 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        flex-shrink: 0;
       }
-      #settingsFab:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      #settingsFab:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
-      #settingsFab.open   { background: var(--surface-bg); color: var(--accent-color);  transform: rotate(45deg); }
-      #settingsFab.open:hover { transform: rotate(45deg) translateY(-2px) scale(1.06); }
+      #settingsFab:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px) scale(1.06);
+      }
+      #settingsFab:active {
+        box-shadow: var(--shadow-sm);
+        transform: scale(0.94);
+      }
+      #settingsFab.open {
+        background: var(--surface-bg);
+        color: var(--accent-color);
+        transform: rotate(45deg);
+      }
+      #settingsFab.open:hover {
+        transform: rotate(45deg) translateY(-2px) scale(1.06);
+      }
 
       /* ── 菜单 FAB 组 ── */
       #settingsFabGroup {
-        position : fixed;
-        right    : 50px;
-        bottom   : 95px;
-        z-index  : 999;
-        display  : flex;
+        position: fixed;
+        right: 50px;
+        bottom: 95px;
+        z-index: 999;
+        display: flex;
         flex-direction: row;
-        align-items   : center;
-        gap      : 22px;
+        align-items: center;
+        gap: 22px;
       }
 
       /* ── FAB 子按钮通用样式 ── */
       .fab-child {
-        width        : 52px;
-        height       : 52px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
-        border       : 1px solid transparent;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
+        border: 1px solid transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-md);
-        font-size    : 22px;
-        line-height  : 1;
-        opacity      : 0;
-        visibility   : hidden;
-        transform    : translateX(20px) scale(0.7);
-        transition   : opacity 0.25s ease, visibility 0.25s ease,
-                       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                       box-shadow 0.25s ease, border-color 0.25s ease;
+        background: var(--surface-bg);
+        box-shadow: var(--shadow-md);
+        font-size: 22px;
+        line-height: 1;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(20px) scale(0.7);
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease,
+          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
         pointer-events: none;
         /* 各子按钮特有颜色通过 CSS 变量覆盖，见展开状态 */
       }
-      .fab-child:hover  { box-shadow: var(--shadow-lg); transform: translateY(-2px) scale(1.06); }
-      .fab-child:active { box-shadow: var(--shadow-sm); transform: scale(0.94); }
+      .fab-child:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px) scale(1.06);
+      }
+      .fab-child:active {
+        box-shadow: var(--shadow-sm);
+        transform: scale(0.94);
+      }
 
       /* 展开状态：所有子按钮统一出现，颜色由各自的 CSS 变量控制 */
       #settingsFabGroup.expanded .fab-child {
-        opacity      : 1;
-        visibility   : visible;
-        transform    : translateX(0) scale(1);
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0) scale(1);
         pointer-events: auto;
-        border-color : var(--fab-glow, var(--fab-glow-default));
-        box-shadow   : 0 0 12px 2px var(--fab-glow-soft, var(--fab-glow-soft-default)), var(--shadow-md);
+        border-color: var(--fab-glow, var(--fab-glow-default));
+        box-shadow:
+          0 0 12px 2px var(--fab-glow-soft, var(--fab-glow-soft-default)),
+          var(--shadow-md);
       }
 
       /* 各子按钮专属颜色（仅需设置变量，样式复用） */
-      #themeToggle   { --fab-glow: #A855F7; --fab-glow-soft: rgba(168, 85, 247, 0.2); }
-      #sponsorBtn    { --fab-glow: #F59E0B; --fab-glow-soft: rgba(245, 158, 11, 0.2); }
-      #copyLinkBtn   { --fab-glow: #22C55E; --fab-glow-soft: rgba(34, 197, 94, 0.2); }
-      #disclaimerBtn { --fab-glow: #3B82F6; --fab-glow-soft: rgba(59, 130, 246, 0.2); }
-      #toolboxBtn    { --fab-glow: #EC4899; --fab-glow-soft: rgba(236, 72, 153, 0.2); }
+      #themeToggle {
+        --fab-glow: #a855f7;
+        --fab-glow-soft: rgba(168, 85, 247, 0.2);
+      }
+      #sponsorBtn {
+        --fab-glow: #f59e0b;
+        --fab-glow-soft: rgba(245, 158, 11, 0.2);
+      }
+      #copyLinkBtn {
+        --fab-glow: #22c55e;
+        --fab-glow-soft: rgba(34, 197, 94, 0.2);
+      }
+      #disclaimerBtn {
+        --fab-glow: #3b82f6;
+        --fab-glow-soft: rgba(59, 130, 246, 0.2);
+      }
+      #toolboxBtn {
+        --fab-glow: #ec4899;
+        --fab-glow-soft: rgba(236, 72, 153, 0.2);
+      }
 
       /* 给 FAB 所有子按钮开启相对定位，用于提示框 */
       #settingsFabGroup button {
-        position      : relative;
+        position: relative;
       }
       #settingsFab {
-        position      : relative;
+        position: relative;
       }
 
       /* ── 提示框（回到顶部 & 菜单主按钮） ── */
       #backToTop::after,
       #settingsFab::after {
-        content       : attr(data-tooltip);
-        position      : absolute;
-        right         : calc(100% + 14px);
-        top           : 50%;
-        transform     : translateY(-50%);
-        background    : var(--tooltip-bg);
-        color         : var(--tooltip-text);
-        padding       : 6px 12px;
-        border-radius : 6px;
-        font-size     : 13px;
-        white-space   : nowrap;
-        box-shadow    : var(--shadow-md);
+        content: attr(data-tooltip);
+        position: absolute;
+        right: calc(100% + 14px);
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--tooltip-bg);
+        color: var(--tooltip-text);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+        box-shadow: var(--shadow-md);
         pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.2s ease,
+          visibility 0.2s ease;
       }
       #backToTop::before,
       #settingsFab::before {
-        content       : '';
-        position      : absolute;
-        right         : calc(100% + 6px);
-        top           : 50%;
-        transform     : translateY(-50%);
-        border-top    : 6px solid transparent;
-        border-bottom : 6px solid transparent;
-        border-left   : 6px solid var(--tooltip-bg);
+        content: "";
+        position: absolute;
+        right: calc(100% + 6px);
+        top: 50%;
+        transform: translateY(-50%);
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid var(--tooltip-bg);
         pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.2s ease,
+          visibility 0.2s ease;
       }
 
       .fab-child::after {
-        content       : attr(data-tooltip);
-        position      : absolute;
-        bottom        : calc(100% + 14px);
-        left          : 50%;
-        transform     : translateX(-50%);
-        background    : var(--tooltip-bg);
-        color         : var(--tooltip-text);
-        padding       : 6px 12px;
-        border-radius : 6px;
-        font-size     : 13px;
-        white-space   : nowrap;
-        box-shadow    : var(--shadow-md);
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--tooltip-bg);
+        color: var(--tooltip-text);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+        box-shadow: var(--shadow-md);
         pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.2s ease,
+          visibility 0.2s ease;
       }
       .fab-child::before {
-        content       : '';
-        position      : absolute;
-        bottom        : calc(100% + 6px);
-        left          : 50%;
-        transform     : translateX(-50%);
-        border-left   : 6px solid transparent;
-        border-right  : 6px solid transparent;
-        border-top    : 6px solid var(--tooltip-bg);
+        content: "";
+        position: absolute;
+        bottom: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid var(--tooltip-bg);
         pointer-events: none;
-        opacity       : 0;
-        visibility    : hidden;
-        transition    : opacity 0.2s ease, visibility 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.2s ease,
+          visibility 0.2s ease;
       }
-      
+
       #settingsFabGroup.expanded #settingsFab::after,
       #settingsFabGroup.expanded #settingsFab::before {
-        opacity   : 0 !important;
-        visibility: hidden !important;
+        opacity: 0;
+        visibility: hidden;
       }
 
       #backToTop:hover::after,
@@ -830,491 +1021,535 @@
       #settingsFab:hover::before,
       #settingsFabGroup.expanded button:hover::after,
       #settingsFabGroup.expanded button:hover::before {
-        opacity   : 1;
+        opacity: 1;
         visibility: visible;
       }
 
       /* ── 模态框打开时锁定背景滚动 ── */
       body.modal-open {
-        overflow : hidden;
+        overflow: hidden;
       }
       html.modal-open {
-        overflow : hidden;
-        height   : 100%;
+        overflow: hidden;
+        height: 100%;
       }
 
       /* ── 通用模态框遮罩与面板（toolbox / disclaimer / sponsor） ── */
       .modal-overlay {
-        position        : fixed;
-        inset           : 0;
-        z-index         : 2000;
-        display         : flex;
-        align-items     : center;
-        justify-content : center;
-        background      : rgba(0, 0, 0, 0.5);
-        opacity         : 0;
-        visibility      : hidden;
-        transition      : opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change     : opacity, visibility;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: opacity, visibility;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
       }
       .modal-overlay.open {
-        opacity   : 1;
+        opacity: 1;
         visibility: visible;
       }
 
       .modal-panel {
-        position     : relative;
-        background   : var(--primary-bg);
+        position: relative;
+        background: var(--primary-bg);
         border-radius: 28px;
-        padding      : 36px 28px 28px;
-        width        : min(94vw, 480px);
-        max-height   : 85dvh;
-        overflow-y   : auto;
-        box-shadow   : var(--shadow-lg);
-        border       : 1px solid var(--border-color);
-        transform    : scale(0.88) translateY(20px);
-        transition   : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 36px 28px 28px;
+        width: min(94vw, 480px);
+        max-height: 85dvh;
+        overflow-y: auto;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border-color);
+        transform: scale(0.88) translateY(20px);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         scrollbar-width: none;
         -ms-overflow-style: none;
-        will-change     : transform;
+        will-change: transform;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
       }
-      .modal-panel::-webkit-scrollbar { display: none; }
+      .modal-panel::-webkit-scrollbar {
+        display: none;
+      }
       .modal-overlay.open .modal-panel {
         transform: scale(1) translateY(0);
       }
 
       .modal-close {
-        position     : absolute;
-        top          : 14px;
-        right        : 16px;
-        width        : 32px;
-        height       : 32px;
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
-        border       : 1px solid var(--border-color);
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        background   : var(--surface-bg);
-        color        : var(--text-secondary);
-        font-size    : 16px;
-        box-shadow   : var(--shadow-sm);
-        transition   : box-shadow 0.2s, transform 0.15s;
+        background: var(--surface-bg);
+        color: var(--text-secondary);
+        font-size: 16px;
+        box-shadow: var(--shadow-sm);
+        transition:
+          box-shadow 0.2s,
+          transform 0.15s;
       }
-      .modal-close:hover  { box-shadow: var(--shadow-md); transform: scale(1.1); }
-      .modal-close:active { box-shadow: var(--shadow-sm); transform: scale(0.92); }
+      .modal-close:hover {
+        box-shadow: var(--shadow-md);
+        transform: scale(1.1);
+      }
+      .modal-close:active {
+        box-shadow: var(--shadow-sm);
+        transform: scale(0.92);
+      }
 
       .modal-title {
-        font-size    : 1.4rem;
-        font-weight  : 700;
-        color        : var(--text-primary);
-        text-align   : center;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-align: center;
         padding-right: 24px;
       }
-      .modal-title.with-mb { margin-bottom: 18px; }
-           
+      .modal-title.with-mb {
+        margin-bottom: 18px;
+      }
+
       /* ── 简单工具面板特有 ── */
       .toolbox-search-row {
-        display    : flex;
+        display: flex;
         align-items: center;
         margin-bottom: 16px;
       }
       .toolbox-search-wrap {
-        position     : relative;
-        flex         : 1;
+        position: relative;
+        flex: 1;
         margin-bottom: 0;
-        display      : flex;
-        align-items  : center;
+        display: flex;
+        align-items: center;
       }
       .toolbox-search {
-        width        : 100%;
-        padding      : 13px 44px 13px 18px;
+        width: 100%;
+        padding: 13px 44px 13px 18px;
         border-radius: 16px;
-        border       : 1px solid var(--border-color);
-        background   : var(--surface-bg);
-        box-shadow   : var(--shadow-sm);
-        color        : var(--text-primary);
-        font-size    : 1rem;
-        outline      : none;
-        transition   : box-shadow 0.2s, border-color 0.2s;
+        border: 1px solid var(--border-color);
+        background: var(--surface-bg);
+        box-shadow: var(--shadow-sm);
+        color: var(--text-primary);
+        font-size: 1rem;
+        outline: none;
+        transition:
+          box-shadow 0.2s,
+          border-color 0.2s;
       }
-      .toolbox-search::placeholder { color: var(--text-secondary); }
-      .toolbox-search::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
-      .toolbox-search::-ms-clear { display: none; }
+      .toolbox-search::placeholder {
+        color: var(--text-secondary);
+      }
+      .toolbox-search::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        display: none;
+      }
+      .toolbox-search::-ms-clear {
+        display: none;
+      }
       .toolbox-search:focus {
-        box-shadow   : var(--shadow-md);
-        border-color : var(--accent-color);
+        box-shadow: var(--shadow-md);
+        border-color: var(--accent-color);
       }
       .toolbox-search-clear {
-        position     : absolute;
-        right        : 10px;
-        width        : 28px;
-        height       : 28px;
+        position: absolute;
+        right: 10px;
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
-        border       : none;
-        cursor       : pointer;
-        display      : flex;
-        align-items  : center;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        background   : var(--accent-gradient);
-        color        : #fff;
-        font-size    : 13px;
-        line-height  : 1;
-        box-shadow   : 0 2px 8px rgba(0, 122, 255, 0.3);
-        opacity      : 0;
+        background: var(--accent-gradient);
+        color: #fff;
+        font-size: 13px;
+        line-height: 1;
+        box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+        opacity: 0;
         pointer-events: none;
-        transform    : scale(0.6);
-        transition   : opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s;
+        transform: scale(0.6);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s;
       }
       .toolbox-search-clear.visible {
-        opacity      : 1;
+        opacity: 1;
         pointer-events: auto;
-        transform    : scale(1);
+        transform: scale(1);
       }
-      .toolbox-search-clear:hover  { box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4); transform: scale(1.1); }
-      .toolbox-search-clear:active { transform: scale(0.88); }
+      .toolbox-search-clear:hover {
+        box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
+        transform: scale(1.1);
+      }
+      .toolbox-search-clear:active {
+        transform: scale(0.88);
+      }
 
       .toolbox-count-badge {
-        flex-shrink   : 0;
-        display       : flex;
+        flex-shrink: 0;
+        display: flex;
         flex-direction: column;
-        align-items   : center;
+        align-items: center;
         justify-content: center;
-        margin-right  : 10px;
-        min-width     : 48px;
-        height        : 46px;
-        border-radius : 14px;
-        background    : var(--surface-bg);
-        border        : 1px solid var(--border-color);
-        box-shadow    : var(--shadow-sm);
-        padding       : 0 10px;
-        gap           : 2px;
-        user-select   : none;
-        transition    : box-shadow 0.2s;
+        margin-right: 10px;
+        min-width: 48px;
+        height: 46px;
+        border-radius: 14px;
+        background: var(--surface-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+        padding: 0 10px;
+        gap: 2px;
+        user-select: none;
+        transition: box-shadow 0.2s;
       }
       .toolbox-count-badge-num {
-        font-size  : 1.1rem;
+        font-size: 1.1rem;
         font-weight: 700;
         line-height: 1;
-        color      : var(--accent-color);
+        color: var(--accent-color);
       }
       .toolbox-count-badge-label {
-        font-size  : 0.58rem;
+        font-size: 0.58rem;
         font-weight: 600;
-        color      : var(--text-secondary);
+        color: var(--text-secondary);
         line-height: 1;
         white-space: nowrap;
       }
 
       .toolbox-list {
-        display              : grid;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap                  : 10px;
-        min-height           : 480px;
-        align-content        : start;
+        gap: 10px;
+        min-height: 480px;
+        align-content: start;
       }
       .toolbox-item {
-        display        : flex;
-        align-items    : center;
+        display: flex;
+        align-items: center;
         justify-content: space-between;
-        padding        : 13px 12px;
-        border-radius  : 16px;
-        background     : var(--surface-bg);
-        border         : 1px solid var(--border-color);
-        box-shadow     : var(--shadow-sm);
-        cursor         : pointer;
+        padding: 13px 12px;
+        border-radius: 16px;
+        background: var(--surface-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+        cursor: pointer;
         text-decoration: none;
-        transition     : box-shadow 0.2s, transform 0.15s;
+        transition:
+          box-shadow 0.2s,
+          transform 0.15s;
         -webkit-tap-highlight-color: transparent;
-        min-width      : 0;
+        min-width: 0;
       }
-      .toolbox-item:hover  {
+      .toolbox-item:hover {
         box-shadow: var(--shadow-md);
-        transform : translateY(-1px);
+        transform: translateY(-1px);
       }
       .toolbox-item:active {
         box-shadow: var(--shadow-sm);
-        transform : scale(0.97);
+        transform: scale(0.97);
       }
       .toolbox-item-name {
-        font-size  : 0.82rem;
+        font-size: 0.82rem;
         font-weight: 600;
-        color      : var(--text-primary);
-        flex       : 1;
-        min-width  : 0;
+        color: var(--text-primary);
+        flex: 1;
+        min-width: 0;
         white-space: nowrap;
-        overflow   : hidden;
+        overflow: hidden;
         text-overflow: ellipsis;
       }
       .toolbox-item-arrow {
-        font-size   : 0.8rem;
-        color       : var(--text-secondary);
-        opacity     : 0.5;
-        flex-shrink : 0;
-        margin-left : 4px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        opacity: 0.5;
+        flex-shrink: 0;
+        margin-left: 4px;
       }
       .toolbox-empty {
         grid-column: 1 / -1;
-        text-align : center;
-        color      : var(--text-secondary);
-        font-size  : 0.88rem;
-        padding    : 28px 0;
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        padding: 28px 0;
       }
       .toolbox-group {
-        display      : contents;
+        display: contents;
       }
       .toolbox-group-header {
-        grid-column  : 1 / -1;
-        display      : flex;
-        align-items  : center;
-        gap          : 8px;
-        margin-top   : 10px;
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
         padding-bottom: 4px;
         border-bottom: 1.5px solid var(--border-color);
       }
-      .toolbox-group-header:first-child { margin-top: 0; }
+      .toolbox-group-header:first-child {
+        margin-top: 0;
+      }
       .toolbox-group-icon {
-        font-size    : 0.95rem;
-        line-height  : 1;
-        flex-shrink  : 0;
+        font-size: 0.95rem;
+        line-height: 1;
+        flex-shrink: 0;
       }
       .toolbox-group-name {
-        font-size    : 0.95rem;
-        font-weight  : 700;
-        color        : var(--text-secondary);
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text-secondary);
         letter-spacing: 0.02em;
       }
 
       /* ── 关于本站面板特有 ── */
       .disclaimer-list {
-        list-style  : none;
-        padding     : 0;
-        margin      : 0;
-        display     : flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
         flex-direction: column;
-        gap         : 14px;
+        gap: 14px;
       }
       .disclaimer-item {
-        display        : flex;
-        align-items    : flex-start;
-        gap            : 10px;
-        padding        : 14px 16px;
-        border-radius  : 16px;
-        background     : var(--surface-bg);
-        border         : 1px solid var(--border-color);
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: var(--surface-bg);
+        border: 1px solid var(--border-color);
       }
       .disclaimer-item-dot {
-        width       : 8px;
-        height      : 8px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
-        background  : var(--accent-color);
-        flex-shrink : 0;
-        margin-top  : 6px;
+        background: var(--accent-color);
+        flex-shrink: 0;
+        margin-top: 6px;
       }
       .disclaimer-item-body {
         flex: 1;
       }
       .disclaimer-item-title {
-        font-size  : 0.9rem;
+        font-size: 0.9rem;
         font-weight: 700;
-        color      : var(--text-primary);
+        color: var(--text-primary);
         margin-bottom: 4px;
       }
       .disclaimer-item-text {
-        font-size  : 0.83rem;
-        color      : var(--text-secondary);
+        font-size: 0.83rem;
+        color: var(--text-secondary);
         line-height: 1.6;
       }
       .disclaimer-item-text strong {
-        color      : var(--text-primary);
+        color: var(--text-primary);
         font-weight: 700;
       }
 
       /* ── 赞赏支持面板特有 ── */
       .sponsor-sub {
-        font-size  : 0.9rem;
-        color      : var(--text-secondary);
+        font-size: 0.9rem;
+        color: var(--text-secondary);
         margin-bottom: 24px;
-        text-align : center;
+        text-align: center;
       }
       .sponsor-qr-row {
-        display        : flex;
+        display: flex;
         justify-content: center;
-        align-items    : flex-start;
+        align-items: flex-start;
       }
       .sponsor-qr-item {
-        display       : flex;
+        display: flex;
         flex-direction: column;
-        align-items   : center;
-        gap           : 10px;
-        width          : 100%;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
       }
       .sponsor-qr-img {
-        width        : 100%;
-        max-width    : 360px;
-        height       : auto;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
         border-radius: 18px;
-        object-fit   : contain;
-        border       : 1px solid var(--border-color);
-        box-shadow   : var(--shadow-sm);
+        object-fit: contain;
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
       }
       .sponsor-qr-label {
-        font-size  : 0.85rem;
-        color      : var(--text-secondary);
+        font-size: 0.85rem;
+        color: var(--text-secondary);
         font-weight: 500;
       }
 
       /* ── 复制链接 Toast ── */
       #copyLinkToast {
-        position        : fixed;
-        bottom          : 36px;
-        left            : 50%;
-        transform       : translateX(-50%) translateY(20px);
-        background      : var(--tooltip-bg);
-        color           : var(--tooltip-text);
-        padding         : 13px 28px;
-        border-radius   : 50px;
-        font-size       : 0.95rem;
-        font-weight     : 600;
-        letter-spacing  : 0.01em;
-        white-space     : nowrap;
-        box-shadow      : var(--shadow-lg);
-        opacity         : 0;
-        pointer-events  : none;
-        z-index         : 9999;
-        transition      : opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-        display         : flex;
-        align-items     : center;
-        gap             : 8px;
+        position: fixed;
+        bottom: 36px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: var(--tooltip-bg);
+        color: var(--tooltip-text);
+        padding: 13px 28px;
+        border-radius: 50px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 9999;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
       #copyLinkToast.show {
-        opacity         : 1;
-        transform       : translateX(-50%) translateY(0);
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
       }
-            
+
       /* ════════════════════════════════════════════════════════
          §2  桌面端布局（min-width: 769px）
          ════════════════════════════════════════════════════════ */
 
       @media (min-width: 769px) {
-
         /* ── 页面 / 容器 ── */
         body {
-          padding     : 0;
-          align-items : stretch;
-          min-height  : 100dvh;
-          animation   : pageLoad 0.8s ease;
-          overflow    : hidden !important;
+          padding: 0;
+          align-items: stretch;
+          min-height: 100dvh;
+          animation: pageLoad 0.8s ease;
+          overflow: hidden;
         }
         .container {
-          max-width   : none;
-          width       : 100%;
+          max-width: none;
+          width: 100%;
           border-radius: 0;
-          margin-top  : 0;
-          padding     : 0;
-          box-shadow  : none;
-          background  : var(--primary-bg);
+          margin-top: 0;
+          padding: 0;
+          box-shadow: none;
+          background: var(--primary-bg);
         }
-        .container:hover { box-shadow: none; }
+        .container:hover {
+          box-shadow: none;
+        }
 
         /* ── 左右布局容器 ── */
         .desktop-layout {
-          display : flex;
-          height  : 100dvh;
+          display: flex;
+          height: 100dvh;
           overflow: hidden;
         }
 
         /* ── 左侧导航栏 ── */
         .sidebar {
-          display   : flex;
-          width     : 260px;
-          min-width : 260px;
+          display: flex;
+          width: 260px;
+          min-width: 260px;
           flex-direction: column;
           background: var(--surface-bg);
           border-right: 1px solid var(--border-color);
-          height    : 100dvh;
-          overflow  : hidden;
-          z-index   : 10;
+          height: 100dvh;
+          overflow: hidden;
+          z-index: 10;
         }
 
         /* ── 侧边栏标题区 ── */
         .sidebar .site-header {
-          padding      : 22px 18px 16px;
+          padding: 22px 18px 16px;
           border-bottom: 1px solid var(--border-color);
-          flex-shrink  : 0;
-          text-align   : center;
+          flex-shrink: 0;
+          text-align: center;
         }
         .sidebar .site-header h1 {
-          font-size  : 2rem;
+          font-size: 2rem;
           line-height: 1.3;
           white-space: nowrap;
         }
         .sidebar .site-header .subtitle {
-          font-size  : 0.95rem;
+          font-size: 0.95rem;
           margin-top: 12px;
           line-height: 1.4;
         }
 
         /* ── 侧边栏导航区（可滚动） ── */
         .sidebar-nav {
-          flex      : 1;
+          flex: 1;
           overflow-y: auto;
           overflow-x: hidden;
           scrollbar-width: thin;
           scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
         }
-        .sidebar-nav::-webkit-scrollbar       { width: 4px; }
-        .sidebar-nav::-webkit-scrollbar-track { background: transparent; }
-        .sidebar-nav::-webkit-scrollbar-thumb { background: rgba(128, 128, 160, 0.35); border-radius: 2px; }
+        .sidebar-nav::-webkit-scrollbar {
+          width: 4px;
+        }
+        .sidebar-nav::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .sidebar-nav::-webkit-scrollbar-thumb {
+          background: rgba(128, 128, 160, 0.35);
+          border-radius: 2px;
+        }
 
         /* ── 分类列表在侧边栏内的布局 ── */
         .sidebar .categories,
         .sidebar-nav .categories,
         .sidebar .mobile-categories,
         .sidebar-nav .mobile-categories {
-          display       : flex !important;
+          display: flex;
           flex-direction: column;
-          gap           : 6px;
-          padding       : 16px 12px 28px;
-          margin-bottom : 0;
-          animation     : none;
+          gap: 6px;
+          padding: 16px 12px 28px;
+          margin-bottom: 0;
+          animation: none;
         }
 
         /* ── 分类按钮：桌面端横向列表样式 ── */
         .category-btn {
-          flex-direction : row;
+          flex-direction: row;
           justify-content: space-between;
-          padding        : 13px 16px;
-          border-radius  : 12px;
-          font-size      : 1rem;
-          gap            : 0;
-          text-align     : left;
-          width          : 100%;
-          box-shadow     : none;
-          background     : transparent;
+          padding: 13px 16px;
+          border-radius: 12px;
+          font-size: 1rem;
+          gap: 0;
+          text-align: left;
+          width: 100%;
+          box-shadow: none;
+          background: transparent;
         }
         .category-btn:hover {
-          transform : none;
+          transform: none;
           background: var(--primary-bg);
         }
         .category-btn.active {
           background: var(--accent-gradient);
-          color     : white;
+          color: white;
           box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3);
         }
         .cat-label {
-          flex        : 1;
+          flex: 1;
           word-spacing: 0;
         }
         .cat-count {
-          display    : inline-block;
-          font-size  : 0.85rem;
-          padding    : 2.2px 7px;
+          display: inline-block;
+          font-size: 0.85rem;
+          padding: 2.2px 7px;
           border-radius: 8px;
           margin-left: 6px;
           flex-shrink: 0;
@@ -1322,10 +1557,10 @@
 
         /* ── 右侧内容区 ── */
         .main-content {
-          flex      : 1;
-          min-width : 0;
-          padding   : 22px 20px 26px;
-          height    : 100dvh;
+          flex: 1;
+          min-width: 0;
+          padding: 22px 20px 26px;
+          height: 100dvh;
           overflow-y: auto;
           overflow-x: hidden;
           scrollbar-width: thin;
@@ -1345,147 +1580,217 @@
         /* ── 搜索区 ── */
         .search-container {
           margin-bottom: 28px;
-          align-items  : center;
-          animation    : none;
+          align-items: center;
+          animation: none;
         }
         .search-bar {
-          width        : 680px;
-          max-width    : 680px;
-          height       : 58px;
+          width: 680px;
+          max-width: 680px;
+          height: 58px;
           border-radius: 18px;
         }
-        .search-box { font-size: 1.15rem; padding: 0 10px; }
-        .engine-trigger { padding: 0 8px 0 12px; gap: 4px; font-size: 0.88rem; }
+        .search-box {
+          font-size: 1.15rem;
+          padding: 0 10px;
+        }
+        .engine-trigger {
+          padding: 0 8px 0 12px;
+          gap: 4px;
+          font-size: 0.88rem;
+        }
         .engine-dropdown {
-          width    : 680px;
+          width: 680px;
           max-width: 680px;
-          left     : auto;
+          left: auto;
           transform: none;
         }
         .engine-trigger .engine-caret {
-          font-size    : 0.9rem;
-          margin-left  : 2px;
+          font-size: 0.9rem;
+          margin-left: 2px;
         }
         @keyframes dropdownIn {
-          from { opacity: 0; transform: translateY(-8px) scale(0.97); }
-          to   { opacity: 1; transform: translateY(0)    scale(1);    }
-        }        
+          from {
+            opacity: 0;
+            transform: translateY(-8px) scale(0.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
 
-        /* ── 工具网格：3 列 ── */
+        /* ── 工具卡片网格 ── */
         .tools-grid {
           grid-template-columns: repeat(4, 1fr);
-          gap          : 18px;
+          gap: 18px;
           margin-bottom: 0;
         }
-        .tool-card    { padding: 20px 20px 18px; border-radius: 18px; }
+        .tool-card {
+          padding: 20px 20px 18px;
+          border-radius: 18px;
+        }
         .tool-icon,
         .tool-icon-skeleton {
-          width        : 50px;
-          height       : 50px;
+          width: 50px;
+          height: 50px;
           margin-bottom: 16px;
         }
-        .tool-icon-fallback { font-size: 2.2rem; margin-bottom: 10px; }
-        .tool-title         { font-size: 1.25rem; margin-bottom: 16px; }
-        .tool-description   { font-size: 0.98rem; margin-bottom: 16px; }
-        .tool-link          { font-size: 1rem; padding: 6px 16px; border-radius: 10px; }
-        footer              { font-size: 0.95rem; margin-top: 28px; }
+        .tool-icon-fallback {
+          font-size: 2.2rem;
+          margin-bottom: 10px;
+        }
+        .tool-title {
+          font-size: 1.25rem;
+          margin-bottom: 16px;
+        }
+        .tool-description {
+          font-size: 0.98rem;
+          margin-bottom: 16px;
+        }
+        .tool-link {
+          font-size: 1rem;
+          padding: 6px 16px;
+          border-radius: 10px;
+        }
+        footer {
+          font-size: 0.95rem;
+          margin-top: 28px;
+        }
 
         /* ── 隐藏移动端专属元素 ── */
-        .mobile-categories     { display: none !important; }
-        .mobile-drawer         { display: none !important; }
-        .mobile-drawer-overlay { display: none !important; }
-        .mobile-menu-btn       { display: none !important; }
-        .search-wrapper        { display: block; }
+        .mobile-categories {
+          display: none;
+        }
+        .mobile-drawer {
+          display: none;
+        }
+        .mobile-drawer-overlay {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: none;
+        }
+        .search-wrapper {
+          display: block;
+        }
       }
-
 
       /* ════════════════════════════════════════════════════════
          §3  移动端布局（max-width: 768px）
          ════════════════════════════════════════════════════════ */
 
       @media (max-width: 768px) {
-
         /* ── 页面 / 容器 ── */
         body {
-          padding  : 0;
+          padding: 0;
           animation: pageLoad 0.8s ease;
         }
         .container {
-          padding      : 0;
-          margin-top   : 0;
+          padding: 0;
+          margin-top: 0;
           border-radius: 0;
-          box-shadow   : none;
-          background   : var(--primary-bg);
-          animation    : none;
+          box-shadow: none;
+          background: var(--primary-bg);
+          animation: none;
         }
 
         /* ── 布局容器退化为普通块流 ── */
         .desktop-layout {
-          display : block;
-          height  : auto;
+          display: block;
+          height: auto;
           overflow: visible;
         }
-        .sidebar { display: none !important; }
+        .sidebar {
+          display: none;
+        }
 
         /* ── 顶部搜索栏 ── */
         .search-wrapper {
-          position  : fixed;
-          top       : 14px;
-          left      : 0;
-          right     : 0;
-          z-index   : 150;
+          position: fixed;
+          top: 14px;
+          left: 0;
+          right: 0;
+          z-index: 150;
           background: transparent;
-          padding   : 0 15px;
-          display   : flex;
+          padding: 0 15px;
+          display: flex;
           align-items: center;
-          gap       : 10px;
+          gap: 10px;
         }
         /* 抽屉打开时与悬浮按钮一致：禁止点击穿透 */
         body.drawer-open .search-wrapper {
           pointer-events: none;
         }
         .search-wrapper .search-container {
-          flex     : 1;
+          flex: 1;
           min-width: 0;
           margin-bottom: 0;
         }
         .search-bar {
           border-radius: 16px;
-          height       : 50px;
-          max-width    : none;
-          width        : 100%;
+          height: 50px;
+          max-width: none;
+          width: 100%;
         }
-        .engine-trigger  { padding: 0 6px 0 8px; gap: 4px; }
-        .search-box      { padding: 0 8px; font-size: 1rem; }
-        .search-submit   { width: 48px; height: 36px; margin-right: 6px; border-radius: 12px; }
-        .engine-dropdown { max-width: calc(100vw - 24px); padding: 12px; border-radius: 18px; }
-        .engine-grid     { grid-template-columns: repeat(4, 1fr); gap: 6px; }
-        .engine-item     { padding: 8px 4px 8px; }
-        .engine-item-icon { width: 30px; height: 30px; border-radius: 8px; }
+        .engine-trigger {
+          padding: 0 6px 0 8px;
+          gap: 4px;
+        }
+        .search-box {
+          padding: 0 8px;
+          font-size: 1rem;
+        }
+        .search-submit {
+          width: 48px;
+          height: 36px;
+          margin-right: 6px;
+          border-radius: 12px;
+        }
+        .engine-dropdown {
+          max-width: calc(100vw - 24px);
+          padding: 12px;
+          border-radius: 18px;
+        }
+        .engine-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 6px;
+        }
+        .engine-item {
+          padding: 8px 4px 8px;
+        }
+        .engine-item-icon {
+          width: 30px;
+          height: 30px;
+          border-radius: 8px;
+        }
         .engine-trigger .engine-caret {
-          font-size    : 0.8rem;
-          margin-left  : 1px;
+          font-size: 0.8rem;
+          margin-left: 1px;
         }
 
         /* ── 移动端侧栏按钮 ── */
         .mobile-menu-btn {
-          flex-shrink  : 0;
-          width        : 50px;
-          height       : 50px;
+          flex-shrink: 0;
+          width: 50px;
+          height: 50px;
           border-radius: 16px;
-          border       : 1px solid var(--border-color);
-          cursor       : pointer;
-          display      : flex;
-          align-items  : center;
+          border: 1px solid var(--border-color);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
           justify-content: center;
-          background   : var(--surface-bg);
-          color        : var(--text-primary);
-          box-shadow   : var(--shadow-sm);
-          transition   : box-shadow 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+          background: var(--surface-bg);
+          color: var(--text-primary);
+          box-shadow: var(--shadow-sm);
+          transition:
+            box-shadow 0.2s,
+            border-color 0.2s,
+            color 0.2s,
+            transform 0.15s;
         }
         .mobile-menu-btn:active {
           box-shadow: var(--shadow-sm);
-          transform : scale(0.94);
+          transform: scale(0.94);
         }
         /* 图标高亮为主题色 */
         .mobile-menu-btn.open {
@@ -1493,131 +1798,204 @@
         }
 
         /* ── 分类网格隐藏（移入抽屉） ── */
-        .categories.mobile-categories { display: none !important; }
+        .categories.mobile-categories {
+          display: none;
+        }
 
         /* 内容区退化 */
         .main-content {
-          display : block;
-          height  : auto;
+          display: block;
+          height: auto;
           overflow: visible;
-          padding : 0;
-        }        
+          padding: 0;
+        }
 
         /* ── 遮罩层 ── */
         .mobile-drawer-overlay {
-          display             : none;
-          position            : fixed;
-          inset               : 0;
-          background          : rgba(0, 0, 0, 0.35);
-          z-index             : 200;
-          opacity             : 0;
-          transition          : opacity 0.3s ease;
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.35);
+          z-index: 200;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
-        .mobile-drawer-overlay.open { display: block; opacity: 1; }
+        .mobile-drawer-overlay.open {
+          display: block;
+          opacity: 1;
+        }
 
         /* ── 左侧抽屉 ── */
         .mobile-drawer {
-          position      : fixed;
-          top           : 0;
-          left          : 0;
-          width         : 260px;
-          height        : 100dvh;
-          background    : var(--surface-bg);
-          box-shadow    : var(--shadow-lg);
-          border-right  : 1px solid var(--border-color);
-          z-index       : 201;
-          display       : flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 260px;
+          height: 100dvh;
+          background: var(--surface-bg);
+          box-shadow: var(--shadow-lg);
+          border-right: 1px solid var(--border-color);
+          z-index: 201;
+          display: flex;
           flex-direction: column;
-          transform     : translateX(-100%);
-          transition    : transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          overflow      : hidden;
-          will-change   : transform;
+          transform: translateX(-100%);
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          overflow: hidden;
+          will-change: transform;
         }
-        .mobile-drawer.open { transform: translateX(0); }
+        .mobile-drawer.open {
+          transform: translateX(0);
+        }
 
         /* ── 抽屉标题区 ── */
         .mobile-drawer .site-header {
-          padding      : 16px 18px 16px;
+          padding: 16px 18px 16px;
           border-bottom: 1px solid var(--border-color);
-          flex-shrink  : 0;
-          text-align   : center;
+          flex-shrink: 0;
+          text-align: center;
         }
         .mobile-drawer .site-header h1 {
           font-size: 2rem;
           margin-bottom: 10px;
         }
-        .mobile-drawer .site-header .subtitle { font-size: 0.9rem; }
+        .mobile-drawer .site-header .subtitle {
+          font-size: 0.9rem;
+        }
 
         /* ── 抽屉导航滚动区 ── */
         .mobile-drawer-nav {
-          flex      : 1;
+          flex: 1;
           overflow-y: auto;
           overflow-x: hidden;
           scrollbar-width: thin;
           scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
-          padding   : 14px 10px 25px;
-          display   : flex;
+          padding: 14px 10px 25px;
+          display: flex;
           flex-direction: column;
-          gap       : 4px;
+          gap: 4px;
         }
-        .mobile-drawer-nav::-webkit-scrollbar       { width: 3px; }
-        .mobile-drawer-nav::-webkit-scrollbar-thumb { background: rgba(128, 128, 160, 0.35); border-radius: 2px; }
+        .mobile-drawer-nav::-webkit-scrollbar {
+          width: 3px;
+        }
+        .mobile-drawer-nav::-webkit-scrollbar-thumb {
+          background: rgba(128, 128, 160, 0.35);
+          border-radius: 2px;
+        }
 
         /* ── 分类按钮：抽屉内横向列表样式 ── */
         .mobile-drawer-nav .category-btn {
-          flex-direction : row ;
-          align-items    : center ;
-          justify-content: space-between ;
-          padding        : 16px 14px ;
-          border-radius  : 12px ;
-          font-size      : 0.95rem ;
-          gap            : 0 ;
-          width          : 100% ;
-          text-align     : left ;
-          box-shadow     : none ;
-          background     : transparent ;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 14px;
+          border-radius: 12px;
+          font-size: 0.95rem;
+          gap: 0;
+          width: 100%;
+          text-align: left;
+          box-shadow: none;
+          background: transparent;
         }
-        .mobile-drawer-nav .category-btn:hover  { transform: none ; background: var(--primary-bg) ; }
-        .mobile-drawer-nav .category-btn.active { background: var(--accent-gradient) ; color: white ; box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3) ; }
-        .mobile-drawer-nav .cat-label           { flex: 1; word-spacing: 0; }
-        .mobile-drawer-nav .cat-count           { display: inline-block ; font-size: 0.8rem; padding: 2px 6.5px; border-radius: 8px; margin-left: 6px; flex-shrink: 0; }
-        .mobile-drawer-nav .category-btn.active .cat-count { background: rgba(255, 255, 255, 0.25) ; color: white ; }
+        .mobile-drawer-nav .category-btn:hover {
+          transform: none;
+          background: var(--primary-bg);
+        }
+        .mobile-drawer-nav .category-btn.active {
+          background: var(--accent-gradient);
+          color: white;
+          box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3);
+        }
+        .mobile-drawer-nav .cat-label {
+          flex: 1;
+          word-spacing: 0;
+        }
+        .mobile-drawer-nav .cat-count {
+          display: inline-block;
+          font-size: 0.8rem;
+          padding: 2px 6.5px;
+          border-radius: 8px;
+          margin-left: 6px;
+          flex-shrink: 0;
+        }
+        .mobile-drawer-nav .category-btn.active .cat-count {
+          background: rgba(255, 255, 255, 0.25);
+          color: white;
+        }
 
-        /* ── 工具卡片 ── */
-        .tool-title       { font-size: 1rem; }
-        .tool-description { font-size: 1rem; }
-        .tool-link        { font-size: 1rem; padding: 8px 16px; border-radius: 12px; }
-        .tools-grid       { grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 8px; padding: 80px 15px 16px; }
-        .tool-card        { padding: 20px 20px 18px; border-radius: 20px; }
-        footer            { margin: 0 15px 26px; padding: 18px 16px; font-size: 0.9rem; border-radius: 18px; }
+        /* ── 工具卡片网格 ── */
+        .tool-title {
+          font-size: 1rem;
+        }
+        .tool-description {
+          font-size: 1rem;
+        }
+        .tool-link {
+          font-size: 1rem;
+          padding: 8px 16px;
+          border-radius: 12px;
+        }
+        .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+          margin-bottom: 8px;
+          padding: 80px 15px 16px;
+        }
+        .tool-card {
+          padding: 20px 20px 18px;
+          border-radius: 20px;
+        }
+        footer {
+          margin: 0 15px 26px;
+          padding: 18px 16px;
+          font-size: 0.9rem;
+          border-radius: 18px;
+        }
 
         /* ── 悬浮按钮移动端尺寸 ── */
-        #backToTop         { right: 24px; bottom: 26px; width: 46px; height: 46px; border-radius: 16px; }
-        #settingsFabGroup  { right: 24px; bottom: 90px; gap: 18px; }
-        #settingsFab       { width: 46px; height: 46px; border-radius: 15px; }
-        .fab-child         { width: 46px; height: 46px; font-size: 20px; }
+        #backToTop {
+          right: 24px;
+          bottom: 26px;
+          width: 46px;
+          height: 46px;
+          border-radius: 16px;
+        }
+        #settingsFabGroup {
+          right: 24px;
+          bottom: 90px;
+          gap: 18px;
+        }
+        #settingsFab {
+          width: 46px;
+          height: 46px;
+          border-radius: 15px;
+        }
+        .fab-child {
+          width: 46px;
+          height: 46px;
+          font-size: 20px;
+        }
 
         /* ── 遮罩层保持全屏，面板从底部滑入 ── */
         #toolboxModal,
         #disclaimerModal,
         #sponsorModal {
-          align-items     : flex-end;
-          justify-content : stretch;
+          align-items: flex-end;
+          justify-content: stretch;
         }
 
         /* ── 工具箱底部面板 ── */
         #toolboxModal .toolbox-panel {
-          width            : 100%;
-          max-width        : 100%;
-          border-radius    : 24px 24px 0 0;         
-          height           : 88dvh;
-          max-height       : 88dvh;
-          padding          : 20px 28px 32px;
-          transform        : translateY(100%);
-          transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.15);
-          border           : none;
-          border-top       : 1px solid var(--border-color);
+          width: 100%;
+          max-width: 100%;
+          border-radius: 24px 24px 0 0;
+          height: 88dvh;
+          max-height: 88dvh;
+          padding: 20px 28px 32px;
+          transform: translateY(100%);
+          transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);
+          border: none;
+          border-top: 1px solid var(--border-color);
         }
         #toolboxModal.open .toolbox-panel {
           transform: translateY(0);
@@ -1625,30 +2003,32 @@
 
         /* ── 工具箱底部面板标题：居中，顶部加"把手"条 ── */
         #toolboxModal .toolbox-panel::before {
-          content      : '';
-          display      : block;
-          width        : 40px;
-          height       : 4px;
+          content: "";
+          display: block;
+          width: 40px;
+          height: 4px;
           border-radius: 2px;
-          background   : var(--border-color);
-          margin       : 0 auto 16px;
-          opacity      : 0.45;
+          background: var(--border-color);
+          margin: 0 auto 16px;
+          opacity: 0.45;
         }
-        #toolboxModal .toolbox-title { padding-right: 0; }
+        #toolboxModal .toolbox-title {
+          padding-right: 0;
+        }
 
         /* ── 关于本站底部面板 ── */
         #disclaimerModal .disclaimer-panel {
-          width            : 100%;
-          max-width        : 100%;
-          border-radius    : 24px 24px 0 0;
-          height           : 88dvh;
-          max-height       : 88dvh;
-          padding          : 20px 28px 32px;
-          transform        : translateY(100%);
-          transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.15);
-          border           : none;
-          border-top       : 1px solid var(--border-color);
+          width: 100%;
+          max-width: 100%;
+          border-radius: 24px 24px 0 0;
+          height: 88dvh;
+          max-height: 88dvh;
+          padding: 20px 28px 32px;
+          transform: translateY(100%);
+          transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);
+          border: none;
+          border-top: 1px solid var(--border-color);
         }
         #disclaimerModal.open .disclaimer-panel {
           transform: translateY(0);
@@ -1656,29 +2036,31 @@
 
         /* ── 关于本站底部面板：同样加把手条 ── */
         #disclaimerModal .disclaimer-panel::before {
-          content      : '';
-          display      : block;
-          width        : 40px;
-          height       : 4px;
+          content: "";
+          display: block;
+          width: 40px;
+          height: 4px;
           border-radius: 2px;
-          background   : var(--border-color);
-          margin       : 0 auto 16px;
-          opacity      : 0.45;
+          background: var(--border-color);
+          margin: 0 auto 16px;
+          opacity: 0.45;
         }
-        #disclaimerModal .disclaimer-title { padding-right: 0; }
+        #disclaimerModal .disclaimer-title {
+          padding-right: 0;
+        }
 
         /* ── 赞赏支持底部面板 ── */
         #sponsorModal .sponsor-panel {
-          width            : 100%;
-          max-width        : 100%;
-          border-radius    : 24px 24px 0 0;
-          max-height       : 88dvh;
-          padding          : 20px 28px 32px;
-          transform        : translateY(100%);
-          transition       : transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow       : 0 -8px 40px rgba(0, 0, 0, 0.15);
-          border           : none;
-          border-top       : 1px solid var(--border-color);
+          width: 100%;
+          max-width: 100%;
+          border-radius: 24px 24px 0 0;
+          max-height: 88dvh;
+          padding: 20px 28px 32px;
+          transform: translateY(100%);
+          transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);
+          border: none;
+          border-top: 1px solid var(--border-color);
         }
         #sponsorModal.open .sponsor-panel {
           transform: translateY(0);
@@ -1686,26 +2068,30 @@
 
         /* ── 赞赏支持底部面板：同样加把手条 ── */
         #sponsorModal .sponsor-panel::before {
-          content      : '';
-          display      : block;
-          width        : 40px;
-          height       : 4px;
+          content: "";
+          display: block;
+          width: 40px;
+          height: 4px;
           border-radius: 2px;
-          background   : var(--border-color);
-          margin       : 0 auto 16px;
-          opacity      : 0.45;
+          background: var(--border-color);
+          margin: 0 auto 16px;
+          opacity: 0.45;
         }
-        #sponsorModal .sponsor-title { padding-right: 0; }       
-        #sponsorModal .sponsor-qr-img { max-width: 360px; }
+        #sponsorModal .sponsor-title {
+          padding-right: 0;
+        }
+        #sponsorModal .sponsor-qr-img {
+          max-width: 360px;
+        }
 
-        /* ── 移动端隐藏悬浮提示框和小箭头 ── */      
+        /* ── 移动端隐藏悬浮提示框和小箭头 ── */
         #backToTop::after,
         #backToTop::before,
         #settingsFab::after,
         #settingsFab::before,
         .fab-child::after,
         .fab-child::before {
-          display: none !important;
+          display: none;
         }
 
         /* 左侧抽屉打开: 悬浮按钮禁止点击 */
@@ -1718,18 +2104,20 @@
           z-index: 150;
         }
       }
-
-    </style>  
+    </style>
   </head>
-  <body>   
+  <body>
     <div class="container theme-anim">
       <div class="desktop-layout">
-
         <!-- 电脑端标题 -->
         <aside class="sidebar theme-anim">
           <div class="site-header">
             <h1 class="site-title">
-              <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
+              <img
+                src="assets/picture/logo.webp"
+                alt="图标"
+                class="title-icon"
+              />
               <span>
                 <span class="char-1">星</span>
                 <span class="char-2">源</span>
@@ -1739,103 +2127,19 @@
             </h1>
             <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
           </div>
-          <nav class="sidebar-nav" id="sidebarNav">
-          </nav>
+          <nav class="sidebar-nav" id="sidebarNav"></nav>
         </aside>
 
-        <!-- ══════════════════════════════════════════
-             右侧内容区（两端共用）
-             ══════════════════════════════════════════ -->
-        <main class="main-content">
-
-          <div class="search-wrapper theme-anim">
-            <!-- 汉堡侧栏按钮（仅移动端显示） -->
-            <button class="mobile-menu-btn theme-anim" id="mobileMenuBtn" aria-label="打开导航侧栏">
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round">
-                <line x1="3" y1="6"  x2="21" y2="6"  />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
-
-            <div class="search-container theme-anim">
-              <div class="search-bar theme-anim" id="searchBar">
-                <button class="engine-trigger theme-anim" id="engineTrigger" aria-label="选择搜索引擎" aria-expanded="false">
-                  <span class="engine-icon" id="triggerIcon"></span>
-                  <span class="engine-caret">▼</span>
-                </button>
-                <input type="text" class="search-box theme-anim" id="searchBox" placeholder="搜索关键词..." />
-                <button class="search-clear theme-anim" id="searchClear" aria-label="清除搜索">
-                  <svg viewBox="0 0 14 14">
-                    <line x1="2" y1="2" x2="12" y2="12"/>
-                    <line x1="12" y1="2" x2="2" y2="12"/>
-                  </svg>
-                </button>
-                <button class="search-submit theme-anim" id="searchSubmit" aria-label="搜索">
-                  <svg viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  </svg>
-                </button>
-              </div>
-
-              <div class="engine-dropdown theme-anim" id="engineDropdown" role="listbox">
-                <div class="engine-grid" id="engineGrid">
-                  <div class="engine-item engine-local-row selected" id="engineLocal" role="option" data-engine="local">
-                    <div class="engine-item-icon engine-local-icon">🔍</div>
-                    <span class="engine-item-label engine-local-name">站内</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-      <!-- 分类标签 -->
-      <div class="categories mobile-categories" id="categoriesEl">
-        <button class="category-btn active theme-anim"><span class="cat-label">🌟 全部分类</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🌍 全球门户</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🔥 国内主流</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🧠 人工智能</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🐙 项目汇总</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">👥 技术社区</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🍉 新知百态</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">📖 学习成长</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🧲 开发辅助</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">📦 资源基地</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🛠️ 综合效率</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🖼️ 图像处理</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🎬 媒体创作</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">📝 文档办公</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🎨 创意设计</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🌈 视觉灵感</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">📤 视频提取</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🔍 聚合搜索</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🎧 影音娱乐</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🔮 漫步次元</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">✈️ 跨境互联</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🧰 扩展空间</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🗃️ 应用分发</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">💻 桌面生态</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🤖 安卓专区</span></button>
-        <button class="category-btn theme-anim"><span class="cat-label">🧭 更多导航</span></button>
-      </div>
-
-          <div class="tools-grid" id="toolsGrid"></div>
-
-          <!-- 底部页脚 -->
-          <footer class="theme-anim">
-            <p>© 2026 星源导航 - 极简 · 纯粹 · 高效</p> 
-          </footer>
-        </main>
-      </div>
-    </div>
-
-    <!-- 移动端标题 -->
-    <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-    <aside class="mobile-drawer theme-anim" id="mobileDrawer">
-      <div class="site-header theme-anim">
-        <h1 class="site-title">
-              <img src="assets/picture/logo.webp" alt="图标" class="title-icon">
+        <!-- 移动端标题 -->
+        <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+        <aside class="mobile-drawer theme-anim" id="mobileDrawer">
+          <div class="site-header theme-anim">
+            <h1 class="site-title">
+              <img
+                src="assets/picture/logo.webp"
+                alt="图标"
+                class="title-icon"
+              />
               <span>
                 <span class="char-1">星</span>
                 <span class="char-2">源</span>
@@ -1843,51 +2147,312 @@
                 <span class="char-4">航</span>
               </span>
             </h1>
-        <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
+            <p class="subtitle">视界窗口 · 链接万物 · 极速开启</p>
+          </div>
+          <nav class="mobile-drawer-nav theme-anim" id="mobileDrawerNav"></nav>
+        </aside>
+
+        <!-- 分类标签 -->
+        <div class="categories mobile-categories" id="categoriesEl">
+          <button class="category-btn active theme-anim">
+            <span class="cat-label">🌟 全部分类</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🌍 全球门户</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🔥 国内主流</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🧠 人工智能</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🐙 项目汇总</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">👥 技术社区</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🍉 新知百态</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">📖 学习成长</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🧲 开发辅助</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">📦 资源基地</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🛠️ 综合效率</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🖼️ 图像处理</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🎬 媒体创作</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">📝 文档办公</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🎨 创意设计</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🌈 视觉灵感</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">📤 视频提取</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🔍 聚合搜索</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🎧 影音娱乐</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🔮 漫步次元</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">✈️ 跨境互联</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🧰 扩展空间</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🗃️ 应用分发</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">💻 桌面生态</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🤖 安卓专区</span>
+          </button>
+          <button class="category-btn theme-anim">
+            <span class="cat-label">🧭 更多导航</span>
+          </button>
+        </div>
+
+        <!-- ══════════════════════════════════════════
+             右侧内容区（两端共用）
+             ══════════════════════════════════════════ -->
+        <main class="main-content">
+          <div class="search-wrapper theme-anim">
+            <!-- 汉堡侧栏按钮（仅移动端显示） -->
+            <button
+              class="mobile-menu-btn theme-anim"
+              id="mobileMenuBtn"
+              aria-label="打开导航侧栏"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                stroke-width="2.5"
+                fill="none"
+                stroke-linecap="round"
+              >
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+
+            <div class="search-container theme-anim">
+              <div class="search-bar theme-anim" id="searchBar">
+                <button
+                  class="engine-trigger theme-anim"
+                  id="engineTrigger"
+                  aria-label="选择搜索引擎"
+                  aria-expanded="false"
+                >
+                  <span class="engine-icon" id="triggerIcon"></span>
+                  <span class="engine-caret">▼</span>
+                </button>
+                <input
+                  type="text"
+                  class="search-box theme-anim"
+                  id="searchBox"
+                  placeholder="搜索关键词..."
+                />
+                <button
+                  class="search-clear theme-anim"
+                  id="searchClear"
+                  aria-label="清除搜索"
+                >
+                  <svg viewBox="0 0 14 14">
+                    <line x1="2" y1="2" x2="12" y2="12" />
+                    <line x1="12" y1="2" x2="2" y2="12" />
+                  </svg>
+                </button>
+                <button
+                  class="search-submit theme-anim"
+                  id="searchSubmit"
+                  aria-label="搜索"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </button>
+              </div>
+
+              <div
+                class="engine-dropdown theme-anim"
+                id="engineDropdown"
+                role="listbox"
+              >
+                <div class="engine-grid" id="engineGrid">
+                  <div
+                    class="engine-item engine-local-row selected"
+                    id="engineLocal"
+                    role="option"
+                    data-engine="local"
+                  >
+                    <div class="engine-item-icon engine-local-icon">🔍</div>
+                    <span class="engine-item-label engine-local-name"
+                      >站内</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tools-grid" id="toolsGrid"></div>
+
+          <!-- 底部页脚 -->
+          <footer class="theme-anim">
+            <p>© 2026 星源导航 - 极简 · 纯粹 · 高效</p>
+          </footer>
+        </main>
       </div>
-      <nav class="mobile-drawer-nav theme-anim" id="mobileDrawerNav">
-      </nav>
-    </aside>
+    </div>
 
     <!-- 回到顶部悬浮按钮 -->
-    <button id="backToTop" data-tooltip="回到顶部" aria-label="回到顶部" class="theme-anim">
+    <button
+      id="backToTop"
+      data-tooltip="回到顶部"
+      aria-label="回到顶部"
+      class="theme-anim"
+    >
       <svg viewBox="0 0 24 24">
-        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path
+          d="M12 19V5M5 12l7-7 7 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
       </svg>
     </button>
 
     <!-- 功能菜单（子按钮统一使用 .fab-child） -->
     <div id="settingsFabGroup">
-      <button id="toolboxBtn" data-tooltip="简单工具" aria-label="简单工具" class="fab-child theme-anim">🧰</button>
-      <button id="disclaimerBtn" data-tooltip="关于本站" aria-label="关于本站" class="fab-child theme-anim">📘</button>
-      <button id="sponsorBtn" data-tooltip="赞赏支持" aria-label="赞赏支持" class="fab-child theme-anim">☕</button>
-      <button id="copyLinkBtn" data-tooltip="复制链接" aria-label="复制链接" class="fab-child theme-anim">🔗</button>
-      <button id="themeToggle" data-tooltip="切换主题" aria-label="切换深色/浅色模式" class="fab-child theme-anim">☀️</button>
-      <button id="settingsFab" data-tooltip="菜单" aria-label="菜单" class="theme-anim">
-        <svg id="settingsFabIcon" viewBox="0 0 24 24" width="22" height="22"
-             stroke="currentColor" stroke-width="2.5"
-             stroke-linecap="round" fill="none">
-          <line x1="12" y1="5"  x2="12" y2="19"/>
-          <line x1="5"  y1="12" x2="19" y2="12"/>
+      <button
+        id="toolboxBtn"
+        data-tooltip="简单工具"
+        aria-label="简单工具"
+        class="fab-child theme-anim"
+      >
+        🧰
+      </button>
+      <button
+        id="disclaimerBtn"
+        data-tooltip="关于本站"
+        aria-label="关于本站"
+        class="fab-child theme-anim"
+      >
+        📘
+      </button>
+      <button
+        id="sponsorBtn"
+        data-tooltip="赞赏支持"
+        aria-label="赞赏支持"
+        class="fab-child theme-anim"
+      >
+        ☕
+      </button>
+      <button
+        id="copyLinkBtn"
+        data-tooltip="复制链接"
+        aria-label="复制链接"
+        class="fab-child theme-anim"
+      >
+        🔗
+      </button>
+      <button
+        id="themeToggle"
+        data-tooltip="切换主题"
+        aria-label="切换深色/浅色模式"
+        class="fab-child theme-anim"
+      >
+        ☀️
+      </button>
+      <button
+        id="settingsFab"
+        data-tooltip="菜单"
+        aria-label="菜单"
+        class="theme-anim"
+      >
+        <svg
+          id="settingsFabIcon"
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          fill="none"
+        >
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </button>
     </div>
     <div id="scrollBottomGlow"></div>
 
     <!-- 简单工具模态框 -->
-    <div id="toolboxModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="简单工具">
+    <div
+      id="toolboxModal"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="简单工具"
+    >
       <div class="modal-panel toolbox-panel">
-        <button class="modal-close toolbox-close" id="toolboxClose" aria-label="关闭">✕</button>
+        <button
+          class="modal-close toolbox-close"
+          id="toolboxClose"
+          aria-label="关闭"
+        >
+          ✕
+        </button>
         <p class="modal-title toolbox-title with-mb">🧰 简单工具</p>
         <div class="toolbox-search-row">
-          <div class="toolbox-count-badge" id="toolboxCountBadge" title="当前显示工具数">
+          <div
+            class="toolbox-count-badge"
+            id="toolboxCountBadge"
+            title="当前显示工具数"
+          >
             <span class="toolbox-count-badge-num" id="toolboxCountNum">0</span>
             <span class="toolbox-count-badge-label">个工具</span>
           </div>
           <div class="toolbox-search-wrap">
-            <input class="toolbox-search" id="toolboxSearch" type="search"
-                   placeholder="搜索工具名称…" autocomplete="off" />
-            <button class="toolbox-search-clear" id="toolboxSearchClear" aria-label="清除搜索">✕</button>
+            <input
+              class="toolbox-search"
+              id="toolboxSearch"
+              type="search"
+              placeholder="搜索工具名称…"
+              autocomplete="off"
+            />
+            <button
+              class="toolbox-search-clear"
+              id="toolboxSearchClear"
+              aria-label="清除搜索"
+            >
+              ✕
+            </button>
           </div>
         </div>
         <div class="toolbox-list" id="toolboxList"></div>
@@ -1895,73 +2460,121 @@
     </div>
 
     <!-- 关于本站模态框 -->
-    <div id="disclaimerModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="关于本站">
+    <div
+      id="disclaimerModal"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="关于本站"
+    >
       <div class="modal-panel disclaimer-panel">
-        <button class="modal-close disclaimer-close" id="disclaimerClose" aria-label="关闭">✕</button>
+        <button
+          class="modal-close disclaimer-close"
+          id="disclaimerClose"
+          aria-label="关闭"
+        >
+          ✕
+        </button>
         <p class="modal-title disclaimer-title with-mb">📘 关于本站</p>
         <ul class="disclaimer-list">
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">本站定位与目的</p>
-              <p class="disclaimer-item-text">本站整合了纯前端实用工具与第三方资源导航，便于日常查找使用。对于本站所收录的外部第三方资源与网站，<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>。</p>
+              <p class="disclaimer-item-text">
+                本站整合了纯前端实用工具与第三方资源导航，便于日常查找使用。对于本站所收录的外部第三方资源与网站，<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>。
+              </p>
             </div>
           </li>
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">内置工具与隐私</p>
-              <p class="disclaimer-item-text">本站提供了一些纯前端实用工具，<strong>所有计算与处理均在本地浏览器中完成，无需将任何数据或操作记录上传至服务器</strong>，在保障隐私安全的同时带来即开即用的流畅体验。</p>
+              <p class="disclaimer-item-text">
+                本站提供了一些纯前端实用工具，<strong>所有计算与处理均在本地浏览器中完成，无需将任何数据或操作记录上传至服务器</strong>，在保障隐私安全的同时带来即开即用的流畅体验。
+              </p>
             </div>
           </li>
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">数据来源与免责</p>
-              <p class="disclaimer-item-text">本站所收录的第三方网站（包括但不限于资源库、素材网、技术论坛等）均由搜索引擎及公开信息整理而成，旨在方便用户获取信息。<strong>本站与所列网站无任何隶属、合作或商业关系。</strong></p>
+              <p class="disclaimer-item-text">
+                本站所收录的第三方网站（包括但不限于资源库、素材网、技术论坛等）均由搜索引擎及公开信息整理而成，旨在方便用户获取信息。<strong
+                  >本站与所列网站无任何隶属、合作或商业关系。</strong
+                >
+              </p>
             </div>
           </li>
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">收录与质量知悉</p>
-              <p class="disclaimer-item-text">本站抓取并整理的第三方网站<strong>均属于随机收录，收录网站的内容质量参差不齐，好坏皆有</strong>。用户在访问和使用相关网站时，根据自身需求理性评估其价值与实用性。</p>
+              <p class="disclaimer-item-text">
+                本站抓取并整理的第三方网站<strong>均属于随机收录，收录网站的内容质量参差不齐，好坏皆有</strong>。用户在访问和使用相关网站时，根据自身需求理性评估其价值与实用性。
+              </p>
             </div>
           </li>
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">风控与安全提示</p>
-              <p class="disclaimer-item-text">本站无法对第三方网站的内容实时性、安全性及服务质量进行监控。用户在访问上述网站时，<strong>请务必自行甄别信息真伪，提高警惕，谨防诈骗、病毒感染及隐私泄露。</strong></p>
+              <p class="disclaimer-item-text">
+                本站无法对第三方网站的内容实时性、安全性及服务质量进行监控。用户在访问上述网站时，<strong
+                  >请务必自行甄别信息真伪，提高警惕，谨防诈骗、病毒感染及隐私泄露。</strong
+                >
+              </p>
             </div>
           </li>
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">图标与视觉说明</p>
-              <p class="disclaimer-item-text">本站所显示的第三方网站图标，<strong>仅作为页面视觉区分与辅助识别体现</strong>，并不一定代表该网站的官方授权或最新官方图标。所有图标的版权均归其原始版权所有人所有。</p>
+              <p class="disclaimer-item-text">
+                本站所显示的第三方网站图标，<strong>仅作为页面视觉区分与辅助识别体现</strong>，并不一定代表该网站的官方授权或最新官方图标。所有图标的版权均归其原始版权所有人所有。
+              </p>
             </div>
           </li>
           <li class="disclaimer-item">
             <div class="disclaimer-item-dot"></div>
             <div class="disclaimer-item-body">
               <p class="disclaimer-item-title">内容描述与体验</p>
-              <p class="disclaimer-item-text">本站对第三方网站的介绍和描述内容<strong>均由 AI 辅助生成，仅供快速了解时参考</strong>。相关网站的实际功能与服务，请用户以最终的实际访问、使用体验及官方最终说明为准。</p>
+              <p class="disclaimer-item-text">
+                本站对第三方网站的介绍和描述内容<strong
+                  >均由 AI 辅助生成，仅供快速了解时参考</strong
+                >。相关网站的实际功能与服务，请用户以最终的实际访问、使用体验及官方最终说明为准。
+              </p>
             </div>
           </li>
         </ul>
       </div>
     </div>
-   
+
     <!-- 赞赏支持模态框 -->
-    <div id="sponsorModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="赞赏支持">
+    <div
+      id="sponsorModal"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="赞赏支持"
+    >
       <div class="modal-panel sponsor-panel">
-        <button class="modal-close sponsor-close" id="sponsorClose" aria-label="关闭">✕</button>
+        <button
+          class="modal-close sponsor-close"
+          id="sponsorClose"
+          aria-label="关闭"
+        >
+          ✕
+        </button>
         <p class="modal-title sponsor-title">☕ 请作者喝杯咖啡</p>
         <p class="sponsor-sub">如果觉得有用，欢迎随缘赞赏</p>
         <div class="sponsor-qr-row">
           <div class="sponsor-qr-item">
-            <img class="sponsor-qr-img" src="assets/picture/wxzs.webp" alt="微信赞赏">
+            <img
+              class="sponsor-qr-img"
+              src="assets/picture/wxzs.webp"
+              alt="微信赞赏"
+            />
             <span class="sponsor-qr-label">微信「 扫一扫 」</span>
           </div>
         </div>
@@ -1973,68 +2586,68 @@
 
     <!-- 简单工具列表配置 -->
     <script>
-      const TOOLS_BASE = 'tools/tools/'
+      const TOOLS_BASE = "tools/tools/";
 
       const TOOL_GROUPS = [
         {
-          icon : '💻',
-          label: '开发者工具',
+          icon: "💻",
+          label: "开发者工具",
           tools: [
-            { name: '代码对比',     file: 'code-diff.html'    },
-            { name: '色彩选择器',  file: 'color-picker.html'  },                        
-            { name: 'JSON 压缩',    file: 'json-minifier.html'    },
-            { name: 'JSON 格式化',  file: 'json-formatter.html'  },                                   
-            { name: 'CSS 动画效果', file: 'css-animations.html' }, 
-            { name: 'Git 命令速查', file: 'git-cheat-sheet.html'   },
+            { name: "代码对比", file: "code-diff.html" },
+            { name: "色彩选择器", file: "color-picker.html" },
+            { name: "JSON 压缩", file: "json-minifier.html" },
+            { name: "JSON 格式化", file: "json-formatter.html" },
+            { name: "CSS 动画效果", file: "css-animations.html" },
+            { name: "Git 命令速查", file: "git-cheat-sheet.html" },
           ],
         },
         {
-          icon : '🖼️',
-          label: '图片与多媒体',
+          icon: "🖼️",
+          label: "图片与多媒体",
           tools: [
-            { name: '图片格式转换',   file: 'image-converter.html' },
-            { name: '图片裁切',       file: 'image-cropper.html'     },
-            { name: '图片对比',       file: 'image-comparison.html'     },
-            { name: '图片切图分割',       file: 'image-splitter.html'     },
-            { name: '图片转 Base64',  file: 'image-to-base64.html' },
-            { name: 'Base64 转图片',  file: 'base64-to-image.html' },
-            { name: 'Icon 生成器',   file: 'favicon-generator.html' },
-            { name: 'EXIF 信息查看器', file: 'exif-viewer.html' },
+            { name: "图片格式转换", file: "image-converter.html" },
+            { name: "图片裁切", file: "image-cropper.html" },
+            { name: "图片对比", file: "image-comparison.html" },
+            { name: "图片切图分割", file: "image-splitter.html" },
+            { name: "图片转 Base64", file: "image-to-base64.html" },
+            { name: "Base64 转图片", file: "base64-to-image.html" },
+            { name: "Icon 生成器", file: "favicon-generator.html" },
+            { name: "EXIF 信息查看器", file: "exif-viewer.html" },
           ],
         },
         {
-          icon : '✍️',
-          label: '文本与效率',
+          icon: "✍️",
+          label: "文本与效率",
           tools: [
-            { name: 'Markdown 编辑器', file: 'markdown-editor.html' },
-            { name: '字数统计',     file: 'word-count.html'     },           
-            { name: 'Word 转 HTML',   file: 'word-to-html.html'   },
-            { name: '汉字转拼音',     file: 'chinese-to-pinyin.html'     },            
-            { name: '简体转繁体',    file: 'simplified-to-traditional.html'   },
-            { name: '繁体转简体',    file: 'traditional-to-simplified.html'   },
-            { name: 'Emoji 表情库', file: 'emoji-library.html' },
-            { name: '特殊符号大全',    file: 'special-characters.html'   },            
-          ],
-        },        
-        {
-          icon : '🎈',
-          label: '日常生活/趣味',
-          tools: [
-            { name: '随机密码生成器',   file: 'password-generator.html'     }, 
-            { name: '单位换算',     file: 'unit-converter.html'     },
-            { name: '二维码生成',   file: 'qr-code-generator.html'  },
-            { name: '每日一言',     file: 'daily-quote.html'     },
-            { name: '反应速度测试', file: 'reaction-test.html' },                      
-            { name: '交通标志查询',     file: 'traffic-signs.html'     },
-            { name: '常用号码查询',     file: 'useful-numbers.html'     },
-            { name: '国际区号查询',     file: 'country-codes.html'     },            
+            { name: "Markdown 编辑器", file: "markdown-editor.html" },
+            { name: "字数统计", file: "word-count.html" },
+            { name: "Word 转 HTML", file: "word-to-html.html" },
+            { name: "汉字转拼音", file: "chinese-to-pinyin.html" },
+            { name: "简体转繁体", file: "simplified-to-traditional.html" },
+            { name: "繁体转简体", file: "traditional-to-simplified.html" },
+            { name: "Emoji 表情库", file: "emoji-library.html" },
+            { name: "特殊符号大全", file: "special-characters.html" },
           ],
         },
-      ]
-      
-      const TOOLS = TOOL_GROUPS.flatMap(g => g.tools)
+        {
+          icon: "🎈",
+          label: "日常生活/趣味",
+          tools: [
+            { name: "随机密码生成器", file: "password-generator.html" },
+            { name: "单位换算", file: "unit-converter.html" },
+            { name: "二维码生成", file: "qr-code-generator.html" },
+            { name: "每日一言", file: "daily-quote.html" },
+            { name: "反应速度测试", file: "reaction-test.html" },
+            { name: "交通标志查询", file: "traffic-signs.html" },
+            { name: "常用号码查询", file: "useful-numbers.html" },
+            { name: "国际区号查询", file: "country-codes.html" },
+          ],
+        },
+      ];
+
+      const TOOLS = TOOL_GROUPS.flatMap((g) => g.tools);
     </script>
-    
+
     <!-- 安全策略 + 搜索引擎配置 -->
     <script src="src/scripts/security.js" defer></script>
     <script src="src/scripts/config.js"></script>
@@ -2043,28 +2656,29 @@
          主逻辑脚本（两端共用，移动/桌面差异通过 innerWidth 分支处理）
          ════════════════════════════════════════════════════════ -->
     <script>
-      const searchBox = document.getElementById('searchBox');
-      const grid = document.getElementById('toolsGrid');
-      const categoryBtns = document.querySelectorAll('.category-btn');
+      const searchBox = document.getElementById("searchBox");
+      const grid = document.getElementById("toolsGrid");
+      const categoryBtns = document.querySelectorAll(".category-btn");
 
       /* ── §A 搜索引擎选择与切换 ── */
-      const ENGINES = typeof SB_ENGINES !== 'undefined' ? SB_ENGINES : {};
-      const ENGINE_META = typeof SB_ENGINE_META !== 'undefined' ? SB_ENGINE_META : {};
+      const ENGINES = typeof SB_ENGINES !== "undefined" ? SB_ENGINES : {};
+      const ENGINE_META =
+        typeof SB_ENGINE_META !== "undefined" ? SB_ENGINE_META : {};
 
-      let currentEngine = 'local';
+      let currentEngine = "local";
 
-      const engineTrigger = document.getElementById('engineTrigger');
-      const engineDropdown = document.getElementById('engineDropdown');
-      const engineGrid = document.getElementById('engineGrid');
-      const engineLocal = document.getElementById('engineLocal');
-      const triggerIcon = document.getElementById('triggerIcon');
-      const searchSubmit = document.getElementById('searchSubmit');
-      const searchClear = document.getElementById('searchClear');
+      const engineTrigger = document.getElementById("engineTrigger");
+      const engineDropdown = document.getElementById("engineDropdown");
+      const engineGrid = document.getElementById("engineGrid");
+      const engineLocal = document.getElementById("engineLocal");
+      const triggerIcon = document.getElementById("triggerIcon");
+      const searchSubmit = document.getElementById("searchSubmit");
+      const searchClear = document.getElementById("searchClear");
 
       // ── 点击标题刷新网页 ──────────────────────────────────────────
-      document.querySelectorAll('.site-header h1').forEach(function(el) {
-        el.style.cursor = 'pointer';
-        el.addEventListener('click', function(e) {
+      document.querySelectorAll(".site-header h1").forEach(function (el) {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", function (e) {
           e.stopPropagation();
           location.reload();
         });
@@ -2072,54 +2686,58 @@
 
       // ── 清除叉号显隐 ──────────────────────────────────────────
       function updateClearBtn() {
-        searchClear.classList.toggle('visible', searchBox.value.length > 0);
+        searchClear.classList.toggle("visible", searchBox.value.length > 0);
       }
 
-      searchClear.addEventListener('click', () => {
-        searchBox.value = '';
-        searchClear.classList.remove('visible');
+      searchClear.addEventListener("click", () => {
+        searchBox.value = "";
+        searchClear.classList.remove("visible");
         searchBox.focus();
-        if (currentEngine === 'local') {
-          const catSites = currentIndex === 0
-            ? allSites
-            : allSites.filter(s => s._catIndex === currentIndex);
+        if (currentEngine === "local") {
+          const catSites =
+            currentIndex === 0
+              ? allSites
+              : allSites.filter((s) => s._catIndex === currentIndex);
           renderCards(catSites);
         }
       });
 
       // ── 引擎触发器状态 ────────────────────────────────────────
       function setTriggerLocal() {
-        triggerIcon.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
-        engineTrigger.classList.remove('engine-selected');
-        searchBox.placeholder = '搜索关键词...';
+        triggerIcon.innerHTML =
+          '<svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+        engineTrigger.classList.remove("engine-selected");
+        searchBox.placeholder = "搜索关键词...";
       }
 
       function setTriggerEngine(key) {
         const meta = ENGINE_META[key];
         if (!meta) return;
-        const iconDiv = document.createElement('div');
+        const iconDiv = document.createElement("div");
         iconDiv.style.cssText = `width:100%;height:100%;border-radius:inherit;background:${meta.bg};display:flex;align-items:center;justify-content:center;overflow:hidden;`;
-        iconDiv.innerHTML = meta.svgIcon || '';
-        triggerIcon.innerHTML = '';
+        iconDiv.innerHTML = meta.svgIcon || "";
+        triggerIcon.innerHTML = "";
         triggerIcon.appendChild(iconDiv);
-        engineTrigger.classList.add('engine-selected');
+        engineTrigger.classList.add("engine-selected");
         searchBox.placeholder = meta.placeholder || `用 ${meta.label} 搜索…`;
       }
 
       // ── 引擎网格 ──────────────────────────────────────────────
       function buildEngineGrid() {
-        engineGrid.querySelectorAll('.engine-item:not(#engineLocal)').forEach(el => el.remove());
-        Object.keys(ENGINE_META).forEach(key => {
+        engineGrid
+          .querySelectorAll(".engine-item:not(#engineLocal)")
+          .forEach((el) => el.remove());
+        Object.keys(ENGINE_META).forEach((key) => {
           const meta = ENGINE_META[key];
-          const item = document.createElement('div');
-          item.className = 'engine-item';
+          const item = document.createElement("div");
+          item.className = "engine-item";
           item.dataset.engine = key;
-          item.setAttribute('role', 'option');
+          item.setAttribute("role", "option");
           item.innerHTML = `
-            <div class="engine-item-icon" style="background:${meta.bg}">${meta.svgIcon || ''}</div>
+            <div class="engine-item-icon" style="background:${meta.bg}">${meta.svgIcon || ""}</div>
             <span class="engine-item-label">${meta.label}</span>
           `;
-          item.addEventListener('click', () => selectEngine(key));
+          item.addEventListener("click", () => selectEngine(key));
           engineGrid.appendChild(item);
         });
       }
@@ -2130,72 +2748,87 @@
       // ── 引擎切换 ──────────────────────────────────────────────
       function selectEngine(key) {
         currentEngine = key;
-        document.querySelectorAll('.engine-item').forEach(el => el.classList.toggle('selected', el.dataset.engine === key));
-        engineLocal.classList.remove('selected');
+        document
+          .querySelectorAll(".engine-item")
+          .forEach((el) =>
+            el.classList.toggle("selected", el.dataset.engine === key),
+          );
+        engineLocal.classList.remove("selected");
         setTriggerEngine(key);
-        searchSubmit.classList.add('visible');
-        searchBox.value = '';
-        searchClear.classList.remove('visible');
+        searchSubmit.classList.add("visible");
+        searchBox.value = "";
+        searchClear.classList.remove("visible");
         closeDropdown();
         searchBox.focus();
       }
 
       function selectLocal() {
-        currentEngine = 'local';
-        document.querySelectorAll('.engine-item').forEach(el => el.classList.remove('selected'));
-        engineLocal.classList.add('selected');
+        currentEngine = "local";
+        document
+          .querySelectorAll(".engine-item")
+          .forEach((el) => el.classList.remove("selected"));
+        engineLocal.classList.add("selected");
         setTriggerLocal();
-        searchSubmit.classList.remove('visible');
-        searchBox.value = '';
-        searchClear.classList.remove('visible');
-        const catSites = currentIndex === 0
-          ? allSites
-          : allSites.filter(s => s._catIndex === currentIndex);
+        searchSubmit.classList.remove("visible");
+        searchBox.value = "";
+        searchClear.classList.remove("visible");
+        const catSites =
+          currentIndex === 0
+            ? allSites
+            : allSites.filter((s) => s._catIndex === currentIndex);
         renderCards(catSites);
         closeDropdown();
         searchBox.focus();
       }
 
-      engineLocal.addEventListener('click', selectLocal);
+      engineLocal.addEventListener("click", selectLocal);
 
       // ── 下拉面板开关 ──────────────────────────────────────────
       function openDropdown() {
-        settingsFabGroup.classList.remove('expanded');
-        settingsFabBtn.classList.remove('open');
-        engineDropdown.classList.add('open');
-        engineTrigger.classList.add('open');
-        engineTrigger.setAttribute('aria-expanded', 'true');
-        history.pushState({ dropdownOpen: true }, '');
+        settingsFabGroup.classList.remove("expanded");
+        settingsFabBtn.classList.remove("open");
+        engineDropdown.classList.add("open");
+        engineTrigger.classList.add("open");
+        engineTrigger.setAttribute("aria-expanded", "true");
+        history.pushState({ dropdownOpen: true }, "");
       }
       function closeDropdown() {
-        engineDropdown.classList.remove('open');
-        engineTrigger.classList.remove('open');
-        engineTrigger.setAttribute('aria-expanded', 'false');
+        engineDropdown.classList.remove("open");
+        engineTrigger.classList.remove("open");
+        engineTrigger.setAttribute("aria-expanded", "false");
       }
 
-      window.addEventListener('popstate', () => {
-        if (engineDropdown.classList.contains('open')) closeDropdown();
+      window.addEventListener("popstate", () => {
+        if (engineDropdown.classList.contains("open")) closeDropdown();
       });
-      engineTrigger.addEventListener('click', e => {
+      engineTrigger.addEventListener("click", (e) => {
         e.stopPropagation();
-        engineDropdown.classList.contains('open') ? closeDropdown() : openDropdown();
+        engineDropdown.classList.contains("open")
+          ? closeDropdown()
+          : openDropdown();
       });
-      document.addEventListener('click', e => {
-        if (!engineDropdown.contains(e.target) && !engineTrigger.contains(e.target)) closeDropdown();
+      document.addEventListener("click", (e) => {
+        if (
+          !engineDropdown.contains(e.target) &&
+          !engineTrigger.contains(e.target)
+        )
+          closeDropdown();
       });
 
       // ── 全网搜索 ──────────────────────────────────────────────
       function doWebSearch() {
         const q = searchBox.value.trim();
-        if (!q || currentEngine === 'local') return;
+        if (!q || currentEngine === "local") return;
         const fn = ENGINES[currentEngine];
-        if (fn) window.open(fn(q), '_blank', 'noopener');
+        if (fn) window.open(fn(q), "_blank", "noopener");
       }
-      searchSubmit.addEventListener('click', doWebSearch);
+      searchSubmit.addEventListener("click", doWebSearch);
 
       /* ── §B 分类数据加载与卡片渲染（懒加载分页） ── */
       // ── 分类按钮索引初始化 ────────────────────────────────────
-      categoryBtns.forEach((btn, i) => { btn.dataset.index = i; });
+      categoryBtns.forEach((btn, i) => {
+        btn.dataset.index = i;
+      });
 
       let currentIndex = 0;
       let allSites = [];
@@ -2209,9 +2842,10 @@
       let _lazyObserver = null;
 
       function buildCard(site, i) {
-        const card = document.createElement('div');
-        card.className = 'tool-card theme-anim';
-        const PERIOD = 3000, STAGGER = 400;
+        const card = document.createElement("div");
+        card.className = "tool-card theme-anim";
+        const PERIOD = 3000,
+          STAGGER = 400;
         const phaseMs = (performance.now() + i * STAGGER) % PERIOD;
         const delay = -(phaseMs / 1000).toFixed(3);
         const iconHtml = site.icon
@@ -2219,13 +2853,13 @@
           : `<span class="tool-icon-skeleton"></span>`;
         card.innerHTML = `
           ${iconHtml}
-          <h3 class="tool-title">${site.title || ''}</h3>
-          <p class="tool-description">${site.description || ''}</p>
+          <h3 class="tool-title">${site.title || ""}</h3>
+          <p class="tool-description">${site.description || ""}</p>
           <a href="go.html?url=${encodeURIComponent(site.url)}" target="_blank" rel="noopener noreferrer nofollow ugc" class="tool-link theme-anim">访问</a>
         `;
-        card.addEventListener('click', function(e) {
-          if (!e.target.classList.contains('tool-link')) {
-            const link = this.querySelector('.tool-link');
+        card.addEventListener("click", function (e) {
+          if (!e.target.classList.contains("tool-link")) {
+            const link = this.querySelector(".tool-link");
             if (link) link.click();
           }
         });
@@ -2234,16 +2868,18 @@
 
       function appendChunk() {
         if (_lazyOffset >= _lazyItems.length) return;
-        const oldSentinel = grid.querySelector('.lazy-sentinel');
+        const oldSentinel = grid.querySelector(".lazy-sentinel");
         if (oldSentinel) oldSentinel.remove();
         const chunk = _lazyItems.slice(_lazyOffset, _lazyOffset + PAGE_SIZE);
         const frag = document.createDocumentFragment();
-        chunk.forEach((site, j) => frag.appendChild(buildCard(site, _lazyOffset + j)));
+        chunk.forEach((site, j) =>
+          frag.appendChild(buildCard(site, _lazyOffset + j)),
+        );
         _lazyOffset += chunk.length;
         if (_lazyOffset < _lazyItems.length) {
-          const sentinel = document.createElement('div');
-          sentinel.className = 'lazy-sentinel';
-          sentinel.style.cssText = 'height:1px;grid-column:1/-1';
+          const sentinel = document.createElement("div");
+          sentinel.className = "lazy-sentinel";
+          sentinel.style.cssText = "height:1px;grid-column:1/-1";
           frag.appendChild(sentinel);
           grid.appendChild(frag);
           _lazyObserver.observe(sentinel);
@@ -2252,29 +2888,39 @@
         }
       }
 
-      function renderCards(sites, searchTerm = '') {
-        if (_lazyObserver) { _lazyObserver.disconnect(); _lazyObserver = null; }
-        grid.innerHTML = '';
+      function renderCards(sites, searchTerm = "") {
+        if (_lazyObserver) {
+          _lazyObserver.disconnect();
+          _lazyObserver = null;
+        }
+        grid.innerHTML = "";
         const term = searchTerm.toLowerCase().trim();
-        _lazyItems = sites.filter(site => {
+        _lazyItems = sites.filter((site) => {
           if (!term) return true;
-          return (site.title || '').toLowerCase().includes(term) ||
-                 (site.description || '').toLowerCase().includes(term);
+          return (
+            (site.title || "").toLowerCase().includes(term) ||
+            (site.description || "").toLowerCase().includes(term)
+          );
         });
         _lazyOffset = 0;
         if (_lazyItems.length === 0) {
-          grid.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">📭 暂无内容</p>';
+          grid.innerHTML =
+            '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">📭 暂无内容</p>';
           return;
         }
-        const scrollRoot = window.innerWidth >= 769
-          ? document.querySelector('.main-content')
-          : null;
-        _lazyObserver = new IntersectionObserver(entries => {
-          if (entries[0].isIntersecting) {
-            entries[0].target.remove();
-            appendChunk();
-          }
-        }, { root: scrollRoot, rootMargin: '200px' });
+        const scrollRoot =
+          window.innerWidth >= 769
+            ? document.querySelector(".main-content")
+            : null;
+        _lazyObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              entries[0].target.remove();
+              appendChunk();
+            }
+          },
+          { root: scrollRoot, rootMargin: "200px" },
+        );
         appendChunk();
       }
 
@@ -2282,13 +2928,14 @@
       function updateCount(index) {
         const btn = categoryBtns[index];
         if (!btn) return;
-        const count = index === 0
-          ? allSites.length
-          : allSites.filter(s => s._catIndex === index).length;
-        let badge = btn.querySelector('.cat-count');
+        const count =
+          index === 0
+            ? allSites.length
+            : allSites.filter((s) => s._catIndex === index).length;
+        let badge = btn.querySelector(".cat-count");
         if (!badge) {
-          badge = document.createElement('span');
-          badge.className = 'cat-count';
+          badge = document.createElement("span");
+          badge.className = "cat-count";
           btn.appendChild(badge);
         }
         badge.textContent = count;
@@ -2302,7 +2949,7 @@
           if (!res.ok) return;
           const data = await res.json();
           const arr = Array.isArray(data) ? data : [];
-          arr.forEach(site => (site._catIndex = index));
+          arr.forEach((site) => (site._catIndex = index));
           allSites = allSites.concat(arr);
           loadedIndexes.add(index);
           updateCount(index);
@@ -2326,22 +2973,25 @@
           renderCards(allSites, term);
         } else {
           await loadCategory(index);
-          renderCards(allSites.filter(s => s._catIndex === index), term);
+          renderCards(
+            allSites.filter((s) => s._catIndex === index),
+            term,
+          );
         }
       }
 
       // ── 分类按钮点击 ──────────────────────────────────────────
-      categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          categoryBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          categoryBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
           // 切换分类时清空搜索栏内容
           if (searchBox.value) {
-            searchBox.value = '';
+            searchBox.value = "";
             updateClearBtn();
           }
           if (window.innerWidth >= 769) {
-            const mainContent = document.querySelector('.main-content');
+            const mainContent = document.querySelector(".main-content");
             if (mainContent) mainContent.scrollTop = 0;
           } else {
             window.scrollTo(0, 0);
@@ -2351,16 +3001,17 @@
       });
 
       // ── 搜索输入 ──────────────────────────────────────────────
-      searchBox.addEventListener('input', function() {
+      searchBox.addEventListener("input", function () {
         updateClearBtn();
-        if (currentEngine !== 'local') return;
+        if (currentEngine !== "local") return;
         const term = this.value.toLowerCase().trim();
         if (term) {
           renderCards(allSites, term);
         } else {
-          const catSites = currentIndex === 0
-            ? allSites
-            : allSites.filter(s => s._catIndex === currentIndex);
+          const catSites =
+            currentIndex === 0
+              ? allSites
+              : allSites.filter((s) => s._catIndex === currentIndex);
           renderCards(catSites);
         }
         scrollContentToTop();
@@ -2369,7 +3020,7 @@
       // ── 内容滚动回顶部 ────────────────────────────────────────
       function scrollContentToTop() {
         if (window.innerWidth >= 769) {
-          const mainContent = document.querySelector('.main-content');
+          const mainContent = document.querySelector(".main-content");
           if (mainContent) mainContent.scrollTop = 0;
         } else {
           window.scrollTo(0, 0);
@@ -2377,27 +3028,31 @@
       }
 
       // ── 键盘快捷键 ────────────────────────────────────────────
-      document.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      document.addEventListener("keydown", function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === "k") {
           e.preventDefault();
           searchBox.focus();
         }
-        if (e.key === 'Escape') {
-          if (engineDropdown.classList.contains('open')) { closeDropdown(); return; }
+        if (e.key === "Escape") {
+          if (engineDropdown.classList.contains("open")) {
+            closeDropdown();
+            return;
+          }
           if (document.activeElement === searchBox) {
-            searchBox.value = '';
-            searchClear.classList.remove('visible');
-            if (currentEngine === 'local') {
-              const catSites = currentIndex === 0
-                ? allSites
-                : allSites.filter(s => s._catIndex === currentIndex);
+            searchBox.value = "";
+            searchClear.classList.remove("visible");
+            if (currentEngine === "local") {
+              const catSites =
+                currentIndex === 0
+                  ? allSites
+                  : allSites.filter((s) => s._catIndex === currentIndex);
               renderCards(catSites);
             }
             searchBox.blur();
           }
         }
-        if (e.key === 'Enter' && document.activeElement === searchBox) {
-          if (currentEngine !== 'local') doWebSearch();
+        if (e.key === "Enter" && document.activeElement === searchBox) {
+          if (currentEngine !== "local") doWebSearch();
         }
       });
 
@@ -2406,29 +3061,37 @@
 
       /* ── §C 悬浮控件：回顶部 / 底部发光 / 主题切换 / 菜单 FAB ── */
       // ── 回顶部 & 底部发光 ──────────────────────────────────────
-      const backToTopBtn = document.getElementById('backToTop');
-      const scrollBottomGlow = document.getElementById('scrollBottomGlow');
+      const backToTopBtn = document.getElementById("backToTop");
+      const scrollBottomGlow = document.getElementById("scrollBottomGlow");
       const SCROLL_THRESHOLD = 300;
-      const mainContentEl = document.querySelector('.main-content');
+      const mainContentEl = document.querySelector(".main-content");
 
       let _glowOn = false;
       let _glowOffTimer = null;
 
       function glowShow() {
-        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null; }
+        if (_glowOffTimer) {
+          clearTimeout(_glowOffTimer);
+          _glowOffTimer = null;
+        }
         if (_glowOn) return;
         _glowOn = true;
-        scrollBottomGlow.classList.remove('fade-out');
-        scrollBottomGlow.classList.add('active');
+        scrollBottomGlow.classList.remove("fade-out");
+        scrollBottomGlow.classList.add("active");
       }
 
       function glowHide() {
-        if (_glowOffTimer) { clearTimeout(_glowOffTimer); _glowOffTimer = null; }
+        if (_glowOffTimer) {
+          clearTimeout(_glowOffTimer);
+          _glowOffTimer = null;
+        }
         if (!_glowOn) return;
         _glowOn = false;
-        scrollBottomGlow.classList.remove('active');
-        scrollBottomGlow.classList.add('fade-out');
-        setTimeout(function() { scrollBottomGlow.classList.remove('fade-out'); }, 550);
+        scrollBottomGlow.classList.remove("active");
+        scrollBottomGlow.classList.add("fade-out");
+        setTimeout(function () {
+          scrollBottomGlow.classList.remove("fade-out");
+        }, 550);
       }
 
       function glowAtBottom() {
@@ -2437,86 +3100,106 @@
         _glowOffTimer = setTimeout(glowHide, 350);
       }
 
-      mainContentEl.addEventListener('scroll', function() {
-        if (window.innerWidth < 769) return;
-        const st = mainContentEl.scrollTop;
-        const ch = mainContentEl.clientHeight;
-        const sh = mainContentEl.scrollHeight;
-        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD);
-        if (st + ch >= sh - 4) { glowAtBottom(); } else { glowHide(); }
-      }, { passive: true });
+      mainContentEl.addEventListener(
+        "scroll",
+        function () {
+          if (window.innerWidth < 769) return;
+          const st = mainContentEl.scrollTop;
+          const ch = mainContentEl.clientHeight;
+          const sh = mainContentEl.scrollHeight;
+          backToTopBtn.classList.toggle("visible", st > SCROLL_THRESHOLD);
+          if (st + ch >= sh - 4) {
+            glowAtBottom();
+          } else {
+            glowHide();
+          }
+        },
+        { passive: true },
+      );
 
-      window.addEventListener('scroll', function() {
-        if (window.innerWidth >= 769) return;
-        const st = window.scrollY;
-        const ch = window.innerHeight;
-        const sh = document.documentElement.scrollHeight;
-        backToTopBtn.classList.toggle('visible', st > SCROLL_THRESHOLD);
-        if (st + ch >= sh - 4) { glowAtBottom(); } else { glowHide(); }
-      }, { passive: true });
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (window.innerWidth >= 769) return;
+          const st = window.scrollY;
+          const ch = window.innerHeight;
+          const sh = document.documentElement.scrollHeight;
+          backToTopBtn.classList.toggle("visible", st > SCROLL_THRESHOLD);
+          if (st + ch >= sh - 4) {
+            glowAtBottom();
+          } else {
+            glowHide();
+          }
+        },
+        { passive: true },
+      );
 
-      backToTopBtn.addEventListener('click', function() {
+      backToTopBtn.addEventListener("click", function () {
         if (window.innerWidth >= 769) {
-          mainContentEl.scrollTo({ top: 0, behavior: 'smooth' });
+          mainContentEl.scrollTo({ top: 0, behavior: "smooth" });
         } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
       });
 
       // ── 主题切换 ──────────────────────────────────────────────
-      const themeToggleBtn = document.getElementById('themeToggle');
-      const themeColorMeta = document.getElementById('themeColorMeta');
-      const DARK_KEY = 'xingyuan-dark-mode';
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const themeColorMeta = document.getElementById("themeColorMeta");
+      const DARK_KEY = "xingyuan-dark-mode";
       let themeTimer = null;
 
       function applyTheme(isDark, animate = false) {
-        themeColorMeta.setAttribute('content', '#007EE6');
+        themeColorMeta.setAttribute("content", "#007EE6");
         if (animate) {
           if (themeTimer) clearTimeout(themeTimer);
-          document.body.classList.add('theme-transitioning');
+          document.body.classList.add("theme-transitioning");
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              document.body.classList.toggle('dark', isDark);
-              themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
-              themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式';
+              document.body.classList.toggle("dark", isDark);
+              themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
+              themeToggleBtn.dataset.tooltip = isDark
+                ? "切换浅色模式"
+                : "切换深色模式";
             });
           });
           themeTimer = setTimeout(() => {
-            document.body.classList.remove('theme-transitioning');
+            document.body.classList.remove("theme-transitioning");
             themeTimer = null;
           }, 400);
         } else {
-          document.body.classList.toggle('dark', isDark);
-          themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
-          themeToggleBtn.dataset.tooltip = isDark ? '切换浅色模式' : '切换深色模式';
+          document.body.classList.toggle("dark", isDark);
+          themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
+          themeToggleBtn.dataset.tooltip = isDark
+            ? "切换浅色模式"
+            : "切换深色模式";
         }
       }
 
       const savedDark = localStorage.getItem(DARK_KEY);
-      const prefersDark = savedDark === 'true';
+      const prefersDark = savedDark === "true";
       applyTheme(prefersDark, false);
 
-      themeToggleBtn.addEventListener('click', function() {
-        const isDark = !document.body.classList.contains('dark');
+      themeToggleBtn.addEventListener("click", function () {
+        const isDark = !document.body.classList.contains("dark");
         applyTheme(isDark, true);
-        localStorage.setItem(DARK_KEY, isDark ? 'true' : 'false');
+        localStorage.setItem(DARK_KEY, isDark ? "true" : "false");
       });
 
       // ── 菜单 FAB 展开/收起 ────────────────────────────────────
-      const settingsFabBtn = document.getElementById('settingsFab');
-      const settingsFabGroup = document.getElementById('settingsFabGroup');
+      const settingsFabBtn = document.getElementById("settingsFab");
+      const settingsFabGroup = document.getElementById("settingsFabGroup");
 
-      settingsFabBtn.addEventListener('click', function(e) {
+      settingsFabBtn.addEventListener("click", function (e) {
         closeDropdown();
         e.stopPropagation();
-        const isOpen = settingsFabGroup.classList.toggle('expanded');
-        settingsFabBtn.classList.toggle('open', isOpen);
+        const isOpen = settingsFabGroup.classList.toggle("expanded");
+        settingsFabBtn.classList.toggle("open", isOpen);
       });
 
-      document.addEventListener('click', function(e) {
+      document.addEventListener("click", function (e) {
         if (!settingsFabGroup.contains(e.target)) {
-          settingsFabGroup.classList.remove('expanded');
-          settingsFabBtn.classList.remove('open');
+          settingsFabGroup.classList.remove("expanded");
+          settingsFabBtn.classList.remove("open");
         }
       });
 
@@ -2526,15 +3209,15 @@
       function lockScroll() {
         _modalLockCount++;
         if (_modalLockCount === 1) {
-          document.body.classList.add('modal-open');
-          document.documentElement.classList.add('modal-open');
+          document.body.classList.add("modal-open");
+          document.documentElement.classList.add("modal-open");
         }
       }
       function unlockScroll() {
         if (_modalLockCount > 0) _modalLockCount--;
         if (_modalLockCount === 0) {
-          document.body.classList.remove('modal-open');
-          document.documentElement.classList.remove('modal-open');
+          document.body.classList.remove("modal-open");
+          document.documentElement.classList.remove("modal-open");
         }
       }
 
@@ -2546,32 +3229,32 @@
 
         function open() {
           closeDropdown();
-          modal.classList.remove('open');
+          modal.classList.remove("open");
           void modal.offsetHeight;
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              modal.classList.add('open');
+              modal.classList.add("open");
               lockScroll();
-              settingsFabGroup.classList.remove('expanded');
-              settingsFabBtn.classList.remove('open');
+              settingsFabGroup.classList.remove("expanded");
+              settingsFabBtn.classList.remove("open");
               const state = {};
               state[stateKey] = true;
-              history.pushState(state, '');
+              history.pushState(state, "");
             });
           });
         }
 
         function close() {
-          modal.classList.remove('open');
+          modal.classList.remove("open");
           if (closeTimer) clearTimeout(closeTimer);
           const onTransitionEnd = () => {
-            modal.removeEventListener('transitionend', onTransitionEnd);
+            modal.removeEventListener("transitionend", onTransitionEnd);
             unlockScroll();
             closeTimer = null;
           };
-          modal.addEventListener('transitionend', onTransitionEnd);
+          modal.addEventListener("transitionend", onTransitionEnd);
           closeTimer = setTimeout(() => {
-            modal.removeEventListener('transitionend', onTransitionEnd);
+            modal.removeEventListener("transitionend", onTransitionEnd);
             unlockScroll();
             closeTimer = null;
           }, 450);
@@ -2582,181 +3265,220 @@
 
       /* ── §D 模态框：赞赏 / 关于本站 / 简单工具 ── */
       // ── 赞赏 ──
-      const sponsorHandler = createModalHandler('sponsorModal', 'sponsorOpen');
-      document.getElementById('sponsorBtn').addEventListener('click', (e) => {
+      const sponsorHandler = createModalHandler("sponsorModal", "sponsorOpen");
+      document.getElementById("sponsorBtn").addEventListener("click", (e) => {
         e.stopPropagation();
         if (sponsorHandler) sponsorHandler.open();
       });
-      document.getElementById('sponsorClose').addEventListener('click', () => {
+      document.getElementById("sponsorClose").addEventListener("click", () => {
         if (history.state && history.state.sponsorOpen) history.back();
         else if (sponsorHandler) sponsorHandler.close();
       });
-      document.getElementById('sponsorModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-          if (history.state && history.state.sponsorOpen) history.back();
-          else if (sponsorHandler) sponsorHandler.close();
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && document.getElementById('sponsorModal').classList.contains('open')) {
+      document
+        .getElementById("sponsorModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            if (history.state && history.state.sponsorOpen) history.back();
+            else if (sponsorHandler) sponsorHandler.close();
+          }
+        });
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("sponsorModal").classList.contains("open")
+        ) {
           if (history.state && history.state.sponsorOpen) history.back();
           else if (sponsorHandler) sponsorHandler.close();
         }
       });
 
       // ── 关于本站 ──
-      const disclaimerHandler = createModalHandler('disclaimerModal', 'disclaimerOpen');
-      document.getElementById('disclaimerBtn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (disclaimerHandler) disclaimerHandler.open();
-      });
-      document.getElementById('disclaimerClose').addEventListener('click', () => {
-        if (history.state && history.state.disclaimerOpen) history.back();
-        else if (disclaimerHandler) disclaimerHandler.close();
-      });
-      document.getElementById('disclaimerModal').addEventListener('click', function(e) {
-        if (e.target === this) {
+      const disclaimerHandler = createModalHandler(
+        "disclaimerModal",
+        "disclaimerOpen",
+      );
+      document
+        .getElementById("disclaimerBtn")
+        .addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (disclaimerHandler) disclaimerHandler.open();
+        });
+      document
+        .getElementById("disclaimerClose")
+        .addEventListener("click", () => {
           if (history.state && history.state.disclaimerOpen) history.back();
           else if (disclaimerHandler) disclaimerHandler.close();
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && document.getElementById('disclaimerModal').classList.contains('open')) {
+        });
+      document
+        .getElementById("disclaimerModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            if (history.state && history.state.disclaimerOpen) history.back();
+            else if (disclaimerHandler) disclaimerHandler.close();
+          }
+        });
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("disclaimerModal").classList.contains("open")
+        ) {
           if (history.state && history.state.disclaimerOpen) history.back();
           else if (disclaimerHandler) disclaimerHandler.close();
         }
       });
 
       // ── 简单工具 ──
-      const toolboxHandler = createModalHandler('toolboxModal', 'toolboxOpen');
-      document.getElementById('toolboxBtn').addEventListener('click', (e) => {
+      const toolboxHandler = createModalHandler("toolboxModal", "toolboxOpen");
+      document.getElementById("toolboxBtn").addEventListener("click", (e) => {
         e.stopPropagation();
-        renderToolList('');
-        document.getElementById('toolboxSearch').value = '';
-        document.getElementById('toolboxSearchClear').classList.remove('visible');
+        renderToolList("");
+        document.getElementById("toolboxSearch").value = "";
+        document
+          .getElementById("toolboxSearchClear")
+          .classList.remove("visible");
         if (toolboxHandler) toolboxHandler.open();
       });
-      document.getElementById('toolboxClose').addEventListener('click', () => {
+      document.getElementById("toolboxClose").addEventListener("click", () => {
         if (history.state && history.state.toolboxOpen) history.back();
         else if (toolboxHandler) toolboxHandler.close();
       });
-      document.getElementById('toolboxModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-          if (history.state && history.state.toolboxOpen) history.back();
-          else if (toolboxHandler) toolboxHandler.close();
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && document.getElementById('toolboxModal').classList.contains('open')) {
+      document
+        .getElementById("toolboxModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            if (history.state && history.state.toolboxOpen) history.back();
+            else if (toolboxHandler) toolboxHandler.close();
+          }
+        });
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("toolboxModal").classList.contains("open")
+        ) {
           if (history.state && history.state.toolboxOpen) history.back();
           else if (toolboxHandler) toolboxHandler.close();
         }
       });
 
       // ── 复制链接 ──────────────────────────────────────────
-      const copyLinkBtn = document.getElementById('copyLinkBtn');
-      const copyLinkToast = document.getElementById('copyLinkToast');
-      const SITE_URL = 'https://nanlin3368.github.io/navigation';
+      const copyLinkBtn = document.getElementById("copyLinkBtn");
+      const copyLinkToast = document.getElementById("copyLinkToast");
+      const SITE_URL = "https://nanlin3368.github.io/navigation";
       let _copyToastTimer = null;
 
       function showCopyToast() {
         if (_copyToastTimer) clearTimeout(_copyToastTimer);
-        copyLinkToast.classList.add('show');
+        copyLinkToast.classList.add("show");
         _copyToastTimer = setTimeout(() => {
-          copyLinkToast.classList.remove('show');
+          copyLinkToast.classList.remove("show");
           _copyToastTimer = null;
         }, 2000);
       }
 
-      copyLinkBtn.addEventListener('click', function(e) {
+      copyLinkBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         const url = SITE_URL || location.href;
-        navigator.clipboard.writeText(url).then(() => {
-          showCopyToast();
-        }).catch(() => {
-          const inp = document.createElement('input');
-          inp.value = url;
-          document.body.appendChild(inp);
-          inp.select();
-          document.execCommand('copy');
-          document.body.removeChild(inp);
-          showCopyToast();
-        });
-        settingsFabGroup.classList.remove('expanded');
-        settingsFabBtn.classList.remove('open');
+        navigator.clipboard
+          .writeText(url)
+          .then(() => {
+            showCopyToast();
+          })
+          .catch(() => {
+            const inp = document.createElement("input");
+            inp.value = url;
+            document.body.appendChild(inp);
+            inp.select();
+            document.execCommand("copy");
+            document.body.removeChild(inp);
+            showCopyToast();
+          });
+        settingsFabGroup.classList.remove("expanded");
+        settingsFabBtn.classList.remove("open");
       });
 
       /* ── §E 移动端专属交互：分类抽屉同步 / 侧滑抽屉开关 ── */
-      const categoriesEl = document.getElementById('categoriesEl');
-      const sidebarNav = document.getElementById('sidebarNav');
-      const mobileDrawerNav = document.getElementById('mobileDrawerNav');
+      const categoriesEl = document.getElementById("categoriesEl");
+      const sidebarNav = document.getElementById("sidebarNav");
+      const mobileDrawerNav = document.getElementById("mobileDrawerNav");
 
       function syncCategoriesPlacement() {
         if (window.innerWidth >= 769) {
           if (sidebarNav && categoriesEl.parentNode !== sidebarNav) {
-            categoriesEl.classList.add('mobile-categories');
+            categoriesEl.classList.add("mobile-categories");
             sidebarNav.appendChild(categoriesEl);
           }
         } else {
           if (mobileDrawerNav && categoriesEl.parentNode !== mobileDrawerNav) {
-            categoriesEl.classList.remove('mobile-categories');
+            categoriesEl.classList.remove("mobile-categories");
             mobileDrawerNav.appendChild(categoriesEl);
           }
         }
       }
 
       syncCategoriesPlacement();
-      window.addEventListener('resize', syncCategoriesPlacement);
+      window.addEventListener("resize", syncCategoriesPlacement);
 
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileDrawer = document.getElementById('mobileDrawer');
-      const mobileDrawerOverlay = document.getElementById('mobileDrawerOverlay');
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      const mobileDrawerOverlay = document.getElementById(
+        "mobileDrawerOverlay",
+      );
 
       function openDrawer() {
         closeDropdown();
-        mobileDrawer.classList.add('open');
-        mobileDrawerOverlay.style.display = 'block';
+        mobileDrawer.classList.add("open");
+        mobileDrawerOverlay.style.display = "block";
         mobileDrawerOverlay.offsetHeight;
-        mobileDrawerOverlay.classList.add('open');
-        document.documentElement.style.overflow = 'hidden';
-        document.body.classList.add('drawer-open');
-        if (mobileMenuBtn) mobileMenuBtn.classList.add('open');
-        history.pushState({ drawerOpen: true }, '');
+        mobileDrawerOverlay.classList.add("open");
+        document.documentElement.style.overflow = "hidden";
+        document.body.classList.add("drawer-open");
+        if (mobileMenuBtn) mobileMenuBtn.classList.add("open");
+        history.pushState({ drawerOpen: true }, "");
       }
       function closeDrawer() {
-        mobileDrawer.classList.remove('open');
-        mobileDrawerOverlay.classList.remove('open');
-        document.documentElement.style.overflow = '';
-        document.body.classList.remove('drawer-open');
-        if (mobileMenuBtn) mobileMenuBtn.classList.remove('open');
-        mobileDrawerOverlay.addEventListener('transitionend', function handler() {
-          if (!mobileDrawerOverlay.classList.contains('open')) {
-            mobileDrawerOverlay.style.display = 'none';
-          }
-          mobileDrawerOverlay.removeEventListener('transitionend', handler);
-        });
+        mobileDrawer.classList.remove("open");
+        mobileDrawerOverlay.classList.remove("open");
+        document.documentElement.style.overflow = "";
+        document.body.classList.remove("drawer-open");
+        if (mobileMenuBtn) mobileMenuBtn.classList.remove("open");
+        mobileDrawerOverlay.addEventListener(
+          "transitionend",
+          function handler() {
+            if (!mobileDrawerOverlay.classList.contains("open")) {
+              mobileDrawerOverlay.style.display = "none";
+            }
+            mobileDrawerOverlay.removeEventListener("transitionend", handler);
+          },
+        );
       }
 
-      window.addEventListener('popstate', function() {
-        if (document.getElementById('toolboxModal').classList.contains('open')) {
+      window.addEventListener("popstate", function () {
+        if (
+          document.getElementById("toolboxModal").classList.contains("open")
+        ) {
           if (toolboxHandler) toolboxHandler.close();
-        } else if (document.getElementById('disclaimerModal').classList.contains('open')) {
+        } else if (
+          document.getElementById("disclaimerModal").classList.contains("open")
+        ) {
           if (disclaimerHandler) disclaimerHandler.close();
-        } else if (document.getElementById('sponsorModal').classList.contains('open')) {
+        } else if (
+          document.getElementById("sponsorModal").classList.contains("open")
+        ) {
           if (sponsorHandler) sponsorHandler.close();
-        } else if (mobileDrawer.classList.contains('open')) {
+        } else if (mobileDrawer.classList.contains("open")) {
           closeDrawer();
         }
       });
 
-      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
-      if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', function() {
-        if (history.state && history.state.drawerOpen) history.back();
-        else closeDrawer();
-      });
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", openDrawer);
+      if (mobileDrawerOverlay)
+        mobileDrawerOverlay.addEventListener("click", function () {
+          if (history.state && history.state.drawerOpen) history.back();
+          else closeDrawer();
+        });
       if (mobileDrawerNav) {
-        mobileDrawerNav.addEventListener('click', function(e) {
-          if (e.target.closest('.category-btn')) {
+        mobileDrawerNav.addEventListener("click", function (e) {
+          if (e.target.closest(".category-btn")) {
             if (history.state && history.state.drawerOpen) history.back();
             else closeDrawer();
           }
@@ -2764,74 +3486,78 @@
       }
 
       /* ── §F 简单工具列表渲染与搜索 ── */
-      const toolboxSearch = document.getElementById('toolboxSearch');
-      const toolboxSearchClear = document.getElementById('toolboxSearchClear');
+      const toolboxSearch = document.getElementById("toolboxSearch");
+      const toolboxSearchClear = document.getElementById("toolboxSearchClear");
 
       function renderToolList(keyword) {
-        const list = document.getElementById('toolboxList');
+        const list = document.getElementById("toolboxList");
         if (!list) return;
-        const kw = (keyword || '').trim().toLowerCase();
+        const kw = (keyword || "").trim().toLowerCase();
 
         if (kw) {
-          const filtered = TOOLS.filter(t => t.name.toLowerCase().includes(kw));
-          const countNum = document.getElementById('toolboxCountNum');
+          const filtered = TOOLS.filter((t) =>
+            t.name.toLowerCase().includes(kw),
+          );
+          const countNum = document.getElementById("toolboxCountNum");
           if (countNum) countNum.textContent = filtered.length;
           if (filtered.length === 0) {
             list.innerHTML = `<p class="toolbox-empty">🤷 没有找到"${keyword}"相关工具</p>`;
             return;
           }
-          list.innerHTML = '';
-          filtered.forEach(function(tool) {
-            const a = document.createElement('a');
-            a.className = 'toolbox-item';
+          list.innerHTML = "";
+          filtered.forEach(function (tool) {
+            const a = document.createElement("a");
+            a.className = "toolbox-item";
             a.href = TOOLS_BASE + tool.file;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
             a.innerHTML = `<span class="toolbox-item-name">${tool.name}</span><span class="toolbox-item-arrow">›</span>`;
             list.appendChild(a);
           });
           return;
         }
 
-        const countNum = document.getElementById('toolboxCountNum');
+        const countNum = document.getElementById("toolboxCountNum");
         if (countNum) countNum.textContent = TOOLS.length;
-        list.innerHTML = '';
-        TOOL_GROUPS.forEach(function(group) {
-          const header = document.createElement('div');
-          header.className = 'toolbox-group-header';
+        list.innerHTML = "";
+        TOOL_GROUPS.forEach(function (group) {
+          const header = document.createElement("div");
+          header.className = "toolbox-group-header";
           header.innerHTML = `<span class="toolbox-group-icon">${group.icon}</span><span class="toolbox-group-name">${group.label}</span>`;
           list.appendChild(header);
-          group.tools.forEach(function(tool) {
-            const a = document.createElement('a');
-            a.className = 'toolbox-item';
+          group.tools.forEach(function (tool) {
+            const a = document.createElement("a");
+            a.className = "toolbox-item";
             a.href = TOOLS_BASE + tool.file;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
             a.innerHTML = `<span class="toolbox-item-name">${tool.name}</span><span class="toolbox-item-arrow">›</span>`;
             list.appendChild(a);
           });
         });
       }
 
-      toolboxSearch.addEventListener('input', function() {
+      toolboxSearch.addEventListener("input", function () {
         const val = this.value;
-        toolboxSearchClear.classList.toggle('visible', val.length > 0);
+        toolboxSearchClear.classList.toggle("visible", val.length > 0);
         renderToolList(val);
       });
-      toolboxSearchClear.addEventListener('click', function() {
-        toolboxSearch.value = '';
-        toolboxSearchClear.classList.remove('visible');
-        renderToolList('');
+      toolboxSearchClear.addEventListener("click", function () {
+        toolboxSearch.value = "";
+        toolboxSearchClear.classList.remove("visible");
+        renderToolList("");
         toolboxSearch.focus();
       });
 
       // 物理删除原生 title 白框，换成自定义文字
-      document.querySelectorAll('#settingsFabGroup button, #backToTop').forEach(el => {
-        if (el.title) {
-          el.setAttribute('data-tooltip', el.title);
-          el.removeAttribute('title');
-        }
-      });            
-    </script>   
+      document
+        .querySelectorAll("#settingsFabGroup button, #backToTop")
+        .forEach((el) => {
+          if (el.title) {
+            el.setAttribute("data-tooltip", el.title);
+            el.removeAttribute("title");
+          }
+        });
+    </script>
   </body>
 </html>
