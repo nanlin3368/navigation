@@ -425,5 +425,19 @@
         "url": "https://www.itinfotools.com",
         "description": "",
         "category": "综合效率"
+    },
+    {
+        "title": "一方工具箱",
+        "icon": "一方工具箱_icon.webp",
+        "url": "https://tool.fologde.com",
+        "description": "",
+        "category": "综合效率"
+    },
+    {
+        "title": "Leowh",
+        "icon": "Leowh_icon.webp",
+        "url": "https://leowh.com/tools/index.html",
+        "description": "",
+        "category": "综合效率"
     }
 ]

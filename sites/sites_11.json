@@ -313,5 +313,12 @@
         "url": "https://appshotmaker.com",
         "description": "",
         "category": "图像处理"
+    },
+    {
+        "title": "Image Matrix",
+        "icon": "Image_Matrix_icon.webp",
+        "url": "https://imagematrix.net/zh",
+        "description": "",
+        "category": "图像处理"
     }
 ]

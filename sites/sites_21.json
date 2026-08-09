@@ -329,9 +329,23 @@
         "category": "扩展空间"
     },
     {
+        "title": "计算器3000",
+        "icon": "计算器3000_icon.webp",
+        "url": "https://jsq3000.com",
+        "description": "",
+        "category": "扩展空间"
+    },
+    {
         "title": "王牌竞速数据整合站",
         "icon": "王牌竞速数据整合站_icon.webp",
         "url": "https://wnqs.github.io/acerace-station/main.html",
+        "description": "",
+        "category": "扩展空间"
+    },
+    {
+        "title": "王牌竞速-瑞卡情报站",
+        "icon": "王牌竞速-瑞卡情报站_icon.webp",
+        "url": "https://reca.seimu.cn/ace-racer/home",
         "description": "",
         "category": "扩展空间"
     },
@@ -364,17 +378,31 @@
         "category": "扩展空间"
     },
     {
-        "title": "计算器3000",
-        "icon": "计算器3000_icon.webp",
-        "url": "https://jsq3000.com",
-        "description": "",
-        "category": "扩展空间"
-    },
-    {
         "title": "乡土游戏馆",
         "icon": "乡土游戏馆_icon.webp",
         "url": "https://youxi.pomodiary.com",
         "description": "",
         "category": "扩展空间"
+    },
+    {
+        "title": "做饭指南",
+        "icon": "做饭指南_icon.webp",
+        "url": "https://docs.cook.ninthfeast.com",
+        "description": "",
+        "category": "扩展空间"
+    },
+    {
+        "title": "装个机",
+        "icon": "装个机_icon.webp",
+        "url": "https://zhuangit.ababtools.com",
+        "description": "",
+        "category": "扩展空间"
+    },
+    {
+        "title": "TG 知道",
+        "icon": "TG_知道_icon.webp",
+        "url": "https://www.tgzhidao.com",
+        "description": "",
+        "category": "更多导航"
     }
 ]

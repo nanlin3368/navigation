@@ -47,5 +47,12 @@
         "url": "https://www.jikeyunsou.com",
         "description": "",
         "category": "聚合搜索"
+    },
+    {
+        "title": "盘小子",
+        "icon": "盘小子_icon.webp",
+        "url": "https://pan.xiaozi.cc",
+        "description": "",
+        "category": "聚合搜索"
     }
 ]

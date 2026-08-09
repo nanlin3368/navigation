@@ -117,5 +117,12 @@
         "url": "https://parse.shenzjd.com",
         "description": "",
         "category": "视频提取"
+    },
+    {
+        "title": "NoWatermark",
+        "icon": "NoWatermark_icon.webp",
+        "url": "https://nowatermarkdownloader.com/zh",
+        "description": "",
+        "category": "视频提取"
     }
 ]

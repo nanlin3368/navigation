@@ -159,5 +159,12 @@
         "url": "https://www.shanghairanking.cn",
         "description": "",
         "category": "新知百态"
+    },
+    {
+        "title": "今日热榜",
+        "icon": "今日热榜_icon.webp",
+        "url": "https://tophub.today",
+        "description": "",
+        "category": "新知百态"
     }
 ]

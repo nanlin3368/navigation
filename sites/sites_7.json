@@ -187,5 +187,12 @@
         "url": "https://waiyuka.cc/zh-CN",
         "description": "",
         "category": "学习成长"
-    }
+    },
+    {
+        "title": "汉语拼音在线学习",
+        "icon": "汉语拼音在线学习_icon.webp",
+        "url": "https://hanyupinyin.net",
+        "description": "",
+        "category": "学习成长"
+    }    
 ]
