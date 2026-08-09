@@ -12,10 +12,42 @@
       name="description"
       content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。"
     />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="星源导航 - 上官网 · 找软件 · 用工具，一键直达"
+    />
+    <meta
+      property="og:description"
+      content="按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。"
+    />
+    <meta
+      property="og:image"
+      content="https://nanlin3368.github.io/navigation/assets/picture/nav.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://nanlin3368.github.io/navigation/"
+    />
+    <meta property="og:site_name" content="星源导航" />
     <meta
       name="google-site-verification"
       content="inPHtMwNwYQJESgLzEK2Sk34DNKnGNiEPEBA0reyVsc"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "星源导航",
+        "url": "https://nanlin3368.github.io/navigation/",
+        "description": "按分类整理好的纯前端静态网址导航页，发现好用、有趣或冷门的网络资源。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://nanlin3368.github.io/navigation/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
     <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
     <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
     <script>
@@ -216,9 +248,9 @@
       /* ── 设置图标为圆角正方形 ── */
       .site-title img,
       .title-icon {
-        width: 36px; /* 设置固定宽度 */
-        height: 36px; /* 设置固定高度 */
-        border-radius: 6px; /* 设置圆角大小 */
+        width: 38px; /* 设置固定宽度 */
+        height: 38px; /* 设置固定高度 */
+        border-radius: 8px; /* 设置圆角大小 */
         object-fit: cover; /* 确保图片自适应填充不变形 */
         flex-shrink: 0; /* 防止图标被挤压变形 */
       }
@@ -3367,7 +3399,7 @@
       // ── 复制链接 ──────────────────────────────────────────
       const copyLinkBtn = document.getElementById("copyLinkBtn");
       const copyLinkToast = document.getElementById("copyLinkToast");
-      const SITE_URL = "https://nanlin3368.github.io/navigation";
+      const SITE_URL = "https://nanlin3368.github.io/navigation/";
       let _copyToastTimer = null;
 
       function showCopyToast() {
