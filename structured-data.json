@@ -1,0 +1,134 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "星源导航",
+  "url": "https://nanlin3368.github.io/navigation/",
+  "description": "星源导航是一个按分类整理好的纯前端静态网址导航页，收录各类优质网站与在线工具，涵盖全球门户、国内主流、人工智能、技术社区、学习成长、开发辅助、图像处理、媒体创作、文档办公、创意设计、视觉灵感、聚合搜索、影音娱乐、跨境互联、桌面生态、安卓专区等二十多个分类，快速发现好用、有趣或冷门的网络资源。",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "全球门户",
+      "description": "Google、YouTube、GitHub、Steam 等全球主流网站官网直达入口"
+    },
+    {
+      "@type": "Thing",
+      "name": "国内主流",
+      "description": "微信、哔哩哔哩、抖音、淘宝、知乎等国内主流平台官网导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "人工智能",
+      "description": "ChatGPT、Claude、DeepSeek、Gemini、Midjourney 等 AI 工具导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "项目汇总",
+      "description": "Webstack、awesome-shizuku、Public APIs 等开源项目合集"
+    },
+    {
+      "@type": "Thing",
+      "name": "技术社区",
+      "description": "稀土掘金、CSDN、博客园、51CTO 等技术社区与开发者论坛导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "新知百态",
+      "description": "央视网、科普中国、故宫博物院等知识科普与文化资源导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "学习成长",
+      "description": "菜鸟教程、W3Schools、wikiHow、GeeksforGeeks 等学习资源导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "开发辅助",
+      "description": "IT-Tools、FreeCodeFormat、加密大师等开发者在线工具集合"
+    },
+    {
+      "@type": "Thing",
+      "name": "资源基地",
+      "description": "PPT 模板、简历模板、字体库、PNG 素材等资源下载导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "综合效率",
+      "description": "Mikutools、123Apps、即时工具等 60+ 在线效率工具集合"
+    },
+    {
+      "@type": "Thing",
+      "name": "图像处理",
+      "description": "抠图、压缩、格式转换、批量处理等 45+ 在线图像工具导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "媒体创作",
+      "description": "视频编辑、文本转语音、人声分离、视频压缩等在线媒体工具"
+    },
+    {
+      "@type": "Thing",
+      "name": "文档办公",
+      "description": "iLovePDF、Smallpdf、Stirling PDF 等 57+ PDF 与文档处理工具"
+    },
+    {
+      "@type": "Thing",
+      "name": "创意设计",
+      "description": "阿里图标库、Google Fonts、Undraw、Flaticon 等设计素材导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "视觉灵感",
+      "description": "Unsplash、Pexels、Behance、Dribbble 等壁纸与设计灵感资源"
+    },
+    {
+      "@type": "Thing",
+      "name": "视频提取",
+      "description": "YouTube、TikTok、Bilibili 等平台视频下载与解析工具"
+    },
+    {
+      "@type": "Thing",
+      "name": "聚合搜索",
+      "description": "网盘资源搜索、鸠摩搜书、海搜等聚合搜索工具导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "影音娱乐",
+      "description": "在线影视、无损音乐下载、歌词工具等影音娱乐资源"
+    },
+    {
+      "@type": "Thing",
+      "name": "漫步次元",
+      "description": "Komiic、拷贝漫画、Pixiv Viewer 等动漫漫画资源导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "跨境互联",
+      "description": "科学上网、机场评测、数字移民等跨境网络资源导航"
+    },
+    {
+      "@type": "Thing",
+      "name": "扩展空间",
+      "description": "临时邮箱、文件快传、二维码生成、鼠标测试等实用小工具"
+    },
+    {
+      "@type": "Thing",
+      "name": "应用分发",
+      "description": "APKMirror、F-Droid、APKPure、Uptodown 等 APK 分发平台"
+    },
+    {
+      "@type": "Thing",
+      "name": "桌面生态",
+      "description": "Chrome、VS Code、Obsidian、PotPlayer 等 41+ 桌面软件官网"
+    },
+    {
+      "@type": "Thing",
+      "name": "安卓专区",
+      "description": "Shizuku、MT 管理器、Hail、GKD 等 29+ 安卓优质应用推荐"
+    },
+    {
+      "@type": "Thing",
+      "name": "更多导航",
+      "description": "Fmhy、优设导航、AI 工具集等其他优质导航站"
+    }
+  ]
+}
