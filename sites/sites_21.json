@@ -404,5 +404,19 @@
         "url": "https://www.tgzhidao.com",
         "description": "",
         "category": "更多导航"
+    },
+    {
+        "title": "教辅百宝箱",
+        "icon": "教辅百宝箱_icon.webp",
+        "url": "https://edu.zmpai.com",
+        "description": "",
+        "category": "扩展空间"
+    },
+    {
+        "title": "许嵩歌词意象百科",
+        "icon": "许嵩歌词意象百科_icon.webp",
+        "url": "https://4kjfycdzbn4fx.feishuapp.com/app/app_17bkt5mck7c/",
+        "description": "",
+        "category": "扩展空间"
     }
 ]

@@ -75,5 +75,12 @@
         "url": "https://web.hanabimanga.com/zh-CN",
         "description": "",
         "category": "漫步次元"
+    },
+    {
+        "title": "AGE动漫",
+        "icon": "AGE动漫_icon.webp",
+        "url": "https://m.agedm.io",
+        "description": "",
+        "category": "漫步次元"
     }
 ]

@@ -124,5 +124,12 @@
         "url": "https://nowatermarkdownloader.com/zh",
         "description": "",
         "category": "视频提取"
+    },
+    {
+        "title": "Twitter 视频下载器",
+        "icon": "Twitter_视频下载器_icon.webp",
+        "url": "https://x-twitter-downloader.com/zh-CN",
+        "description": "",
+        "category": "视频提取"
     }
 ]

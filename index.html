@@ -83,7 +83,7 @@
         --tooltip-bg: #1c1c1e;
         --tooltip-text: #ffffff;
 
-        /* 极简阴影 */
+        /* --- 极简阴影 --- */
         --shadow-sm:
           0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
         --shadow-md:
@@ -94,6 +94,10 @@
         /* ── 菜单 FAB 子按钮高亮色（统一变量） ── */
         --fab-glow-default: #a855f7;
         --fab-glow-soft-default: rgba(168, 85, 247, 0.2);
+
+        /* ── emoji 背景色 ── */
+        --header-icon-bg: rgba(0, 126, 230, 0.12);
+        --header-icon-color: #007ee6;
       }
 
       body.dark {
@@ -111,6 +115,10 @@
         --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
         --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
         --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+
+        /* ── emoji 背景色 ── */
+        --header-icon-bg: rgba(0, 126, 230, 0.3);
+        --header-icon-color: #007ee6;
       }
 
       body {
@@ -706,6 +714,46 @@
         font-size: 0.85rem;
         font-weight: 500;
         border: 1px solid rgba(0, 122, 255, 0.1);
+      }
+
+      /* ── 分类分组标题 ── */
+      .category-section-header {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 30px 0 2px 0;
+        margin-top: 4px;
+      }
+      .category-section-header:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .cat-header-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--header-icon-bg);
+        color: var(--header-icon-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        flex-shrink: 0;
+      }
+      .cat-header-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .cat-header-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+      .cat-header-desc {
+        font-size: 1rem;
+        color: var(--text-secondary);
       }
 
       /* ── 底部页脚卡片 ── */
@@ -1978,6 +2026,46 @@
           border-radius: 18px;
         }
 
+        /* ── 分类分组标题 ── */
+        .category-section-header {
+          grid-column: 1 / -1;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 28px 0 2px 0;
+          margin-top: 4px;
+        }
+        .category-section-header:first-of-type {
+          margin-top: 0;
+          padding-top: 0;
+        }
+        .cat-header-icon {
+          width: 42px;
+          height: 42px;
+          border-radius: 12px;
+          background: var(--header-icon-bg);
+          color: var(--header-icon-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.3rem;
+          flex-shrink: 0;
+        }
+        .cat-header-info {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .cat-header-name {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+        .cat-header-desc {
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+        }
+
         /* ── 悬浮按钮移动端尺寸 ── */
         #backToTop {
           right: 24px;
@@ -2171,82 +2259,157 @@
 
         <!-- 分类标签 -->
         <div class="categories mobile-categories" id="categoriesEl">
-          <button class="category-btn active theme-anim">
+          <button class="category-btn active theme-anim" data-desc="全部分类">
             <span class="cat-label">🌟 全部分类</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="全球知名站点与综合性平台"
+          >
             <span class="cat-label">🌍 全球门户</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="日常高频使用的国内主流平台"
+          >
             <span class="cat-label">🔥 国内主流</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="各类 AI 大模型与工具助手"
+          >
             <span class="cat-label">🧠 人工智能</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="开源项目与资源合集"
+          >
             <span class="cat-label">🐙 项目汇总</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="开发者交流与分享的社区"
+          >
             <span class="cat-label">👥 技术社区</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="热点资讯与知识科普站点"
+          >
             <span class="cat-label">🍉 新知百态</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="编程及各类技能自学平台"
+          >
             <span class="cat-label">📖 学习成长</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="编码开发相关的小工具合集"
+          >
             <span class="cat-label">🧲 开发辅助</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="简历模板、字体等资源下载"
+          >
             <span class="cat-label">📦 资源基地</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="各类网页版实用小工具集"
+          >
             <span class="cat-label">🛠️ 综合效率</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="在线图片编辑与处理站点"
+          >
             <span class="cat-label">🖼️ 图像处理</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="音视频剪辑与创作辅助工具"
+          >
             <span class="cat-label">🎬 媒体创作</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="文档转换、处理等办公网站"
+          >
             <span class="cat-label">📝 文档办公</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="图标、字体及设计灵感素材"
+          >
             <span class="cat-label">🎨 创意设计</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="优质壁纸与摄影作品欣赏"
+          >
             <span class="cat-label">🌈 视觉灵感</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="音视频解析与提取下载工具"
+          >
             <span class="cat-label">📤 视频提取</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="一站式多源聚合搜索平台"
+          >
             <span class="cat-label">🔍 聚合搜索</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="影视剧与无损音乐在线平台"
+          >
             <span class="cat-label">🎧 影音娱乐</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="动漫与二次元同好聚集地"
+          >
             <span class="cat-label">🔮 漫步次元</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="网络访问节点与服务推荐"
+          >
             <span class="cat-label">✈️ 跨境互联</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="临时邮箱等各类实用站点"
+          >
             <span class="cat-label">🧰 扩展空间</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="APK 安装包分发与下载平台"
+          >
             <span class="cat-label">🗃️ 应用分发</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="PC 端常用桌面软件官网导航"
+          >
             <span class="cat-label">💻 桌面生态</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="安卓开源应用及玩机辅助工具"
+          >
             <span class="cat-label">🤖 安卓专区</span>
           </button>
-          <button class="category-btn theme-anim">
+          <button
+            class="category-btn theme-anim"
+            data-desc="更多优质导航站点合集"
+          >
             <span class="cat-label">🧭 更多导航</span>
           </button>
         </div>
@@ -2858,6 +3021,49 @@
       let _lazyOffset = 0;
       let _lazyObserver = null;
 
+      // 提取分类图标与名称
+      function getCategoryMeta(index) {
+        if (index === 0) {
+          return {
+            icon: "⭐",
+            name: "全部分类",
+            desc: "全部分类",
+          };
+        }
+
+        const btn = categoryBtns[index];
+
+        if (!btn) {
+          return {
+            icon: "🔗",
+            name: "其他",
+            desc: "探索更多",
+          };
+        }
+
+        const labelText = btn.querySelector(".cat-label").textContent.trim();
+
+        // 匹配开头的 Emoji，并同时处理 VS16
+        const emojiMatch = labelText.match(/^(\p{Emoji}(?:\uFE0F)?)/u);
+
+        const icon = emojiMatch
+          ? emojiMatch[1].replace(/\uFE0F/g, "") + "\uFE0F"
+          : "🔗";
+
+        const name = emojiMatch
+          ? labelText.slice(emojiMatch[0].length).trim()
+          : labelText;
+
+        const desc = btn.dataset.desc || "探索更多精彩内容";
+
+        return {
+          icon,
+          name,
+          desc,
+        };
+      }
+
+      // 构建单个卡片节点
       function buildCard(site, i) {
         const card = document.createElement("div");
         card.className = "tool-card theme-anim";
@@ -2883,28 +3089,22 @@
         return card;
       }
 
-      function appendChunk() {
-        if (_lazyOffset >= _lazyItems.length) return;
-        const oldSentinel = grid.querySelector(".lazy-sentinel");
-        if (oldSentinel) oldSentinel.remove();
-        const chunk = _lazyItems.slice(_lazyOffset, _lazyOffset + PAGE_SIZE);
-        const frag = document.createDocumentFragment();
-        chunk.forEach((site, j) =>
-          frag.appendChild(buildCard(site, _lazyOffset + j)),
-        );
-        _lazyOffset += chunk.length;
-        if (_lazyOffset < _lazyItems.length) {
-          const sentinel = document.createElement("div");
-          sentinel.className = "lazy-sentinel";
-          sentinel.style.cssText = "height:1px;grid-column:1/-1";
-          frag.appendChild(sentinel);
-          grid.appendChild(frag);
-          _lazyObserver.observe(sentinel);
-        } else {
-          grid.appendChild(frag);
-        }
+      // 构建分组标题节点
+      function buildGroupHeader(catIndex) {
+        const header = document.createElement("div");
+        header.className = "category-section-header";
+        const meta = getCategoryMeta(catIndex);
+        header.innerHTML = `
+          <div class="cat-header-icon">${meta.icon}</div>
+          <div class="cat-header-info">
+            <div class="cat-header-name">${meta.name}</div>
+            <div class="cat-header-desc">${meta.desc}</div>
+          </div>
+        `;
+        return header;
       }
 
+      // 渲染卡片
       function renderCards(sites, searchTerm = "") {
         if (_lazyObserver) {
           _lazyObserver.disconnect();
@@ -2912,19 +3112,46 @@
         }
         grid.innerHTML = "";
         const term = searchTerm.toLowerCase().trim();
-        _lazyItems = sites.filter((site) => {
+
+        let filtered = sites.filter((site) => {
           if (!term) return true;
           return (
             (site.title || "").toLowerCase().includes(term) ||
             (site.description || "").toLowerCase().includes(term)
           );
         });
-        _lazyOffset = 0;
-        if (_lazyItems.length === 0) {
+
+        if (filtered.length === 0) {
           grid.innerHTML =
             '<p style="color:var(--text-secondary);text-align:center;padding:40px;grid-column:1/-1">📭 暂无内容</p>';
           return;
         }
+
+        let isGroupMode = currentIndex === 0 || term.length > 0;
+
+        let structuredList = [];
+        if (isGroupMode) {
+          const sorted = [...filtered].sort(
+            (a, b) => a._catIndex - b._catIndex,
+          );
+          let lastCat = -1;
+          sorted.forEach((item) => {
+            if (item._catIndex !== lastCat) {
+              structuredList.push({ type: "header", index: item._catIndex });
+              lastCat = item._catIndex;
+            }
+            structuredList.push({ type: "card", data: item });
+          });
+        } else {
+          structuredList.push({ type: "header", index: currentIndex });
+          filtered.forEach((item) => {
+            structuredList.push({ type: "card", data: item });
+          });
+        }
+
+        _lazyItems = structuredList;
+        _lazyOffset = 0;
+
         const scrollRoot =
           window.innerWidth >= 769
             ? document.querySelector(".main-content")
@@ -2939,6 +3166,38 @@
           { root: scrollRoot, rootMargin: "200px" },
         );
         appendChunk();
+      }
+
+      // 懒加载追加分块
+      function appendChunk() {
+        if (_lazyOffset >= _lazyItems.length) return;
+        const oldSentinel = grid.querySelector(".lazy-sentinel");
+        if (oldSentinel) oldSentinel.remove();
+
+        const chunk = _lazyItems.slice(_lazyOffset, _lazyOffset + PAGE_SIZE);
+        const frag = document.createDocumentFragment();
+        chunk.forEach((item, j) => {
+          let node;
+          if (item.type === "header") {
+            node = buildGroupHeader(item.index);
+            node.style.gridColumn = "1 / -1";
+          } else {
+            node = buildCard(item.data, _lazyOffset + j);
+          }
+          frag.appendChild(node);
+        });
+
+        _lazyOffset += chunk.length;
+        if (_lazyOffset < _lazyItems.length) {
+          const sentinel = document.createElement("div");
+          sentinel.className = "lazy-sentinel";
+          sentinel.style.cssText = "height:1px;grid-column:1/-1";
+          frag.appendChild(sentinel);
+          grid.appendChild(frag);
+          _lazyObserver.observe(sentinel);
+        } else {
+          grid.appendChild(frag);
+        }
       }
 
       // ── 更新分类按钮数字 ──────────────────────────────────────
