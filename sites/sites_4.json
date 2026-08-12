@@ -21,6 +21,20 @@
         "category": "项目汇总"
     },
     {
+        "title": "React Bits",
+        "icon": "React_Bits_icon.webp",
+        "url": "https://github.com/DavidHDev/react-bits",
+        "description": "",
+        "category": "项目汇总"
+    },
+    {
+        "title": "IT-Tools",
+        "icon": "IT-Tools_icon.webp",
+        "url": "https://github.com/CorentinTh/it-tools",
+        "description": "",
+        "category": "项目汇总"
+    },
+    {
         "title": "Public APIs",
         "icon": "Public_APIs_icon.webp",
         "url": "https://github.com/public-apis/public-apis",

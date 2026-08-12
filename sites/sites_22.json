@@ -35,6 +35,13 @@
         "category": "应用分发"
     },
     {
+        "title": "Aptoide",
+        "icon": "Aptoide_icon.webp",
+        "url": "https://en.aptoide.com",
+        "description": "",
+        "category": "应用分发"
+    },
+    {
         "title": "A2ZAPK",
         "icon": "A2ZAPK_icon.webp",
         "url": "https://a2zapk.co",

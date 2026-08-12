@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /assets/siteicons/*.webp
+
+Sitemap: https://nanlin3368.github.io/navigation/sitemap.xml

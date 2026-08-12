@@ -418,5 +418,12 @@
         "url": "https://4kjfycdzbn4fx.feishuapp.com/app/app_17bkt5mck7c/",
         "description": "",
         "category": "扩展空间"
+    },
+    {
+        "title": "DevFile",
+        "icon": "DevFile_icon.webp",
+        "url": "https://devfile.cn",
+        "description": "",
+        "category": "扩展空间"
     }
 ]

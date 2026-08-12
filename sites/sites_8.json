@@ -84,9 +84,9 @@
         "category": "开发辅助"
     },
     {
-        "title": "DevFile",
-        "icon": "DevFile_icon.webp",
-        "url": "https://devfile.cn",
+        "title": "ToolsForCode",
+        "icon": "ToolsForCode_icon.webp",
+        "url": "https://www.toolsforcode.com/zh",
         "description": "",
         "category": "开发辅助"
     },
@@ -98,9 +98,9 @@
         "category": "开发辅助"
     },
     {
-        "title": "ToolsForCode",
-        "icon": "ToolsForCode_icon.webp",
-        "url": "https://www.toolsforcode.com/zh",
+        "title": "JSONTech",
+        "icon": "JSONTech_icon.webp",
+        "url": "https://jsontech.net/zh",
         "description": "",
         "category": "开发辅助"
     }
