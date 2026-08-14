@@ -1,107 +1,107 @@
 [
-    {
-        "title": "FreeCodeFormat",
-        "icon": "FreeCodeFormat_icon.webp",
-        "url": "https://www.freecodeformat.com/zh-hans",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "IT-Tools",
-        "icon": "IT-Tools_icon.webp",
-        "url": "https://it-tools.tech",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "开发者武器库",
-        "icon": "开发者武器库_icon.webp",
-        "url": "https://devtool.tech",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "蛙蛙工具",
-        "icon": "蛙蛙工具_icon.webp",
-        "url": "https://www.10015tools.online/zh",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "TidyCode",
-        "icon": "TidyCode_icon.webp",
-        "url": "https://tidycode.org/zh-cn",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "加密大师",
-        "icon": "加密大师_icon.webp",
-        "url": "https://jiamidashi.cn",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "程序员工具",
-        "icon": "程序员工具_icon.webp",
-        "url": "https://tool.ur1.fun",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "BeautifierConverter",
-        "icon": "BeautifierConverter_icon.webp",
-        "url": "https://www.beautifyconverter.com",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "Beautify Tools",
-        "icon": "Beautify_Tools_icon.webp",
-        "url": "https://beautifytools.com",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "百川在线工具箱",
-        "icon": "百川在线工具箱_icon.webp",
-        "url": "https://rivers.chaitin.cn/tools",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "JavaPub Tool",
-        "icon": "JavaPub_Tool_icon.webp",
-        "url": "https://rodert.github.io/jsonformat",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "工具百宝箱",
-        "icon": "工具百宝箱_icon.webp",
-        "url": "https://toolsdev.top",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "ToolsForCode",
-        "icon": "ToolsForCode_icon.webp",
-        "url": "https://www.toolsforcode.com/zh",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "friday 工具箱",
-        "icon": "friday_工具箱_icon.webp",
-        "url": "https://fridaytools.dpdns.org",
-        "description": "",
-        "category": "开发辅助"
-    },
-    {
-        "title": "JSONTech",
-        "icon": "JSONTech_icon.webp",
-        "url": "https://jsontech.net/zh",
-        "description": "",
-        "category": "开发辅助"
-    }
+  {
+    "title": "FreeCodeFormat",
+    "icon": "FreeCodeFormat_icon.webp",
+    "url": "https://www.freecodeformat.com/zh-hans",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "IT-Tools",
+    "icon": "IT-Tools_icon.webp",
+    "url": "https://it-tools.tech",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "开发者武器库",
+    "icon": "开发者武器库_icon.webp",
+    "url": "https://devtool.tech",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "蛙蛙工具",
+    "icon": "蛙蛙工具_icon.webp",
+    "url": "https://www.10015tools.online/zh",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "TidyCode",
+    "icon": "TidyCode_icon.webp",
+    "url": "https://tidycode.org/zh-cn",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "加密大师",
+    "icon": "加密大师_icon.webp",
+    "url": "https://jiamidashi.cn",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "程序员工具",
+    "icon": "程序员工具_icon.webp",
+    "url": "https://tool.ur1.fun",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "BeautifierConverter",
+    "icon": "BeautifierConverter_icon.webp",
+    "url": "https://www.beautifyconverter.com",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "Beautify Tools",
+    "icon": "Beautify_Tools_icon.webp",
+    "url": "https://beautifytools.com",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "百川在线工具箱",
+    "icon": "百川在线工具箱_icon.webp",
+    "url": "https://rivers.chaitin.cn/tools",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "JavaPub Tool",
+    "icon": "JavaPub_Tool_icon.webp",
+    "url": "https://rodert.github.io/jsonformat",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "工具百宝箱",
+    "icon": "工具百宝箱_icon.webp",
+    "url": "https://toolsdev.top",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "ToolsForCode",
+    "icon": "ToolsForCode_icon.webp",
+    "url": "https://www.toolsforcode.com/zh",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "friday 工具箱",
+    "icon": "friday_工具箱_icon.webp",
+    "url": "https://fridaytools.dpdns.org",
+    "description": "",
+    "category": "开发辅助"
+  },
+  {
+    "title": "JSONTech",
+    "icon": "JSONTech_icon.webp",
+    "url": "https://jsontech.net/zh",
+    "description": "",
+    "category": "开发辅助"
+  }
 ]

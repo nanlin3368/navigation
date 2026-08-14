@@ -1,289 +1,296 @@
 [
-    {
-        "title": "Google Chrome",
-        "icon": "Google_Chrome_icon.webp",
-        "url": "https://www.google.cn/chrome",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Microsoft Edge",
-        "icon": "Microsoft_Edge_icon.webp",
-        "url": "https://www.microsoft.com/zh-cn/edge/download",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "7-Zip",
-        "icon": "7-Zip_icon.webp",
-        "url": "https://www.7-zip.org",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Everything",
-        "icon": "Everything_icon.webp",
-        "url": "https://www.voidtools.com/zh-cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Geek Uninstaller",
-        "icon": "Geek_Uninstaller_icon.webp",
-        "url": "https://geekuninstaller.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "图吧工具箱",
-        "icon": "图吧工具箱_icon.webp",
-        "url": "https://www.tbtool.cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "PotPlayer",
-        "icon": "PotPlayer_icon.webp",
-        "url": "https://potplayer.tv",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Escrcpy",
-        "icon": "Escrcpy_icon.webp",
-        "url": "https://viarotel.eu.org/zhHans",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "WPS Office",
-        "icon": "WPS_Office_icon.webp",
-        "url": "https://www.wps.cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "火绒安全",
-        "icon": "火绒安全_icon.webp",
-        "url": "https://www.huorong.cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "IDM",
-        "icon": "IDM_icon.webp",
-        "url": "https://www.internetdownloadmanager.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Steam",
-        "icon": "Steam_icon.webp",
-        "url": "https://store.steampowered.com/about",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "ShareX",
-        "icon": "ShareX_icon.webp",
-        "url": "https://getsharex.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Obsidian",
-        "icon": "Obsidian_icon.webp",
-        "url": "https://obsidian.md/zh",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Clash Verge Rev",
-        "icon": "Clash_Verge_Rev_icon.webp",
-        "url": "https://www.clashverge.dev",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Codex",
-        "icon": "Codex_icon.webp",
-        "url": "https://chatgpt.com/zh-Hans-CN/codex",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Visual Studio Code",
-        "icon": "Visual_Studio_Code_icon.webp",
-        "url": "https://code.visualstudio.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "GitHub Desktop",
-        "icon": "GitHub_Desktop_icon.webp",
-        "url": "https://desktop.github.com/download",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "LocalSend",
-        "icon": "LocalSend_icon.webp",
-        "url": "https://localsend.org/zh-CN",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "OBS Studio",
-        "icon": "OBS_Studio_icon.webp",
-        "url": "https://obsproject.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Notion",
-        "icon": "Notion_icon.webp",
-        "url": "https://www.notion.com/zh-cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "XnConvert",
-        "icon": "XnConvert_icon.webp",
-        "url": "https://www.xnview.com/en/xnconvert",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "EcoPaste",
-        "icon": "EcoPaste_icon.webp",
-        "url": "https://ecopaste.cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Snipaste",
-        "icon": "Snipaste_icon.webp",
-        "url": "https://zh.snipaste.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "QuickLook",
-        "icon": "QuickLook_icon.webp",
-        "url": "https://github.com/QL-Win/QuickLook",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Wallpaper Engine",
-        "icon": "Wallpaper_Engine_icon.webp",
-        "url": "https://www.wallpaperengine.io/zh-hans",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "PDFgear",
-        "icon": "PDFgear_icon.webp",
-        "url": "https://www.pdfgear.com/zh",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Bandizip",
-        "icon": "Bandizip_icon.webp",
-        "url": "https://www.bandisoft.com/bandizip",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Honeyview",
-        "icon": "Honeyview_icon.webp",
-        "url": "https://www.bandisoft.com/honeyview",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Quicker",
-        "icon": "Quicker_icon.webp",
-        "url": "https://getquicker.net",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "PowerToys",
-        "icon": "PowerToys_icon.webp",
-        "url": "https://github.com/microsoft/PowerToys",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "CCleaner",
-        "icon": "CCleaner_icon.webp",
-        "url": "https://www.ccleaner.com/zh-cn",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "FlClash",
-        "icon": "FlClash_icon.webp",
-        "url": "https://flclash.cc",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "SyncClipboard",
-        "icon": "SyncClipboard_icon.webp",
-        "url": "https://github.com/Jeric-X/SyncClipboard",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Upscayl",
-        "icon": "Upscayl_icon.webp",
-        "url": "https://upscayl.org",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Actus Auto Clicker",
-        "icon": "Actus_Auto_Clicker_icon.webp",
-        "url": "https://actusclicker.com/zh",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "BananaCut",
-        "icon": "BananaCut_icon.webp",
-        "url": "https://a.zjhn.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "链文工具箱",
-        "icon": "链文工具箱_icon.webp",
-        "url": "https://lianwentool.com",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "File Converter",
-        "icon": "File_Converter_icon.webp",
-        "url": "https://file-converter.io",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "HandBrake",
-        "icon": "HandBrake_icon.webp",
-        "url": "https://handbrake.fr",
-        "description": "",
-        "category": "桌面生态"
-    },
-    {
-        "title": "Files",
-        "icon": "Files_icon.webp",
-        "url": "https://files.community",
-        "description": "",
-        "category": "桌面生态"
-    }
+  {
+    "title": "Google Chrome",
+    "icon": "Google_Chrome_icon.webp",
+    "url": "https://www.google.cn/chrome",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Microsoft Edge",
+    "icon": "Microsoft_Edge_icon.webp",
+    "url": "https://www.microsoft.com/zh-cn/edge/download",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "7-Zip",
+    "icon": "7-Zip_icon.webp",
+    "url": "https://www.7-zip.org",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Everything",
+    "icon": "Everything_icon.webp",
+    "url": "https://www.voidtools.com/zh-cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Geek Uninstaller",
+    "icon": "Geek_Uninstaller_icon.webp",
+    "url": "https://geekuninstaller.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "图吧工具箱",
+    "icon": "图吧工具箱_icon.webp",
+    "url": "https://www.tbtool.cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "PotPlayer",
+    "icon": "PotPlayer_icon.webp",
+    "url": "https://potplayer.tv",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Escrcpy",
+    "icon": "Escrcpy_icon.webp",
+    "url": "https://viarotel.eu.org/zhHans",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "WPS Office",
+    "icon": "WPS_Office_icon.webp",
+    "url": "https://www.wps.cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "火绒安全",
+    "icon": "火绒安全_icon.webp",
+    "url": "https://www.huorong.cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "IDM",
+    "icon": "IDM_icon.webp",
+    "url": "https://www.internetdownloadmanager.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Steam",
+    "icon": "Steam_icon.webp",
+    "url": "https://store.steampowered.com/about",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "ShareX",
+    "icon": "ShareX_icon.webp",
+    "url": "https://getsharex.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Obsidian",
+    "icon": "Obsidian_icon.webp",
+    "url": "https://obsidian.md/zh",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Clash Verge Rev",
+    "icon": "Clash_Verge_Rev_icon.webp",
+    "url": "https://www.clashverge.dev",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Codex",
+    "icon": "Codex_icon.webp",
+    "url": "https://chatgpt.com/zh-Hans-CN/codex",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Visual Studio Code",
+    "icon": "Visual_Studio_Code_icon.webp",
+    "url": "https://code.visualstudio.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "GitHub Desktop",
+    "icon": "GitHub_Desktop_icon.webp",
+    "url": "https://desktop.github.com/download",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "LocalSend",
+    "icon": "LocalSend_icon.webp",
+    "url": "https://localsend.org/zh-CN",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "OBS Studio",
+    "icon": "OBS_Studio_icon.webp",
+    "url": "https://obsproject.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Notion",
+    "icon": "Notion_icon.webp",
+    "url": "https://www.notion.com/zh-cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "XnConvert",
+    "icon": "XnConvert_icon.webp",
+    "url": "https://www.xnview.com/en/xnconvert",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "EcoPaste",
+    "icon": "EcoPaste_icon.webp",
+    "url": "https://ecopaste.cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Snipaste",
+    "icon": "Snipaste_icon.webp",
+    "url": "https://zh.snipaste.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "QuickLook",
+    "icon": "QuickLook_icon.webp",
+    "url": "https://github.com/QL-Win/QuickLook",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Wallpaper Engine",
+    "icon": "Wallpaper_Engine_icon.webp",
+    "url": "https://www.wallpaperengine.io/zh-hans",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "PDFgear",
+    "icon": "PDFgear_icon.webp",
+    "url": "https://www.pdfgear.com/zh",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Bandizip",
+    "icon": "Bandizip_icon.webp",
+    "url": "https://www.bandisoft.com/bandizip",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Honeyview",
+    "icon": "Honeyview_icon.webp",
+    "url": "https://www.bandisoft.com/honeyview",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Quicker",
+    "icon": "Quicker_icon.webp",
+    "url": "https://getquicker.net",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "PowerToys",
+    "icon": "PowerToys_icon.webp",
+    "url": "https://github.com/microsoft/PowerToys",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "CCleaner",
+    "icon": "CCleaner_icon.webp",
+    "url": "https://www.ccleaner.com/zh-cn",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "FlClash",
+    "icon": "FlClash_icon.webp",
+    "url": "https://flclash.cc",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "SyncClipboard",
+    "icon": "SyncClipboard_icon.webp",
+    "url": "https://github.com/Jeric-X/SyncClipboard",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Upscayl",
+    "icon": "Upscayl_icon.webp",
+    "url": "https://upscayl.org",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Actus Auto Clicker",
+    "icon": "Actus_Auto_Clicker_icon.webp",
+    "url": "https://actusclicker.com/zh",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "BananaCut",
+    "icon": "BananaCut_icon.webp",
+    "url": "https://a.zjhn.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "链文工具箱",
+    "icon": "链文工具箱_icon.webp",
+    "url": "https://lianwentool.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "File Converter",
+    "icon": "File_Converter_icon.webp",
+    "url": "https://file-converter.io",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "HandBrake",
+    "icon": "HandBrake_icon.webp",
+    "url": "https://handbrake.fr",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Files",
+    "icon": "Files_icon.webp",
+    "url": "https://files.community",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "飞鼠格式",
+    "icon": "飞鼠格式_icon.webp",
+    "url": "https://github.com/LaoFeng-mouse/flyingmouse-format",
+    "description": "",
+    "category": "桌面生态"
+  }
 ]

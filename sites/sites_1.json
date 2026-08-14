@@ -1,268 +1,268 @@
 [
-    {
-        "title": "Play Store",
-        "icon": "Play_Store_icon.webp",
-        "url": "https://play.google.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "App Store",
-        "icon": "App_Store_icon.webp",
-        "url": "https://www.apple.com/app-store",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Google",
-        "icon": "Google_icon.webp",
-        "url": "https://www.google.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Bing",
-        "icon": "Bing_icon.webp",
-        "url": "https://www.bing.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "YouTube",
-        "icon": "YouTube_icon.webp",
-        "url": "https://www.youtube.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Facebook",
-        "icon": "Facebook_icon.webp",
-        "url": "https://www.facebook.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Instagram",
-        "icon": "Instagram_icon.webp",
-        "url": "https://www.instagram.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Telegram",
-        "icon": "Telegram_icon.webp",
-        "url": "https://telegram.org",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "GitHub",
-        "icon": "GitHub_icon.webp",
-        "url": "https://github.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Wikipedia",
-        "icon": "Wikipedia_icon.webp",
-        "url": "https://www.wikipedia.org",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Steam",
-        "icon": "Steam_icon.webp",
-        "url": "https://store.steampowered.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "TikTok",
-        "icon": "TikTok_icon.webp",
-        "url": "https://www.tiktok.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "DuckDuckGo",
-        "icon": "DuckDuckGo_icon.webp",
-        "url": "https://duckduckgo.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Pixiv",
-        "icon": "pixiv_icon.webp",
-        "url": "https://www.pixiv.net",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "X（原 Twitter）",
-        "icon": "X_icon.webp",
-        "url": "https://x.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Dropbox",
-        "icon": "Dropbox_icon.webp",
-        "url": "https://www.dropbox.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Yandex",
-        "icon": "Yandex_icon.webp",
-        "url": "https://yandex.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Spotify",
-        "icon": "Spotify_icon.webp",
-        "url": "https://open.spotify.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Potato Chat",
-        "icon": "Potato_Chat_icon.webp",
-        "url": "https://www.potato.im",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Yahoo",
-        "icon": "Yahoo_icon.webp",
-        "url": "https://www.yahoo.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Amazon",
-        "icon": "Amazon_icon.webp",
-        "url": "https://www.amazon.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Quora",
-        "icon": "Quora_icon.webp",
-        "url": "https://www.quora.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "LinkedIn",
-        "icon": "LinkedIn_icon.webp",
-        "url": "https://www.linkedin.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Netflix",
-        "icon": "Netflix_icon.webp",
-        "url": "https://www.netflix.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Reddit",
-        "icon": "Reddit_icon.webp",
-        "url": "https://www.reddit.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "CNN",
-        "icon": "CNN_icon.webp",
-        "url": "https://www.cnn.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Twitch",
-        "icon": "Twitch_icon.webp",
-        "url": "https://www.twitch.tv",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Threads",
-        "icon": "Threads_icon.webp",
-        "url": "https://www.threads.net",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "BBC",
-        "icon": "BBC_icon.webp",
-        "url": "https://www.bbc.com/news",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Discord",
-        "icon": "Discord_icon.webp",
-        "url": "https://discord.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Pinterest",
-        "icon": "Pinterest_icon.webp",
-        "url": "https://www.pinterest.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "WhatsApp",
-        "icon": "WhatsApp_icon.webp",
-        "url": "https://www.whatsapp.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Disney",
-        "icon": "Disney_icon.webp",
-        "url": "https://www.disneyplus.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "The Guardian",
-        "icon": "The_Guardian_icon.webp",
-        "url": "https://www.theguardian.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Tumblr",
-        "icon": "Tumblr_icon.webp",
-        "url": "https://www.tumblr.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "VK",
-        "icon": "VK_icon.webp",
-        "url": "https://vk.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "Snapchat",
-        "icon": "Snapchat_icon.webp",
-        "url": "https://www.snapchat.com",
-        "description": "",
-        "category": "全球门户"
-    },
-    {
-        "title": "9GAG",
-        "icon": "9GAG_icon.webp",
-        "url": "https://9gag.com",
-        "description": "",
-        "category": "全球门户"
-    }
+  {
+    "title": "Play Store",
+    "icon": "Play_Store_icon.webp",
+    "url": "https://play.google.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "App Store",
+    "icon": "App_Store_icon.webp",
+    "url": "https://www.apple.com/app-store",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Google",
+    "icon": "Google_icon.webp",
+    "url": "https://www.google.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Bing",
+    "icon": "Bing_icon.webp",
+    "url": "https://www.bing.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "YouTube",
+    "icon": "YouTube_icon.webp",
+    "url": "https://www.youtube.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Facebook",
+    "icon": "Facebook_icon.webp",
+    "url": "https://www.facebook.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Instagram",
+    "icon": "Instagram_icon.webp",
+    "url": "https://www.instagram.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Telegram",
+    "icon": "Telegram_icon.webp",
+    "url": "https://telegram.org",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "GitHub",
+    "icon": "GitHub_icon.webp",
+    "url": "https://github.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Wikipedia",
+    "icon": "Wikipedia_icon.webp",
+    "url": "https://www.wikipedia.org",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Steam",
+    "icon": "Steam_icon.webp",
+    "url": "https://store.steampowered.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "TikTok",
+    "icon": "TikTok_icon.webp",
+    "url": "https://www.tiktok.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "DuckDuckGo",
+    "icon": "DuckDuckGo_icon.webp",
+    "url": "https://duckduckgo.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Pixiv",
+    "icon": "pixiv_icon.webp",
+    "url": "https://www.pixiv.net",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "X（原:Twitter）",
+    "icon": "X_icon.webp",
+    "url": "https://x.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Dropbox",
+    "icon": "Dropbox_icon.webp",
+    "url": "https://www.dropbox.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Yandex",
+    "icon": "Yandex_icon.webp",
+    "url": "https://yandex.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Spotify",
+    "icon": "Spotify_icon.webp",
+    "url": "https://open.spotify.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Potato Chat",
+    "icon": "Potato_Chat_icon.webp",
+    "url": "https://www.potato.im",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Yahoo",
+    "icon": "Yahoo_icon.webp",
+    "url": "https://www.yahoo.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Amazon",
+    "icon": "Amazon_icon.webp",
+    "url": "https://www.amazon.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Quora",
+    "icon": "Quora_icon.webp",
+    "url": "https://www.quora.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "LinkedIn",
+    "icon": "LinkedIn_icon.webp",
+    "url": "https://www.linkedin.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Netflix",
+    "icon": "Netflix_icon.webp",
+    "url": "https://www.netflix.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Reddit",
+    "icon": "Reddit_icon.webp",
+    "url": "https://www.reddit.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "CNN",
+    "icon": "CNN_icon.webp",
+    "url": "https://www.cnn.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Twitch",
+    "icon": "Twitch_icon.webp",
+    "url": "https://www.twitch.tv",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Threads",
+    "icon": "Threads_icon.webp",
+    "url": "https://www.threads.net",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "BBC",
+    "icon": "BBC_icon.webp",
+    "url": "https://www.bbc.com/news",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Discord",
+    "icon": "Discord_icon.webp",
+    "url": "https://discord.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Pinterest",
+    "icon": "Pinterest_icon.webp",
+    "url": "https://www.pinterest.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "WhatsApp",
+    "icon": "WhatsApp_icon.webp",
+    "url": "https://www.whatsapp.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Disney",
+    "icon": "Disney_icon.webp",
+    "url": "https://www.disneyplus.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "The Guardian",
+    "icon": "The_Guardian_icon.webp",
+    "url": "https://www.theguardian.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Tumblr",
+    "icon": "Tumblr_icon.webp",
+    "url": "https://www.tumblr.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "VK",
+    "icon": "VK_icon.webp",
+    "url": "https://vk.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "Snapchat",
+    "icon": "Snapchat_icon.webp",
+    "url": "https://www.snapchat.com",
+    "description": "",
+    "category": "全球门户"
+  },
+  {
+    "title": "9GAG",
+    "icon": "9GAG_icon.webp",
+    "url": "https://9gag.com",
+    "description": "",
+    "category": "全球门户"
+  }
 ]

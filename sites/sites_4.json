@@ -1,72 +1,72 @@
 [
-    {
-        "title": "Webstack",
-        "icon": "Webstack_icon.webp",
-        "url": "https://github.com/WebStackPage/WebStackPage.github.io",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "SSR-V2ray-Trojan",
-        "icon": "SSR-V2ray-Trojan_icon.webp",
-        "url": "https://github.com/hwanz/SSR-V2ray-Trojan",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "awesome-shizuku",
-        "icon": "awesome-shizuku_icon.webp",
-        "url": "https://github.com/timschneeb/awesome-shizuku/blob/master/README_cn.md",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "React Bits",
-        "icon": "React_Bits_icon.webp",
-        "url": "https://github.com/DavidHDev/react-bits",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "IT-Tools",
-        "icon": "IT-Tools_icon.webp",
-        "url": "https://github.com/CorentinTh/it-tools",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "Public APIs",
-        "icon": "Public_APIs_icon.webp",
-        "url": "https://github.com/public-apis/public-apis",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "Datawhale",
-        "icon": "Datawhale_icon.webp",
-        "url": "https://github.com/datawhalechina",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "ChinaTextbook",
-        "icon": "ChinaTextbook_icon.webp",
-        "url": "https://github.com/TapXWorld/ChinaTextbook",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "TelegramGroup",
-        "icon": "TelegramGroup_icon.webp",
-        "url": "https://github.com/itgoyo/TelegramGroup",
-        "description": "",
-        "category": "项目汇总"
-    },
-    {
-        "title": "定制版应用收藏",
-        "icon": "定制版应用收藏_icon.webp",
-        "url": "https://gitee.com/ww3w/dzb",
-        "description": "",
-        "category": "项目汇总"
-    }
+  {
+    "title": "Webstack",
+    "icon": "Webstack_icon.webp",
+    "url": "https://github.com/WebStackPage/WebStackPage.github.io",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "SSR-V2ray-Trojan",
+    "icon": "SSR-V2ray-Trojan_icon.webp",
+    "url": "https://github.com/hwanz/SSR-V2ray-Trojan",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "awesome-shizuku",
+    "icon": "awesome-shizuku_icon.webp",
+    "url": "https://github.com/timschneeb/awesome-shizuku/blob/master/README_cn.md",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "React Bits",
+    "icon": "React_Bits_icon.webp",
+    "url": "https://github.com/DavidHDev/react-bits",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "IT-Tools",
+    "icon": "IT-Tools_icon.webp",
+    "url": "https://github.com/CorentinTh/it-tools",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "Public APIs",
+    "icon": "Public_APIs_icon.webp",
+    "url": "https://github.com/public-apis/public-apis",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "Datawhale",
+    "icon": "Datawhale_icon.webp",
+    "url": "https://github.com/datawhalechina",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "ChinaTextbook",
+    "icon": "ChinaTextbook_icon.webp",
+    "url": "https://github.com/TapXWorld/ChinaTextbook",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "TelegramGroup",
+    "icon": "TelegramGroup_icon.webp",
+    "url": "https://github.com/itgoyo/TelegramGroup",
+    "description": "",
+    "category": "项目汇总"
+  },
+  {
+    "title": "定制版应用收藏",
+    "icon": "定制版应用收藏_icon.webp",
+    "url": "https://gitee.com/ww3w/dzb",
+    "description": "",
+    "category": "项目汇总"
+  }
 ]

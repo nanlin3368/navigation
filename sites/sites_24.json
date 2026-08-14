@@ -1,205 +1,268 @@
-[       
-    {
-        "title": "Shizuku",
-        "icon": "Shizuku_icon.webp",
-        "url": "https://shizuku.rikka.app/zh-hans",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "InstallerX Revived",
-        "icon": "InstallerX_Revived_icon.webp",
-        "url": "https://github.com/wxxsfxyzm/InstallerX-Revived",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "MT 管理器",
-        "icon": "MT_管理器_icon.webp",
-        "url": "https://mt2.cn",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Hail",
-        "icon": "Hail_icon.webp",
-        "url": "https://github.com/aistra0528/Hail",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "GKD",
-        "icon": "GKD_icon.webp",
-        "url": "https://gkd.li",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "李跳跳",
-        "icon": "李跳跳_icon.webp",
-        "url": "https://github.com/rongzhiy/LiTiaotiao",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Stellar",
-        "icon": "Stellar_icon.webp",
-        "url": "https://github.com/roro2239/Stellar",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "甲壳虫ADB助手",
-        "icon": "甲壳虫ADB助手_icon.webp",
-        "url": "https://github.com/didjdk/adbhelper",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "App Ops",
-        "icon": "App_Ops_icon.webp",
-        "url": "https://github.com/RikkaApps/App-Ops-issue-tracker",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Dhizuku",
-        "icon": "Dhizuku_icon.webp",
-        "url": "https://github.com/iamr0s/Dhizuku",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Ice Box",
-        "icon": "Ice_Box_icon.webp",
-        "url": "https://iceboxdoc.catchingnow.com/changelog.html",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "LocalSend",
-        "icon": "LocalSend_icon.webp",
-        "url": "https://localsend.org/zh-CN",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "PiliPlus",
-        "icon": "PiliPlus_icon.webp",
-        "url": "https://github.com/bggRGjQaUbCoE/PiliPlus",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Kazumi",
-        "icon": "Kazumi_icon.webp",
-        "url": "https://kazumi.app",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Via",
-        "icon": "Via_icon.webp",
-        "url": "https://viayoo.com/zh-cn",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Acode",
-        "icon": "Acode_icon.webp",
-        "url": "https://github.com/Acode-Foundation/Acode",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Xed-Editor",
-        "icon": "Xed-Editor_icon.webp",
-        "url": "https://github.com/Xed-Editor/Xed-Editor",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "LibChecker",
-        "icon": "LibChecker_icon.webp",
-        "url": "https://github.com/LibChecker/LibChecker",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Canta",
-        "icon": "Canta_icon.webp",
-        "url": "https://github.com/samolego/Canta",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Anywhere-",
-        "icon": "Anywhere-_icon.webp",
-        "url": "https://github.com/zhaobozhen/Anywhere-",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Flowmix",
-        "icon": "Flowmix_icon.webp",
-        "url": "https://docs.flowmix.ykload.com",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Nrfr",
-        "icon": "Nrfr_icon.webp",
-        "url": "https://github.com/Ackites/Nrfr",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "小企鹅输入法",
-        "icon": "小企鹅输入法_icon.webp",
-        "url": "https://github.com/fcitx5-android/fcitx5-android",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "语燕输入法",
-        "icon": "语燕输入法_icon.webp",
-        "url": "https://github.com/gurecn/YuyanIme",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "Clash Meta",
-        "icon": "Clash_Meta_icon.webp",
-        "url": "https://github.com/MetaCubeX/ClashMetaForAndroid",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "NekoBox",
-        "icon": "NekoBox_icon.webp",
-        "url": "https://github.com/MatsuriDayo/NekoBoxForAndroid",
-        "description": "",
-        "category": "安卓专区"
-    },   
-    {
-        "title": "Aurora Store",
-        "icon": "Aurora_Store_icon.webp",
-        "url": "https://gitlab.com/AuroraOSS/AuroraStore",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "LX Music",
-        "icon": "LX_Music_icon.webp",
-        "url": "https://lxmusic.toside.cn",
-        "description": "",
-        "category": "安卓专区"
-    },
-    {
-        "title": "EhViewer",
-        "icon": "EhViewer_icon.webp",
-        "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
-        "description": "",
-        "category": "安卓专区"
-    }
+[
+  {
+    "title": "Shizuku",
+    "icon": "Shizuku_icon.webp",
+    "url": "https://shizuku.rikka.app/zh-hans",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "InstallerX Revived",
+    "icon": "InstallerX_Revived_icon.webp",
+    "url": "https://github.com/wxxsfxyzm/InstallerX-Revived",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "MT 管理器",
+    "icon": "MT_管理器_icon.webp",
+    "url": "https://mt2.cn",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Hail",
+    "icon": "Hail_icon.webp",
+    "url": "https://github.com/aistra0528/Hail",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "GKD",
+    "icon": "GKD_icon.webp",
+    "url": "https://gkd.li",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "李跳跳",
+    "icon": "李跳跳_icon.webp",
+    "url": "https://github.com/rongzhiy/LiTiaotiao",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Stellar",
+    "icon": "Stellar_icon.webp",
+    "url": "https://github.com/roro2239/Stellar",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "甲壳虫ADB助手",
+    "icon": "甲壳虫ADB助手_icon.webp",
+    "url": "https://github.com/didjdk/adbhelper",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "App Ops",
+    "icon": "App_Ops_icon.webp",
+    "url": "https://github.com/RikkaApps/App-Ops-issue-tracker",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Dhizuku",
+    "icon": "Dhizuku_icon.webp",
+    "url": "https://github.com/iamr0s/Dhizuku",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Ice Box",
+    "icon": "Ice_Box_icon.webp",
+    "url": "https://iceboxdoc.catchingnow.com/changelog.html",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "LocalSend",
+    "icon": "LocalSend_icon.webp",
+    "url": "https://localsend.org/zh-CN",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "AniCh",
+    "icon": "AniCh_icon.webp",
+    "url": "https://github.com/Sle2p/AniCh",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Kazumi",
+    "icon": "Kazumi_icon.webp",
+    "url": "https://kazumi.app",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "PiliPlus",
+    "icon": "PiliPlus_icon.webp",
+    "url": "https://github.com/bggRGjQaUbCoE/PiliPlus",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Via",
+    "icon": "Via_icon.webp",
+    "url": "https://viayoo.com/zh-cn",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Acode",
+    "icon": "Acode_icon.webp",
+    "url": "https://github.com/Acode-Foundation/Acode",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Xed-Editor",
+    "icon": "Xed-Editor_icon.webp",
+    "url": "https://github.com/Xed-Editor/Xed-Editor",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "LibChecker",
+    "icon": "LibChecker_icon.webp",
+    "url": "https://github.com/LibChecker/LibChecker",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Canta",
+    "icon": "Canta_icon.webp",
+    "url": "https://github.com/samolego/Canta",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Anywhere-",
+    "icon": "Anywhere-_icon.webp",
+    "url": "https://github.com/zhaobozhen/Anywhere-",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Flowmix",
+    "icon": "Flowmix_icon.webp",
+    "url": "https://docs.flowmix.ykload.com",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "小企鹅输入法",
+    "icon": "小企鹅输入法_icon.webp",
+    "url": "https://github.com/fcitx5-android/fcitx5-android",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "语燕输入法",
+    "icon": "语燕输入法_icon.webp",
+    "url": "https://github.com/gurecn/YuyanIme",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Clash Meta",
+    "icon": "Clash_Meta_icon.webp",
+    "url": "https://github.com/MetaCubeX/ClashMetaForAndroid",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "NekoBox",
+    "icon": "NekoBox_icon.webp",
+    "url": "https://github.com/MatsuriDayo/NekoBoxForAndroid",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Aurora Store",
+    "icon": "Aurora_Store_icon.webp",
+    "url": "https://gitlab.com/AuroraOSS/AuroraStore",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "LX Music",
+    "icon": "LX_Music_icon.webp",
+    "url": "https://lxmusic.toside.cn",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "EhViewer",
+    "icon": "EhViewer_icon.webp",
+    "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Image Toolbox",
+    "icon": "Image_Toolbox_icon.webp",
+    "url": "https://github.com/T8RIN/ImageToolbox",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Fake Location",
+    "icon": "Fake_Location_icon.webp",
+    "url": "https://fakeloc.cc/app",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "爱玩机工具箱",
+    "icon": "爱玩机工具箱_icon.webp",
+    "url": "https://www.aiwanjitool.com",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "清浊",
+    "icon": "清浊_icon.webp",
+    "url": "https://www.dircleaner.com",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "暮光",
+    "icon": "暮光_icon.webp",
+    "url": "https://qisuhe.github.io",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "WebToApp",
+    "icon": "WebToApp_icon.webp",
+    "url": "https://github.com/shiaho777/web-to-app",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Nrfr",
+    "icon": "Nrfr_icon.webp",
+    "url": "https://github.com/Ackites/Nrfr",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "ADB 助手",
+    "icon": "ADB_助手_icon.webp",
+    "url": "https://www.dagui-smart.com/app/s/1",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "ADB WiFi",
+    "icon": "ADB_WiFi_icon.webp",
+    "url": "https://www.dagui-smart.com/app/s/3",
+    "description": "",
+    "category": "安卓专区"
+  }
 ]

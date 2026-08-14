@@ -1,191 +1,191 @@
 [
-    {
-        "title": "微信",
-        "icon": "微信_icon.webp",
-        "url": "https://weixin.qq.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "QQ",
-        "icon": "QQ_icon.webp",
-        "url": "https://im.qq.com/index/#/",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "哔哩哔哩",
-        "icon": "哔哩哔哩_icon.webp",
-        "url": "https://www.bilibili.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "抖音",
-        "icon": "抖音_icon.webp",
-        "url": "https://www.douyin.com/home",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "快手",
-        "icon": "快手_icon.webp",
-        "url": "https://www.kuaishou.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "小红书",
-        "icon": "小红书_icon.webp",
-        "url": "https://www.xiaohongshu.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "微博",
-        "icon": "微博_icon.webp",
-        "url": "https://weibo.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "知乎",
-        "icon": "知乎_icon.webp",
-        "url": "https://www.zhihu.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "酷安",
-        "icon": "酷安_icon.webp",
-        "url": "https://www.coolapk.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "京东",
-        "icon": "京东_icon.webp",
-        "url": "https://m.jd.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "拼多多",
-        "icon": "拼多多_icon.webp",
-        "url": "https://m.pinduoduo.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "淘宝",
-        "icon": "淘宝_icon.webp",
-        "url": "https://www.taobao.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "闲鱼",
-        "icon": "闲鱼_icon.webp",
-        "url": "https://www.goofish.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "腾讯视频",
-        "icon": "腾讯视频_icon.webp",
-        "url": "https://v.qq.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "QQ音乐",
-        "icon": "QQ音乐_icon.webp",
-        "url": "https://y.qq.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "酷狗音乐",
-        "icon": "酷狗音乐_icon.webp",
-        "url": "https://www.kugou.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "虎牙直播",
-        "icon": "虎牙直播_icon.webp",
-        "url": "https://www.huya.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "斗鱼直播",
-        "icon": "斗鱼直播_icon.webp",
-        "url": "https://www.douyu.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "夸克",
-        "icon": "夸克_icon.webp",
-        "url": "https://www.quark.cn",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "百度",
-        "icon": "百度_icon.webp",
-        "url": "https://www.baidu.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "百度贴吧",
-        "icon": "百度贴吧_icon.webp",
-        "url": "https://tieba.baidu.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "网易",
-        "icon": "网易_icon.webp",
-        "url": "https://www.163.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "网易云音乐",
-        "icon": "网易云音乐_icon.webp",
-        "url": "https://music.163.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "搜狐",
-        "icon": "搜狐_icon.webp",
-        "url": "https://www.sohu.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "今日头条",
-        "icon": "今日头条_icon.webp",
-        "url": "https://www.toutiao.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "西瓜视频",
-        "icon": "西瓜视频_icon.webp",
-        "url": "https://www.ixigua.com",
-        "description": "",
-        "category": "国内主流"
-    },
-    {
-        "title": "爱奇艺",
-        "icon": "爱奇艺_icon.webp",
-        "url": "https://www.iqiyi.com",
-        "description": "",
-        "category": "国内主流"
-    }
+  {
+    "title": "微信",
+    "icon": "微信_icon.webp",
+    "url": "https://weixin.qq.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "QQ",
+    "icon": "QQ_icon.webp",
+    "url": "https://im.qq.com/index/#/",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "哔哩哔哩",
+    "icon": "哔哩哔哩_icon.webp",
+    "url": "https://www.bilibili.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "抖音",
+    "icon": "抖音_icon.webp",
+    "url": "https://www.douyin.com/home",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "快手",
+    "icon": "快手_icon.webp",
+    "url": "https://www.kuaishou.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "小红书",
+    "icon": "小红书_icon.webp",
+    "url": "https://www.xiaohongshu.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "微博",
+    "icon": "微博_icon.webp",
+    "url": "https://weibo.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "知乎",
+    "icon": "知乎_icon.webp",
+    "url": "https://www.zhihu.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "酷安",
+    "icon": "酷安_icon.webp",
+    "url": "https://www.coolapk.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "京东",
+    "icon": "京东_icon.webp",
+    "url": "https://m.jd.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "拼多多",
+    "icon": "拼多多_icon.webp",
+    "url": "https://m.pinduoduo.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "淘宝",
+    "icon": "淘宝_icon.webp",
+    "url": "https://www.taobao.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "闲鱼",
+    "icon": "闲鱼_icon.webp",
+    "url": "https://www.goofish.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "腾讯视频",
+    "icon": "腾讯视频_icon.webp",
+    "url": "https://v.qq.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "QQ音乐",
+    "icon": "QQ音乐_icon.webp",
+    "url": "https://y.qq.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "酷狗音乐",
+    "icon": "酷狗音乐_icon.webp",
+    "url": "https://www.kugou.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "虎牙直播",
+    "icon": "虎牙直播_icon.webp",
+    "url": "https://www.huya.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "斗鱼直播",
+    "icon": "斗鱼直播_icon.webp",
+    "url": "https://www.douyu.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "夸克",
+    "icon": "夸克_icon.webp",
+    "url": "https://www.quark.cn",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "百度",
+    "icon": "百度_icon.webp",
+    "url": "https://www.baidu.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "百度贴吧",
+    "icon": "百度贴吧_icon.webp",
+    "url": "https://tieba.baidu.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "网易",
+    "icon": "网易_icon.webp",
+    "url": "https://www.163.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "网易云音乐",
+    "icon": "网易云音乐_icon.webp",
+    "url": "https://music.163.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "搜狐",
+    "icon": "搜狐_icon.webp",
+    "url": "https://www.sohu.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "今日头条",
+    "icon": "今日头条_icon.webp",
+    "url": "https://www.toutiao.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "西瓜视频",
+    "icon": "西瓜视频_icon.webp",
+    "url": "https://www.ixigua.com",
+    "description": "",
+    "category": "国内主流"
+  },
+  {
+    "title": "爱奇艺",
+    "icon": "爱奇艺_icon.webp",
+    "url": "https://www.iqiyi.com",
+    "description": "",
+    "category": "国内主流"
+  }
 ]

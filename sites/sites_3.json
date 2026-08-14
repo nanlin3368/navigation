@@ -1,93 +1,93 @@
 [
-    {
-        "title": "ChatGPT",
-        "icon": "ChatGPT_icon.webp",
-        "url": "https://chatgpt.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "Claude",
-        "icon": "Claude_icon.webp",
-        "url": "https://claude.ai",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "Copilot",
-        "icon": "Copilot_icon.webp",
-        "url": "https://copilot.microsoft.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "DeepSeek",
-        "icon": "DeepSeek_icon.webp",
-        "url": "https://chat.deepseek.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "Grok",
-        "icon": "Grok_icon.webp",
-        "url": "https://grok.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "Gemini",
-        "icon": "Gemini_icon.webp",
-        "url": "https://gemini.google.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "Midjourney",
-        "icon": "Midjourney_icon.webp",
-        "url": "https://www.midjourney.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "Perplexity",
-        "icon": "Perplexity_icon.webp",
-        "url": "https://www.perplexity.ai",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "kimi",
-        "icon": "kimi_icon.webp",
-        "url": "https://www.kimi.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "元宝",
-        "icon": "元宝_icon.webp",
-        "url": "https://yuanbao.tencent.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "豆包",
-        "icon": "豆包_icon.webp",
-        "url": "https://www.doubao.com/chat",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "千问",
-        "icon": "千问_icon.webp",
-        "url": "https://www.qianwen.com",
-        "description": "",
-        "category": "人工智能"
-    },
-    {
-        "title": "秘塔Ai",
-        "icon": "秘塔Ai_icon.webp",
-        "url": "https://metaso.cn",
-        "description": "",
-        "category": "人工智能"
-    }
+  {
+    "title": "ChatGPT",
+    "icon": "ChatGPT_icon.webp",
+    "url": "https://chatgpt.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "Claude",
+    "icon": "Claude_icon.webp",
+    "url": "https://claude.ai",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "Copilot",
+    "icon": "Copilot_icon.webp",
+    "url": "https://copilot.microsoft.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "DeepSeek",
+    "icon": "DeepSeek_icon.webp",
+    "url": "https://chat.deepseek.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "Grok",
+    "icon": "Grok_icon.webp",
+    "url": "https://grok.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "Gemini",
+    "icon": "Gemini_icon.webp",
+    "url": "https://gemini.google.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "Midjourney",
+    "icon": "Midjourney_icon.webp",
+    "url": "https://www.midjourney.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "Perplexity",
+    "icon": "Perplexity_icon.webp",
+    "url": "https://www.perplexity.ai",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "kimi",
+    "icon": "kimi_icon.webp",
+    "url": "https://www.kimi.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "元宝",
+    "icon": "元宝_icon.webp",
+    "url": "https://yuanbao.tencent.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "豆包",
+    "icon": "豆包_icon.webp",
+    "url": "https://www.doubao.com/chat",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "千问",
+    "icon": "千问_icon.webp",
+    "url": "https://www.qianwen.com",
+    "description": "",
+    "category": "人工智能"
+  },
+  {
+    "title": "秘塔Ai",
+    "icon": "秘塔Ai_icon.webp",
+    "url": "https://metaso.cn",
+    "description": "",
+    "category": "人工智能"
+  }
 ]

@@ -1,86 +1,86 @@
 [
-    {
-        "title": "Komiic",
-        "icon": "Komiic_icon.webp",
-        "url": "https://komiic.com",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "拷贝漫画",
-        "icon": "拷贝漫画_icon.webp",
-        "url": "https://www.2026copy.com/h5/index",
-        "description": "",
-        "category": "漫步次元"
-    },    
-    {
-        "title": "风铃动漫",
-        "icon": "风铃动漫_icon.webp",
-        "url": "https://www.aafun.cc",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "Animoe",
-        "icon": "Animoe_icon.webp",
-        "url": "https://animoe.org",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "Pixiv Viewer",
-        "icon": "Pixiv_Viewer_icon.webp",
-        "url": "https://pixiv.pictures",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "Mangabz",
-        "icon": "Mangabz_icon.webp",
-        "url": "https://www.mangabz.com",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "G点漫画",
-        "icon": "G点漫画_icon.webp",
-        "url": "https://m.g-mh.org",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "Yymanhua",
-        "icon": "Yymanhua_icon.webp",
-        "url": "https://www.yymanhua.com",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "轻书架",
-        "icon": "轻书架_icon.webp",
-        "url": "https://www.acgdmzy.com/home",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "稀饭动漫",
-        "icon": "稀饭动漫_icon.webp",
-        "url": "https://next.xifanacg.com",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "花火漫画",
-        "icon": "花火漫画_icon.webp",
-        "url": "https://web.hanabimanga.com/zh-CN",
-        "description": "",
-        "category": "漫步次元"
-    },
-    {
-        "title": "AGE动漫",
-        "icon": "AGE动漫_icon.webp",
-        "url": "https://m.agedm.io",
-        "description": "",
-        "category": "漫步次元"
-    }
+  {
+    "title": "Komiic",
+    "icon": "Komiic_icon.webp",
+    "url": "https://komiic.com",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "拷贝漫画",
+    "icon": "拷贝漫画_icon.webp",
+    "url": "https://www.2026copy.com/h5/index",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "风铃动漫",
+    "icon": "风铃动漫_icon.webp",
+    "url": "https://www.aafun.cc",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "Animoe",
+    "icon": "Animoe_icon.webp",
+    "url": "https://animoe.org",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "Pixiv Viewer",
+    "icon": "Pixiv_Viewer_icon.webp",
+    "url": "https://pixiv.pictures",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "Mangabz",
+    "icon": "Mangabz_icon.webp",
+    "url": "https://www.mangabz.com",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "G点漫画",
+    "icon": "G点漫画_icon.webp",
+    "url": "https://m.g-mh.org",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "Yymanhua",
+    "icon": "Yymanhua_icon.webp",
+    "url": "https://www.yymanhua.com",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "轻书架",
+    "icon": "轻书架_icon.webp",
+    "url": "https://www.acgdmzy.com/home",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "稀饭动漫",
+    "icon": "稀饭动漫_icon.webp",
+    "url": "https://next.xifanacg.com",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "花火漫画",
+    "icon": "花火漫画_icon.webp",
+    "url": "https://web.hanabimanga.com/zh-CN",
+    "description": "",
+    "category": "漫步次元"
+  },
+  {
+    "title": "AGE动漫",
+    "icon": "AGE动漫_icon.webp",
+    "url": "https://m.agedm.io",
+    "description": "",
+    "category": "漫步次元"
+  }
 ]

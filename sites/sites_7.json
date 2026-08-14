@@ -1,198 +1,198 @@
 [
-    {
-        "title": "菜鸟教程",
-        "icon": "菜鸟教程_icon.webp",
-        "url": "https://www.runoob.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "wikiHow",
-        "icon": "wikiHow_icon.webp",
-        "url": "https://zh.wikihow.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "W3Schools",
-        "icon": "W3Schools_icon.webp",
-        "url": "https://www.w3schools.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Qwerty Learner",
-        "icon": "Qwerty_Learner_icon.webp",
-        "url": "https://qwerty.kaiyi.cool/mobile",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Edclub",
-        "icon": "Edclub_icon.webp",
-        "url": "https://www.edclub.com/zh/",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Musicca",
-        "icon": "Musicca_icon.webp",
-        "url": "https://www.musicca.com/zh",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Fold'N Fly",
-        "icon": "Fold_N_Fly_icon.webp",
-        "url": "https://www.foldnfly.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Geeksforgeeks",
-        "icon": "Geeksforgeeks_icon.webp",
-        "url": "https://www.geeksforgeeks.org",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "你缺失的那门计算机课",
-        "icon": "你缺失的那门计算机课_icon.webp",
-        "url": "https://www.criwits.top/missing",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "VitePress",
-        "icon": "VitePress_icon.webp",
-        "url": "https://vitepress.dev/zh",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Markdown 教程",
-        "icon": "Markdown_教程_icon.webp",
-        "url": "https://www.markdownlang.com/zh",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Bun",
-        "icon": "Bun_icon.webp",
-        "url": "https://www.bunjs.com.cn/zh-cn",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "LetMeEnglish",
-        "icon": "LetMeEnglish_icon.webp",
-        "url": "https://letmeenglish.com/zh-hans",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "LanguageGuide",
-        "icon": "LanguageGuide_icon.webp",
-        "url": "https://www.languageguide.org/cn",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Type Words",
-        "icon": "Type_Words_icon.webp",
-        "url": "https://typewords.cc",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "W3School",
-        "icon": "W3School_icon.webp",
-        "url": "https://www.w3school.com.cn",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "Typing Learner",
-        "icon": "Typing_Learner_icon.webp",
-        "url": "https://www.typinglearner.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "LabEx",
-        "icon": "LabEx_icon.webp",
-        "url": "https://labex.io/zh",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "BALA 公考",
-        "icon": "BALA_公考_icon.webp",
-        "url": "https://www.baijing1.top",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "VitePress",
-        "icon": "VitePress_icon.webp",
-        "url": "https://vitepress.yiov.top",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "考试酷",
-        "icon": "考试酷_icon.webp",
-        "url": "https://www.examcoo.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "摄影技术学习",
-        "icon": "摄影技术学习_icon.webp",
-        "url": "https://www.photographystudy.online",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "格言人",
-        "icon": "格言人_icon.webp",
-        "url": "https://kyrgk.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "格言人-英语",
-        "icon": "格言人-英语_icon.webp",
-        "url": "https://en.kyrgk.com",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "DevDocs",
-        "icon": "DevDocs_icon.webp",
-        "url": "https://devdocs.io",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "LingoHut",
-        "icon": "LingoHut_icon.webp",
-        "url": "https://www.lingohut.com/zh",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "黄油单词",
-        "icon": "黄油单词_icon.webp",
-        "url": "https://waiyuka.cc/zh-CN",
-        "description": "",
-        "category": "学习成长"
-    },
-    {
-        "title": "汉语拼音在线学习",
-        "icon": "汉语拼音在线学习_icon.webp",
-        "url": "https://hanyupinyin.net",
-        "description": "",
-        "category": "学习成长"
-    }    
+  {
+    "title": "菜鸟教程",
+    "icon": "菜鸟教程_icon.webp",
+    "url": "https://www.runoob.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "wikiHow",
+    "icon": "wikiHow_icon.webp",
+    "url": "https://zh.wikihow.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "W3Schools",
+    "icon": "W3Schools_icon.webp",
+    "url": "https://www.w3schools.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Qwerty Learner",
+    "icon": "Qwerty_Learner_icon.webp",
+    "url": "https://qwerty.kaiyi.cool/mobile",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Edclub",
+    "icon": "Edclub_icon.webp",
+    "url": "https://www.edclub.com/zh/",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Musicca",
+    "icon": "Musicca_icon.webp",
+    "url": "https://www.musicca.com/zh",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Fold'N Fly",
+    "icon": "Fold_N_Fly_icon.webp",
+    "url": "https://www.foldnfly.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Geeksforgeeks",
+    "icon": "Geeksforgeeks_icon.webp",
+    "url": "https://www.geeksforgeeks.org",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "你缺失的那门计算机课",
+    "icon": "你缺失的那门计算机课_icon.webp",
+    "url": "https://www.criwits.top/missing",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "VitePress",
+    "icon": "VitePress_icon.webp",
+    "url": "https://vitepress.dev/zh",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Markdown 教程",
+    "icon": "Markdown_教程_icon.webp",
+    "url": "https://www.markdownlang.com/zh",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Bun",
+    "icon": "Bun_icon.webp",
+    "url": "https://www.bunjs.com.cn/zh-cn",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "LetMeEnglish",
+    "icon": "LetMeEnglish_icon.webp",
+    "url": "https://letmeenglish.com/zh-hans",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "LanguageGuide",
+    "icon": "LanguageGuide_icon.webp",
+    "url": "https://www.languageguide.org/cn",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Type Words",
+    "icon": "Type_Words_icon.webp",
+    "url": "https://typewords.cc",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "W3School",
+    "icon": "W3School_icon.webp",
+    "url": "https://www.w3school.com.cn",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "Typing Learner",
+    "icon": "Typing_Learner_icon.webp",
+    "url": "https://www.typinglearner.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "LabEx",
+    "icon": "LabEx_icon.webp",
+    "url": "https://labex.io/zh",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "BALA 公考",
+    "icon": "BALA_公考_icon.webp",
+    "url": "https://www.baijing1.top",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "VitePress",
+    "icon": "VitePress_icon.webp",
+    "url": "https://vitepress.yiov.top",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "考试酷",
+    "icon": "考试酷_icon.webp",
+    "url": "https://www.examcoo.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "摄影技术学习",
+    "icon": "摄影技术学习_icon.webp",
+    "url": "https://www.photographystudy.online",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "格言人",
+    "icon": "格言人_icon.webp",
+    "url": "https://kyrgk.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "格言人-英语",
+    "icon": "格言人-英语_icon.webp",
+    "url": "https://en.kyrgk.com",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "DevDocs",
+    "icon": "DevDocs_icon.webp",
+    "url": "https://devdocs.io",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "LingoHut",
+    "icon": "LingoHut_icon.webp",
+    "url": "https://www.lingohut.com/zh",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "黄油单词",
+    "icon": "黄油单词_icon.webp",
+    "url": "https://waiyuka.cc/zh-CN",
+    "description": "",
+    "category": "学习成长"
+  },
+  {
+    "title": "汉语拼音在线学习",
+    "icon": "汉语拼音在线学习_icon.webp",
+    "url": "https://hanyupinyin.net",
+    "description": "",
+    "category": "学习成长"
+  }
 ]

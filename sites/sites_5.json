@@ -1,44 +1,44 @@
 [
-    {
-        "title": "51CTO 博客",
-        "icon": "51CTO博客_icon.webp",
-        "url": "https://blog.51cto.com",
-        "description": "",
-        "category": "技术社区"
-    },
-    {
-        "title": "稀土掘金",
-        "icon": "稀土掘金_icon.webp",
-        "url": "https://juejin.cn",
-        "description": "",
-        "category": "技术社区"
-    },
-    {
-        "title": "Oschina",
-        "icon": "Oschina_icon.webp",
-        "url": "https://www.oschina.net",
-        "description": "",
-        "category": "技术社区"
-    },
-    {
-        "title": "CSDN",
-        "icon": "CSDN_icon.webp",
-        "url": "https://www.csdn.net",
-        "description": "",
-        "category": "技术社区"
-    },
-    {
-        "title": "博客园",
-        "icon": "博客园_icon.webp",
-        "url": "https://www.cnblogs.com",
-        "description": "",
-        "category": "技术社区"
-    },
-    {
-        "title": "MT 论坛",
-        "icon": "MT论坛_icon.webp",
-        "url": "https://bbs.binmt.cc",
-        "description": "",
-        "category": "技术社区"
-    }
+  {
+    "title": "51CTO 博客",
+    "icon": "51CTO博客_icon.webp",
+    "url": "https://blog.51cto.com",
+    "description": "",
+    "category": "技术社区"
+  },
+  {
+    "title": "稀土掘金",
+    "icon": "稀土掘金_icon.webp",
+    "url": "https://juejin.cn",
+    "description": "",
+    "category": "技术社区"
+  },
+  {
+    "title": "Oschina",
+    "icon": "Oschina_icon.webp",
+    "url": "https://www.oschina.net",
+    "description": "",
+    "category": "技术社区"
+  },
+  {
+    "title": "CSDN",
+    "icon": "CSDN_icon.webp",
+    "url": "https://www.csdn.net",
+    "description": "",
+    "category": "技术社区"
+  },
+  {
+    "title": "博客园",
+    "icon": "博客园_icon.webp",
+    "url": "https://www.cnblogs.com",
+    "description": "",
+    "category": "技术社区"
+  },
+  {
+    "title": "MT 论坛",
+    "icon": "MT论坛_icon.webp",
+    "url": "https://bbs.binmt.cc",
+    "description": "",
+    "category": "技术社区"
+  }
 ]

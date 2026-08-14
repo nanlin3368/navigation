@@ -1,58 +1,58 @@
 [
-    {
-        "title": "网盘资源搜索",
-        "icon": "网盘资源搜索_icon.webp",
-        "url": "https://wpzyss.top",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "PanSou",
-        "icon": "PanSou_icon.webp",
-        "url": "https://so.252035.xyz",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "TV 搜",
-        "icon": "TV搜_icon.webp",
-        "url": "https://www.tvso.uk",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "鸠摩搜书",
-        "icon": "鸠摩搜书_icon.webp",
-        "url": "https://www.jiumosearch.org",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "海搜",
-        "icon": "海搜_icon.webp",
-        "url": "https://haisou.cc",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "PanHub",
-        "icon": "PanHub_icon.webp",
-        "url": "https://panhub.shenzjd.com",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "极刻云搜",
-        "icon": "极刻云搜_icon.webp",
-        "url": "https://www.jikeyunsou.com",
-        "description": "",
-        "category": "聚合搜索"
-    },
-    {
-        "title": "盘小子",
-        "icon": "盘小子_icon.webp",
-        "url": "https://pan.xiaozi.cc",
-        "description": "",
-        "category": "聚合搜索"
-    }
+  {
+    "title": "网盘资源搜索",
+    "icon": "网盘资源搜索_icon.webp",
+    "url": "https://wpzyss.top",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "PanSou",
+    "icon": "PanSou_icon.webp",
+    "url": "https://so.252035.xyz",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "TV 搜",
+    "icon": "TV搜_icon.webp",
+    "url": "https://www.tvso.uk",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "鸠摩搜书",
+    "icon": "鸠摩搜书_icon.webp",
+    "url": "https://www.jiumosearch.org",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "海搜",
+    "icon": "海搜_icon.webp",
+    "url": "https://haisou.cc",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "PanHub",
+    "icon": "PanHub_icon.webp",
+    "url": "https://panhub.shenzjd.com",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "极刻云搜",
+    "icon": "极刻云搜_icon.webp",
+    "url": "https://www.jikeyunsou.com",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "盘小子",
+    "icon": "盘小子_icon.webp",
+    "url": "https://pan.xiaozi.cc",
+    "description": "",
+    "category": "聚合搜索"
+  }
 ]
