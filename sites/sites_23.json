@@ -292,5 +292,19 @@
     "url": "https://github.com/LaoFeng-mouse/flyingmouse-format",
     "description": "",
     "category": "桌面生态"
+  },
+  {
+    "title": "游戏加加",
+    "icon": "游戏加加_icon.webp",
+    "url": "https://gamepp.com",
+    "description": "",
+    "category": "桌面生态"
+  },
+  {
+    "title": "Pavise",
+    "icon": "Pavise_icon.webp",
+    "url": "https://github.com/dulaiduwang003/Pavise-Game",
+    "description": "",
+    "category": "桌面生态"
   }
 ]

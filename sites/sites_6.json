@@ -63,6 +63,13 @@
     "category": "新知百态"
   },
   {
+    "title": "Just Laws",
+    "icon": "Just_Laws_icon.webp",
+    "url": "https://www.justlaws.cn",
+    "description": "",
+    "category": "新知百态"
+  },
+  {
     "title": "医保政策导航",
     "icon": "医保政策导航_icon.webp",
     "url": "https://yibao.233h.com",
@@ -73,13 +80,6 @@
     "title": "高校名录数据可视化",
     "icon": "高校名录数据可视化_icon.webp",
     "url": "https://uni.utities.online",
-    "description": "",
-    "category": "新知百态"
-  },
-  {
-    "title": "日本海景车站",
-    "icon": "日本海景车站_icon.webp",
-    "url": "https://seaside-station.com",
     "description": "",
     "category": "新知百态"
   },
@@ -164,6 +164,20 @@
     "title": "今日热榜",
     "icon": "今日热榜_icon.webp",
     "url": "https://tophub.today",
+    "description": "",
+    "category": "新知百态"
+  },
+  {
+    "title": "宿舍志",
+    "icon": "宿舍志_icon.webp",
+    "url": "https://sushe.help",
+    "description": "",
+    "category": "新知百态"
+  },
+  {
+    "title": "日本海景车站",
+    "icon": "日本海景车站_icon.webp",
+    "url": "https://seaside-station.com",
     "description": "",
     "category": "新知百态"
   }

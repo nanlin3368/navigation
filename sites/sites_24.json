@@ -77,9 +77,9 @@
     "category": "安卓专区"
   },
   {
-    "title": "LocalSend",
-    "icon": "LocalSend_icon.webp",
-    "url": "https://localsend.org/zh-CN",
+    "title": "清浊",
+    "icon": "清浊_icon.webp",
+    "url": "https://www.dircleaner.com",
     "description": "",
     "category": "安卓专区"
   },
@@ -108,6 +108,20 @@
     "title": "Via",
     "icon": "Via_icon.webp",
     "url": "https://viayoo.com/zh-cn",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "LocalSend",
+    "icon": "LocalSend_icon.webp",
+    "url": "https://localsend.org/zh-CN",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "暮光",
+    "icon": "暮光_icon.webp",
+    "url": "https://qisuhe.github.io",
     "description": "",
     "category": "安卓专区"
   },
@@ -196,9 +210,9 @@
     "category": "安卓专区"
   },
   {
-    "title": "EhViewer",
-    "icon": "EhViewer_icon.webp",
-    "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+    "title": "Obsidian",
+    "icon": "Obsidian_icon.webp",
+    "url": "https://github.com/obsidianmd/obsidian-releases",
     "description": "",
     "category": "安卓专区"
   },
@@ -206,6 +220,34 @@
     "title": "Image Toolbox",
     "icon": "Image_Toolbox_icon.webp",
     "url": "https://github.com/T8RIN/ImageToolbox",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "KeePassDX",
+    "icon": "KeePassDX_icon.webp",
+    "url": "https://github.com/Kunzisoft/KeePassDX",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "轻小说阅读器",
+    "icon": "轻小说阅读器_icon.webp",
+    "url": "https://github.com/dmzz-yyhyy/LightNovelReader",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "EhViewer",
+    "icon": "EhViewer_icon.webp",
+    "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Animeko",
+    "icon": "Animeko_icon.webp",
+    "url": "https://animeko.org",
     "description": "",
     "category": "安卓专区"
   },
@@ -220,20 +262,6 @@
     "title": "爱玩机工具箱",
     "icon": "爱玩机工具箱_icon.webp",
     "url": "https://www.aiwanjitool.com",
-    "description": "",
-    "category": "安卓专区"
-  },
-  {
-    "title": "清浊",
-    "icon": "清浊_icon.webp",
-    "url": "https://www.dircleaner.com",
-    "description": "",
-    "category": "安卓专区"
-  },
-  {
-    "title": "暮光",
-    "icon": "暮光_icon.webp",
-    "url": "https://qisuhe.github.io",
     "description": "",
     "category": "安卓专区"
   },
@@ -262,6 +290,13 @@
     "title": "ADB WiFi",
     "icon": "ADB_WiFi_icon.webp",
     "url": "https://www.dagui-smart.com/app/s/3",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "ShizuWall",
+    "icon": "ShizuWall_icon.webp",
+    "url": "https://github.com/AhmetCanArslan/ShizuWall",
     "description": "",
     "category": "安卓专区"
   }

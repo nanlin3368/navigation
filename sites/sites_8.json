@@ -103,5 +103,12 @@
     "url": "https://jsontech.net/zh",
     "description": "",
     "category": "开发辅助"
+  },
+  {
+    "title": "WorkTool",
+    "icon": "Work_Tool_icon.webp",
+    "url": "https://www.worktool.app/zh",
+    "description": "",
+    "category": "开发辅助"
   }
 ]
