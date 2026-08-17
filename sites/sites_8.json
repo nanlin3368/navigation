@@ -110,5 +110,12 @@
     "url": "https://www.worktool.app/zh",
     "description": "",
     "category": "开发辅助"
+  },
+  {
+    "title": "EdJson",
+    "icon": "EdJson_icon.webp",
+    "url": "https://edjson.com",
+    "description": "",
+    "category": "开发辅助"
   }
 ]

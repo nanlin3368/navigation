@@ -299,5 +299,19 @@
     "url": "https://github.com/AhmetCanArslan/ShizuWall",
     "description": "",
     "category": "安卓专区"
+  },
+  {
+    "title": "Appteka",
+    "icon": "Appteka_icon.webp",
+    "url": "https://github.com/solkin/appteka-android",
+    "description": "",
+    "category": "安卓专区"
+  },
+  {
+    "title": "WeatherMaster",
+    "icon": "WeatherMaster_icon.webp",
+    "url": "https://github.com/PranshulGG/WeatherMaster",
+    "description": "",
+    "category": "安卓专区"
   }
 ]
