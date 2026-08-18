@@ -54,5 +54,12 @@
     "url": "https://pan.xiaozi.cc",
     "description": "",
     "category": "聚合搜索"
+  },
+  {
+    "title": "聚盘搜",
+    "icon": "聚盘搜_icon.webp",
+    "url": "https://www.panso567.com",
+    "description": "",
+    "category": "聚合搜索"
   }
 ]

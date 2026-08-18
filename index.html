@@ -70,7 +70,7 @@
       :root {
         --primary-bg: #eeedf2;
         --surface-bg: #ffffff;
-        --border-color: #cfd2db;
+        --border-color: #d0d2dc;
         --accent-color: #007ee6;
         --accent-gradient: #007ee6;
         --success-color: #34c759;
@@ -107,6 +107,11 @@
         --card-hover-border: rgba(59, 130, 246, 0.55);
         --card-hover-glow: rgba(59, 130, 246, 0.32);
         --card-hover-glow-soft: rgba(59, 130, 246, 0.18);
+
+        /* ── 入场动画参数 ── */
+        --fade-distance: 80px;
+        --fade-duration: 0.5s;
+        --fade-easing: cubic-bezier(0.35, 1, 1, 1);
       }
 
       body.dark {
@@ -158,61 +163,38 @@
          §1  通用基础样式
          ════════════════════════════════════════════════════════ */
 
-      /* ── 入场动画 ── */
-      @keyframes pageLoad {
+      /* ── 入场动画：从底部淡入 ── */
+      @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(var(--fade-distance));
         }
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
-      @keyframes containerFloat {
-        from {
-          opacity: 0;
-          transform: translateY(30px) scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
+
+      /* --- 先出现组：左侧导航栏 / 搜索栏 / 悬浮按钮（桌面&移动） --- */
+      .animate-early {
+        animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
       }
-      @keyframes titleGlow {
-        from {
-          filter: brightness(1);
-        }
-        to {
-          filter: brightness(1.2);
-        }
+
+      /* --- 后出现组：网格卡片 / 底部页脚 --- */
+      .animate-late {
+        animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.45s both;
       }
-      @keyframes categoriesSlide {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
+
+      /* ── 其他保留动画（图标浮动、骨架 shimmer 等） ── */
+      @keyframes iconFloat {
+        0% {
+          transform: translateY(0px);
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+        50% {
+          transform: translateY(-10px);
         }
-      }
-      @keyframes toolsSlide {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes footerFade {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
+        100% {
+          transform: translateY(0px);
         }
       }
       @keyframes skeletonShimmer {
@@ -578,9 +560,6 @@
       }
 
       /* ── 分类按钮（通用基础，两端覆盖细节） ── */
-      .categories {
-        animation: categoriesSlide 0.8s ease 0.8s both;
-      }
       .category-btn {
         background: transparent;
         border: none;
@@ -623,7 +602,6 @@
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 24px;
         margin-bottom: 32px;
-        animation: toolsSlide 0.8s ease 1s both;
       }
       .tool-card {
         background: var(--surface-bg);
@@ -642,18 +620,6 @@
         box-shadow:
           0 0 18px var(--card-hover-glow),
           0 0 40px var(--card-hover-glow-soft);
-      }
-
-      @keyframes iconFloat {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
       }
 
       .tool-icon {
@@ -783,7 +749,6 @@
         border-radius: 20px;
         border: 1px solid var(--border-color);
         box-shadow: var(--shadow-sm);
-        animation: footerFade 0.8s ease 1.2s both;
       }
 
       /* ── 底部到达发光条 ── */
@@ -1527,7 +1492,6 @@
           padding: 0;
           align-items: stretch;
           min-height: 100dvh;
-          animation: pageLoad 0.8s ease;
           overflow: hidden;
         }
         .container {
@@ -1550,7 +1514,7 @@
           overflow: hidden;
         }
 
-        /* ── 左侧导航栏 ── */
+        /* ── 左侧导航栏（先出现组） ── */
         .sidebar {
           display: flex;
           width: 260px;
@@ -1561,6 +1525,7 @@
           height: 100dvh;
           overflow: hidden;
           z-index: 10;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
         }
 
         /* ── 侧边栏标题区 ── */
@@ -1610,7 +1575,6 @@
           gap: 6px;
           padding: 16px 12px 28px;
           margin-bottom: 0;
-          animation: none;
         }
 
         /* ── 分类按钮：桌面端横向列表样式 ── */
@@ -1670,11 +1634,15 @@
           border-radius: 2px;
         }
 
-        /* ── 搜索区 ── */
+        /* ── 搜索区（先出现组） ── */
         .search-container {
           margin-bottom: 28px;
           align-items: center;
-          animation: none;
+        }
+        .search-wrapper {
+          position: relative;
+          z-index: 10;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
         }
         .search-bar {
           width: 680px;
@@ -1712,11 +1680,12 @@
           }
         }
 
-        /* ── 工具卡片网格 ── */
+        /* ── 工具卡片网格（后出现组） ── */
         .tools-grid {
           grid-template-columns: repeat(4, 1fr);
           gap: 18px;
           margin-bottom: 0;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.45s both;
         }
         .tool-card {
           padding: 20px 20px 18px;
@@ -1745,9 +1714,17 @@
           padding: 6px 16px;
           border-radius: 10px;
         }
+
+        /* ── 底部页脚（后出现组） ── */
         footer {
           font-size: 0.95rem;
           margin-top: 28px;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.45s both;
+        }
+
+        /* ── 悬浮菜单组（先出现组） ── */
+        #settingsFabGroup {
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
         }
 
         /* ── 隐藏移动端专属元素 ── */
@@ -1776,7 +1753,6 @@
         /* ── 页面 / 容器 ── */
         body {
           padding: 0;
-          animation: pageLoad 0.8s ease;
         }
         .container {
           padding: 0;
@@ -1784,7 +1760,6 @@
           border-radius: 0;
           box-shadow: none;
           background: var(--primary-bg);
-          animation: none;
         }
 
         /* ── 布局容器退化为普通块流 ── */
@@ -1797,7 +1772,7 @@
           display: none;
         }
 
-        /* ── 顶部搜索栏 ── */
+        /* ── 顶部搜索栏（先出现组） ── */
         .search-wrapper {
           position: fixed;
           top: 14px;
@@ -1809,8 +1784,8 @@
           display: flex;
           align-items: center;
           gap: 10px;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
         }
-        /* 抽屉打开时与悬浮按钮一致：禁止点击穿透 */
         body.drawer-open .search-wrapper {
           pointer-events: none;
         }
@@ -1885,7 +1860,6 @@
           box-shadow: var(--shadow-sm);
           transform: scale(0.94);
         }
-        /* 图标高亮为主题色 */
         .mobile-menu-btn.open {
           color: var(--accent-color);
         }
@@ -2015,7 +1989,7 @@
           color: white;
         }
 
-        /* ── 工具卡片网格 ── */
+        /* ── 工具卡片网格（后出现组） ── */
         .tool-title {
           font-size: 1rem;
         }
@@ -2032,16 +2006,20 @@
           gap: 15px;
           margin-bottom: 8px;
           padding: 80px 15px 16px;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.45s both;
         }
         .tool-card {
           padding: 20px 20px 18px;
           border-radius: 20px;
         }
+
+        /* ── 底部页脚（后出现组） ── */
         footer {
           margin: 0 15px 26px;
           padding: 18px 16px;
           font-size: 0.9rem;
           border-radius: 18px;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.45s both;
         }
 
         /* ── 分类分组标题 ── */
@@ -2096,6 +2074,7 @@
           right: 24px;
           bottom: 90px;
           gap: 18px;
+          animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
         }
         #settingsFab {
           width: 46px;
@@ -2116,7 +2095,7 @@
           justify-content: stretch;
         }
 
-        /* ── 工具箱底部面板 ── */
+        /* ── 简单工具底部面板 ── */
         #toolboxModal .toolbox-panel {
           width: 100%;
           max-width: 100%;
@@ -2134,7 +2113,7 @@
           transform: translateY(0);
         }
 
-        /* ── 工具箱底部面板标题：居中，顶部加"把手"条 ── */
+        /* ── 简单工具底部面板标题：居中，顶部加"把手"条 ── */
         #toolboxModal .toolbox-panel::before {
           content: "";
           display: block;
