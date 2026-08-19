@@ -61,5 +61,19 @@
     "url": "https://www.panso567.com",
     "description": "",
     "category": "聚合搜索"
+  },
+  {
+    "title": "点派搜索",
+    "icon": "点派搜索_icon.webp",
+    "url": "https://dianpai.dpdns.org",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "盘盘侠",
+    "icon": "盘盘侠_icon.webp",
+    "url": "https://www.panpanxia.com",
+    "description": "",
+    "category": "聚合搜索"
   }
 ]

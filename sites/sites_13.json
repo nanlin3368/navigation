@@ -397,5 +397,12 @@
     "url": "https://remeins.com",
     "description": "",
     "category": "文档办公"
+  },
+  {
+    "title": "PDF 工具箱",
+    "icon": "PDF_工具箱_icon.webp",
+    "url": "https://pdfbookmarks.com/zh",
+    "description": "",
+    "category": "文档办公"
   }
 ]

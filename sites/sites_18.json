@@ -100,14 +100,28 @@
   {
     "title": "Go Music DL",
     "icon": "Go_Music_DL_icon.webp",
-    "url": "http://music.zkkp.nyc.mn/",
+    "url": "http://music.zkkp.nyc.mn",
     "description": "",
     "category": "影音娱乐"
   },
   {
-    "title": "白嫖者联盟",
-    "icon": "白嫖者联盟_icon.webp",
-    "url": "https://bpz.app",
+    "title": "开开无损音乐",
+    "icon": "开开无损音乐_icon.webp",
+    "url": "https://www.kkws.cc",
+    "description": "",
+    "category": "影音娱乐"
+  },
+  {
+    "title": "搜剧AI",
+    "icon": "搜剧AI_icon.webp",
+    "url": "https://souju.ai",
+    "description": "",
+    "category": "影音娱乐"
+  },
+  {
+    "title": "看剧AI",
+    "icon": "看剧AI_icon.webp",
+    "url": "https://kanju.ai",
     "description": "",
     "category": "影音娱乐"
   }
