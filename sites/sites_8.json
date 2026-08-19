@@ -117,5 +117,12 @@
     "url": "https://edjson.com",
     "description": "",
     "category": "开发辅助"
+  },
+  {
+    "title": "WeTools",
+    "icon": "WeTools_icon.webp",
+    "url": "https://wetools.cc",
+    "description": "",
+    "category": "开发辅助"
   }
 ]

@@ -306,5 +306,12 @@
     "url": "https://github.com/dulaiduwang003/Pavise-Game",
     "description": "",
     "category": "桌面生态"
+  },
+  {
+    "title": "Rustdesk",
+    "icon": "Rustdesk_icon.webp",
+    "url": "https://github.com/rustdesk/rustdesk",
+    "description": "",
+    "category": "桌面生态"
   }
 ]

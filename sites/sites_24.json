@@ -320,5 +320,12 @@
     "url": "https://operit.app",
     "description": "",
     "category": "安卓专区"
+  },
+  {
+    "title": "蓝牙遥控器",
+    "icon": "蓝牙遥控器_icon.webp",
+    "url": "https://gitlab.com/Atharok/BtRemote",
+    "description": "",
+    "category": "安卓专区"
   }
 ]

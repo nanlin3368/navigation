@@ -324,7 +324,7 @@
   {
     "title": "Tools Sutdio",
     "icon": "Tools_Sutdio_icon.webp",
-    "url": "https://tools.wflynn.cn/tools",
+    "url": "https://tools.wflynn.cn",
     "description": "",
     "category": "综合效率"
   },
@@ -413,6 +413,13 @@
     "category": "综合效率"
   },
   {
+    "title": "格镜工具箱",
+    "icon": "格镜工具箱_icon.webp",
+    "url": "https://tools.gaiyiguo.com",
+    "description": "",
+    "category": "综合效率"
+  },
+  {
     "title": "ToolKnit",
     "icon": "ToolKnit_icon.webp",
     "url": "https://toolknit.com",
@@ -444,6 +451,20 @@
     "title": "LocallyTools",
     "icon": "LocallyTools_icon.webp",
     "url": "https://locallytools.com/zh-Hans",
+    "description": "",
+    "category": "综合效率"
+  },
+  {
+    "title": "MeTool",
+    "icon": "MeTool_icon.webp",
+    "url": "https://metool.online/zh",
+    "description": "",
+    "category": "综合效率"
+  },
+  {
+    "title": "91AI工具",
+    "icon": "91AI工具_icon.webp",
+    "url": "https://www.91aitool.cn",
     "description": "",
     "category": "综合效率"
   }

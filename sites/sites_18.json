@@ -124,5 +124,12 @@
     "url": "https://kanju.ai",
     "description": "",
     "category": "影音娱乐"
+  },
+  {
+    "title": "ZIP0",
+    "icon": "ZIP0_icon.webp",
+    "url": "https://zip0.com",
+    "description": "",
+    "category": "影音娱乐"
   }
 ]
