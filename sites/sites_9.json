@@ -145,5 +145,12 @@
     "url": "https://html5up.net",
     "description": "",
     "category": "资源基地"
+  },
+  {
+    "title": "StockTune",
+    "icon": "StockTune_icon.webp",
+    "url": "https://stocktune.com",
+    "description": "",
+    "category": "资源基地"
   }
 ]

@@ -313,5 +313,12 @@
     "url": "https://github.com/rustdesk/rustdesk",
     "description": "",
     "category": "桌面生态"
+  },
+  {
+    "title": "CC Switch",
+    "icon": "CC_Switch_icon.webp",
+    "url": "https://ccswitch.io/zh",
+    "description": "",
+    "category": "桌面生态"
   }
 ]

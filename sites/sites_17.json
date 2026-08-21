@@ -1,8 +1,15 @@
 [
   {
-    "title": "网盘资源搜索",
-    "icon": "网盘资源搜索_icon.webp",
-    "url": "https://wpzyss.top",
+    "title": "盘大师",
+    "icon": "盘大师_icon.webp",
+    "url": "https://www.pandashi8.com",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "极刻云搜",
+    "icon": "极刻云搜_icon.webp",
+    "url": "https://www.jikeyunsou.com",
     "description": "",
     "category": "聚合搜索"
   },
@@ -42,9 +49,9 @@
     "category": "聚合搜索"
   },
   {
-    "title": "极刻云搜",
-    "icon": "极刻云搜_icon.webp",
-    "url": "https://www.jikeyunsou.com",
+    "title": "网盘资源搜索",
+    "icon": "网盘资源搜索_icon.webp",
+    "url": "https://wpzyss.top",
     "description": "",
     "category": "聚合搜索"
   },

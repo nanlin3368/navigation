@@ -131,5 +131,26 @@
     "url": "https://zip0.com",
     "description": "",
     "category": "影音娱乐"
+  },
+  {
+    "title": "飞快 TV",
+    "icon": "飞快_TV_icon.webp",
+    "url": "https://feikuai.in",
+    "description": "",
+    "category": "影音娱乐"
+  },
+  {
+    "title": "简单 TV",
+    "icon": "简单_TV_icon.webp",
+    "url": "https://jiandantv.cc",
+    "description": "",
+    "category": "聚合搜索"
+  },
+  {
+    "title": "Moovie 影牛",
+    "icon": "Moovie_影牛_icon.webp",
+    "url": "https://moovie.c2v2.com",
+    "description": "",
+    "category": "影音娱乐"
   }
 ]

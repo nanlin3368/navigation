@@ -173,5 +173,19 @@
     "url": "https://www.bizhihui.com",
     "description": "",
     "category": "视觉灵感"
+  },
+  {
+    "title": "MeiGen",
+    "icon": "MeiGen_icon.webp",
+    "url": "https://www.meigen.ai",
+    "description": "",
+    "category": "视觉灵感"
+  },
+  {
+    "title": "GPT-Image2",
+    "icon": "GPT-Image2_icon.webp",
+    "url": "https://gpt-image2.canghe.ai",
+    "description": "",
+    "category": "视觉灵感"
   }
 ]

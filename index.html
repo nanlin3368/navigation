@@ -14,6 +14,8 @@
       name="description"
       content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。"
     />
+    <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
+    <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -36,13 +38,14 @@
       name="google-site-verification"
       content="inPHtMwNwYQJESgLzEK2Sk34DNKnGNiEPEBA0reyVsc"
     />
-    <link rel="apple-touch-icon" href="assets/picture/nav.webp" />
-    <link rel="icon" href="assets/picture/nav.webp" type="image/webp" />
-    <link
-      rel="alternate"
-      type="application/ld+json"
-      href="/structured-data.json"
-    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "星源导航",
+        "url": "https://nanlin3368.github.io/navigation/"
+      }
+    </script>
     <script>
       history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
@@ -85,13 +88,11 @@
         --tooltip-bg: #1c1c1e;
         --tooltip-text: #ffffff;
 
-        /* --- 极简阴影 --- */
+        /* ── 极简阴影 ── */
         --shadow-sm:
           0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
-
         --shadow-md:
           0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.04);
-
         --shadow-lg:
           0 10px 28px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.05);
 
@@ -175,12 +176,12 @@
         }
       }
 
-      /* --- 先出现组：左侧导航栏 / 搜索栏 / 悬浮按钮（桌面&移动） --- */
+      /* ── 先出现组：左侧导航栏 / 搜索栏 / 悬浮按钮（桌面&移动） ── */
       .animate-early {
         animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.08s both;
       }
 
-      /* --- 后出现组：网格卡片 / 底部页脚 --- */
+      /* ── 后出现组：网格卡片 / 底部页脚 ── */
       .animate-late {
         animation: fadeInUp var(--fade-duration) var(--fade-easing) 0.45s both;
       }
@@ -520,7 +521,7 @@
       }
       .engine-item:hover {
         background: var(--primary-bg);
-        transform: translateY(-2px);
+        transform: translateY(-5px);
       }
       .engine-item:active {
         transform: scale(0.95);
@@ -704,7 +705,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 32px 0 2px 0;
+        padding: 36px 0 2px 0;
         margin-top: 4px;
       }
       .category-section-header:first-of-type {
@@ -749,6 +750,10 @@
         border-radius: 20px;
         border: 1px solid var(--border-color);
         box-shadow: var(--shadow-sm);
+      }
+      .time-num {
+        color: var(--accent-color);
+        font-weight: 600;
       }
 
       /* ── 底部到达发光条 ── */
@@ -1312,7 +1317,7 @@
         min-width: 0;
       }
       .toolbox-item:hover {
-        transform: translateY(-2px);
+        transform: translateY(-5px);
         border-color: var(--card-hover-border);
         box-shadow:
           0 0 18px var(--card-hover-glow),
@@ -2028,7 +2033,7 @@
           display: flex;
           align-items: center;
           gap: 10px;
-          padding: 30px 0 2px 0;
+          padding: 32px 0 2px 0;
           margin-top: 4px;
         }
         .category-section-header:first-of-type {
@@ -2501,7 +2506,11 @@
 
           <!-- 底部页脚 -->
           <footer class="theme-anim">
-            <p>© 2026 星源导航 - 极简 · 纯粹 · 高效</p>
+            <p>
+              © <span id="currentYear"></span> 星源导航 - 极简 · 纯粹 · 高效
+              <br />
+              <span id="runtime"></span>
+            </p>
           </footer>
         </main>
       </div>
@@ -2830,11 +2839,15 @@
          主逻辑脚本（两端共用，移动/桌面差异通过 innerWidth 分支处理）
          ════════════════════════════════════════════════════════ -->
     <script>
+      // ── 全局 DOM 引用 ──
       const searchBox = document.getElementById("searchBox");
       const grid = document.getElementById("toolsGrid");
       const categoryBtns = document.querySelectorAll(".category-btn");
 
-      /* ── §A 搜索引擎选择与切换 ── */
+      /* ════════════════════════════════════════════════════════
+         §A  搜索引擎选择与切换
+         ════════════════════════════════════════════════════════ */
+
       const ENGINES = typeof SB_ENGINES !== "undefined" ? SB_ENGINES : {};
       const ENGINE_META =
         typeof SB_ENGINE_META !== "undefined" ? SB_ENGINE_META : {};
@@ -2849,7 +2862,7 @@
       const searchSubmit = document.getElementById("searchSubmit");
       const searchClear = document.getElementById("searchClear");
 
-      // ── 点击标题刷新网页 ──────────────────────────────────────────
+      // ── 点击标题刷新网页 ──
       document.querySelectorAll(".site-header h1").forEach(function (el) {
         el.style.cursor = "pointer";
         el.addEventListener("click", function (e) {
@@ -2858,7 +2871,7 @@
         });
       });
 
-      // ── 清除叉号显隐 ──────────────────────────────────────────
+      // ── 清除叉号显隐 ──
       function updateClearBtn() {
         searchClear.classList.toggle("visible", searchBox.value.length > 0);
       }
@@ -2876,7 +2889,7 @@
         }
       });
 
-      // ── 引擎触发器状态 ────────────────────────────────────────
+      // ── 引擎触发器状态 ──
       function setTriggerLocal() {
         triggerIcon.innerHTML =
           '<svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
@@ -2896,7 +2909,7 @@
         searchBox.placeholder = meta.placeholder || `用 ${meta.label} 搜索…`;
       }
 
-      // ── 引擎网格 ──────────────────────────────────────────────
+      // ── 引擎网格 ──
       function buildEngineGrid() {
         engineGrid
           .querySelectorAll(".engine-item:not(#engineLocal)")
@@ -2919,7 +2932,7 @@
       buildEngineGrid();
       setTriggerLocal();
 
-      // ── 引擎切换 ──────────────────────────────────────────────
+      // ── 引擎切换 ──
       function selectEngine(key) {
         currentEngine = key;
         document
@@ -2957,7 +2970,7 @@
 
       engineLocal.addEventListener("click", selectLocal);
 
-      // ── 下拉面板开关 ──────────────────────────────────────────
+      // ── 下拉面板开关 ──
       function openDropdown() {
         settingsFabGroup.classList.remove("expanded");
         settingsFabBtn.classList.remove("open");
@@ -2966,6 +2979,7 @@
         engineTrigger.setAttribute("aria-expanded", "true");
         history.pushState({ dropdownOpen: true }, "");
       }
+
       function closeDropdown() {
         engineDropdown.classList.remove("open");
         engineTrigger.classList.remove("open");
@@ -2975,12 +2989,14 @@
       window.addEventListener("popstate", () => {
         if (engineDropdown.classList.contains("open")) closeDropdown();
       });
+
       engineTrigger.addEventListener("click", (e) => {
         e.stopPropagation();
         engineDropdown.classList.contains("open")
           ? closeDropdown()
           : openDropdown();
       });
+
       document.addEventListener("click", (e) => {
         if (
           !engineDropdown.contains(e.target) &&
@@ -2989,17 +3005,21 @@
           closeDropdown();
       });
 
-      // ── 全网搜索 ──────────────────────────────────────────────
+      // ── 全网搜索 ──
       function doWebSearch() {
         const q = searchBox.value.trim();
         if (!q || currentEngine === "local") return;
         const fn = ENGINES[currentEngine];
         if (fn) window.open(fn(q), "_blank", "noopener");
       }
+
       searchSubmit.addEventListener("click", doWebSearch);
 
-      /* ── §B 分类数据加载与卡片渲染（懒加载分页） ── */
-      // ── 分类按钮索引初始化 ────────────────────────────────────
+      /* ════════════════════════════════════════════════════════
+         §B  分类数据加载与卡片渲染（懒加载分页）
+         ════════════════════════════════════════════════════════ */
+
+      // ── 分类按钮索引初始化 ──
       categoryBtns.forEach((btn, i) => {
         btn.dataset.index = i;
       });
@@ -3009,7 +3029,7 @@
       let loadedIndexes = new Set();
       const totalCategories = categoryBtns.length - 1;
 
-      // ── 渲染卡片（懒加载分页版）─────────────────────────────
+      // ── 渲染卡片（懒加载分页） ──
       const PAGE_SIZE = 20;
       let _lazyItems = [];
       let _lazyOffset = 0;
@@ -3057,7 +3077,7 @@
         };
       }
 
-      // 构建单个卡片节点
+      // ── 构建单个卡片节点 ──
       function buildCard(site, i) {
         const card = document.createElement("div");
         card.className = "tool-card theme-anim";
@@ -3069,11 +3089,11 @@
           ? `<img class="tool-icon" src="assets/siteicons/${site.icon}" alt="${site.title}" loading="lazy" style="animation-delay:${delay}s" onerror="this.outerHTML='<span class=\\'tool-icon-skeleton\\'></span>'">`
           : `<span class="tool-icon-skeleton"></span>`;
         card.innerHTML = `
-          ${iconHtml}
-          <h3 class="tool-title">${site.title || ""}</h3>
-          <p class="tool-description">${site.description || ""}</p>
-          <a href="go.html?url=${encodeURIComponent(site.url)}" target="_blank" rel="noopener noreferrer nofollow ugc" class="tool-link theme-anim">访问</a>
-        `;
+      ${iconHtml}
+      <h3 class="tool-title">${site.title || ""}</h3>
+      <p class="tool-description">${site.description || ""}</p>
+      <a href="go.html?url=${encodeURIComponent(site.url)}" target="_blank" rel="noopener noreferrer nofollow ugc" class="tool-link theme-anim">访问</a>
+    `;
         card.addEventListener("click", function (e) {
           if (!e.target.classList.contains("tool-link")) {
             const link = this.querySelector(".tool-link");
@@ -3083,22 +3103,22 @@
         return card;
       }
 
-      // 构建分组标题节点
+      // ── 构建分组标题节点 ──
       function buildGroupHeader(catIndex) {
         const header = document.createElement("div");
         header.className = "category-section-header";
         const meta = getCategoryMeta(catIndex);
         header.innerHTML = `
-          <div class="cat-header-icon">${meta.icon}</div>
-          <div class="cat-header-info">
-            <div class="cat-header-name">${meta.name}</div>
-            <div class="cat-header-desc">${meta.desc}</div>
-          </div>
-        `;
+      <div class="cat-header-icon">${meta.icon}</div>
+      <div class="cat-header-info">
+        <div class="cat-header-name">${meta.name}</div>
+        <div class="cat-header-desc">${meta.desc}</div>
+      </div>
+    `;
         return header;
       }
 
-      // 渲染卡片
+      // ── 渲染卡片 ──
       function renderCards(sites, searchTerm = "") {
         if (_lazyObserver) {
           _lazyObserver.disconnect();
@@ -3162,7 +3182,7 @@
         appendChunk();
       }
 
-      // 懒加载追加分块
+      // ── 懒加载追加分块 ──
       function appendChunk() {
         if (_lazyOffset >= _lazyItems.length) return;
         const oldSentinel = grid.querySelector(".lazy-sentinel");
@@ -3194,7 +3214,7 @@
         }
       }
 
-      // ── 更新分类按钮数字 ──────────────────────────────────────
+      // ── 更新分类按钮数字 ──
       function updateCount(index) {
         const btn = categoryBtns[index];
         if (!btn) return;
@@ -3211,7 +3231,7 @@
         badge.textContent = count;
       }
 
-      // ── 加载单个 JSON ─────────────────────────────────────────
+      // ── 加载单个 JSON ──
       async function loadCategory(index) {
         if (loadedIndexes.has(index)) return;
         try {
@@ -3229,7 +3249,7 @@
         }
       }
 
-      // ── 显示分类 ──────────────────────────────────────────────
+      // ── 显示分类 ──
       async function showCategory(index) {
         currentIndex = index;
         const term = searchBox.value;
@@ -3250,7 +3270,7 @@
         }
       }
 
-      // ── 分类按钮点击 ──────────────────────────────────────────
+      // ── 分类按钮点击 ──
       categoryBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
           categoryBtns.forEach((b) => b.classList.remove("active"));
@@ -3270,7 +3290,7 @@
         });
       });
 
-      // ── 搜索输入 ──────────────────────────────────────────────
+      // ── 搜索输入 ──
       searchBox.addEventListener("input", function () {
         updateClearBtn();
         if (currentEngine !== "local") return;
@@ -3287,7 +3307,7 @@
         scrollContentToTop();
       });
 
-      // ── 内容滚动回顶部 ────────────────────────────────────────
+      // ── 内容滚动回顶部 ──
       function scrollContentToTop() {
         if (window.innerWidth >= 769) {
           const mainContent = document.querySelector(".main-content");
@@ -3297,7 +3317,7 @@
         }
       }
 
-      // ── 键盘快捷键 ────────────────────────────────────────────
+      // ── 键盘快捷键 ──
       document.addEventListener("keydown", function (e) {
         if ((e.ctrlKey || e.metaKey) && e.key === "k") {
           e.preventDefault();
@@ -3326,11 +3346,40 @@
         }
       });
 
-      // ── 初始化：显示全部分类 ──────────────────────────────────
+      // ── 初始化：显示全部分类 & 页脚卡片年份 ──
       showCategory(0);
 
-      /* ── §C 悬浮控件：回顶部 / 底部发光 / 主题切换 / 菜单 FAB ── */
-      // ── 回顶部 & 底部发光 ──────────────────────────────────────
+      const runtimeEl = document.getElementById("runtime");
+      const yearEl = document.getElementById("currentYear");
+      const birthDay = new Date("2026-03-01T00:00:00");
+      const SECOND = 1000;
+      const MINUTE = 60 * SECOND;
+      const HOUR = 60 * MINUTE;
+      const DAY = 24 * HOUR;
+
+      function updateRuntime() {
+        const diff = Date.now() - birthDay.getTime();
+        const days = Math.floor(diff / DAY);
+        const hours = Math.floor((diff % DAY) / HOUR);
+        const minutes = Math.floor((diff % HOUR) / MINUTE);
+        const seconds = Math.floor((diff % MINUTE) / SECOND);
+        runtimeEl.innerHTML =
+          `本站已运行：<span class="time-num">${days}</span>天` +
+          `<span class="time-num">${hours}</span>小时` +
+          `<span class="time-num">${minutes}</span>分钟` +
+          `<span class="time-num">${seconds}</span>秒`;
+      }
+
+      updateRuntime();
+      setInterval(updateRuntime, 1000);
+
+      yearEl.textContent = new Date().getFullYear();
+
+      /* ════════════════════════════════════════════════════════
+         §C  悬浮控件：回顶部 / 底部发光 / 菜单 FAB（展开/收起）
+         ════════════════════════════════════════════════════════ */
+
+      // ── 回顶部 & 底部发光 ──
       const backToTopBtn = document.getElementById("backToTop");
       const scrollBottomGlow = document.getElementById("scrollBottomGlow");
       const SCROLL_THRESHOLD = 300;
@@ -3370,6 +3419,18 @@
         _glowOffTimer = setTimeout(glowHide, 350);
       }
 
+      // ── 滚动时自动关闭搜索引擎下拉面板 & 菜单 FAB（统一函数） ──
+      function closeFloatingPanels() {
+        if (engineDropdown.classList.contains("open")) {
+          closeDropdown();
+        }
+        if (settingsFabGroup.classList.contains("expanded")) {
+          settingsFabGroup.classList.remove("expanded");
+          settingsFabBtn.classList.remove("open");
+        }
+      }
+
+      // ── 桌面端滚动监听（右侧内容区内部滚动） ──
       mainContentEl.addEventListener(
         "scroll",
         function () {
@@ -3383,10 +3444,13 @@
           } else {
             glowHide();
           }
+          // 滚动时自动关闭
+          closeFloatingPanels();
         },
         { passive: true },
       );
 
+      // ── 移动端滚动监听（整个页面滚动） ──
       window.addEventListener(
         "scroll",
         function () {
@@ -3400,6 +3464,8 @@
           } else {
             glowHide();
           }
+          // 滚动时自动关闭
+          closeFloatingPanels();
         },
         { passive: true },
       );
@@ -3412,7 +3478,222 @@
         }
       });
 
-      // ── 主题切换 ──────────────────────────────────────────────
+      // ── 菜单 FAB 展开/收起 ──
+      const settingsFabBtn = document.getElementById("settingsFab");
+      const settingsFabGroup = document.getElementById("settingsFabGroup");
+
+      settingsFabBtn.addEventListener("click", function (e) {
+        closeDropdown();
+        e.stopPropagation();
+        const isOpen = settingsFabGroup.classList.toggle("expanded");
+        settingsFabBtn.classList.toggle("open", isOpen);
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!settingsFabGroup.contains(e.target)) {
+          settingsFabGroup.classList.remove("expanded");
+          settingsFabBtn.classList.remove("open");
+        }
+      });
+
+      // ── 背景滚动锁 ──
+      let _modalLockCount = 0;
+
+      function lockScroll() {
+        _modalLockCount++;
+        if (_modalLockCount === 1) {
+          document.body.classList.add("modal-open");
+          document.documentElement.classList.add("modal-open");
+        }
+      }
+
+      function unlockScroll() {
+        if (_modalLockCount > 0) _modalLockCount--;
+        if (_modalLockCount === 0) {
+          document.body.classList.remove("modal-open");
+          document.documentElement.classList.remove("modal-open");
+        }
+      }
+
+      // ── 通用模态框工厂函数 ──
+      function createModalHandler(modalId, stateKey) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return null;
+        let closeTimer = null;
+
+        function open() {
+          closeDropdown();
+          modal.classList.remove("open");
+          void modal.offsetHeight;
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              modal.classList.add("open");
+              lockScroll();
+              settingsFabGroup.classList.remove("expanded");
+              settingsFabBtn.classList.remove("open");
+              const state = {};
+              state[stateKey] = true;
+              history.pushState(state, "");
+            });
+          });
+        }
+
+        function close() {
+          modal.classList.remove("open");
+          if (closeTimer) clearTimeout(closeTimer);
+          const onTransitionEnd = () => {
+            modal.removeEventListener("transitionend", onTransitionEnd);
+            unlockScroll();
+            closeTimer = null;
+          };
+          modal.addEventListener("transitionend", onTransitionEnd);
+          closeTimer = setTimeout(() => {
+            modal.removeEventListener("transitionend", onTransitionEnd);
+            unlockScroll();
+            closeTimer = null;
+          }, 450);
+        }
+
+        return { open, close, modal };
+      }
+
+      /* ════════════════════════════════════════════════════════
+         §D  功能按钮：简单工具 / 关于本站 / 赞赏支持 / 复制链接 / 主题切换
+         ════════════════════════════════════════════════════════ */
+
+      // ── 简单工具 ──
+      const toolboxHandler = createModalHandler("toolboxModal", "toolboxOpen");
+      document.getElementById("toolboxBtn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        renderToolList("");
+        document.getElementById("toolboxSearch").value = "";
+        document
+          .getElementById("toolboxSearchClear")
+          .classList.remove("visible");
+        if (toolboxHandler) toolboxHandler.open();
+      });
+      document.getElementById("toolboxClose").addEventListener("click", () => {
+        if (history.state && history.state.toolboxOpen) history.back();
+        else if (toolboxHandler) toolboxHandler.close();
+      });
+      document
+        .getElementById("toolboxModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            if (history.state && history.state.toolboxOpen) history.back();
+            else if (toolboxHandler) toolboxHandler.close();
+          }
+        });
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("toolboxModal").classList.contains("open")
+        ) {
+          if (history.state && history.state.toolboxOpen) history.back();
+          else if (toolboxHandler) toolboxHandler.close();
+        }
+      });
+
+      // ── 关于本站 ──
+      const disclaimerHandler = createModalHandler(
+        "disclaimerModal",
+        "disclaimerOpen",
+      );
+      document
+        .getElementById("disclaimerBtn")
+        .addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (disclaimerHandler) disclaimerHandler.open();
+        });
+      document
+        .getElementById("disclaimerClose")
+        .addEventListener("click", () => {
+          if (history.state && history.state.disclaimerOpen) history.back();
+          else if (disclaimerHandler) disclaimerHandler.close();
+        });
+      document
+        .getElementById("disclaimerModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            if (history.state && history.state.disclaimerOpen) history.back();
+            else if (disclaimerHandler) disclaimerHandler.close();
+          }
+        });
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("disclaimerModal").classList.contains("open")
+        ) {
+          if (history.state && history.state.disclaimerOpen) history.back();
+          else if (disclaimerHandler) disclaimerHandler.close();
+        }
+      });
+
+      // ── 赞赏支持 ──
+      const sponsorHandler = createModalHandler("sponsorModal", "sponsorOpen");
+      document.getElementById("sponsorBtn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (sponsorHandler) sponsorHandler.open();
+      });
+      document.getElementById("sponsorClose").addEventListener("click", () => {
+        if (history.state && history.state.sponsorOpen) history.back();
+        else if (sponsorHandler) sponsorHandler.close();
+      });
+      document
+        .getElementById("sponsorModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            if (history.state && history.state.sponsorOpen) history.back();
+            else if (sponsorHandler) sponsorHandler.close();
+          }
+        });
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("sponsorModal").classList.contains("open")
+        ) {
+          if (history.state && history.state.sponsorOpen) history.back();
+          else if (sponsorHandler) sponsorHandler.close();
+        }
+      });
+
+      // ── 复制链接 ──
+      const copyLinkBtn = document.getElementById("copyLinkBtn");
+      const copyLinkToast = document.getElementById("copyLinkToast");
+      const SITE_URL = "https://nanlin3368.github.io/navigation/";
+      let _copyToastTimer = null;
+
+      function showCopyToast() {
+        if (_copyToastTimer) clearTimeout(_copyToastTimer);
+        copyLinkToast.classList.add("show");
+        _copyToastTimer = setTimeout(() => {
+          copyLinkToast.classList.remove("show");
+          _copyToastTimer = null;
+        }, 2000);
+      }
+
+      copyLinkBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const url = SITE_URL || location.href;
+        navigator.clipboard
+          .writeText(url)
+          .then(() => {
+            showCopyToast();
+          })
+          .catch(() => {
+            const inp = document.createElement("input");
+            inp.value = url;
+            document.body.appendChild(inp);
+            inp.select();
+            document.execCommand("copy");
+            document.body.removeChild(inp);
+            showCopyToast();
+          });
+        settingsFabGroup.classList.remove("expanded");
+        settingsFabBtn.classList.remove("open");
+      });
+
+      // ── 主题切换 ──
       const themeToggleBtn = document.getElementById("themeToggle");
       const themeColorMeta = document.getElementById("themeColorMeta");
       const DARK_KEY = "xingyuan-dark-mode";
@@ -3455,218 +3736,10 @@
         localStorage.setItem(DARK_KEY, isDark ? "true" : "false");
       });
 
-      // ── 菜单 FAB 展开/收起 ────────────────────────────────────
-      const settingsFabBtn = document.getElementById("settingsFab");
-      const settingsFabGroup = document.getElementById("settingsFabGroup");
+      /* ════════════════════════════════════════════════════════
+         §E  移动端专属交互：分类抽屉同步 / 侧滑抽屉开关
+         ════════════════════════════════════════════════════════ */
 
-      settingsFabBtn.addEventListener("click", function (e) {
-        closeDropdown();
-        e.stopPropagation();
-        const isOpen = settingsFabGroup.classList.toggle("expanded");
-        settingsFabBtn.classList.toggle("open", isOpen);
-      });
-
-      document.addEventListener("click", function (e) {
-        if (!settingsFabGroup.contains(e.target)) {
-          settingsFabGroup.classList.remove("expanded");
-          settingsFabBtn.classList.remove("open");
-        }
-      });
-
-      // ── 背景滚动锁 ────────────────────────────────────────────
-      let _modalLockCount = 0;
-
-      function lockScroll() {
-        _modalLockCount++;
-        if (_modalLockCount === 1) {
-          document.body.classList.add("modal-open");
-          document.documentElement.classList.add("modal-open");
-        }
-      }
-      function unlockScroll() {
-        if (_modalLockCount > 0) _modalLockCount--;
-        if (_modalLockCount === 0) {
-          document.body.classList.remove("modal-open");
-          document.documentElement.classList.remove("modal-open");
-        }
-      }
-
-      /* ── 通用模态框工厂函数 ────────────────────────── */
-      function createModalHandler(modalId, stateKey) {
-        const modal = document.getElementById(modalId);
-        if (!modal) return null;
-        let closeTimer = null;
-
-        function open() {
-          closeDropdown();
-          modal.classList.remove("open");
-          void modal.offsetHeight;
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              modal.classList.add("open");
-              lockScroll();
-              settingsFabGroup.classList.remove("expanded");
-              settingsFabBtn.classList.remove("open");
-              const state = {};
-              state[stateKey] = true;
-              history.pushState(state, "");
-            });
-          });
-        }
-
-        function close() {
-          modal.classList.remove("open");
-          if (closeTimer) clearTimeout(closeTimer);
-          const onTransitionEnd = () => {
-            modal.removeEventListener("transitionend", onTransitionEnd);
-            unlockScroll();
-            closeTimer = null;
-          };
-          modal.addEventListener("transitionend", onTransitionEnd);
-          closeTimer = setTimeout(() => {
-            modal.removeEventListener("transitionend", onTransitionEnd);
-            unlockScroll();
-            closeTimer = null;
-          }, 450);
-        }
-
-        return { open, close, modal };
-      }
-
-      /* ── §D 模态框：赞赏 / 关于本站 / 简单工具 ── */
-      // ── 赞赏 ──
-      const sponsorHandler = createModalHandler("sponsorModal", "sponsorOpen");
-      document.getElementById("sponsorBtn").addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (sponsorHandler) sponsorHandler.open();
-      });
-      document.getElementById("sponsorClose").addEventListener("click", () => {
-        if (history.state && history.state.sponsorOpen) history.back();
-        else if (sponsorHandler) sponsorHandler.close();
-      });
-      document
-        .getElementById("sponsorModal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            if (history.state && history.state.sponsorOpen) history.back();
-            else if (sponsorHandler) sponsorHandler.close();
-          }
-        });
-      document.addEventListener("keydown", function (e) {
-        if (
-          e.key === "Escape" &&
-          document.getElementById("sponsorModal").classList.contains("open")
-        ) {
-          if (history.state && history.state.sponsorOpen) history.back();
-          else if (sponsorHandler) sponsorHandler.close();
-        }
-      });
-
-      // ── 关于本站 ──
-      const disclaimerHandler = createModalHandler(
-        "disclaimerModal",
-        "disclaimerOpen",
-      );
-      document
-        .getElementById("disclaimerBtn")
-        .addEventListener("click", (e) => {
-          e.stopPropagation();
-          if (disclaimerHandler) disclaimerHandler.open();
-        });
-      document
-        .getElementById("disclaimerClose")
-        .addEventListener("click", () => {
-          if (history.state && history.state.disclaimerOpen) history.back();
-          else if (disclaimerHandler) disclaimerHandler.close();
-        });
-      document
-        .getElementById("disclaimerModal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            if (history.state && history.state.disclaimerOpen) history.back();
-            else if (disclaimerHandler) disclaimerHandler.close();
-          }
-        });
-      document.addEventListener("keydown", function (e) {
-        if (
-          e.key === "Escape" &&
-          document.getElementById("disclaimerModal").classList.contains("open")
-        ) {
-          if (history.state && history.state.disclaimerOpen) history.back();
-          else if (disclaimerHandler) disclaimerHandler.close();
-        }
-      });
-
-      // ── 简单工具 ──
-      const toolboxHandler = createModalHandler("toolboxModal", "toolboxOpen");
-      document.getElementById("toolboxBtn").addEventListener("click", (e) => {
-        e.stopPropagation();
-        renderToolList("");
-        document.getElementById("toolboxSearch").value = "";
-        document
-          .getElementById("toolboxSearchClear")
-          .classList.remove("visible");
-        if (toolboxHandler) toolboxHandler.open();
-      });
-      document.getElementById("toolboxClose").addEventListener("click", () => {
-        if (history.state && history.state.toolboxOpen) history.back();
-        else if (toolboxHandler) toolboxHandler.close();
-      });
-      document
-        .getElementById("toolboxModal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            if (history.state && history.state.toolboxOpen) history.back();
-            else if (toolboxHandler) toolboxHandler.close();
-          }
-        });
-      document.addEventListener("keydown", function (e) {
-        if (
-          e.key === "Escape" &&
-          document.getElementById("toolboxModal").classList.contains("open")
-        ) {
-          if (history.state && history.state.toolboxOpen) history.back();
-          else if (toolboxHandler) toolboxHandler.close();
-        }
-      });
-
-      // ── 复制链接 ──────────────────────────────────────────
-      const copyLinkBtn = document.getElementById("copyLinkBtn");
-      const copyLinkToast = document.getElementById("copyLinkToast");
-      const SITE_URL = "https://nanlin3368.github.io/navigation/";
-      let _copyToastTimer = null;
-
-      function showCopyToast() {
-        if (_copyToastTimer) clearTimeout(_copyToastTimer);
-        copyLinkToast.classList.add("show");
-        _copyToastTimer = setTimeout(() => {
-          copyLinkToast.classList.remove("show");
-          _copyToastTimer = null;
-        }, 2000);
-      }
-
-      copyLinkBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        const url = SITE_URL || location.href;
-        navigator.clipboard
-          .writeText(url)
-          .then(() => {
-            showCopyToast();
-          })
-          .catch(() => {
-            const inp = document.createElement("input");
-            inp.value = url;
-            document.body.appendChild(inp);
-            inp.select();
-            document.execCommand("copy");
-            document.body.removeChild(inp);
-            showCopyToast();
-          });
-        settingsFabGroup.classList.remove("expanded");
-        settingsFabBtn.classList.remove("open");
-      });
-
-      /* ── §E 移动端专属交互：分类抽屉同步 / 侧滑抽屉开关 ── */
       const categoriesEl = document.getElementById("categoriesEl");
       const sidebarNav = document.getElementById("sidebarNav");
       const mobileDrawerNav = document.getElementById("mobileDrawerNav");
@@ -3705,6 +3778,7 @@
         if (mobileMenuBtn) mobileMenuBtn.classList.add("open");
         history.pushState({ drawerOpen: true }, "");
       }
+
       function closeDrawer() {
         mobileDrawer.classList.remove("open");
         mobileDrawerOverlay.classList.remove("open");
@@ -3755,7 +3829,10 @@
         });
       }
 
-      /* ── §F 简单工具列表渲染与搜索 ── */
+      /* ════════════════════════════════════════════════════════
+         §F  简单工具列表渲染与搜索
+         ════════════════════════════════════════════════════════ */
+
       const toolboxSearch = document.getElementById("toolboxSearch");
       const toolboxSearchClear = document.getElementById("toolboxSearchClear");
 
@@ -3812,6 +3889,7 @@
         toolboxSearchClear.classList.toggle("visible", val.length > 0);
         renderToolList(val);
       });
+
       toolboxSearchClear.addEventListener("click", function () {
         toolboxSearch.value = "";
         toolboxSearchClear.classList.remove("visible");

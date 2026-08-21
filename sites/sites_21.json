@@ -460,5 +460,12 @@
     "url": "https://search-sharp.com",
     "description": "",
     "category": "扩展空间"
+  },
+  {
+    "title": "IPCheck",
+    "icon": "IPCheck_icon.webp",
+    "url": "https://ipcheck.ing",
+    "description": "",
+    "category": "扩展空间"
   }
 ]
