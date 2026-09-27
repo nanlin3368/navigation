@@ -1,121 +1,135 @@
 [
   {
-    "title": "抠抠图",
-    "icon": "抠抠图_icon.webp",
-    "url": "https://www.koukoutu.com",
-    "description": "",
-    "category": "图像处理"
+    "title": "Uiverse",
+    "icon": "Uiverse_icon.webp",
+    "url": "https://uiverse.io",
+    "description": "开源 UI 组件库",
+    "category": "创意设计"
   },
   {
-    "title": "Shutterstock",
-    "icon": "Shutterstock_icon.webp",
-    "url": "https://www.shutterstock.com/zh/image-design-tools",
-    "description": "",
-    "category": "图像处理"
+    "title": "React Bits",
+    "icon": "React_Bits_icon.webp",
+    "url": "https://reactbits.dev",
+    "description": "React 动效组件库",
+    "category": "创意设计"
   },
   {
-    "title": "在线图片编辑",
-    "icon": "在线图片编辑_icon.webp",
-    "url": "https://llccj.cn",
-    "description": "",
-    "category": "图像处理"
+    "title": "M3E Canvas",
+    "icon": "M3E_Canvas_icon.webp",
+    "url": "https://lnkiai.github.io/m3e-canvas",
+    "description": "自定义构建MD3界面",
+    "category": "创意设计"
   },
   {
-    "title": "iLoveIMG",
-    "icon": "iLoveIMG_icon.webp",
-    "url": "https://www.iloveimg.com/zh-cn",
-    "description": "",
-    "category": "图像处理"
+    "title": "西瓜封面设计",
+    "icon": "西瓜封面设计_icon.webp",
+    "url": "https://cover.xgdh.cn",
+    "description": "专业封面设计工具",
+    "category": "创意设计"
   },
   {
-    "title": "小鹿 Image",
-    "icon": "小鹿_Image_icon.webp",
-    "url": "https://deerimage.com",
-    "description": "",
-    "category": "图像处理"
+    "title": "中国传统配色",
+    "icon": "中国传统配色_icon.webp",
+    "url": "https://nevertoday.github.io/zhongguo-traditional-colors",
+    "description": "742张中国传统色色卡",
+    "category": "创意设计"
   },
   {
-    "title": "神奇橡皮擦",
-    "icon": "神奇橡皮擦_icon.webp",
-    "url": "https://magiceraser.org/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "UI Notes",
+    "icon": "UI_Notes_icon.webp",
+    "url": "https://uinotes.com",
+    "description": "优秀应用完整UI截图",
+    "category": "创意设计"
   },
   {
-    "title": "BulkPicTools",
-    "icon": "BulkPicTools_icon.webp",
-    "url": "https://bulkpictools.com/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "调色板",
+    "icon": "调色板_icon.webp",
+    "url": "https://cn.online-color.com",
+    "description": "在线调色板配色工具",
+    "category": "创意设计"
   },
   {
-    "title": "Squoosh",
-    "icon": "Squoosh_icon.webp",
-    "url": "https://squoosh.app",
-    "description": "",
-    "category": "图像处理"
+    "title": "Color Hunt",
+    "icon": "Color_Hunt_icon.webp",
+    "url": "https://colorhunt.co",
+    "description": "精选配色方案分享平台",
+    "category": "创意设计"
   },
   {
-    "title": "ImagesTool",
-    "icon": "ImagesTool_icon.webp",
-    "url": "https://imagestool.com/zh_CN",
-    "description": "",
-    "category": "图像处理"
+    "title": "Cover Page",
+    "icon": "Cover_Page_icon.webp",
+    "url": "https://www.coverpage.one",
+    "description": "封面图片创建工具",
+    "category": "创意设计"
   },
   {
-    "title": "Image Splitter",
-    "icon": "Image_Splitter_icon.webp",
-    "url": "https://imagesplitter.tools/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "Coverly",
+    "icon": "Coverly_icon.webp",
+    "url": "https://coverly.79px.com",
+    "description": "文章封面图制作工具",
+    "category": "创意设计"
   },
   {
-    "title": "在线图像工具箱",
-    "icon": "在线图像工具箱_icon.webp",
-    "url": "https://phototool.cn",
-    "description": "",
-    "category": "图像处理"
+    "title": "beUI",
+    "icon": "beUI_icon.webp",
+    "url": "https://beui.dev",
+    "description": "产品界面UI组件库",
+    "category": "创意设计"
   },
   {
-    "title": "EXIF Frame",
-    "icon": "EXIF_Frame_icon.webp",
-    "url": "https://exifframe.org/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "Rare UI",
+    "icon": "Rare_UI_icon.webp",
+    "url": "https://www.rareui.com",
+    "description": "开源 React 动画组件",
+    "category": "创意设计"
   },
   {
-    "title": "PhotoCollagePro",
-    "icon": "PhotoCollagePro_icon.webp",
-    "url": "https://photocollagepro.com/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "QM Icon",
+    "icon": "QM_Icon_icon.webp",
+    "url": "https://icon.qiaomu.ai",
+    "description": "跨平台图标设计工具站",
+    "category": "创意设计"
   },
   {
-    "title": "麻雀AI工具箱",
-    "icon": "麻雀AI工具箱_icon.webp",
-    "url": "https://maquetool.cn",
-    "description": "",
-    "category": "图像处理"
+    "title": "Bible Strong",
+    "icon": "Bible_Strong_icon.webp",
+    "url": "https://bible-strong-avatar-lab.vercel.app",
+    "description": "头像生成与创作工具",
+    "category": "创意设计"
   },
   {
-    "title": "应用截图工坊",
-    "icon": "应用截图工坊_icon.webp",
-    "url": "https://appshotmaker.com",
-    "description": "",
-    "category": "图像处理"
+    "title": "Bloub",
+    "icon": "Bloub_icon.webp",
+    "url": "https://bloub.vercel.app",
+    "description": "动画SVG头像制作",
+    "category": "创意设计"
   },
   {
-    "title": "Image Matrix",
-    "icon": "Image_Matrix_icon.webp",
-    "url": "https://imagematrix.net/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "OneWorks Avatar",
+    "icon": "OneWorks_Avatar_icon.webp",
+    "url": "https://oneworks.cloud/avatar",
+    "description": "开源3D头像编辑器",
+    "category": "创意设计"
   },
   {
-    "title": "MiaoCut",
-    "icon": "MiaoCut_icon.webp",
-    "url": "https://miaocut.app/zh",
-    "description": "",
-    "category": "图像处理"
+    "title": "UI UX Pro Max",
+    "icon": "UI_UX_Pro_Max_icon.webp",
+    "url": "https://www.uupm.cc",
+    "description": "AI驱动的界面设计指南",
+    "category": "创意设计"
+  },
+  {
+    "title": "Transitions",
+    "icon": "Transitions_icon.webp",
+    "url": "https://transitions.dev",
+    "description": "网页交互动效素材库",
+    "category": "创意设计"
+  },
+  {
+    "title": "Shadcn UI",
+    "icon": "Shadcn_UI_icon.webp",
+    "url": "https://ui.shadcn.com",
+    "description": "可定制的网页组件库",
+    "category": "创意设计"
   }
 ]

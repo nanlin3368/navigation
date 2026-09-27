@@ -1,296 +1,338 @@
 [
   {
-    "title": "TemporaryMail",
-    "icon": "TemporaryMail_icon.webp",
-    "url": "https://temporarymail.com/zh",
-    "description": "免费一次性邮件地址",
-    "category": "实用扩展"
+    "title": "Shizuku",
+    "icon": "Shizuku_icon.webp",
+    "url": "https://shizuku.rikka.app/zh-hans",
+    "description": "免Root应用系统授权",
+    "category": "安卓专区"
   },
   {
-    "title": "Temp Number",
-    "icon": "Temp_Number_icon.webp",
-    "url": "https://temp-number.org/zh",
-    "description": "在线接收短信验证",
-    "category": "实用扩展"
+    "title": "InstallerX Revived",
+    "icon": "InstallerX_Revived_icon.webp",
+    "url": "https://github.com/wxxsfxyzm/InstallerX-Revived",
+    "description": "功能强大应用安装器",
+    "category": "安卓专区"
   },
   {
-    "title": "草料二维码",
-    "icon": "草料二维码_icon.webp",
-    "url": "https://cli.im",
-    "description": "在线生成二维码图片",
-    "category": "实用扩展"
+    "title": "MT 管理器",
+    "icon": "MT_管理器_icon.webp",
+    "url": "https://mt2.cn",
+    "description": "双栏文件管理逆向修改",
+    "category": "安卓专区"
   },
   {
-    "title": "聚合图床",
-    "icon": "聚合图床_icon.webp",
-    "url": "https://www.superbed.cn",
-    "description": "便捷高效图片托管服务",
-    "category": "实用扩展"
+    "title": "Hail",
+    "icon": "Hail_icon.webp",
+    "url": "https://github.com/aistra0528/Hail",
+    "description": "冻结暂停应用后台运行",
+    "category": "安卓专区"
   },
   {
-    "title": "聚合视频",
-    "icon": "聚合视频_icon.webp",
-    "url": "https://v.superbed.cn",
-    "description": "专业的视频托管服务",
-    "category": "实用扩展"
+    "title": "GKD",
+    "icon": "GKD_icon.webp",
+    "url": "https://gkd.li",
+    "description": "自定义屏幕点击跳过",
+    "category": "安卓专区"
   },
   {
-    "title": "聚合网盘",
-    "icon": "聚合网盘_icon.webp",
-    "url": "https://pan.superbed.cn",
-    "description": "文件管理与分享平台",
-    "category": "实用扩展"
+    "title": "李跳跳",
+    "icon": "李跳跳_icon.webp",
+    "url": "https://github.com/rongzhiy/LiTiaotiao",
+    "description": "自动跳过开屏广告弹窗",
+    "category": "安卓专区"
   },
   {
-    "title": "视觉族",
-    "icon": "视觉族_icon.webp",
-    "url": "https://www.shijuezu.com",
-    "description": "屏幕坏点色彩检测",
-    "category": "实用扩展"
+    "title": "Stellar",
+    "icon": "Stellar_icon.webp",
+    "url": "https://github.com/roro2239/Stellar",
+    "description": "系统权限增强与管理",
+    "category": "安卓专区"
   },
   {
-    "title": "鼠标测试",
-    "icon": "鼠标测试_icon.webp",
-    "url": "https://www.mousetester.cn",
-    "description": "鼠标按键回报率测试",
-    "category": "实用扩展"
+    "title": "甲壳虫ADB助手",
+    "icon": "甲壳虫ADB助手_icon.webp",
+    "url": "https://github.com/didjdk/adbhelper",
+    "description": "可视化ADB调试操作",
+    "category": "安卓专区"
   },
   {
-    "title": "键盘测试",
-    "icon": "键盘测试_icon.webp",
-    "url": "https://www.keyboardtest.cn",
-    "description": "全键无冲与延迟检测",
-    "category": "实用扩展"
+    "title": "App Ops",
+    "icon": "App_Ops_icon.webp",
+    "url": "https://github.com/RikkaApps/App-Ops-issue-tracker",
+    "description": "精细管理应用隐藏权限",
+    "category": "安卓专区"
   },
   {
-    "title": "手柄测试",
-    "icon": "手柄测试_icon.webp",
-    "url": "https://www.gamepadtester.cn",
-    "description": "游戏手柄按键校准",
-    "category": "实用扩展"
+    "title": "Dhizuku",
+    "icon": "Dhizuku_icon.webp",
+    "url": "https://github.com/iamr0s/Dhizuku",
+    "description": "设备管理员权限共享",
+    "category": "安卓专区"
   },
   {
-    "title": "GetPostalCodes",
-    "icon": "GetPostalCodes_icon.webp",
-    "url": "https://www.getpostalcodes.com",
-    "description": "全球各国邮编查询",
-    "category": "实用扩展"
+    "title": "Ice Box",
+    "icon": "Ice_Box_icon.webp",
+    "url": "https://iceboxdoc.catchingnow.com/changelog.html",
+    "description": "老牌应用冻结与隐藏",
+    "category": "安卓专区"
   },
   {
-    "title": "TGwiki",
-    "icon": "TGwiki_icon.webp",
-    "url": "https://wiki.tgnav.org",
-    "description": "电报使用全方位指南",
-    "category": "实用扩展"
+    "title": "清浊",
+    "icon": "清浊_icon.webp",
+    "url": "https://www.dircleaner.com",
+    "description": "深度清理无用存储垃圾",
+    "category": "安卓专区"
   },
   {
-    "title": "FMAIL",
-    "icon": "FMAIL_icon.webp",
-    "url": "https://femails.win",
-    "description": "24小时匿名临时邮箱",
-    "category": "实用扩展"
+    "title": "AniCh",
+    "icon": "AniCh_icon.webp",
+    "url": "https://github.com/Sle2p/AniCh",
+    "description": "超分辨率动漫弹幕播放",
+    "category": "安卓专区"
   },
   {
-    "title": "计算器3000",
-    "icon": "计算器3000_icon.webp",
-    "url": "https://jsq3000.com",
-    "description": "多功能在线计算器",
-    "category": "实用扩展"
+    "title": "Kazumi",
+    "icon": "Kazumi_icon.webp",
+    "url": "https://kazumi.app",
+    "description": "自定义规则番剧与观看",
+    "category": "安卓专区"
   },
   {
-    "title": "Aura Share",
-    "icon": "Aura_Share_icon.webp",
-    "url": "https://share.dedyn.io/zh",
-    "description": "跨设备临时文件直传",
-    "category": "实用扩展"
+    "title": "PiliPlus",
+    "icon": "PiliPlus_icon.webp",
+    "url": "https://github.com/bggRGjQaUbCoE/PiliPlus",
+    "description": "第三方哔哩哔哩客户端",
+    "category": "安卓专区"
   },
   {
-    "title": "SymbolDb",
-    "icon": "SymbolDb_icon.webp",
-    "url": "https://symboldb.org/zh",
-    "description": "花式字符与符号大全",
-    "category": "实用扩展"
+    "title": "Via",
+    "icon": "Via_icon.webp",
+    "url": "https://viayoo.com/zh-cn",
+    "description": "简约极速极小浏览器",
+    "category": "安卓专区"
   },
   {
-    "title": "ImgPeel",
-    "icon": "ImgPeel_icon.webp",
-    "url": "https://imgpeel.toolooz.com/zh-CN",
-    "description": "图片文字在线提取",
-    "category": "实用扩展"
+    "title": "LocalSend",
+    "icon": "LocalSend_icon.webp",
+    "url": "https://localsend.org/zh-CN",
+    "description": "跨平台局域网文件传输",
+    "category": "安卓专区"
   },
   {
-    "title": "DevFile",
-    "icon": "DevFile_icon.webp",
-    "url": "https://devfile.cn",
-    "description": "免费HTML网页托管",
-    "category": "实用扩展"
+    "title": "暮光",
+    "icon": "暮光_icon.webp",
+    "url": "https://qisuhe.github.io",
+    "description": "多功能纯净实用工具箱",
+    "category": "安卓专区"
   },
   {
-    "title": "IPCheck",
-    "icon": "IPCheck_icon.webp",
-    "url": "https://ipcheck.ing",
-    "description": "IP地址与网络诊断",
-    "category": "实用扩展"
+    "title": "Acode",
+    "icon": "Acode_icon.webp",
+    "url": "https://github.com/Acode-Foundation/Acode",
+    "description": "轻量移动端代码编辑器",
+    "category": "安卓专区"
   },
   {
-    "title": "NetCoffee",
-    "icon": "NetCoffee_icon.webp",
-    "url": "https://ip.net.coffee",
-    "description": "网络环境综合分析",
-    "category": "实用扩展"
+    "title": "Xed-Editor",
+    "icon": "Xed-Editor_icon.webp",
+    "url": "https://github.com/Xed-Editor/Xed-Editor",
+    "description": "多功能文本代码编辑器",
+    "category": "安卓专区"
   },
   {
-    "title": "符号世界",
-    "icon": "符号世界_icon.webp",
-    "url": "https://symbols.wisdom-life.in/zh-CN",
-    "description": "特殊符号与表情大全",
-    "category": "实用扩展"
+    "title": "LibChecker",
+    "icon": "LibChecker_icon.webp",
+    "url": "https://github.com/LibChecker/LibChecker",
+    "description": "查看应用架构与组件库",
+    "category": "安卓专区"
   },
   {
-    "title": "文件快传",
-    "icon": "文件快传_icon.webp",
-    "url": "https://transfer.52python.cn",
-    "description": "端到端文件极速传输",
-    "category": "实用扩展"
+    "title": "Canta",
+    "icon": "Canta_icon.webp",
+    "url": "https://github.com/samolego/Canta",
+    "description": "免Root预装应用卸载",
+    "category": "安卓专区"
   },
   {
-    "title": "魔方简历",
-    "icon": "魔方简历_icon.webp",
-    "url": "https://magicv.art/zh",
-    "description": "免费开源简历编辑器",
-    "category": "实用扩展"
+    "title": "Anywhere-",
+    "icon": "Anywhere-_icon.webp",
+    "url": "https://github.com/zhaobozhen/Anywhere-",
+    "description": "快捷开启应用特定页面",
+    "category": "安卓专区"
   },
   {
-    "title": "烁皓的工具箱",
-    "icon": "烁皓的工具箱_icon.webp",
-    "url": "https://eternityspring.github.io/article-tools",
-    "description": "封面制作与排版工具",
-    "category": "实用扩展"
+    "title": "Flowmix",
+    "icon": "Flowmix_icon.webp",
+    "url": "https://docs.flowmix.ykload.com",
+    "description": "全局系统音频均衡器",
+    "category": "安卓专区"
   },
   {
-    "title": "简约文件床",
-    "icon": "简约文件床_icon.webp",
-    "url": "https://pic.sl.al",
-    "description": "极简直链文件托管",
-    "category": "实用扩展"
+    "title": "小企鹅输入法",
+    "icon": "小企鹅输入法_icon.webp",
+    "url": "https://github.com/fcitx5-android/fcitx5-android",
+    "description": "开源Fcitx5框架输入法",
+    "category": "安卓专区"
   },
   {
-    "title": "SignatureFont",
-    "icon": "SignatureFont_icon.webp",
-    "url": "https://signaturefont.net/zh",
-    "description": "艺术签名在线生成",
-    "category": "实用扩展"
+    "title": "语燕输入法",
+    "icon": "语燕输入法_icon.webp",
+    "url": "https://github.com/gurecn/YuyanIme",
+    "description": "隐私安全离线中文输入",
+    "category": "安卓专区"
   },
   {
-    "title": "Apple 苹果产品参数中心",
-    "icon": "Apple_苹果产品参数中心_icon.webp",
-    "url": "https://hubweb.cn",
-    "description": "苹果全系设备规格对比",
-    "category": "实用扩展"
+    "title": "Clash Meta",
+    "icon": "Clash_Meta_icon.webp",
+    "url": "https://github.com/MetaCubeX/ClashMetaForAndroid",
+    "description": "开源网络代理客户端",
+    "category": "安卓专区"
   },
   {
-    "title": "教辅百宝箱",
-    "icon": "教辅百宝箱_icon.webp",
-    "url": "https://edu.zmpai.com",
-    "description": "小学练字纸在线生成",
-    "category": "实用扩展"
+    "title": "NekoBox",
+    "icon": "NekoBox_icon.webp",
+    "url": "https://github.com/MatsuriDayo/NekoBoxForAndroid",
+    "description": "全协议通用网络代理",
+    "category": "安卓专区"
   },
   {
-    "title": "My Steps",
-    "icon": "My_Steps_icon.webp",
-    "url": "https://mysteps.top",
-    "description": "个人旅行足迹地图",
-    "category": "实用扩展"
+    "title": "Aurora Store",
+    "icon": "Aurora_Store_icon.webp",
+    "url": "https://gitlab.com/AuroraOSS/AuroraStore",
+    "description": "开源Google Play客户端",
+    "category": "安卓专区"
   },
   {
-    "title": "114号码通",
-    "icon": "114号码通_icon.webp",
-    "url": "https://114phone.com",
-    "description": "号码归属地信息查询",
-    "category": "实用扩展"
+    "title": "LX Music",
+    "icon": "LX_Music_icon.webp",
+    "url": "https://lxmusic.toside.cn",
+    "description": "开源无广告音乐播放器",
+    "category": "安卓专区"
   },
   {
-    "title": "老药新用全景研究",
-    "icon": "老药新用全景研究_icon.webp",
-    "url": "https://t3d7wcppdarmk.ok.kimi.link",
-    "description": "西药中药用途研究资料",
-    "category": "实用扩展"
+    "title": "Obsidian",
+    "icon": "Obsidian_icon.webp",
+    "url": "https://github.com/obsidianmd/obsidian-releases",
+    "description": "双链卡片本地笔记应用",
+    "category": "安卓专区"
   },
   {
-    "title": "小故事铺",
-    "icon": "小故事铺_icon.webp",
-    "url": "https://storynook.cn",
-    "description": "治愈系短篇故事阅读",
-    "category": "实用扩展"
+    "title": "Image Toolbox",
+    "icon": "Image_Toolbox_icon.webp",
+    "url": "https://github.com/T8RIN/ImageToolbox",
+    "description": "开源全能图像编辑器",
+    "category": "安卓专区"
   },
   {
-    "title": "Anitabi",
-    "icon": "Anitabi_icon.webp",
-    "url": "https://www.anitabi.cn/map",
-    "description": "二次元巡礼圣地地图",
-    "category": "实用扩展"
+    "title": "KeePassDX",
+    "icon": "KeePassDX_icon.webp",
+    "url": "https://github.com/Kunzisoft/KeePassDX",
+    "description": "开源安全本地密码管理",
+    "category": "安卓专区"
   },
   {
-    "title": "嵩词百科",
-    "icon": "嵩词百科_icon.webp",
-    "url": "https://4kjfycdzbn4fx.feishuapp.com/app/app_17bkt5mck7c/",
-    "description": "许嵩歌词意象资料库",
-    "category": "实用扩展"
+    "title": "轻小说阅读器",
+    "icon": "轻小说阅读器_icon.webp",
+    "url": "https://github.com/dmzz-yyhyy/LightNovelReader",
+    "description": "多数据源轻小说阅读器",
+    "category": "安卓专区"
   },
   {
-    "title": "SearchSharp",
-    "icon": "SearchSharp_icon.webp",
-    "url": "https://search-sharp.com",
-    "description": "全网流行缩写黑话叫法",
-    "category": "实用扩展"
+    "title": "EhViewer",
+    "icon": "EhViewer_icon.webp",
+    "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+    "description": "绿色版开源漫画阅读器",
+    "category": "安卓专区"
   },
   {
-    "title": "Sweezy Cursors",
-    "icon": "Sweezy_Cursors_icon.webp",
-    "url": "https://sweezy-cursors.com",
-    "description": "个性光标自定义下载",
-    "category": "实用扩展"
+    "title": "Animeko",
+    "icon": "Animeko_icon.webp",
+    "url": "https://animeko.org",
+    "description": "动漫追番与媒体播放",
+    "category": "安卓专区"
   },
   {
-    "title": "酸柠檬新标签页",
-    "icon": "酸柠檬新标签页_icon.webp",
-    "url": "https://somelemon.com",
-    "description": "极简无广告浏览器首页",
-    "category": "实用扩展"
+    "title": "Fake Location",
+    "icon": "Fake_Location_icon.webp",
+    "url": "https://fakeloc.cc/app",
+    "description": "专业级位置虚拟定位",
+    "category": "安卓专区"
   },
   {
-    "title": "青柠起始页",
-    "icon": "青柠起始页_icon.webp",
-    "url": "https://www.limestart.cn",
-    "description": "高颜值导航起始页",
-    "category": "实用扩展"
+    "title": "爱玩机工具箱",
+    "icon": "爱玩机工具箱_icon.webp",
+    "url": "https://www.aiwanjitool.com",
+    "description": "玩机党系统性能调优",
+    "category": "安卓专区"
   },
   {
-    "title": "Z2H字帖",
-    "icon": "Z2H字帖_icon.webp",
-    "url": "https://z2h.cn",
-    "description": "自定义字帖生成工具",
-    "category": "实用扩展"
+    "title": "WebToApp",
+    "icon": "WebToApp_icon.webp",
+    "url": "https://github.com/shiaho777/web-to-app",
+    "description": "把任意网页打包成应用",
+    "category": "安卓专区"
   },
   {
-    "title": "文字图像提取器",
-    "icon": "文字图像提取器_icon.webp",
-    "url": "https://word.appinn.com",
-    "description": "文档图片无损提取",
-    "category": "实用扩展"
+    "title": "Nrfr",
+    "icon": "Nrfr_icon.webp",
+    "url": "https://github.com/Ackites/Nrfr",
+    "description": "修改网络运营商国家码",
+    "category": "安卓专区"
   },
   {
-    "title": "教师盒子",
-    "icon": "教师盒子_icon.webp",
-    "url": "https://teachbox.cn",
-    "description": "教师减负提效工具集合",
-    "category": "实用扩展"
+    "title": "ADB 助手",
+    "icon": "ADB_助手_icon.webp",
+    "url": "https://www.dagui-smart.com/app/s/1",
+    "description": "USB连接与设备控制",
+    "category": "安卓专区"
   },
   {
-    "title": "逐风拼豆",
-    "icon": "逐风拼豆_icon.webp",
-    "url": "https://pd.zhufengxing.com",
-    "description": "图片秒变拼豆图纸",
-    "category": "实用扩展"
+    "title": "ADB WiFi",
+    "icon": "ADB_WiFi_icon.webp",
+    "url": "https://www.dagui-smart.com/app/s/3",
+    "description": "无线调试与设备连接",
+    "category": "安卓专区"
+  },
+  {
+    "title": "ShizuWall",
+    "icon": "ShizuWall_icon.webp",
+    "url": "https://github.com/AhmetCanArslan/ShizuWall",
+    "description": "阻止任何应用网络连接",
+    "category": "安卓专区"
+  },
+  {
+    "title": "De1984",
+    "icon": "De1984_icon.webp",
+    "url": "https://github.com/dorumrr/de1984",
+    "description": "阻止应用联网和包管理",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Appteka",
+    "icon": "Appteka_icon.webp",
+    "url": "https://github.com/solkin/appteka-android",
+    "description": "第三方开源应用商店",
+    "category": "安卓专区"
+  },
+  {
+    "title": "Operit AI",
+    "icon": "Operit_AI_icon.webp",
+    "url": "https://operit.app",
+    "description": "智能化移动交互助手",
+    "category": "安卓专区"
+  },
+  {
+    "title": "WeatherMaster",
+    "icon": "WeatherMaster_icon.webp",
+    "url": "https://github.com/PranshulGG/WeatherMaster",
+    "description": "开源精美天气预报",
+    "category": "安卓专区"
+  },
+  {
+    "title": "蓝牙遥控器",
+    "icon": "蓝牙遥控器_icon.webp",
+    "url": "https://gitlab.com/Atharok/BtRemote",
+    "description": "将手机变成多媒体遥控",
+    "category": "安卓专区"
   }
 ]

@@ -1,128 +1,142 @@
 [
   {
-    "title": "Uiverse",
-    "icon": "Uiverse_icon.webp",
-    "url": "https://uiverse.io",
-    "description": "开源 UI 组件库",
-    "category": "创意设计"
+    "title": "theSVG",
+    "icon": "theSVG_icon.webp",
+    "url": "https://thesvg.org",
+    "description": "7417+个品牌SVG图标",
+    "category": "图标符号"
   },
   {
-    "title": "React Bits",
-    "icon": "React_Bits_icon.webp",
-    "url": "https://reactbits.dev",
-    "description": "React 动效组件库",
-    "category": "创意设计"
+    "title": "Remix Icon",
+    "icon": "Remix_Icon_icon.webp",
+    "url": "https://remixicon.com",
+    "description": "开源中性风格系统符号",
+    "category": "图标符号"
   },
   {
-    "title": "M3E Canvas",
-    "icon": "M3E_Canvas_icon.webp",
-    "url": "https://lnkiai.github.io/m3e-canvas",
-    "description": "自定义构建MD3界面",
-    "category": "创意设计"
+    "title": "Emoji Directory",
+    "icon": "Emoji_Directory_icon.webp",
+    "url": "https://emojidir.com/zh-CN",
+    "description": "全平台系统表情符号",
+    "category": "图标符号"
   },
   {
-    "title": "西瓜封面设计",
-    "icon": "西瓜封面设计_icon.webp",
-    "url": "https://cover.xgdh.cn",
-    "description": "专业封面设计工具",
-    "category": "创意设计"
+    "title": "APPLORE",
+    "icon": "APPLORE_icon.webp",
+    "url": "https://app.uiboy.com",
+    "description": "发现丰富精美应用图标",
+    "category": "图标符号"
   },
   {
-    "title": "中国传统配色",
-    "icon": "中国传统配色_icon.webp",
-    "url": "https://nevertoday.github.io/zhongguo-traditional-colors",
-    "description": "742张中国传统色色卡",
-    "category": "创意设计"
+    "title": "Iconfont",
+    "icon": "Iconfont_icon.webp",
+    "url": "https://www.iconfont.cn",
+    "description": "阿里旗下矢量图标库",
+    "category": "图标符号"
   },
   {
-    "title": "Google Fonts",
-    "icon": "Google_Fonts_icon.webp",
-    "url": "https://fonts.google.com",
-    "description": "免费开源网页字体库",
-    "category": "创意设计"
+    "title": "Icon Inspo",
+    "icon": "Icon_Inspo_icon.webp",
+    "url": "https://iconinspo.com",
+    "description": "探索设计精美应用图标",
+    "category": "图标符号"
   },
   {
-    "title": "调色板",
-    "icon": "调色板_icon.webp",
-    "url": "https://cn.online-color.com",
-    "description": "在线调色板配色工具",
-    "category": "创意设计"
+    "title": "All SVG Icons",
+    "icon": "All_SVG_Icons_icon.webp",
+    "url": "https://allsvgicons.com",
+    "description": "超37万个免费SVG图标",
+    "category": "图标符号"
   },
   {
-    "title": "Color Hunt",
-    "icon": "Color_Hunt_icon.webp",
-    "url": "https://colorhunt.co",
-    "description": "精选配色方案分享平台",
-    "category": "创意设计"
+    "title": "Urongda",
+    "icon": "Urongda_icon.webp",
+    "url": "https://www.urongda.com",
+    "description": "中国大学矢量校徽大全",
+    "category": "图标符号"
   },
   {
-    "title": "Undraw",
-    "icon": "Undraw_icon.webp",
-    "url": "https://undraw.co/illustrations",
-    "description": "开源矢量插画素材库",
-    "category": "创意设计"
+    "title": "yesicon",
+    "icon": "yesicon_icon.webp",
+    "url": "https://yesicon.app",
+    "description": "231组开源免费图标库",
+    "category": "图标符号"
   },
   {
-    "title": "CocoMaterial",
-    "icon": "CocoMaterial_icon.webp",
-    "url": "https://cocomaterial.com",
-    "description": "开源手绘插图素材库",
-    "category": "创意设计"
+    "title": "svgl",
+    "icon": "svgl_icon.webp",
+    "url": "https://svgl.app",
+    "description": "开源主流品牌SVG徽标",
+    "category": "图标符号"
   },
   {
-    "title": "Cover Page",
-    "icon": "Cover_Page_icon.webp",
-    "url": "https://www.coverpage.one",
-    "description": "封面图片创建工具",
-    "category": "创意设计"
+    "title": "Flaticon",
+    "icon": "Flaticon_icon.webp",
+    "url": "https://www.flaticon.com",
+    "description": "矢量图标和贴纸素材",
+    "category": "图标符号"
   },
   {
-    "title": "Coverly",
-    "icon": "Coverly_icon.webp",
-    "url": "https://coverly.79px.com",
-    "description": "文章封面图制作工具",
-    "category": "创意设计"
+    "title": "Iconbuddy",
+    "icon": "Iconbuddy_icon.webp",
+    "url": "https://iconbuddy.com",
+    "description": "多种类型图标素材库",
+    "category": "图标符号"
   },
   {
-    "title": "QM Icon",
-    "icon": "QM_Icon_icon.webp",
-    "url": "https://icon.qiaomu.ai",
-    "description": "跨平台图标设计工具站",
-    "category": "创意设计"
+    "title": "Dashboard Icons",
+    "icon": "Dashboard_Icons_icon.webp",
+    "url": "https://dashboardicons.com",
+    "description": "9300+个图标和徽标",
+    "category": "图标符号"
   },
   {
-    "title": "beUI",
-    "icon": "beUI_icon.webp",
-    "url": "https://beui.dev",
-    "description": "产品界面UI组件库",
-    "category": "创意设计"
+    "title": "Worldvectorlogo",
+    "icon": "Worldvectorlogo_icon.webp",
+    "url": "https://worldvectorlogo.com/zh",
+    "description": "顶级品牌SVG矢量标志",
+    "category": "图标符号"
   },
   {
-    "title": "Bible Strong",
-    "icon": "Bible_Strong_icon.webp",
-    "url": "https://bible-strong-avatar-lab.vercel.app",
-    "description": "头像生成与创作工具",
-    "category": "创意设计"
+    "title": "Lordicon",
+    "icon": "Lordicon_icon.webp",
+    "url": "https://lordicon.com",
+    "description": "拥有4万多个动画图标",
+    "category": "图标符号"
   },
   {
-    "title": "Bloub",
-    "icon": "Bloub_icon.webp",
-    "url": "https://bloub.vercel.app",
-    "description": "动画SVG头像制作",
-    "category": "创意设计"
+    "title": "SVG Logos",
+    "icon": "SVG_Logos_icon.webp",
+    "url": "https://svglogos.dev",
+    "description": "数千个品牌标志和图标",
+    "category": "图标符号"
   },
   {
-    "title": "OneWorks Avatar",
-    "icon": "OneWorks_Avatar_icon.webp",
-    "url": "https://oneworks.cloud/avatar",
-    "description": "开源3D头像编辑器",
-    "category": "创意设计"
+    "title": "Logos Apps",
+    "icon": "Logos_Apps_icon.webp",
+    "url": "https://logos.lndev.me",
+    "description": "15017多个简洁徽标",
+    "category": "图标符号"
   },
   {
-    "title": "UI UX Pro Max",
-    "icon": "UI_UX_Pro_Max_icon.webp",
-    "url": "https://www.uupm.cc",
-    "description": "UI/UX设计资源平台",
-    "category": "创意设计"
+    "title": "morphicons",
+    "icon": "morphicons_icon.webp",
+    "url": "https://www.morphicons.com",
+    "description": "UI交互高级图标动画库",
+    "category": "图标符号"
+  },
+  {
+    "title": "IP as Logo",
+    "icon": "IP_as_Logo_icon.webp",
+    "url": "https://ipaslogo.com",
+    "description": "开源原创吉祥物Logo",
+    "category": "图标符号"
+  },
+  {
+    "title": "Logoinspo",
+    "icon": "Logoinspo_icon.webp",
+    "url": "https://www.logoinspo.com/",
+    "description": "精选真实和虚构标志",
+    "category": "图标符号"
   }
 ]

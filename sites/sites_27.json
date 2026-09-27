@@ -1,366 +1,86 @@
 [
   {
-    "title": "Google Chrome",
-    "icon": "Google_Chrome_icon.webp",
-    "url": "https://www.google.cn/chrome",
-    "description": "谷歌极速网页浏览器",
-    "category": "桌面软件"
+    "title": "APKMirror",
+    "icon": "APKMirror_icon.webp",
+    "url": "https://www.apkmirror.com",
+    "description": "原版应用安装包下载站",
+    "category": "应用下载"
   },
   {
-    "title": "Microsoft Edge",
-    "icon": "Microsoft_Edge_icon.webp",
-    "url": "https://www.microsoft.com/zh-cn/edge/download",
-    "description": "微软内置高效浏览器",
-    "category": "桌面软件"
+    "title": "Appteka",
+    "icon": "Appteka_icon.webp",
+    "url": "https://appteka.store/apps",
+    "description": "俄区特色软件下载站",
+    "category": "应用下载"
   },
   {
-    "title": "7-Zip",
-    "icon": "7-Zip_icon.webp",
-    "url": "https://www.7-zip.org",
-    "description": "开源免费解压缩工具",
-    "category": "桌面软件"
+    "title": "F-Droid",
+    "icon": "F-Droid_icon.webp",
+    "url": "https://f-droid.org/zh_Hans/packages",
+    "description": "自由开源安卓应用商店",
+    "category": "应用下载"
   },
   {
-    "title": "Everything",
-    "icon": "Everything_icon.webp",
-    "url": "https://www.voidtools.com/zh-cn",
-    "description": "本地文件秒级搜索",
-    "category": "桌面软件"
+    "title": "Uptodown",
+    "icon": "Uptodown_icon.webp",
+    "url": "https://cn.uptodown.com",
+    "description": "多平台软件与游戏下载",
+    "category": "应用下载"
   },
   {
-    "title": "Geek Uninstaller",
-    "icon": "Geek_Uninstaller_icon.webp",
-    "url": "https://geekuninstaller.com",
-    "description": "软件彻底卸载清理",
-    "category": "桌面软件"
+    "title": "APKPure",
+    "icon": "APKPure_icon.webp",
+    "url": "https://m.apkpure.com/cn",
+    "description": "海外热门安卓应用市场",
+    "category": "应用下载"
   },
   {
-    "title": "图吧工具箱",
-    "icon": "图吧工具箱_icon.webp",
-    "url": "https://www.tbtool.cn",
-    "description": "极客电脑硬件检测箱",
-    "category": "桌面软件"
+    "title": "Aptoide",
+    "icon": "Aptoide_icon.webp",
+    "url": "https://en.aptoide.com",
+    "description": "去中心化独立应用商店",
+    "category": "应用下载"
   },
   {
-    "title": "PotPlayer",
-    "icon": "PotPlayer_icon.webp",
-    "url": "https://potplayer.tv",
-    "description": "强大全能本地播放器",
-    "category": "桌面软件"
+    "title": "A2ZAPK",
+    "icon": "A2ZAPK_icon.webp",
+    "url": "https://a2zapk.co",
+    "description": "海量修改版应用与游戏",
+    "category": "应用下载"
   },
   {
-    "title": "Escrcpy",
-    "icon": "Escrcpy_icon.webp",
-    "url": "https://viarotel.eu.org/zhHans",
-    "description": "图形化安卓投屏控制",
-    "category": "桌面软件"
+    "title": "APKCombo",
+    "icon": "APKCombo_icon.webp",
+    "url": "https://apkcombo.com/zh",
+    "description": "安卓APK与XAPK下载",
+    "category": "应用下载"
   },
   {
-    "title": "WPS Office",
-    "icon": "WPS_Office_icon.webp",
-    "url": "https://www.wps.cn",
-    "description": "一站式办公文档处理",
-    "category": "桌面软件"
+    "title": "OpenAPK",
+    "icon": "OpenAPK_icon.webp",
+    "url": "https://www.openapk.net/zh/",
+    "description": "安卓开源应用APK下载",
+    "category": "应用下载"
   },
   {
-    "title": "腾讯文档",
-    "icon": "腾讯文档_icon.webp",
-    "url": "https://docs.qq.com/home/download",
-    "description": "多人实时在线协作",
-    "category": "桌面软件"
+    "title": "APKToy",
+    "icon": "APKToy_icon.webp",
+    "url": "https://m.apktoy.com",
+    "description": "移动应用与游戏提取",
+    "category": "应用下载"
   },
   {
-    "title": "火绒安全",
-    "icon": "火绒安全_icon.webp",
-    "url": "https://www.huorong.cn",
-    "description": "小巧强悍电脑安全防护",
-    "category": "桌面软件"
+    "title": "Sfile Mobi",
+    "icon": "Sfile_Mobi_icon.webp",
+    "url": "https://sfile.mobi",
+    "description": "网盘文件与应用分享",
+    "category": "应用下载"
   },
   {
-    "title": "IDM",
-    "icon": "IDM_icon.webp",
-    "url": "https://www.internetdownloadmanager.com",
-    "description": "多线程高速下载神器",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Steam",
-    "icon": "Steam_icon.webp",
-    "url": "https://store.steampowered.com/about",
-    "description": "PC数字游戏购买平台",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Watt Toolkit",
-    "icon": "Watt_Toolkit_icon.webp",
-    "url": "https://steampp.net",
-    "description": "开源多功能游戏加速",
-    "category": "桌面软件"
-  },
-  {
-    "title": "网易UU加速器",
-    "icon": "网易UU加速器_icon.webp",
-    "url": "https://uu.163.com",
-    "description": "全平台游戏网络加速",
-    "category": "桌面软件"
-  },
-  {
-    "title": "雷神加速器",
-    "icon": "雷神加速器_icon.webp",
-    "url": "https://www.leigod.com",
-    "description": "按小时计费游戏加速",
-    "category": "桌面软件"
-  },
-  {
-    "title": "ShareX",
-    "icon": "ShareX_icon.webp",
-    "url": "https://getsharex.com",
-    "description": "开源全能截图录屏",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Obsidian",
-    "icon": "Obsidian_icon.webp",
-    "url": "https://obsidian.md/zh",
-    "description": "双链卡片本地笔记应用",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Clash Verge",
-    "icon": "Clash_Verge_icon.webp",
-    "url": "https://www.clashverge.dev",
-    "description": "现代网络代理客户端",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Codex",
-    "icon": "Codex_icon.webp",
-    "url": "https://chatgpt.com/zh-Hans-CN/codex",
-    "description": "AI智能代码辅助编写",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Visual Studio Code",
-    "icon": "Visual_Studio_Code_icon.webp",
-    "url": "https://code.visualstudio.com",
-    "description": "主流跨平台代码编辑器",
-    "category": "桌面软件"
-  },
-  {
-    "title": "GitHub Desktop",
-    "icon": "GitHub_Desktop_icon.webp",
-    "url": "https://desktop.github.com/download",
-    "description": "直观的Git版本管理",
-    "category": "桌面软件"
-  },
-  {
-    "title": "LocalSend",
-    "icon": "LocalSend_icon.webp",
-    "url": "https://localsend.org/zh-CN",
-    "description": "跨平台局域网文件传输",
-    "category": "桌面软件"
-  },
-  {
-    "title": "OBS Studio",
-    "icon": "OBS_Studio_icon.webp",
-    "url": "https://obsproject.com",
-    "description": "专业开源直播录屏",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Notion",
-    "icon": "Notion_icon.webp",
-    "url": "https://www.notion.com/zh-cn",
-    "description": "模块化笔记协作空间",
-    "category": "桌面软件"
-  },
-  {
-    "title": "XnConvert",
-    "icon": "XnConvert_icon.webp",
-    "url": "https://www.xnview.com/en/xnconvert",
-    "description": "批量图像处理与转换",
-    "category": "桌面软件"
-  },
-  {
-    "title": "EcoPaste",
-    "icon": "EcoPaste_icon.webp",
-    "url": "https://ecopaste.cn",
-    "description": "开源跨平台剪贴板",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Snipaste",
-    "icon": "Snipaste_icon.webp",
-    "url": "https://zh.snipaste.com",
-    "description": "强大方便的截图贴图",
-    "category": "桌面软件"
-  },
-  {
-    "title": "QuickLook",
-    "icon": "QuickLook_icon.webp",
-    "url": "https://github.com/QL-Win/QuickLook",
-    "description": "空格键极速预览文件",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Wallpaper Engine",
-    "icon": "Wallpaper_Engine_icon.webp",
-    "url": "https://www.wallpaperengine.io/zh-hans",
-    "description": "创意动态桌面壁纸",
-    "category": "桌面软件"
-  },
-  {
-    "title": "PDFgear",
-    "icon": "PDFgear_icon.webp",
-    "url": "https://www.pdfgear.com/zh",
-    "description": "免费全能PDF编辑",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Bandizip",
-    "icon": "Bandizip_icon.webp",
-    "url": "https://www.bandisoft.com/bandizip",
-    "description": "多功能解压缩文件管理",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Honeyview",
-    "icon": "Honeyview_icon.webp",
-    "url": "https://www.bandisoft.com/honeyview",
-    "description": "高效快速图片查看工具",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Quicker",
-    "icon": "Quicker_icon.webp",
-    "url": "https://getquicker.net",
-    "description": "桌面快捷操作效率面板",
-    "category": "桌面软件"
-  },
-  {
-    "title": "PowerToys",
-    "icon": "PowerToys_icon.webp",
-    "url": "https://github.com/microsoft/PowerToys",
-    "description": "微软官方实用工具集",
-    "category": "桌面软件"
-  },
-  {
-    "title": "CCleaner",
-    "icon": "CCleaner_icon.webp",
-    "url": "https://www.ccleaner.com/zh-cn",
-    "description": "老牌系统垃圾清理",
-    "category": "桌面软件"
-  },
-  {
-    "title": "FlClash",
-    "icon": "FlClash_icon.webp",
-    "url": "https://flclash.cc",
-    "description": "多平台网络代理客户端",
-    "category": "桌面软件"
-  },
-  {
-    "title": "SyncClipboard",
-    "icon": "SyncClipboard_icon.webp",
-    "url": "https://github.com/Jeric-X/SyncClipboard",
-    "description": "多端同步剪贴板服务",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Upscayl",
-    "icon": "Upscayl_icon.webp",
-    "url": "https://upscayl.org",
-    "description": "本地AI图片无损放大",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Actus Auto Clicker",
-    "icon": "Actus_Auto_Clicker_icon.webp",
-    "url": "https://actusclicker.com/zh",
-    "description": "自定义鼠标自动连点",
-    "category": "桌面软件"
-  },
-  {
-    "title": "BananaCut",
-    "icon": "BananaCut_icon.webp",
-    "url": "https://a.zjhn.com",
-    "description": "轻量视频快捷剪辑",
-    "category": "桌面软件"
-  },
-  {
-    "title": "链文工具箱",
-    "icon": "链文工具箱_icon.webp",
-    "url": "https://lianwentool.com",
-    "description": "聚合多种实用功能",
-    "category": "桌面软件"
-  },
-  {
-    "title": "File Converter",
-    "icon": "File_Converter_icon.webp",
-    "url": "https://file-converter.io",
-    "description": "右键快捷文件格式转换",
-    "category": "桌面软件"
-  },
-  {
-    "title": "HandBrake",
-    "icon": "HandBrake_icon.webp",
-    "url": "https://handbrake.fr",
-    "description": "多平台开源视频转码器",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Files",
-    "icon": "Files_icon.webp",
-    "url": "https://files.community",
-    "description": "双面板文件浏览管理",
-    "category": "桌面软件"
-  },
-  {
-    "title": "飞鼠格式",
-    "icon": "飞鼠格式_icon.webp",
-    "url": "https://github.com/LaoFeng-mouse/flyingmouse-format",
-    "description": "文件格式快捷转换",
-    "category": "桌面软件"
-  },
-  {
-    "title": "游戏加加",
-    "icon": "游戏加加_icon.webp",
-    "url": "https://gamepp.com",
-    "description": "游戏帧率与硬件监控",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Pavise",
-    "icon": "Pavise_icon.webp",
-    "url": "https://github.com/dulaiduwang003/Pavise-Game",
-    "description": "电脑游戏性能优化守护",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Rustdesk",
-    "icon": "Rustdesk_icon.webp",
-    "url": "https://github.com/rustdesk/rustdesk",
-    "description": "开源自建远程桌面",
-    "category": "桌面软件"
-  },
-  {
-    "title": "CC Switch",
-    "icon": "CC_Switch_icon.webp",
-    "url": "https://ccswitch.io/zh",
-    "description": "AI模型快捷切换管理",
-    "category": "桌面软件"
-  },
-  {
-    "title": "Git",
-    "icon": "Git_icon.webp",
-    "url": "https://git-scm.com",
-    "description": "分布式版本控制系统",
-    "category": "桌面软件"
-  },
-  {
-    "title": "图吧工具箱 WinUI3",
-    "icon": "图吧工具箱_WinUI3_icon.webp",
-    "url": "https://tubawinui3.cn",
-    "description": "新版WinUI界面检测箱",
-    "category": "桌面软件"
+    "title": "Crx搜搜",
+    "icon": "Crx搜搜_icon.webp",
+    "url": "https://www.crxsoso.com",
+    "description": "浏览器扩展插件下载",
+    "category": "应用下载"
   }
 ]

@@ -1,86 +1,86 @@
 [
   {
-    "title": "菜鸟教程",
-    "icon": "菜鸟教程_icon.webp",
-    "url": "https://www.runoob.com",
-    "description": "基础编程入门学习",
-    "category": "编程技术"
+    "title": "科普中国 Lite",
+    "icon": "科普中国_Lite_icon.webp",
+    "url": "https://m.kepuchina.cn/headline",
+    "description": "科学知识与科普资讯",
+    "category": "知识科普"
   },
   {
-    "title": "W3Schools",
-    "icon": "W3Schools_icon.webp",
-    "url": "https://www.w3schools.com",
-    "description": "全球知名Web开发教程",
-    "category": "编程技术"
+    "title": "微科普",
+    "icon": "微科普_icon.webp",
+    "url": "https://www.wkepu.com",
+    "description": "公益性知识科普媒体",
+    "category": "知识科普"
   },
   {
-    "title": "Geeksforgeeks",
-    "icon": "Geeksforgeeks_icon.webp",
-    "url": "https://www.geeksforgeeks.org",
-    "description": "计算机算法与编程刷题",
-    "category": "编程技术"
+    "title": "科学辟谣",
+    "icon": "科学辟谣_icon.webp",
+    "url": "https://piyao.kepuchina.cn",
+    "description": "科学辟谣与知识辨析",
+    "category": "知识科普"
   },
   {
-    "title": "W3School",
-    "icon": "W3School_icon.webp",
-    "url": "https://www.w3school.com.cn",
-    "description": "中文Web技术学习手册",
-    "category": "编程技术"
+    "title": "Just Laws",
+    "icon": "Just_Laws_icon.webp",
+    "url": "https://www.justlaws.cn",
+    "description": "法律知识与法规查询",
+    "category": "知识科普"
   },
   {
-    "title": "VitePress",
-    "icon": "VitePress_icon.webp",
-    "url": "https://vitepress.dev",
-    "description": "Vue驱动的静态站点生成",
-    "category": "编程技术"
+    "title": "wikiHow",
+    "icon": "wikiHow_icon.webp",
+    "url": "https://zh.wikihow.com",
+    "description": "实用知识与生活指南",
+    "category": "知识科普"
   },
   {
-    "title": "Vue.js",
-    "icon": "Vue_js_icon.webp",
-    "url": "https://cn.vuejs.org",
-    "description": "渐进式JavaScript框架",
-    "category": "编程技术"
+    "title": "大众科普网",
+    "icon": "大众科普网_icon.webp",
+    "url": "https://www.dazhongkepu.cn",
+    "description": "大众科学知识平台",
+    "category": "知识科普"
   },
   {
-    "title": "React",
-    "icon": "React_icon.webp",
-    "url": "https://react.dev",
-    "description": "构建Web界面的前端库",
-    "category": "编程技术"
+    "title": "家庭保健报",
+    "icon": "家庭保健报_icon.webp",
+    "url": "https://www.familyhealthpaper.com",
+    "description": "健康知识与生活资讯",
+    "category": "知识科普"
   },
   {
-    "title": "Node.js",
-    "icon": "Node_js_icon.webp",
-    "url": "https://nodejs.org",
-    "description": "服务端的JS运行环境",
-    "category": "编程技术"
+    "title": "我爱怀旧网",
+    "icon": "我爱怀旧网_icon.webp",
+    "url": "https://www.52huaijiu.com",
+    "description": "怀旧老物件与重温记忆",
+    "category": "知识科普"
   },
   {
-    "title": "Vite",
-    "icon": "Vite_icon.webp",
-    "url": "https://vite.dev",
-    "description": "极速前端开发构建工具",
-    "category": "编程技术"
+    "title": "高性价比人生指南",
+    "icon": "高性价比人生指南_icon.webp",
+    "url": "https://eternity4719.github.io/HowToLiveBetter",
+    "description": "日常生活问题解答知识",
+    "category": "知识科普"
   },
   {
-    "title": "Markdown",
-    "icon": "Markdown_icon.webp",
-    "url": "https://www.markdownlang.com",
-    "description": "易读易写轻量标记语言",
-    "category": "编程技术"
+    "title": "KnowSex",
+    "icon": "KnowSex_icon.webp",
+    "url": "https://knowsex.net",
+    "description": "通俗易懂性教育科普",
+    "category": "知识科普"
   },
   {
-    "title": "DevDocs",
-    "icon": "DevDocs_icon.webp",
-    "url": "https://devdocs.io",
-    "description": "一站式开发文档库",
-    "category": "编程技术"
+    "title": "指尖上",
+    "icon": "指尖上_icon.webp",
+    "url": "https://www.zhijianshang.com",
+    "description": "全球目的地全景游览",
+    "category": "知识科普"
   },
   {
-    "title": "LabEx",
-    "icon": "LabEx_icon.webp",
-    "url": "https://labex.io/zh",
-    "description": "动手实战的编程实验课",
-    "category": "编程技术"
+    "title": "AirPano",
+    "icon": "AirPano_icon.webp",
+    "url": "https://airpano.org.cn",
+    "description": "全球全景影像探索",
+    "category": "知识科普"
   }
 ]

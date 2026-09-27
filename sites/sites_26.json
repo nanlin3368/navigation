@@ -1,86 +1,93 @@
 [
   {
-    "title": "APKMirror",
-    "icon": "APKMirror_icon.webp",
-    "url": "https://www.apkmirror.com",
-    "description": "原版应用安装包下载站",
-    "category": "应用下载"
+    "title": "王牌竞速数据站",
+    "icon": "王牌竞速数据站_icon.webp",
+    "url": "https://wnqs.github.io/acerace-station/main.html",
+    "description": "王牌竞速数据与资料",
+    "category": "休闲娱乐"
   },
   {
-    "title": "Appteka",
-    "icon": "Appteka_icon.webp",
-    "url": "https://appteka.store/apps",
-    "description": "俄区特色软件下载站",
-    "category": "应用下载"
+    "title": "王牌竞速情报站",
+    "icon": "王牌竞速情报站_icon.webp",
+    "url": "https://reca.seimu.cn/ace-racer/home",
+    "description": "王牌竞速玩家情报资料",
+    "category": "休闲娱乐"
   },
   {
-    "title": "F-Droid",
-    "icon": "F-Droid_icon.webp",
-    "url": "https://f-droid.org/zh_Hans/packages",
-    "description": "自由开源安卓应用商店",
-    "category": "应用下载"
+    "title": "摸鱼小游戏",
+    "icon": "摸鱼小游戏_icon.webp",
+    "url": "https://moyu.aolifu.org",
+    "description": "休闲怀旧在线小游戏",
+    "category": "休闲娱乐"
   },
   {
-    "title": "Uptodown",
-    "icon": "Uptodown_icon.webp",
-    "url": "https://cn.uptodown.com",
-    "description": "多平台软件与游戏下载",
-    "category": "应用下载"
+    "title": "乡土游戏馆",
+    "icon": "乡土游戏馆_icon.webp",
+    "url": "https://youxi.pomodiary.com",
+    "description": "民间乡土棋类游戏",
+    "category": "休闲娱乐"
   },
   {
-    "title": "APKPure",
-    "icon": "APKPure_icon.webp",
-    "url": "https://m.apkpure.com/cn",
-    "description": "海外热门安卓应用市场",
-    "category": "应用下载"
+    "title": "小游戏合集",
+    "icon": "小游戏合集_icon.webp",
+    "url": "https://game.teckbest.com",
+    "description": "在线小游戏合集",
+    "category": "休闲娱乐"
   },
   {
-    "title": "Aptoide",
-    "icon": "Aptoide_icon.webp",
-    "url": "https://en.aptoide.com",
-    "description": "去中心化独立应用商店",
-    "category": "应用下载"
+    "title": "楚河漢界",
+    "icon": "楚河漢界_icon.webp",
+    "url": "https://chess.moyu.ge",
+    "description": "3D中国象棋对弈",
+    "category": "休闲娱乐"
   },
   {
-    "title": "A2ZAPK",
-    "icon": "A2ZAPK_icon.webp",
-    "url": "https://a2zapk.co",
-    "description": "海量修改版应用与游戏",
-    "category": "应用下载"
+    "title": "grubiks",
+    "icon": "grubiks_icon.webp",
+    "url": "https://www.grubiks.com",
+    "description": "多款魔方益智畅玩",
+    "category": "休闲娱乐"
   },
   {
-    "title": "APKCombo",
-    "icon": "APKCombo_icon.webp",
-    "url": "https://apkcombo.com/zh",
-    "description": "安卓APK与XAPK下载",
-    "category": "应用下载"
+    "title": "3D魔方",
+    "icon": "3D魔方_icon.webp",
+    "url": "https://game.ur1.fun/cube",
+    "description": "在线3D魔方趣玩",
+    "category": "休闲娱乐"
   },
   {
-    "title": "OpenAPK",
-    "icon": "OpenAPK_icon.webp",
-    "url": "https://www.openapk.net/zh/",
-    "description": "安卓开源应用APK下载",
-    "category": "应用下载"
+    "title": "罗码术",
+    "icon": "罗码术_icon.webp",
+    "url": "https://www.luomashu.com",
+    "description": "认知测试与性格测评",
+    "category": "休闲娱乐"
   },
   {
-    "title": "APKToy",
-    "icon": "APKToy_icon.webp",
-    "url": "https://m.apktoy.com",
-    "description": "移动应用与游戏提取",
-    "category": "应用下载"
+    "title": "A Real Me",
+    "icon": "ARealMe_icon.webp",
+    "url": "https://www.arealme.com",
+    "description": "自我测试与趣味互动",
+    "category": "休闲娱乐"
   },
   {
-    "title": "Sfile Mobi",
-    "icon": "Sfile_Mobi_icon.webp",
-    "url": "https://sfile.mobi",
-    "description": "网盘文件与应用分享",
-    "category": "应用下载"
+    "title": "待一会",
+    "icon": "待一会_icon.webp",
+    "url": "https://daiyihui.com",
+    "description": "沉浸式放松解压空间",
+    "category": "休闲娱乐"
   },
   {
-    "title": "Crx搜搜",
-    "icon": "Crx搜搜_icon.webp",
-    "url": "https://www.crxsoso.com",
-    "description": "浏览器扩展插件下载",
-    "category": "应用下载"
+    "title": "泡泡白噪音",
+    "icon": "泡泡白噪音_icon.webp",
+    "url": "https://www.ppbzy.com",
+    "description": "助眠冥想白噪音播放",
+    "category": "休闲娱乐"
+  },
+  {
+    "title": "ORBIT",
+    "icon": "ORBIT_icon.webp",
+    "url": "https://ryh842487118-bot.github.io/orbit/",
+    "description": "沉浸式3D宇宙探索",
+    "category": "休闲娱乐"
   }
 ]

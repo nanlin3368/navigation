@@ -1,163 +1,51 @@
 [
   {
-    "title": "如意视频",
-    "icon": "如意视频_icon.webp",
-    "url": "https://rytv.tv",
-    "description": "",
-    "category": "影视音乐"
+    "title": "Telegram APK",
+    "icon": "Telegram_APK_icon.webp",
+    "url": "https://t.me/TAndroidAPK",
+    "description": "官方APK文件发布频道",
+    "category": "电报频道"
   },
   {
-    "title": "无忧音乐网",
-    "icon": "无忧音乐网_icon.webp",
-    "url": "https://www.qeecc.com",
-    "description": "",
-    "category": "影视音乐"
+    "title": "Telegram X APK",
+    "icon": "Telegram_X_APK_icon.webp",
+    "url": "https://t.me/tgx_log",
+    "description": "发布更新日志与安装包",
+    "category": "电报频道"
   },
   {
-    "title": "枫叶音乐盒",
-    "icon": "枫叶音乐盒_icon.webp",
-    "url": "https://mu-jie.cc/musicBox/#",
-    "description": "",
-    "category": "影视音乐"
+    "title": "极搜🔍资源搜索",
+    "icon": "极搜_icon.webp",
+    "url": "t.me/jisou2",
+    "description": "搜索群组、频道等资源",
+    "category": "电报频道"
   },
   {
-    "title": "瓜子影视",
-    "icon": "瓜子影视_icon.webp",
-    "url": "https://ng6.app",
-    "description": "",
-    "category": "影视音乐"
+    "title": "秀儿の科技软件",
+    "icon": "秀儿_科技软件_icon.webp",
+    "url": "https://t.me/jianjiaoPD",
+    "description": "每日分享各类优质内容",
+    "category": "电报频道"
   },
   {
-    "title": "Novipnoad",
-    "icon": "Novipnoad_icon.webp",
-    "url": "https://findno.tv",
-    "description": "",
-    "category": "影视音乐"
+    "title": "吃瓜群众",
+    "icon": "吃瓜群众_icon.webp",
+    "url": "https://t.me/CG12316",
+    "description": "聚焦网络猎奇新闻视频",
+    "category": "电报频道"
   },
   {
-    "title": "歌曲海",
-    "icon": "歌曲海_icon.webp",
-    "url": "https://www.gequhai.com",
-    "description": "",
-    "category": "影视音乐"
+    "title": "LoopDNS 资讯播报",
+    "icon": "LoopDNS_资讯播报_icon.webp",
+    "url": "https://t.me/DNSPODT",
+    "description": "实时播报行业热点信息",
+    "category": "电报频道"
   },
   {
-    "title": "无损音乐下载",
-    "icon": "无损音乐下载_icon.webp",
-    "url": "https://flac.music.hi.cn",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "歌词易",
-    "icon": "歌词易_icon.webp",
-    "url": "https://geciyi.com/zh-cn",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "PPnix",
-    "icon": "PPnix_icon.webp",
-    "url": "https://www.ppnix.com/cn",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "一起刷",
-    "icon": "一起刷_icon.webp",
-    "url": "https://yqs11.app/pc",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "网飞猫",
-    "icon": "网飞猫_icon.webp",
-    "url": "https://www.ncat22.com",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "Hi歌曲音乐网",
-    "icon": "Hi歌曲音乐网_icon.webp",
-    "url": "https://higequ.com",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "歌曲宝",
-    "icon": "歌曲宝_icon.webp",
-    "url": "https://www.gequbao.com",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "COCO音乐下载站",
-    "icon": "COCO音乐下载站_icon.webp",
-    "url": "https://cocodownloader.markqq.com",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "Go Music DL",
-    "icon": "Go_Music_DL_icon.webp",
-    "url": "http://music.zkkp.nyc.mn",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "开开无损音乐",
-    "icon": "开开无损音乐_icon.webp",
-    "url": "https://www.kkws.cc",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "搜剧AI",
-    "icon": "搜剧AI_icon.webp",
-    "url": "https://souju.ai",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "看剧AI",
-    "icon": "看剧AI_icon.webp",
-    "url": "https://kanju.ai",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "ZIP0",
-    "icon": "ZIP0_icon.webp",
-    "url": "https://zip0.com",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "飞快 TV",
-    "icon": "飞快_TV_icon.webp",
-    "url": "https://feikuai.in",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "简单 TV",
-    "icon": "简单_TV_icon.webp",
-    "url": "https://jiandantv.cc",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "Moovie 影牛",
-    "icon": "Moovie_影牛_icon.webp",
-    "url": "https://moovie.c2v2.com",
-    "description": "",
-    "category": "影视音乐"
-  },
-  {
-    "title": "金牌影院",
-    "icon": "金牌影院_icon.webp",
-    "url": "https://m.vv3nwjk.com",
-    "description": "",
-    "category": "影视音乐"
+    "title": "Telegram 中文社群",
+    "icon": "Telegram_中文社群_icon.webp",
+    "url": "https://t.me/tgcnx",
+    "description": "中文公共社区聊天群组",
+    "category": "电报频道"
   }
 ]

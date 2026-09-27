@@ -1,135 +1,177 @@
 [
   {
-    "title": "Komiic",
-    "icon": "Komiic_icon.webp",
-    "url": "https://komiic.com",
-    "description": "",
-    "category": "动漫次元"
+    "title": "如意视频",
+    "icon": "如意视频_icon.webp",
+    "url": "https://rytv.tv",
+    "description": "高清正版影视免费观看",
+    "category": "影视音乐"
   },
   {
-    "title": "拷贝漫画",
-    "icon": "拷贝漫画_icon.webp",
-    "url": "https://www.2026copy.com/h5/index",
-    "description": "",
-    "category": "动漫次元"
+    "title": "无忧音乐网",
+    "icon": "无忧音乐网_icon.webp",
+    "url": "https://www.qeecc.com",
+    "description": "千万曲库免费下载网站",
+    "category": "影视音乐"
   },
   {
-    "title": "Animoe",
-    "icon": "Animoe_icon.webp",
-    "url": "https://animoe.org",
-    "description": "",
-    "category": "动漫次元"
+    "title": "枫叶音乐盒",
+    "icon": "枫叶音乐盒_icon.webp",
+    "url": "https://mu-jie.cc/musicBox/#",
+    "description": "开源免费在线音乐播放",
+    "category": "影视音乐"
   },
   {
-    "title": "Pixiv Viewer",
-    "icon": "Pixiv_Viewer_icon.webp",
-    "url": "https://pixiv.pictures",
+    "title": "瓜子影视",
+    "icon": "瓜子影视_icon.webp",
+    "url": "https://ng6.app",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "Mangabz",
-    "icon": "Mangabz_icon.webp",
-    "url": "https://www.mangabz.com",
+    "title": "Novipnoad",
+    "icon": "Novipnoad_icon.webp",
+    "url": "https://findno.tv",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "G点漫画",
-    "icon": "G点漫画_icon.webp",
-    "url": "https://m.g-mh.org",
-    "description": "",
-    "category": "动漫次元"
+    "title": "歌曲海",
+    "icon": "歌曲海_icon.webp",
+    "url": "https://www.gequhai.com",
+    "description": "高品质MP3音乐免费下载",
+    "category": "影视音乐"
   },
   {
-    "title": "Yymanhua",
-    "icon": "Yymanhua_icon.webp",
-    "url": "https://www.yymanhua.com",
+    "title": "无损音乐下载",
+    "icon": "无损音乐下载_icon.webp",
+    "url": "https://flac.music.hi.cn",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "轻书架",
-    "icon": "轻书架_icon.webp",
-    "url": "https://www.acgdmzy.com/home",
-    "description": "",
-    "category": "动漫次元"
+    "title": "歌词易",
+    "icon": "歌词易_icon.webp",
+    "url": "https://geciyi.com/zh-cn",
+    "description": "拥有500+万首歌曲歌词",
+    "category": "影视音乐"
   },
   {
-    "title": "稀饭动漫",
-    "icon": "稀饭动漫_icon.webp",
-    "url": "https://next.xifanacg.com",
+    "title": "PPnix",
+    "icon": "PPnix_icon.webp",
+    "url": "https://www.ppnix.com/cn",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "花火漫画",
-    "icon": "花火漫画_icon.webp",
-    "url": "https://web.hanabimanga.com/zh-CN",
+    "title": "一起刷",
+    "icon": "一起刷_icon.webp",
+    "url": "https://yqs11.app/pc",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "AGE动漫",
-    "icon": "AGE动漫_icon.webp",
-    "url": "https://m.agedm.io",
+    "title": "网飞猫",
+    "icon": "网飞猫_icon.webp",
+    "url": "https://www.ncat22.com",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "花子动漫",
-    "icon": "花子动漫_icon.webp",
-    "url": "https://www.huazidm.com",
+    "title": "Hi歌曲音乐网",
+    "icon": "Hi歌曲音乐网_icon.webp",
+    "url": "https://higequ.com",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "Omofun",
-    "icon": "Omofun_icon.webp",
-    "url": "https://www.omofuna.com",
+    "title": "歌曲宝",
+    "icon": "歌曲宝_icon.webp",
+    "url": "https://www.gequbao.com",
     "description": "",
-    "category": "动漫次元"
+    "category": "影视音乐"
   },
   {
-    "title": "SomeACG",
-    "icon": "SomeACG_icon.webp",
-    "url": "https://www.someacg.top",
-    "description": "",
-    "category": "动漫次元"
+    "title": "COCO音乐下载站",
+    "icon": "COCO音乐下载站_icon.webp",
+    "url": "https://cocodownloader.markqq.com",
+    "description": "多音源聚合搜索与播放",
+    "category": "影视音乐"
   },
   {
-    "title": "Cosine Gallery",
-    "icon": "Cosine_Gallery_icon.webp",
-    "url": "https://pic.cosine.ren",
-    "description": "",
-    "category": "动漫次元"
+    "title": "Go Music DL",
+    "icon": "Go_Music_DL_icon.webp",
+    "url": "http://music.zkkp.nyc.mn",
+    "description": "开源免费音乐搜索工具",
+    "category": "影视音乐"
   },
   {
-    "title": "ManyACG",
-    "icon": "ManyACG_icon.webp",
-    "url": "https://manyacg.top",
-    "description": "",
-    "category": "动漫次元"
+    "title": "开开无损音乐",
+    "icon": "开开无损音乐_icon.webp",
+    "url": "https://www.kkws.cc",
+    "description": "mp3歌曲免费音乐下载",
+    "category": "影视音乐"
   },
   {
-    "title": "锦里画作室",
-    "icon": "锦里画作室_icon.webp",
-    "url": "https://koi.drblack-system.com",
-    "description": "",
-    "category": "动漫次元"
+    "title": "搜剧AI",
+    "icon": "搜剧AI_icon.webp",
+    "url": "https://souju.ai",
+    "description": "AI影视搜索与内容发现",
+    "category": "影视音乐"
   },
   {
-    "title": "米麓星",
-    "icon": "米麓星_icon.webp",
-    "url": "https://m.miluxing.com",
-    "description": "",
-    "category": "动漫次元"
+    "title": "看剧AI",
+    "icon": "看剧AI_icon.webp",
+    "url": "https://kanju.ai",
+    "description": "AI影视搜索与内容发现",
+    "category": "影视音乐"
   },
   {
-    "title": "初音乐园",
-    "icon": "初音乐园_icon.webp",
-    "url": "https://www.mikupara.com",
-    "description": "",
-    "category": "动漫次元"
+    "title": "ZIP0",
+    "icon": "ZIP0_icon.webp",
+    "url": "https://zip0.com",
+    "description": "影视信息聚合搜索播放",
+    "category": "影视音乐"
+  },
+  {
+    "title": "飞快 TV",
+    "icon": "飞快_TV_icon.webp",
+    "url": "https://feikuai.in",
+    "description": "高清热播电影免费观看",
+    "category": "影视音乐"
+  },
+  {
+    "title": "简单 TV",
+    "icon": "简单_TV_icon.webp",
+    "url": "https://jiandantv.cc",
+    "description": "搜索剧名即可在线播放",
+    "category": "影视音乐"
+  },
+  {
+    "title": "Moovie 影牛",
+    "icon": "Moovie_影牛_icon.webp",
+    "url": "https://moovie.c2v2.com",
+    "description": "聚合全网影视资源搜索",
+    "category": "影视音乐"
+  },
+  {
+    "title": "金牌影院",
+    "icon": "金牌影院_icon.webp",
+    "url": "https://m.vv3nwjk.com",
+    "description": "免费在线播放影视站",
+    "category": "影视音乐"
+  },
+  {
+    "title": "瓣影寻踪",
+    "icon": "瓣影寻踪_icon.webp",
+    "url": "https://douban-scout.kfstorm.com",
+    "description": "用于探索豆瓣影视节目",
+    "category": "影视音乐"
+  },
+  {
+    "title": "SeedHub",
+    "icon": "SeedHub_icon.webp",
+    "url": "https://sidhub.cc",
+    "description": "影视动漫分享与下载",
+    "category": "影视音乐"
   }
 ]

@@ -1,72 +1,93 @@
 [
   {
-    "title": "科普中国 Lite",
-    "icon": "科普中国_Lite_icon.webp",
-    "url": "https://m.kepuchina.cn/headline",
-    "description": "科学知识与科普资讯",
-    "category": "知识科普"
+    "title": "故宫博物院",
+    "icon": "故宫博物院_icon.webp",
+    "url": "https://www.dpm.org.cn",
+    "description": "故宫文物与历史文化",
+    "category": "人文历史"
   },
   {
-    "title": "微科普",
-    "icon": "微科普_icon.webp",
-    "url": "https://www.wkepu.com",
-    "description": "科学知识科普媒体",
-    "category": "知识科普"
+    "title": "数字文物库",
+    "icon": "数字文物库_icon.webp",
+    "url": "https://digicol.dpm.org.cn",
+    "description": "故宫珍贵文物高清影像",
+    "category": "人文历史"
   },
   {
-    "title": "科学辟谣",
-    "icon": "科学辟谣_icon.webp",
-    "url": "https://piyao.kepuchina.cn",
-    "description": "科学辟谣与知识辨析",
-    "category": "知识科普"
+    "title": "四大名著",
+    "icon": "四大名著_icon.webp",
+    "url": "http://www.sdmz.cn",
+    "description": "中国四大名著小说",
+    "category": "人文历史"
   },
   {
-    "title": "Just Laws",
-    "icon": "Just_Laws_icon.webp",
-    "url": "https://www.justlaws.cn",
-    "description": "法律知识与法规查询",
-    "category": "知识科普"
+    "title": "读典籍",
+    "icon": "读典籍_icon.webp",
+    "url": "https://dudianji.com",
+    "description": "中华经典与古籍阅读",
+    "category": "人文历史"
   },
   {
-    "title": "wikiHow",
-    "icon": "wikiHow_icon.webp",
-    "url": "https://zh.wikihow.com",
-    "description": "实用知识与生活指南",
-    "category": "知识科普"
+    "title": "书格",
+    "icon": "书格_icon.webp",
+    "url": "https://www.shuge.org",
+    "description": "古籍与艺术图书馆",
+    "category": "人文历史"
   },
   {
-    "title": "大众科普网",
-    "icon": "大众科普网_icon.webp",
-    "url": "https://www.dazhongkepu.cn",
-    "description": "大众科学知识平台",
-    "category": "知识科普"
+    "title": "文籍典册",
+    "icon": "文籍典册_icon.webp",
+    "url": "https://wendian.dicomp.net",
+    "description": "中华古籍文献典册",
+    "category": "人文历史"
   },
   {
-    "title": "家庭保健报",
-    "icon": "家庭保健报_icon.webp",
-    "url": "https://www.familyhealthpaper.com",
-    "description": "健康知识与生活资讯",
-    "category": "知识科普"
+    "title": "寻迹",
+    "icon": "寻迹_icon.webp",
+    "url": "https://xunjimap.online",
+    "description": "古墓与文保遗迹地图",
+    "category": "人文历史"
   },
   {
-    "title": "我爱怀旧网",
-    "icon": "我爱怀旧网_icon.webp",
-    "url": "https://www.52huaijiu.com",
-    "description": "怀旧老物件与重温记忆",
-    "category": "知识科普"
+    "title": "5000言",
+    "icon": "5000言_icon.webp",
+    "url": "https://5000yan.com",
+    "description": "名言名句与经典语录",
+    "category": "人文历史"
   },
   {
-    "title": "指尖上",
-    "icon": "指尖上_icon.webp",
-    "url": "https://www.zhijianshang.com",
-    "description": "全球目的地全景游览",
-    "category": "知识科普"
+    "title": "诗泉",
+    "icon": "诗泉_icon.webp",
+    "url": "https://poetry.palemoky.com",
+    "description": "古典诗词阅读与检索",
+    "category": "人文历史"
   },
   {
-    "title": "AirPano",
-    "icon": "AirPano_icon.webp",
-    "url": "https://airpano.org.cn",
-    "description": "全球全景影像探索",
-    "category": "知识科普"
+    "title": "汉语国学",
+    "icon": "汉语国学_icon.webp",
+    "url": "https://www.hanyuguoxue.com",
+    "description": "汉语字典与国学知识",
+    "category": "人文历史"
+  },
+  {
+    "title": "数字敦煌",
+    "icon": "数字敦煌_icon.webp",
+    "url": "https://www.e-dunhuang.com",
+    "description": "石窟文物信息及资料库",
+    "category": "人文历史"
+  },
+  {
+    "title": "皮影数字博物馆",
+    "icon": "皮影数字博物馆_icon.webp",
+    "url": "http://shadow.caa.edu.cn",
+    "description": "皮影图像与古籍影卷",
+    "category": "人文历史"
+  },
+  {
+    "title": "老画报",
+    "icon": "老画报_icon.webp",
+    "url": "http://www.laohuabao.com",
+    "description": "近现代老画报欣赏",
+    "category": "人文历史"
   }
 ]

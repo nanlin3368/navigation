@@ -1,156 +1,177 @@
 [
   {
-    "title": "theSVG",
-    "icon": "theSVG_icon.webp",
-    "url": "https://thesvg.org",
-    "description": "",
-    "category": "图标符号"
+    "title": "哲风壁纸",
+    "icon": "哲风壁纸_icon.webp",
+    "url": "https://haowallpaper.com",
+    "description": "高清静态与动态壁纸",
+    "category": "视觉灵感"
   },
   {
-    "title": "Remix Icon",
-    "icon": "Remix_Icon_icon.webp",
-    "url": "https://remixicon.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "Unsplash",
+    "icon": "Unsplash_icon.webp",
+    "url": "https://unsplash.com",
+    "description": "百万张摄影作品和插图",
+    "category": "视觉灵感"
   },
   {
-    "title": "Emoji Directory",
-    "icon": "Emoji_Directory_icon.webp",
-    "url": "https://emojidir.com/zh-CN",
-    "description": "",
-    "category": "图标符号"
+    "title": "Pexels",
+    "icon": "Pexels_icon.webp",
+    "url": "https://www.pexels.com/zh-cn/",
+    "description": "免费图片与视频素材",
+    "category": "视觉灵感"
   },
   {
-    "title": "APPLORE",
-    "icon": "APPLORE_icon.webp",
-    "url": "https://app.uiboy.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "Behance",
+    "icon": "Behance_icon.webp",
+    "url": "https://www.behance.net",
+    "description": "创意作品展示与发现",
+    "category": "视觉灵感"
   },
   {
-    "title": "阿里巴巴矢量图标库",
-    "icon": "阿里巴巴矢量图标库_icon.webp",
-    "url": "https://www.iconfont.cn",
-    "description": "",
-    "category": "图标符号"
+    "title": "Dribbble",
+    "icon": "Dribbble_icon.webp",
+    "url": "https://dribbble.com",
+    "description": "设计作品与创意社区",
+    "category": "视觉灵感"
   },
   {
-    "title": "图标灵感",
-    "icon": "图标灵感_icon.webp",
-    "url": "https://iconinspo.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "Aiart Pics",
+    "icon": "Aiart_Pics_icon.webp",
+    "url": "https://aiart.pics",
+    "description": "AI艺术作品图库",
+    "category": "视觉灵感"
   },
   {
-    "title": "YouIcons",
-    "icon": "YouIcons_icon.webp",
-    "url": "https://cn.youicons.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "2DWallpapers",
+    "icon": "2DWallpapers_icon.webp",
+    "url": "https://www.2dwallpapers.com",
+    "description": "二次元高清壁纸",
+    "category": "视觉灵感"
   },
   {
-    "title": "All SVG Icons",
-    "icon": "All_SVG_Icons_icon.webp",
-    "url": "https://allsvgicons.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "Foodiesfeed",
+    "icon": "Foodiesfeed_icon.webp",
+    "url": "https://www.foodiesfeed.com/zh",
+    "description": "美食摄影图片素材",
+    "category": "视觉灵感"
   },
   {
-    "title": "中国大学矢量校徽大全",
-    "icon": "中国大学矢量校徽大全_icon.webp",
-    "url": "https://www.urongda.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "AURA 壁纸",
+    "icon": "AURA_壁纸_icon.webp",
+    "url": "https://gallery.wallaura.cn",
+    "description": "纯粹优雅壁纸网站",
+    "category": "视觉灵感"
   },
   {
-    "title": "yesicon",
-    "icon": "yesicon_icon.webp",
-    "url": "https://yesicon.app",
-    "description": "",
-    "category": "图标符号"
+    "title": "Akspic",
+    "icon": "Akspic_icon.webp",
+    "url": "https://wallspic.com/cn",
+    "description": "高清壁纸与背景图片",
+    "category": "视觉灵感"
   },
   {
-    "title": "svgl",
-    "icon": "svgl_icon.webp",
-    "url": "https://svgl.app",
-    "description": "",
-    "category": "图标符号"
+    "title": "MakerWorld",
+    "icon": "MakerWorld_icon.webp",
+    "url": "https://makerworld.com.cn/zh",
+    "description": "3D打印模型创意社区",
+    "category": "视觉灵感"
   },
   {
-    "title": "FreeDownloadLogo",
-    "icon": "FreeDownloadLogo_icon.webp",
-    "url": "https://www.freedownloadlogo.com/cn",
-    "description": "",
-    "category": "图标符号"
+    "title": "图叙",
+    "icon": "图叙_icon.webp",
+    "url": "https://www.tuxuai.com/inspiration",
+    "description": "AI创作与视觉灵感",
+    "category": "视觉灵感"
   },
   {
-    "title": "Flaticon",
-    "icon": "Flaticon_icon.webp",
-    "url": "https://www.flaticon.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "恋风壁纸",
+    "icon": "恋风壁纸_icon.webp",
+    "url": "https://www.luvbree.com",
+    "description": "海量高质量壁纸下载",
+    "category": "视觉灵感"
   },
   {
-    "title": "Iconbuddy",
-    "icon": "Iconbuddy_icon.webp",
-    "url": "https://iconbuddy.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "拾光壁纸",
+    "icon": "拾光壁纸_icon.webp",
+    "url": "https://gallery.timeline.ink",
+    "description": "干净流畅壁纸网站",
+    "category": "视觉灵感"
   },
   {
-    "title": "Dashboard Icons",
-    "icon": "Dashboard_Icons_icon.webp",
-    "url": "https://dashboardicons.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "AppleWalls",
+    "icon": "AppleWalls_icon.webp",
+    "url": "https://www.applewalls.com/zh",
+    "description": "苹果设备壁纸图库",
+    "category": "视觉灵感"
   },
   {
-    "title": "Worldvectorlogo",
-    "icon": "Worldvectorlogo_icon.webp",
-    "url": "https://worldvectorlogo.com/zh",
-    "description": "",
-    "category": "图标符号"
+    "title": "Chiikawa",
+    "icon": "Chiikawa_icon.webp",
+    "url": "https://chiikawawallpaper.com/zh-Hans",
+    "description": "高清精美吉伊卡哇壁纸",
+    "category": "视觉灵感"
   },
   {
-    "title": "Lordicon",
-    "icon": "Lordicon_icon.webp",
-    "url": "https://lordicon.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "backiee",
+    "icon": "backiee_icon.webp",
+    "url": "https://backiee.com",
+    "description": "高清壁纸与背景图库",
+    "category": "视觉灵感"
   },
   {
-    "title": "SVG Logos",
-    "icon": "SVG_Logos_icon.webp",
-    "url": "https://svglogos.dev",
-    "description": "",
-    "category": "图标符号"
+    "title": "OpenNana",
+    "icon": "OpenNana_icon.webp",
+    "url": "https://opennana.com/awesome-prompt-gallery",
+    "description": "AI绘图提示词图库",
+    "category": "视觉灵感"
   },
   {
-    "title": "Logos Apps",
-    "icon": "Logos_Apps_icon.webp",
-    "url": "https://logos.lndev.me",
-    "description": "",
-    "category": "图标符号"
+    "title": "Wallpaper Gallery",
+    "icon": "Wallpaper_Gallery_icon.webp",
+    "url": "https://wallpaper.061129.xyz/mobile",
+    "description": "4K高清壁纸与浏览体验",
+    "category": "视觉灵感"
   },
   {
-    "title": "morphicons",
-    "icon": "morphicons_icon.webp",
-    "url": "https://www.morphicons.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "Bing Wallpaper",
+    "icon": "Bing_Wallpaper_icon.webp",
+    "url": "https://bing.ioliu.cn",
+    "description": "必应每日精选壁纸",
+    "category": "视觉灵感"
   },
   {
-    "title": "IP as Logo",
-    "icon": "IP_as_Logo_icon.webp",
-    "url": "https://ipaslogo.com",
-    "description": "",
-    "category": "图标符号"
+    "title": "PhWalls",
+    "icon": "PhWalls_icon.webp",
+    "url": "https://phwalls.com/zh",
+    "description": "手机与电脑内置壁纸",
+    "category": "视觉灵感"
   },
   {
-    "title": "Logoinspo",
-    "icon": "Logoinspo_icon.webp",
-    "url": "https://www.logoinspo.com/",
-    "description": "",
-    "category": "图标符号"
+    "title": "壁纸汇",
+    "icon": "壁纸汇_icon.webp",
+    "url": "https://www.bizhihui.com",
+    "description": "高清壁纸资源平台",
+    "category": "视觉灵感"
+  },
+  {
+    "title": "MeiGen",
+    "icon": "MeiGen_icon.webp",
+    "url": "https://www.meigen.ai",
+    "description": "AI生成视觉创作",
+    "category": "视觉灵感"
+  },
+  {
+    "title": "GPT-Image2",
+    "icon": "GPT-Image2_icon.webp",
+    "url": "https://gpt-image2.canghe.ai",
+    "description": "AI生成图像画廊",
+    "category": "视觉灵感"
+  },
+  {
+    "title": "日本海景车站",
+    "icon": "日本海景车站_icon.webp",
+    "url": "https://seaside-station.com",
+    "description": "日本海景车站影像",
+    "category": "视觉灵感"
   }
 ]

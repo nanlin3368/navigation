@@ -1,177 +1,65 @@
 [
   {
-    "title": "智慧教育",
-    "icon": "智慧教育_icon.webp",
-    "url": "https://www.smartedu.cn",
-    "description": "国家级公共教育资源",
-    "category": "学习教育"
+    "title": "CCTV 节目",
+    "icon": "CCTV_节目_icon.webp",
+    "url": "https://tv.cctv.com",
+    "description": "拥有众多优质频道栏目",
+    "category": "新闻资讯"
   },
   {
-    "title": "智慧中小学",
-    "icon": "智慧中小学_icon.webp",
-    "url": "https://www.zxx.edu.cn",
-    "description": "基础教育官方学习网",
-    "category": "学习教育"
+    "title": "央视网",
+    "icon": "央视网_icon.webp",
+    "url": "https://m.cctv.com",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "中小学教材",
-    "icon": "中小学教材_icon.webp",
-    "url": "https://jc.pep.com.cn",
-    "description": "人教版电子教材大全",
-    "category": "学习教育"
+    "title": "央广网",
+    "icon": "央广网_icon.webp",
+    "url": "https://m.cnr.cn",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "Edclub",
-    "icon": "Edclub_icon.webp",
-    "url": "https://www.edclub.com/zh/",
-    "description": "趣味英文键盘打字练习",
-    "category": "学习教育"
+    "title": "热榜 Today",
+    "icon": "热榜Today_icon.webp",
+    "url": "https://rebang.today",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "LetMeEnglish",
-    "icon": "LetMeEnglish_icon.webp",
-    "url": "https://letmeenglish.com/zh-hans",
-    "description": "英语听力与口语提升",
-    "category": "学习教育"
+    "title": "摸鱼热榜",
+    "icon": "摸鱼热榜_icon.webp",
+    "url": "https://moyuhot.com/bold",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "LingoHut",
-    "icon": "LingoHut_icon.webp",
-    "url": "https://www.lingohut.com/zh",
-    "description": "多语种基础词汇入门",
-    "category": "学习教育"
+    "title": "糖果梦热榜",
+    "icon": "糖果梦热榜_icon.webp",
+    "url": "https://tgmeng.com",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "Qwerty Learner",
-    "icon": "Qwerty_Learner_icon.webp",
-    "url": "https://qwerty.kaiyi.cool/mobile",
-    "description": "边打字边背英语单词",
-    "category": "学习教育"
+    "title": "Redian",
+    "icon": "Redian_icon.webp",
+    "url": "https://www.redian.me",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "Typing Learner",
-    "icon": "Typing_Learner_icon.webp",
-    "url": "https://www.typinglearner.com",
-    "description": "英语打字与单词记忆",
-    "category": "学习教育"
+    "title": "即时热点",
+    "icon": "即时热点_icon.webp",
+    "url": "https://nowhots.com/mobile",
+    "description": "",
+    "category": "新闻资讯"
   },
   {
-    "title": "大学生活质量指北",
-    "icon": "大学生活质量指北_icon.webp",
-    "url": "https://colleges.chat",
-    "description": "全国高校生活质量信息",
-    "category": "学习教育"
-  },
-  {
-    "title": "高校名录数据可视化",
-    "icon": "高校名录数据可视化_icon.webp",
-    "url": "https://uni.utities.online",
-    "description": "全国高校分布地图查询",
-    "category": "学习教育"
-  },
-  {
-    "title": "神人高校网",
-    "icon": "神人高校网_icon.webp",
-    "url": "https://www.srgaoxiao.cn",
-    "description": "全国大学真实评价平台",
-    "category": "学习教育"
-  },
-  {
-    "title": "宿舍志",
-    "icon": "宿舍志_icon.webp",
-    "url": "https://sushe.help",
-    "description": "全国大学宿舍条件查询",
-    "category": "学习教育"
-  },
-  {
-    "title": "软科",
-    "icon": "软科_icon.webp",
-    "url": "https://www.shanghairanking.cn",
-    "description": "权威大学与学科排名",
-    "category": "学习教育"
-  },
-  {
-    "title": "你缺失的那门计算机课",
-    "icon": "你缺失的那门计算机课_icon.webp",
-    "url": "https://www.criwits.top/missing",
-    "description": "电脑入门课程与知识",
-    "category": "学习教育"
-  },
-  {
-    "title": "LanguageGuide",
-    "icon": "LanguageGuide_icon.webp",
-    "url": "https://www.languageguide.org/cn",
-    "description": "交互式发音词汇学习",
-    "category": "学习教育"
-  },
-  {
-    "title": "黄油单词",
-    "icon": "黄油单词_icon.webp",
-    "url": "https://waiyuka.cc/zh-CN",
-    "description": "趣味卡片多语种背词",
-    "category": "学习教育"
-  },
-  {
-    "title": "一度资料库",
-    "icon": "一度资料库_icon.webp",
-    "url": "https://sj.liuyidu.com",
-    "description": "中小学各科学习试卷",
-    "category": "学习教育"
-  },
-  {
-    "title": "高考真题大全",
-    "icon": "高考真题大全_icon.webp",
-    "url": "https://t.urongda.com",
-    "description": "历年高考原卷解析下载",
-    "category": "学习教育"
-  },
-  {
-    "title": "BALA 公考",
-    "icon": "BALA_公考_icon.webp",
-    "url": "https://www.baijing1.top",
-    "description": "公考刷题与备考资料",
-    "category": "学习教育"
-  },
-  {
-    "title": "考试酷",
-    "icon": "考试酷_icon.webp",
-    "url": "https://www.examcoo.com",
-    "description": "免费在线考试与刷题",
-    "category": "学习教育"
-  },
-  {
-    "title": "格言人",
-    "icon": "格言人_icon.webp",
-    "url": "https://kyrgk.com",
-    "description": "考研政治与公共课备考",
-    "category": "学习教育"
-  },
-  {
-    "title": "格言人-英语",
-    "icon": "格言人-英语_icon.webp",
-    "url": "https://en.kyrgk.com",
-    "description": "四六级与考研英语备考",
-    "category": "学习教育"
-  },
-  {
-    "title": "汉语拼音在线学习",
-    "icon": "汉语拼音在线学习_icon.webp",
-    "url": "https://hanyupinyin.net",
-    "description": "标准拼音发音入门教程",
-    "category": "学习教育"
-  },
-  {
-    "title": "Type Words",
-    "icon": "Type_Words_icon.webp",
-    "url": "https://typewords.cc",
-    "description": "高效沉浸式打字记单词",
-    "category": "学习教育"
-  },
-  {
-    "title": "Musicca",
-    "icon": "Musicca_icon.webp",
-    "url": "https://www.musicca.com/zh",
-    "description": "互动式乐理与视唱练耳",
-    "category": "学习教育"
+    "title": "今日热榜",
+    "icon": "今日热榜_icon.webp",
+    "url": "https://tophub.today",
+    "description": "",
+    "category": "新闻资讯"
   }
 ]

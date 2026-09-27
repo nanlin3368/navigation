@@ -1,177 +1,100 @@
 [
   {
-    "title": "哲风壁纸",
-    "icon": "哲风壁纸_icon.webp",
-    "url": "https://haowallpaper.com",
-    "description": "高清静态与动态壁纸",
-    "category": "视觉灵感"
+    "title": "VibeHub",
+    "icon": "VibeHub_icon.webp",
+    "url": "https://vibe-hub.org",
+    "description": "VibeCoding术语图鉴",
+    "category": "编程技术"
   },
   {
-    "title": "Unsplash",
-    "icon": "Unsplash_icon.webp",
-    "url": "https://unsplash.com",
-    "description": "百万张摄影作品和插图",
-    "category": "视觉灵感"
+    "title": "VibePrompt",
+    "icon": "VibePrompt_icon.webp",
+    "url": "https://vibeprompts.dev",
+    "description": "UI布局提示和代码复制",
+    "category": "编程技术"
   },
   {
-    "title": "Pexels",
-    "icon": "Pexels_icon.webp",
-    "url": "https://www.pexels.com/zh-cn/",
-    "description": "免费图片与视频素材",
-    "category": "视觉灵感"
+    "title": "菜鸟教程",
+    "icon": "菜鸟教程_icon.webp",
+    "url": "https://www.runoob.com",
+    "description": "基础编程入门学习",
+    "category": "编程技术"
   },
   {
-    "title": "Behance",
-    "icon": "Behance_icon.webp",
-    "url": "https://www.behance.net",
-    "description": "创意作品展示与发现",
-    "category": "视觉灵感"
+    "title": "W3Schools",
+    "icon": "W3Schools_icon.webp",
+    "url": "https://www.w3schools.com",
+    "description": "全球知名Web开发教程",
+    "category": "编程技术"
   },
   {
-    "title": "Dribbble",
-    "icon": "Dribbble_icon.webp",
-    "url": "https://dribbble.com",
-    "description": "设计作品与创意社区",
-    "category": "视觉灵感"
+    "title": "Geeksforgeeks",
+    "icon": "Geeksforgeeks_icon.webp",
+    "url": "https://www.geeksforgeeks.org",
+    "description": "计算机算法与编程刷题",
+    "category": "编程技术"
   },
   {
-    "title": "Aiart Pics",
-    "icon": "Aiart_Pics_icon.webp",
-    "url": "https://aiart.pics",
-    "description": "AI艺术作品图库",
-    "category": "视觉灵感"
+    "title": "W3School",
+    "icon": "W3School_icon.webp",
+    "url": "https://www.w3school.com.cn",
+    "description": "中文Web技术学习手册",
+    "category": "编程技术"
   },
   {
-    "title": "2DWallpapers",
-    "icon": "2DWallpapers_icon.webp",
-    "url": "https://www.2dwallpapers.com",
-    "description": "二次元高清壁纸",
-    "category": "视觉灵感"
+    "title": "VitePress",
+    "icon": "VitePress_icon.webp",
+    "url": "https://vitepress.dev",
+    "description": "Vue驱动静态站点生成",
+    "category": "编程技术"
   },
   {
-    "title": "Foodiesfeed",
-    "icon": "Foodiesfeed_icon.webp",
-    "url": "https://www.foodiesfeed.com/zh",
-    "description": "美食摄影图片素材",
-    "category": "视觉灵感"
+    "title": "Vue.js",
+    "icon": "Vue_js_icon.webp",
+    "url": "https://cn.vuejs.org",
+    "description": "渐进式JavaScript框架",
+    "category": "编程技术"
   },
   {
-    "title": "AURA 壁纸",
-    "icon": "AURA_壁纸_icon.webp",
-    "url": "https://gallery.wallaura.cn",
-    "description": "纯粹优雅壁纸网站",
-    "category": "视觉灵感"
+    "title": "React",
+    "icon": "React_icon.webp",
+    "url": "https://react.dev",
+    "description": "构建Web界面的前端库",
+    "category": "编程技术"
   },
   {
-    "title": "Akspic",
-    "icon": "Akspic_icon.webp",
-    "url": "https://wallspic.com/cn",
-    "description": "高清壁纸与背景图片",
-    "category": "视觉灵感"
+    "title": "Node.js",
+    "icon": "Node_js_icon.webp",
+    "url": "https://nodejs.org",
+    "description": "服务端的JS运行环境",
+    "category": "编程技术"
   },
   {
-    "title": "MakerWorld",
-    "icon": "MakerWorld_icon.webp",
-    "url": "https://makerworld.com.cn/zh",
-    "description": "3D打印模型创意社区",
-    "category": "视觉灵感"
+    "title": "Vite",
+    "icon": "Vite_icon.webp",
+    "url": "https://vite.dev",
+    "description": "极速前端开发构建工具",
+    "category": "编程技术"
   },
   {
-    "title": "图叙",
-    "icon": "图叙_icon.webp",
-    "url": "https://www.tuxuai.com/inspiration",
-    "description": "AI创作与视觉灵感",
-    "category": "视觉灵感"
+    "title": "Markdown",
+    "icon": "Markdown_icon.webp",
+    "url": "https://www.markdownlang.com",
+    "description": "易读易写轻量标记语言",
+    "category": "编程技术"
   },
   {
-    "title": "恋风壁纸",
-    "icon": "恋风壁纸_icon.webp",
-    "url": "https://www.luvbree.com",
-    "description": "海量高质量壁纸下载",
-    "category": "视觉灵感"
+    "title": "DevDocs",
+    "icon": "DevDocs_icon.webp",
+    "url": "https://devdocs.io",
+    "description": "一站式开发文档库",
+    "category": "编程技术"
   },
   {
-    "title": "拾光壁纸",
-    "icon": "拾光壁纸_icon.webp",
-    "url": "https://gallery.timeline.ink",
-    "description": "干净流畅壁纸网站",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "AppleWalls",
-    "icon": "AppleWalls_icon.webp",
-    "url": "https://www.applewalls.com/zh",
-    "description": "苹果设备壁纸图库",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "Chiikawa",
-    "icon": "Chiikawa_icon.webp",
-    "url": "https://chiikawawallpaper.com/zh-Hans",
-    "description": "高清精美吉伊卡哇壁纸",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "backiee",
-    "icon": "backiee_icon.webp",
-    "url": "https://backiee.com",
-    "description": "高清壁纸与背景图库",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "OpenNana",
-    "icon": "OpenNana_icon.webp",
-    "url": "https://opennana.com/awesome-prompt-gallery",
-    "description": "AI绘图提示词图库",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "Wallpaper Gallery",
-    "icon": "Wallpaper_Gallery_icon.webp",
-    "url": "https://wallpaper.061129.xyz/mobile",
-    "description": "4K高清壁纸与浏览体验",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "Bing Wallpaper",
-    "icon": "Bing_Wallpaper_icon.webp",
-    "url": "https://bing.ioliu.cn",
-    "description": "必应每日精选壁纸",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "PhWalls",
-    "icon": "PhWalls_icon.webp",
-    "url": "https://phwalls.com/zh",
-    "description": "手机与电脑内置壁纸",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "壁纸汇",
-    "icon": "壁纸汇_icon.webp",
-    "url": "https://www.bizhihui.com",
-    "description": "高清壁纸资源平台",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "MeiGen",
-    "icon": "MeiGen_icon.webp",
-    "url": "https://www.meigen.ai",
-    "description": "AI生成视觉创作",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "GPT-Image2",
-    "icon": "GPT-Image2_icon.webp",
-    "url": "https://gpt-image2.canghe.ai",
-    "description": "AI生成图像画廊",
-    "category": "视觉灵感"
-  },
-  {
-    "title": "日本海景车站",
-    "icon": "日本海景车站_icon.webp",
-    "url": "https://seaside-station.com",
-    "description": "日本海景车站影像",
-    "category": "视觉灵感"
+    "title": "LabEx",
+    "icon": "LabEx_icon.webp",
+    "url": "https://labex.io/zh",
+    "description": "动手实战的编程实验课",
+    "category": "编程技术"
   }
 ]
