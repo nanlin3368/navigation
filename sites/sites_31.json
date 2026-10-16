@@ -192,7 +192,42 @@
     "title": "奎章阁",
     "icon": "奎章阁_icon.webp",
     "url": "https://www.wenxianxue.cn",
-    "description": "古典文献资源导航",
+    "description": "古典文献资源站导航",
+    "category": "更多站点"
+  },
+  {
+    "title": "软鉴 SoftMemo",
+    "icon": "软鉴_SoftMemo_icon.webp",
+    "url": "https://couleurapp.com",
+    "description": "实用软件详细清单",
+    "category": "更多站点"
+  },
+  {
+    "title": "AppWK",
+    "icon": "AppWK_icon.webp",
+    "url": "https://appwk.cn",
+    "description": "精选桌面端优质应用",
+    "category": "更多站点"
+  },
+  {
+    "title": "Hunt Now",
+    "icon": "Hunt_Now_icon.webp",
+    "url": "https://www.hunt.now",
+    "description": "AI驱动设计灵感资源站",
+    "category": "更多站点"
+  },
+  {
+    "title": "仓库列表",
+    "icon": "仓库列表_icon.webp",
+    "url": "https://gitshare.luler.top",
+    "description": "精选开源项目仓库导航",
+    "category": "更多站点"
+  },
+  {
+    "title": "rectg",
+    "icon": "rectg_icon.webp",
+    "url": "https://www.rectg.com",
+    "description": "中文电报频道与群组",
     "category": "更多站点"
   }
 ]

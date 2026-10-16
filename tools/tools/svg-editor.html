@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>SVG 编辑器</title>
+    <meta
+      name="description"
+      content="SVG 编辑器 - 纯本地安全预览、编辑、一键转换、下载与复制 SVG 代码，完全离线运行。"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+    />
+    <link
+      rel="icon"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+      type="image/svg+xml"
+    />
+    <style>
+      /* ── 设计令牌 ── */
+      :root {
+        --bg: #f5f5f7;
+        --card: #ffffff;
+        --ink: #1d1d1f;
+        --sub: #86868b;
+        --accent: #0071e3;
+        --accent-press: #0059b3;
+        --line: rgba(0, 0, 0, 0.08);
+        --red: #ff3b30;
+        --radius: 18px;
+        --radius-sm: 12px;
+      }
+
+      /* ── 基础重置 ── */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ── 顶栏 ── */
+      .topbar {
+        text-align: center;
+        padding: max(28px, env(safe-area-inset-top)) 0 18px;
+        flex: 0 0 auto;
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+      .topbar h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .topbar p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--sub);
+      }
+
+      /* ── 主容器与入场动画 ── */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 12px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      .panel-left {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+      }
+      .panel-right {
+        animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
+      }
+
+      /* ── 卡片与面板 ── */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 8px 24px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .panel-left,
+      .panel-right {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* ── 区块标题 ── */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--sub);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0;
+        flex: 1;
+      }
+      .meta-info {
+        font-size: 12px;
+        color: var(--sub);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+      }
+
+      /* ── 输入框 ── */
+      textarea {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 14px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--ink);
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      textarea:focus {
+        border-color: var(--accent);
+      }
+      textarea::placeholder {
+        color: var(--sub);
+        opacity: 0.6;
+      }
+
+      /* ── 预览区 ── */
+      .preview-container {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        max-height: 550px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+        position: relative;
+        background-image:
+          linear-gradient(45deg, rgba(0, 0, 0, 0.03) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(0, 0, 0, 0.03) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.03) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.03) 75%);
+        background-size: 16px 16px;
+        background-position:
+          0 0,
+          0 8px,
+          8px -8px,
+          -8px 0;
+      }
+      .preview-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+      }
+      .preview-wrapper svg {
+        max-width: 100%;
+        max-height: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        background: transparent;
+        border-radius: 4px;
+      }
+      .preview-placeholder {
+        color: var(--sub);
+        font-size: 14px;
+        opacity: 0.6;
+        position: absolute;
+      }
+
+      /* ── 按钮 ── */
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        flex: 1;
+        min-width: 100px;
+        border: none;
+        border-radius: 14px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.08s ease,
+          background-color 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:active {
+        background: var(--accent-press);
+      }
+      .btn-secondary {
+        background: var(--bg);
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+      .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
+      .btn-danger {
+        background: var(--bg);
+        color: var(--red);
+        border: 1px solid var(--line);
+      }
+
+      /* ── 隐藏文件选择 ── */
+      #fileInput {
+        display: none;
+      }
+
+      /* ── 滚动条 ── */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+      }
+
+      /* ── Toast ── */
+      .toast {
+        position: fixed;
+        top: max(18px, env(safe-area-inset-top));
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        background: rgba(28, 28, 30, 0.92);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+        z-index: 100;
+        max-width: calc(100vw - 40px);
+        text-align: center;
+        word-break: break-word;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* ── 桌面端双栏 ── */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-left,
+        .panel-right {
+          flex: 1 1 50%;
+          min-width: 0;
+        }
+      }
+
+      /* ── 减少动效 ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="topbar">
+      <h1>✒️ SVG 编辑器</h1>
+      <p>本地安全解析 · 实时预览与转换</p>
+    </div>
+
+    <div class="app">
+      <div class="panel-left">
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">SVG 源码编辑</p>
+            <span class="meta-info" id="inputMeta">0 字符</span>
+          </div>
+          <textarea
+            id="svgInput"
+            placeholder="在此粘贴 SVG 源码，或者点击下方导入按钮从文件管理器选择 .svg 文件，亦可直接拖拽 .svg 文件到此区域..."
+            spellcheck="false"
+          ></textarea>
+          <div class="btn-row">
+            <input
+              type="file"
+              id="fileInput"
+              accept=".svg,application/svg+xml,text/xml,application/xml"
+            />
+            <button class="btn btn-secondary" id="importBtn">导入 SVG</button>
+            <button class="btn btn-danger" id="clearBtn">清空</button>
+            <button class="btn btn-primary" id="convertBtn">一键转换</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-right">
+        <div class="card">
+          <div class="section-header">
+            <p class="section-title">实时预览区域</p>
+            <span class="meta-info" id="outputMeta">暂无图形</span>
+          </div>
+          <div class="preview-container">
+            <div class="preview-placeholder" id="placeholderText">
+              等待转换后的图形预览...
+            </div>
+            <div class="preview-wrapper" id="previewWrapper"></div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-secondary" id="copyBtn">
+              复制 SVG 代码
+            </button>
+            <button class="btn btn-primary" id="downloadBtn">
+              下载 SVG 文件
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ── 关闭历史滚动恢复 ──
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+      (function () {
+        "use strict";
+
+        // ── DOM 引用 ──
+        const svgInput = document.getElementById("svgInput");
+        const previewWrapper = document.getElementById("previewWrapper");
+        const placeholderText = document.getElementById("placeholderText");
+        const inputMeta = document.getElementById("inputMeta");
+        const outputMeta = document.getElementById("outputMeta");
+        const fileInput = document.getElementById("fileInput");
+        const importBtn = document.getElementById("importBtn");
+        const clearBtn = document.getElementById("clearBtn");
+        const convertBtn = document.getElementById("convertBtn");
+        const copyBtn = document.getElementById("copyBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const toast = document.getElementById("toast");
+
+        // ── 提示条 ──
+        let toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg || "操作成功";
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove("show"), 1600);
+        }
+
+        // ── 字符计数 ──
+        function updateInputMeta() {
+          inputMeta.textContent = `${svgInput.value.length} 字符`;
+        }
+
+        // ── 复位预览 ──
+        function resetPreview() {
+          previewWrapper.innerHTML = "";
+          placeholderText.style.display = "block";
+          outputMeta.textContent = "暂无图形";
+        }
+
+        // ── 转换 ──
+        function convertAndPreview() {
+          const code = svgInput.value.trim();
+          if (!code) {
+            resetPreview();
+            showToast("请输入或导入 SVG 源码");
+            return;
+          }
+
+          if (!code.toLowerCase().includes("<svg")) {
+            showToast("警告：输入内容可能不包含标准的 <svg> 标签");
+          }
+
+          try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(code, "image/svg+xml");
+            const parserError = doc.querySelector("parsererror");
+            if (parserError) {
+              throw new Error("SVG XML 解析错误，请检查标签闭合");
+            }
+
+            const svgElement = doc.querySelector("svg");
+            if (!svgElement) {
+              throw new Error("未找到有效的 <svg> 元素");
+            }
+
+            previewWrapper.innerHTML = "";
+            previewWrapper.appendChild(svgElement);
+            placeholderText.style.display = "none";
+
+            const viewBox = svgElement.getAttribute("viewBox");
+            const width = svgElement.getAttribute("width") || "auto";
+            const height = svgElement.getAttribute("height") || "auto";
+            outputMeta.textContent = viewBox
+              ? `ViewBox: ${viewBox}`
+              : `尺寸: ${width} × ${height}`;
+
+            showToast("转换预览成功");
+          } catch (err) {
+            showToast(err.message || "SVG 渲染失败，请检查源码");
+          }
+        }
+
+        // ── 读取 SVG 文件（仅允许 SVG） ──
+        function handleFile(file) {
+          if (!file) return;
+
+          const name = (file.name || "").toLowerCase();
+          const type = (file.type || "").toLowerCase();
+          const isSvg =
+            name.endsWith(".svg") ||
+            type === "image/svg+xml" ||
+            type === "application/svg+xml" ||
+            type === "text/xml" ||
+            type === "application/xml";
+
+          if (!isSvg) {
+            showToast("仅支持导入 .svg 文件");
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            svgInput.value = e.target.result;
+            updateInputMeta();
+            convertAndPreview();
+            showToast("SVG 文件导入成功");
+          };
+          reader.onerror = function () {
+            showToast("文件读取失败，请重试");
+          };
+          reader.readAsText(file);
+        }
+
+        // ── 事件绑定 ──
+        svgInput.addEventListener("input", updateInputMeta);
+        svgInput.addEventListener("dragover", (e) => e.preventDefault());
+        svgInput.addEventListener("drop", (e) => {
+          e.preventDefault();
+          if (e.dataTransfer.files.length > 0)
+            handleFile(e.dataTransfer.files[0]);
+        });
+        importBtn.addEventListener("click", () => fileInput.click());
+        fileInput.addEventListener("change", (e) => {
+          handleFile(e.target.files[0]);
+          fileInput.value = "";
+        });
+        clearBtn.addEventListener("click", () => {
+          svgInput.value = "";
+          fileInput.value = "";
+          updateInputMeta();
+          resetPreview();
+          showToast("已清空");
+        });
+        convertBtn.addEventListener("click", convertAndPreview);
+
+        // ── 复制 SVG 代码 ──
+        copyBtn.addEventListener("click", async () => {
+          const code = svgInput.value.trim();
+          if (!code) {
+            showToast("没有可复制的 SVG 代码");
+            return;
+          }
+          try {
+            await navigator.clipboard.writeText(code);
+            showToast("SVG 代码已复制到剪贴板");
+          } catch (err) {
+            const textarea = document.createElement("textarea");
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+              document.execCommand("copy");
+              showToast("SVG 代码已复制到剪贴板");
+            } catch (e) {
+              showToast("复制失败");
+            }
+            document.body.removeChild(textarea);
+          }
+        });
+
+        // ── 下载 SVG 文件 ──
+        downloadBtn.addEventListener("click", () => {
+          const code = svgInput.value.trim();
+          if (!code) {
+            showToast("没有可下载的 SVG 内容");
+            return;
+          }
+          const blob = new Blob([code], {
+            type: "image/svg+xml;charset=utf-8",
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `graphic_${Date.now()}.svg`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showToast("SVG 文件已开始下载");
+        });
+
+        // ── 初始化 ──
+        updateInputMeta();
+        resetPreview();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        "use strict";
+
+        function _isDarkMode() {
+          var htmlTheme = document.documentElement.getAttribute("data-theme");
+          var bodyTheme = document.body
+            ? document.body.getAttribute("data-theme")
+            : null;
+          if (htmlTheme === "dark" || bodyTheme === "dark") return true;
+          if (htmlTheme === "light" || bodyTheme === "light") return false;
+          if (document.body && document.body.classList.contains("dark"))
+            return true;
+          try {
+            var bg = getComputedStyle(document.documentElement)
+              .getPropertyValue("--primary-bg")
+              .trim();
+            if (bg) {
+              var hex = bg.replace("#", "");
+              if (hex.length >= 2) {
+                return parseInt(hex.substring(0, 2), 16) < 80;
+              }
+            }
+          } catch (err) {}
+          return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          );
+        }
+
+        (function _injectUserSelectCSS() {
+          var style = document.createElement("style");
+          style.id = "security-user-select";
+          style.textContent = [
+            "body{",
+            "  user-select:none;",
+            "  -webkit-user-select:none;",
+            "  -moz-user-select:none;",
+            "  -ms-user-select:none;",
+            "}",
+            "input,textarea{",
+            "  user-select:text;",
+            "  -webkit-user-select:text;",
+            "}",
+          ].join("\n");
+          (document.head || document.documentElement).appendChild(style);
+        })();
+
+        document.addEventListener("copy", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+            if (e.clipboardData) e.clipboardData.setData("text/plain", "");
+          }
+        });
+
+        document.addEventListener("cut", function (e) {
+          var tag =
+            e.target && e.target.tagName ? e.target.tagName.toLowerCase() : "";
+          if (tag !== "input" && tag !== "textarea") {
+            e.preventDefault();
+          }
+        });
+
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          var key = (e.key || "").toLowerCase();
+
+          if (e.ctrlKey || e.metaKey) {
+            if (key === "s") {
+              e.preventDefault();
+              return false;
+            }
+
+            if (["+", "-", "=", "0"].includes(e.key)) {
+              e.preventDefault();
+              return false;
+            }
+          }
+        });
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            if (e.touches.length > 1) e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        document.addEventListener(
+          "gesturestart",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gesturechange",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+        document.addEventListener(
+          "gestureend",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey || e.metaKey) e.preventDefault();
+          },
+          { passive: false },
+        );
+      })();
+    </script>
+  </body>
+</html>

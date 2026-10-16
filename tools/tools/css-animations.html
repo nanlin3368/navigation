@@ -13,15 +13,15 @@
     />
     <link
       rel="apple-touch-icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
     />
     <link
       rel="icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
-      type="image/svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+      type="image/svg+xml"
     />
     <style>
-      /* --- 全局变量与设计令牌 --- */
+      /* ── 设计令牌 ── */
       :root {
         --bg: #f5f5f7;
         --card: #ffffff;
@@ -34,7 +34,7 @@
         --radius-sm: 12px;
       }
 
-      /* --- 重置 & 基础排版 --- */
+      /* ── 基础重置 ── */
       * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
@@ -56,12 +56,10 @@
         flex-direction: column;
       }
 
-      /* --- 顶部导航栏入场动画 --- */
+      /* ── 顶栏 ── */
       .topbar {
-        padding: env(safe-area-inset-top, 0) 0 0 0;
         text-align: center;
-        padding-top: max(28px, env(safe-area-inset-top));
-        padding-bottom: 18px;
+        padding: max(28px, env(safe-area-inset-top)) 0 18px;
         flex: 0 0 auto;
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
@@ -77,19 +75,17 @@
         color: var(--sub);
       }
 
-      /* --- 主应用容器（移动端默认纵向排列） --- */
+      /* ── 主容器与入场动画 ── */
       .app {
         flex: 1 1 auto;
         width: 100%;
         max-width: 1800px;
         margin: 0 auto;
-        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        padding: 0 12px calc(30px + env(safe-area-inset-bottom, 0px));
         display: flex;
         flex-direction: column;
         gap: 18px;
       }
-
-      /* --- 弹性入场动画 --- */
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -100,8 +96,6 @@
           transform: translateY(0) scale(1);
         }
       }
-
-      /* 给左右面板加交错入场效果 */
       .panel-settings {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
       }
@@ -109,92 +103,7 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 分类按钮组（移动端3列网格） --- */
-      .category-group {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        padding-bottom: 4px;
-      }
-
-      /* --- 动画卡片网格（自适应列宽） --- */
-      .phone-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-        gap: 12px;
-        padding: 4px 0;
-      }
-
-      /* --- 可滚动容器（移动端固定高度） --- */
-      .phone-container-scroll {
-        height: 340px;
-        overflow-y: auto;
-        padding-right: 6px;
-      }
-
-      /* --- 数据看板统计行 --- */
-      .stat-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        color: var(--ink);
-      }
-      .stat-row .val {
-        font-weight: 700;
-        color: var(--accent);
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        font-size: 16px;
-      }
-
-      /* --- 右侧底部组（列表 + 代码，移动端纵向排列） --- */
-      .results-bottom-group {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      /* --- 桌面端双栏布局（≥960px） --- */
-      @media (min-width: 960px) {
-        .app {
-          flex-direction: row;
-          align-items: stretch;
-          padding-bottom: 45px;
-        }
-        .panel-settings {
-          flex: 0 0 280px;
-        }
-        /* 桌面端恢复为单列垂直列表 */
-        .category-group {
-          grid-template-columns: 1fr;
-        }
-        .panel-results {
-          flex: 1 1 auto;
-          min-width: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-        }
-
-        /* 底部列表与代码块并排两列，严格防止溢出 */
-        .results-bottom-group {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 14px;
-          align-items: stretch;
-        }
-
-        /* 统一拉长列表和代码容器高度 */
-        .phone-container-scroll {
-          height: 400px;
-        }
-        pre {
-          height: 400px !important;
-          max-height: 400px !important;
-        }
-      }
-
-      /* --- 卡片组件 --- */
+      /* ── 卡片与面板 ── */
       .card {
         background: var(--card);
         border-radius: var(--radius);
@@ -214,7 +123,7 @@
         gap: 14px;
       }
 
-      /* --- 区块标题 --- */
+      /* ── 区块标题 ── */
       .section-title {
         font-size: 13px;
         font-weight: 600;
@@ -224,7 +133,28 @@
         margin: 0 0 14px;
       }
 
-      /* --- 分类胶囊按钮 --- */
+      /* ── 数据看板 ── */
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .stat-row .val {
+        font-weight: 700;
+        color: var(--accent);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 16px;
+      }
+
+      /* ── 分类按钮组（移动端 3 列网格） ── */
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding-bottom: 4px;
+      }
       .cat-btn {
         flex: 0 0 auto;
         text-align: center;
@@ -244,17 +174,6 @@
         justify-content: center;
         gap: 2px;
       }
-      @media (min-width: 960px) {
-        .cat-btn {
-          text-align: left;
-          padding: 12px 16px;
-          font-size: 14px;
-          line-height: 1.4;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
       .cat-btn:hover {
         background: rgba(0, 0, 0, 0.03);
       }
@@ -264,7 +183,18 @@
         font-weight: 600;
       }
 
-      /* --- 动画条目卡片 --- */
+      /* ── 动画卡片网格 ── */
+      .phone-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 12px;
+        padding: 4px 0;
+      }
+      .phone-container-scroll {
+        height: 340px;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
       .phone-item {
         background: var(--bg);
         border-radius: var(--radius-sm);
@@ -304,7 +234,7 @@
         color: var(--ink);
       }
 
-      /* --- 预览区与参数控制（两列自适应） --- */
+      /* ── 实时工作台：预览 + 参数 ── */
       .preview-section {
         display: grid;
         grid-template-columns: 1fr;
@@ -339,8 +269,6 @@
         font-size: 14px;
         font-weight: 600;
       }
-
-      /* --- 参数调节控件 --- */
       .param-controls {
         display: flex;
         flex-direction: column;
@@ -382,7 +310,7 @@
         font-weight: 600;
       }
 
-      /* --- 播放控制按钮组 --- */
+      /* ── 按钮 ── */
       .player-btns {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -412,7 +340,7 @@
         background: var(--accent-press);
       }
 
-      /* --- 代码展示区（带复制按钮） --- */
+      /* ── 代码展示区 ── */
       .code-area {
         position: relative;
         display: flex;
@@ -457,7 +385,14 @@
         background: rgba(0, 0, 0, 0.05);
       }
 
-      /* --- 滚动条 --- */
+      /* ── 底部组基础样式 ── */
+      .results-bottom-group {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      /* ── 滚动条 ── */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -467,7 +402,7 @@
         border-radius: 3px;
       }
 
-      /* --- Toast 轻提示 --- */
+      /* ── Toast ── */
       .toast {
         position: fixed;
         top: max(18px, env(safe-area-inset-top));
@@ -486,29 +421,78 @@
           opacity 0.25s ease,
           transform 0.25s ease;
         z-index: 100;
-        white-space: nowrap;
+        max-width: calc(100vw - 40px);
+        text-align: center;
+        word-break: break-word;
       }
       .toast.show {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
+
+      /* ── 桌面端双栏 ── */
+      @media (min-width: 960px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          flex: 0 0 280px;
+        }
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+        .category-group {
+          grid-template-columns: 1fr;
+        }
+        .cat-btn {
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 14px;
+          line-height: 1.4;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .results-bottom-group {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+          align-items: stretch;
+        }
+        .phone-container-scroll {
+          height: 400px;
+        }
+        pre {
+          height: 400px;
+          max-height: 400px;
+        }
+      }
+
+      /* ── 减少动效 ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
   <body>
-    <!-- Toast 提示容器 -->
-    <div class="toast" id="toast">已复制到剪贴板</div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <!-- 顶部标题 -->
     <div class="topbar">
       <h1>🎬 CSS 动画效果</h1>
       <p>纯本地多维度过滤 · 参数微调与完整代码提取</p>
     </div>
 
-    <!-- 主应用 -->
     <div class="app">
-      <!-- 左侧设置面板 -->
       <div class="panel-settings">
-        <!-- 数据看板 -->
         <div class="card">
           <p class="section-title">数据看板</p>
           <div class="stat-row">
@@ -517,16 +501,13 @@
           </div>
         </div>
 
-        <!-- 动画分类按钮 -->
         <div class="card">
           <p class="section-title">动画分类</p>
           <div class="category-group" id="categorySelector"></div>
         </div>
       </div>
 
-      <!-- 右侧结果面板 -->
       <div class="panel-results">
-        <!-- 实时工作台（预览 + 参数 + 播放控制） -->
         <div class="card">
           <p class="section-title">实时工作台</p>
           <div class="preview-section">
@@ -579,9 +560,7 @@
           </div>
         </div>
 
-        <!-- 底部：动画列表 + 代码展示（桌面端并排） -->
         <div class="results-bottom-group">
-          <!-- 动画列表卡片 -->
           <div class="card">
             <p class="section-title" id="gridTitle">全部特效</p>
             <div class="phone-container-scroll">
@@ -589,7 +568,6 @@
             </div>
           </div>
 
-          <!-- 代码展示与复制卡片 -->
           <div class="card">
             <p class="section-title">实时完整 CSS 代码</p>
             <div class="code-area">
@@ -607,21 +585,18 @@
       </div>
     </div>
 
-    <!-- 动态注入动画样式 -->
     <style id="dynamicAnimationInject"></style>
 
     <script>
-      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
+      // ── 关闭历史滚动恢复 ──
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
       (function () {
         "use strict";
 
-        /* --- 完整动画数据库（按分类组织，含名称、中文名、图标、关键帧） --- */
+        // ── 动画数据库 ──
         const animations = [
-          // ---- 弹跳类 ----
+          // 弹跳类
           {
             name: "bounceIn",
             nameCn: "弹入",
@@ -652,7 +627,7 @@
             category: "bounce",
             icon: "⬅️",
             keyframes:
-              "0% { opacity: 0; transform: translateX(-1000px); } 60% { opacity: 1; transform: translateX(30px); } 80% { transform: translateY(-10px); } 100% { transform: translateX(0); }",
+              "0% { opacity: 0; transform: translateX(-1000px); } 60% { opacity: 1; transform: translateX(30px); } 80% { transform: translateX(-10px); } 100% { transform: translateX(0); }",
           },
           {
             name: "bounceInRight",
@@ -660,7 +635,7 @@
             category: "bounce",
             icon: "➡️",
             keyframes:
-              "0% { opacity: 0; transform: translateX(1000px); } 60% { opacity: 1; transform: translateX(-30px); } 80% { transform: translateY(10px); } 100% { transform: translateX(0); }",
+              "0% { opacity: 0; transform: translateX(1000px); } 60% { opacity: 1; transform: translateX(-30px); } 80% { transform: translateX(10px); } 100% { transform: translateX(0); }",
           },
           {
             name: "bounceOut",
@@ -702,7 +677,7 @@
             keyframes:
               "0% { transform: translateX(0); } 20% { opacity: 1; transform: translateX(-20px); } 100% { opacity: 0; transform: translateX(1000px); }",
           },
-          // ---- 淡入淡出类 ----
+          // 淡入淡出类
           {
             name: "fadeIn",
             nameCn: "淡入",
@@ -772,7 +747,7 @@
             category: "fade",
             icon: "▶️",
             keyframes:
-              "from { opacity: 0; transform: translateX(1000px); } to { opacity: 1; transform: translateY(0); }",
+              "from { opacity: 0; transform: translateX(1000px); } to { opacity: 1; transform: translateX(0); }",
           },
           {
             name: "fadeOut",
@@ -829,7 +804,7 @@
             keyframes:
               "from { opacity: 1; } to { opacity: 0; transform: translateY(-1000px); }",
           },
-          // ---- 翻转类 ----
+          // 翻转类
           {
             name: "flipInX",
             nameCn: "X轴翻入",
@@ -878,7 +853,7 @@
             keyframes:
               "0% { transform: perspective(400px) rotateY(360deg); } 100% { transform: perspective(400px) rotateY(0); }",
           },
-          // ---- 光速类 ----
+          // 光速类
           {
             name: "lightSpeedIn",
             nameCn: "光速进入",
@@ -911,7 +886,7 @@
             keyframes:
               "from { opacity: 1; } to { transform: translateX(100%) skewX(30deg); opacity: 0; }",
           },
-          // ---- 旋转类 ----
+          // 旋转类
           {
             name: "rotateIn",
             nameCn: "旋转进入",
@@ -976,7 +951,7 @@
             keyframes:
               "from { opacity: 1; transform-origin: right bottom; } to { transform: rotate(-90deg); opacity: 0; }",
           },
-          // ---- 缩放类 ----
+          // 缩放类
           {
             name: "zoomIn",
             nameCn: "放大进入",
@@ -1041,7 +1016,7 @@
             keyframes:
               "from { opacity: 1; transform: scale(1) translateY(0); } to { opacity: 0; transform: scale(0.1) translateY(-1000px); }",
           },
-          // ---- 滑动类 ----
+          // 滑动类
           {
             name: "slideInDown",
             nameCn: "向下滑入",
@@ -1106,7 +1081,7 @@
             keyframes:
               "from { transform: translateX(0); } to { transform: translateX(100%); }",
           },
-          // ---- 特殊类 ----
+          // 特殊类
           {
             name: "hinge",
             nameCn: "铰链",
@@ -1155,7 +1130,7 @@
             keyframes:
               "0% { transform: scale(0); opacity: 0; } 80% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; }",
           },
-          // ---- 强调类 ----
+          // 强调类
           {
             name: "bounce",
             nameCn: "弹跳",
@@ -1251,7 +1226,7 @@
             keyframes:
               "0% { transform: scale(1); } 14% { transform: scale(1.3); } 28% { transform: scale(1); } 42% { transform: scale(1.3); } 70% { transform: scale(1); }",
           },
-          // ---- 连续类 ----
+          // 连续类
           {
             name: "spin",
             nameCn: "旋转",
@@ -1294,7 +1269,7 @@
           },
         ];
 
-        /* --- 分类定义（含全部） --- */
+        // ── 分类定义 ──
         const categories = [
           { id: "all", name: "全部" },
           { id: "bounce", name: "弹跳" },
@@ -1309,11 +1284,7 @@
           { id: "continuous", name: "连续" },
         ];
 
-        /* --- 状态变量 --- */
-        let currentCategory = "all";
-        let selectedAnim = animations[0];
-
-        /* --- DOM 元素引用 --- */
+        // ── DOM 引用 ──
         const categorySelector = document.getElementById("categorySelector");
         const phoneGrid = document.getElementById("phoneGrid");
         const gridTitle = document.getElementById("gridTitle");
@@ -1324,31 +1295,33 @@
         );
         const codeOutput = document.getElementById("codeOutput");
         const toast = document.getElementById("toast");
-
         const paramDuration = document.getElementById("paramDuration");
         const paramDelay = document.getElementById("paramDelay");
         const paramIteration = document.getElementById("paramIteration");
         const valDuration = document.getElementById("valDuration");
         const valDelay = document.getElementById("valDelay");
         const valIteration = document.getElementById("valIteration");
-
         const btnPlay = document.getElementById("btnPlay");
         const btnLoop = document.getElementById("btnLoop");
         const btnStop = document.getElementById("btnStop");
+        const copyFull = document.getElementById("copyFull");
+        const copyKeyframes = document.getElementById("copyKeyframes");
+        const copyClass = document.getElementById("copyClass");
 
+        // ── 状态 ──
+        let currentCategory = "all";
+        let selectedAnim = animations[0];
+
+        // ── 提示条 ──
         let toastTimer = null;
-
-        /* --- Toast 轻提示逻辑 --- */
         function showToast(msg) {
-          toast.textContent = msg;
+          toast.textContent = msg || "操作成功";
           toast.classList.add("show");
           clearTimeout(toastTimer);
-          toastTimer = setTimeout(() => {
-            toast.classList.remove("show");
-          }, 1500);
+          toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
         }
 
-        /* --- 复制文本到剪贴板（兼容降级） --- */
+        // ── 剪贴板 ──
         function copyToClipboard(text) {
           if (navigator.clipboard && window.isSecureContext) {
             return navigator.clipboard.writeText(text);
@@ -1364,15 +1337,15 @@
           return Promise.resolve();
         }
 
-        /* --- 生成 CSS 代码（含类名 + @keyframes） --- */
-        /* loopOverride: null=正常, "infinite"=无限循环, "stop"=停止状态 */
+        // ── 生成 CSS 代码 ──
         function buildCSS(loopOverride = null) {
-          const dur = paramDuration.value + "s";
-          const del = paramDelay.value + "s";
-          let iter = paramIteration.value;
-          if (loopOverride === "infinite") iter = "infinite";
           if (loopOverride === "stop")
             return { full: "", keyframes: "", className: "" };
+
+          const dur = paramDuration.value + "s";
+          const del = paramDelay.value + "s";
+          const iter =
+            loopOverride === "infinite" ? "infinite" : paramIteration.value;
 
           const keyframesBlock = `@keyframes ${selectedAnim.name} {\n  ${selectedAnim.keyframes}\n}`;
           const classBlock = `.${selectedAnim.name} {\n  animation: ${selectedAnim.name} ${dur} ease ${del} ${iter} normal both;\n}`;
@@ -1384,30 +1357,27 @@
           };
         }
 
-        /* --- 更新代码展示区 --- */
+        // ── 更新代码展示区 ──
         function renderCodeBlock() {
           const css = buildCSS();
           codeOutput.textContent = css.full || "/* 动画已停止 */";
         }
 
-        /* --- 应用动画到预览盒子 --- */
+        // ── 应用动画到预览盒子 ──
         function applyAnimation(mode = "play") {
-          // 先清除旧动画以重置状态
           animateBox.style.animation = "none";
           dynamicAnimationInject.innerHTML = "";
-          void animateBox.offsetWidth; // 触发回流确保重置生效
+          void animateBox.offsetWidth;
 
           if (mode === "stop") return;
 
-          // 注入完整 CSS（含 @keyframes 和类）
           const css = buildCSS(mode === "loop" ? "infinite" : null);
           dynamicAnimationInject.innerHTML = css.full;
 
-          // 直接通过 style 应用动画，确保参数实时生效
           animateBox.style.animation = `${selectedAnim.name} ${paramDuration.value}s ease ${paramDelay.value}s ${mode === "loop" ? "infinite" : paramIteration.value} normal both`;
         }
 
-        /* --- 渲染动画列表（根据当前分类筛选） --- */
+        // ── 渲染动画列表 ──
         function renderGrid() {
           const filtered =
             currentCategory === "all"
@@ -1419,32 +1389,30 @@
           phoneGrid.innerHTML = filtered
             .map(
               (item) => `
-      <div class="phone-item ${item.name === selectedAnim.name ? "active" : ""}" data-name="${item.name}">
-        <span class="phone-number">${item.icon} ${item.nameCn}</span>
-        <span class="phone-name">${item.name}</span>
-      </div>
-    `,
+                <div class="phone-item ${item.name === selectedAnim.name ? "active" : ""}" data-name="${item.name}">
+                  <span class="phone-number">${item.icon} ${item.nameCn}</span>
+                  <span class="phone-name">${item.name}</span>
+                </div>
+              `,
             )
             .join("");
 
-          // 点击卡片切换当前动画
           phoneGrid.querySelectorAll(".phone-item").forEach((card) => {
             card.addEventListener("click", () => {
-              const targetName = card.dataset.name;
-              selectedAnim = animations.find((a) => a.name === targetName);
-
+              selectedAnim = animations.find(
+                (a) => a.name === card.dataset.name,
+              );
               phoneGrid
                 .querySelectorAll(".phone-item")
                 .forEach((c) => c.classList.remove("active"));
               card.classList.add("active");
-
               renderCodeBlock();
               applyAnimation("play");
             });
           });
         }
 
-        /* --- 渲染分类按钮 --- */
+        // ── 渲染分类按钮 ──
         function renderCategories() {
           totalCountVal.textContent = `${animations.length} 个`;
 
@@ -1455,9 +1423,9 @@
                   ? animations.length
                   : animations.filter((a) => a.category === cat.id).length;
               return `<button class="cat-btn ${cat.id === currentCategory ? "active" : ""}" data-id="${cat.id}">
-        <span>${cat.name}</span>
-        <small style="opacity:0.6; font-size:11px;">(${count})</small>
-      </button>`;
+                <span>${cat.name}</span>
+                <small style="opacity:0.6; font-size:11px;">(${count})</small>
+              </button>`;
             })
             .join("");
 
@@ -1473,7 +1441,7 @@
           });
         }
 
-        /* --- 参数滑块事件绑定 --- */
+        // ── 参数滑块 ──
         paramDuration.addEventListener("input", () => {
           valDuration.textContent = paramDuration.value + "s";
           renderCodeBlock();
@@ -1490,41 +1458,33 @@
           applyAnimation("play");
         });
 
-        /* --- 播放控制按钮 --- */
+        // ── 播放控制 ──
         btnPlay.addEventListener("click", () => applyAnimation("play"));
         btnLoop.addEventListener("click", () => applyAnimation("loop"));
         btnStop.addEventListener("click", () => applyAnimation("stop"));
 
-        /* --- 复制按钮：完整 CSS --- */
-        document.getElementById("copyFull").addEventListener("click", () => {
+        // ── 复制按钮 ──
+        copyFull.addEventListener("click", () => {
           copyToClipboard(buildCSS().full).then(() =>
             showToast("✅ 完整 CSS 代码已复制！"),
           );
         });
-        /* --- 复制按钮：仅 @keyframes --- */
-        document
-          .getElementById("copyKeyframes")
-          .addEventListener("click", () => {
-            copyToClipboard(buildCSS().keyframes).then(() =>
-              showToast("✨ @keyframes 块已单独复制！"),
-            );
-          });
-        /* --- 复制按钮：仅类名 --- */
-        document.getElementById("copyClass").addEventListener("click", () => {
+        copyKeyframes.addEventListener("click", () => {
+          copyToClipboard(buildCSS().keyframes).then(() =>
+            showToast("✨ @keyframes 块已单独复制！"),
+          );
+        });
+        copyClass.addEventListener("click", () => {
           copyToClipboard(buildCSS().className).then(() =>
             showToast("🎨 CSS 类选择器已单独复制！"),
           );
         });
 
-        /* --- 初始化 --- */
-        function init() {
-          renderCategories();
-          renderGrid();
-          renderCodeBlock();
-          applyAnimation("play");
-        }
-
-        init();
+        // ── 初始化 ──
+        renderCategories();
+        renderGrid();
+        renderCodeBlock();
+        applyAnimation("play");
       })();
     </script>
 
@@ -1598,12 +1558,18 @@
         });
 
         document.addEventListener("keydown", function (e) {
-          if (
-            (e.ctrlKey || e.metaKey) &&
-            ["+", "-", "=", "0"].includes(e.key)
-          ) {
-            e.preventDefault();
-            return false;
+          var key = (e.key || "").toLowerCase();
+
+          if (e.ctrlKey || e.metaKey) {
+            if (key === "s") {
+              e.preventDefault();
+              return false;
+            }
+
+            if (["+", "-", "=", "0"].includes(e.key)) {
+              e.preventDefault();
+              return false;
+            }
           }
         });
 

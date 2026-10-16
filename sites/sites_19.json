@@ -108,7 +108,7 @@
     "title": "黄油单词",
     "icon": "黄油单词_icon.webp",
     "url": "https://waiyuka.cc/zh-CN",
-    "description": "趣味卡片多语种背词",
+    "description": "趣味卡片多语种背单词",
     "category": "学习教育"
   },
   {
@@ -179,6 +179,20 @@
     "icon": "Musicca_icon.webp",
     "url": "https://www.musicca.com/zh",
     "description": "互动式乐理与视唱练耳",
+    "category": "学习教育"
+  },
+  {
+    "title": "WeduLab",
+    "icon": "WeduLab_icon.webp",
+    "url": "https://wedulab.com",
+    "description": "理科虚拟仿真教学工具",
+    "category": "学习教育"
+  },
+  {
+    "title": "知识公社",
+    "icon": "知识公社_icon.webp",
+    "url": "https://taimabenji.github.io/knowledge-commons",
+    "description": "开源知识共享学习资源",
     "category": "学习教育"
   }
 ]

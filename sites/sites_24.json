@@ -119,6 +119,13 @@
     "category": "动漫次元"
   },
   {
+    "title": "初音乐园",
+    "icon": "初音乐园_icon.webp",
+    "url": "https://www.mikupara.com",
+    "description": "精选初音未来优质插画",
+    "category": "动漫次元"
+  },
+  {
     "title": "米麓星",
     "icon": "米麓星_icon.webp",
     "url": "https://m.miluxing.com",
@@ -126,10 +133,10 @@
     "category": "动漫次元"
   },
   {
-    "title": "初音乐园",
-    "icon": "初音乐园_icon.webp",
-    "url": "https://www.mikupara.com",
-    "description": "精选初音未来优质插画",
+    "title": "Anitabi",
+    "icon": "Anitabi_icon.webp",
+    "url": "https://www.anitabi.cn/map",
+    "description": "二次元巡礼圣地地图",
     "category": "动漫次元"
   }
 ]

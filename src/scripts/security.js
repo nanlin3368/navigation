@@ -66,9 +66,18 @@
   });
 
   document.addEventListener("keydown", function (e) {
-    if ((e.ctrlKey || e.metaKey) && ["+", "-", "=", "0"].includes(e.key)) {
-      e.preventDefault();
-      return false;
+    var key = (e.key || "").toLowerCase();
+
+    if (e.ctrlKey || e.metaKey) {
+      if (key === "s") {
+        e.preventDefault();
+        return false;
+      }
+
+      if (["+", "-", "=", "0"].includes(e.key)) {
+        e.preventDefault();
+        return false;
+      }
     }
   });
 

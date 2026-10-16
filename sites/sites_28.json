@@ -51,7 +51,7 @@
   {
     "title": "Escrcpy",
     "icon": "Escrcpy_icon.webp",
-    "url": "https://viarotel.eu.org/zhHans",
+    "url": "https://github.com/viarotel-org/escrcpy",
     "description": "图形化安卓投屏控制",
     "category": "桌面软件"
   },
@@ -128,7 +128,7 @@
   {
     "title": "Clash Verge",
     "icon": "Clash_Verge_icon.webp",
-    "url": "https://www.clashverge.dev",
+    "url": "https://github.com/clash-verge-rev/clash-verge-rev",
     "description": "现代网络代理客户端",
     "category": "桌面软件"
   },
@@ -156,7 +156,7 @@
   {
     "title": "LocalSend",
     "icon": "LocalSend_icon.webp",
-    "url": "https://localsend.org/zh-CN",
+    "url": "https://github.com/localsend/localsend",
     "description": "跨平台局域网文件传输",
     "category": "桌面软件"
   },
@@ -254,7 +254,7 @@
   {
     "title": "FlClash",
     "icon": "FlClash_icon.webp",
-    "url": "https://flclash.cc",
+    "url": "https://github.com/chen08209/FlClash",
     "description": "多平台网络代理客户端",
     "category": "桌面软件"
   },
@@ -318,7 +318,7 @@
     "title": "飞鼠格式",
     "icon": "飞鼠格式_icon.webp",
     "url": "https://github.com/LaoFeng-mouse/flyingmouse-format",
-    "description": "文件格式快捷转换",
+    "description": "多种文件格式快捷转换",
     "category": "桌面软件"
   },
   {
@@ -336,6 +336,20 @@
     "category": "桌面软件"
   },
   {
+    "title": "雷电模拟器",
+    "icon": "雷电模拟器_icon.webp",
+    "url": "https://m.ldmnq.com",
+    "description": "高帧率安卓游戏模拟器",
+    "category": "桌面软件"
+  },
+  {
+    "title": "MuMu模拟器",
+    "icon": "MuMu模拟器_icon.webp",
+    "url": "https://mumu.163.com",
+    "description": "全平台覆盖安卓模拟器",
+    "category": "桌面软件"
+  },
+  {
     "title": "Rustdesk",
     "icon": "Rustdesk_icon.webp",
     "url": "https://github.com/rustdesk/rustdesk",
@@ -345,7 +359,7 @@
   {
     "title": "CC Switch",
     "icon": "CC_Switch_icon.webp",
-    "url": "https://ccswitch.io/zh",
+    "url": "https://github.com/farion1231/cc-switch",
     "description": "AI模型快捷切换管理",
     "category": "桌面软件"
   },
@@ -357,9 +371,16 @@
     "category": "桌面软件"
   },
   {
+    "title": "Filee",
+    "icon": "Filee_icon.webp",
+    "url": "https://github.com/KnifeLemon/Filee",
+    "description": "开源文件格式转换器",
+    "category": "桌面软件"
+  },
+  {
     "title": "图吧工具箱 WinUI3",
     "icon": "图吧工具箱_WinUI3_icon.webp",
-    "url": "https://tubawinui3.cn",
+    "url": "https://github.com/luolangaga/tubatools",
     "description": "新版WinUI界面检测箱",
     "category": "桌面软件"
   }

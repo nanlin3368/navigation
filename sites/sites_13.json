@@ -3,21 +3,21 @@
     "title": "Uiverse",
     "icon": "Uiverse_icon.webp",
     "url": "https://uiverse.io",
-    "description": "开源 UI 组件库",
+    "description": "开源 UI 元素代码库",
     "category": "创意设计"
   },
   {
     "title": "React Bits",
     "icon": "React_Bits_icon.webp",
     "url": "https://reactbits.dev",
-    "description": "React 动效组件库",
+    "description": "开源 React 动效组件库",
     "category": "创意设计"
   },
   {
     "title": "M3E Canvas",
     "icon": "M3E_Canvas_icon.webp",
     "url": "https://lnkiai.github.io/m3e-canvas",
-    "description": "自定义构建MD3界面",
+    "description": "自定义构建 MD3 界面",
     "category": "创意设计"
   },
   {
@@ -35,10 +35,24 @@
     "category": "创意设计"
   },
   {
+    "title": "中国传统纹样图鉴",
+    "icon": "中国传统纹样图鉴_icon.webp",
+    "url": "https://wenyang.net",
+    "description": "500+张中国传统纹样图",
+    "category": "创意设计"
+  },
+  {
+    "title": "VibePrompt",
+    "icon": "VibePrompt_icon.webp",
+    "url": "https://vibeprompts.dev",
+    "description": "UI布局提示和代码复制",
+    "category": "创意设计"
+  },
+  {
     "title": "UI Notes",
     "icon": "UI_Notes_icon.webp",
     "url": "https://uinotes.com",
-    "description": "优秀应用完整UI截图",
+    "description": "优秀应用完整 UI 截图",
     "category": "创意设计"
   },
   {
@@ -73,7 +87,7 @@
     "title": "beUI",
     "icon": "beUI_icon.webp",
     "url": "https://beui.dev",
-    "description": "产品界面UI组件库",
+    "description": "产品界面 UI 组件库",
     "category": "创意设计"
   },
   {
@@ -101,21 +115,14 @@
     "title": "Bloub",
     "icon": "Bloub_icon.webp",
     "url": "https://bloub.vercel.app",
-    "description": "动画SVG头像制作",
+    "description": "动画 SVG 头像制作",
     "category": "创意设计"
   },
   {
     "title": "OneWorks Avatar",
     "icon": "OneWorks_Avatar_icon.webp",
     "url": "https://oneworks.cloud/avatar",
-    "description": "开源3D头像编辑器",
-    "category": "创意设计"
-  },
-  {
-    "title": "UI UX Pro Max",
-    "icon": "UI_UX_Pro_Max_icon.webp",
-    "url": "https://www.uupm.cc",
-    "description": "AI驱动的界面设计指南",
+    "description": "开源 3D 头像编辑器",
     "category": "创意设计"
   },
   {
@@ -130,6 +137,27 @@
     "icon": "Shadcn_UI_icon.webp",
     "url": "https://ui.shadcn.com",
     "description": "可定制的网页组件库",
+    "category": "创意设计"
+  },
+  {
+    "title": "Prompt Motion",
+    "icon": "Prompt_Motion_icon.webp",
+    "url": "https://prompt-motion.com",
+    "description": "动态设计案列与提示词",
+    "category": "创意设计"
+  },
+  {
+    "title": "Lucian UX/UI Prompt",
+    "icon": "Lucian_UX_UI_Prompt_icon.webp",
+    "url": "https://lucianlabs.dev/uxui-prompt",
+    "description": "200个精致动态 UI 元件",
+    "category": "创意设计"
+  },
+  {
+    "title": "UI UX Pro Max",
+    "icon": "UI_UX_Pro_Max_icon.webp",
+    "url": "https://www.uupm.cc",
+    "description": "AI驱动的界面设计指南",
     "category": "创意设计"
   }
 ]

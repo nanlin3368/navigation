@@ -3,7 +3,7 @@
     "title": "故宫博物院",
     "icon": "故宫博物院_icon.webp",
     "url": "https://www.dpm.org.cn",
-    "description": "故宫文物与历史文化",
+    "description": "故宫数字文博服务门户",
     "category": "人文历史"
   },
   {
@@ -17,7 +17,14 @@
     "title": "四大名著",
     "icon": "四大名著_icon.webp",
     "url": "http://www.sdmz.cn",
-    "description": "中国四大名著小说",
+    "description": "中国四大名著小说阅读",
+    "category": "人文历史"
+  },
+  {
+    "title": "四大名著网",
+    "icon": "四大名著网_icon.webp",
+    "url": "https://www.sdmz.net",
+    "description": "四大名著原文人物查询",
     "category": "人文历史"
   },
   {
@@ -31,14 +38,14 @@
     "title": "书格",
     "icon": "书格_icon.webp",
     "url": "https://www.shuge.org",
-    "description": "古籍与艺术图书馆",
+    "description": "数字古籍与艺术图书馆",
     "category": "人文历史"
   },
   {
     "title": "文籍典册",
     "icon": "文籍典册_icon.webp",
     "url": "https://wendian.dicomp.net",
-    "description": "中华古籍文献典册",
+    "description": "中华古籍诗词文献典册",
     "category": "人文历史"
   },
   {
@@ -52,7 +59,7 @@
     "title": "5000言",
     "icon": "5000言_icon.webp",
     "url": "https://5000yan.com",
-    "description": "名言名句与经典语录",
+    "description": "国学经典与百家著作",
     "category": "人文历史"
   },
   {
@@ -60,6 +67,20 @@
     "icon": "诗泉_icon.webp",
     "url": "https://poetry.palemoky.com",
     "description": "古典诗词阅读与检索",
+    "category": "人文历史"
+  },
+  {
+    "title": "古诗屋",
+    "icon": "古诗屋_icon.webp",
+    "url": "https://www.gushi5.com",
+    "description": "品读历代经典古诗词文",
+    "category": "人文历史"
+  },
+  {
+    "title": "诗词汇",
+    "icon": "诗词汇_icon.webp",
+    "url": "https://shici.znkong.com",
+    "description": "中华古诗词大全赏析",
     "category": "人文历史"
   },
   {
@@ -87,7 +108,63 @@
     "title": "老画报",
     "icon": "老画报_icon.webp",
     "url": "http://www.laohuabao.com",
-    "description": "近现代老画报欣赏",
+    "description": "近现代老画报资料欣赏",
+    "category": "人文历史"
+  },
+  {
+    "title": "古文哇",
+    "icon": "古文哇_icon.webp",
+    "url": "https://www.guwenwa.com",
+    "description": "经典古诗文言文名句",
+    "category": "人文历史"
+  },
+  {
+    "title": "古诗词网",
+    "icon": "古诗词网_icon.webp",
+    "url": "https://www.gushici.org",
+    "description": "唐诗宋词元曲经典名篇",
+    "category": "人文历史"
+  },
+  {
+    "title": "爱古文",
+    "icon": "爱古文_icon.webp",
+    "url": "https://aiguwen.oulujixie.cn",
+    "description": "古诗古文国学知识资料",
+    "category": "人文历史"
+  },
+  {
+    "title": "中文诗歌",
+    "icon": "中文诗歌_icon.webp",
+    "url": "https://awesome-poetry.top",
+    "description": "唐宋两朝诗歌古典文集",
+    "category": "人文历史"
+  },
+  {
+    "title": "最美古诗文网",
+    "icon": "最美古诗文网_icon.webp",
+    "url": "https://www.zmgsw.com",
+    "description": "诗文名句国学百科鉴赏",
+    "category": "人文历史"
+  },
+  {
+    "title": "华夏博物志",
+    "icon": "华夏博物志_icon.webp",
+    "url": "https://huaxia-museum-atlas.pages.dev",
+    "description": "中国博物馆手卷舆图",
+    "category": "人文历史"
+},
+  {
+    "title": "非物质文化遗产",
+    "icon": "非物质文化遗产_icon.webp",
+    "url": "https://www.ihchina.cn",
+    "description": "中国非物质文化遗产网",
+    "category": "人文历史"
+  },
+  {
+    "title": "古建漫游指南",
+    "icon": "古建漫游指南_icon.webp",
+    "url": "https://gujianzhu.wiki",
+    "description": "古建筑历史文献与影像",
     "category": "人文历史"
   }
 ]

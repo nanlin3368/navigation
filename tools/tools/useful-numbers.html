@@ -13,15 +13,15 @@
     />
     <link
       rel="apple-touch-icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
     />
     <link
       rel="icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
-      type="image/svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+      type="image/svg+xml"
     />
     <style>
-      /* --- 全局变量与设计令牌 --- */
+      /* ── 设计令牌 ── */
       :root {
         --bg: #f5f5f7;
         --card: #ffffff;
@@ -34,10 +34,13 @@
         --radius-sm: 12px;
       }
 
-      /* --- 重置 & 基础排版 --- */
+      /* ── 基础重置 ── */
       * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        scrollbar-gutter: stable;
       }
       html,
       body {
@@ -56,12 +59,10 @@
         flex-direction: column;
       }
 
-      /* --- 顶部导航栏入场动画 --- */
+      /* ── 顶栏 ── */
       .topbar {
-        padding: env(safe-area-inset-top, 0) 0 0 0;
         text-align: center;
-        padding-top: max(28px, env(safe-area-inset-top));
-        padding-bottom: 18px;
+        padding: max(28px, env(safe-area-inset-top)) 0 18px;
         flex: 0 0 auto;
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
@@ -77,19 +78,17 @@
         color: var(--sub);
       }
 
-      /* --- 主应用容器（移动端默认纵向排列） --- */
+      /* ── 主容器与入场动画 ── */
       .app {
         flex: 1 1 auto;
         width: 100%;
         max-width: 1800px;
         margin: 0 auto;
-        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        padding: 0 12px calc(30px + env(safe-area-inset-bottom, 0px));
         display: flex;
         flex-direction: column;
         gap: 18px;
       }
-
-      /* --- 弹性入场动画 --- */
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -100,8 +99,6 @@
           transform: translateY(0) scale(1);
         }
       }
-
-      /* 给左右面板加交错入场效果 */
       .panel-settings {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
       }
@@ -109,15 +106,7 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 左右面板（移动端均为纵向） --- */
-      .panel-settings,
-      .panel-results {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      /* --- 卡片组件 --- */
+      /* ── 卡片与面板 ── */
       .card {
         background: var(--card);
         border-radius: var(--radius);
@@ -129,8 +118,14 @@
         display: flex;
         flex-direction: column;
       }
+      .panel-settings,
+      .panel-results {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
 
-      /* --- 区块标题 --- */
+      /* ── 区块标题 ── */
       .section-title {
         font-size: 13px;
         font-weight: 600;
@@ -138,47 +133,14 @@
         text-transform: uppercase;
         letter-spacing: 0.04em;
         margin: 0 0 14px;
-        flex: 0 0 auto;
       }
 
-      /* --- 分类按钮组（移动端3列） --- */
+      /* ── 大洲分类（移动端 3 列网格） ── */
       .category-group {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
       }
-
-      /* --- 号码网格（自适应列宽） --- */
-      .phone-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 12px;
-        padding: 4px 0;
-      }
-
-      /* --- 号码列表滚动容器（移动端高度） --- */
-      .phone-container-scroll {
-        max-height: 560px;
-        overflow-y: auto;
-        padding-right: 6px;
-      }
-
-      /* --- 数据看板统计行 --- */
-      .stat-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        color: var(--ink);
-      }
-      .stat-row .val {
-        font-weight: 700;
-        color: var(--accent);
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        font-size: 16px;
-      }
-
-      /* --- 分类按钮样式 --- */
       .cat-btn {
         width: 100%;
         text-align: center;
@@ -204,7 +166,74 @@
         font-weight: 600;
       }
 
-      /* --- 单个号码卡片样式 --- */
+      /* ── 桌面端顶部胶囊分类条（默认隐藏） ── */
+      .category-bar {
+        display: none;
+        flex-wrap: nowrap;
+        gap: 8px;
+        overflow-x: auto;
+        margin: 0 0 16px;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .category-bar::-webkit-scrollbar {
+        display: none;
+      }
+      .category-bar .cat-btn {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      /* ── 号码卡片网格 ── */
+      .phone-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .phone-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .group-title {
+        margin: 0 0 10px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--sub);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .group-title::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 1px;
+        background: var(--line);
+      }
+      .group-count {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent);
+        background: rgba(0, 113, 227, 0.08);
+        padding: 2px 8px;
+        border-radius: 999px;
+      }
+      .phone-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+        padding: 4px 0;
+      }
+      .phone-container-scroll {
+        max-height: 460px;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
       .phone-item {
         background: var(--bg);
         border-radius: var(--radius-sm);
@@ -241,12 +270,14 @@
         color: var(--accent);
         font-family: ui-monospace, SFMono-Regular, monospace;
       }
-      /* 紧急号码特殊颜色 */
       .emergency .phone-number {
         color: #ff3b30;
       }
+      .phone-card {
+        flex: 1;
+      }
 
-      /* --- 滚动条美化 --- */
+      /* ── 滚动条 ── */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -256,7 +287,7 @@
         border-radius: 3px;
       }
 
-      /* --- Toast 轻提示 --- */
+      /* ── Toast ── */
       .toast {
         position: fixed;
         top: max(18px, env(safe-area-inset-top));
@@ -275,14 +306,16 @@
           opacity 0.25s ease,
           transform 0.25s ease;
         z-index: 100;
-        white-space: nowrap;
+        max-width: calc(100vw - 40px);
+        text-align: center;
+        word-break: break-word;
       }
       .toast.show {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
 
-      /* --- 桌面端响应式布局（≥860px） --- */
+      /* ── 桌面端双栏（≥860px） ── */
       @media (min-width: 860px) {
         .app {
           flex-direction: row;
@@ -290,62 +323,39 @@
           padding-bottom: 45px;
         }
         .panel-settings {
-          flex: 0 0 280px;
+          display: none;
+        }
+        .category-bar {
           display: flex;
-          flex-direction: column;
-          gap: 14px;
         }
-
-        /* 分类卡片：桌面端固定高度内部滚动 */
-        .category-card {
-          height: 400px;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
-
-        /* 滚动列表容器：改为 Flex 纵向排列并开启滚动 */
-        .category-card .category-group {
-          display: flex;
-          flex-direction: column;
-          flex: 1 1 auto;
-          overflow-y: auto;
-          gap: 8px;
-          padding-right: 6px;
-        }
-
-        /* 修正分类按钮样式与文字展示 */
-        .category-card .cat-btn {
-          flex: 0 0 auto;
-          text-align: left;
-          padding: 12px 16px;
-          font-size: 14px;
-          line-height: 1.4;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
         .panel-results {
           flex: 1 1 auto;
           min-width: 0;
-          display: flex;
-          flex-direction: column;
         }
-
         .phone-container-scroll {
           height: 550px;
           max-height: none;
-          overflow-y: auto;
+        }
+        .phone-list {
+          gap: 28px;
+        }
+      }
+
+      /* ── 减少动效 ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
   </head>
   <body>
-    <!-- --- Toast 提示容器 --- -->
-    <div class="toast" id="toast">已复制到剪贴板</div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <!-- --- 顶部标题栏 --- -->
     <div class="topbar">
       <h1>☎️ 常用号码查询</h1>
       <p>纯本地分类快捷查阅 · 点击秒级复制或拨打</p>
@@ -353,43 +363,33 @@
 
     <div class="app">
       <div class="panel-settings">
-        <!-- 数据看板卡片 -->
-        <div class="card">
-          <p class="section-title">数据看板</p>
-          <div class="stat-row">
-            <span>已收录号码总数</span>
-            <span class="val" id="totalCountVal">0 个</span>
-          </div>
-        </div>
-
-        <!-- 分类卡片 -->
         <div class="card category-card">
           <p class="section-title">号码分类</p>
           <div class="category-group" id="categorySelector"></div>
         </div>
       </div>
 
-      <!-- --- 右侧结果面板 --- -->
       <div class="panel-results">
-        <div class="card" style="flex: 1">
+        <div class="card phone-card">
           <p class="section-title" id="gridTitle">全部号码</p>
+
+          <div class="category-bar" id="categoryBar"></div>
+
           <div class="phone-container-scroll">
-            <div class="phone-grid" id="phoneGrid"></div>
+            <div class="phone-list" id="phoneGrid"></div>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
+      // ── 关闭历史滚动恢复 ──
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
       (function () {
         "use strict";
 
-        /* --- 内置常用号码数据库（按分类组织） --- */
+        // ── 号码数据 ──
         const PHONE_DATA = [
           {
             name: "紧急求助",
@@ -550,26 +550,29 @@
           },
         ];
 
-        /* --- 状态变量与 DOM 引用 --- */
-        let activeIndex = 0;
+        const ALL_INDEX = -1;
+        const TOTAL = PHONE_DATA.reduce((sum, c) => sum + c.phone.length, 0);
+
+        // ── DOM 引用 ──
         const categorySelector = document.getElementById("categorySelector");
+        const categoryBar = document.getElementById("categoryBar");
         const phoneGrid = document.getElementById("phoneGrid");
         const gridTitle = document.getElementById("gridTitle");
-        const totalCountVal = document.getElementById("totalCountVal");
         const toast = document.getElementById("toast");
-        let toastTimer = null;
 
-        /* --- Toast 轻提示逻辑 --- */
+        // ── 状态：默认选中「全部」 ──
+        let activeIndex = ALL_INDEX;
+
+        // ── 提示条 ──
+        let toastTimer = null;
         function showToast(msg) {
-          toast.textContent = msg;
+          toast.textContent = msg || "操作成功";
           toast.classList.add("show");
           clearTimeout(toastTimer);
-          toastTimer = setTimeout(() => {
-            toast.classList.remove("show");
-          }, 1500);
+          toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
         }
 
-        /* --- 复制文本到剪贴板（兼容降级） --- */
+        // ── 剪贴板 ──
         function copyToClipboard(text) {
           if (navigator.clipboard && window.isSecureContext) {
             return navigator.clipboard.writeText(text);
@@ -585,39 +588,45 @@
           return Promise.resolve();
         }
 
-        /* --- 计算总号码数并更新统计 --- */
-        function calculateTotalNumbers() {
-          const total = PHONE_DATA.reduce(
-            (sum, category) => sum + category.phone.length,
-            0,
-          );
-          totalCountVal.textContent = `${total} 个`;
+        // ── 单个号码卡片 HTML ──
+        function itemHTML(item, isEmergency) {
+          const cls = isEmergency ? " emergency" : "";
+          return `<div class="phone-item${cls}" data-num="${item.num}" title="点击复制 / 双击拨打">
+                    <span class="phone-name">${item.name}</span>
+                    <span class="phone-number">${item.num}</span>
+                  </div>`;
         }
 
-        /* --- 渲染指定分类下的号码卡片 --- */
+        // ── 渲染号码卡片 ──
         function renderNumbers(index) {
-          const category = PHONE_DATA[index];
-          gridTitle.textContent = `${category.name} (${category.phone.length})`;
-          const isEmergencyClass = category.isEmergency ? " emergency" : "";
+          if (index === ALL_INDEX) {
+            gridTitle.textContent = `全部号码 (${TOTAL})`;
+            phoneGrid.innerHTML = PHONE_DATA.map(
+              (cat) => `
+                <section class="phone-group">
+                  <p class="group-title">
+                    ${cat.name}
+                    <span class="group-count">${cat.phone.length}</span>
+                  </p>
+                  <div class="phone-grid">${cat.phone
+                    .map((item) => itemHTML(item, cat.isEmergency))
+                    .join("")}</div>
+                </section>`,
+            ).join("");
+          } else {
+            const category = PHONE_DATA[index];
+            gridTitle.textContent = `${category.name} (${category.phone.length})`;
+            phoneGrid.innerHTML = `<div class="phone-grid">${category.phone
+              .map((item) => itemHTML(item, category.isEmergency))
+              .join("")}</div>`;
+          }
 
-          phoneGrid.innerHTML = category.phone
-            .map(
-              (item) => `
-      <div class="phone-item${isEmergencyClass}" data-num="${item.num}" title="点击复制/拨打">
-        <span class="phone-name">${item.name}</span>
-        <span class="phone-number">${item.num}</span>
-      </div>
-    `,
-            )
-            .join("");
-
-          // 绑定点击复制（单击）和双击拨打（tel: 链接）事件
           phoneGrid.querySelectorAll(".phone-item").forEach((item) => {
             item.addEventListener("click", () => {
               const num = item.dataset.num;
-              copyToClipboard(num).then(() => {
-                showToast(`✅ 成功复制号码: ${num}`);
-              });
+              copyToClipboard(num).then(() =>
+                showToast(`✅ 成功复制号码: ${num}`),
+              );
             });
             item.addEventListener("dblclick", () => {
               window.location.href = `tel:${item.dataset.num}`;
@@ -625,35 +634,41 @@
           });
         }
 
-        /* --- 渲染分类按钮 --- */
-        function renderCategories() {
-          categorySelector.innerHTML = PHONE_DATA.map(
-            (cat, idx) => `
-      <button class="cat-btn${idx === activeIndex ? " active" : ""}" data-index="${idx}">${cat.name}</button>
-    `,
-          ).join("");
-
-          categorySelector.querySelectorAll(".cat-btn").forEach((btn) => {
-            btn.addEventListener("click", () => {
-              const idx = parseInt(btn.dataset.index, 10);
-              activeIndex = idx;
-              categorySelector
-                .querySelectorAll(".cat-btn")
-                .forEach((b) => b.classList.remove("active"));
-              btn.classList.add("active");
-              renderNumbers(activeIndex);
-            });
+        // ── 同步两侧按钮激活态 ──
+        function syncActive() {
+          document.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.classList.toggle(
+              "active",
+              parseInt(btn.dataset.index, 10) === activeIndex,
+            );
           });
         }
 
-        /* --- 初始化 --- */
-        function init() {
-          calculateTotalNumbers();
-          renderCategories();
-          renderNumbers(activeIndex);
+        // ── 渲染号码分类 ──
+        function renderCategories() {
+          const allBtn = `<button class="cat-btn" data-index="${ALL_INDEX}">全部</button>`;
+          const base = PHONE_DATA.map(
+            (cat, idx) =>
+              `<button class="cat-btn" data-index="${idx}">${cat.name}</button>`,
+          ).join("");
+
+          categorySelector.innerHTML = allBtn + base;
+          categoryBar.innerHTML = allBtn + base;
+
+          document.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              activeIndex = parseInt(btn.dataset.index, 10);
+              syncActive();
+              renderNumbers(activeIndex);
+            });
+          });
+
+          syncActive();
         }
 
-        init();
+        // ── 初始化 ──
+        renderCategories();
+        renderNumbers(activeIndex);
       })();
     </script>
 
@@ -727,12 +742,18 @@
         });
 
         document.addEventListener("keydown", function (e) {
-          if (
-            (e.ctrlKey || e.metaKey) &&
-            ["+", "-", "=", "0"].includes(e.key)
-          ) {
-            e.preventDefault();
-            return false;
+          var key = (e.key || "").toLowerCase();
+
+          if (e.ctrlKey || e.metaKey) {
+            if (key === "s") {
+              e.preventDefault();
+              return false;
+            }
+
+            if (["+", "-", "=", "0"].includes(e.key)) {
+              e.preventDefault();
+              return false;
+            }
           }
         });
 

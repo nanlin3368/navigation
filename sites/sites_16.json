@@ -1,19 +1,5 @@
 [
   {
-    "title": "VibeHub",
-    "icon": "VibeHub_icon.webp",
-    "url": "https://vibe-hub.org",
-    "description": "VibeCoding术语图鉴",
-    "category": "编程技术"
-  },
-  {
-    "title": "VibePrompt",
-    "icon": "VibePrompt_icon.webp",
-    "url": "https://vibeprompts.dev",
-    "description": "UI布局提示和代码复制",
-    "category": "编程技术"
-  },
-  {
     "title": "菜鸟教程",
     "icon": "菜鸟教程_icon.webp",
     "url": "https://www.runoob.com",
@@ -95,6 +81,13 @@
     "icon": "LabEx_icon.webp",
     "url": "https://labex.io/zh",
     "description": "动手实战的编程实验课",
+    "category": "编程技术"
+  },
+  {
+    "title": "VibeHub",
+    "icon": "VibeHub_icon.webp",
+    "url": "https://vibe-hub.org",
+    "description": "AI开发术语与技能知识",
     "category": "编程技术"
   }
 ]

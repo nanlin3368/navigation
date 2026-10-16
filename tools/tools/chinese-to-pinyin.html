@@ -13,17 +13,16 @@
     />
     <link
       rel="apple-touch-icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
     />
     <link
       rel="icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
-      type="image/svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+      type="image/svg+xml"
     />
-    <!-- 引入 pinyin-pro 库 (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3/dist/index.js"></script>
     <style>
-      /* --- 全局变量（设计令牌） --- */
+      /* ── 设计令牌 ── */
       :root {
         --bg: #f5f5f7;
         --card: #ffffff;
@@ -36,7 +35,7 @@
         --radius-sm: 12px;
       }
 
-      /* --- 重置 & 基础排版 --- */
+      /* ── 基础重置 ── */
       * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
@@ -58,12 +57,10 @@
         overflow-y: auto;
       }
 
-      /* --- 顶部导航栏入场动画 --- */
+      /* ── 顶栏 ── */
       .topbar {
-        padding: env(safe-area-inset-top, 0) 0 0 0;
         text-align: center;
-        padding-top: max(28px, env(safe-area-inset-top));
-        padding-bottom: 18px;
+        padding: max(28px, env(safe-area-inset-top)) 0 18px;
         flex: 0 0 auto;
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
@@ -79,7 +76,7 @@
         color: var(--sub);
       }
 
-      /* --- 应用主容器（移动端默认纵向排列） --- */
+      /* ── 主容器与入场动画 ── */
       .app {
         flex: 1 1 auto;
         width: 100%;
@@ -90,8 +87,6 @@
         flex-direction: column;
         gap: 18px;
       }
-
-      /* --- 弹性入场动画 --- */
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -102,8 +97,6 @@
           transform: translateY(0) scale(1);
         }
       }
-
-      /* 给左右面板加交错入场效果 */
       .panel-config,
       .panel-left {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
@@ -113,7 +106,7 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 卡片 & 通用组件 --- */
+      /* ── 卡片与面板 ── */
       .card {
         background: var(--card);
         border-radius: var(--radius);
@@ -141,6 +134,7 @@
         gap: 14px;
       }
 
+      /* ── 区块标题 ── */
       .section-header {
         display: flex;
         align-items: center;
@@ -163,7 +157,7 @@
         white-space: nowrap;
       }
 
-      /* --- 配置选项组（模式/声调切换） --- */
+      /* ── 配置选项组 ── */
       .opt-group {
         display: flex;
         flex-direction: column;
@@ -178,7 +172,6 @@
         font-weight: 500;
         color: var(--ink);
       }
-
       .btn-toggle-row {
         display: flex;
         gap: 8px;
@@ -204,7 +197,7 @@
         border-color: var(--accent);
       }
 
-      /* --- 文本输入框 --- */
+      /* ── 文本编辑区 ── */
       textarea {
         width: 100%;
         flex: 1;
@@ -229,7 +222,59 @@
         opacity: 0.6;
       }
 
-      /* --- 操作按钮组 --- */
+      /* ── 预览面板 ── */
+      .preview-body {
+        width: 100%;
+        flex: 1;
+        min-height: 550px;
+        max-height: 550px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        padding: 20px;
+        color: var(--ink);
+      }
+      .pinyin-content {
+        line-height: 3.2;
+        font-size: 18px;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+      .pinyin-content ruby {
+        font-size: 18px;
+        margin: 0 1px;
+        ruby-align: center;
+      }
+      .pinyin-content rt {
+        font-size: 12px;
+        color: var(--accent);
+        line-height: 1;
+        font-family: ui-monospace, Monaco, "Andale Mono", monospace;
+        letter-spacing: 0.02em;
+        user-select: none;
+      }
+      .pinyin-text-only {
+        font-family: ui-monospace, Monaco, monospace;
+        letter-spacing: 0.03em;
+        color: var(--accent);
+        line-height: 1.8;
+      }
+      .pinyin-mix {
+        letter-spacing: 0.02em;
+        line-height: 1.8;
+      }
+      .preview-placeholder {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--sub);
+        font-size: 14px;
+      }
+
+      /* ── 按钮 ── */
       .btn-row {
         display: flex;
         gap: 10px;
@@ -280,66 +325,12 @@
         background: rgba(255, 59, 48, 0.04);
       }
 
-      /* --- 隐藏的文件选择器 --- */
+      /* ── 隐藏文件输入 ── */
       #fileInput {
         display: none;
       }
 
-      /* --- 拼音预览区域 --- */
-      .preview-body {
-        width: 100%;
-        flex: 1;
-        min-height: 550px;
-        max-height: 550px;
-        overflow-y: auto;
-        overflow-x: hidden;
-        background: var(--bg);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        padding: 20px;
-        color: var(--ink);
-      }
-
-      .pinyin-content {
-        line-height: 3.2;
-        font-size: 18px;
-        word-break: break-word;
-        white-space: pre-wrap;
-      }
-      .pinyin-content ruby {
-        font-size: 18px;
-        margin: 0 1px;
-        ruby-align: center;
-      }
-      .pinyin-content rt {
-        font-size: 12px;
-        color: var(--accent);
-        line-height: 1;
-        font-family: ui-monospace, Monaco, "Andale Mono", monospace;
-        letter-spacing: 0.02em;
-        user-select: none;
-      }
-      .pinyin-text-only {
-        font-family: ui-monospace, Monaco, monospace;
-        letter-spacing: 0.03em;
-        color: var(--accent);
-        line-height: 1.8;
-      }
-      .pinyin-mix {
-        letter-spacing: 0.02em;
-        line-height: 1.8;
-      }
-
-      .preview-placeholder {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--sub);
-        font-size: 14px;
-      }
-
-      /* --- 自定义滚动条 --- */
+      /* ── 滚动条 ── */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -349,7 +340,7 @@
         border-radius: 3px;
       }
 
-      /* --- Toast 轻提示 --- */
+      /* ── Toast ── */
       .toast {
         position: fixed;
         top: max(18px, env(safe-area-inset-top));
@@ -375,14 +366,13 @@
         transform: translateX(-50%) translateY(0);
       }
 
-      /* --- 桌面端响应式（≥860px） --- */
+      /* ── 桌面端双栏 ── */
       @media (min-width: 860px) {
         .app {
           flex-direction: column;
           gap: 18px;
           padding-bottom: 40px;
         }
-
         .panel-config {
           flex-direction: row;
           align-items: stretch;
@@ -391,7 +381,6 @@
         .panel-config .card {
           flex: 1;
         }
-
         .panel-content {
           display: flex;
           flex-direction: row;
@@ -403,15 +392,12 @@
           flex: 1 1 50%;
           min-width: 0;
         }
-
         .card {
           min-height: 0;
         }
-
         textarea {
           min-height: 550px;
         }
-
         .preview-body {
           flex: 1;
           height: auto;
@@ -419,21 +405,28 @@
           overflow-y: auto;
         }
       }
+
+      /* ── 减少动效 ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
   <body>
-    <!-- Toast 提示容器 -->
     <div class="toast" id="toast">已复制到剪贴板</div>
 
-    <!-- 顶部标题 -->
     <div class="topbar">
       <h1>📝 汉字转拼音</h1>
       <p>纯本地安全处理 · 支持多种排版模式与一键导出</p>
     </div>
 
-    <!-- 主应用区域 -->
     <div class="app">
-      <!-- 配置面板：展示模式 + 声调样式 -->
       <div class="panel-config">
         <div class="card" style="flex: 1">
           <div class="opt-group">
@@ -463,7 +456,6 @@
         </div>
       </div>
 
-      <!-- 内容面板：左栏输入 + 右栏预览 -->
       <div class="panel-content">
         <div class="panel-left">
           <div class="card flex-card">
@@ -493,7 +485,7 @@
             <div class="section-header">
               <p class="section-title">实时拼音转换预览效果</p>
             </div>
-            <div class="preview-body" id="previewBody">
+            <div class="preview-body">
               <div class="pinyin-content" id="pinyinContent"></div>
             </div>
             <div class="btn-row">
@@ -510,13 +502,13 @@
     </div>
 
     <script>
-      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
+      // ── 关闭历史滚动恢复 ──
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
 
       (function () {
-        /* --- DOM 元素引用 --- */
+        // ── DOM 引用 ──
         const zhInput = document.getElementById("zhInput");
         const pinyinContent = document.getElementById("pinyinContent");
         const metaText = document.getElementById("metaText");
@@ -528,11 +520,11 @@
         const exportHTMLBtn = document.getElementById("exportHTMLBtn");
         const toast = document.getElementById("toast");
 
-        /* --- 状态变量：当前选中的模式和声调类型 --- */
+        // ── 状态变量 ──
         let currentMode = "ruby";
         let currentTone = "symbol";
 
-        /* --- Toast 轻提示逻辑 --- */
+        // ── 通用提示 ──
         let toastTimer = null;
         function showToast(msg) {
           toast.textContent = msg;
@@ -543,7 +535,7 @@
           }, 1600);
         }
 
-        /* --- 初始化切换按钮组（模式/声调）--- */
+        // ── 初始化切换按钮组 ──
         function initToggleButtons(containerId, callback) {
           const container = document.getElementById(containerId);
           const buttons = container.querySelectorAll(".btn-tab");
@@ -565,7 +557,7 @@
           handleConvert();
         });
 
-        /* --- 生成包含汉字及拼音的数据数组（用于 ruby / mix 模式） --- */
+        // ── 生成汉字及拼音数据 ──
         function generatePinyinData(text, toneType) {
           const result = pinyinPro.pinyin(text, {
             toneType: toneType,
@@ -579,7 +571,7 @@
           }));
         }
 
-        /* --- 核心转换函数：根据当前模式/声调渲染预览 --- */
+        // ── 核心转换 ──
         function handleConvert() {
           const text = zhInput.value;
           if (!text.trim()) {
@@ -593,7 +585,6 @@
           let resultHTML = "";
 
           if (currentMode === "pure") {
-            // 纯拼音模式：直接使用 pinyin-pro 的连续输出
             const py = pinyinPro.pinyin(text, {
               toneType: toneType,
               nonZh: "consecutive",
@@ -602,7 +593,6 @@
           } else {
             const pinyinData = generatePinyinData(text, toneType);
             if (currentMode === "mix") {
-              // 混合模式：汉字(拼音)
               const htmlArray = pinyinData.map((item) => {
                 if (item.isChinese) {
                   return `${item.char}(${item.pinyin})`;
@@ -611,7 +601,6 @@
               });
               resultHTML = `<div class="pinyin-mix">${htmlArray.join("")}</div>`;
             } else {
-              // ruby 模式：拼音在汉字上方（使用 <ruby> 标签）
               const htmlArray = pinyinData.map((item) => {
                 if (item.isChinese) {
                   return `<ruby>${item.char}<rt>${item.pinyin}</rt></ruby>`;
@@ -619,7 +608,6 @@
                 if (item.char === "\n") {
                   return "<br>\n";
                 }
-                // 对非汉字字符进行转义，防止 XSS
                 return `<span>${item.char.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</span>`;
               });
               resultHTML = htmlArray.join("");
@@ -628,7 +616,7 @@
           pinyinContent.innerHTML = resultHTML;
         }
 
-        /* --- 文件导入处理（支持 .txt 拖拽或按钮选择） --- */
+        // ── 文件读取 ──
         function handleFile(file) {
           if (!file) return;
           const reader = new FileReader();
@@ -640,7 +628,7 @@
           reader.readAsText(file);
         }
 
-        /* --- 事件绑定：输入变化、导入、清空、拖拽 --- */
+        // ── 事件绑定：输入与导入 ──
         zhInput.addEventListener("input", handleConvert);
         importBtn.addEventListener("click", () => fileInput.click());
         fileInput.addEventListener("change", (e) =>
@@ -659,7 +647,7 @@
           }
         });
 
-        /* --- 导出工具：生成带 BOM 的 UTF-8 文件并下载 --- */
+        // ── 通用下载 ──
         function downloadFile(content, filename, contentType) {
           const a = document.createElement("a");
           const file = new Blob([new Uint8Array([0xef, 0xbb, 0xbf]), content], {
@@ -671,7 +659,7 @@
           URL.revokeObjectURL(a.href);
         }
 
-        /* --- 导出 .txt 纯文本 --- */
+        // ── 导出 .txt 纯文本 ──
         exportTXTBtn.addEventListener("click", () => {
           const rawText = zhInput.value;
           if (!rawText.trim()) {
@@ -693,7 +681,6 @@
               )
               .join("");
           } else {
-            // ruby 模式导出为两行格式：拼音行 + 原字行
             const lines = rawText.split("\n");
             const formattedLines = lines.map((line) => {
               if (!line.trim()) return "";
@@ -714,7 +701,7 @@
           showToast("TXT 文本导出成功");
         });
 
-        /* --- 导出 .html 精美网页（保留预览样式） --- */
+        // ── 导出 .html 精美网页 ──
         exportHTMLBtn.addEventListener("click", () => {
           if (!zhInput.value.trim()) {
             showToast("内容为空，无法导出");
@@ -798,7 +785,7 @@
           showToast("HTML 精美网页导出成功");
         });
 
-        /* --- 初次加载时自动转换（已有示例文本） --- */
+        // ── 页面加载时初始化渲染 ──
         handleConvert();
       })();
     </script>
@@ -873,12 +860,18 @@
         });
 
         document.addEventListener("keydown", function (e) {
-          if (
-            (e.ctrlKey || e.metaKey) &&
-            ["+", "-", "=", "0"].includes(e.key)
-          ) {
-            e.preventDefault();
-            return false;
+          var key = (e.key || "").toLowerCase();
+
+          if (e.ctrlKey || e.metaKey) {
+            if (key === "s") {
+              e.preventDefault();
+              return false;
+            }
+
+            if (["+", "-", "=", "0"].includes(e.key)) {
+              e.preventDefault();
+              return false;
+            }
           }
         });
 

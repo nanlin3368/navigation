@@ -42,13 +42,6 @@
     "category": "视觉灵感"
   },
   {
-    "title": "2DWallpapers",
-    "icon": "2DWallpapers_icon.webp",
-    "url": "https://www.2dwallpapers.com",
-    "description": "二次元高清壁纸",
-    "category": "视觉灵感"
-  },
-  {
     "title": "Foodiesfeed",
     "icon": "Foodiesfeed_icon.webp",
     "url": "https://www.foodiesfeed.com/zh",
@@ -147,13 +140,6 @@
     "category": "视觉灵感"
   },
   {
-    "title": "壁纸汇",
-    "icon": "壁纸汇_icon.webp",
-    "url": "https://www.bizhihui.com",
-    "description": "高清壁纸资源平台",
-    "category": "视觉灵感"
-  },
-  {
     "title": "MeiGen",
     "icon": "MeiGen_icon.webp",
     "url": "https://www.meigen.ai",
@@ -165,6 +151,13 @@
     "icon": "GPT-Image2_icon.webp",
     "url": "https://gpt-image2.canghe.ai",
     "description": "AI生成图像画廊",
+    "category": "视觉灵感"
+  },
+  {
+    "title": "壁纸汇",
+    "icon": "壁纸汇_icon.webp",
+    "url": "https://www.bizhihui.com",
+    "description": "高清4k/8k壁纸资源",
     "category": "视觉灵感"
   },
   {

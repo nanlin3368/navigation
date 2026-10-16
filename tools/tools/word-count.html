@@ -13,15 +13,15 @@
     />
     <link
       rel="apple-touch-icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
     />
     <link
       rel="icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
-      type="image/svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+      type="image/svg+xml"
     />
     <style>
-      /* --- 全局变量与设计令牌 --- */
+      /* ── 设计令牌 ── */
       :root {
         --bg: #f5f5f7;
         --card: #ffffff;
@@ -31,12 +31,11 @@
         --accent-press: #0059b3;
         --line: rgba(0, 0, 0, 0.08);
         --red: #ff3b30;
-        --green: #34c759;
         --radius: 18px;
         --radius-sm: 12px;
       }
 
-      /* --- 重置 & 基础排版 --- */
+      /* ── 基础重置 ── */
       * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
@@ -58,12 +57,10 @@
         flex-direction: column;
       }
 
-      /* --- 顶部导航栏 --- */
+      /* ── 顶栏 ── */
       .topbar {
-        padding: env(safe-area-inset-top, 0) 0 0 0;
         text-align: center;
-        padding-top: max(28px, env(safe-area-inset-top));
-        padding-bottom: 18px;
+        padding: max(28px, env(safe-area-inset-top)) 0 18px;
         flex: 0 0 auto;
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
@@ -79,7 +76,17 @@
         color: var(--sub);
       }
 
-      /* --- 弹性入场动画 --- */
+      /* ── 主容器与入场动画 ── */
+      .app {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 12px calc(30px + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -90,19 +97,6 @@
           transform: translateY(0) scale(1);
         }
       }
-
-      /* --- 应用主容器 --- */
-      .app {
-        flex: 1 1 auto;
-        width: 100%;
-        max-width: 1800px;
-        margin: 0 auto;
-        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-
       .panel-left {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
       }
@@ -110,24 +104,7 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 桌面端双栏响应式 --- */
-      @media (min-width: 860px) {
-        .app {
-          flex-direction: row;
-          align-items: stretch;
-          padding-bottom: 45px;
-        }
-        .panel-left,
-        .panel-right {
-          flex: 1 1 50%;
-          min-width: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-        }
-      }
-
-      /* --- 卡片组件 --- */
+      /* ── 卡片与面板 ── */
       .card {
         background: var(--card);
         border-radius: var(--radius);
@@ -140,6 +117,7 @@
         flex-direction: column;
       }
 
+      /* ── 区块标题 ── */
       .section-header {
         display: flex;
         align-items: center;
@@ -156,7 +134,7 @@
         flex: 1;
       }
 
-      /* --- 输入框控制 --- */
+      /* ── 文本输入区 ── */
       .text-area-wrapper {
         width: 100%;
         flex: 1;
@@ -186,7 +164,7 @@
         background: #ffffff;
       }
 
-      /* --- 数据高亮看板（顶部概览） --- */
+      /* ── 概览数据看板 ── */
       .overview-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -214,7 +192,7 @@
         font-family: ui-monospace, SFMono-Regular, monospace;
       }
 
-      /* --- 信息列表容器 --- */
+      /* ── 详细数据列表 ── */
       .info-container {
         display: flex;
         flex-direction: column;
@@ -264,7 +242,7 @@
         font-family: ui-monospace, SFMono-Regular, monospace;
       }
 
-      /* --- 按钮操作栏 --- */
+      /* ── 按钮 ── */
       .btn-row {
         display: flex;
         gap: 10px;
@@ -312,11 +290,12 @@
         border: 1px solid var(--line);
       }
 
+      /* ── 隐藏文件输入 ── */
       #fileInput {
         display: none;
       }
 
-      /* --- 滚动条美化 --- */
+      /* ── 滚动条 ── */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -326,7 +305,7 @@
         border-radius: 3px;
       }
 
-      /* --- Toast 轻提示 --- */
+      /* ── Toast ── */
       .toast {
         position: fixed;
         top: max(18px, env(safe-area-inset-top));
@@ -350,6 +329,34 @@
       .toast.show {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
+      }
+
+      /* ── 桌面端双栏 ── */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: stretch;
+          padding-bottom: 45px;
+        }
+        .panel-left,
+        .panel-right {
+          flex: 1 1 50%;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+      }
+
+      /* ── 减少动效 ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
     </style>
   </head>
@@ -402,7 +409,7 @@
               <span class="stat-value" id="totalChars">0</span>
             </div>
             <div class="stat-box">
-              <span class="stat-label">总字数 (中汉字+英文单词)</span>
+              <span class="stat-label">总字数 (汉字+英文单词)</span>
               <span class="stat-value" id="totalWords">0</span>
             </div>
           </div>
@@ -481,12 +488,13 @@
     </div>
 
     <script>
-      // 禁用历史滚动恢复
+      // ── 关闭历史滚动恢复 ──
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
 
       (function () {
+        // ── DOM 引用 ──
         const textInput = document.getElementById("textInput");
         const fileInput = document.getElementById("fileInput");
         const importBtn = document.getElementById("importBtn");
@@ -495,7 +503,6 @@
         const copyResultBtn = document.getElementById("copyResultBtn");
         const toast = document.getElementById("toast");
 
-        // DOM 元素绑定
         const doms = {
           totalChars: document.getElementById("totalChars"),
           totalWords: document.getElementById("totalWords"),
@@ -512,7 +519,7 @@
           speakTime: document.getElementById("speakTime"),
         };
 
-        /* --- Toast 轻提示 --- */
+        // ── 通用提示 ──
         let toastTimer = null;
         function showToast(msg) {
           toast.textContent = msg || "操作成功";
@@ -523,7 +530,7 @@
           }, 1600);
         }
 
-        /* --- 核心字数统计算法 --- */
+        // ── 核心字数统计算法 ──
         function analyzeText(text) {
           if (!text) {
             return {
@@ -545,45 +552,24 @@
 
           const totalChars = text.length;
           const charsNoSpace = text.replace(/\s/g, "").length;
-
-          // 匹配中文字符（CJK统一表意文字）
-          const cnMatches = text.match(/[\u4e00-\u9fa5]/g) || [];
-          const cnChars = cnMatches.length;
-
-          // 匹配英文字母
+          const cnChars = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
           const enLetters = (text.match(/[a-zA-Z]/g) || []).length;
-
-          // 匹配数字
           const digitsCount = (text.match(/[0-9]/g) || []).length;
-
-          // 匹配英文单词
-          const enWordsMatches = text.match(/[a-zA-Z0-9]+('[a-zA-Z]+)?/g) || [];
-          const enWords = enWordsMatches.length;
-
-          // 中文标点
+          const enWords = (text.match(/[a-zA-Z0-9]+('[a-zA-Z]+)?/g) || [])
+            .length;
           const cnPunct = (
             text.match(
               /[\u3001\u3002\uff0c\uff1a\uff1b\uff1f\uff01\u201c\u201d\u2018\u2019\u3030\u300a\u300b\u300e\u300f\u3010\u3011\u2026\u2014\uff08\uff09]/g,
             ) || []
           ).length;
-
-          // 英文标点
           const enPunct = (
             text.match(/[!\"#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]/g) || []
           ).length;
-
-          // 计算总字数：汉字数 + 英文单词数
           const totalWords = cnChars + enWords;
-
-          // 计算段落数（排除全空白段）
           const paragraphs = text
             .split(/\n+/)
             .filter((p) => p.trim().length > 0).length;
-
-          // 行数
           const lines = text ? text.split("\n").length : 0;
-
-          // 阅读与朗读预估
           const readMinutes = Math.max(1, Math.ceil(totalWords / 400));
           const speakMinutes = Math.max(1, Math.ceil(totalWords / 250));
 
@@ -604,11 +590,9 @@
           };
         }
 
-        // 更新 UI
+        // ── UI 更新 ──
         function updateUI() {
-          const val = textInput.value;
-          const res = analyzeText(val);
-
+          const res = analyzeText(textInput.value);
           doms.totalChars.textContent = res.totalChars.toLocaleString();
           doms.totalWords.textContent = res.totalWords.toLocaleString();
           doms.charsNoSpace.textContent = res.charsNoSpace.toLocaleString();
@@ -624,10 +608,10 @@
           doms.speakTime.textContent = res.speakTime;
         }
 
-        // 事件监听：实时打字分析
+        // ── 事件绑定：实时分析 ──
         textInput.addEventListener("input", updateUI);
 
-        // 导入文件逻辑
+        // ── 事件绑定：导入文件 ──
         importBtn.addEventListener("click", () => fileInput.click());
 
         fileInput.addEventListener("change", (e) => {
@@ -639,7 +623,7 @@
             textInput.value = event.target.result;
             updateUI();
             showToast(`已成功导入：${file.name}`);
-            fileInput.value = ""; // 重置 input 允许再次选择同名文件
+            fileInput.value = "";
           };
           reader.onerror = function () {
             showToast("文件读取失败，请确保选择的是可读文本文件");
@@ -647,7 +631,7 @@
           reader.readAsText(file, "UTF-8");
         });
 
-        // 清空
+        // ── 事件绑定：清空 / 复制 ──
         clearBtn.addEventListener("click", () => {
           if (!textInput.value) {
             showToast("暂无内容可清空");
@@ -658,7 +642,6 @@
           showToast("已清空内容");
         });
 
-        // 复制输入框文本
         copyBtn.addEventListener("click", () => {
           if (!textInput.value) {
             showToast("暂无文本可复制");
@@ -670,14 +653,13 @@
             .catch(() => showToast("复制失败"));
         });
 
-        // 复制分析数据 summary
+        // ── 事件绑定：复制统计报告 ──
         copyResultBtn.addEventListener("click", () => {
-          const val = textInput.value;
-          if (!val) {
+          if (!textInput.value) {
             showToast("暂无统计数据");
             return;
           }
-          const res = analyzeText(val);
+          const res = analyzeText(textInput.value);
           const summary = `【文本统计报告】
 - 总字符数 (含空格): ${res.totalChars}
 - 总字数 (中+英词): ${res.totalWords}
@@ -766,12 +748,18 @@
         });
 
         document.addEventListener("keydown", function (e) {
-          if (
-            (e.ctrlKey || e.metaKey) &&
-            ["+", "-", "=", "0"].includes(e.key)
-          ) {
-            e.preventDefault();
-            return false;
+          var key = (e.key || "").toLowerCase();
+
+          if (e.ctrlKey || e.metaKey) {
+            if (key === "s") {
+              e.preventDefault();
+              return false;
+            }
+
+            if (["+", "-", "=", "0"].includes(e.key)) {
+              e.preventDefault();
+              return false;
+            }
           }
         });
 

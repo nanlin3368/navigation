@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页 -->
   <url>
     <loc>https://nanlin3368.github.io/navigation/</loc>
     <priority>1.0</priority>
   </url>
+
+  <!-- 开发者工具 -->
   <url>
     <loc>https://nanlin3368.github.io/navigation/tools/tools/code-diff.html</loc>
     <priority>0.6</priority>
@@ -28,6 +31,12 @@
     <loc>https://nanlin3368.github.io/navigation/tools/tools/git-cheat-sheet.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://nanlin3368.github.io/navigation/tools/tools/svg-editor.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 图片与多媒体 -->
   <url>
     <loc>https://nanlin3368.github.io/navigation/tools/tools/image-converter.html</loc>
     <priority>0.6</priority>
@@ -56,10 +65,8 @@
     <loc>https://nanlin3368.github.io/navigation/tools/tools/favicon-generator.html</loc>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://nanlin3368.github.io/navigation/tools/tools/exif-viewer.html</loc>
-    <priority>0.6</priority>
-  </url>
+
+  <!-- 文本与效率 -->
   <url>
     <loc>https://nanlin3368.github.io/navigation/tools/tools/markdown-editor.html</loc>
     <priority>0.6</priority>
@@ -92,6 +99,8 @@
     <loc>https://nanlin3368.github.io/navigation/tools/tools/special-characters.html</loc>
     <priority>0.6</priority>
   </url>
+
+  <!-- 日常生活/趣味 -->
   <url>
     <loc>https://nanlin3368.github.io/navigation/tools/tools/password-generator.html</loc>
     <priority>0.6</priority>

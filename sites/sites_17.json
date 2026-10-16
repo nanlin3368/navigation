@@ -21,6 +21,13 @@
     "category": "知识科普"
   },
   {
+    "title": "果壳网",
+    "icon": "果壳网_icon.webp",
+    "url": "https://m.guokr.com",
+    "description": "开放多元科技兴趣文化",
+    "category": "知识科普"
+  },
+  {
     "title": "Just Laws",
     "icon": "Just_Laws_icon.webp",
     "url": "https://www.justlaws.cn",
@@ -39,6 +46,13 @@
     "icon": "大众科普网_icon.webp",
     "url": "https://www.dazhongkepu.cn",
     "description": "大众科学知识平台",
+    "category": "知识科普"
+  },
+  {
+    "title": "十万个为什么",
+    "icon": "十万个为什么_icon.webp",
+    "url": "https://10why.net",
+    "description": "百科知识问题及答案",
     "category": "知识科普"
   },
   {
@@ -70,17 +84,66 @@
     "category": "知识科普"
   },
   {
+    "title": "天文探索",
+    "icon": "天文探索_icon.webp",
+    "url": "https://tianwenlover.com",
+    "description": "天文科普探索宇宙奥秘",
+    "category": "知识科普"
+  },
+  {
+    "title": "千万像素看世界",
+    "icon": "千万像素看世界_icon.webp",
+    "url": "https://www.bigpixel.cn",
+    "description": "超高分辨率城市全景图",
+    "category": "知识科普"
+  },
+  {
     "title": "指尖上",
     "icon": "指尖上_icon.webp",
     "url": "https://www.zhijianshang.com",
-    "description": "全球目的地全景游览",
+    "description": "全球目的地全景图游览",
     "category": "知识科普"
   },
   {
     "title": "AirPano",
     "icon": "AirPano_icon.webp",
     "url": "https://airpano.org.cn",
-    "description": "全球全景影像探索",
+    "description": "全球景点航拍影像探索",
     "category": "知识科普"
+  },
+  {
+    "title": "地理知识",
+    "icon": "地理知识_icon.webp",
+    "url": "https://geoknow.cn",
+    "description": "地理知识三维图像演示",
+    "category": "知识科普"
+  },
+  {
+    "title": "地理视界",
+    "icon": "地理视界_icon.webp",
+    "url": "https://www.geographylens.com",
+    "description": "3D地理模型演示动画",
+    "category": "知识科普"
+  },
+  {
+    "title": "世界的形状",
+    "icon": "世界的形状_icon.webp",
+    "url": "https://shapeof.world",
+    "description": "200+款可视化模型知识",
+    "category": "知识科普"
+  },
+  {
+    "title": "ORBIT",
+    "icon": "ORBIT_icon.webp",
+    "url": "https://ryh842487118-bot.github.io/orbit",
+    "description": "3D宇宙星系探索体验",
+    "category": "科普知识"
+  },
+  {
+    "title": "七政",
+    "icon": "七政_icon.webp",
+    "url": "https://dipper.bunai.cc",
+    "description": "三维轨道与历象示意图",
+    "category": "科普知识"
   }
 ]

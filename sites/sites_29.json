@@ -2,7 +2,7 @@
   {
     "title": "Shizuku",
     "icon": "Shizuku_icon.webp",
-    "url": "https://shizuku.rikka.app/zh-hans",
+    "url": "https://github.com/RikkaApps/Shizuku",
     "description": "免Root应用系统授权",
     "category": "安卓专区"
   },
@@ -30,7 +30,7 @@
   {
     "title": "GKD",
     "icon": "GKD_icon.webp",
-    "url": "https://gkd.li",
+    "url": "https://github.com/gkd-kit/gkd",
     "description": "自定义屏幕点击跳过",
     "category": "安卓专区"
   },
@@ -93,7 +93,7 @@
   {
     "title": "Kazumi",
     "icon": "Kazumi_icon.webp",
-    "url": "https://kazumi.app",
+    "url": "https://github.com/Predidit/Kazumi",
     "description": "自定义规则番剧与观看",
     "category": "安卓专区"
   },
@@ -114,7 +114,7 @@
   {
     "title": "LocalSend",
     "icon": "LocalSend_icon.webp",
-    "url": "https://localsend.org/zh-CN",
+    "url": "https://github.com/localsend/localsend",
     "description": "跨平台局域网文件传输",
     "category": "安卓专区"
   },
@@ -205,7 +205,7 @@
   {
     "title": "LX Music",
     "icon": "LX_Music_icon.webp",
-    "url": "https://lxmusic.toside.cn",
+    "url": "https://github.com/lyswhut/lx-music-mobile",
     "description": "开源无广告音乐播放器",
     "category": "安卓专区"
   },
@@ -247,7 +247,7 @@
   {
     "title": "Animeko",
     "icon": "Animeko_icon.webp",
-    "url": "https://animeko.org",
+    "url": "https://github.com/open-ani/animeko",
     "description": "动漫追番与媒体播放",
     "category": "安卓专区"
   },
@@ -317,7 +317,7 @@
   {
     "title": "Operit AI",
     "icon": "Operit_AI_icon.webp",
-    "url": "https://operit.app",
+    "url": "https://github.com/AAswordman/Operit",
     "description": "智能化移动交互助手",
     "category": "安卓专区"
   },

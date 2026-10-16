@@ -138,5 +138,19 @@
     "url": "https://www.logoinspo.com/",
     "description": "精选真实和虚构标志",
     "category": "图标符号"
+  },
+  {
+    "title": "IconGallery",
+    "icon": "IconGallery_icon.webp",
+    "url": "https://glancers.github.io/IconGallery",
+    "description": "聚合28个主流图标库",
+    "category": "图标符号"
+  },
+  {
+    "title": "Tabler",
+    "icon": "Tabler_icon.webp",
+    "url": "https://tabler.io/icons",
+    "description": "开源免费界面设计图标",
+    "category": "图标符号"
   }
 ]

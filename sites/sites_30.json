@@ -10,7 +10,7 @@
     "title": "Temp Number",
     "icon": "Temp_Number_icon.webp",
     "url": "https://temp-number.org/zh",
-    "description": "在线接收短信验证",
+    "description": "接收临时短信验证码",
     "category": "实用扩展"
   },
   {
@@ -77,10 +77,10 @@
     "category": "实用扩展"
   },
   {
-    "title": "TGwiki",
-    "icon": "TGwiki_icon.webp",
-    "url": "https://wiki.tgnav.org",
-    "description": "电报使用全方位指南",
+    "title": "Apple 产品参数",
+    "icon": "Apple_产品参数_icon.webp",
+    "url": "https://hubweb.cn",
+    "description": "苹果全系设备规格对比",
     "category": "实用扩展"
   },
   {
@@ -112,17 +112,17 @@
     "category": "实用扩展"
   },
   {
-    "title": "ImgPeel",
-    "icon": "ImgPeel_icon.webp",
-    "url": "https://imgpeel.toolooz.com/zh-CN",
-    "description": "图片文字在线提取",
-    "category": "实用扩展"
-  },
-  {
     "title": "DevFile",
     "icon": "DevFile_icon.webp",
     "url": "https://devfile.cn",
     "description": "免费HTML网页托管",
+    "category": "实用扩展"
+  },
+  {
+    "title": "One IP",
+    "icon": "One_IP_icon.webp",
+    "url": "https://ip.huzhihui.com",
+    "description": "IP纯净检测与风险评级",
     "category": "实用扩展"
   },
   {
@@ -182,17 +182,17 @@
     "category": "实用扩展"
   },
   {
-    "title": "Apple 苹果产品参数中心",
-    "icon": "Apple_苹果产品参数中心_icon.webp",
-    "url": "https://hubweb.cn",
-    "description": "苹果全系设备规格对比",
+    "title": "Sweezy Cursors",
+    "icon": "Sweezy_Cursors_icon.webp",
+    "url": "https://sweezy-cursors.com",
+    "description": "个性光标自定义下载",
     "category": "实用扩展"
   },
   {
-    "title": "教辅百宝箱",
-    "icon": "教辅百宝箱_icon.webp",
-    "url": "https://edu.zmpai.com",
-    "description": "小学练字纸在线生成",
+    "title": "ImgPeel",
+    "icon": "ImgPeel_icon.webp",
+    "url": "https://imgpeel.toolooz.com/zh-CN",
+    "description": "图片文字在线提取",
     "category": "实用扩展"
   },
   {
@@ -217,17 +217,17 @@
     "category": "实用扩展"
   },
   {
+    "title": "SearchSharp",
+    "icon": "SearchSharp_icon.webp",
+    "url": "https://search-sharp.com",
+    "description": "全网流行缩写黑话叫法",
+    "category": "实用扩展"
+  },
+  {
     "title": "小故事铺",
     "icon": "小故事铺_icon.webp",
     "url": "https://storynook.cn",
     "description": "治愈系短篇故事阅读",
-    "category": "实用扩展"
-  },
-  {
-    "title": "Anitabi",
-    "icon": "Anitabi_icon.webp",
-    "url": "https://www.anitabi.cn/map",
-    "description": "二次元巡礼圣地地图",
     "category": "实用扩展"
   },
   {
@@ -238,17 +238,17 @@
     "category": "实用扩展"
   },
   {
-    "title": "SearchSharp",
-    "icon": "SearchSharp_icon.webp",
-    "url": "https://search-sharp.com",
-    "description": "全网流行缩写黑话叫法",
+    "title": "教辅百宝箱",
+    "icon": "教辅百宝箱_icon.webp",
+    "url": "https://edu.zmpai.com",
+    "description": "小学练字纸在线生成",
     "category": "实用扩展"
   },
   {
-    "title": "Sweezy Cursors",
-    "icon": "Sweezy_Cursors_icon.webp",
-    "url": "https://sweezy-cursors.com",
-    "description": "个性光标自定义下载",
+    "title": "Momotan",
+    "icon": "Momotan_icon.webp",
+    "url": "https://momotan.cc",
+    "description": "MD3风格极简起始页",
     "category": "实用扩展"
   },
   {
@@ -266,10 +266,10 @@
     "category": "实用扩展"
   },
   {
-    "title": "One IP",
-    "icon": "One_IP_icon.webp",
-    "url": "https://ip.huzhihui.com",
-    "description": "IP纯净检测与风险评级",
+    "title": "TGwiki",
+    "icon": "TGwiki_icon.webp",
+    "url": "https://wiki.tgnav.org",
+    "description": "电报使用全方位知识",
     "category": "实用扩展"
   },
   {

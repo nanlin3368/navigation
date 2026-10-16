@@ -1,16 +1,16 @@
 [
   {
-    "title": "王牌竞速数据站",
-    "icon": "王牌竞速数据站_icon.webp",
-    "url": "https://wnqs.github.io/acerace-station/main.html",
-    "description": "王牌竞速数据与资料",
-    "category": "休闲娱乐"
-  },
-  {
     "title": "王牌竞速情报站",
     "icon": "王牌竞速情报站_icon.webp",
     "url": "https://reca.seimu.cn/ace-racer/home",
     "description": "王牌竞速玩家情报资料",
+    "category": "休闲娱乐"
+  },
+  {
+    "title": "王牌竞速芯片计算",
+    "icon": "王牌竞速芯片计算_icon.webp",
+    "url": "https://www.aceracercalc.top",
+    "description": "大招能量精密计算器",
     "category": "休闲娱乐"
   },
   {
@@ -21,6 +21,13 @@
     "category": "休闲娱乐"
   },
   {
+    "title": "小游戏合集",
+    "icon": "小游戏合集_icon.webp",
+    "url": "https://game.teckbest.com",
+    "description": "41款免费在线小游戏",
+    "category": "休闲娱乐"
+  },
+  {
     "title": "乡土游戏馆",
     "icon": "乡土游戏馆_icon.webp",
     "url": "https://youxi.pomodiary.com",
@@ -28,10 +35,10 @@
     "category": "休闲娱乐"
   },
   {
-    "title": "小游戏合集",
-    "icon": "小游戏合集_icon.webp",
-    "url": "https://game.teckbest.com",
-    "description": "在线小游戏合集",
+    "title": "JoyPip",
+    "icon": "JoyPip_icon.webp",
+    "url": "https://joypip.com",
+    "description": "免费棋牌类休闲游戏",
     "category": "休闲娱乐"
   },
   {
@@ -41,6 +48,13 @@
     "description": "3D中国象棋对弈",
     "category": "休闲娱乐"
   },
+  {
+    "title": "中国象棋",
+    "icon": "中国象棋_icon.webp",
+    "url": "https://chinese-chess.gh.miniasp.com",
+    "description": "3D互动棋盘对战",
+    "category": "休闲娱乐"
+},
   {
     "title": "grubiks",
     "icon": "grubiks_icon.webp",
@@ -84,10 +98,17 @@
     "category": "休闲娱乐"
   },
   {
-    "title": "ORBIT",
-    "icon": "ORBIT_icon.webp",
-    "url": "https://ryh842487118-bot.github.io/orbit/",
-    "description": "沉浸式3D宇宙探索",
+    "title": "爱涂色",
+    "icon": "爱涂色_icon.webp",
+    "url": "https://aituse.cn",
+    "description": "趣味自由儿童涂色画板",
+    "category": "休闲娱乐"
+  },
+  {
+    "title": "186小游戏",
+    "icon": "186小游戏_icon.webp",
+    "url": "https://game186.com",
+    "description": "益智休闲游戏打开即玩",
     "category": "休闲娱乐"
   }
 ]

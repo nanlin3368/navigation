@@ -13,33 +13,33 @@
     />
     <link
       rel="apple-touch-icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
     />
     <link
       rel="icon"
-      href="https://nanlin3368.github.io/navigation/assets/picture/nav.svg"
-      type="image/svg"
+      href="https://nanlin3368.github.io/navigation/assets/picture/logo.svg"
+      type="image/svg+xml"
     />
     <style>
-      /* --- 全局变量与设计令牌 --- */
+      /* ── 设计令牌 ── */
       :root {
         --bg: #f5f5f7;
         --card: #ffffff;
         --ink: #1d1d1f;
         --sub: #86868b;
         --accent: #0071e3;
-        --accent-press: #0059b3;
         --line: rgba(0, 0, 0, 0.08);
         --radius: 18px;
         --radius-sm: 12px;
-        --code-bg: #282c34;
-        --code-fg: #61afef;
       }
 
-      /* --- 重置 & 基础排版 --- */
+      /* ── 基础重置 ── */
       * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        scrollbar-gutter: stable;
       }
       html,
       body {
@@ -58,12 +58,10 @@
         flex-direction: column;
       }
 
-      /* --- 顶部导航栏入场动画 --- */
+      /* ── 顶栏 ── */
       .topbar {
-        padding: env(safe-area-inset-top, 0) 0 0 0;
         text-align: center;
-        padding-top: max(28px, env(safe-area-inset-top));
-        padding-bottom: 18px;
+        padding: max(28px, env(safe-area-inset-top)) 0 18px;
         flex: 0 0 auto;
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
       }
@@ -79,19 +77,17 @@
         color: var(--sub);
       }
 
-      /* --- 主应用容器 --- */
+      /* ── 主容器与入场动画 ── */
       .app {
         flex: 1 1 auto;
         width: 100%;
         max-width: 1800px;
         margin: 0 auto;
-        padding: 0 20px calc(30px + env(safe-area-inset-bottom, 0px));
+        padding: 0 12px calc(30px + env(safe-area-inset-bottom, 0px));
         display: flex;
         flex-direction: column;
         gap: 18px;
       }
-
-      /* --- 弹性入场动画 --- */
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -102,8 +98,6 @@
           transform: translateY(0) scale(1);
         }
       }
-
-      /* 给左右面板加交错入场效果 */
       .panel-settings {
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
       }
@@ -111,44 +105,7 @@
         animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.22s both;
       }
 
-      /* --- 移动端分类标签布局：3列 --- */
-      .category-group {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-      }
-
-      /* --- Git 命令网格 --- */
-      .cmd-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 12px;
-        padding: 4px 0;
-      }
-
-      /* --- 移动端固定高度，卡片内滚动 --- */
-      .cmd-container-scroll {
-        max-height: 480px;
-        overflow-y: auto;
-        padding-right: 6px;
-      }
-
-      /* --- 数据看板统计行 --- */
-      .stat-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        color: var(--ink);
-      }
-      .stat-row .val {
-        font-weight: 700;
-        color: var(--accent);
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        font-size: 16px;
-      }
-
-      /* --- 卡片组件 --- */
+      /* ── 卡片与面板 ── */
       .card {
         background: var(--card);
         border-radius: var(--radius);
@@ -167,7 +124,7 @@
         gap: 14px;
       }
 
-      /* --- 区块标题 --- */
+      /* ── 区块标题 ── */
       .section-title {
         font-size: 13px;
         font-weight: 600;
@@ -177,7 +134,12 @@
         margin: 0 0 14px;
       }
 
-      /* --- 分类胶囊按钮 --- */
+      /* ── 分类按钮（移动端 3 列网格） ── */
+      .category-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
       .cat-btn {
         width: 100%;
         text-align: center;
@@ -203,7 +165,71 @@
         font-weight: 600;
       }
 
-      /* --- Git 命令卡片样式 --- */
+      /* ── 桌面端顶部胶囊分类条（默认隐藏） ── */
+      .category-bar {
+        display: none;
+        flex-wrap: nowrap;
+        gap: 8px;
+        overflow-x: auto;
+        margin: 0 0 16px;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .category-bar::-webkit-scrollbar {
+        display: none;
+      }
+      .category-bar .cat-btn {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+
+      /* ── 命令列表与分组 ── */
+      .cmd-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .cmd-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .group-title {
+        margin: 0 0 10px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: var(--sub);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .group-title::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 1px;
+        background: var(--line);
+      }
+      .group-count {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent);
+        background: rgba(0, 113, 227, 0.08);
+        padding: 2px 8px;
+        border-radius: 999px;
+      }
+
+      /* ── 命令卡片网格 ── */
+      .cmd-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 12px;
+        padding: 4px 0;
+      }
       .cmd-item {
         background: var(--bg);
         border-radius: var(--radius-sm);
@@ -239,64 +265,18 @@
         font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
         word-break: break-all;
       }
-
-      /* --- 桌面端左右双栏布局（≥860px） --- */
-      @media (min-width: 860px) {
-        .app {
-          flex-direction: row;
-          align-items: flex-start;
-          padding-bottom: 45px;
-        }
-        .panel-settings {
-          flex: 0 0 280px;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-        }
-
-        /* 分类卡片：固定高度内部滚动 */
-        .category-card {
-          height: 400px;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
-
-        .category-card .category-group {
-          display: flex;
-          flex-direction: column;
-          flex: 1 1 auto;
-          overflow-y: auto;
-          gap: 8px;
-          padding-right: 6px;
-        }
-
-        .category-card .cat-btn {
-          flex: 0 0 auto;
-          text-align: left;
-          padding: 12px 16px;
-          font-size: 14px;
-          line-height: 1.4;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        .panel-results {
-          flex: 1 1 auto;
-          min-width: 0;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .cmd-container-scroll {
-          height: 550px;
-          max-height: none;
-          overflow-y: auto;
-        }
+      .cmd-card {
+        flex: 1;
       }
 
-      /* --- 滚动条 --- */
+      /* ── 滚动容器 ── */
+      .cmd-container-scroll {
+        max-height: 480px;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
+
+      /* ── 滚动条 ── */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -306,7 +286,7 @@
         border-radius: 3px;
       }
 
-      /* --- Toast 轻提示 --- */
+      /* ── Toast ── */
       .toast {
         position: fixed;
         top: max(18px, env(safe-area-inset-top));
@@ -325,16 +305,55 @@
           opacity 0.25s ease,
           transform 0.25s ease;
         z-index: 100;
-        white-space: nowrap;
+        max-width: calc(100vw - 40px);
+        text-align: center;
+        word-break: break-word;
       }
       .toast.show {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
+
+      /* ── 桌面端双栏（≥860px） ── */
+      @media (min-width: 860px) {
+        .app {
+          flex-direction: row;
+          align-items: flex-start;
+          padding-bottom: 45px;
+        }
+        .panel-settings {
+          display: none;
+        }
+        .category-bar {
+          display: flex;
+        }
+        .panel-results {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+        .cmd-container-scroll {
+          height: 550px;
+          max-height: none;
+        }
+        .cmd-list {
+          gap: 28px;
+        }
+      }
+
+      /* ── 减少动效 ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="toast" id="toast">已复制到剪贴板</div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <div class="topbar">
       <h1>⚡ Git 命令速查</h1>
@@ -343,14 +362,6 @@
 
     <div class="app">
       <div class="panel-settings">
-        <div class="card">
-          <p class="section-title">数据看板</p>
-          <div class="stat-row">
-            <span>已收录命令总数</span>
-            <span class="val" id="totalCountVal">0 条</span>
-          </div>
-        </div>
-
         <div class="card category-card">
           <p class="section-title">功能分类</p>
           <div class="category-group" id="categorySelector"></div>
@@ -358,25 +369,26 @@
       </div>
 
       <div class="panel-results">
-        <div class="card" style="flex: 1">
+        <div class="card cmd-card">
           <p class="section-title" id="gridTitle">全部指令</p>
+
+          <div class="category-bar" id="categoryBar"></div>
+
           <div class="cmd-container-scroll">
-            <div class="cmd-grid" id="cmdGrid"></div>
+            <div class="cmd-list" id="cmdGrid"></div>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      // 禁用浏览器的历史滚动恢复，强制每次刷新都回到顶部
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
+      // ── 关闭历史滚动恢复 ──
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
       (function () {
         "use strict";
 
-        /* --- 纯本地内置 Git 常用命令数据库（按功能分组） --- */
+        // ── Git 命令数据库 ──
         const GIT_DATA = [
           {
             name: "配置与初始化",
@@ -527,28 +539,29 @@
           },
         ];
 
-        /* --- 状态变量：当前选中的分类索引 --- */
-        let activeIndex = 0;
+        const ALL_INDEX = -1;
+        const TOTAL = GIT_DATA.reduce((sum, c) => sum + c.commands.length, 0);
 
-        /* --- DOM 元素引用 --- */
+        // ── DOM 引用 ──
         const categorySelector = document.getElementById("categorySelector");
+        const categoryBar = document.getElementById("categoryBar");
         const cmdGrid = document.getElementById("cmdGrid");
         const gridTitle = document.getElementById("gridTitle");
-        const totalCountVal = document.getElementById("totalCountVal");
         const toast = document.getElementById("toast");
-        let toastTimer = null;
 
-        /* --- Toast 轻提示逻辑 --- */
+        // ── 状态：默认选中「全部」 ──
+        let activeIndex = ALL_INDEX;
+
+        // ── 提示条 ──
+        let toastTimer = null;
         function showToast(msg) {
-          toast.textContent = msg;
+          toast.textContent = msg || "操作成功";
           toast.classList.add("show");
           clearTimeout(toastTimer);
-          toastTimer = setTimeout(() => {
-            toast.classList.remove("show");
-          }, 1500);
+          toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
         }
 
-        /* --- 复制文本到剪贴板 --- */
+        // ── 剪贴板 ──
         function copyToClipboard(text) {
           if (navigator.clipboard && window.isSecureContext) {
             return navigator.clipboard.writeText(text);
@@ -564,73 +577,79 @@
           return Promise.resolve();
         }
 
-        /* --- 计算总条目数并更新统计 --- */
-        function calculateTotalNumbers() {
-          const total = GIT_DATA.reduce(
-            (sum, category) => sum + category.commands.length,
-            0,
-          );
-          totalCountVal.textContent = `${total} 条`;
+        // ── 单个命令卡片 HTML ──
+        function itemHTML(item) {
+          return `<div class="cmd-item" data-code="${item.code}" title="点击复制命令">
+                    <span class="cmd-name">${item.name}</span>
+                    <code class="cmd-code">${item.code}</code>
+                  </div>`;
         }
 
-        /* --- 渲染指定分类下的命令卡片 --- */
+        // ── 渲染命令卡片 ──
         function renderCommands(index) {
-          const category = GIT_DATA[index];
-          gridTitle.textContent = `${category.name} (${category.commands.length})`;
+          if (index === ALL_INDEX) {
+            gridTitle.textContent = `全部指令 (${TOTAL})`;
+            cmdGrid.innerHTML = GIT_DATA.map(
+              (cat) => `
+                <section class="cmd-group">
+                  <p class="group-title">
+                    ${cat.name}
+                    <span class="group-count">${cat.commands.length}</span>
+                  </p>
+                  <div class="cmd-grid">${cat.commands.map(itemHTML).join("")}</div>
+                </section>`,
+            ).join("");
+          } else {
+            const category = GIT_DATA[index];
+            gridTitle.textContent = `${category.name} (${category.commands.length})`;
+            cmdGrid.innerHTML = `<div class="cmd-grid">${category.commands
+              .map(itemHTML)
+              .join("")}</div>`;
+          }
 
-          cmdGrid.innerHTML = category.commands
-            .map(
-              (item) => `
-      <div class="cmd-item" data-code="${item.code}" title="点击复制命令">
-        <span class="cmd-name">${item.name}</span>
-        <code class="cmd-code">${item.code}</code>
-      </div>
-    `,
-            )
-            .join("");
-
-          // 绑定点击复制事件
           cmdGrid.querySelectorAll(".cmd-item").forEach((item) => {
             item.addEventListener("click", () => {
               const code = item.dataset.code;
-              copyToClipboard(code).then(() => {
-                showToast(`✅ 已复制: ${code}`);
-              });
+              copyToClipboard(code).then(() => showToast(`✅ 已复制: ${code}`));
             });
           });
         }
 
-        /* --- 渲染分类按钮 --- */
+        // ── 同步两侧按钮激活态 ──
+        function syncActive() {
+          document.querySelectorAll(".cat-btn").forEach((btn) => {
+            btn.classList.toggle(
+              "active",
+              parseInt(btn.dataset.index, 10) === activeIndex,
+            );
+          });
+        }
+
+        // ── 渲染分类 ──
         function renderCategories() {
-          categorySelector.innerHTML = GIT_DATA.map(
-            (cat, idx) => `
-      <button class="cat-btn${idx === activeIndex ? " active" : ""}" data-index="${idx}">${cat.name}</button>
-    `,
+          const allBtn = `<button class="cat-btn" data-index="${ALL_INDEX}">全部</button>`;
+          const base = GIT_DATA.map(
+            (cat, idx) =>
+              `<button class="cat-btn" data-index="${idx}">${cat.name}</button>`,
           ).join("");
 
-          categorySelector.querySelectorAll(".cat-btn").forEach((btn) => {
+          categorySelector.innerHTML = allBtn + base;
+          categoryBar.innerHTML = allBtn + base;
+
+          document.querySelectorAll(".cat-btn").forEach((btn) => {
             btn.addEventListener("click", () => {
-              const idx = parseInt(btn.dataset.index, 10);
-              activeIndex = idx;
-
-              categorySelector
-                .querySelectorAll(".cat-btn")
-                .forEach((b) => b.classList.remove("active"));
-              btn.classList.add("active");
-
+              activeIndex = parseInt(btn.dataset.index, 10);
+              syncActive();
               renderCommands(activeIndex);
             });
           });
+
+          syncActive();
         }
 
-        /* --- 初始化 --- */
-        function init() {
-          calculateTotalNumbers();
-          renderCategories();
-          renderCommands(activeIndex);
-        }
-
-        init();
+        // ── 初始化 ──
+        renderCategories();
+        renderCommands(activeIndex);
       })();
     </script>
 
@@ -704,12 +723,18 @@
         });
 
         document.addEventListener("keydown", function (e) {
-          if (
-            (e.ctrlKey || e.metaKey) &&
-            ["+", "-", "=", "0"].includes(e.key)
-          ) {
-            e.preventDefault();
-            return false;
+          var key = (e.key || "").toLowerCase();
+
+          if (e.ctrlKey || e.metaKey) {
+            if (key === "s") {
+              e.preventDefault();
+              return false;
+            }
+
+            if (["+", "-", "=", "0"].includes(e.key)) {
+              e.preventDefault();
+              return false;
+            }
           }
         });
 

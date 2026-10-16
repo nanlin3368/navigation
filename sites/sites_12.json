@@ -124,5 +124,19 @@
     "url": "https://svg.bz/zh",
     "description": "AI生成SVG与转换工具",
     "category": "图像处理"
+  },
+  {
+    "title": "Remove bg",
+    "icon": "Remove_bg_icon.webp",
+    "url": "https://www.remove.bg/zh",
+    "description": "免费智能图片去除背景",
+    "category": "图像处理"
+  },
+  {
+    "title": "证件照大师",
+    "icon": "证件照大师_icon.webp",
+    "url": "https://id-photo.cn",
+    "description": "抠图/换底色/裁剪/排版",
+    "category": "图像处理"
   }
 ]

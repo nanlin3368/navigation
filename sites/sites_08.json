@@ -124,5 +124,12 @@
     "url": "https://cocomaterial.com",
     "description": "开源手绘插图素材库",
     "category": "资源素材"
+  },
+  {
+    "title": "Smoji",
+    "icon": "Smoji_icon.webp",
+    "url": "https://smoji.zsh.moe",
+    "description": "表情包资源管理与导出",
+    "category": "资源素材"
   }
 ]

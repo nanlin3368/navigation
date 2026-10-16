@@ -11,10 +11,9 @@
     </title>
     <meta
       name="description"
-      content="星源导航是按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。"
+      content="简洁轻量的静态网址导航，收录各类优质网站，涵盖全球热门网站、国内常用平台、AI 工具、开发运维、设计素材、学习教育、知识阅读、影音娱乐、动漫漫画、应用官网等丰富分类，一站式直达实用网站，轻松发现好用、有趣、小众的宝藏资源。"
     />
-    <link rel="icon" href="assets/picture/nav.svg" type="image/svg" />
-    <link rel="apple-touch-icon" href="assets/picture/nav.svg" />
+    <link rel="icon" href="assets/picture/logo.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -22,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="按分类整理好的纯前端静态网址导航页，随机收录各类网站，发现好用、有趣或冷门的网络资源。"
+      content="简洁轻量的静态网址导航，收录各类优质网站，涵盖全球热门网站、国内常用平台、AI 工具、开发运维、设计素材、学习教育、知识阅读、影音娱乐、动漫漫画、应用官网等丰富分类，一站式直达实用网站，轻松发现好用、有趣、小众的宝藏资源。"
     />
     <meta property="og:site_name" content="星源导航" />
     <meta
@@ -34,7 +33,8 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "星源导航",
-        "url": "https://nanlin3368.github.io/navigation/"
+        "url": "https://nanlin3368.github.io/navigation/",
+        "description": "简洁轻量的静态网址导航，收录各类优质网站，涵盖全球热门网站、国内常用平台、AI 工具、开发运维、设计素材、学习教育、知识阅读、影音娱乐、动漫漫画、应用官网等丰富分类，一站式直达实用网站，轻松发现好用、有趣、小众的宝藏资源。"
       }
     </script>
     <script>
@@ -61,6 +61,17 @@
         -webkit-tap-highlight-color: transparent;
       }
 
+      html.no-transition,
+      html.no-transition * {
+        transition: none !important;
+      }
+
+      html,
+      body,
+      .main {
+        overscroll-behavior: none;
+      }
+
       :root {
         --color: #007ee6;
         --grad-color: #007ee6;
@@ -73,32 +84,25 @@
         --sk-shine: #f0f0f2;
         --tip-bg: #1c1c1e;
         --tip-text: #ffffff;
-        --count-bg: rgba(142, 148, 160, 0.16);
         --count-text: #6b7280;
+        --count-bg: rgba(142, 148, 160, 0.16);
         --shadow-sm:
-          0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
+          0 2px 5px rgba(0, 0, 0, 0.035), 0 1px 2px rgba(0, 0, 0, 0.025);
         --shadow-md:
-          0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.04);
+          0 3px 8px rgba(0, 0, 0, 0.045), 0 1px 3px rgba(0, 0, 0, 0.025);
         --shadow-lg:
-          0 10px 28px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.05);
-
-        /* ── emoji 背景色 ── */
+          0 5px 12px rgba(0, 0, 0, 0.055), 0 2px 5px rgba(0, 0, 0, 0.03);
         --icon-bg: rgba(0, 126, 230, 0.22);
-
-        /* ── 通用卡片边框高亮 ── */
         --hover-border: rgba(0, 126, 230, 1);
         --hover-glow: rgba(0, 126, 230, 0.15);
-        --hover-glow-soft: rgba(0, 126, 230, 0.06);
-
-        /* ── 入场动画参数 ── */
         --fade-y: 80px;
         --fade-t: 0.5s;
         --fade-e: cubic-bezier(0.35, 1, 1, 1);
       }
 
       body.dark {
-        --color: #60a5fa;
-        --grad-color: #60a5fa;
+        --color: #5ca5ff;
+        --grad-color: #5ca5ff;
         --bg: #0f1117;
         --panel: #181c24;
         --border: #2c3442;
@@ -108,41 +112,31 @@
         --sk-shine: #343e4d;
         --tip-bg: #e8edf4;
         --tip-text: #101317;
-        --count-bg: rgba(152, 162, 179, 0.16);
         --count-text: #98a2b3;
-        --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
-        --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4);
-        --shadow-lg: 0 16px 42px rgba(0, 0, 0, 0.5);
+        --count-bg: rgba(152, 162, 179, 0.16);
+        --shadow-sm:
+          0 2px 5px rgba(0, 0, 0, 0.13), 0 1px 2px rgba(0, 0, 0, 0.08);
+        --shadow-md:
+          0 3px 8px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-lg:
+          0 5px 12px rgba(0, 0, 0, 0.24), 0 2px 5px rgba(0, 0, 0, 0.13);
         --icon-bg: rgba(96, 165, 250, 0.32);
-        --hover-border: rgba(97, 166, 250, 1);
-        --hover-glow: rgba(96, 165, 250, 0.16);
-        --hover-glow-soft: rgba(96, 165, 250, 0.06);
+        --hover-border: rgba(92, 165, 255, 1);
+        --hover-glow: rgba(92, 165, 255, 0.15);
       }
 
       /* ════════════════════════════════════════════════════════
          §1  通用基础样式
          ════════════════════════════════════════════════════════ */
 
+      /* ── 页面基础 ── */
+      html {
+        scrollbar-gutter: stable;
+      }
       body {
         background: var(--bg);
         min-height: 100dvh;
-        margin: 0;
-        padding: 0;
-        scrollbar-gutter: stable;
       }
-
-      body.theme-transitioning,
-      body.theme-transitioning .theme-anim {
-        transition: none;
-      }
-
-      html,
-      body,
-      .main {
-        overscroll-behavior: none;
-      }
-
-      /* ── 外层容器 ── */
       .app {
         padding: 0;
         margin-top: 0;
@@ -163,13 +157,9 @@
           transform: translateY(0);
         }
       }
-
-      /* ── 先出现组：左侧导航栏 / 搜索栏 / 悬浮按钮（桌面&移动） ── */
       .anim-early {
         animation: fadeInUp var(--fade-t) var(--fade-e) 0.08s both;
       }
-
-      /* ── 后出现组：网格卡片 / 底部页脚 ── */
       .anim-late {
         animation: fadeInUp var(--fade-t) var(--fade-e) 0.45s both;
       }
@@ -184,23 +174,25 @@
         }
       }
 
-      /* ── 滚动条统一样式 ── */
-      .scroll {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
+      /* ── 全局滚动条 ── */
+      ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
       }
-      .scroll::-webkit-scrollbar {
-        width: 4px;
-      }
-      .scroll::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .scroll::-webkit-scrollbar-thumb {
+      ::-webkit-scrollbar-thumb {
         background: rgba(128, 128, 160, 0.35);
-        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(128, 128, 160, 0.55);
+      }
+      @supports not selector(::-webkit-scrollbar) {
+        * {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(128, 128, 160, 0.35) transparent;
+        }
       }
 
-      /* ── 标题与图标 ── */
+      /* ── 标题与图标容器 ── */
       .header h1 {
         color: var(--text);
         font-weight: 600;
@@ -221,10 +213,6 @@
         align-items: center;
         justify-content: center;
         background: var(--color);
-        box-shadow: 0 3px 10px var(--hover-glow);
-        transition:
-          background 0.3s ease,
-          box-shadow 0.3s ease;
       }
       .title-icon img {
         width: 24px;
@@ -239,7 +227,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0;
         position: relative;
         z-index: 100;
       }
@@ -248,11 +235,11 @@
       .sbar {
         width: 100%;
         max-width: 680px;
-        height: 56px;
+        height: 52px;
         display: flex;
         align-items: center;
         background: var(--panel);
-        border-radius: 13px;
+        border-radius: 12px;
         border: 1px solid var(--border);
         box-shadow: var(--shadow-sm);
         transition:
@@ -290,7 +277,6 @@
       .ebtn:hover {
         color: var(--color);
       }
-
       .ebtn .eicon {
         width: 30px;
         height: 30px;
@@ -310,10 +296,9 @@
       .ebtn .eicon svg {
         display: block;
       }
-
       .ebtn .caret {
         font-size: 9px;
-        opacity: 0.6;
+        opacity: 0.5;
         transition: transform 0.25s;
         margin-left: 1px;
       }
@@ -360,9 +345,7 @@
         transform: scale(0.6);
         transition:
           opacity 0.2s ease,
-          transform 0.2s ease,
-          box-shadow 0.2s;
-        box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+          transform 0.2s ease;
       }
       .clear.visible {
         opacity: 1;
@@ -370,12 +353,10 @@
         transform: scale(1);
       }
       .clear:hover {
-        box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
         transform: scale(1.08);
       }
       .clear:active {
         transform: scale(0.88);
-        box-shadow: 0 1px 4px rgba(0, 122, 255, 0.2);
       }
       .clear svg {
         width: 12px;
@@ -389,8 +370,8 @@
       /* ── 全网搜索提交按钮 ── */
       .submit {
         flex-shrink: 0;
-        width: 56px;
-        height: 44px;
+        width: 54px;
+        height: 42px;
         margin-right: 6px;
         border-radius: 10px;
         border: none;
@@ -400,7 +381,6 @@
         justify-content: center;
         transition: all 0.25s ease;
         background: var(--grad-color);
-        box-shadow: 0 2px 8px color-mix(in srgb, var(--color) 28%, transparent);
         opacity: 0;
         pointer-events: none;
         transform: scale(0.7);
@@ -412,7 +392,6 @@
       }
       .submit:hover {
         transform: scale(1.08);
-        box-shadow: 0 2px 8px color-mix(in srgb, var(--color) 28%, transparent);
       }
       .submit:active {
         transform: scale(0.94);
@@ -436,7 +415,7 @@
         width: 100%;
         max-width: 680px;
         background: var(--panel);
-        border-radius: 13px;
+        border-radius: 12px;
         box-shadow: var(--shadow-lg);
         border: 1px solid var(--border);
         padding: 14px;
@@ -447,7 +426,6 @@
       .emenu.open {
         display: block;
       }
-
       @keyframes dropdownIn {
         from {
           opacity: 0;
@@ -459,19 +437,24 @@
         }
       }
 
-      /* ── 站内搜索项 ── */
+      /* ── 站内引擎项 ── */
       .local-row.selected {
         background: var(--bg);
         border-radius: 10px;
       }
       .local-icon {
         background: var(--grad-color);
-        font-size: 18px;
         box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+      }
+      .local-icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        display: block;
       }
       .local-row.selected .eitem-label {
         color: var(--color);
-        font-weight: 700;
+        font-weight: 600;
       }
 
       /* ── 搜索引擎网格 ── */
@@ -508,7 +491,6 @@
       .eitem.selected {
         background: var(--bg);
       }
-
       .eitem-icon {
         width: 32px;
         height: 32px;
@@ -535,7 +517,7 @@
       }
       .eitem.selected .eitem-label {
         color: var(--color);
-        font-weight: 700;
+        font-weight: 600;
       }
 
       /* ── 搜索联想词列表样式 ── */
@@ -546,7 +528,7 @@
         right: 0;
         z-index: 180;
         background: var(--panel);
-        border-radius: 13px;
+        border-radius: 12px;
         box-shadow: var(--shadow-lg);
         border: 1px solid var(--border);
         overflow: hidden;
@@ -593,9 +575,16 @@
         border-left-color: var(--color);
       }
       .slist li .sug-icon {
-        font-size: 0.8rem;
-        opacity: 0.5;
         flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        opacity: 0.5;
+      }
+      .slist li .sug-icon img {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+        display: block;
       }
       .slist li .sug-text {
         flex: 1;
@@ -614,6 +603,10 @@
         text-align: center;
         color: var(--text-sub);
         font-size: 0.88rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
       }
       .sloading {
         padding: 16px 18px;
@@ -639,6 +632,17 @@
         }
       }
 
+      /* ── 空状态通用小图标 ── */
+      .empty-icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        display: inline-block;
+        vertical-align: -4px;
+        opacity: 0.5;
+        flex-shrink: 0;
+      }
+
       /* ── 分类按钮 ── */
       .cat-btn {
         background: transparent;
@@ -659,6 +663,8 @@
         text-align: left;
         width: 100%;
         box-shadow: none;
+        padding: 12px 14px;
+        font-size: 0.95rem;
       }
       .cat-btn:hover {
         transform: none;
@@ -667,7 +673,6 @@
       .cat-btn.active {
         background: var(--grad-color);
         color: white;
-        box-shadow: 0 2px 8px color-mix(in srgb, var(--color) 28%, transparent);
       }
       .cat-label {
         display: flex;
@@ -680,10 +685,12 @@
         white-space: nowrap;
         word-spacing: 0;
       }
-      .cat-emoji {
+      .cat-icon {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
         flex-shrink: 0;
-        line-height: 1;
-        font-size: 1.02em;
+        display: block;
       }
       .cat-text {
         overflow: hidden;
@@ -693,9 +700,9 @@
       }
       .cat-count {
         flex-shrink: 0;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1;
-        border-radius: 5px;
+        border-radius: 4px;
         background: var(--count-bg);
         color: var(--count-text);
         transition: all 0.3s ease;
@@ -703,6 +710,8 @@
         text-align: center;
         display: inline-block;
         margin-left: 6px;
+        font-size: 0.72rem;
+        padding: 4px 6.5px 4px;
       }
       .cat-btn.active .cat-count {
         background: rgba(255, 255, 255, 0.25);
@@ -717,7 +726,7 @@
       }
       .card {
         background: var(--panel);
-        border-radius: 16px;
+        border-radius: 14px;
         padding: 24px 26px 20px;
         box-shadow: var(--shadow-md);
         border: 1px solid var(--border);
@@ -729,11 +738,8 @@
       .card:hover {
         transform: translateY(-5px);
         border-color: var(--hover-border);
-        box-shadow:
-          0 0 0 1px var(--hover-border),
-          0 6px 16px var(--hover-glow);
+        box-shadow: 0 0 0 1px var(--hover-border);
       }
-
       .card-icon {
         width: 52px;
         height: 52px;
@@ -741,9 +747,8 @@
         display: block;
         border-radius: 12px;
         object-fit: cover;
-        filter: drop-shadow(0 4px 8px rgba(0, 122, 255, 0.15));
+        filter: drop-shadow(0 2px 6px rgba(0, 122, 255, 0.15));
       }
-
       .card-icon-sk {
         width: 52px;
         height: 52px;
@@ -760,7 +765,6 @@
         animation: skeletonShimmer 1.6s ease-in-out infinite;
         flex-shrink: 0;
       }
-
       .card-title {
         font-size: 1.2rem;
         font-weight: 600;
@@ -793,12 +797,16 @@
         height: 46px;
         border-radius: 10px;
         background: var(--icon-bg);
-        color: var(--icon-text);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.6rem;
         flex-shrink: 0;
+      }
+      .section-icon img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        display: block;
       }
       .section-info {
         display: flex;
@@ -807,7 +815,7 @@
       }
       .section-name {
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--text);
       }
       .section-desc {
@@ -823,7 +831,7 @@
         font-size: 0.9rem;
         padding: 20px 24px;
         background: var(--panel);
-        border-radius: 15px;
+        border-radius: 14px;
         border: 1px solid var(--border);
         box-shadow: var(--shadow-sm);
       }
@@ -832,58 +840,14 @@
         font-weight: 600;
       }
 
-      /* ── 底部到达发光条 ── */
-      #scrollBottomGlow {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        pointer-events: none;
-        z-index: 9999;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          color-mix(in srgb, var(--color) 70%, transparent) 20%,
-          color-mix(in srgb, var(--color) 95%, transparent) 50%,
-          color-mix(in srgb, var(--color) 70%, transparent) 80%,
-          transparent 100%
-        );
-        opacity: 0;
-        transform: scaleX(0.55);
-        transform-origin: center;
-        box-shadow: none;
-        transition:
-          opacity 0.18s ease,
-          transform 0.18s ease,
-          box-shadow 0.18s ease;
-      }
-      #scrollBottomGlow.active {
-        opacity: 1;
-        transform: scaleX(1);
-        box-shadow:
-          0 0 18px 6px color-mix(in srgb, var(--color) 55%, transparent),
-          0 0 60px 20px color-mix(in srgb, var(--color) 20%, transparent),
-          0 -8px 36px 0 color-mix(in srgb, var(--color) 16%, transparent);
-      }
-      #scrollBottomGlow.fade-out {
-        opacity: 0;
-        transform: scaleX(1);
-        box-shadow: none;
-        transition:
-          opacity 0.5s ease,
-          transform 0.5s ease,
-          box-shadow 0.5s ease;
-      }
-
       /* ════════════════════════════════════════════════════════
-         §2  通用浮层组件（回到顶部、菜单、FAB组、遮罩层、模态框、Toast）
+         §2  通用浮层组件
          ════════════════════════════════════════════════════════ */
 
       /* ── 回到顶部按钮 ── */
       #backToTop {
         position: fixed;
-        right: 50px;
+        right: 42px;
         width: 52px;
         height: 52px;
         border-radius: 12px;
@@ -912,7 +876,7 @@
       }
       #backToTop:hover {
         box-shadow: var(--shadow-lg);
-        transform: translateY(-3px) scale(1.07);
+        transform: translateY(-3px) scale(1.05);
       }
       #backToTop:active {
         box-shadow: var(--shadow-sm);
@@ -928,7 +892,19 @@
         fill: none;
       }
 
-      /* ── 菜单按钮 ── */
+      /* ── 功能菜单按钮组 ── */
+      #settingsFabGroup {
+        position: fixed;
+        right: 42px;
+        bottom: 95px;
+        z-index: 999;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* ── 功能菜单主按钮 ── */
       #settingsFab {
         width: 52px;
         height: 52px;
@@ -948,7 +924,7 @@
       }
       #settingsFab:hover {
         box-shadow: var(--shadow-lg);
-        transform: translateY(-3px) scale(1.07);
+        transform: translateY(-3px) scale(1.05);
       }
       #settingsFab:active {
         box-shadow: var(--shadow-sm);
@@ -960,22 +936,10 @@
         transform: rotate(45deg);
       }
       #settingsFab.open:hover {
-        transform: rotate(45deg) translateY(-3px) scale(1.07);
+        transform: rotate(45deg) translateY(-3px) scale(1.05);
       }
 
-      /* ── 菜单 FAB 组 ── */
-      #settingsFabGroup {
-        position: fixed;
-        right: 50px;
-        bottom: 95px;
-        z-index: 999;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 18px;
-      }
-
-      /* ── FAB 子按钮通用样式 ── */
+      /* ── 子按钮通用样式 ── */
       .fab {
         width: 52px;
         height: 52px;
@@ -987,8 +951,6 @@
         justify-content: center;
         background: var(--panel);
         box-shadow: var(--shadow-md);
-        font-size: 22px;
-        line-height: 1;
         opacity: 0;
         visibility: hidden;
         transform: translateX(20px) scale(0.7);
@@ -1000,6 +962,13 @@
           border-color 0.25s ease;
         pointer-events: none;
       }
+      .fab img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        display: block;
+        pointer-events: none;
+      }
       .fab:hover {
         box-shadow: var(--shadow-lg);
         transform: translateY(-3px) scale(1.07);
@@ -1009,7 +978,7 @@
         transform: scale(0.94);
       }
 
-      /* 展开状态：所有子按钮统一出现，颜色由各自的 CSS 变量控制 */
+      /* ── FAB 展开状态、子按钮配色与定位 ── */
       #settingsFabGroup.expanded .fab {
         opacity: 1;
         visibility: visible;
@@ -1020,8 +989,6 @@
           0 0 12px 2px var(--fab-glow-soft),
           var(--shadow-md);
       }
-
-      /* 各子按钮专属颜色（仅需设置变量，样式复用） */
       #themeToggle {
         --fab-glow: #a855f7;
         --fab-glow-soft: rgba(168, 85, 247, 0.2);
@@ -1042,16 +1009,11 @@
         --fab-glow: #ec4899;
         --fab-glow-soft: rgba(236, 72, 153, 0.2);
       }
-
-      /* 给 FAB 所有子按钮开启相对定位，用于提示框 */
       #settingsFabGroup button {
         position: relative;
       }
-      #settingsFab {
-        position: relative;
-      }
 
-      /* ── 提示框（回到顶部 & 菜单主按钮） ── */
+      /* ── 提示框（回到顶部 & 功能菜单） ── */
       #backToTop::after,
       #settingsFab::after {
         content: attr(data-tooltip);
@@ -1091,7 +1053,7 @@
           visibility 0.2s ease;
       }
 
-      /* ── 提示框（菜单 FAB 所有子按钮） ── */
+      /* ── 提示框（功能菜单子按钮） ── */
       .fab::after {
         content: attr(data-tooltip);
         position: absolute;
@@ -1146,15 +1108,15 @@
       }
 
       /* ── 模态框打开时锁定背景滚动 ── */
-      body.modal-open {
-        overflow: hidden;
-      }
       html.modal-open {
         overflow: hidden;
         height: 100%;
       }
+      body.modal-open {
+        overflow: hidden;
+      }
 
-      /* ── 通用遮罩层（侧边栏 / 模态框） ── */
+      /* ── 遮罩层 ── */
       .overlay {
         position: fixed;
         inset: 0;
@@ -1177,11 +1139,12 @@
         visibility: visible;
       }
 
+      /* ── 通用模态框 ── */
       .panel {
         position: relative;
         background: var(--bg);
-        border-radius: 18px;
-        padding: 32px 28px 28px;
+        border-radius: 16px;
+        padding: 32px 24px 28px;
         width: min(94vw, 550px);
         max-height: 85dvh;
         overflow-y: auto;
@@ -1201,7 +1164,6 @@
       .overlay.open .panel {
         transform: scale(1) translateY(0);
       }
-
       .close {
         position: absolute;
         top: 14px;
@@ -1230,13 +1192,23 @@
         box-shadow: var(--shadow-sm);
         transform: scale(0.92);
       }
-
       .panel-title {
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--text);
         text-align: center;
         padding-right: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .panel-title img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        display: block;
+        flex-shrink: 0;
       }
       .panel-title.with-mb {
         margin-bottom: 16px;
@@ -1299,14 +1271,12 @@
         color: #fff;
         font-size: 13px;
         line-height: 1;
-        box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
         opacity: 0;
         pointer-events: none;
         transform: scale(0.6);
         transition:
           opacity 0.2s ease,
-          transform 0.2s ease,
-          box-shadow 0.2s;
+          transform 0.2s ease;
       }
       .toolbox-clear.visible {
         opacity: 1;
@@ -1314,13 +1284,11 @@
         transform: scale(1);
       }
       .toolbox-clear:hover {
-        box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
         transform: scale(1.1);
       }
       .toolbox-clear:active {
         transform: scale(0.88);
       }
-
       .toolbox-badge {
         flex-shrink: 0;
         display: flex;
@@ -1329,7 +1297,7 @@
         justify-content: center;
         min-width: 46px;
         height: 46px;
-        border-radius: 10px;
+        border-radius: 12px;
         background: var(--panel);
         border: 1px solid var(--border);
         box-shadow: var(--shadow-sm);
@@ -1340,7 +1308,7 @@
       }
       .badge-num {
         font-size: 1rem;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1;
         color: var(--color);
       }
@@ -1351,7 +1319,6 @@
         line-height: 1;
         white-space: nowrap;
       }
-
       .toolbox-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1379,9 +1346,7 @@
       .toolbox-item:hover {
         transform: translateY(-5px);
         border-color: var(--hover-border);
-        box-shadow:
-          0 0 0 1px var(--hover-border),
-          0 6px 16px var(--hover-glow);
+        box-shadow: 0 0 0 1px var(--hover-border);
       }
       .toolbox-item:active {
         box-shadow: var(--shadow-sm);
@@ -1398,11 +1363,12 @@
         text-overflow: ellipsis;
       }
       .item-arrow {
-        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
         color: var(--text-sub);
-        opacity: 0.5;
+        opacity: 1;
         flex-shrink: 0;
-        margin-left: 4px;
+        margin-left: 6px;
       }
       .toolbox-empty {
         grid-column: 1 / -1;
@@ -1410,6 +1376,10 @@
         color: var(--text-sub);
         font-size: 0.88rem;
         padding: 24px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
       }
       .group-header {
         grid-column: 1 / -1;
@@ -1424,13 +1394,19 @@
         margin-top: 0;
       }
       .group-icon {
-        font-size: 1rem;
-        line-height: 1;
         flex-shrink: 0;
+        display: flex;
+        align-items: center;
+      }
+      .group-icon img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        display: block;
       }
       .group-name {
         font-size: 0.95rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--text-sub);
         letter-spacing: 0.02em;
       }
@@ -1466,7 +1442,7 @@
       }
       .disclaimer-title {
         font-size: 0.95rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--text);
         margin-bottom: 4px;
       }
@@ -1477,7 +1453,7 @@
       }
       .disclaimer-text strong {
         color: var(--text);
-        font-weight: 700;
+        font-weight: 600;
       }
 
       /* ── 赞赏支持面板特有 ── */
@@ -1503,7 +1479,7 @@
         width: 100%;
         max-width: 360px;
         height: auto;
-        border-radius: 13px;
+        border-radius: 12px;
         object-fit: contain;
         border: 1px solid var(--border);
         box-shadow: var(--shadow-sm);
@@ -1539,41 +1515,43 @@
         align-items: center;
         gap: 8px;
       }
+      #copyLinkToast img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        display: block;
+      }
       #copyLinkToast.show {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
 
       /* ════════════════════════════════════════════════════════
-         §3  桌面端布局（min-width: 769px）
+         §3  桌面端布局（min-width: 1024px）
          ════════════════════════════════════════════════════════ */
 
-      @media (min-width: 769px) {
-        /* ── 页面 / 容器 ── */
+      @media (min-width: 1024px) {
         body {
           align-items: stretch;
           overflow: hidden;
         }
-
-        /* ── 左右布局容器 ── */
         .layout {
           display: flex;
           height: 100dvh;
           overflow: hidden;
         }
 
-        /* ── 左侧导航栏（先出现组） ── */
+        /* ── 左侧导航栏 ── */
         .sidebar {
           display: flex;
-          width: 240px;
-          min-width: 240px;
+          width: 220px;
+          min-width: 220px;
           flex-direction: column;
           background: var(--panel);
           border-right: 1px solid var(--border);
           height: 100dvh;
           overflow: hidden;
           z-index: 10;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.08s both;
         }
 
         /* ── 导航栏标题区 ── */
@@ -1584,7 +1562,7 @@
           text-align: center;
         }
         .sidebar .header h1 {
-          font-size: 2.2rem;
+          font-size: 2rem;
           line-height: 1.3;
           white-space: nowrap;
         }
@@ -1595,27 +1573,15 @@
           overflow-y: auto;
           overflow-x: hidden;
         }
-
-        /* ── 分类列表在导航栏内的布局 ── */
         .sidebar .cats,
         .sidebar .mobile-cats,
         .nav .cats,
         .nav .mobile-cats {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 4px;
           padding: 14px 10px 24px;
           margin-bottom: 0;
-        }
-
-        /* ── 分类按钮：桌面端差异 ── */
-        .cat-btn {
-          padding: 12px 14px;
-          font-size: 0.95rem;
-        }
-        .cat-count {
-          font-size: 0.72rem;
-          padding: 4px 6.5px 4px;
         }
 
         /* ── 右侧内容区 ── */
@@ -1626,9 +1592,10 @@
           height: 100dvh;
           overflow-y: auto;
           overflow-x: hidden;
+          scrollbar-gutter: stable;
         }
 
-        /* ── 搜索区（先出现组） ── */
+        /* ── 搜索栏 ── */
         .search {
           margin-bottom: 24px;
           align-items: center;
@@ -1637,7 +1604,6 @@
           position: relative;
           z-index: 10;
           display: block;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.08s both;
         }
         .sinput {
           padding: 0 10px;
@@ -1654,6 +1620,11 @@
           left: auto;
           transform: none;
         }
+        .suggest {
+          max-width: 680px;
+          margin-left: auto;
+          margin-right: auto;
+        }
         @keyframes dropdownIn {
           from {
             opacity: 0;
@@ -1665,19 +1636,10 @@
           }
         }
 
-        /* ── 搜索联想词列表在桌面端定位修正 ── */
-        .suggest {
-          max-width: 680px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        /* ── 站点卡片网格（后出现组） ── */
+        /* ── 站点卡片网格 ── */
         .grid {
-          grid-template-columns: repeat(5, 1fr);
           gap: 16px;
           margin-bottom: 0;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.45s both;
         }
         .card {
           padding: 18px 20px 16px;
@@ -1695,20 +1657,14 @@
           font-size: 0.92rem;
         }
 
-        /* ── 底部页脚（后出现组） ── */
+        /* ── 底部页脚 ── */
         footer {
           font-size: 0.88rem;
           margin-top: 24px;
           padding: 18px 24px;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.45s both;
         }
 
-        /* ── 悬浮菜单组（先出现组） ── */
-        #settingsFabGroup {
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.08s both;
-        }
-
-        /* ── 桌面端隐藏移动专属元素 ── */
+        /* ── 桌面端隐藏移动端专属元素 ── */
         .mobile-cats,
         .drawer,
         .menu-btn {
@@ -1716,22 +1672,48 @@
         }
       }
 
+      /* ── 桌面端布局：卡片网格分档 ── */
+      @media (min-width: 1024px) and (max-width: 1279px) {
+        .grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 1280px) and (max-width: 1439px) {
+        .grid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+      @media (min-width: 1440px) and (max-width: 1679px) {
+        .grid {
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+      @media (min-width: 1680px) {
+        .grid {
+          grid-template-columns: repeat(7, 1fr);
+        }
+      }
+
       /* ════════════════════════════════════════════════════════
-         §4  移动端布局（max-width: 768px）
+         §4  移动端布局（max-width: 1023px）
          ════════════════════════════════════════════════════════ */
 
-      @media (max-width: 768px) {
-        /* ── 布局容器退化为普通块流 ── */
-        .layout {
+      @media (max-width: 1023px) {
+        .sidebar,
+        .cats.mobile-cats {
+          display: none;
+        }
+        .layout,
+        .main {
           display: block;
           height: auto;
           overflow: visible;
         }
-        .sidebar {
-          display: none;
+        .main {
+          padding: 0;
         }
 
-        /* ── 移动端侧边栏按钮 ── */
+        /* ── 汉堡侧栏按钮 ── */
         .menu-btn {
           flex-shrink: 0;
           width: 48px;
@@ -1759,25 +1741,12 @@
           color: var(--color);
         }
 
-        /* ── 分类网格隐藏（移入抽屉） ── */
-        .cats.mobile-cats {
-          display: none;
-        }
-
-        /* 内容区退化 */
-        .main {
-          display: block;
-          height: auto;
-          overflow: visible;
-          padding: 0;
-        }
-
         /* ── 侧边栏 ── */
         .drawer {
           position: fixed;
           top: 0;
           left: 0;
-          width: 240px;
+          width: 220px;
           height: 100dvh;
           background: var(--panel);
           box-shadow: var(--shadow-lg);
@@ -1802,7 +1771,7 @@
           text-align: center;
         }
         .drawer .header h1 {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
 
         /* ── 侧边栏滚动区 ── */
@@ -1810,23 +1779,20 @@
           flex: 1;
           overflow-y: auto;
           overflow-x: hidden;
-          padding: 12px 10px 20px;
+          padding: 14px 10px 20px;
           display: flex;
           flex-direction: column;
           gap: 4px;
         }
-
-        /* ── 分类按钮：移动端差异 ── */
-        .cat-btn {
-          padding: 14px 16px;
-          font-size: 0.95rem;
-        }
-        .cat-count {
-          font-size: 0.72rem;
-          padding: 4px 6.5px 4px;
+        .drawer-nav .cats {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          padding: 0;
+          margin-bottom: 0;
         }
 
-        /* ── 顶部搜索栏（先出现组） ── */
+        /* ── 顶部搜索栏 ── */
         .search-wrap {
           position: fixed;
           top: 12px;
@@ -1838,7 +1804,6 @@
           display: flex;
           align-items: center;
           gap: 10px;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.08s both;
         }
         .search-wrap .search {
           flex: 1;
@@ -1883,8 +1848,6 @@
           font-size: 0.8rem;
           margin-left: 1px;
         }
-
-        /* ── 搜索联想词列表在移动端定位修正 ── */
         .suggest {
           margin-top: 0;
         }
@@ -1893,13 +1856,12 @@
           font-size: 0.9rem;
         }
 
-        /* ── 站点卡片网格（后出现组） ── */
+        /* ── 站点卡片网格 ── */
         .grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 12px;
           margin-bottom: 6px;
           padding: 76px 12px 14px;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.45s both;
         }
         .card {
           padding: 16px 18px 14px;
@@ -1918,7 +1880,6 @@
         .section-icon {
           width: 44px;
           height: 44px;
-          font-size: 1.4rem;
         }
         .section-info {
           gap: 4px;
@@ -1930,28 +1891,26 @@
           font-size: 0.85rem;
         }
 
-        /* ── 底部页脚（后出现组） ── */
+        /* ── 底部页脚 ── */
         footer {
           margin: 0 12px 20px;
           padding: 16px 14px;
           font-size: 0.85rem;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.45s both;
         }
 
-        /* ── 悬浮按钮移动端尺寸 ── */
+        /* ── 浮动按钮 ── */
         #backToTop {
-          right: 20px;
+          right: 22px;
           bottom: 24px;
           width: 48px;
           height: 48px;
           z-index: 150;
         }
         #settingsFabGroup {
-          right: 20px;
+          right: 22px;
           bottom: 86px;
-          gap: 14px;
+          gap: 10px;
           z-index: 150;
-          animation: fadeInUp var(--fade-t) var(--fade-e) 0.08s both;
         }
         #settingsFab {
           width: 48px;
@@ -1960,10 +1919,9 @@
         .fab {
           width: 48px;
           height: 48px;
-          font-size: 20px;
         }
 
-        /* ── 遮罩层保持全屏，面板从底部滑入 ── */
+        /* ── 遮罩层保持全屏 ── */
         #toolboxModal,
         #disclaimerModal,
         #sponsorModal {
@@ -1971,30 +1929,21 @@
           justify-content: stretch;
         }
 
-        /* ── 三个底部抽屉面板公共样式 ── */
+        /* ── 底部抽屉面板公共样式 ── */
         #toolboxModal .panel,
         #disclaimerModal .panel,
         #sponsorModal .panel {
           width: 100%;
           max-width: 100%;
-          border-radius: 18px 18px 0 0;
+          border-radius: 16px 16px 0 0;
           max-height: 88dvh;
-          padding: 18px 22px 28px;
+          padding: 18px 18px 28px;
           transform: translateY(100%);
           transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15);
           border: none;
           border-top: 1px solid var(--border);
         }
-
-        /* 三个底部抽屉面板：展开时回到原位 */
-        #toolboxModal.open .panel,
-        #disclaimerModal.open .panel,
-        #sponsorModal.open .panel {
-          transform: translateY(0);
-        }
-
-        /* 三个底部抽屉面板：顶部抓手条 */
         #toolboxModal .panel::before,
         #disclaimerModal .panel::before,
         #sponsorModal .panel::before {
@@ -2008,7 +1957,14 @@
           opacity: 0.45;
         }
 
-        /* ── 移动端隐藏悬浮提示框和小箭头 ── */
+        /* ── 展开时回到原位 ── */
+        #toolboxModal.open .panel,
+        #disclaimerModal.open .panel,
+        #sponsorModal.open .panel {
+          transform: translateY(0);
+        }
+
+        /* ── 移动端隐藏提示框和小箭头 ── */
         #backToTop::after,
         #backToTop::before,
         #settingsFab::after,
@@ -2018,13 +1974,44 @@
           display: none;
         }
       }
+
+      /* ── 移动端布局：卡片网格分档 ── */
+      @media (min-width: 600px) and (max-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .egrid {
+          grid-template-columns: repeat(7, 1fr);
+        }
+        .toolbox-list {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 769px) and (max-width: 1023px) {
+        .grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .egrid {
+          grid-template-columns: repeat(9, 1fr);
+        }
+        .toolbox-list {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        #toolboxModal .panel,
+        #disclaimerModal .panel,
+        #sponsorModal .panel {
+          max-width: 640px;
+          margin: 0 auto;
+          padding: 18px 18px 28px;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="app theme-anim">
+    <div class="app">
       <div class="layout">
         <!-- 桌面端标题 -->
-        <aside class="sidebar theme-anim">
+        <aside class="sidebar anim-early">
           <div class="header">
             <h1 class="title">
               <img
@@ -2035,13 +2022,13 @@
               <span>星源导航</span>
             </h1>
           </div>
-          <nav class="nav scroll" id="sidebarNav"></nav>
+          <nav class="nav" id="sidebarNav"></nav>
         </aside>
 
         <!-- 移动端标题 -->
         <div class="overlay" id="mobileDrawerOverlay"></div>
-        <aside class="drawer theme-anim" id="mobileDrawer">
-          <div class="header theme-anim">
+        <aside class="drawer" id="mobileDrawer">
+          <div class="header">
             <h1 class="title">
               <img
                 src="assets/picture/logo.svg"
@@ -2051,293 +2038,360 @@
               <span>星源导航</span>
             </h1>
           </div>
-          <nav class="drawer-nav scroll theme-anim" id="mobileDrawerNav"></nav>
+          <nav class="drawer-nav" id="mobileDrawerNav"></nav>
         </aside>
 
         <!-- 分类标签 -->
         <div class="cats mobile-cats" id="categoriesEl">
-          <button class="cat-btn active theme-anim" data-desc="全部分类">
+          <button class="cat-btn active" data-desc="全部分类">
             <span class="cat-label">
-              <span class="cat-emoji">🏠</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/home.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">全部分类</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="探索全球热门网站与综合服务平台"
-          >
+          <button class="cat-btn" data-desc="探索全球热门网站与综合服务平台">
             <span class="cat-label">
-              <span class="cat-emoji">🌍</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/global.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">全球热门</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="汇聚国内主流网站与常用服务平台"
-          >
+          <button class="cat-btn" data-desc="汇聚国内主流网站与常用服务平台">
             <span class="cat-label">
-              <span class="cat-emoji">🔥</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/china.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">国内主流</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="热门 AI、智能搜索与创作工具"
-          >
+          <button class="cat-btn" data-desc="热门 AI、智能搜索与创作工具">
             <span class="cat-label">
-              <span class="cat-emoji">🧠</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/ai.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">人工智能</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="编码加密、调试测试与开发工具合集"
-          >
+          <button class="cat-btn" data-desc="编码加密、调试测试与开发工具合集">
             <span class="cat-label">
-              <span class="cat-emoji">🛠️</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/dev-tools.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">开发工具</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="站点部署、监控分析与服务器运维"
-          >
+          <button class="cat-btn" data-desc="站点部署、监控分析与服务器运维">
             <span class="cat-label">
-              <span class="cat-emoji">📡</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/devops.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">网站运维</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="办公学习、生活查询与常用工具合集"
-          >
+          <button class="cat-btn" data-desc="办公学习、生活查询与常用工具合集">
             <span class="cat-label">
-              <span class="cat-emoji">🧰</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/toolbox.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">综合效率</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="文档处理、转换与办公效率工具"
-          >
+          <button class="cat-btn" data-desc="文档处理、转换与办公效率工具">
             <span class="cat-label">
-              <span class="cat-emoji">📝</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/document.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">文档办公</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="海量模板、字体、素材与资源下载"
-          >
+          <button class="cat-btn" data-desc="海量模板、字体、素材与资源下载">
             <span class="cat-label">
-              <span class="cat-emoji">📦</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/resources.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">资源素材</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="聚合网盘、影视与电子书资源搜索"
-          >
+          <button class="cat-btn" data-desc="聚合网盘、影视与电子书资源搜索">
             <span class="cat-label">
-              <span class="cat-emoji">🔍</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/search.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">聚合搜索</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="视频解析、提取与下载工具合集"
-          >
+          <button class="cat-btn" data-desc="视频解析、提取与下载工具合集">
             <span class="cat-label">
-              <span class="cat-emoji">🎞️</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/video-parse.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">视频解析</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="音视频制作、转换与内容创作"
-          >
+          <button class="cat-btn" data-desc="音视频制作、转换与内容创作">
             <span class="cat-label">
-              <span class="cat-emoji">🎬</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/media.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">媒体创作</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="图片编辑、AI抠图与智能处理工具"
-          >
+          <button class="cat-btn" data-desc="图片编辑、AI抠图与智能处理工具">
             <span class="cat-label">
-              <span class="cat-emoji">🖼️</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/image.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">图像处理</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="UI 设计、创意工具与设计资源"
-          >
+          <button class="cat-btn" data-desc="UI 设计、创意工具与设计资源">
             <span class="cat-label">
-              <span class="cat-emoji">🎨</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/design.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">创意设计</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="图标素材、SVG 与品牌 Logo "
-          >
+          <button class="cat-btn" data-desc="图标素材、SVG 与品牌 Logo ">
             <span class="cat-label">
-              <span class="cat-emoji">🌈</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/icons.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">图标符号</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="精选壁纸、摄影与视觉艺术作品"
-          >
+          <button class="cat-btn" data-desc="精选壁纸、摄影与视觉艺术作品">
             <span class="cat-label">
-              <span class="cat-emoji">📸</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/photo.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">视觉灵感</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="编程语言、技术文档与开发知识"
-          >
+          <button class="cat-btn" data-desc="编程语言、技术文档与开发知识">
             <span class="cat-label">
-              <span class="cat-emoji">📚</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/coding.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">编程技术</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="科普知识、健康生活与实用知识"
-          >
+          <button class="cat-btn" data-desc="科普知识、健康生活与实用知识">
             <span class="cat-label">
-              <span class="cat-emoji">💡</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/knowledge.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">知识科普</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="国学典籍、历史文化与诗词阅读"
-          >
+          <button class="cat-btn" data-desc="国学典籍、历史文化与诗词阅读">
             <span class="cat-label">
-              <span class="cat-emoji">📖</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/history.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">人文历史</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="教育服务、院校信息与学习资源"
-          >
+          <button class="cat-btn" data-desc="教育服务、院校信息与学习资源">
             <span class="cat-label">
-              <span class="cat-emoji">🎓</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/education.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">学习教育</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="热榜聚合、新闻资讯与实时热点"
-          >
+          <button class="cat-btn" data-desc="热榜聚合、新闻资讯与实时热点">
             <span class="cat-label">
-              <span class="cat-emoji">📰</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/news.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">新闻资讯</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="知识交流、经验分享与社区互动"
-          >
+          <button class="cat-btn" data-desc="知识交流、经验分享与社区互动">
             <span class="cat-label">
-              <span class="cat-emoji">💬</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/forum.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">社区论坛</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="电报频道、群组与实用机器人"
-          >
+          <button class="cat-btn" data-desc="电报频道、群组与实用机器人">
             <span class="cat-label">
-              <span class="cat-emoji">✈️</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/telegram.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">电报频道</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="影视、剧集、音乐与在线播放平台"
-          >
+          <button class="cat-btn" data-desc="影视、剧集、音乐与在线播放平台">
             <span class="cat-label">
-              <span class="cat-emoji">🎧</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/movie-music.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">影视音乐</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="动漫、漫画、轻小说与二次元图集"
-          >
+          <button class="cat-btn" data-desc="动漫、漫画、轻小说与二次元图集">
             <span class="cat-label">
-              <span class="cat-emoji">🌸</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/anime.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">动漫次元</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="科学上网、机场测评与跨境网络资源"
-          >
+          <button class="cat-btn" data-desc="科学上网、机场测评与跨境网络资源">
             <span class="cat-label">
-              <span class="cat-emoji">🌐</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/network.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">跨境网络</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="游戏娱乐、趣味互动与玩家资源"
-          >
+          <button class="cat-btn" data-desc="游戏娱乐、趣味互动与玩家资源">
             <span class="cat-label">
-              <span class="cat-emoji">🎲</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/game.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">休闲娱乐</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="应用商店、扩展插件与安装包下载"
-          >
+          <button class="cat-btn" data-desc="应用商店、扩展插件与安装包下载">
             <span class="cat-label">
-              <span class="cat-emoji">📥</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/download.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">应用下载</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="桌面软件官网与常用工具导航"
-          >
+          <button class="cat-btn" data-desc="桌面软件官网与常用工具导航">
             <span class="cat-label">
-              <span class="cat-emoji">💻</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/desktop.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">桌面软件</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="安卓开源应用与玩机资源合集"
-          >
+          <button class="cat-btn" data-desc="安卓开源应用与玩机资源合集">
             <span class="cat-label">
-              <span class="cat-emoji">📱</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/android.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">安卓专区</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="临时邮箱、文件快传与各类零散网站"
-          >
+          <button class="cat-btn" data-desc="临时邮箱、文件快传与各类零散网站">
             <span class="cat-label">
-              <span class="cat-emoji">🧩</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/extension.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">实用扩展</span>
             </span>
           </button>
-          <button
-            class="cat-btn theme-anim"
-            data-desc="发现更多优质导航与资源网站"
-          >
+          <button class="cat-btn" data-desc="发现更多优质导航与资源网站">
             <span class="cat-label">
-              <span class="cat-emoji">🧭</span>
+              <img
+                class="cat-icon"
+                src="assets/svgicons/more.svg"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
               <span class="cat-text">更多站点</span>
             </span>
           </button>
@@ -2346,14 +2400,10 @@
         <!-- ══════════════════════════════════════════
              右侧内容区（两端共用）
              ══════════════════════════════════════════ -->
-        <main class="main scroll">
-          <div class="search-wrap theme-anim">
+        <main class="main">
+          <div class="search-wrap anim-early">
             <!-- 汉堡侧栏按钮（仅移动端显示） -->
-            <button
-              class="menu-btn theme-anim"
-              id="mobileMenuBtn"
-              aria-label="打开导航侧栏"
-            >
+            <button class="menu-btn" id="mobileMenuBtn" aria-label="打开侧边栏">
               <svg
                 viewBox="0 0 24 24"
                 width="20"
@@ -2369,11 +2419,11 @@
               </svg>
             </button>
 
-            <!-- 搜索栏 -->
-            <div class="search theme-anim">
-              <div class="sbar theme-anim" id="searchBar">
+            <!-- 搜索区 -->
+            <div class="search">
+              <div class="sbar" id="searchBar">
                 <button
-                  class="ebtn theme-anim"
+                  class="ebtn"
                   id="engineTrigger"
                   aria-label="选择搜索引擎"
                   aria-expanded="false"
@@ -2383,25 +2433,17 @@
                 </button>
                 <input
                   type="text"
-                  class="sinput theme-anim"
+                  class="sinput"
                   id="searchBox"
                   placeholder="站内搜索..."
                 />
-                <button
-                  class="clear theme-anim"
-                  id="searchClear"
-                  aria-label="清除搜索"
-                >
+                <button class="clear" id="searchClear" aria-label="清除搜索">
                   <svg viewBox="0 0 14 14">
                     <line x1="2" y1="2" x2="12" y2="12" />
                     <line x1="12" y1="2" x2="2" y2="12" />
                   </svg>
                 </button>
-                <button
-                  class="submit theme-anim"
-                  id="searchSubmit"
-                  aria-label="搜索"
-                >
+                <button class="submit" id="searchSubmit" aria-label="搜索">
                   <svg viewBox="0 0 24 24">
                     <circle cx="11" cy="11" r="8" />
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -2410,11 +2452,12 @@
               </div>
 
               <!-- 搜索联想词容器 -->
-              <div class="suggest theme-anim" id="suggestionsContainer">
-                <ul class="slist scroll" id="suggestionsList"></ul>
+              <div class="suggest" id="suggestionsContainer">
+                <ul class="slist" id="suggestionsList"></ul>
               </div>
 
-              <div class="emenu theme-anim" id="engineDropdown" role="listbox">
+              <!-- 搜索引擎下拉面板 -->
+              <div class="emenu" id="engineDropdown" role="listbox">
                 <div class="egrid" id="engineGrid">
                   <div
                     class="eitem local-row selected"
@@ -2422,17 +2465,23 @@
                     role="option"
                     data-engine="local"
                   >
-                    <div class="eitem-icon local-icon">🔍</div>
+                    <div class="eitem-icon local-icon">
+                      <img
+                        src="assets/picture/nav.svg"
+                        alt=""
+                        onerror="this.style.display = 'none'"
+                      />
+                    </div>
                     <span class="eitem-label">站内</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="grid" id="toolsGrid"></div>
+          <div class="grid anim-late" id="toolsGrid"></div>
 
           <!-- 底部页脚 -->
-          <footer class="theme-anim">
+          <footer class="anim-late">
             <p>
               © <span id="currentYear"></span> 星源导航 - 极简 · 纯粹 · 高效
               <br />
@@ -2444,12 +2493,7 @@
     </div>
 
     <!-- 回到顶部按钮 -->
-    <button
-      id="backToTop"
-      data-tooltip="回到顶部"
-      aria-label="回到顶部"
-      class="theme-anim"
-    >
+    <button id="backToTop" data-tooltip="回到顶部" aria-label="回到顶部">
       <svg viewBox="0 0 24 24">
         <path
           d="M12 19V5M5 12l7-7 7 7"
@@ -2460,56 +2504,70 @@
       </svg>
     </button>
 
-    <!-- 功能菜单（子按钮统一使用 .fab） -->
-    <div id="settingsFabGroup">
+    <!-- 功能菜单 -->
+    <div id="settingsFabGroup" class="anim-early">
       <button
         id="toolboxBtn"
         data-tooltip="简单工具"
         aria-label="简单工具"
-        class="fab theme-anim"
+        class="fab"
       >
-        🧰
+        <img
+          src="assets/svgicons/simple-tools.svg"
+          alt=""
+          onerror="this.style.display = 'none'"
+        />
       </button>
       <button
         id="disclaimerBtn"
         data-tooltip="关于本站"
         aria-label="关于本站"
-        class="fab theme-anim"
+        class="fab"
       >
-        📘
+        <img
+          src="assets/svgicons/about.svg"
+          alt=""
+          onerror="this.style.display = 'none'"
+        />
       </button>
       <button
         id="sponsorBtn"
         data-tooltip="赞赏支持"
         aria-label="赞赏支持"
-        class="fab theme-anim"
+        class="fab"
       >
-        ☕
+        <img
+          src="assets/svgicons/coffee.svg"
+          alt=""
+          onerror="this.style.display = 'none'"
+        />
       </button>
       <button
         id="copyLinkBtn"
         data-tooltip="复制链接"
         aria-label="复制链接"
-        class="fab theme-anim"
+        class="fab"
       >
-        🔗
+        <img
+          src="assets/svgicons/link.svg"
+          alt=""
+          onerror="this.style.display = 'none'"
+        />
       </button>
       <button
         id="themeToggle"
         data-tooltip="切换主题"
         aria-label="切换深色/浅色模式"
-        class="fab theme-anim"
+        class="fab"
       >
-        ☀️
+        <img
+          src="assets/svgicons/sun.svg"
+          alt=""
+          onerror="this.style.display = 'none'"
+        />
       </button>
-      <button
-        id="settingsFab"
-        data-tooltip="菜单"
-        aria-label="菜单"
-        class="theme-anim"
-      >
+      <button id="settingsFab" data-tooltip="菜单" aria-label="菜单">
         <svg
-          id="settingsFabIcon"
           viewBox="0 0 24 24"
           width="22"
           height="22"
@@ -2523,7 +2581,6 @@
         </svg>
       </button>
     </div>
-    <div id="scrollBottomGlow"></div>
 
     <!-- 简单工具 -->
     <div
@@ -2535,9 +2592,16 @@
     >
       <div class="panel">
         <button class="close" id="toolboxClose" aria-label="关闭">✕</button>
-        <p class="panel-title with-mb">🧰 简单工具</p>
+        <p class="panel-title with-mb">
+          <img
+            src="assets/svgicons/simple-tools.svg"
+            alt=""
+            onerror="this.style.display = 'none'"
+          />
+          <span>简单工具</span>
+        </p>
         <div class="toolbox-row">
-          <div class="toolbox-badge" id="toolboxCountBadge">
+          <div class="toolbox-badge">
             <span class="badge-num" id="toolboxCountNum">0</span>
             <span class="badge-label">个工具</span>
           </div>
@@ -2572,23 +2636,21 @@
     >
       <div class="panel">
         <button class="close" id="disclaimerClose" aria-label="关闭">✕</button>
-        <p class="panel-title with-mb">📘 关于本站</p>
+        <p class="panel-title with-mb">
+          <img
+            src="assets/svgicons/about.svg"
+            alt=""
+            onerror="this.style.display = 'none'"
+          />
+          <span>关于本站</span>
+        </p>
         <ul class="disclaimer-list">
           <li class="disclaimer-item">
             <div class="dot"></div>
             <div class="body">
               <p class="disclaimer-title">本站定位与目的</p>
               <p class="disclaimer-text">
-                本站整合了纯前端实用工具与第三方资源导航，便于日常查找使用。对于本站所收录的外部第三方资源与网站，<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>。
-              </p>
-            </div>
-          </li>
-          <li class="disclaimer-item">
-            <div class="dot"></div>
-            <div class="body">
-              <p class="disclaimer-title">内置工具与隐私</p>
-              <p class="disclaimer-text">
-                本站提供了一些纯前端实用工具，<strong>所有计算与处理均在本地浏览器中完成，无需将任何数据或操作记录上传至服务器</strong>，在保障隐私安全的同时带来即开即用的流畅体验。
+                本站整合纯前端实用工具与第三方资源导航，便于日常查找使用。对于所收录的外部第三方资源与网站，<strong>本站不提供任何形式的下载、存储、代理访问或内容托管服务</strong>。
               </p>
             </div>
           </li>
@@ -2597,18 +2659,9 @@
             <div class="body">
               <p class="disclaimer-title">数据来源与免责</p>
               <p class="disclaimer-text">
-                本站所收录的第三方网站（包括但不限于资源库、素材网、技术论坛等）均由搜索引擎及公开信息整理而成，旨在方便用户获取信息。<strong
-                  >本站与所列网站无任何隶属、合作或商业关系。</strong
+                本站收录的第三方网站（包括但不限于资源库、素材站、技术论坛等）均整理自搜索引擎及公开信息，旨在方便获取信息。<strong
+                  >本站与所列网站不存在任何隶属、合作或商业关系。</strong
                 >
-              </p>
-            </div>
-          </li>
-          <li class="disclaimer-item">
-            <div class="dot"></div>
-            <div class="body">
-              <p class="disclaimer-title">收录与质量知悉</p>
-              <p class="disclaimer-text">
-                本站抓取并整理的第三方网站<strong>均属于随机收录，收录网站的内容质量参差不齐，好坏皆有</strong>。用户在访问和使用相关网站时，根据自身需求理性评估其价值与实用性。
               </p>
             </div>
           </li>
@@ -2617,9 +2670,18 @@
             <div class="body">
               <p class="disclaimer-title">风控与安全提示</p>
               <p class="disclaimer-text">
-                本站无法对第三方网站的内容实时性、安全性及服务质量进行监控。用户在访问上述网站时，<strong
-                  >请务必自行甄别信息真伪，提高警惕，谨防诈骗、病毒感染及隐私泄露。</strong
+                本站无法对第三方网站的内容、安全性及服务质量实时监控。访问时请自行甄别信息真伪，谨慎对待涉及账号、支付等敏感操作，提高警惕，<strong
+                  >谨防诈骗、病毒感染及隐私泄露。</strong
                 >
+              </p>
+            </div>
+          </li>
+          <li class="disclaimer-item">
+            <div class="dot"></div>
+            <div class="body">
+              <p class="disclaimer-title">网络环境与访问</p>
+              <p class="disclaimer-text">
+                本站收录的第三方网站来自不同网络环境，<strong>部分需开启代理才能访问，少数则需关闭代理才能正常打开。</strong>若遇到无法访问或加载缓慢的情况，可尝试切换网络环境后重试。
               </p>
             </div>
           </li>
@@ -2628,7 +2690,7 @@
             <div class="body">
               <p class="disclaimer-title">图标与视觉说明</p>
               <p class="disclaimer-text">
-                本站所显示的第三方网站图标，<strong>仅作为页面视觉区分与辅助识别体现</strong>，并不一定代表该网站的官方授权或最新官方图标。所有图标的版权均归其原始版权所有人所有。
+                本站展示的第三方网站图标，<strong>仅用于页面视觉区分与辅助识别</strong>，不代表已获授权，也不一定是最新官方图标。相关图标版权均归原始版权方所有。
               </p>
             </div>
           </li>
@@ -2637,9 +2699,7 @@
             <div class="body">
               <p class="disclaimer-title">内容描述与体验</p>
               <p class="disclaimer-text">
-                本站对第三方网站的介绍和描述内容<strong
-                  >部分由 AI 辅助生成，仅供快速了解时参考</strong
-                >。相关网站的实际功能与服务，请用户以最终的实际访问、使用体验及官方最终说明为准。
+                本站对第三方网站的介绍与描述，<strong>仅作为概况性说明，供快速了解时参考</strong>。相关网站的实际功能与服务，以最终访问、使用体验及官方说明为准。
               </p>
             </div>
           </li>
@@ -2657,7 +2717,14 @@
     >
       <div class="panel">
         <button class="close" id="sponsorClose" aria-label="关闭">✕</button>
-        <p class="panel-title with-mb">☕ 请作者喝杯咖啡</p>
+        <p class="panel-title with-mb">
+          <img
+            src="assets/svgicons/coffee.svg"
+            alt=""
+            onerror="this.style.display = 'none'"
+          />
+          <span>请作者喝杯咖啡</span>
+        </p>
         <p class="sponsor-sub">如果觉得有用，欢迎支持一下</p>
         <div class="qr-row">
           <div class="qr-item">
@@ -2669,15 +2736,23 @@
     </div>
 
     <!-- 复制链接 -->
-    <div id="copyLinkToast">✅ 成功复制本站链接</div>
+    <div id="copyLinkToast">
+      <img
+        src="assets/svgicons/check.svg"
+        alt=""
+        onerror="this.style.display = 'none'"
+      />
+      <span>成功复制本站链接</span>
+    </div>
 
     <!-- 简单工具列表配置 -->
     <script>
       const TOOLS_BASE = "tools/tools/";
+      const SVG_BASE = "assets/svgicons/";
 
       const TOOL_GROUPS = [
         {
-          icon: "💻",
+          icon: SVG_BASE + "group-dev.svg",
           label: "开发者工具",
           tools: [
             { name: "代码对比", file: "code-diff.html" },
@@ -2686,10 +2761,11 @@
             { name: "JSON 格式化", file: "json-formatter.html" },
             { name: "CSS 动画效果", file: "css-animations.html" },
             { name: "Git 命令速查", file: "git-cheat-sheet.html" },
+            { name: "SVG 编辑器", file: "svg-editor.html" },
           ],
         },
         {
-          icon: "🖼️",
+          icon: SVG_BASE + "group-media.svg",
           label: "图片与多媒体",
           tools: [
             { name: "图片格式转换", file: "image-converter.html" },
@@ -2699,11 +2775,10 @@
             { name: "图片转 Base64", file: "image-to-base64.html" },
             { name: "Base64 转图片", file: "base64-to-image.html" },
             { name: "Icon 生成器", file: "favicon-generator.html" },
-            { name: "EXIF 信息查看器", file: "exif-viewer.html" },
           ],
         },
         {
-          icon: "✍️",
+          icon: SVG_BASE + "group-text.svg",
           label: "文本与效率",
           tools: [
             { name: "Markdown 编辑器", file: "markdown-editor.html" },
@@ -2717,7 +2792,7 @@
           ],
         },
         {
-          icon: "🎈",
+          icon: SVG_BASE + "fun.svg",
           label: "日常生活/趣味",
           tools: [
             { name: "随机密码生成器", file: "password-generator.html" },
@@ -2733,20 +2808,18 @@
     </script>
 
     <!-- 安全策略 + 搜索引擎配置 -->
-    <script src="src/scripts/security.js" defer></script>
+    <script src="src/scripts/security.js"></script>
     <script src="src/scripts/config.js"></script>
 
-    <!-- ════════════════════════════════════════════════════════
-         主逻辑脚本（两端共用，移动/桌面差异通过 innerWidth 分支处理）
-         ════════════════════════════════════════════════════════ -->
+    <!-- 分档断点与全局 DOM 引用 -->
     <script>
-      // ── 全局 DOM 引用 ──
+      const DESKTOP_BP = 1024;
       const searchBox = document.getElementById("searchBox");
       const grid = document.getElementById("toolsGrid");
       const categoryBtns = document.querySelectorAll(".cat-btn");
 
       /* ════════════════════════════════════════════════════════
-         §A  搜索引擎选择与切换 + 外部搜索联想词
+         §A  搜索引擎切换与搜索联想词
          ════════════════════════════════════════════════════════ */
 
       const ENGINES = typeof SB_ENGINES !== "undefined" ? SB_ENGINES : {};
@@ -2798,9 +2871,8 @@
         closeSuggestions();
         searchClear.classList.remove("visible");
       }
-      window.clearSearchAndSuggestions = clearSearchAndSuggestions;
 
-      // ── 清空按钮 ──
+      // ── 清除按钮 ──
       searchClear.addEventListener("click", () => {
         if (currentEngine !== "local") {
           clearSearchAndSuggestions();
@@ -2943,21 +3015,15 @@
         if (!text) return;
         searchBox.value = text;
         closeSuggestions();
-        if (currentEngine !== "local" && typeof doWebSearch === "function") {
+        if (currentEngine !== "local") {
           doWebSearch();
-        } else {
-          const q = text.trim();
-          if (q && currentEngine !== "local") {
-            const fn = ENGINES[currentEngine];
-            if (fn) window.open(fn(q), "_blank", "noopener");
-          }
         }
       }
 
       function renderSuggestions(suggestions) {
         suggestionsList.innerHTML = "";
         if (!suggestions || suggestions.length === 0) {
-          suggestionsList.innerHTML = `<div class="sempty">🔍 没有找到相关联想词</div>`;
+          suggestionsList.innerHTML = `<div class="sempty"><img class="empty-icon" src="assets/svgicons/empty-search.svg" alt="" onerror="this.style.display='none'" /> 没有找到相关联想词</div>`;
           return;
         }
         currentSuggestions = suggestions;
@@ -2965,7 +3031,7 @@
         suggestions.forEach((item, index) => {
           const li = document.createElement("li");
           li.dataset.index = index;
-          li.innerHTML = `<span class="sug-icon">🔎</span><span class="sug-text">${escapeHtml(item)}</span><span class="sug-hint">搜索</span>`;
+          li.innerHTML = `<span class="sug-icon"><img src="assets/svgicons/sug-search.svg" alt="" onerror="this.style.display='none'" /></span><span class="sug-text">${escapeHtml(item)}</span><span class="sug-hint">搜索</span>`;
           li.addEventListener("mousedown", (e) => {
             e.preventDefault();
             selectSuggestion(item);
@@ -3017,12 +3083,10 @@
 
       function openSuggestions() {
         suggestionsContainer.classList.add("open");
-        suggestionsContainer.style.display = "block";
       }
 
       function closeSuggestions() {
         suggestionsContainer.classList.remove("open");
-        suggestionsContainer.style.display = "none";
         selectedIndex = -1;
         if (suggestionTimer) {
           clearTimeout(suggestionTimer);
@@ -3153,7 +3217,7 @@
             renderSuggestions(suggestions);
             openSuggestions();
           } else {
-            suggestionsList.innerHTML = `<div class="sempty">🔍 未找到相关联想词</div>`;
+            suggestionsList.innerHTML = `<div class="sempty"><img class="empty-icon" src="assets/svgicons/empty-search.svg" alt="" onerror="this.style.display='none'" /> 未找到相关联想词</div>`;
             openSuggestions();
           }
         } catch (err) {
@@ -3271,21 +3335,8 @@
         }
       });
 
-      // ── 初始化 ──
-      document.addEventListener("DOMContentLoaded", function () {
-        if (currentEngine !== "local") {
-          const query = searchBox.value.trim();
-          if (query) {
-            setTimeout(() => {
-              lastQuery = "";
-              debouncedFetch(query);
-            }, 200);
-          }
-        }
-      });
-
       /* ════════════════════════════════════════════════════════
-         §B  分类数据加载与卡片渲染（懒加载分页）
+         §B  分类数据加载与卡片渲染
          ════════════════════════════════════════════════════════ */
 
       // ── 分类按钮索引初始化 ──
@@ -3304,52 +3355,31 @@
       let _lazyOffset = 0;
       let _lazyObserver = null;
 
-      // 提取分类图标与名称
+      // ── 提取分类图标与名称 ──
       function getCategoryMeta(index) {
-        if (index === 0) {
-          return {
-            icon: "⭐",
-            name: "全部分类",
-            desc: "全部分类",
-          };
-        }
-
         const btn = categoryBtns[index];
-
         if (!btn) {
           return {
-            icon: "🔗",
+            icon: "assets/svgicons/more.svg",
             name: "其他",
             desc: "探索更多",
           };
         }
 
-        const labelText = btn.querySelector(".cat-label").textContent.trim();
+        const img = btn.querySelector(".cat-icon");
+        const icon = img ? img.getAttribute("src") : "assets/svgicons/more.svg";
 
-        // 匹配开头的 Emoji，并同时处理 VS16
-        const emojiMatch = labelText.match(/^(\p{Emoji}(?:\uFE0F)?)/u);
-
-        const icon = emojiMatch
-          ? emojiMatch[1].replace(/\uFE0F/g, "") + "\uFE0F"
-          : "🔗";
-
-        const name = emojiMatch
-          ? labelText.slice(emojiMatch[0].length).trim()
-          : labelText;
-
+        const nameEl = btn.querySelector(".cat-text");
+        const name = nameEl ? nameEl.textContent.trim() : "其他";
         const desc = btn.dataset.desc || "探索更多精彩内容";
 
-        return {
-          icon,
-          name,
-          desc,
-        };
+        return { icon, name, desc };
       }
 
       // ── 构建单个卡片节点 ──
       function buildCard(site) {
         const card = document.createElement("div");
-        card.className = "card theme-anim";
+        card.className = "card";
         const iconHtml = site.icon
           ? `<img class="card-icon" src="assets/siteicons/${site.icon}" alt="${site.title}" loading="lazy" onerror="this.outerHTML='<span class=\\'card-icon-sk\\'></span>'">`
           : `<span class="card-icon-sk"></span>`;
@@ -3371,7 +3401,9 @@
         header.className = "section-header";
         const meta = getCategoryMeta(catIndex);
         header.innerHTML = `
-      <div class="section-icon">${meta.icon}</div>
+      <div class="section-icon">
+        <img src="${meta.icon}" alt="" onerror="this.style.display='none'" />
+      </div>
       <div class="section-info">
         <div class="section-name">${meta.name}</div>
         <div class="section-desc">${meta.desc}</div>
@@ -3398,8 +3430,7 @@
         });
 
         if (filtered.length === 0) {
-          grid.innerHTML =
-            '<p style="color:var(--text-sub);text-align:center;padding:40px;grid-column:1/-1">📭 暂无内容</p>';
+          grid.innerHTML = `<p style="color:var(--text-sub);text-align:center;padding:40px;grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:6px"><img class="empty-icon" src="assets/svgicons/empty-site.svg" alt="" onerror="this.style.display='none'" /> 暂无内容</p>`;
           return;
         }
 
@@ -3429,7 +3460,9 @@
         _lazyOffset = 0;
 
         const scrollRoot =
-          window.innerWidth >= 769 ? document.querySelector(".main") : null;
+          window.innerWidth >= DESKTOP_BP
+            ? document.querySelector(".main")
+            : null;
         _lazyObserver = new IntersectionObserver(
           (entries) => {
             if (entries[0].isIntersecting) {
@@ -3543,7 +3576,7 @@
             searchBox.value = "";
             updateClearBtn();
           }
-          if (window.innerWidth >= 769) {
+          if (window.innerWidth >= DESKTOP_BP) {
             const mainContent = document.querySelector(".main");
             if (mainContent) mainContent.scrollTop = 0;
           } else {
@@ -3572,7 +3605,7 @@
 
       // ── 内容滚动回顶部 ──
       function scrollContentToTop() {
-        if (window.innerWidth >= 769) {
+        if (window.innerWidth >= DESKTOP_BP) {
           const mainContent = document.querySelector(".main");
           if (mainContent) mainContent.scrollTop = 0;
         } else {
@@ -3581,50 +3614,15 @@
       }
 
       /* ════════════════════════════════════════════════════════
-         §C  悬浮控件：回到顶部 / 底部发光 / 菜单 FAB（展开/收起）
+         §C  浮动元素：回到顶部 / 滚动反馈 / 功能菜单
          ════════════════════════════════════════════════════════ */
 
-      // ── 回顶部 & 底部发光 ──
+      // ── 回到顶部 ──
       const backToTopBtn = document.getElementById("backToTop");
-      const scrollBottomGlow = document.getElementById("scrollBottomGlow");
       const SCROLL_THRESHOLD = 300;
       const mainContentEl = document.querySelector(".main");
 
-      let _glowOn = false;
-      let _glowOffTimer = null;
-
-      function glowShow() {
-        if (_glowOffTimer) {
-          clearTimeout(_glowOffTimer);
-          _glowOffTimer = null;
-        }
-        if (_glowOn) return;
-        _glowOn = true;
-        scrollBottomGlow.classList.remove("fade-out");
-        scrollBottomGlow.classList.add("active");
-      }
-
-      function glowHide() {
-        if (_glowOffTimer) {
-          clearTimeout(_glowOffTimer);
-          _glowOffTimer = null;
-        }
-        if (!_glowOn) return;
-        _glowOn = false;
-        scrollBottomGlow.classList.remove("active");
-        scrollBottomGlow.classList.add("fade-out");
-        setTimeout(function () {
-          scrollBottomGlow.classList.remove("fade-out");
-        }, 550);
-      }
-
-      function glowAtBottom() {
-        glowShow();
-        if (_glowOffTimer) clearTimeout(_glowOffTimer);
-        _glowOffTimer = setTimeout(glowHide, 350);
-      }
-
-      // ── 滚动时自动关闭搜索引擎下拉面板 & 菜单 FAB ──
+      // ── 滚动时自动关闭搜索下拉面板 & 功能菜单 ──
       function closeFloatingPanels() {
         if (engineDropdown.classList.contains("open")) closeDropdown();
         if (settingsFabGroup.classList.contains("expanded")) {
@@ -3637,13 +3635,9 @@
       mainContentEl.addEventListener(
         "scroll",
         function () {
-          if (window.innerWidth < 769) return;
+          if (window.innerWidth < DESKTOP_BP) return;
           const st = mainContentEl.scrollTop;
-          const ch = mainContentEl.clientHeight;
-          const sh = mainContentEl.scrollHeight;
           backToTopBtn.classList.toggle("visible", st > SCROLL_THRESHOLD);
-          if (st + ch >= sh - 4) glowAtBottom();
-          else glowHide();
           closeFloatingPanels();
           if (currentEngine !== "local") clearSearchAndSuggestions();
         },
@@ -3654,13 +3648,9 @@
       window.addEventListener(
         "scroll",
         function () {
-          if (window.innerWidth >= 769) return;
+          if (window.innerWidth >= DESKTOP_BP) return;
           const st = window.scrollY;
-          const ch = window.innerHeight;
-          const sh = document.documentElement.scrollHeight;
           backToTopBtn.classList.toggle("visible", st > SCROLL_THRESHOLD);
-          if (st + ch >= sh - 4) glowAtBottom();
-          else glowHide();
           closeFloatingPanels();
           if (currentEngine !== "local") clearSearchAndSuggestions();
         },
@@ -3668,14 +3658,14 @@
       );
 
       backToTopBtn.addEventListener("click", function () {
-        if (window.innerWidth >= 769) {
+        if (window.innerWidth >= DESKTOP_BP) {
           mainContentEl.scrollTo({ top: 0, behavior: "smooth" });
         } else {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       });
 
-      // ── 菜单 FAB 展开/收起 ──
+      // ── 功能菜单展开/收起 ──
       const settingsFabBtn = document.getElementById("settingsFab");
       const settingsFabGroup = document.getElementById("settingsFabGroup");
 
@@ -3695,7 +3685,7 @@
       });
 
       /* ════════════════════════════════════════════════════════
-         §D  功能按钮 + 模态框
+         §D  模态框与功能按钮
          ════════════════════════════════════════════════════════ */
 
       // ── 背景滚动锁 ──
@@ -3894,41 +3884,26 @@
       // ── 主题切换 ──
       const themeToggleBtn = document.getElementById("themeToggle");
       const DARK_KEY = "xingyuan-dark-mode";
-      let themeTimer = null;
 
-      function applyTheme(isDark, animate = false) {
-        if (animate) {
-          if (themeTimer) clearTimeout(themeTimer);
-          document.body.classList.add("theme-transitioning");
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              document.body.classList.toggle("dark", isDark);
-              themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
-              themeToggleBtn.dataset.tooltip = isDark
-                ? "切换浅色模式"
-                : "切换深色模式";
-            });
-          });
-          themeTimer = setTimeout(() => {
-            document.body.classList.remove("theme-transitioning");
-            themeTimer = null;
-          }, 400);
-        } else {
-          document.body.classList.toggle("dark", isDark);
-          themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
-          themeToggleBtn.dataset.tooltip = isDark
-            ? "切换浅色模式"
-            : "切换深色模式";
-        }
+      function applyTheme(isDark) {
+        const root = document.documentElement;
+        root.classList.add("no-transition");
+        document.body.classList.toggle("dark", isDark);
+        // 用 SVG 替换 emoji：深色模式显示太阳（切换浅色），浅色模式显示月亮（切换深色）
+        const iconFile = isDark ? "sun.svg" : "moon.svg";
+        themeToggleBtn.innerHTML = `<img src="assets/svgicons/${iconFile}" alt="" onerror="this.style.display='none'" />`;
+        themeToggleBtn.dataset.tooltip = isDark
+          ? "切换浅色模式"
+          : "切换深色模式";
+        void root.offsetHeight;
+        root.classList.remove("no-transition");
       }
 
-      const savedDark = localStorage.getItem(DARK_KEY);
-      const prefersDark = savedDark === "true";
-      applyTheme(prefersDark, false);
+      applyTheme(localStorage.getItem(DARK_KEY) === "true");
 
       themeToggleBtn.addEventListener("click", function () {
         const isDark = !document.body.classList.contains("dark");
-        applyTheme(isDark, true);
+        applyTheme(isDark);
         localStorage.setItem(DARK_KEY, isDark ? "true" : "false");
       });
 
@@ -3950,7 +3925,7 @@
       });
 
       /* ════════════════════════════════════════════════════════
-         §E  移动端专属交互：分类抽屉同步 / 侧滑抽屉开关
+         §E  移动端交互：分类挂载 / 抽屉开关
          ════════════════════════════════════════════════════════ */
 
       const categoriesEl = document.getElementById("categoriesEl");
@@ -3958,7 +3933,7 @@
       const mobileDrawerNav = document.getElementById("mobileDrawerNav");
 
       function syncCategoriesPlacement() {
-        if (window.innerWidth >= 769) {
+        if (window.innerWidth >= DESKTOP_BP) {
           if (sidebarNav && categoriesEl.parentNode !== sidebarNav) {
             categoriesEl.classList.add("mobile-cats");
             sidebarNav.appendChild(categoriesEl);
@@ -3988,7 +3963,6 @@
         mobileDrawer.classList.add("open");
         mobileDrawerOverlay.classList.add("open");
         document.documentElement.style.overflow = "hidden";
-        document.body.classList.add("drawer-open");
         if (mobileMenuBtn) mobileMenuBtn.classList.add("open");
         history.pushState({ drawerOpen: true }, "");
       }
@@ -3997,7 +3971,6 @@
         mobileDrawer.classList.remove("open");
         mobileDrawerOverlay.classList.remove("open");
         document.documentElement.style.overflow = "";
-        document.body.classList.remove("drawer-open");
         if (mobileMenuBtn) mobileMenuBtn.classList.remove("open");
       }
 
@@ -4042,7 +4015,7 @@
           const countNum = document.getElementById("toolboxCountNum");
           if (countNum) countNum.textContent = filtered.length;
           if (filtered.length === 0) {
-            list.innerHTML = `<p class="toolbox-empty">🤷 没有找到"${keyword}"相关工具</p>`;
+            list.innerHTML = `<p class="toolbox-empty"><img class="empty-icon" src="assets/svgicons/empty-tool.svg" alt="" onerror="this.style.display='none'" /> 没有找到"${keyword}"相关工具</p>`;
             return;
           }
           list.innerHTML = "";
@@ -4052,7 +4025,12 @@
             a.href = TOOLS_BASE + tool.file;
             a.target = "_blank";
             a.rel = "noopener noreferrer";
-            a.innerHTML = `<span class="item-name">${tool.name}</span><span class="item-arrow">›</span>`;
+            a.innerHTML = `<span class="item-name">${tool.name}</span>
+               <span class="item-arrow">
+                 <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                   <polyline points="9 18 15 12 9 6"></polyline>
+                 </svg>
+               </span>`;
             list.appendChild(a);
           });
           return;
@@ -4064,7 +4042,7 @@
         TOOL_GROUPS.forEach(function (group) {
           const header = document.createElement("div");
           header.className = "group-header";
-          header.innerHTML = `<span class="group-icon">${group.icon}</span><span class="group-name">${group.label}</span>`;
+          header.innerHTML = `<span class="group-icon"><img src="${group.icon}" alt="" onerror="this.style.display='none'" /></span><span class="group-name">${group.label}</span>`;
           list.appendChild(header);
           group.tools.forEach(function (tool) {
             const a = document.createElement("a");
@@ -4072,7 +4050,12 @@
             a.href = TOOLS_BASE + tool.file;
             a.target = "_blank";
             a.rel = "noopener noreferrer";
-            a.innerHTML = `<span class="item-name">${tool.name}</span><span class="item-arrow">›</span>`;
+            a.innerHTML = `<span class="item-name">${tool.name}</span>
+               <span class="item-arrow">
+                 <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                   <polyline points="9 18 15 12 9 6"></polyline>
+                 </svg>
+               </span>`;
             list.appendChild(a);
           });
         });
@@ -4102,16 +4085,6 @@
           location.reload();
         });
       });
-
-      // ── 物理删除原生 title 白框，换成自定义文字 ──
-      document
-        .querySelectorAll("#settingsFabGroup button, #backToTop")
-        .forEach((el) => {
-          if (el.title) {
-            el.setAttribute("data-tooltip", el.title);
-            el.removeAttribute("title");
-          }
-        });
 
       // ── 加载全部分类 ──
       showCategory(0);
